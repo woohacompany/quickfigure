@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function SalaryCalculatorPage({
   params,
@@ -15,12 +16,12 @@ export default function SalaryCalculatorPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.salaryCalc;
-  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
-  const fmtCurrency = (v: number) => {
-    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
-    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  };
   const relatedPosts = getPostsByTool("salary-calculator");
+
+  const [currency, setCurrency] = useState<Currency>(locale === "ko" ? "KRW" : "USD");
+  const sym = getCurrencySymbol(currency);
+  const fmt = (v: number) => formatCurrency(v, currency);
+  const unitHint = (v: number) => currency === "KRW" ? formatKRW(v) : formatUSD(v);
 
   const [salary, setSalary] = useState("");
   const [dependents, setDependents] = useState("1");
@@ -36,16 +37,14 @@ export default function SalaryCalculatorPage({
     if (annual <= 0) return;
 
     if (locale === "ko") {
-      // Korean salary calculation: 4대보험 + 소득세 + 지방소득세
       const monthly = annual / 12;
-      const nationalPension = Math.min(monthly * 0.045, 248850); // 국민연금 4.5%
-      const healthInsurance = monthly * 0.03545; // 건강보험 3.545%
-      const longTermCare = healthInsurance * 0.1295; // 장기요양보험 12.95%
-      const employmentInsurance = monthly * 0.009; // 고용보험 0.9%
+      const nationalPension = Math.min(monthly * 0.045, 248850);
+      const healthInsurance = monthly * 0.03545;
+      const longTermCare = healthInsurance * 0.1295;
+      const employmentInsurance = monthly * 0.009;
 
-      // Simplified income tax based on annual salary
       const dep = parseInt(dependents) || 1;
-      let taxBase = annual - (annual * 0.15) - (1500000 * dep); // 근로소득공제 + 인적공제
+      let taxBase = annual - (annual * 0.15) - (1500000 * dep);
       if (taxBase < 0) taxBase = 0;
 
       let annualTax = 0;
@@ -59,7 +58,7 @@ export default function SalaryCalculatorPage({
       else annualTax = 384060000 + (taxBase - 1000000000) * 0.45;
 
       const monthlyIncomeTax = annualTax / 12;
-      const localIncomeTax = monthlyIncomeTax * 0.1; // 지방소득세 10%
+      const localIncomeTax = monthlyIncomeTax * 0.1;
 
       const totalDeductions = nationalPension + healthInsurance + longTermCare + employmentInsurance + monthlyIncomeTax + localIncomeTax;
       const netMonthly = monthly - totalDeductions;
@@ -78,15 +77,12 @@ export default function SalaryCalculatorPage({
         ],
       });
     } else {
-      // US salary calculation: Federal + FICA
       const monthly = annual / 12;
 
-      // FICA taxes
       const socialSecurity = Math.min(annual, 168600) * 0.062 / 12;
       const medicare = annual * 0.0145 / 12;
       const additionalMedicare = annual > 200000 ? (annual - 200000) * 0.009 / 12 : 0;
 
-      // Federal income tax (2025 single filer, standard deduction $14,600)
       const standardDeduction = 14600;
       let taxableIncome = annual - standardDeduction;
       if (taxableIncome < 0) taxableIncome = 0;
@@ -126,15 +122,33 @@ export default function SalaryCalculatorPage({
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
+        <div className="flex items-center gap-2">
+          <label className="text-sm font-medium">{locale === "ko" ? "통화" : "Currency"}</label>
+          <select
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value as Currency)}
+            className="p-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="KRW">₩ KRW</option>
+            <option value="USD">$ USD</option>
+          </select>
+        </div>
+
         <div>
           <label className="text-sm font-medium block mb-2">{t.annualSalary}</label>
-          <input
-            type="number"
-            value={salary}
-            onChange={(e) => setSalary(e.target.value)}
-            placeholder={locale === "ko" ? "50000000" : "75000"}
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={salary}
+              onChange={(e) => setSalary(e.target.value)}
+              placeholder={currency === "KRW" ? "50,000,000" : "75,000"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {salary && parseFloat(salary) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(salary))}</p>
+          )}
         </div>
 
         {locale === "ko" && (
@@ -163,29 +177,28 @@ export default function SalaryCalculatorPage({
 
         {result && (
           <div className="space-y-4 mt-4">
-            {/* Summary Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                <p className="text-2xl font-semibold tracking-tight">
-                  {fmtCurrency(result.grossMonthly)}
-                </p>
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.grossMonthly)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.grossMonthly)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.grossMonthly}</p>
               </div>
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
                 <p className="text-2xl font-semibold tracking-tight text-red-600 dark:text-red-400">
-                  -{fmtCurrency(result.totalDeductions)}
+                  -{fmt(result.totalDeductions)}
                 </p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalDeductions)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalDeductions}</p>
               </div>
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
                 <p className="text-2xl font-semibold tracking-tight text-green-600 dark:text-green-400">
-                  {fmtCurrency(result.netMonthly)}
+                  {fmt(result.netMonthly)}
                 </p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.netMonthly)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.netMonthly}</p>
               </div>
             </div>
 
-            {/* Breakdown Table */}
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
@@ -198,12 +211,12 @@ export default function SalaryCalculatorPage({
                   {result.breakdown.map((item, i) => (
                     <tr key={i} className="border-t border-neutral-200 dark:border-neutral-700">
                       <td className="p-3 text-neutral-600 dark:text-neutral-400">{item.label}</td>
-                      <td className="p-3 text-right">{fmtCurrency(item.amount)}</td>
+                      <td className="p-3 text-right">{fmt(item.amount)}</td>
                     </tr>
                   ))}
                   <tr className="border-t-2 border-neutral-300 dark:border-neutral-600 font-semibold">
                     <td className="p-3">{t.totalDeductions}</td>
-                    <td className="p-3 text-right">{fmtCurrency(result.totalDeductions)}</td>
+                    <td className="p-3 text-right">{fmt(result.totalDeductions)}</td>
                   </tr>
                 </tbody>
               </table>
@@ -212,7 +225,6 @@ export default function SalaryCalculatorPage({
         )}
       </div>
 
-      {/* How to Use */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{t.howToUseTitle}</h2>
         <ol className="list-decimal list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
@@ -222,7 +234,6 @@ export default function SalaryCalculatorPage({
         </ol>
       </section>
 
-      {/* FAQ */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.faq}</h2>
         <div className="space-y-4">
@@ -235,7 +246,6 @@ export default function SalaryCalculatorPage({
         </div>
       </section>
 
-      {/* FAQ Schema Markup */}
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -252,7 +262,6 @@ export default function SalaryCalculatorPage({
         }}
       />
 
-      {/* Related Tools */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.quickTools}</h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -281,7 +290,6 @@ export default function SalaryCalculatorPage({
         </div>
       </section>
 
-      {/* Related Blog Posts */}
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
           <h2 className="text-xl font-semibold mb-4">{dict.relatedArticles}</h2>

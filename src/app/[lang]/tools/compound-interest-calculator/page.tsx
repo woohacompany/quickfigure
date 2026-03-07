@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function CompoundInterestPage({
   params,
@@ -15,12 +16,12 @@ export default function CompoundInterestPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.compoundInterest;
-  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
-  const fmtCurrency = (v: number) => {
-    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
-    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  };
   const relatedPosts = getPostsByTool("compound-interest-calculator");
+
+  const [currency, setCurrency] = useState<Currency>(locale === "ko" ? "KRW" : "USD");
+  const sym = getCurrencySymbol(currency);
+  const fmt = (v: number) => formatCurrency(v, currency);
+  const unitHint = (v: number) => currency === "KRW" ? formatKRW(v) : formatUSD(v);
 
   const [principal, setPrincipal] = useState("");
   const [monthlyContribution, setMonthlyContribution] = useState("");
@@ -52,12 +53,9 @@ export default function CompoundInterestPage({
       const nt = n * t;
       const compoundFactor = Math.pow(1 + rn, nt);
       const principalFV = P * compoundFactor;
-
-      // Convert monthly contribution to per-period contribution
       const periodsPerYear = n;
       const PMTperPeriod = PMT * (12 / periodsPerYear);
       const annuityFV = PMTperPeriod * ((compoundFactor - 1) / rn);
-
       futureValue = principalFV + annuityFV;
     }
 
@@ -75,49 +73,80 @@ export default function CompoundInterestPage({
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
+        {/* Currency Selector */}
+        <div className="flex items-center gap-2">
+          <label className="text-sm font-medium">{locale === "ko" ? "통화" : "Currency"}</label>
+          <select
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value as Currency)}
+            className="p-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="KRW">₩ KRW</option>
+            <option value="USD">$ USD</option>
+          </select>
+        </div>
+
         <div>
           <label className="text-sm font-medium block mb-2">{t.principal}</label>
-          <input
-            type="number"
-            value={principal}
-            onChange={(e) => setPrincipal(e.target.value)}
-            placeholder="10000"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={principal}
+              onChange={(e) => setPrincipal(e.target.value)}
+              placeholder={currency === "KRW" ? "10,000,000" : "10,000"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {principal && parseFloat(principal) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(principal))}</p>
+          )}
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.monthlyContribution}</label>
-          <input
-            type="number"
-            value={monthlyContribution}
-            onChange={(e) => setMonthlyContribution(e.target.value)}
-            placeholder="500"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={monthlyContribution}
+              onChange={(e) => setMonthlyContribution(e.target.value)}
+              placeholder={currency === "KRW" ? "500,000" : "500"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {monthlyContribution && parseFloat(monthlyContribution) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(monthlyContribution))}</p>
+          )}
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.rate}</label>
-          <input
-            type="number"
-            value={rate}
-            onChange={(e) => setRate(e.target.value)}
-            placeholder="7"
-            step="0.1"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <input
+              type="number"
+              value={rate}
+              onChange={(e) => setRate(e.target.value)}
+              placeholder="7"
+              step="0.1"
+              className="w-full p-3 pr-10 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">%</span>
+          </div>
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.years}</label>
-          <input
-            type="number"
-            value={years}
-            onChange={(e) => setYears(e.target.value)}
-            placeholder="20"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <input
+              type="number"
+              value={years}
+              onChange={(e) => setYears(e.target.value)}
+              placeholder="20"
+              className="w-full p-3 pr-12 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{locale === "ko" ? "년" : "years"}</span>
+          </div>
         </div>
 
         <div>
@@ -143,21 +172,18 @@ export default function CompoundInterestPage({
         {result && (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.futureValue)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.futureValue)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.futureValue)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.result}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.totalInterest)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalInterest)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.totalDeposited)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalDeposited)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalDeposited)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalDeposited}</p>
             </div>
           </div>

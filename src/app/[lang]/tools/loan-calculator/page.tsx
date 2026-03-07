@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function LoanCalculatorPage({
   params,
@@ -15,12 +16,12 @@ export default function LoanCalculatorPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.loanCalc;
-  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
-  const fmtCurrency = (v: number) => {
-    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
-    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  };
   const relatedPosts = getPostsByTool("loan-calculator");
+
+  const [currency, setCurrency] = useState<Currency>(locale === "ko" ? "KRW" : "USD");
+  const sym = getCurrencySymbol(currency);
+  const fmt = (v: number) => formatCurrency(v, currency);
+  const unitHint = (v: number) => currency === "KRW" ? formatKRW(v) : formatUSD(v);
 
   const [amount, setAmount] = useState("");
   const [rate, setRate] = useState("");
@@ -72,38 +73,62 @@ export default function LoanCalculatorPage({
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
+        <div className="flex items-center gap-2">
+          <label className="text-sm font-medium">{locale === "ko" ? "통화" : "Currency"}</label>
+          <select
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value as Currency)}
+            className="p-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="KRW">₩ KRW</option>
+            <option value="USD">$ USD</option>
+          </select>
+        </div>
+
         <div>
           <label className="text-sm font-medium block mb-2">{t.loanAmount}</label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder={locale === "ko" ? "100000000" : "250000"}
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder={currency === "KRW" ? "300,000,000" : "300,000"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {amount && parseFloat(amount) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(amount))}</p>
+          )}
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.interestRate}</label>
-          <input
-            type="number"
-            value={rate}
-            onChange={(e) => setRate(e.target.value)}
-            placeholder="5.5"
-            step="0.1"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <input
+              type="number"
+              value={rate}
+              onChange={(e) => setRate(e.target.value)}
+              placeholder="5.5"
+              step="0.1"
+              className="w-full p-3 pr-10 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">%</span>
+          </div>
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.loanTerm}</label>
-          <input
-            type="number"
-            value={years}
-            onChange={(e) => setYears(e.target.value)}
-            placeholder="30"
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <input
+              type="number"
+              value={years}
+              onChange={(e) => setYears(e.target.value)}
+              placeholder="30"
+              className="w-full p-3 pr-12 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{locale === "ko" ? "년" : "years"}</span>
+          </div>
         </div>
 
         <button
@@ -117,26 +142,22 @@ export default function LoanCalculatorPage({
           <div className="space-y-4 mt-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                <p className="text-2xl font-semibold tracking-tight">
-                  {fmtCurrency(result.monthlyPayment)}
-                </p>
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.monthlyPayment)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.monthlyPayment)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.monthlyPayment}</p>
               </div>
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                <p className="text-2xl font-semibold tracking-tight">
-                  {fmtCurrency(result.totalPayment)}
-                </p>
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalPayment)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalPayment)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalPayment}</p>
               </div>
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                <p className="text-2xl font-semibold tracking-tight text-red-600 dark:text-red-400">
-                  {fmtCurrency(result.totalInterest)}
-                </p>
+                <p className="text-2xl font-semibold tracking-tight text-red-600 dark:text-red-400">{fmt(result.totalInterest)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
               </div>
             </div>
 
-            {/* Amortization Schedule Toggle */}
             <button
               onClick={() => setShowSchedule(!showSchedule)}
               className="text-sm text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
@@ -160,10 +181,10 @@ export default function LoanCalculatorPage({
                     {result.schedule.map((row) => (
                       <tr key={row.month} className="border-t border-neutral-200 dark:border-neutral-700">
                         <td className="p-3 text-neutral-600 dark:text-neutral-400">{row.month}</td>
-                        <td className="p-3 text-right">{fmtCurrency(row.payment)}</td>
-                        <td className="p-3 text-right">{fmtCurrency(row.principal)}</td>
-                        <td className="p-3 text-right">{fmtCurrency(row.interest)}</td>
-                        <td className="p-3 text-right">{fmtCurrency(row.balance)}</td>
+                        <td className="p-3 text-right">{fmt(row.payment)}</td>
+                        <td className="p-3 text-right">{fmt(row.principal)}</td>
+                        <td className="p-3 text-right">{fmt(row.interest)}</td>
+                        <td className="p-3 text-right">{fmt(row.balance)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -174,7 +195,6 @@ export default function LoanCalculatorPage({
         )}
       </div>
 
-      {/* How to Use */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{t.howToUseTitle}</h2>
         <ol className="list-decimal list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
@@ -184,7 +204,6 @@ export default function LoanCalculatorPage({
         </ol>
       </section>
 
-      {/* FAQ */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.faq}</h2>
         <div className="space-y-4">
@@ -213,7 +232,6 @@ export default function LoanCalculatorPage({
         }}
       />
 
-      {/* Related Tools */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.quickTools}</h2>
         <div className="grid gap-4 sm:grid-cols-2">

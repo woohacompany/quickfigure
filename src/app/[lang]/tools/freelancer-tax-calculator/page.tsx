@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function FreelancerTaxPage({
   params,
@@ -15,12 +16,12 @@ export default function FreelancerTaxPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.freelancerTax;
-  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
-  const fmtCurrency = (v: number) => {
-    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
-    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  };
   const relatedPosts = getPostsByTool("freelancer-tax-calculator");
+
+  const [currency, setCurrency] = useState<Currency>(locale === "ko" ? "KRW" : "USD");
+  const sym = getCurrencySymbol(currency);
+  const fmt = (v: number) => formatCurrency(v, currency);
+  const unitHint = (v: number) => currency === "KRW" ? formatKRW(v) : formatUSD(v);
 
   const [income, setIncome] = useState("");
   const [expenses, setExpenses] = useState("");
@@ -38,12 +39,10 @@ export default function FreelancerTaxPage({
     if (gross <= 0) return;
 
     if (locale === "ko") {
-      // Korean 3.3% withholding tax system
       const withholdingRate = 0.033;
       const withholdingTax = gross * withholdingRate;
       const netIncome = gross - withholdingTax;
 
-      // Simplified estimated actual tax (using standard deduction)
       const taxableIncome = gross - exp;
       let actualTax = 0;
       if (taxableIncome <= 14000000) actualTax = taxableIncome * 0.06;
@@ -66,13 +65,11 @@ export default function FreelancerTaxPage({
         estimatedRefund,
       });
     } else {
-      // US self-employment tax calculation
       const selfEmploymentTaxRate = 0.153;
       const selfEmploymentTax = (gross - exp) * selfEmploymentTaxRate;
       const deductibleSETax = selfEmploymentTax * 0.5;
       const taxableIncome = gross - exp - deductibleSETax;
 
-      // Simplified federal tax brackets (2025)
       let federalTax = 0;
       if (taxableIncome <= 11600) federalTax = taxableIncome * 0.10;
       else if (taxableIncome <= 47150) federalTax = 1160 + (taxableIncome - 11600) * 0.12;
@@ -104,26 +101,50 @@ export default function FreelancerTaxPage({
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
+        <div className="flex items-center gap-2">
+          <label className="text-sm font-medium">{locale === "ko" ? "통화" : "Currency"}</label>
+          <select
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value as Currency)}
+            className="p-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="KRW">₩ KRW</option>
+            <option value="USD">$ USD</option>
+          </select>
+        </div>
+
         <div>
           <label className="text-sm font-medium block mb-2">{t.grossIncome}</label>
-          <input
-            type="number"
-            value={income}
-            onChange={(e) => setIncome(e.target.value)}
-            placeholder={locale === "ko" ? "30000000" : "50000"}
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={income}
+              onChange={(e) => setIncome(e.target.value)}
+              placeholder={currency === "KRW" ? "30,000,000" : "50,000"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {income && parseFloat(income) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(income))}</p>
+          )}
         </div>
 
         <div>
           <label className="text-sm font-medium block mb-2">{t.expenses}</label>
-          <input
-            type="number"
-            value={expenses}
-            onChange={(e) => setExpenses(e.target.value)}
-            placeholder={locale === "ko" ? "5000000" : "10000"}
-            className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="relative">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">{sym}</span>
+            <input
+              type="number"
+              value={expenses}
+              onChange={(e) => setExpenses(e.target.value)}
+              placeholder={currency === "KRW" ? "5,000,000" : "10,000"}
+              className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          {expenses && parseFloat(expenses) > 0 && (
+            <p className="text-sm text-neutral-500 mt-1">{unitHint(parseFloat(expenses))}</p>
+          )}
         </div>
 
         <button
@@ -136,28 +157,26 @@ export default function FreelancerTaxPage({
         {result && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.withholdingTax)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.withholdingTax)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.withholdingTax)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.withholdingTax}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.netIncome)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.netIncome)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.netIncome)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.netIncome}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {fmtCurrency(result.taxableIncome)}
-              </p>
+              <p className="text-2xl font-semibold tracking-tight">{fmt(result.taxableIncome)}</p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.taxableIncome)}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.taxableIncome}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className={`text-2xl font-semibold tracking-tight ${locale === "ko" && result.estimatedRefund > 0 ? "text-green-600 dark:text-green-400" : locale === "ko" && result.estimatedRefund < 0 ? "text-red-600 dark:text-red-400" : ""}`}>
                 {locale === "ko" && result.estimatedRefund > 0 ? "+" : ""}
-                {fmtCurrency(Math.abs(result.estimatedRefund))}
+                {fmt(Math.abs(result.estimatedRefund))}
               </p>
+              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(Math.abs(result.estimatedRefund))}</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
                 {locale === "ko"
                   ? result.estimatedRefund >= 0
@@ -170,7 +189,6 @@ export default function FreelancerTaxPage({
         )}
       </div>
 
-      {/* How to Use */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{t.howToUseTitle}</h2>
         <ol className="list-decimal list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
@@ -180,7 +198,6 @@ export default function FreelancerTaxPage({
         </ol>
       </section>
 
-      {/* FAQ Schema */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.faq}</h2>
         <div className="space-y-4">
@@ -193,7 +210,6 @@ export default function FreelancerTaxPage({
         </div>
       </section>
 
-      {/* FAQ Schema Markup */}
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -210,7 +226,6 @@ export default function FreelancerTaxPage({
         }}
       />
 
-      {/* Related Tools */}
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{dict.blog.quickTools}</h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -239,7 +254,6 @@ export default function FreelancerTaxPage({
         </div>
       </section>
 
-      {/* Related Blog Posts */}
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
           <h2 className="text-xl font-semibold mb-4">{dict.relatedArticles}</h2>
