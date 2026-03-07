@@ -60,6 +60,20 @@ const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }
       </svg>
     ),
   },
+  utility: {
+    gradient: "from-violet-500 to-fuchsia-600",
+    icon: (
+      <svg viewBox="0 0 120 120" fill="none" className="w-20 h-20 sm:w-28 sm:h-28">
+        <rect x="25" y="30" width="70" height="60" rx="8" fill="white" fillOpacity="0.15" />
+        <rect x="35" y="42" width="20" height="20" rx="4" fill="white" fillOpacity="0.3" />
+        <rect x="65" y="42" width="20" height="20" rx="4" fill="white" fillOpacity="0.25" />
+        <rect x="35" y="68" width="20" height="12" rx="4" fill="white" fillOpacity="0.2" />
+        <rect x="65" y="68" width="20" height="12" rx="4" fill="white" fillOpacity="0.35" />
+        <circle cx="45" cy="52" r="5" fill="white" fillOpacity="0.5" />
+        <path d="M72 48 L78 48 L75 54 Z" fill="white" fillOpacity="0.5" />
+      </svg>
+    ),
+  },
   lifestyle: {
     gradient: "from-rose-500 to-pink-600",
     icon: (

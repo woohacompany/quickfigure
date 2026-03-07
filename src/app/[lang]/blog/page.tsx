@@ -28,7 +28,7 @@ export default function BlogListPage({
   const filtered = getPostsByCategory(category);
   const { posts, totalPages } = getPaginatedPosts(filtered, page);
 
-  const categories: (BlogCategory | "all")[] = ["all", "text-tools", "developer-tools", "generators", "finance", "lifestyle"];
+  const categories: (BlogCategory | "all")[] = ["all", "text-tools", "developer-tools", "generators", "finance", "lifestyle", "utility"];
 
   function selectCategory(c: BlogCategory | "all") {
     setCategory(c);

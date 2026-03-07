@@ -1,0 +1,65 @@
+# 빌드 결과물
+.next/
+out/
+dist/
+build/
+
+# 의존성
+node_modules/
+
+# 캐시
+.cache/
+.vercel/
+.turbo/
+
+# 락파일 (토큰 낭비 주범)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 이미지/미디어 (바이너리 읽을 필요 없음)
+public/images/
+public/icons/
+public/fonts/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.webp
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.mp4
+*.mp3
+
+# Git
+.git/
+.gitignore
+
+# 환경변수
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 기타
+*.log
+*.map
+coverage/
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx

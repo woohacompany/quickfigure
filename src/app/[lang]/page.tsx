@@ -63,6 +63,12 @@ export default async function HomePage({
     { name: t.home.ageCalc, description: t.home.ageCalcDesc, href: `/${lang}/tools/age-calculator` },
   ];
 
+  const utilityTools = [
+    { name: t.home.symbolCopyPaste, description: t.home.symbolCopyPasteDesc, href: `/${lang}/tools/symbol-copy-paste` },
+    { name: t.home.qrCodeGenerator, description: t.home.qrCodeGeneratorDesc, href: `/${lang}/tools/qr-code-generator` },
+    { name: t.home.colorPicker, description: t.home.colorPickerDesc, href: `/${lang}/tools/color-picker` },
+  ];
+
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
     return (
       <div className="grid gap-4 sm:grid-cols-2">
@@ -126,6 +132,12 @@ export default async function HomePage({
         <section>
           <h2 className="text-xl font-semibold mb-4">{t.home.healthTools}</h2>
           <ToolGrid tools={healthTools} />
+        </section>
+
+        {/* Utility Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.utilityTools}</h2>
+          <ToolGrid tools={utilityTools} />
         </section>
       </div>
 

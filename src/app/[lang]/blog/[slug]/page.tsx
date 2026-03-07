@@ -305,6 +305,9 @@ export default async function BlogPostPage({
                   { slug: "bmi-calculator", name: { en: "BMI Calculator", ko: "BMI 계산기" } },
                   { slug: "calorie-calculator", name: { en: "Calorie Calculator", ko: "칼로리 계산기" } },
                   { slug: "age-calculator", name: { en: "Age Calculator", ko: "나이 계산기" } },
+                  { slug: "symbol-copy-paste", name: { en: "Symbol & Emoji Copy Paste", ko: "특수기호 & 이모지 복사" } },
+                  { slug: "qr-code-generator", name: { en: "QR Code Generator", ko: "QR 코드 생성기" } },
+                  { slug: "color-picker", name: { en: "Color Picker & Converter", ko: "색상 선택기 & 변환기" } },
                 ].map((tool) => (
                   <li key={tool.slug}>
                     <Link
