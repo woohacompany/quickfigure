@@ -115,6 +115,44 @@ function ContentRenderer({
                 </Link>
               </div>
             );
+          case "faq":
+            return (
+              <section
+                key={i}
+                className="mb-5"
+                itemScope
+                itemType="https://schema.org/FAQPage"
+              >
+                <h2 className="text-xl font-semibold mt-8 mb-4">{t.faq}</h2>
+                <div className="space-y-4">
+                  {block.faqItems!.map((item, j) => (
+                    <div
+                      key={j}
+                      className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-4"
+                      itemScope
+                      itemProp="mainEntity"
+                      itemType="https://schema.org/Question"
+                    >
+                      <h3 className="font-medium mb-2" itemProp="name">
+                        {item.question}
+                      </h3>
+                      <div
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <p
+                          className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"
+                          itemProp="text"
+                        >
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            );
           default:
             return null;
         }
@@ -186,7 +224,7 @@ export default async function BlogPostPage({
             aria-label={post.thumbnailAlt[locale]}
           >
             <span className="text-5xl text-neutral-300 dark:text-neutral-600">
-              {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : "***"}
+              {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : "***"}
             </span>
           </div>
 

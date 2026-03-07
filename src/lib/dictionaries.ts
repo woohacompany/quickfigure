@@ -299,6 +299,7 @@ const dictionaries = {
       allTools: "All Tools",
       latestPosts: "Latest from the Blog",
       viewAll: "View all posts",
+      faq: "Frequently Asked Questions",
     },
     footer: {
       rights: "All rights reserved.",
@@ -601,6 +602,7 @@ const dictionaries = {
       allTools: "전체 도구",
       latestPosts: "최신 블로그 글",
       viewAll: "전체 보기",
+      faq: "자주 묻는 질문",
     },
     footer: {
       rights: "All rights reserved.",

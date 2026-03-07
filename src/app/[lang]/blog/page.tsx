@@ -27,7 +27,7 @@ export default function BlogListPage({
   const filtered = getPostsByCategory(category);
   const { posts, totalPages } = getPaginatedPosts(filtered, page);
 
-  const categories: (BlogCategory | "all")[] = ["all", "text-tools", "developer-tools", "generators"];
+  const categories: (BlogCategory | "all")[] = ["all", "text-tools", "developer-tools", "generators", "finance"];
 
   function selectCategory(c: BlogCategory | "all") {
     setCategory(c);
@@ -81,7 +81,7 @@ export default function BlogListPage({
                 aria-label={post.thumbnailAlt[locale]}
               >
                 <span className="text-3xl text-neutral-300 dark:text-neutral-600">
-                  {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : "***"}
+                  {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : "***"}
                 </span>
               </div>
               <div className="p-5">

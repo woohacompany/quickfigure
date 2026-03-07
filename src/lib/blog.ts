@@ -1,15 +1,16 @@
 import type { Locale } from "./dictionaries";
 
-export type BlogCategory = "text-tools" | "developer-tools" | "generators";
+export type BlogCategory = "text-tools" | "developer-tools" | "generators" | "finance";
 
 export interface ContentBlock {
-  type: "paragraph" | "heading" | "code" | "list" | "callout" | "cta";
+  type: "paragraph" | "heading" | "code" | "list" | "callout" | "cta" | "faq";
   text?: string;
   items?: string[];
   language?: string;
   code?: string;
   tool?: string;
   toolName?: string;
+  faqItems?: { question: string; answer: string }[];
 }
 
 export interface BlogPost {
@@ -30,6 +31,7 @@ export const categoryLabels: Record<BlogCategory, { en: string; ko: string }> = 
   "text-tools": { en: "Text Tools", ko: "텍스트 도구" },
   "developer-tools": { en: "Developer Tools", ko: "개발자 도구" },
   generators: { en: "Generators", ko: "생성 도구" },
+  finance: { en: "Finance", ko: "금융" },
 };
 
 export const POSTS_PER_PAGE = 6;
@@ -113,7 +115,7 @@ export const blogPosts: BlogPost[] = [
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
       { slug: "case-converter", name: { en: "Case Converter", ko: "대소문자 변환" } },
     ],
-    relatedPosts: ["text-case-conversion-guide", "lorem-ipsum-history-and-usage"],
+    relatedPosts: ["text-case-conversion-guide", "lorem-ipsum-history-and-usage", "compound-interest-calculator-guide"],
   },
   {
     slug: "json-formatting-best-practices",
@@ -184,7 +186,7 @@ export const blogPosts: BlogPost[] = [
       { slug: "json-formatter", name: { en: "JSON Formatter", ko: "JSON 포맷터" } },
       { slug: "base64-encoder-decoder", name: { en: "Base64 Encoder/Decoder", ko: "Base64 인코더/디코더" } },
     ],
-    relatedPosts: ["understanding-base64-encoding", "how-to-create-strong-passwords"],
+    relatedPosts: ["understanding-base64-encoding", "how-to-create-strong-passwords", "bmi-calculator-guide"],
   },
   {
     slug: "how-to-create-strong-passwords",
@@ -271,7 +273,7 @@ export const blogPosts: BlogPost[] = [
       { slug: "password-generator", name: { en: "Password Generator", ko: "비밀번호 생성기" } },
       { slug: "base64-encoder-decoder", name: { en: "Base64 Encoder/Decoder", ko: "Base64 인코더/디코더" } },
     ],
-    relatedPosts: ["understanding-base64-encoding", "json-formatting-best-practices"],
+    relatedPosts: ["understanding-base64-encoding", "json-formatting-best-practices", "retirement-savings-calculator-guide"],
   },
   {
     slug: "understanding-base64-encoding",
@@ -425,7 +427,547 @@ export const blogPosts: BlogPost[] = [
       { slug: "case-converter", name: { en: "Case Converter", ko: "대소문자 변환" } },
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
     ],
-    relatedPosts: ["how-to-count-words-in-essay", "json-formatting-best-practices"],
+    relatedPosts: ["how-to-count-words-in-essay", "lorem-ipsum-history-and-usage"],
+  },
+  {
+    slug: "compound-interest-calculator-guide",
+    category: "finance",
+    date: "2026-02-20",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "Graph showing compound interest growth over time with an upward curve",
+      ko: "시간에 따른 복리 이자 성장을 보여주는 상승 곡선 그래프",
+    },
+    translations: {
+      en: {
+        title: "How to Calculate Compound Interest: Formula, Examples, and Calculator",
+        summary:
+          "Master compound interest calculations with clear formulas, real-world examples, and practical tips for growing your savings and investments.",
+        content: [
+          { type: "paragraph", text: "Compound interest is often called the eighth wonder of the world, and for good reason. It's the mechanism that turns small, regular savings into significant wealth over time. Understanding how compound interest works is fundamental to making smart financial decisions." },
+          { type: "heading", text: "What Is Compound Interest?" },
+          { type: "paragraph", text: "Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest, which only earns interest on the original amount, compound interest earns interest on interest — creating an exponential growth effect." },
+          { type: "heading", text: "The Compound Interest Formula" },
+          { type: "code", language: "text", code: "A = P(1 + r/n)^(nt)\n\nWhere:\n  A = Final amount\n  P = Principal (initial investment)\n  r = Annual interest rate (decimal)\n  n = Number of times interest compounds per year\n  t = Number of years\n\nExample:\n  P = $10,000\n  r = 5% (0.05)\n  n = 12 (monthly compounding)\n  t = 10 years\n\n  A = 10,000(1 + 0.05/12)^(12 × 10)\n  A = 10,000(1.004167)^120\n  A = $16,470.09\n\n  Interest earned: $6,470.09" },
+          { type: "callout", text: "Key Takeaway: In this example, you earned $6,470.09 in interest on a $10,000 investment over 10 years at 5% — without adding any additional money. The power of compound interest grows dramatically over longer time periods." },
+          { type: "heading", text: "Compounding Frequency Matters" },
+          { type: "paragraph", text: "The more frequently interest compounds, the more you earn. Here's how different compounding frequencies affect a $10,000 investment at 5% over 10 years:" },
+          { type: "list", items: [
+            "Annually (1x/year): $16,288.95",
+            "Quarterly (4x/year): $16,436.19",
+            "Monthly (12x/year): $16,470.09",
+            "Daily (365x/year): $16,486.65",
+            "Continuously: $16,487.21",
+          ] },
+          { type: "heading", text: "Rule of 72" },
+          { type: "paragraph", text: "The Rule of 72 is a quick way to estimate how long it takes to double your money. Simply divide 72 by the annual interest rate. At 6% interest, your money doubles in approximately 72 ÷ 6 = 12 years. At 8%, it doubles in about 9 years." },
+          { type: "heading", text: "Practical Tips for Maximizing Compound Interest" },
+          { type: "list", items: [
+            "Start early — time is the most important factor in compound growth",
+            "Reinvest dividends and interest payments automatically",
+            "Choose investments with higher compounding frequencies when possible",
+            "Make regular additional contributions to accelerate growth",
+            "Avoid withdrawing interest — let it compound",
+            "Compare APY (Annual Percentage Yield) rather than APR for savings accounts",
+          ] },
+          { type: "heading", text: "Compound Interest and Debt" },
+          { type: "paragraph", text: "Compound interest works both ways. While it grows your savings, it also grows your debt. Credit card interest, for example, compounds daily on most cards. A $5,000 balance at 20% APR, making only minimum payments, could take over 25 years to pay off and cost more than $8,000 in interest alone." },
+          { type: "faq", faqItems: [
+            { question: "What is the difference between simple and compound interest?", answer: "Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus all accumulated interest. Over time, compound interest yields significantly more because you earn interest on your interest." },
+            { question: "How often does compound interest compound?", answer: "It depends on the financial product. Savings accounts typically compound daily or monthly. CDs may compound daily, monthly, or quarterly. Bonds usually compound semi-annually. The more frequent the compounding, the higher the effective return." },
+            { question: "Is compound interest always beneficial?", answer: "Compound interest benefits savers and investors but works against borrowers. When you have savings or investments, compound interest helps your money grow faster. When you have debt (like credit cards), compound interest makes your balance grow faster too." },
+            { question: "What is APY and how does it relate to compound interest?", answer: "APY (Annual Percentage Yield) reflects the total interest earned in a year including the effects of compounding. It's always equal to or higher than the nominal interest rate. APY allows you to compare savings products with different compounding frequencies on an equal basis." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "복리 이자 계산법: 공식, 예시, 계산기 사용법",
+        summary:
+          "명확한 공식, 실제 예시, 실용적인 팁으로 복리 이자 계산을 마스터하세요. 저축과 투자를 성장시키는 방법을 알아봅니다.",
+        content: [
+          { type: "paragraph", text: "복리 이자는 종종 세계 8대 불가사의라고 불리며, 그럴 만한 이유가 있습니다. 작고 규칙적인 저축을 시간이 지남에 따라 상당한 부로 변환시키는 메커니즘입니다. 복리 이자의 작동 방식을 이해하는 것은 현명한 재정 결정을 내리는 데 기본입니다." },
+          { type: "heading", text: "복리 이자란?" },
+          { type: "paragraph", text: "복리 이자는 초기 원금과 이전 기간의 누적 이자 모두에 대해 계산되는 이자입니다. 원래 금액에 대해서만 이자를 버는 단리와 달리, 복리는 이자에 대한 이자를 벌어 기하급수적 성장 효과를 만듭니다." },
+          { type: "heading", text: "복리 이자 공식" },
+          { type: "code", language: "text", code: "A = P(1 + r/n)^(nt)\n\n각 변수:\n  A = 최종 금액\n  P = 원금 (초기 투자금)\n  r = 연이율 (소수)\n  n = 연간 복리 횟수\n  t = 년수\n\n예시:\n  P = 1,000만원\n  r = 5% (0.05)\n  n = 12 (월 복리)\n  t = 10년\n\n  A = 1,000만(1 + 0.05/12)^(12 × 10)\n  A = 1,000만(1.004167)^120\n  A = 1,647만원\n\n  이자 수익: 647만원" },
+          { type: "callout", text: "핵심 포인트: 이 예시에서 1,000만원 투자로 10년 동안 5% 이율에서 647만원의 이자를 벌었습니다 — 추가 투자 없이. 복리의 힘은 기간이 길어질수록 극적으로 증가합니다." },
+          { type: "heading", text: "복리 주기의 중요성" },
+          { type: "paragraph", text: "이자가 더 자주 복리되면 더 많이 벌 수 있습니다. 1,000만원을 5% 이율로 10년간 투자할 때 복리 주기별 차이입니다:" },
+          { type: "list", items: [
+            "연 복리 (1회/년): 1,628만원",
+            "분기 복리 (4회/년): 1,643만원",
+            "월 복리 (12회/년): 1,647만원",
+            "일 복리 (365회/년): 1,648만원",
+            "연속 복리: 1,648만원",
+          ] },
+          { type: "heading", text: "72의 법칙" },
+          { type: "paragraph", text: "72의 법칙은 돈이 두 배가 되는 데 걸리는 시간을 빠르게 추정하는 방법입니다. 72를 연이율로 나누면 됩니다. 6% 이율에서 돈은 약 72 ÷ 6 = 12년 만에 두 배가 됩니다. 8%에서는 약 9년이 걸립니다." },
+          { type: "heading", text: "복리를 극대화하는 실용 팁" },
+          { type: "list", items: [
+            "일찍 시작하세요 — 시간이 복리 성장에서 가장 중요한 요소입니다",
+            "배당금과 이자를 자동으로 재투자하세요",
+            "가능하면 복리 주기가 높은 투자를 선택하세요",
+            "정기적으로 추가 납입하여 성장을 가속화하세요",
+            "이자를 인출하지 마세요 — 복리되도록 두세요",
+            "저축 계좌는 APR이 아닌 APY(연간 수익률)를 비교하세요",
+          ] },
+          { type: "heading", text: "복리와 부채" },
+          { type: "paragraph", text: "복리는 양날의 검입니다. 저축을 늘리는 동시에 부채도 늘립니다. 예를 들어 신용카드 이자는 대부분 일 복리로 계산됩니다. 연 20% 이율의 500만원 잔액은 최소 납입만 하면 상환에 25년 이상 걸리고 이자만 800만원 이상이 될 수 있습니다." },
+          { type: "faq", faqItems: [
+            { question: "단리와 복리의 차이는 무엇인가요?", answer: "단리는 원금에 대해서만 이자가 계산되고, 복리는 원금과 누적된 이자 모두에 대해 계산됩니다. 시간이 지날수록 복리는 이자에 대한 이자를 벌기 때문에 훨씬 더 많은 수익을 냅니다." },
+            { question: "복리 이자는 얼마나 자주 복리되나요?", answer: "금융 상품에 따라 다릅니다. 저축 계좌는 일반적으로 매일 또는 매월 복리됩니다. CD는 매일, 매월, 또는 분기별로 복리될 수 있습니다. 채권은 보통 반기별로 복리됩니다." },
+            { question: "복리가 항상 유리한가요?", answer: "복리는 저축자와 투자자에게 유리하지만 차입자에게는 불리하게 작용합니다. 저축이나 투자가 있으면 돈이 더 빨리 불어나지만, 부채(신용카드 등)가 있으면 잔액도 더 빨리 늘어납니다." },
+            { question: "APY란 무엇이고 복리와 어떤 관계가 있나요?", answer: "APY(연간 수익률)는 복리 효과를 포함한 1년간 총 이자를 반영합니다. 명목 이율과 같거나 높습니다. APY를 사용하면 복리 주기가 다른 저축 상품을 동등하게 비교할 수 있습니다." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["mortgage-calculator-guide", "retirement-savings-calculator-guide"],
+  },
+  {
+    slug: "mortgage-calculator-guide",
+    category: "finance",
+    date: "2026-02-17",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "A house with a calculator and mortgage payment breakdown chart",
+      ko: "계산기와 모기지 상환 내역이 표시된 주택 이미지",
+    },
+    translations: {
+      en: {
+        title: "Mortgage Calculator Guide: How Much House Can You Afford in 2025",
+        summary:
+          "Learn how mortgage calculations work, understand monthly payments, and discover practical strategies to determine how much house you can truly afford.",
+        content: [
+          { type: "paragraph", text: "Buying a home is likely the biggest financial decision you'll ever make. Understanding how mortgages work and how much you can truly afford is crucial to avoiding financial stress and building long-term wealth." },
+          { type: "heading", text: "How Mortgage Payments Are Calculated" },
+          { type: "paragraph", text: "A standard mortgage payment consists of four components, often called PITI: Principal, Interest, Taxes, and Insurance. The principal and interest portion is calculated using an amortization formula that ensures equal monthly payments over the loan term." },
+          { type: "code", language: "text", code: "Monthly Payment Formula:\n  M = P[r(1+r)^n] / [(1+r)^n - 1]\n\nWhere:\n  M = Monthly payment\n  P = Loan principal\n  r = Monthly interest rate (annual rate ÷ 12)\n  n = Total number of payments\n\nExample: $300,000 loan at 6.5% for 30 years\n  r = 0.065/12 = 0.005417\n  n = 30 × 12 = 360\n  M = $1,896.20/month (principal + interest only)\n\n  Add taxes (~1.1%): +$275/month\n  Add insurance: +$125/month\n  Total PITI: ~$2,296/month" },
+          { type: "heading", text: "The 28/36 Rule" },
+          { type: "paragraph", text: "Financial experts recommend the 28/36 rule as a guideline for how much you should spend on housing:" },
+          { type: "list", items: [
+            "28% Rule: Your monthly housing costs (PITI) should not exceed 28% of your gross monthly income",
+            "36% Rule: Your total monthly debt payments (housing + car loans + student loans + credit cards) should not exceed 36% of your gross monthly income",
+            "Example: If your household income is $100,000/year ($8,333/month), your max housing payment should be ~$2,333/month",
+          ] },
+          { type: "callout", text: "Key Takeaway: Just because a bank will lend you a certain amount doesn't mean you should borrow that much. Banks approve based on their risk tolerance, not your financial comfort. The 28/36 rule helps keep housing costs manageable." },
+          { type: "heading", text: "Factors That Affect Your Mortgage" },
+          { type: "list", items: [
+            "Credit score — higher scores get lower interest rates (potentially saving tens of thousands)",
+            "Down payment — 20% down avoids PMI (Private Mortgage Insurance), saving $100-300/month",
+            "Loan term — 15-year mortgages have higher payments but save significantly on total interest",
+            "Interest rate type — fixed rates provide stability; adjustable rates (ARM) start lower but can increase",
+            "Location — property taxes and insurance vary greatly by state and municipality",
+          ] },
+          { type: "heading", text: "15-Year vs. 30-Year Mortgage" },
+          { type: "paragraph", text: "On a $300,000 loan at 6.5%, a 30-year mortgage costs $1,896/month with total interest of $382,633. A 15-year mortgage at 5.9% costs $2,521/month but total interest drops to $153,721 — saving you $228,912. The monthly payment is only $625 more, but the savings are enormous." },
+          { type: "heading", text: "Hidden Costs of Homeownership" },
+          { type: "list", items: [
+            "Maintenance and repairs (budget 1-2% of home value annually)",
+            "HOA fees (if applicable, $200-500+/month)",
+            "Closing costs (2-5% of loan amount)",
+            "Home inspection and appraisal fees",
+            "Moving costs and initial furnishing",
+            "Utility costs (often higher than renting)",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "How much down payment do I need for a house?", answer: "While 20% is traditional and avoids PMI, many programs allow much less. FHA loans require as little as 3.5% down, and some VA and USDA loans offer 0% down. However, a larger down payment means lower monthly payments and less interest paid overall." },
+            { question: "What credit score do I need for a mortgage?", answer: "Conventional loans typically require a minimum credit score of 620. FHA loans may accept scores as low as 580 with 3.5% down. However, higher scores (740+) qualify for the best interest rates, which can save you thousands over the life of the loan." },
+            { question: "Should I choose a fixed or adjustable rate mortgage?", answer: "Fixed-rate mortgages provide payment stability and are ideal if you plan to stay long-term. Adjustable-rate mortgages (ARMs) offer lower initial rates, making them suitable if you plan to sell or refinance within 5-7 years. In a rising rate environment, fixed rates offer more protection." },
+            { question: "Can I afford a house if I have student loans?", answer: "Yes, but your student loan payments affect your debt-to-income ratio. Lenders typically want total debt payments under 36-43% of gross income. Pay down high-interest debt first, and consider income-driven repayment plans to lower monthly obligations before applying." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "모기지 계산기 가이드: 2025년 얼마짜리 집을 살 수 있을까",
+        summary:
+          "모기지 계산 방법을 이해하고, 월 상환액을 파악하며, 실제로 감당할 수 있는 주택 가격을 결정하는 실용적인 전략을 알아보세요.",
+        content: [
+          { type: "paragraph", text: "주택 구매는 인생에서 가장 큰 재정적 결정일 것입니다. 모기지의 작동 방식과 실제로 감당할 수 있는 금액을 이해하는 것은 재정적 스트레스를 피하고 장기적인 자산을 구축하는 데 매우 중요합니다." },
+          { type: "heading", text: "모기지 상환액 계산 방법" },
+          { type: "paragraph", text: "표준 모기지 상환액은 원금, 이자, 세금, 보험의 네 가지 구성 요소로 이루어져 있으며, 이를 PITI라고 합니다. 원금과 이자 부분은 대출 기간 동안 동일한 월 상환액을 보장하는 상각 공식을 사용하여 계산됩니다." },
+          { type: "code", language: "text", code: "월 상환액 공식:\n  M = P[r(1+r)^n] / [(1+r)^n - 1]\n\n각 변수:\n  M = 월 상환액\n  P = 대출 원금\n  r = 월 이율 (연이율 ÷ 12)\n  n = 총 상환 횟수\n\n예시: 3억원 대출, 연 6.5%, 30년\n  r = 0.065/12 = 0.005417\n  n = 30 × 12 = 360\n  M = 약 189만원/월 (원리금만)\n\n  재산세 추가 (~1.1%): +약 27만원/월\n  보험 추가: +약 12만원/월\n  총 PITI: 약 228만원/월" },
+          { type: "heading", text: "28/36 규칙" },
+          { type: "paragraph", text: "재정 전문가들은 주거비 지출에 대한 가이드라인으로 28/36 규칙을 권장합니다:" },
+          { type: "list", items: [
+            "28% 규칙: 월 주거비(PITI)가 월 총소득의 28%를 초과하지 않아야 합니다",
+            "36% 규칙: 총 월 부채 상환액(주거비 + 자동차 대출 + 학자금 대출 + 카드)이 월 총소득의 36%를 초과하지 않아야 합니다",
+            "예시: 가구 연소득이 6,000만원(월 500만원)이면, 최대 주거비는 약 140만원/월",
+          ] },
+          { type: "callout", text: "핵심 포인트: 은행이 특정 금액을 대출해준다고 해서 그만큼 빌려야 하는 것은 아닙니다. 은행은 자체 위험 허용도에 따라 승인하지, 여러분의 재정적 편안함에 따라 승인하는 것이 아닙니다. 28/36 규칙은 주거비를 관리 가능한 수준으로 유지하는 데 도움이 됩니다." },
+          { type: "heading", text: "모기지에 영향을 미치는 요소" },
+          { type: "list", items: [
+            "신용 점수 — 높은 점수는 낮은 이율을 받습니다 (수천만원 절약 가능)",
+            "계약금 — 20% 이상이면 PMI(개인 모기지 보험)를 피할 수 있어 월 10-30만원 절약",
+            "대출 기간 — 15년 모기지는 상환액이 높지만 총 이자에서 크게 절약",
+            "이율 유형 — 고정 이율은 안정성 제공; 변동 이율(ARM)은 초기에 낮지만 상승 가능",
+            "위치 — 재산세와 보험료는 지역에 따라 크게 다릅니다",
+          ] },
+          { type: "heading", text: "15년 vs. 30년 모기지" },
+          { type: "paragraph", text: "3억원 대출, 6.5% 이율에서 30년 모기지는 월 189만원, 총 이자 3억 8,200만원입니다. 15년 모기지(5.9%)는 월 252만원이지만 총 이자가 1억 5,300만원으로 줄어 2억 2,800만원을 절약합니다. 월 상환액은 63만원만 더 높지만 절약 효과는 엄청납니다." },
+          { type: "heading", text: "주택 소유의 숨겨진 비용" },
+          { type: "list", items: [
+            "유지 보수 및 수리 (연간 주택 가치의 1-2% 예산)",
+            "관리비 (해당 시 월 20-50만원 이상)",
+            "취득세 및 등록세 (매매가의 1-3%)",
+            "주택 검사 및 감정 비용",
+            "이사 비용 및 초기 인테리어",
+            "공과금 (임대보다 높은 경우가 많음)",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "주택 구매 시 계약금은 얼마나 필요한가요?", answer: "전통적으로 20%가 권장되며 PMI를 피할 수 있지만, 많은 프로그램에서 훨씬 적은 금액을 허용합니다. 한국의 경우 LTV(주택담보대출비율) 규제에 따라 지역과 주택 유형에 따라 다르며, 일반적으로 40-70%까지 대출이 가능합니다." },
+            { question: "모기지를 받으려면 어떤 신용 점수가 필요한가요?", answer: "한국에서는 NICE나 KCB 신용점수가 700점 이상이면 대부분의 은행에서 유리한 조건으로 대출을 받을 수 있습니다. 점수가 높을수록 더 낮은 이율을 적용받아 대출 기간 동안 수백만원을 절약할 수 있습니다." },
+            { question: "고정 금리와 변동 금리 중 어떤 것을 선택해야 하나요?", answer: "고정 금리는 상환 안정성을 제공하며 장기 거주 계획이 있을 때 적합합니다. 변동 금리는 초기 이율이 낮아 5-7년 내 매도나 재융자를 계획할 때 적합합니다. 금리 상승기에는 고정 금리가 더 많은 보호를 제공합니다." },
+            { question: "학자금 대출이 있어도 집을 살 수 있나요?", answer: "가능하지만, 학자금 대출 상환액이 총부채상환비율(DTI)에 영향을 줍니다. 대출 기관은 일반적으로 총 부채 상환액이 총소득의 36-43% 이하를 원합니다. 고금리 부채를 먼저 상환하고 신청 전 월 상환 부담을 줄이는 것이 좋습니다." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide"],
+  },
+  {
+    slug: "bmi-calculator-guide",
+    category: "finance",
+    date: "2026-02-14",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "A BMI chart showing different weight categories with a measuring tape",
+      ko: "줄자와 함께 다양한 체중 범주를 보여주는 BMI 차트",
+    },
+    translations: {
+      en: {
+        title: "BMI Calculator: What Your Body Mass Index Really Means",
+        summary:
+          "Understand what BMI is, how it's calculated, its limitations, and what your number actually means for your health. A comprehensive guide with practical advice.",
+        content: [
+          { type: "paragraph", text: "Body Mass Index (BMI) is one of the most widely used health screening tools in the world. While it has its limitations, understanding your BMI can be a useful starting point for assessing your overall health." },
+          { type: "heading", text: "What Is BMI?" },
+          { type: "paragraph", text: "BMI is a numerical value calculated from your weight and height. It provides a simple way to categorize individuals as underweight, normal weight, overweight, or obese. The formula was developed by Belgian mathematician Adolphe Quetelet in the 1830s." },
+          { type: "heading", text: "How to Calculate BMI" },
+          { type: "code", language: "text", code: "BMI Formula:\n  Metric:   BMI = weight(kg) / height(m)²\n  Imperial: BMI = 703 × weight(lb) / height(in)²\n\nExample:\n  Weight: 70 kg\n  Height: 175 cm (1.75 m)\n  BMI = 70 / (1.75)² = 70 / 3.0625 = 22.86\n\nBMI Categories:\n  Under 18.5      → Underweight\n  18.5 – 24.9     → Normal weight\n  25.0 – 29.9     → Overweight\n  30.0 – 34.9     → Obesity Class I\n  35.0 – 39.9     → Obesity Class II\n  40.0 and above   → Obesity Class III" },
+          { type: "heading", text: "What Your BMI Number Means" },
+          { type: "paragraph", text: "A BMI in the \"normal\" range (18.5-24.9) is generally associated with lower health risks. However, BMI is just one piece of the puzzle. It doesn't measure body fat directly, nor does it account for muscle mass, bone density, age, sex, or ethnicity — all of which affect health risk." },
+          { type: "callout", text: "Key Takeaway: BMI is a screening tool, not a diagnostic tool. A high BMI doesn't necessarily mean you're unhealthy (athletes often have high BMIs due to muscle mass), and a normal BMI doesn't guarantee good health. Always consult with a healthcare provider for a complete assessment." },
+          { type: "heading", text: "Limitations of BMI" },
+          { type: "list", items: [
+            "Doesn't distinguish between muscle and fat (a muscular athlete may have a \"overweight\" BMI)",
+            "Doesn't account for fat distribution (belly fat is more dangerous than hip fat)",
+            "Less accurate for elderly people who naturally lose muscle mass",
+            "May underestimate body fat in people who have lost muscle",
+            "Different ethnic groups may have different health risks at the same BMI",
+            "Not suitable for children — pediatric BMI uses age and sex-specific percentiles",
+          ] },
+          { type: "heading", text: "Better Metrics to Use Alongside BMI" },
+          { type: "list", items: [
+            "Waist circumference — measures abdominal fat (men: <40in/102cm, women: <35in/88cm)",
+            "Waist-to-hip ratio — another measure of fat distribution",
+            "Body fat percentage — measured via DEXA scan, bioelectrical impedance, or calipers",
+            "Waist-to-height ratio — waist should be less than half your height",
+          ] },
+          { type: "heading", text: "Healthy Weight Management Tips" },
+          { type: "list", items: [
+            "Focus on overall health, not just the number on the scale",
+            "Aim for gradual changes — 0.5-1 kg per week is sustainable",
+            "Combine cardio with strength training to preserve muscle mass",
+            "Prioritize whole foods, adequate protein, and proper hydration",
+            "Get 7-9 hours of quality sleep — poor sleep affects metabolism and hunger hormones",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "Is BMI accurate for everyone?", answer: "No. BMI is a general screening tool that works well for population-level analysis but has significant limitations for individuals. Athletes, elderly individuals, and people of different ethnic backgrounds may get misleading results. Use BMI as one of several health indicators." },
+            { question: "What is a healthy BMI for adults?", answer: "The \"normal\" BMI range is 18.5 to 24.9. However, health isn't determined by a single number. Someone with a BMI of 26 who exercises regularly and eats well may be healthier than someone with a BMI of 22 who is sedentary. Context matters." },
+            { question: "Can BMI be used for children?", answer: "Standard BMI categories are not used for children. Pediatric BMI is calculated the same way but interpreted using age- and sex-specific growth charts, expressed as percentiles. A pediatrician should assess children's weight status." },
+            { question: "How often should I check my BMI?", answer: "Checking BMI once or twice a year is sufficient for most adults. More important than the exact number is the trend over time. If your BMI is gradually increasing, it may be worth evaluating your diet and activity levels." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "BMI 계산기: 체질량지수가 진짜 의미하는 것",
+        summary:
+          "BMI가 무엇인지, 어떻게 계산하는지, 한계점은 무엇인지, 그리고 당신의 수치가 건강에 실제로 무엇을 의미하는지 알아보세요.",
+        content: [
+          { type: "paragraph", text: "체질량지수(BMI)는 세계에서 가장 널리 사용되는 건강 선별 도구 중 하나입니다. 한계가 있지만, BMI를 이해하는 것은 전반적인 건강을 평가하는 유용한 출발점이 될 수 있습니다." },
+          { type: "heading", text: "BMI란?" },
+          { type: "paragraph", text: "BMI는 체중과 키로 계산되는 수치입니다. 개인을 저체중, 정상 체중, 과체중, 비만으로 분류하는 간단한 방법을 제공합니다. 이 공식은 1830년대 벨기에 수학자 아돌프 케틀레가 개발했습니다." },
+          { type: "heading", text: "BMI 계산 방법" },
+          { type: "code", language: "text", code: "BMI 공식:\n  BMI = 체중(kg) / 신장(m)²\n\n예시:\n  체중: 70 kg\n  신장: 175 cm (1.75 m)\n  BMI = 70 / (1.75)² = 70 / 3.0625 = 22.86\n\nBMI 분류:\n  18.5 미만        → 저체중\n  18.5 – 22.9     → 정상 (아시아 기준)\n  23.0 – 24.9     → 과체중 (아시아 기준)\n  25.0 – 29.9     → 비만 1단계\n  30.0 이상        → 비만 2단계" },
+          { type: "heading", text: "BMI 수치의 의미" },
+          { type: "paragraph", text: "\"정상\" 범위의 BMI(한국 기준 18.5-22.9)는 일반적으로 낮은 건강 위험과 관련이 있습니다. 하지만 BMI는 퍼즐의 한 조각일 뿐입니다. 체지방을 직접 측정하지 않으며, 근육량, 골밀도, 나이, 성별, 민족성을 고려하지 않습니다." },
+          { type: "callout", text: "핵심 포인트: BMI는 선별 도구이지 진단 도구가 아닙니다. 높은 BMI가 반드시 건강하지 않다는 것을 의미하지 않으며(운동선수는 근육량으로 높은 BMI를 가질 수 있음), 정상 BMI가 좋은 건강을 보장하지도 않습니다. 완전한 평가를 위해 항상 의료 전문가와 상담하세요." },
+          { type: "heading", text: "BMI의 한계" },
+          { type: "list", items: [
+            "근육과 지방을 구분하지 못합니다 (근육질 운동선수가 \"과체중\" BMI를 가질 수 있음)",
+            "지방 분포를 고려하지 않습니다 (복부 지방이 엉덩이 지방보다 위험)",
+            "자연적으로 근육량이 감소하는 노인에게 덜 정확합니다",
+            "근육을 잃은 사람의 체지방을 과소평가할 수 있습니다",
+            "같은 BMI에서도 민족에 따라 건강 위험이 다를 수 있습니다 (아시아인 기준은 더 낮음)",
+          ] },
+          { type: "heading", text: "BMI와 함께 사용할 더 나은 지표" },
+          { type: "list", items: [
+            "허리둘레 — 복부 지방 측정 (남성: 90cm 미만, 여성: 85cm 미만, 한국 기준)",
+            "허리-엉덩이 비율 — 지방 분포의 또 다른 측정",
+            "체지방률 — DEXA 스캔, 생체 전기 임피던스, 캘리퍼로 측정",
+            "허리-키 비율 — 허리둘레가 키의 절반 미만이어야 합니다",
+          ] },
+          { type: "heading", text: "건강한 체중 관리 팁" },
+          { type: "list", items: [
+            "체중계 숫자가 아닌 전반적인 건강에 집중하세요",
+            "점진적인 변화를 목표로 하세요 — 주 0.5-1kg이 지속 가능합니다",
+            "근육량을 보존하기 위해 유산소와 근력 운동을 병행하세요",
+            "자연식품, 충분한 단백질, 적절한 수분 섭취를 우선시하세요",
+            "7-9시간의 양질의 수면을 취하세요 — 수면 부족은 대사와 배고픔 호르몬에 영향을 줍니다",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "BMI는 모든 사람에게 정확한가요?", answer: "아닙니다. BMI는 인구 수준 분석에는 잘 작동하지만 개인에게는 상당한 한계가 있는 일반 선별 도구입니다. 운동선수, 노인, 다른 민족 배경의 사람들은 오해의 소지가 있는 결과를 얻을 수 있습니다." },
+            { question: "성인의 건강한 BMI는 얼마인가요?", answer: "한국인 기준 정상 BMI 범위는 18.5~22.9입니다 (WHO 기준과 다름). 하지만 건강은 단일 숫자로 결정되지 않습니다. BMI 24이지만 규칙적으로 운동하고 잘 먹는 사람이 BMI 21이지만 앉아만 있는 사람보다 건강할 수 있습니다." },
+            { question: "어린이에게 BMI를 사용할 수 있나요?", answer: "표준 BMI 분류는 어린이에게 사용하지 않습니다. 소아 BMI는 같은 방식으로 계산되지만 연령 및 성별별 성장 차트를 사용하여 백분위수로 해석됩니다. 소아과 의사가 어린이의 체중 상태를 평가해야 합니다." },
+            { question: "BMI를 얼마나 자주 확인해야 하나요?", answer: "대부분의 성인은 1년에 1-2번 확인하면 충분합니다. 정확한 숫자보다 시간에 따른 추세가 더 중요합니다. BMI가 점차 증가하고 있다면 식단과 활동 수준을 평가해볼 필요가 있습니다." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide"],
+  },
+  {
+    slug: "retirement-savings-calculator-guide",
+    category: "finance",
+    date: "2026-02-10",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "A retirement nest egg with growing savings chart and calendar",
+      ko: "성장하는 저축 차트와 달력이 있는 은퇴 자금 이미지",
+    },
+    translations: {
+      en: {
+        title: "Retirement Savings Calculator: How Much Do You Need to Retire",
+        summary:
+          "Calculate how much you need to save for retirement using proven formulas and strategies. Learn about the 4% rule, catch-up contributions, and retirement planning by age.",
+        content: [
+          { type: "paragraph", text: "One of life's biggest financial questions is: \"How much do I need to retire?\" The answer depends on many personal factors, but understanding the key principles of retirement planning can help you create a realistic savings goal and strategy." },
+          { type: "heading", text: "The 4% Rule" },
+          { type: "paragraph", text: "The 4% rule is a widely used guideline suggesting you can safely withdraw 4% of your retirement savings annually without running out of money over a 30-year retirement. This means you need 25 times your annual expenses saved for retirement." },
+          { type: "code", language: "text", code: "4% Rule Calculator:\n\n  Step 1: Estimate annual retirement expenses\n          Example: $50,000/year\n\n  Step 2: Multiply by 25\n          $50,000 × 25 = $1,250,000\n\n  You need approximately $1,250,000 saved for retirement.\n\n  Monthly withdrawal: $1,250,000 × 0.04 / 12 = $4,167/month\n\nAge-based savings milestones:\n  By 30: 1× annual salary saved\n  By 40: 3× annual salary saved\n  By 50: 6× annual salary saved\n  By 60: 8× annual salary saved\n  By 67: 10× annual salary saved" },
+          { type: "callout", text: "Key Takeaway: To maintain a $50,000/year lifestyle in retirement, you'd need approximately $1.25 million. Starting early makes this achievable — a 25-year-old saving $500/month at 7% average return will have over $1.3 million by age 65." },
+          { type: "heading", text: "How Much Should You Save Each Month?" },
+          { type: "paragraph", text: "The general guideline is to save 15-20% of your gross income for retirement, including any employer match. If you're starting later, you may need to save more aggressively:" },
+          { type: "list", items: [
+            "Starting at 25: Save 10-15% of income (time is on your side)",
+            "Starting at 35: Save 15-20% of income",
+            "Starting at 45: Save 25-30% of income (consider catch-up contributions)",
+            "Starting at 55: Save 30%+ and maximize all tax-advantaged accounts",
+          ] },
+          { type: "heading", text: "Retirement Account Types" },
+          { type: "list", items: [
+            "401(k)/403(b) — employer-sponsored, pre-tax contributions, employer match possible",
+            "Traditional IRA — tax-deductible contributions, taxed on withdrawal",
+            "Roth IRA — after-tax contributions, tax-free growth and withdrawals",
+            "HSA (Health Savings Account) — triple tax advantage, can be used for retirement after 65",
+            "Taxable brokerage account — no tax advantages but no withdrawal restrictions",
+          ] },
+          { type: "heading", text: "The Power of Starting Early" },
+          { type: "paragraph", text: "Consider two scenarios: Person A starts saving $300/month at age 25, and Person B starts saving $600/month at age 35. Both earn 7% annual returns and retire at 65. Person A contributes $144,000 total and has $734,000. Person B contributes $216,000 total but only has $567,000. Starting 10 years earlier, with smaller contributions, produces $167,000 more." },
+          { type: "heading", text: "Common Retirement Planning Mistakes" },
+          { type: "list", items: [
+            "Not starting early enough — every year of delay is costly",
+            "Underestimating healthcare costs (plan for $300,000+ for a couple)",
+            "Not accounting for inflation (today's $50K will need ~$90K in 20 years at 3%)",
+            "Withdrawing from retirement accounts early (10% penalty + taxes)",
+            "Being too conservative with investments when young",
+            "Not taking full advantage of employer matching (it's free money!)",
+            "Forgetting about Social Security or pension adjustments",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "How much money do I need to retire comfortably?", answer: "A common guideline is 25 times your annual expenses (based on the 4% rule). For a $50,000/year lifestyle, that's $1.25 million. However, your actual needs depend on healthcare costs, desired lifestyle, location, and whether you'll have other income sources like Social Security or pensions." },
+            { question: "Is $1 million enough to retire?", answer: "Using the 4% rule, $1 million provides about $40,000/year or $3,333/month. Whether that's enough depends on your expenses, location, and other income. In high-cost areas, it may be tight. In lower-cost areas or with additional income sources, it could be comfortable." },
+            { question: "What is the best age to retire?", answer: "There's no universal answer. Full Social Security benefits start at 67 for most Americans. However, early retirement is possible with sufficient savings. Many financial planners suggest targeting the age when your savings can sustain your desired lifestyle for 30+ years." },
+            { question: "Should I prioritize paying off debt or saving for retirement?", answer: "Generally, always contribute enough to get your employer's full 401(k) match (free money). Then pay off high-interest debt (above 7-8%). After that, maximize retirement contributions. Low-interest debt (mortgages, student loans under 5%) can be paid alongside retirement savings." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "은퇴 자금 계산기: 은퇴하려면 얼마가 필요할까",
+        summary:
+          "검증된 공식과 전략으로 은퇴에 필요한 저축액을 계산하세요. 4% 규칙, 추가 납입, 연령별 은퇴 계획에 대해 알아봅니다.",
+        content: [
+          { type: "paragraph", text: "인생의 가장 큰 재정적 질문 중 하나는 \"은퇴하려면 얼마가 필요한가?\"입니다. 답은 많은 개인적 요인에 따라 다르지만, 은퇴 계획의 핵심 원칙을 이해하면 현실적인 저축 목표와 전략을 세울 수 있습니다." },
+          { type: "heading", text: "4% 규칙" },
+          { type: "paragraph", text: "4% 규칙은 30년 은퇴 기간 동안 매년 은퇴 저축의 4%를 인출해도 돈이 고갈되지 않는다는 널리 사용되는 가이드라인입니다. 이는 연간 지출의 25배를 은퇴를 위해 저축해야 함을 의미합니다." },
+          { type: "code", language: "text", code: "4% 규칙 계산기:\n\n  1단계: 연간 은퇴 지출 추정\n         예시: 3,000만원/년\n\n  2단계: 25를 곱하기\n         3,000만원 × 25 = 7억 5,000만원\n\n  은퇴를 위해 약 7억 5,000만원이 필요합니다.\n\n  월 인출액: 7.5억 × 0.04 / 12 = 250만원/월\n\n연령별 저축 마일스톤:\n  30세: 연봉의 1배\n  40세: 연봉의 3배\n  50세: 연봉의 6배\n  60세: 연봉의 8배\n  65세: 연봉의 10배" },
+          { type: "callout", text: "핵심 포인트: 연 3,000만원 생활 수준을 은퇴 후에도 유지하려면 약 7.5억원이 필요합니다. 일찍 시작하면 달성 가능합니다 — 25세에 월 50만원을 연 7% 수익률로 저축하면 65세에 약 13억원 이상을 모을 수 있습니다." },
+          { type: "heading", text: "매월 얼마를 저축해야 할까?" },
+          { type: "paragraph", text: "일반적인 가이드라인은 총소득의 15-20%를 은퇴를 위해 저축하는 것입니다. 늦게 시작할수록 더 적극적으로 저축해야 합니다:" },
+          { type: "list", items: [
+            "25세 시작: 소득의 10-15% 저축 (시간이 편)",
+            "35세 시작: 소득의 15-20% 저축",
+            "45세 시작: 소득의 25-30% 저축",
+            "55세 시작: 30% 이상 저축, 모든 세제 혜택 계좌 최대화",
+          ] },
+          { type: "heading", text: "한국의 은퇴 계좌 종류" },
+          { type: "list", items: [
+            "국민연금 — 의무 가입, 소득의 9% (근로자/사업주 각 4.5%)",
+            "퇴직연금(DB/DC/IRP) — 직장 제공, 세액공제 혜택",
+            "개인형 퇴직연금(IRP) — 연 최대 1,800만원 납입, 세액공제",
+            "연금저축 — 연 600만원까지 세액공제 (IRP 합산 900만원)",
+            "ISA(개인종합자산관리계좌) — 비과세/분리과세 혜택",
+          ] },
+          { type: "heading", text: "일찍 시작하는 것의 힘" },
+          { type: "paragraph", text: "두 가지 시나리오를 비교해보세요: A는 25세에 월 30만원 저축 시작, B는 35세에 월 60만원 저축 시작. 둘 다 연 7% 수익률, 65세 은퇴. A는 총 1억 4,400만원을 납입하고 약 7억 3,000만원을 모읍니다. B는 총 2억 1,600만원을 납입하지만 약 5억 6,700만원만 모읍니다. 10년 일찍 시작한 A가 적은 납입으로도 1억 6,000만원 이상 더 모읍니다." },
+          { type: "heading", text: "흔한 은퇴 계획 실수" },
+          { type: "list", items: [
+            "충분히 일찍 시작하지 않기 — 매년의 지연은 비용이 큽니다",
+            "의료비 과소평가 (부부 기준 3억원 이상 계획 필요)",
+            "인플레이션 미반영 (현재 3,000만원은 20년 후 약 5,400만원 필요)",
+            "은퇴 계좌에서 조기 인출 (세금 + 패널티)",
+            "젊을 때 너무 보수적인 투자",
+            "회사 매칭을 최대한 활용하지 않기 (무료 돈!)",
+            "국민연금 수령액 변동 미고려",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "편안하게 은퇴하려면 얼마가 필요한가요?", answer: "일반적인 가이드라인은 연간 지출의 25배입니다 (4% 규칙). 연 3,000만원 생활을 위해서는 약 7.5억원이 필요합니다. 하지만 실제 필요 금액은 의료비, 원하는 생활 수준, 거주지, 국민연금 등 다른 소득원에 따라 달라집니다." },
+            { question: "10억원이면 은퇴하기에 충분한가요?", answer: "4% 규칙으로 10억원은 연 4,000만원(월 약 333만원)을 제공합니다. 생활비, 거주지, 기타 소득에 따라 충분할 수도 부족할 수도 있습니다. 국민연금, 퇴직연금 등을 합산하면 더 여유로울 수 있습니다." },
+            { question: "은퇴하기 가장 좋은 나이는?", answer: "보편적인 답은 없습니다. 한국의 국민연금 수령 시작 나이는 현재 63세(1969년 이후 출생자는 65세)입니다. 하지만 충분한 저축이 있으면 조기 은퇴도 가능합니다. 저축이 30년 이상 원하는 생활을 유지할 수 있는 시점을 목표로 하세요." },
+            { question: "부채 상환과 은퇴 저축 중 무엇을 우선해야 하나요?", answer: "일반적으로 먼저 회사 퇴직연금 매칭을 최대한 활용하세요 (무료 돈). 그 다음 고금리 부채(7-8% 이상)를 상환하세요. 그 후 은퇴 저축을 최대화하세요. 저금리 부채(주택담보대출, 5% 미만 학자금 대출)는 은퇴 저축과 병행할 수 있습니다." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["compound-interest-calculator-guide", "mortgage-calculator-guide"],
+  },
+  {
+    slug: "lorem-ipsum-history-and-usage",
+    category: "generators",
+    date: "2026-02-07",
+    readingTime: 5,
+    thumbnailAlt: {
+      en: "Ancient Roman manuscript with Lorem Ipsum text and modern design tools",
+      ko: "Lorem Ipsum 텍스트가 있는 고대 로마 필사본과 현대 디자인 도구",
+    },
+    translations: {
+      en: {
+        title: "What is Lorem Ipsum? History, Uses, and Modern Alternatives",
+        summary:
+          "Discover the fascinating history behind Lorem Ipsum, learn when and why designers use placeholder text, and explore modern alternatives for your projects.",
+        content: [
+          { type: "paragraph", text: "If you've ever worked with design mockups, website templates, or document layouts, you've likely encountered \"Lorem Ipsum dolor sit amet...\" — the world's most famous placeholder text. But where did it come from, and why do we still use it after centuries?" },
+          { type: "heading", text: "The Origin of Lorem Ipsum" },
+          { type: "paragraph", text: "Contrary to popular belief, Lorem Ipsum is not simply random Latin. It's derived from \"De Finibus Bonorum et Malorum\" (On the Ends of Good and Evil), a philosophical work by Roman statesman Cicero written in 45 BC. The standard Lorem Ipsum passage has been used as placeholder text since the 1500s, when an unknown printer scrambled a section of Cicero's text to create a type specimen book." },
+          { type: "callout", text: "Key Takeaway: Lorem Ipsum has survived over 500 years of use in the printing and typesetting industry. Its longevity is a testament to its effectiveness as a layout tool — it mimics the visual appearance of real text without distracting readers with meaningful content." },
+          { type: "heading", text: "Why Use Lorem Ipsum?" },
+          { type: "list", items: [
+            "Focuses attention on design, not content — readers won't get distracted reading the text",
+            "Mimics realistic text distribution with varied word lengths and sentence structures",
+            "Universally recognized — clients and team members understand it's placeholder text",
+            "Available in any quantity — easy to generate paragraphs, sentences, or words as needed",
+            "Language-neutral — works across all design projects regardless of the final language",
+          ] },
+          { type: "cta", tool: "lorem-ipsum-generator", toolName: "Lorem Ipsum Generator" },
+          { type: "heading", text: "When NOT to Use Lorem Ipsum" },
+          { type: "paragraph", text: "While Lorem Ipsum is incredibly useful, there are situations where real or semi-real content is better:" },
+          { type: "list", items: [
+            "User testing — participants need real content to evaluate usability effectively",
+            "Content-driven design — when the content should shape the design (not vice versa)",
+            "Client presentations — real content helps clients visualize the final product",
+            "Accessibility testing — real text is needed to test screen readers and readability",
+            "SEO layouts — placeholder text won't reveal content hierarchy issues",
+          ] },
+          { type: "heading", text: "Modern Alternatives to Lorem Ipsum" },
+          { type: "paragraph", text: "Several creative alternatives have emerged for designers who want something different:" },
+          { type: "list", items: [
+            "Hipster Ipsum — trendy, hipster-themed placeholder text",
+            "Bacon Ipsum — meat-themed dummy text for the hungry designer",
+            "Cupcake Ipsum — sweet, dessert-flavored placeholder text",
+            "Corporate Ipsum — realistic business jargon for enterprise mockups",
+            "Real content snippets — using actual articles or documentation drafts",
+          ] },
+          { type: "heading", text: "The Original Lorem Ipsum Text" },
+          { type: "code", language: "text", code: "The standard Lorem Ipsum passage (used since the 1500s):\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim ad minim veniam, quis nostrud\nexercitation ullamco laboris nisi ut aliquip ex ea\ncommodo consequat.\"\n\nFrom Cicero's original (45 BC):\n\"Neque porro quisquam est, qui dolorem ipsum quia\ndolor sit amet, consectetur, adipisci velit...\"\n(\"There is no one who loves pain itself, who seeks\nafter it and wants to have it, simply because it\nis pain...\")" },
+          { type: "heading", text: "Best Practices for Using Placeholder Text" },
+          { type: "list", items: [
+            "Match the approximate length of final content when possible",
+            "Use varied paragraph lengths to test layout flexibility",
+            "Include headings, lists, and other formatting to test all content types",
+            "Replace placeholder text before launch — search your codebase for \"lorem\" before deployment",
+            "Consider using content-first design when the message is critical",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "Is Lorem Ipsum real Latin?", answer: "Partially. It's based on a real Latin text by Cicero (45 BC), but the standard passage has been altered, with words changed, added, and removed over the centuries. It's not meant to be readable Latin — its purpose is purely visual." },
+            { question: "Why not just use random English text as placeholder?", answer: "English (or any readable language) is distracting — people naturally start reading and evaluating the content instead of focusing on the design. Lorem Ipsum looks like real text but prevents this distraction, keeping the focus on layout and typography." },
+            { question: "Can Lorem Ipsum affect SEO?", answer: "Yes, negatively. Never publish a page with Lorem Ipsum text. Search engines may flag it as thin or low-quality content. Always replace all placeholder text with real, meaningful content before publishing. Use our Word Counter to verify your content meets length requirements." },
+            { question: "How much Lorem Ipsum should I generate for a mockup?", answer: "Match the expected content length. For blog posts, generate 300-500 words. For landing pages, 100-200 words per section. For product descriptions, 50-100 words. Use varied lengths across sections to test layout adaptability." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "Lorem Ipsum이란? 역사, 용도, 최신 대안 총정리",
+        summary:
+          "Lorem Ipsum의 흥미로운 역사를 발견하고, 디자이너가 플레이스홀더 텍스트를 사용하는 이유를 알아보며, 프로젝트를 위한 최신 대안을 살펴보세요.",
+        content: [
+          { type: "paragraph", text: "디자인 목업, 웹사이트 템플릿, 문서 레이아웃 작업을 해본 적이 있다면 \"Lorem Ipsum dolor sit amet...\"을 만난 적이 있을 것입니다 — 세계에서 가장 유명한 플레이스홀더 텍스트. 하지만 어디서 왔고, 왜 수세기가 지난 지금도 사용할까요?" },
+          { type: "heading", text: "Lorem Ipsum의 기원" },
+          { type: "paragraph", text: "일반적인 믿음과 달리, Lorem Ipsum은 단순한 무작위 라틴어가 아닙니다. 기원전 45년 로마 정치가 키케로가 쓴 철학 작품 \"De Finibus Bonorum et Malorum\"(선과 악의 목적에 대하여)에서 유래했습니다. 표준 Lorem Ipsum 구절은 1500년대부터 플레이스홀더 텍스트로 사용되어 왔으며, 무명의 인쇄공이 키케로의 텍스트를 섞어 활자 견본 책을 만들면서 시작되었습니다." },
+          { type: "callout", text: "핵심 포인트: Lorem Ipsum은 인쇄 및 조판 산업에서 500년 이상 사용되어 왔습니다. 이 오랜 역사는 레이아웃 도구로서의 효과를 증명합니다 — 의미 있는 내용으로 독자를 산만하게 하지 않으면서 실제 텍스트의 시각적 외관을 모방합니다." },
+          { type: "heading", text: "Lorem Ipsum을 사용하는 이유" },
+          { type: "list", items: [
+            "내용이 아닌 디자인에 집중 — 독자가 텍스트를 읽느라 산만해지지 않습니다",
+            "다양한 단어 길이와 문장 구조로 사실적인 텍스트 분포를 모방",
+            "보편적으로 인정 — 클라이언트와 팀원이 플레이스홀더 텍스트임을 이해합니다",
+            "원하는 양만큼 사용 가능 — 문단, 문장, 단어를 필요에 따라 쉽게 생성",
+            "언어 중립적 — 최종 언어에 관계없이 모든 디자인 프로젝트에서 작동",
+          ] },
+          { type: "cta", tool: "lorem-ipsum-generator", toolName: "Lorem Ipsum 생성기" },
+          { type: "heading", text: "Lorem Ipsum을 사용하면 안 되는 경우" },
+          { type: "paragraph", text: "Lorem Ipsum이 매우 유용하지만, 실제 또는 반실제 콘텐츠가 더 나은 상황이 있습니다:" },
+          { type: "list", items: [
+            "사용자 테스트 — 참가자가 사용성을 효과적으로 평가하려면 실제 콘텐츠가 필요",
+            "콘텐츠 중심 디자인 — 콘텐츠가 디자인을 형성해야 할 때",
+            "클라이언트 프레젠테이션 — 실제 콘텐츠가 최종 제품 시각화에 도움",
+            "접근성 테스트 — 스크린 리더와 가독성 테스트에 실제 텍스트 필요",
+            "SEO 레이아웃 — 플레이스홀더 텍스트로는 콘텐츠 계층 문제를 파악할 수 없음",
+          ] },
+          { type: "heading", text: "Lorem Ipsum의 현대 대안" },
+          { type: "paragraph", text: "다른 것을 원하는 디자이너를 위해 여러 창의적인 대안이 등장했습니다:" },
+          { type: "list", items: [
+            "Hipster Ipsum — 트렌디한 힙스터 테마 플레이스홀더 텍스트",
+            "Bacon Ipsum — 육류 테마 더미 텍스트",
+            "Cupcake Ipsum — 달콤한 디저트 풍미의 플레이스홀더 텍스트",
+            "Corporate Ipsum — 기업 목업을 위한 사실적인 비즈니스 용어",
+            "실제 콘텐츠 스니펫 — 실제 기사나 문서 초안 사용",
+          ] },
+          { type: "heading", text: "원본 Lorem Ipsum 텍스트" },
+          { type: "code", language: "text", code: "표준 Lorem Ipsum 구절 (1500년대부터 사용):\n\n\"Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\nmagna aliqua. Ut enim ad minim veniam, quis nostrud\nexercitation ullamco laboris nisi ut aliquip ex ea\ncommodo consequat.\"\n\n키케로의 원본 (기원전 45년):\n\"Neque porro quisquam est, qui dolorem ipsum quia\ndolor sit amet, consectetur, adipisci velit...\"\n(\"고통 그 자체를 사랑하고, 추구하고, 갖고 싶어하는\n사람은 아무도 없다, 단지 그것이 고통이라는\n이유만으로...\")" },
+          { type: "heading", text: "플레이스홀더 텍스트 사용 모범 사례" },
+          { type: "list", items: [
+            "가능하면 최종 콘텐츠의 대략적인 길이와 맞추세요",
+            "레이아웃 유연성을 테스트하기 위해 다양한 문단 길이를 사용하세요",
+            "모든 콘텐츠 유형을 테스트하기 위해 제목, 목록 등 서식을 포함하세요",
+            "출시 전에 플레이스홀더 텍스트를 교체하세요 — 배포 전 코드베이스에서 \"lorem\" 검색",
+            "메시지가 중요한 경우 콘텐츠 우선 디자인을 고려하세요",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "Lorem Ipsum은 진짜 라틴어인가요?", answer: "부분적으로 그렇습니다. 키케로(기원전 45년)의 실제 라틴어 텍스트를 기반으로 하지만, 표준 구절은 수세기에 걸쳐 단어가 변경, 추가, 제거되었습니다. 읽을 수 있는 라틴어가 아니라 순전히 시각적 목적입니다." },
+            { question: "플레이스홀더로 그냥 한국어 텍스트를 쓰면 안 되나요?", answer: "읽을 수 있는 언어는 산만합니다 — 사람들은 자연스럽게 디자인에 집중하는 대신 내용을 읽고 평가하기 시작합니다. Lorem Ipsum은 실제 텍스트처럼 보이지만 이러한 산만함을 방지하여 레이아웃과 타이포그래피에 집중하게 합니다." },
+            { question: "Lorem Ipsum이 SEO에 영향을 줄 수 있나요?", answer: "네, 부정적으로 영향을 줍니다. Lorem Ipsum 텍스트가 포함된 페이지를 절대 게시하지 마세요. 검색 엔진이 얇거나 품질이 낮은 콘텐츠로 표시할 수 있습니다. 게시 전에 모든 플레이스홀더 텍스트를 실제 의미 있는 콘텐츠로 교체하세요." },
+            { question: "목업에 Lorem Ipsum을 얼마나 생성해야 하나요?", answer: "예상 콘텐츠 길이에 맞추세요. 블로그 글은 300-500단어, 랜딩 페이지는 섹션당 100-200단어, 제품 설명은 50-100단어를 생성하세요. 레이아웃 적응성을 테스트하기 위해 섹션마다 다양한 길이를 사용하세요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "lorem-ipsum-generator", name: { en: "Lorem Ipsum Generator", ko: "Lorem Ipsum 생성기" } },
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["how-to-count-words-in-essay", "text-case-conversion-guide"],
   },
 ];
 
