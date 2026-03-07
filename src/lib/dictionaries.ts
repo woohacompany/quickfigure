@@ -1,0 +1,419 @@
+export const locales = ["en", "ko"] as const;
+export type Locale = (typeof locales)[number];
+
+export function isValidLocale(lang: string): lang is Locale {
+  return locales.includes(lang as Locale);
+}
+
+const dictionaries = {
+  en: {
+    siteTitle: "QuickFigure",
+    siteDescription: "Free online tools for text analysis, counting, and more.",
+    nav: {
+      home: "Home",
+      tools: "Tools",
+      about: "About",
+      contact: "Contact",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+    },
+    home: {
+      hero: "Free Online Tools",
+      heroSub: "Simple, fast, and free tools to help you get things done.",
+      textTools: "Text Tools",
+      wordCounter: "Word Counter",
+      wordCounterDesc:
+        "Count words, characters, sentences, paragraphs, and estimate reading time instantly.",
+      moreToolsComing: "More tools coming soon!",
+    },
+    wordCounter: {
+      title: "Word Counter",
+      metaTitle: "Word Counter - Count Words, Characters & Sentences | QuickFigure",
+      metaDescription:
+        "Free online word counter tool. Instantly count words, characters, sentences, paragraphs, and estimate reading time for any text.",
+      description: "Paste or type your text below to get an instant word count and more.",
+      placeholder: "Start typing or paste your text here...",
+      words: "Words",
+      characters: "Characters",
+      charactersNoSpaces: "Characters (no spaces)",
+      sentences: "Sentences",
+      paragraphs: "Paragraphs",
+      readingTime: "Reading Time",
+      min: "min",
+      clear: "Clear text",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      metaTitle: "Privacy Policy | QuickFigure",
+      metaDescription: "Read QuickFigure's privacy policy. Learn how we handle your data.",
+      lastUpdated: "Last updated: March 7, 2026",
+      intro:
+        "At QuickFigure, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.",
+      sections: [
+        {
+          heading: "Information We Collect",
+          content:
+            "We may collect information about you in a variety of ways. The information we may collect on the Site includes:\n\n**Personal Data:** We do not require you to create an account or provide personal information to use our tools. However, if you contact us via email, we will collect your email address and any information you voluntarily provide in your message.\n\n**Usage Data:** We automatically collect certain information when you visit, use, or navigate the Site. This information may include your IP address, browser type, operating system, referring URLs, pages viewed, and the dates/times of your visits. This data is collected through cookies and similar tracking technologies.",
+        },
+        {
+          heading: "Use of Your Information",
+          content:
+            "We may use information collected about you to:\n\n- Operate and maintain our website\n- Improve, personalize, and expand our website\n- Understand and analyze how you use our website\n- Develop new products, services, features, and functionality\n- Communicate with you, if you have contacted us\n- Send you emails regarding updates or informational purposes\n- Find and prevent fraud\n- Comply with legal obligations",
+        },
+        {
+          heading: "Cookies and Tracking Technologies",
+          content:
+            "We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help customize the Site and improve your experience. You can choose to disable cookies through your browser settings, though this may affect some features of the Site.",
+        },
+        {
+          heading: "Third-Party Services",
+          content:
+            "We may use third-party service providers to serve advertisements on the Site, including Google AdSense. These third-party vendors may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the Internet. You may opt out of personalized advertising by visiting Google's Ads Settings (https://www.google.com/settings/ads).",
+        },
+        {
+          heading: "Data Retention",
+          content:
+            "We retain your information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.",
+        },
+        {
+          heading: "Security of Your Information",
+          content:
+            "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the information you provide to us, please be aware that no security measures are perfect, and no method of data transmission can be guaranteed against interception or misuse.",
+        },
+        {
+          heading: "Children's Privacy",
+          content:
+            "Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under age 13, we will delete that information as quickly as possible.",
+        },
+        {
+          heading: "Changes to This Privacy Policy",
+          content:
+            "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date. You are advised to review this Privacy Policy periodically for any changes.",
+        },
+        {
+          heading: "Contact Us",
+          content:
+            "If you have questions or concerns about this Privacy Policy, please contact us at: quickfigure@gmail.com",
+        },
+      ],
+    },
+    terms: {
+      title: "Terms of Service",
+      metaTitle: "Terms of Service | QuickFigure",
+      metaDescription: "Read QuickFigure's terms of service for using our free online tools.",
+      lastUpdated: "Last updated: March 7, 2026",
+      intro:
+        "Welcome to QuickFigure. By accessing and using this website, you accept and agree to be bound by the terms and conditions outlined below.",
+      sections: [
+        {
+          heading: "Acceptance of Terms",
+          content:
+            "By accessing or using QuickFigure, you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.",
+        },
+        {
+          heading: "Description of Service",
+          content:
+            "QuickFigure provides free online tools for text analysis and other utility purposes. Our tools are provided on an 'as is' and 'as available' basis. We reserve the right to modify, suspend, or discontinue any part of the service at any time without notice.",
+        },
+        {
+          heading: "Use of the Service",
+          content:
+            "You agree to use QuickFigure only for lawful purposes and in accordance with these Terms. You agree not to:\n\n- Use the service in any way that violates applicable laws or regulations\n- Attempt to interfere with or disrupt the service or servers\n- Use automated systems or software to extract data from the website (scraping)\n- Introduce viruses, trojans, or other malicious material\n- Attempt to gain unauthorized access to any part of the service",
+        },
+        {
+          heading: "Intellectual Property",
+          content:
+            "The content, features, and functionality of QuickFigure, including but not limited to text, graphics, logos, and software, are owned by QuickFigure and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works from any content on this site without our express written permission.",
+        },
+        {
+          heading: "User Content",
+          content:
+            "Any text or data you input into our tools is processed locally in your browser and is not stored on our servers. We do not claim ownership of any content you input into our tools. You are solely responsible for the content you process using our services.",
+        },
+        {
+          heading: "Disclaimer of Warranties",
+          content:
+            "QuickFigure is provided 'as is' without any warranties, expressed or implied. We do not warrant that the service will be uninterrupted, error-free, or free of viruses or other harmful components. We make no warranties about the accuracy or reliability of the results obtained through the use of our tools.",
+        },
+        {
+          heading: "Limitation of Liability",
+          content:
+            "In no event shall QuickFigure, its operators, or its suppliers be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of or inability to use the service.",
+        },
+        {
+          heading: "Third-Party Links and Advertising",
+          content:
+            "Our website may contain advertisements provided by third parties, including Google AdSense. We are not responsible for the content of any third-party advertisements or the products/services they promote. Your interactions with advertisers are solely between you and the advertiser.",
+        },
+        {
+          heading: "Modifications to Terms",
+          content:
+            "We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to the website. Your continued use of QuickFigure after any changes constitutes your acceptance of the new terms.",
+        },
+        {
+          heading: "Governing Law",
+          content:
+            "These Terms shall be governed and construed in accordance with the laws of the Republic of Korea, without regard to its conflict of law provisions.",
+        },
+        {
+          heading: "Contact Us",
+          content:
+            "If you have any questions about these Terms of Service, please contact us at: quickfigure@gmail.com",
+        },
+      ],
+    },
+    contact: {
+      title: "Contact Us",
+      metaTitle: "Contact Us | QuickFigure",
+      metaDescription: "Get in touch with QuickFigure. We'd love to hear from you.",
+      description: "Have a question, suggestion, or feedback? We'd love to hear from you.",
+      email: "Email",
+      emailAddress: "quickfigure@gmail.com",
+      emailNote: "We typically respond within 1-2 business days.",
+    },
+    about: {
+      title: "About QuickFigure",
+      metaTitle: "About | QuickFigure",
+      metaDescription: "Learn about QuickFigure - free online tools for text analysis and more.",
+      description:
+        "QuickFigure is a collection of free, fast, and easy-to-use online tools designed to help you with everyday tasks.",
+      sections: [
+        {
+          heading: "Our Mission",
+          content:
+            "We believe that useful tools should be accessible to everyone. QuickFigure provides simple, fast, and free online tools that work right in your browser - no sign-up required, no data stored on our servers.",
+        },
+        {
+          heading: "What We Offer",
+          content:
+            "QuickFigure currently offers text analysis tools including our Word Counter, which lets you instantly count words, characters, sentences, paragraphs, and estimate reading time. We are actively developing more tools to help you with various tasks.",
+        },
+        {
+          heading: "Privacy First",
+          content:
+            "Your privacy matters. All our tools process data locally in your browser. We don't store your text, files, or personal data on any server. What you type stays on your device.",
+        },
+        {
+          heading: "Always Free",
+          content:
+            "QuickFigure is and will always be free to use. We support the site through non-intrusive advertising, allowing us to keep all tools completely free for everyone.",
+        },
+      ],
+    },
+    footer: {
+      rights: "All rights reserved.",
+      tools: "Tools",
+      legal: "Legal",
+      company: "Company",
+    },
+    langSwitch: "한국어",
+  },
+  ko: {
+    siteTitle: "QuickFigure",
+    siteDescription: "텍스트 분석, 글자수 세기 등 무료 온라인 도구 모음.",
+    nav: {
+      home: "홈",
+      tools: "도구",
+      about: "소개",
+      contact: "문의",
+      privacy: "개인정보처리방침",
+      terms: "이용약관",
+    },
+    home: {
+      hero: "무료 온라인 도구",
+      heroSub: "간편하고 빠른 무료 온라인 도구로 일을 효율적으로 처리하세요.",
+      textTools: "텍스트 도구",
+      wordCounter: "글자수 세기",
+      wordCounterDesc:
+        "단어, 글자, 문장, 문단 수를 세고 읽기 시간을 즉시 확인하세요.",
+      moreToolsComing: "더 많은 도구가 곧 추가됩니다!",
+    },
+    wordCounter: {
+      title: "글자수 세기",
+      metaTitle: "글자수 세기 - 단어, 글자, 문장 수 카운터 | QuickFigure",
+      metaDescription:
+        "무료 온라인 글자수 세기 도구. 단어, 글자, 문장, 문단 수와 읽기 시간을 즉시 확인하세요.",
+      description: "아래에 텍스트를 붙여넣거나 입력하면 즉시 글자수를 확인할 수 있습니다.",
+      placeholder: "여기에 텍스트를 입력하거나 붙여넣으세요...",
+      words: "단어",
+      characters: "글자",
+      charactersNoSpaces: "글자 (공백 제외)",
+      sentences: "문장",
+      paragraphs: "문단",
+      readingTime: "읽기 시간",
+      min: "분",
+      clear: "텍스트 지우기",
+    },
+    privacy: {
+      title: "개인정보처리방침",
+      metaTitle: "개인정보처리방침 | QuickFigure",
+      metaDescription: "QuickFigure의 개인정보처리방침을 확인하세요.",
+      lastUpdated: "최종 수정일: 2026년 3월 7일",
+      intro:
+        "QuickFigure는 귀하의 개인정보를 소중히 여깁니다. 본 개인정보처리방침은 귀하가 당사 웹사이트를 방문할 때 수집, 사용, 공개 및 보호하는 정보에 대해 설명합니다.",
+      sections: [
+        {
+          heading: "수집하는 정보",
+          content:
+            "당사는 다양한 방법으로 귀하에 대한 정보를 수집할 수 있습니다.\n\n**개인정보:** 당사 도구를 사용하기 위해 계정을 만들거나 개인정보를 제공할 필요가 없습니다. 다만, 이메일로 문의하시는 경우 이메일 주소와 메시지에 자발적으로 제공하신 정보를 수집합니다.\n\n**이용 데이터:** 귀하가 사이트를 방문, 사용 또는 탐색할 때 IP 주소, 브라우저 유형, 운영 체제, 참조 URL, 방문 페이지 및 방문 날짜/시간 등의 정보가 자동으로 수집될 수 있습니다.",
+        },
+        {
+          heading: "정보의 사용",
+          content:
+            "수집된 정보는 다음과 같은 목적으로 사용될 수 있습니다:\n\n- 웹사이트 운영 및 유지\n- 웹사이트 개선, 개인화 및 확장\n- 웹사이트 이용 방식 분석\n- 새로운 제품, 서비스, 기능 개발\n- 문의에 대한 답변\n- 사기 방지\n- 법적 의무 이행",
+        },
+        {
+          heading: "쿠키 및 추적 기술",
+          content:
+            "당사는 사이트에서 쿠키, 웹 비콘 및 기타 추적 기술을 사용하여 사이트를 맞춤화하고 경험을 개선할 수 있습니다. 브라우저 설정에서 쿠키를 비활성화할 수 있지만, 사이트의 일부 기능에 영향을 줄 수 있습니다.",
+        },
+        {
+          heading: "제3자 서비스",
+          content:
+            "당사는 Google AdSense를 포함한 제3자 서비스 제공업체를 사용하여 광고를 게재할 수 있습니다. 이러한 제3자 업체는 쿠키를 사용하여 귀하의 이전 방문 기록을 기반으로 광고를 게재할 수 있습니다. Google 광고 설정(https://www.google.com/settings/ads)에서 맞춤 광고를 거부할 수 있습니다.",
+        },
+        {
+          heading: "데이터 보관",
+          content:
+            "당사는 본 개인정보처리방침에 명시된 목적을 달성하는 데 필요한 기간 동안만 귀하의 정보를 보관합니다.",
+        },
+        {
+          heading: "정보 보안",
+          content:
+            "당사는 귀하의 개인정보를 보호하기 위해 관리적, 기술적, 물리적 보안 조치를 사용합니다. 그러나 완벽한 보안 방법은 없으며, 데이터 전송이 가로채기나 오용에 대해 보장될 수 없음을 유의하시기 바랍니다.",
+        },
+        {
+          heading: "아동의 개인정보",
+          content:
+            "당사 웹사이트는 13세 미만의 아동을 대상으로 하지 않습니다. 13세 미만 아동의 개인정보를 고의로 수집하지 않으며, 수집한 사실을 알게 되면 즉시 삭제합니다.",
+        },
+        {
+          heading: "개인정보처리방침 변경",
+          content:
+            "당사는 수시로 본 개인정보처리방침을 업데이트할 수 있습니다. 변경 사항은 이 페이지에 게시하고 '최종 수정일'을 업데이트하여 알립니다.",
+        },
+        {
+          heading: "문의하기",
+          content:
+            "본 개인정보처리방침에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure@gmail.com",
+        },
+      ],
+    },
+    terms: {
+      title: "이용약관",
+      metaTitle: "이용약관 | QuickFigure",
+      metaDescription: "QuickFigure의 이용약관을 확인하세요.",
+      lastUpdated: "최종 수정일: 2026년 3월 7일",
+      intro:
+        "QuickFigure에 오신 것을 환영합니다. 본 웹사이트에 접근하고 사용함으로써 아래에 명시된 이용약관에 동의하는 것으로 간주됩니다.",
+      sections: [
+        {
+          heading: "약관 동의",
+          content:
+            "QuickFigure에 접근하거나 사용함으로써 본 이용약관을 준수하고 이에 구속되는 것에 동의합니다. 이 약관에 동의하지 않는 경우 웹사이트를 사용하지 마십시오.",
+        },
+        {
+          heading: "서비스 설명",
+          content:
+            "QuickFigure는 텍스트 분석 및 기타 유틸리티 목적의 무료 온라인 도구를 제공합니다. 당사의 도구는 '있는 그대로' 및 '이용 가능한 상태로' 제공됩니다. 당사는 사전 통지 없이 서비스의 일부를 수정, 중단 또는 중지할 권리를 보유합니다.",
+        },
+        {
+          heading: "서비스 이용",
+          content:
+            "귀하는 합법적인 목적으로만 QuickFigure를 사용하는 데 동의합니다. 다음 행위를 하지 않는 것에 동의합니다:\n\n- 관련 법률이나 규정을 위반하는 방식으로 서비스 사용\n- 서비스 또는 서버를 방해하거나 중단하려는 시도\n- 자동화된 시스템으로 웹사이트에서 데이터 추출(스크래핑)\n- 바이러스, 트로이 목마 또는 기타 악성 콘텐츠 유포\n- 서비스의 무단 접근 시도",
+        },
+        {
+          heading: "지적 재산권",
+          content:
+            "QuickFigure의 콘텐츠, 기능 및 기능성은 QuickFigure가 소유하며 저작권, 상표권 및 기타 지적 재산권법으로 보호됩니다. 당사의 명시적인 서면 허가 없이 본 사이트의 콘텐츠를 복제, 배포 또는 파생 저작물을 만들 수 없습니다.",
+        },
+        {
+          heading: "사용자 콘텐츠",
+          content:
+            "당사 도구에 입력하는 텍스트 또는 데이터는 브라우저에서 로컬로 처리되며 서버에 저장되지 않습니다. 당사는 귀하가 도구에 입력하는 콘텐츠에 대한 소유권을 주장하지 않습니다.",
+        },
+        {
+          heading: "보증 부인",
+          content:
+            "QuickFigure는 명시적이든 묵시적이든 어떠한 보증도 없이 '있는 그대로' 제공됩니다. 당사는 서비스가 중단 없이, 오류 없이, 바이러스나 기타 유해한 구성 요소 없이 제공될 것을 보증하지 않습니다.",
+        },
+        {
+          heading: "책임 제한",
+          content:
+            "QuickFigure, 운영자 또는 공급업체는 서비스 사용 또는 사용 불능으로 인한 간접적, 우발적, 특별, 결과적 또는 징벌적 손해에 대해 책임을 지지 않습니다.",
+        },
+        {
+          heading: "제3자 링크 및 광고",
+          content:
+            "당사 웹사이트에는 Google AdSense를 포함한 제3자가 제공하는 광고가 포함될 수 있습니다. 당사는 제3자 광고의 내용이나 해당 제품/서비스에 대해 책임을 지지 않습니다.",
+        },
+        {
+          heading: "약관 수정",
+          content:
+            "당사는 언제든지 이용약관을 수정할 권리를 보유합니다. 변경 사항은 웹사이트에 게시되는 즉시 효력이 발생합니다. 변경 후 QuickFigure를 계속 사용하면 새로운 약관에 동의하는 것으로 간주됩니다.",
+        },
+        {
+          heading: "준거법",
+          content:
+            "본 약관은 대한민국 법률에 의해 규율되고 해석됩니다.",
+        },
+        {
+          heading: "문의하기",
+          content:
+            "이용약관에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure@gmail.com",
+        },
+      ],
+    },
+    contact: {
+      title: "문의하기",
+      metaTitle: "문의하기 | QuickFigure",
+      metaDescription: "QuickFigure에 문의하세요. 여러분의 의견을 기다립니다.",
+      description: "질문, 제안 또는 피드백이 있으신가요? 언제든지 연락해 주세요.",
+      email: "이메일",
+      emailAddress: "quickfigure@gmail.com",
+      emailNote: "일반적으로 1-2 영업일 이내에 답변드립니다.",
+    },
+    about: {
+      title: "QuickFigure 소개",
+      metaTitle: "소개 | QuickFigure",
+      metaDescription: "QuickFigure - 텍스트 분석 등 무료 온라인 도구 모음 소개.",
+      description:
+        "QuickFigure는 일상적인 작업을 도와주는 무료, 빠르고 사용하기 쉬운 온라인 도구 모음입니다.",
+      sections: [
+        {
+          heading: "우리의 미션",
+          content:
+            "유용한 도구는 모든 사람이 이용할 수 있어야 합니다. QuickFigure는 브라우저에서 바로 작동하는 간단하고 빠른 무료 온라인 도구를 제공합니다. 회원가입 불필요, 서버에 데이터 저장 없음.",
+        },
+        {
+          heading: "제공 서비스",
+          content:
+            "QuickFigure는 현재 글자수 세기를 포함한 텍스트 분석 도구를 제공하고 있으며, 단어, 글자, 문장, 문단 수와 읽기 시간을 즉시 확인할 수 있습니다. 더 많은 도구를 계속 개발하고 있습니다.",
+        },
+        {
+          heading: "개인정보 보호 우선",
+          content:
+            "모든 도구는 브라우저에서 로컬로 데이터를 처리합니다. 입력한 텍스트, 파일 또는 개인 데이터를 서버에 저장하지 않습니다. 입력한 내용은 귀하의 기기에만 남습니다.",
+        },
+        {
+          heading: "항상 무료",
+          content:
+            "QuickFigure는 항상 무료입니다. 비침해적인 광고를 통해 사이트를 운영하여 모든 도구를 무료로 제공합니다.",
+        },
+      ],
+    },
+    footer: {
+      rights: "All rights reserved.",
+      tools: "Tools",
+      legal: "Legal",
+      company: "Company",
+    },
+    langSwitch: "English",
+  },
+} as const;
+
+export type Dictionary = (typeof dictionaries)["en"];
+
+export function getDictionary(locale: Locale): Dictionary {
+  return dictionaries[locale] as Dictionary;
+}
