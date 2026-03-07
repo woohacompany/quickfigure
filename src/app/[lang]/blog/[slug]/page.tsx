@@ -224,7 +224,7 @@ export default async function BlogPostPage({
             aria-label={post.thumbnailAlt[locale]}
           >
             <span className="text-5xl text-neutral-300 dark:text-neutral-600">
-              {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : "***"}
+              {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : post.category === "lifestyle" ? "♡" : "***"}
             </span>
           </div>
 

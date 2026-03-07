@@ -1,6 +1,6 @@
 import type { Locale } from "./dictionaries";
 
-export type BlogCategory = "text-tools" | "developer-tools" | "generators" | "finance";
+export type BlogCategory = "text-tools" | "developer-tools" | "generators" | "finance" | "lifestyle";
 
 export interface ContentBlock {
   type: "paragraph" | "heading" | "code" | "list" | "callout" | "cta" | "faq";
@@ -32,6 +32,7 @@ export const categoryLabels: Record<BlogCategory, { en: string; ko: string }> = 
   "developer-tools": { en: "Developer Tools", ko: "개발자 도구" },
   generators: { en: "Generators", ko: "생성 도구" },
   finance: { en: "Finance", ko: "금융" },
+  lifestyle: { en: "Lifestyle", ko: "라이프스타일" },
 };
 
 export const POSTS_PER_PAGE = 6;
@@ -525,7 +526,7 @@ export const blogPosts: BlogPost[] = [
     relatedTools: [
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
     ],
-    relatedPosts: ["mortgage-calculator-guide", "retirement-savings-calculator-guide"],
+    relatedPosts: ["mortgage-calculator-guide", "retirement-savings-calculator-guide", "emergency-fund-calculator-guide"],
   },
   {
     slug: "mortgage-calculator-guide",
@@ -629,7 +630,7 @@ export const blogPosts: BlogPost[] = [
     relatedTools: [
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
     ],
-    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide"],
+    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide", "emergency-fund-calculator-guide"],
   },
   {
     slug: "bmi-calculator-guide",
@@ -734,7 +735,7 @@ export const blogPosts: BlogPost[] = [
     relatedTools: [
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
     ],
-    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide"],
+    relatedPosts: ["compound-interest-calculator-guide", "calorie-calculator-guide"],
   },
   {
     slug: "retirement-savings-calculator-guide",
@@ -968,6 +969,354 @@ export const blogPosts: BlogPost[] = [
       { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
     ],
     relatedPosts: ["how-to-count-words-in-essay", "text-case-conversion-guide"],
+  },
+  {
+    slug: "emergency-fund-calculator-guide",
+    category: "finance",
+    date: "2026-02-03",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "A piggy bank with an emergency savings fund chart and safety net illustration",
+      ko: "비상 저축 기금 차트와 안전망 일러스트가 있는 저금통",
+    },
+    translations: {
+      en: {
+        title: "Emergency Fund Calculator: How Much Should You Save",
+        summary:
+          "Learn how to calculate the right emergency fund size for your situation. Step-by-step guide with formulas, strategies, and tips for building your financial safety net.",
+        content: [
+          { type: "paragraph", text: "An emergency fund is the foundation of financial security. It's money set aside to cover unexpected expenses — job loss, medical emergencies, car repairs, or home maintenance. Without one, a single financial shock can spiral into debt, stress, and long-term financial damage." },
+          { type: "heading", text: "How Much Do You Need?" },
+          { type: "paragraph", text: "The standard advice is to save 3-6 months of essential expenses, but your ideal amount depends on your personal circumstances. Here's a step-by-step approach to calculate your target:" },
+          { type: "code", language: "text", code: "Emergency Fund Calculator:\n\nStep 1: Calculate Monthly Essential Expenses\n  Rent/Mortgage:     $1,500\n  Utilities:         $200\n  Groceries:         $400\n  Insurance:         $300\n  Transportation:    $250\n  Minimum debt:      $350\n  ─────────────────────────\n  Total essentials:  $3,000/month\n\nStep 2: Choose Your Multiplier\n  Stable job, dual income:    3 months = $9,000\n  Single income, stable:      6 months = $18,000\n  Freelance/variable income:  9-12 months = $27,000-$36,000\n\nStep 3: Adjust for Personal Factors\n  + Add $1,000-2,000 for pet emergencies\n  + Add deductible amounts for health/auto insurance\n  + Add more if you own a home (repair fund)" },
+          { type: "callout", text: "Key Takeaway: Start with a $1,000 mini emergency fund if you're in debt. Once high-interest debt is paid off, build up to 3-6 months of expenses. The perfect emergency fund is the one you actually have — any amount is better than zero." },
+          { type: "heading", text: "Who Needs More Than 6 Months?" },
+          { type: "list", items: [
+            "Freelancers and self-employed workers with irregular income",
+            "Single-income households with dependents",
+            "People in industries with long job search timelines",
+            "Homeowners (vs. renters) due to potential repair costs",
+            "Those with chronic health conditions or high medical costs",
+            "Workers in volatile industries or regions with high unemployment",
+          ] },
+          { type: "heading", text: "Where to Keep Your Emergency Fund" },
+          { type: "paragraph", text: "Your emergency fund needs to be accessible but not too accessible. The ideal location balances liquidity, safety, and some return:" },
+          { type: "list", items: [
+            "High-yield savings account (HYSA) — best balance of access and returns (4-5% APY currently)",
+            "Money market account — similar to HYSA with check-writing ability",
+            "Short-term CDs (3-6 month) — slightly higher rates with planned access",
+            "NOT in stocks, crypto, or investments — these can lose value when you need them most",
+            "NOT under your mattress — you lose purchasing power to inflation",
+          ] },
+          { type: "heading", text: "How to Build Your Emergency Fund" },
+          { type: "list", items: [
+            "Set up automatic transfers — even $50/week adds up to $2,600/year",
+            "Direct deposit splitting — have a portion of your paycheck go directly to savings",
+            "Save windfalls — tax refunds, bonuses, gifts, and side income",
+            "Cut one subscription temporarily and redirect that money",
+            "Use the 50/30/20 budget — 20% for savings, emergency fund first",
+            "Sell unused items — declutter and fund your safety net simultaneously",
+          ] },
+          { type: "heading", text: "When to Use Your Emergency Fund" },
+          { type: "paragraph", text: "An emergency fund is for true emergencies only. Before dipping in, ask yourself: Is this unexpected? Is this necessary? Is this urgent? If the answer to all three is yes, it's likely a legitimate emergency." },
+          { type: "list", items: [
+            "YES: Job loss, medical emergencies, essential car/home repairs, unexpected travel for family emergency",
+            "NO: Vacations, sales/deals, planned purchases, non-essential upgrades, investment opportunities",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "Is $1,000 enough for an emergency fund?", answer: "$1,000 is a great starter emergency fund, especially if you're paying off high-interest debt. However, it won't cover most major emergencies like job loss or significant medical bills. Work toward 3-6 months of expenses once your high-interest debt is under control." },
+            { question: "Should I save for emergencies or pay off debt first?", answer: "Both. Start with a $1,000 mini emergency fund, then aggressively pay off high-interest debt (above 7-8%). Without any emergency fund, unexpected expenses will force you back into debt. Once high-interest debt is gone, build up to 3-6 months." },
+            { question: "How long does it take to build a 6-month emergency fund?", answer: "It depends on your savings rate. Saving $500/month takes 3 years to reach $18,000. Saving $1,000/month takes 18 months. The key is consistency — automate your savings and treat it as a non-negotiable expense. Any progress is good progress." },
+            { question: "Should I invest my emergency fund?", answer: "No. Emergency funds should be in safe, liquid accounts like high-yield savings accounts. Investing introduces the risk of loss at the worst possible time — market downturns often coincide with economic events that cause job losses. Keep your emergency fund boring and accessible." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "비상자금 계산기: 얼마를 모아야 할까",
+        summary:
+          "상황에 맞는 적절한 비상자금 규모를 계산하는 방법을 알아보세요. 공식, 전략, 재정적 안전망 구축 팁이 포함된 단계별 가이드입니다.",
+        content: [
+          { type: "paragraph", text: "비상자금은 재정 안정의 기초입니다. 실직, 의료 응급 상황, 차량 수리, 주택 유지보수 등 예상치 못한 지출을 충당하기 위해 마련해 둔 돈입니다. 비상자금이 없으면 하나의 재정적 충격이 부채, 스트레스, 장기적인 재정 피해로 이어질 수 있습니다." },
+          { type: "heading", text: "얼마가 필요할까?" },
+          { type: "paragraph", text: "일반적인 조언은 필수 지출 3-6개월분을 저축하는 것이지만, 이상적인 금액은 개인 상황에 따라 다릅니다. 목표 금액을 계산하는 단계별 방법입니다:" },
+          { type: "code", language: "text", code: "비상자금 계산기:\n\n1단계: 월 필수 지출 계산\n  주거비(월세/대출):   100만원\n  공과금:             15만원\n  식비:               40만원\n  보험료:             20만원\n  교통비:             15만원\n  최소 부채 상환:      30만원\n  ─────────────────────────\n  총 필수 지출:       220만원/월\n\n2단계: 배수 선택\n  안정직장, 맞벌이:     3개월 = 660만원\n  외벌이, 안정직장:     6개월 = 1,320만원\n  프리랜서/변동소득:  9-12개월 = 1,980만-2,640만원\n\n3단계: 개인 요소 조정\n  + 반려동물 응급비 100-200만원\n  + 건강/자동차 보험 공제액\n  + 주택 소유 시 수리비 추가" },
+          { type: "callout", text: "핵심 포인트: 부채가 있다면 100만원의 소규모 비상자금부터 시작하세요. 고금리 부채를 상환한 후 3-6개월분으로 늘리세요. 완벽한 비상자금은 실제로 가지고 있는 비상자금입니다 — 어떤 금액이든 없는 것보다 낫습니다." },
+          { type: "heading", text: "6개월 이상이 필요한 사람" },
+          { type: "list", items: [
+            "불규칙한 소득의 프리랜서 및 자영업자",
+            "부양가족이 있는 외벌이 가구",
+            "구직 기간이 긴 업종 종사자",
+            "수리 비용 가능성이 있는 주택 소유자",
+            "만성 질환이나 높은 의료비가 있는 사람",
+            "불안정한 업종이나 높은 실업률 지역의 근로자",
+          ] },
+          { type: "heading", text: "비상자금을 어디에 보관할까?" },
+          { type: "paragraph", text: "비상자금은 접근 가능하되 너무 쉽게 쓸 수 없어야 합니다. 유동성, 안전성, 일정 수익의 균형이 이상적입니다:" },
+          { type: "list", items: [
+            "고금리 저축 계좌 — 접근성과 수익의 최적 균형",
+            "CMA(종합자산관리계좌) — 수시 입출금 가능, 은행 예금보다 높은 금리",
+            "단기 정기예금(3-6개월) — 약간 높은 금리, 계획된 접근",
+            "주식, 암호화폐, 투자에 넣지 마세요 — 필요할 때 가치가 하락할 수 있음",
+            "현금으로 보관하지 마세요 — 인플레이션으로 구매력 손실",
+          ] },
+          { type: "heading", text: "비상자금 만드는 방법" },
+          { type: "list", items: [
+            "자동 이체 설정 — 주 5만원도 연 260만원이 됩니다",
+            "급여 분할 입금 — 급여의 일부를 바로 저축 계좌로",
+            "임시 소득 저축 — 보너스, 선물, 부업 수입",
+            "구독 하나를 일시적으로 해지하고 그 금액을 저축으로",
+            "50/30/20 예산법 — 20%를 저축에, 비상자금 우선",
+            "안 쓰는 물건 판매 — 정리하면서 동시에 안전망 구축",
+          ] },
+          { type: "heading", text: "비상자금을 사용해야 할 때" },
+          { type: "paragraph", text: "비상자금은 진정한 비상 상황에만 사용해야 합니다. 사용 전에 스스로에게 물어보세요: 예상치 못한 것인가? 꼭 필요한 것인가? 긴급한 것인가? 세 가지 모두 '예'라면 정당한 비상 상황일 가능성이 높습니다." },
+          { type: "list", items: [
+            "사용 O: 실직, 의료 응급, 필수 차량/주택 수리, 가족 비상 상황",
+            "사용 X: 여행, 세일/할인, 계획된 구매, 비필수 업그레이드, 투자 기회",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "100만원이면 비상자금으로 충분한가요?", answer: "100만원은 훌륭한 초기 비상자금이며, 특히 고금리 부채를 상환 중일 때 좋습니다. 하지만 실직이나 큰 의료비 같은 주요 비상 상황을 감당하기에는 부족합니다. 고금리 부채가 정리되면 3-6개월분으로 늘리세요." },
+            { question: "비상자금 저축과 부채 상환 중 어떤 것을 먼저 해야 하나요?", answer: "둘 다 하세요. 먼저 100만원의 소규모 비상자금을 만들고, 그 다음 고금리 부채(7-8% 이상)를 적극적으로 상환하세요. 비상자금이 전혀 없으면 예상치 못한 지출이 다시 부채로 이어집니다." },
+            { question: "6개월분 비상자금을 만드는 데 얼마나 걸리나요?", answer: "저축률에 따라 다릅니다. 월 50만원 저축 시 1,320만원 모으는 데 약 2년 2개월이 걸립니다. 월 100만원이면 약 1년 1개월입니다. 핵심은 일관성입니다 — 저축을 자동화하고 필수 지출로 취급하세요." },
+            { question: "비상자금을 투자해야 하나요?", answer: "아닙니다. 비상자금은 고금리 저축 계좌나 CMA 같은 안전하고 유동적인 계좌에 보관해야 합니다. 투자는 최악의 시기에 손실 위험을 수반합니다 — 경기 침체기에 실직이 발생하는 경우가 많습니다. 비상자금은 지루하지만 접근 가능하게 유지하세요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide", "mortgage-calculator-guide"],
+  },
+  {
+    slug: "age-calculator-guide",
+    category: "lifestyle",
+    date: "2026-01-30",
+    readingTime: 5,
+    thumbnailAlt: {
+      en: "A calendar showing age calculation with years, months, and days highlighted",
+      ko: "년, 월, 일이 강조 표시된 나이 계산 달력",
+    },
+    translations: {
+      en: {
+        title: "Age Calculator: How to Calculate Exact Age in Years, Months, Days",
+        summary:
+          "Learn how to calculate exact age down to years, months, and days. Understand different age counting systems around the world and practical uses for precise age calculations.",
+        content: [
+          { type: "paragraph", text: "Calculating your exact age seems simple — just subtract your birth year from the current year, right? But precise age calculation is more nuanced than that. Whether you need it for legal documents, medical records, or personal milestones, knowing your exact age in years, months, and days matters." },
+          { type: "heading", text: "How Age Calculation Works" },
+          { type: "paragraph", text: "To calculate your exact age, you need to account for the difference between your birth date and today's date across three units: years, months, and days. This is more complex than simple subtraction because months have different lengths and leap years add an extra day." },
+          { type: "code", language: "text", code: "Age Calculation Example:\n\n  Birth date:   March 15, 1990\n  Today's date: March 8, 2026\n\n  Step 1: Years\n    2026 - 1990 = 36\n    But March 8 < March 15, so: 35 complete years\n\n  Step 2: Months\n    From March 15, 2025 to March 8, 2026\n    = 11 months and some days\n\n  Step 3: Days\n    From Feb 15 to March 8 = 21 days\n\n  Result: 35 years, 11 months, 21 days\n\n  Total days alive: ~13,142 days\n  Next birthday in: 7 days!" },
+          { type: "heading", text: "Age Counting Systems Around the World" },
+          { type: "paragraph", text: "Different cultures count age differently, which can lead to confusion in international contexts:" },
+          { type: "list", items: [
+            "Western system — Age starts at 0 at birth, increases on each birthday",
+            "Korean age (만 나이 vs 세는 나이) — Korea officially switched to the international age system (만 나이) in June 2023, ending the traditional system where babies were 1 at birth",
+            "East Asian age (数え年) — Traditional system in Japan/China where you're 1 at birth and age increases on New Year's Day",
+            "Lunar calendar age — Some cultures calculate age based on lunar calendar birthdays",
+          ] },
+          { type: "callout", text: "Key Takeaway: Since June 2023, South Korea officially uses the international age system (만 나이) for all legal and administrative purposes. This means Koreans are now 1-2 years 'younger' in official documents compared to the old system." },
+          { type: "heading", text: "When Exact Age Matters" },
+          { type: "list", items: [
+            "Legal purposes — voting age, drinking age, retirement age, contract eligibility",
+            "Medical records — pediatric development milestones, vaccination schedules, age-adjusted health metrics",
+            "Insurance — premiums change at specific ages, often calculated to the day",
+            "Education — school enrollment cutoff dates vary by country and state",
+            "Sports — age group classifications for competitions",
+            "Immigration — visa and citizenship eligibility often depends on exact age",
+          ] },
+          { type: "heading", text: "Interesting Age-Related Facts" },
+          { type: "list", items: [
+            "A billion seconds old = approximately 31 years, 8 months",
+            "10,000 days old ≈ 27 years, 4 months",
+            "Leap year babies (Feb 29) legally celebrate on Feb 28 or March 1 in non-leap years",
+            "The oldest verified person lived 122 years and 164 days",
+            "Your 'golden birthday' is when your age matches your birth date (e.g., turning 15 on the 15th)",
+          ] },
+          { type: "heading", text: "Age Calculation Tips" },
+          { type: "paragraph", text: "When calculating age manually, remember that you haven't completed a year until your birthday has passed. If today is before your birthday this year, subtract one from the year difference. For precise calculations involving months and days, work backwards from today to your last birthday." },
+          { type: "faq", faqItems: [
+            { question: "How do I calculate my exact age in days?", answer: "Count the total number of days from your birth date to today. Remember to account for leap years (years divisible by 4, except centuries not divisible by 400). A quick estimate: multiply your age by 365.25 (average days per year including leap years)." },
+            { question: "What is Korean age vs. international age?", answer: "Korean traditional age (세는 나이) counted everyone as 1 at birth and added a year on New Year's Day. Since June 28, 2023, Korea officially uses international age (만 나이), which starts at 0 and increases on your actual birthday, just like Western countries." },
+            { question: "How do leap year birthdays work?", answer: "If you're born on February 29, you technically have a birthday only every 4 years. Legally, most jurisdictions treat March 1 as your birthday in non-leap years. Some countries use February 28. For age calculation, you still age normally — you don't stay younger!" },
+            { question: "At what exact moment do you turn a year older?", answer: "Legally, in most countries you turn a year older at the start of your birthday (midnight). Some jurisdictions consider you a year older the day before your birthday. For most practical purposes, your birthday is when your age increases by one year." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "만나이 계산기: 정확한 나이 계산하는 방법",
+        summary:
+          "년, 월, 일 단위까지 정확한 나이를 계산하는 방법을 알아보세요. 전 세계의 다양한 나이 계산 체계와 정확한 나이 계산의 실용적 활용법을 설명합니다.",
+        content: [
+          { type: "paragraph", text: "정확한 나이를 계산하는 것은 간단해 보입니다 — 현재 연도에서 출생 연도를 빼면 되지 않나요? 하지만 정밀한 나이 계산은 그보다 복잡합니다. 법적 서류, 의료 기록, 개인적인 이정표 등 정확한 나이를 년, 월, 일 단위로 아는 것이 중요한 경우가 많습니다." },
+          { type: "heading", text: "나이 계산 방법" },
+          { type: "paragraph", text: "정확한 나이를 계산하려면 생년월일과 오늘 날짜 사이의 차이를 년, 월, 일 세 단위로 계산해야 합니다. 월마다 일수가 다르고 윤년에 하루가 추가되기 때문에 단순 뺄셈보다 복잡합니다." },
+          { type: "code", language: "text", code: "나이 계산 예시:\n\n  생년월일:    1990년 3월 15일\n  오늘 날짜:   2026년 3월 8일\n\n  1단계: 년\n    2026 - 1990 = 36\n    하지만 3월 8일 < 3월 15일이므로: 만 35세\n\n  2단계: 월\n    2025년 3월 15일부터 2026년 3월 8일까지\n    = 11개월과 며칠\n\n  3단계: 일\n    2월 15일부터 3월 8일 = 21일\n\n  결과: 만 35세 11개월 21일\n\n  살아온 총 일수: 약 13,142일\n  다음 생일까지: 7일!" },
+          { type: "heading", text: "전 세계의 나이 계산 체계" },
+          { type: "paragraph", text: "문화마다 나이를 다르게 계산하며, 이는 국제적 맥락에서 혼란을 일으킬 수 있습니다:" },
+          { type: "list", items: [
+            "서양식 — 태어날 때 0세, 매 생일에 1세 증가",
+            "한국 나이 (만 나이 vs 세는 나이) — 2023년 6월 한국은 공식적으로 만 나이 체계로 전환, 태어날 때 1세이던 전통 방식 폐지",
+            "동아시아 나이 (数え年) — 일본/중국의 전통 체계, 태어날 때 1세이고 설날에 나이 증가",
+            "음력 나이 — 일부 문화에서는 음력 생일을 기준으로 나이 계산",
+          ] },
+          { type: "callout", text: "핵심 포인트: 2023년 6월부터 한국은 모든 법적, 행정적 목적에 만 나이를 공식 사용합니다. 이로 인해 한국인들은 공식 문서에서 이전 체계보다 1-2세 '젊어'졌습니다." },
+          { type: "heading", text: "정확한 나이가 중요한 경우" },
+          { type: "list", items: [
+            "법적 목적 — 선거권, 음주 가능 나이, 정년, 계약 자격",
+            "의료 기록 — 소아 발달 이정표, 예방접종 일정, 나이 보정 건강 지표",
+            "보험 — 보험료가 특정 나이에 변경, 일 단위로 계산되기도 함",
+            "교육 — 취학 연령 기준일이 국가와 지역에 따라 다름",
+            "스포츠 — 대회 연령 그룹 분류",
+            "출입국 — 비자 및 시민권 자격이 정확한 나이에 의존하는 경우",
+          ] },
+          { type: "heading", text: "나이와 관련된 흥미로운 사실" },
+          { type: "list", items: [
+            "10억 초 = 약 31년 8개월",
+            "10,000일 ≈ 약 27년 4개월",
+            "윤년 생일자(2월 29일)는 비윤년에 법적으로 2월 28일이나 3월 1일에 생일 축하",
+            "검증된 최고령자는 122세 164일을 살았습니다",
+            "'골든 생일'은 나이가 생일 날짜와 같을 때 (예: 15일에 15세 됨)",
+          ] },
+          { type: "heading", text: "나이 계산 팁" },
+          { type: "paragraph", text: "수동으로 나이를 계산할 때, 올해 생일이 지나야 한 해가 완성된다는 점을 기억하세요. 오늘이 올해 생일 전이면 연도 차이에서 1을 빼세요. 월과 일을 포함한 정밀 계산은 오늘부터 마지막 생일까지 역산하는 방식으로 하세요." },
+          { type: "faq", faqItems: [
+            { question: "정확한 나이를 일 단위로 어떻게 계산하나요?", answer: "생년월일부터 오늘까지의 총 일수를 세세요. 윤년(4로 나누어지는 해, 단 400으로 나누어지지 않는 세기 제외)을 고려하세요. 빠른 추정: 나이에 365.25(윤년 포함 연평균 일수)를 곱하세요." },
+            { question: "한국 나이와 만 나이의 차이는?", answer: "한국 전통 나이(세는 나이)는 태어날 때 1세, 매년 1월 1일에 1세 증가했습니다. 2023년 6월 28일부터 한국은 만 나이를 공식 사용합니다. 만 나이는 0세에서 시작하고 실제 생일에 1세 증가하며, 서양식과 동일합니다." },
+            { question: "윤년 생일은 어떻게 되나요?", answer: "2월 29일에 태어나면 기술적으로 4년에 한 번만 생일이 있습니다. 법적으로 대부분의 국가에서는 비윤년에 3월 1일을 생일로 취급합니다. 일부 국가는 2월 28일을 사용합니다. 나이 계산에서는 정상적으로 나이가 들어갑니다." },
+            { question: "정확히 몇 시에 한 살 더 먹나요?", answer: "법적으로 대부분의 국가에서는 생일 시작(자정)에 한 살 더 먹습니다. 일부 법적 관할 구역에서는 생일 전날에 한 살 더 먹는 것으로 간주합니다. 대부분의 실용적 목적에서는 생일이 나이가 1세 증가하는 날입니다." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["bmi-calculator-guide", "calorie-calculator-guide"],
+  },
+  {
+    slug: "calorie-calculator-guide",
+    category: "lifestyle",
+    date: "2026-01-27",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "A plate of food with calorie counts and a daily nutrition breakdown chart",
+      ko: "칼로리 수치와 일일 영양 분석 차트가 있는 음식 접시",
+    },
+    translations: {
+      en: {
+        title: "Calorie Calculator: How Many Calories Do You Need Per Day",
+        summary:
+          "Learn how to calculate your daily calorie needs using BMR and TDEE formulas. Understand calorie counting for weight loss, maintenance, and muscle gain with practical examples.",
+        content: [
+          { type: "paragraph", text: "Understanding your daily calorie needs is the foundation of nutrition management. Whether you want to lose weight, maintain your current weight, or build muscle, knowing how many calories your body needs is the first step toward achieving your goals." },
+          { type: "heading", text: "What Are Calories?" },
+          { type: "paragraph", text: "A calorie (technically a kilocalorie or kcal) is a unit of energy. Your body uses calories from food to power everything from breathing and thinking to running and lifting. When you consume more calories than you burn, the excess is stored as fat. When you consume fewer, your body taps into stored fat for energy." },
+          { type: "heading", text: "How to Calculate Your Daily Calorie Needs" },
+          { type: "paragraph", text: "Your daily calorie needs are determined in two steps: first calculate your Basal Metabolic Rate (BMR), then multiply by an activity factor to get your Total Daily Energy Expenditure (TDEE)." },
+          { type: "code", language: "text", code: "Step 1: Calculate BMR (Mifflin-St Jeor Equation)\n\n  Men:   BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) + 5\n  Women: BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age) - 161\n\n  Example (30-year-old male, 75kg, 178cm):\n  BMR = (10 × 75) + (6.25 × 178) - (5 × 30) + 5\n  BMR = 750 + 1,112.5 - 150 + 5 = 1,717.5 kcal/day\n\nStep 2: Multiply by Activity Factor (TDEE)\n\n  Sedentary (desk job):          BMR × 1.2  = 2,061 kcal\n  Lightly active (1-3 days/wk):  BMR × 1.375 = 2,362 kcal\n  Moderately active (3-5 days):  BMR × 1.55 = 2,662 kcal\n  Very active (6-7 days):        BMR × 1.725 = 2,963 kcal\n  Extremely active (athlete):    BMR × 1.9  = 3,263 kcal" },
+          { type: "callout", text: "Key Takeaway: Your TDEE is the number of calories you need to maintain your current weight. To lose weight, eat 300-500 calories below TDEE. To gain muscle, eat 200-300 calories above TDEE. Never go below 1,200 kcal (women) or 1,500 kcal (men) without medical supervision." },
+          { type: "heading", text: "Calorie Goals by Objective" },
+          { type: "list", items: [
+            "Weight loss: TDEE minus 300-500 kcal/day (0.3-0.5 kg loss per week)",
+            "Aggressive weight loss: TDEE minus 500-750 kcal/day (0.5-0.75 kg per week, not recommended long-term)",
+            "Weight maintenance: Eat at TDEE",
+            "Lean muscle gain: TDEE plus 200-300 kcal/day with strength training",
+            "Bulk muscle gain: TDEE plus 400-500 kcal/day with heavy training",
+          ] },
+          { type: "heading", text: "Macronutrient Balance" },
+          { type: "paragraph", text: "Calories alone don't tell the whole story. The source of your calories matters too. A balanced approach to macronutrients supports both energy and health:" },
+          { type: "list", items: [
+            "Protein: 1.6-2.2g per kg of body weight for active individuals (4 kcal per gram)",
+            "Fat: 20-35% of total calories (9 kcal per gram) — essential for hormones and vitamin absorption",
+            "Carbohydrates: Remaining calories after protein and fat (4 kcal per gram) — primary energy source",
+            "Example (2,500 kcal diet, 75kg person): 150g protein (600 kcal), 70g fat (630 kcal), 318g carbs (1,270 kcal)",
+          ] },
+          { type: "heading", text: "Common Calorie Counting Mistakes" },
+          { type: "list", items: [
+            "Not counting cooking oils and sauces (a tablespoon of oil = 120 kcal)",
+            "Underestimating portion sizes — use a food scale for accuracy",
+            "Forgetting liquid calories (coffee drinks, smoothies, alcohol)",
+            "Eating back exercise calories — fitness trackers often overestimate burns",
+            "Being too restrictive — extreme deficits slow metabolism and cause rebound",
+            "Not adjusting as weight changes — recalculate TDEE every 5-10 kg lost",
+          ] },
+          { type: "heading", text: "Practical Tips for Daily Calorie Management" },
+          { type: "list", items: [
+            "Track for at least 2 weeks to understand your eating patterns",
+            "Meal prep to control portions and ingredients",
+            "Focus on nutrient-dense foods — vegetables, lean protein, whole grains",
+            "Drink water before meals — sometimes thirst masquerades as hunger",
+            "Allow flexibility — an 80/20 approach (80% nutritious, 20% enjoyment) is sustainable",
+            "Adjust based on results, not just calculations — bodies are individual",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "How many calories should I eat to lose weight?", answer: "Subtract 300-500 calories from your TDEE for steady, sustainable weight loss of 0.3-0.5 kg per week. For example, if your TDEE is 2,200 kcal, aim for 1,700-1,900 kcal per day. Avoid going below 1,200 kcal (women) or 1,500 kcal (men) without medical supervision." },
+            { question: "Do I need to count calories forever?", answer: "No. Calorie counting is a learning tool. After tracking for a few weeks to months, most people develop a good sense of portion sizes and calorie content. Many successfully transition to intuitive eating while maintaining their weight goals. Periodic tracking can help if you plateau or drift." },
+            { question: "Are all calories equal?", answer: "Thermodynamically yes, but nutritionally no. 200 calories of chicken breast provides lasting satiety and muscle-building protein, while 200 calories of candy provides quick energy and a crash. The quality of calories affects hunger, energy levels, muscle retention, and long-term health." },
+            { question: "Why am I not losing weight even though I'm counting calories?", answer: "Common reasons include: underestimating portions (use a food scale), not counting cooking oils or sauces, drinking hidden calories, your TDEE may be lower than calculated, or metabolic adaptation from prolonged dieting. Try recalculating your TDEE at your current weight and tracking more precisely for a week." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "칼로리 계산기: 하루에 몇 칼로리가 필요할까",
+        summary:
+          "BMR과 TDEE 공식을 사용하여 일일 칼로리 필요량을 계산하는 방법을 알아보세요. 체중 감량, 유지, 근육 증가를 위한 칼로리 계산을 실용 예시와 함께 설명합니다.",
+        content: [
+          { type: "paragraph", text: "일일 칼로리 필요량을 이해하는 것은 영양 관리의 기초입니다. 체중 감량, 현재 체중 유지, 근육 증가 등 어떤 목표든 몸이 필요로 하는 칼로리를 아는 것이 목표 달성의 첫걸음입니다." },
+          { type: "heading", text: "칼로리란?" },
+          { type: "paragraph", text: "칼로리(정확히는 킬로칼로리, kcal)는 에너지의 단위입니다. 몸은 음식의 칼로리를 사용하여 호흡과 사고부터 달리기와 역기 들기까지 모든 것을 수행합니다. 소비한 칼로리가 태운 것보다 많으면 초과분이 지방으로 저장됩니다. 적으면 몸이 저장된 지방을 에너지로 사용합니다." },
+          { type: "heading", text: "일일 칼로리 필요량 계산 방법" },
+          { type: "paragraph", text: "일일 칼로리 필요량은 두 단계로 결정됩니다: 먼저 기초대사량(BMR)을 계산한 다음, 활동 계수를 곱하여 총 일일 에너지 소비량(TDEE)을 구합니다." },
+          { type: "code", language: "text", code: "1단계: BMR 계산 (미플린-세인트 지오어 공식)\n\n  남성: BMR = (10 × 체중kg) + (6.25 × 키cm) - (5 × 나이) + 5\n  여성: BMR = (10 × 체중kg) + (6.25 × 키cm) - (5 × 나이) - 161\n\n  예시 (30세 남성, 75kg, 178cm):\n  BMR = (10 × 75) + (6.25 × 178) - (5 × 30) + 5\n  BMR = 750 + 1,112.5 - 150 + 5 = 1,717.5 kcal/일\n\n2단계: 활동 계수 곱하기 (TDEE)\n\n  비활동적 (사무직):           BMR × 1.2  = 2,061 kcal\n  약간 활동적 (주 1-3일):      BMR × 1.375 = 2,362 kcal\n  보통 활동적 (주 3-5일):      BMR × 1.55 = 2,662 kcal\n  매우 활동적 (주 6-7일):      BMR × 1.725 = 2,963 kcal\n  극도로 활동적 (운동선수):     BMR × 1.9  = 3,263 kcal" },
+          { type: "callout", text: "핵심 포인트: TDEE는 현재 체중을 유지하는 데 필요한 칼로리입니다. 체중 감량은 TDEE보다 300-500kcal 적게, 근육 증가는 200-300kcal 많게 섭취하세요. 의료 감독 없이 여성 1,200kcal, 남성 1,500kcal 이하로 내리지 마세요." },
+          { type: "heading", text: "목표별 칼로리" },
+          { type: "list", items: [
+            "체중 감량: TDEE - 300-500kcal/일 (주 0.3-0.5kg 감량)",
+            "적극적 감량: TDEE - 500-750kcal/일 (주 0.5-0.75kg, 장기 비권장)",
+            "체중 유지: TDEE만큼 섭취",
+            "린 근육 증가: TDEE + 200-300kcal/일, 근력 운동 병행",
+            "벌크 근육 증가: TDEE + 400-500kcal/일, 고강도 훈련 병행",
+          ] },
+          { type: "heading", text: "다량 영양소 균형" },
+          { type: "paragraph", text: "칼로리만으로는 전체 그림을 볼 수 없습니다. 칼로리의 출처도 중요합니다. 균형 잡힌 다량 영양소 접근법이 에너지와 건강 모두를 지원합니다:" },
+          { type: "list", items: [
+            "단백질: 활동적인 사람 기준 체중 kg당 1.6-2.2g (1g당 4kcal)",
+            "지방: 총 칼로리의 20-35% (1g당 9kcal) — 호르몬과 비타민 흡수에 필수",
+            "탄수화물: 단백질과 지방 후 나머지 (1g당 4kcal) — 주요 에너지원",
+            "예시 (2,500kcal 식단, 75kg): 단백질 150g(600kcal), 지방 70g(630kcal), 탄수화물 318g(1,270kcal)",
+          ] },
+          { type: "heading", text: "흔한 칼로리 계산 실수" },
+          { type: "list", items: [
+            "조리유와 소스를 세지 않기 (식용유 1큰술 = 120kcal)",
+            "1인분 양 과소평가 — 정확도를 위해 음식 저울 사용",
+            "액체 칼로리 잊기 (커피 음료, 스무디, 술)",
+            "운동 칼로리를 되먹기 — 피트니스 트래커는 소모량을 과대평가하는 경우가 많음",
+            "너무 제한적 — 극단적 적자는 대사를 늦추고 반동을 일으킴",
+            "체중 변화에 따라 미조정 안 하기 — 5-10kg 감량마다 TDEE 재계산",
+          ] },
+          { type: "heading", text: "일일 칼로리 관리 실용 팁" },
+          { type: "list", items: [
+            "최소 2주 동안 기록하여 식사 패턴 파악",
+            "식사 준비(밀프렙)로 분량과 재료 조절",
+            "영양 밀도 높은 음식에 집중 — 채소, 저지방 단백질, 통곡물",
+            "식사 전 물 마시기 — 갈증이 배고픔으로 위장되는 경우가 있음",
+            "유연성 허용 — 80/20 접근법(80% 영양, 20% 즐거움)이 지속 가능",
+            "계산이 아닌 결과에 따라 조정 — 몸은 개인마다 다름",
+          ] },
+          { type: "faq", faqItems: [
+            { question: "체중 감량을 위해 하루에 몇 칼로리를 먹어야 하나요?", answer: "TDEE에서 300-500kcal을 빼면 주 0.3-0.5kg의 꾸준하고 지속 가능한 감량이 가능합니다. 예를 들어 TDEE가 2,200kcal이면 1,700-1,900kcal을 목표로 하세요. 의료 감독 없이 여성 1,200kcal, 남성 1,500kcal 이하로 내리지 마세요." },
+            { question: "칼로리를 평생 세야 하나요?", answer: "아닙니다. 칼로리 계산은 학습 도구입니다. 몇 주에서 몇 달 기록하면 대부분 1인분 양과 칼로리 함량에 대한 감각이 생깁니다. 많은 사람이 체중 목표를 유지하면서 직관적 식사로 성공적으로 전환합니다." },
+            { question: "모든 칼로리는 동일한가요?", answer: "열역학적으로는 그렇지만 영양적으로는 아닙니다. 닭가슴살 200kcal은 지속적인 포만감과 근육 생성 단백질을 제공하고, 사탕 200kcal은 빠른 에너지와 급격한 저하를 가져옵니다. 칼로리의 질이 배고픔, 에너지 수준, 근육 유지, 장기 건강에 영향을 줍니다." },
+            { question: "칼로리를 세는데 왜 체중이 안 빠지나요?", answer: "흔한 이유: 1인분 과소평가(음식 저울 사용), 조리유/소스 미계산, 숨겨진 액체 칼로리, TDEE가 계산보다 낮음, 장기 다이어트로 인한 대사 적응. 현재 체중으로 TDEE를 재계산하고 1주일간 더 정밀하게 추적해보세요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+    ],
+    relatedPosts: ["bmi-calculator-guide", "age-calculator-guide"],
   },
 ];
 
