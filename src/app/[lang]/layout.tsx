@@ -35,6 +35,12 @@ export default async function LangLayout({
               {t.nav.tools}
             </Link>
             <Link
+              href={`/${lang}/blog`}
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+            >
+              {t.blog.title}
+            </Link>
+            <Link
               href={`/${lang}/about`}
               className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
             >
@@ -116,6 +122,11 @@ export default async function LangLayout({
             <div>
               <p className="font-semibold mb-3">{t.footer.company}</p>
               <ul className="space-y-2 text-neutral-500 dark:text-neutral-400">
+                <li>
+                  <Link href={`/${lang}/blog`} className="hover:text-foreground transition-colors">
+                    {t.blog.title}
+                  </Link>
+                </li>
                 <li>
                   <Link href={`/${lang}/about`} className="hover:text-foreground transition-colors">
                     {t.nav.about}

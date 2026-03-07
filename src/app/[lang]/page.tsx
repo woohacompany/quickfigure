@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
+import { blogPosts, categoryLabels } from "@/lib/blog";
 
 export async function generateMetadata({
   params,
@@ -97,6 +98,44 @@ export default async function HomePage({
           <ToolGrid tools={devTools} />
         </section>
       </div>
+
+      {/* Latest Blog Posts */}
+      <section className="mt-16">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-semibold">{t.blog.latestPosts}</h2>
+          <Link
+            href={`/${lang}/blog`}
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            {t.blog.viewAll} &rarr;
+          </Link>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.slice(0, 3).map((post) => {
+            const tr = post.translations[lang as Locale];
+            return (
+              <Link
+                key={post.slug}
+                href={`/${lang}/blog/${post.slug}`}
+                className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-4 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
+                    {categoryLabels[post.category][lang as Locale]}
+                  </span>
+                  <span className="text-xs text-neutral-400">{post.date}</span>
+                </div>
+                <h3 className="font-medium leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {tr.title}
+                </h3>
+                <p className="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2">
+                  {tr.summary}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

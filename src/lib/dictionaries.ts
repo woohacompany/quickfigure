@@ -178,7 +178,7 @@ const dictionaries = {
         {
           heading: "Contact Us",
           content:
-            "If you have questions or concerns about this Privacy Policy, please contact us at: quickfigure@gmail.com",
+            "If you have questions or concerns about this Privacy Policy, please contact us at: quickfigure.contact@gmail.com",
         },
       ],
     },
@@ -243,7 +243,7 @@ const dictionaries = {
         {
           heading: "Contact Us",
           content:
-            "If you have any questions about these Terms of Service, please contact us at: quickfigure@gmail.com",
+            "If you have any questions about these Terms of Service, please contact us at: quickfigure.contact@gmail.com",
         },
       ],
     },
@@ -253,7 +253,7 @@ const dictionaries = {
       metaDescription: "Get in touch with QuickFigure. We'd love to hear from you.",
       description: "Have a question, suggestion, or feedback? We'd love to hear from you.",
       email: "Email",
-      emailAddress: "quickfigure@gmail.com",
+      emailAddress: "quickfigure.contact@gmail.com",
       emailNote: "We typically respond within 1-2 business days.",
     },
     about: {
@@ -284,6 +284,21 @@ const dictionaries = {
             "QuickFigure is and will always be free to use. We support the site through non-intrusive advertising, allowing us to keep all tools completely free for everyone.",
         },
       ],
+    },
+    blog: {
+      title: "Blog",
+      metaTitle: "Blog | QuickFigure",
+      metaDescription: "Tips, guides, and tutorials on text tools, developer utilities, and productivity.",
+      description: "Tips, guides, and tutorials to help you work smarter.",
+      all: "All",
+      minRead: "min read",
+      noPosts: "No posts found.",
+      tryTool: "Try this tool now:",
+      youMightAlsoLike: "You might also like",
+      quickTools: "Related Tools",
+      allTools: "All Tools",
+      latestPosts: "Latest from the Blog",
+      viewAll: "View all posts",
     },
     footer: {
       rights: "All rights reserved.",
@@ -465,7 +480,7 @@ const dictionaries = {
         {
           heading: "문의하기",
           content:
-            "본 개인정보처리방침에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure@gmail.com",
+            "본 개인정보처리방침에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure.contact@gmail.com",
         },
       ],
     },
@@ -530,7 +545,7 @@ const dictionaries = {
         {
           heading: "문의하기",
           content:
-            "이용약관에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure@gmail.com",
+            "이용약관에 대해 질문이 있으시면 다음으로 연락해 주세요: quickfigure.contact@gmail.com",
         },
       ],
     },
@@ -540,7 +555,7 @@ const dictionaries = {
       metaDescription: "QuickFigure에 문의하세요. 여러분의 의견을 기다립니다.",
       description: "질문, 제안 또는 피드백이 있으신가요? 언제든지 연락해 주세요.",
       email: "이메일",
-      emailAddress: "quickfigure@gmail.com",
+      emailAddress: "quickfigure.contact@gmail.com",
       emailNote: "일반적으로 1-2 영업일 이내에 답변드립니다.",
     },
     about: {
@@ -571,6 +586,21 @@ const dictionaries = {
             "QuickFigure는 항상 무료입니다. 비침해적인 광고를 통해 사이트를 운영하여 모든 도구를 무료로 제공합니다.",
         },
       ],
+    },
+    blog: {
+      title: "블로그",
+      metaTitle: "블로그 | QuickFigure",
+      metaDescription: "텍스트 도구, 개발자 유틸리티, 생산성에 대한 팁, 가이드, 튜토리얼.",
+      description: "더 스마트하게 작업할 수 있도록 돕는 팁, 가이드, 튜토리얼.",
+      all: "전체",
+      minRead: "분 읽기",
+      noPosts: "게시물이 없습니다.",
+      tryTool: "지금 이 도구를 사용해 보세요:",
+      youMightAlsoLike: "이런 글도 좋아하실 수 있어요",
+      quickTools: "관련 도구",
+      allTools: "전체 도구",
+      latestPosts: "최신 블로그 글",
+      viewAll: "전체 보기",
     },
     footer: {
       rights: "All rights reserved.",
