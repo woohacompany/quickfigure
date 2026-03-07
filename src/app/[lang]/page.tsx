@@ -55,6 +55,9 @@ export default async function HomePage({
     { name: t.home.mortgage, description: t.home.mortgageDesc, href: `/${lang}/tools/mortgage-calculator` },
     { name: t.home.retirement, description: t.home.retirementDesc, href: `/${lang}/tools/retirement-calculator` },
     { name: t.home.emergencyFund, description: t.home.emergencyFundDesc, href: `/${lang}/tools/emergency-fund-calculator` },
+    { name: t.home.freelancerTax, description: t.home.freelancerTaxDesc, href: `/${lang}/tools/freelancer-tax-calculator` },
+    { name: t.home.salaryCalc, description: t.home.salaryCalcDesc, href: `/${lang}/tools/salary-calculator` },
+    { name: t.home.loanCalc, description: t.home.loanCalcDesc, href: `/${lang}/tools/loan-calculator` },
   ];
 
   const healthTools = [
@@ -67,6 +70,8 @@ export default async function HomePage({
     { name: t.home.symbolCopyPaste, description: t.home.symbolCopyPasteDesc, href: `/${lang}/tools/symbol-copy-paste` },
     { name: t.home.qrCodeGenerator, description: t.home.qrCodeGeneratorDesc, href: `/${lang}/tools/qr-code-generator` },
     { name: t.home.colorPicker, description: t.home.colorPickerDesc, href: `/${lang}/tools/color-picker` },
+    { name: t.home.unitConverter, description: t.home.unitConverterDesc, href: `/${lang}/tools/unit-converter` },
+    { name: t.home.percentageCalc, description: t.home.percentageCalcDesc, href: `/${lang}/tools/percentage-calculator` },
   ];
 
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {

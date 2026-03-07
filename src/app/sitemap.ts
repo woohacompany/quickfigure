@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://quickfigure.com";
+const BASE_URL = "https://quickfigure.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en", "ko"];
@@ -22,6 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/symbol-copy-paste",
     "/tools/qr-code-generator",
     "/tools/color-picker",
+    "/tools/freelancer-tax-calculator",
+    "/tools/salary-calculator",
+    "/tools/loan-calculator",
+    "/tools/unit-converter",
+    "/tools/percentage-calculator",
     "/blog",
     "/blog/how-to-count-words-in-essay",
     "/blog/json-formatting-best-practices",
@@ -46,6 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/copy-paste-symbols-special-characters",
     "/blog/how-to-create-qr-code-free",
     "/blog/hex-to-rgb-color-converter-guide",
+    "/blog/freelancer-tax-calculator-guide",
+    "/blog/salary-calculator-guide",
+    "/blog/loan-calculator-guide",
+    "/blog/unit-converter-guide",
+    "/blog/percentage-calculator-guide",
     "/about",
     "/contact",
     "/privacy-policy",
