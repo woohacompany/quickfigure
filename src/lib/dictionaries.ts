@@ -301,6 +301,17 @@ const dictionaries = {
       viewAll: "View all posts",
       faq: "Frequently Asked Questions",
     },
+    bookmarkBanner: {
+      text: "Bookmark this page! We add new free tools every week.",
+    },
+    trustSection: {
+      tools: "Tools available",
+      toolsCount: "6+",
+      blog: "Blog articles",
+      blogCount: "10+",
+      languages: "Languages",
+      languagesValue: "English & 한국어",
+    },
     footer: {
       rights: "All rights reserved.",
       tools: "Tools",
@@ -603,6 +614,17 @@ const dictionaries = {
       latestPosts: "최신 블로그 글",
       viewAll: "전체 보기",
       faq: "자주 묻는 질문",
+    },
+    bookmarkBanner: {
+      text: "이 페이지를 즐겨찾기하세요! 매주 새로운 무료 도구가 추가됩니다.",
+    },
+    trustSection: {
+      tools: "제공 도구",
+      toolsCount: "6+",
+      blog: "블로그 글",
+      blogCount: "10+",
+      languages: "지원 언어",
+      languagesValue: "English & 한국어",
     },
     footer: {
       rights: "All rights reserved.",

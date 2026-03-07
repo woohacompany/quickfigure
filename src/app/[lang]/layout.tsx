@@ -69,8 +69,37 @@ export default async function LangLayout({
         {children}
       </main>
 
+      {/* Trust Section */}
+      <section className="mt-16 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="max-w-5xl mx-auto px-4 py-10">
+          <div className="grid grid-cols-3 gap-6 text-center">
+            <div>
+              <p className="text-2xl font-bold">{t.trustSection.toolsCount}</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.tools}</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold">{t.trustSection.blogCount}</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.blog}</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold">{t.trustSection.languagesValue}</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.languages}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bookmark Banner */}
+      <div className="bg-blue-50 dark:bg-blue-950 border-y border-blue-100 dark:border-blue-900">
+        <div className="max-w-5xl mx-auto px-4 py-4 text-center">
+          <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
+            {t.bookmarkBanner.text}
+          </p>
+        </div>
+      </div>
+
       {/* Footer */}
-      <footer className="border-t border-neutral-200 dark:border-neutral-800 mt-16">
+      <footer className="border-t border-neutral-200 dark:border-neutral-800">
         <div className="max-w-5xl mx-auto px-4 py-10">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
             <div>
