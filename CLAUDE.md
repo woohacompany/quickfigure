@@ -183,3 +183,47 @@ git add . && git commit -m "add: [도구명]" && git push origin main
 - AdSense 정책: 자동 클릭 유도 금지, 성인/도박/불법 콘텐츠 금지
 - 이미지 최적화: next/image 사용, WebP 포맷 우선
 - 페이지 속도: Core Web Vitals 통과 필수 (LCP < 2.5s)
+
+## 성장 전략 & 로드맵
+
+### 수익 구조 (AdSense만으로는 한계, 다층화 필수)
+- AdSense (20~30%): RPM $15~$25 목표, finance/health 고CPC 키워드 집중
+- CPA 제휴 (40~50%): 금융 도구에 대출비교/신용카드 CPA 링크 (건당 $20~$100)
+- 스폰서 콘텐츠 (10~20%): 도메인 권위 쌓인 후
+- 프리미엄 도구 구독 (10%): 향후 확장
+
+### 단계별 목표
+- Phase 1 (현재~6개월): 도구 50개 + 블로그 50개, finance 카테고리 집중 → 월 $500~$2,000
+- Phase 2 (6~12개월): 도구 100개 + 블로그 100개, CPA 제휴 연결 → 월 $5,000~$15,000
+- Phase 3 (12개월+): 도구 200개+, 도메인 권위 확보 → 월 $30,000+
+
+### 콘텐츠 발행 주기
+- 블로그: 주 2~3개 꾸준히 (구글이 정기 업데이트 사이트 선호)
+- 도구: 주 2~3개 추가
+- 기존 콘텐츠 업데이트: 월 1회 (날짜, 수치 최신화)
+
+### 외부 유입 채널
+- Pinterest: 도구 인포그래픽 핀 → 도구 페이지 유도
+- Quora/Reddit: 관련 질문 답변에 자연스러운 도구 링크
+- 백링크: 경쟁 사이트 분석 → 게스트 포스트, 리소스 페이지 등록
+
+### 키워드 우선순위 (CPC 높은 순)
+1. finance: loan, mortgage, salary, tax, investment (CPC $2~$10)
+2. health: BMI, calorie, insurance (CPC $1~$8)
+3. seo: keyword tools, meta tag (CPC $1~$5)
+4. dev: JSON, Base64, regex (CPC $0.5~$3)
+5. text/converter: 저CPC지만 고트래픽으로 도메인 권위 확보용
+
+### 도구 제작 우선순위 원칙
+- 고CPC 키워드 도구 먼저 (finance > health > seo > dev > text)
+- 경쟁도 낮은 롱테일 키워드 도구 병행
+- 도구 1개당 블로그 최소 1개 + 추가 관련 블로그 1개 = 내부링크 그물망
+
+### 현재 보유 도구 (21개)
+text: word-counter, case-converter, lorem-ipsum-generator
+dev: json-formatter, base64-encoder-decoder, password-generator
+finance: compound-interest-calculator, mortgage-calculator, retirement-calculator, emergency-fund-calculator, freelancer-tax-calculator, salary-calculator, loan-calculator
+health: bmi-calculator, calorie-calculator, age-calculator
+utility: symbol-copy-paste, qr-code-generator, color-picker
+converter: unit-converter
+math: percentage-calculator

@@ -67,26 +67,26 @@ export default function PercentageCalculatorPage({
       </header>
 
       <div className="space-y-6">
-        {/* Mode 1: What is X% of Y? */}
+        {/* Mode 1: What is Y% of X? */}
         <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-4">
           <h2 className="text-lg font-semibold">{t.mode1Title}</h2>
           <div className="flex flex-wrap items-center gap-3">
             <input
               type="number"
-              value={pct1}
-              onChange={(e) => setPct1(e.target.value)}
-              placeholder="25"
-              className="w-24 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <span className="text-neutral-500 font-medium">% {t.of}</span>
-            <input
-              type="number"
               value={val1}
               onChange={(e) => setVal1(e.target.value)}
-              placeholder="200"
-              className="w-32 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="50"
+              className="w-28 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-neutral-500 font-medium">= ?</span>
+            <span className="text-neutral-500 font-medium">{t.of}</span>
+            <input
+              type="number"
+              value={pct1}
+              onChange={(e) => setPct1(e.target.value)}
+              placeholder="20"
+              className="w-24 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <span className="text-neutral-500 font-medium">{t.pctIs}</span>
             <button
               onClick={calc1}
               className="px-5 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors cursor-pointer"
@@ -113,15 +113,15 @@ export default function PercentageCalculatorPage({
               placeholder="50"
               className="w-28 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-neutral-500 font-medium">{t.isWhatPctOf}</span>
+            <span className="text-neutral-500 font-medium">{t.isWhatPctOf1}</span>
             <input
               type="number"
               value={wholeVal}
               onChange={(e) => setWholeVal(e.target.value)}
-              placeholder="200"
+              placeholder="20"
               className="w-28 p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-neutral-500 font-medium">?</span>
+            <span className="text-neutral-500 font-medium">{t.isWhatPctOf2}</span>
             <button
               onClick={calc2}
               className="px-5 py-2 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors cursor-pointer"
