@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
+import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
 
 function StatCard({ label, value }: { label: string; value: string | number }) {
@@ -19,7 +21,10 @@ export default function WordCounterPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = use(params);
-  const t = getDictionary((isValidLocale(lang) ? lang : "en") as Locale).wordCounter;
+  const locale = (isValidLocale(lang) ? lang : "en") as Locale;
+  const dict = getDictionary(locale);
+  const t = dict.wordCounter;
+  const relatedPosts = getPostsByTool("word-counter");
 
   const [text, setText] = useState("");
 
@@ -75,6 +80,32 @@ export default function WordCounterPage({
 
       {/* Ad placeholder - bottom */}
       {/* <div className="mt-8"><ins className="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="XXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div> */}
+
+      {relatedPosts.length > 0 && (
+        <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
+          <h2 className="text-xl font-semibold mb-4">{dict.relatedArticles}</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedPosts.map((post) => {
+              const tr = post.translations[locale];
+              return (
+                <Link
+                  key={post.slug}
+                  href={`/${lang}/blog/${post.slug}`}
+                  className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-4 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
+                >
+                  <span className="text-xs text-neutral-400">{post.date}</span>
+                  <h3 className="mt-1 font-medium leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    {tr.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2">
+                    {tr.summary}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

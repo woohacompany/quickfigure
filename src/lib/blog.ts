@@ -1341,3 +1341,9 @@ export function getPaginatedPosts(
 export function getAllSlugs(): string[] {
   return blogPosts.map((p) => p.slug);
 }
+
+export function getPostsByTool(toolSlug: string, limit = 3): BlogPost[] {
+  return blogPosts
+    .filter((p) => p.relatedTools.some((t) => t.slug === toolSlug))
+    .slice(0, limit);
+}

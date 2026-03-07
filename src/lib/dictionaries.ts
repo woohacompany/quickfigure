@@ -301,6 +301,7 @@ const dictionaries = {
       viewAll: "View all posts",
       faq: "Frequently Asked Questions",
     },
+    relatedArticles: "Related Articles",
     bookmarkBanner: {
       text: "Bookmark this page! We add new free tools every week.",
     },
@@ -615,6 +616,7 @@ const dictionaries = {
       viewAll: "전체 보기",
       faq: "자주 묻는 질문",
     },
+    relatedArticles: "관련 글",
     bookmarkBanner: {
       text: "이 페이지를 즐겨찾기하세요! 매주 새로운 무료 도구가 추가됩니다.",
     },
