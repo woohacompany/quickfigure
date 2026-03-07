@@ -16,6 +16,11 @@ export async function generateMetadata({
       canonical: `/${lang}/privacy-policy`,
       languages: { en: "/en/privacy-policy", ko: "/ko/privacy-policy" },
     },
+    openGraph: {
+      title: t.metaTitle,
+      description: t.metaDescription,
+      type: "website",
+    },
   };
 }
 

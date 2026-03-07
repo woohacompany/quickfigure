@@ -16,6 +16,11 @@ export async function generateMetadata({
       canonical: `/${lang}/terms-of-service`,
       languages: { en: "/en/terms-of-service", ko: "/ko/terms-of-service" },
     },
+    openGraph: {
+      title: t.metaTitle,
+      description: t.metaDescription,
+      type: "website",
+    },
   };
 }
 

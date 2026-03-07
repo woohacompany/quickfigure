@@ -11,6 +11,7 @@ import {
   getPostsByCategory,
   type BlogCategory,
 } from "@/lib/blog";
+import BlogHeroImage from "@/components/BlogHeroImage";
 
 export default function BlogListPage({
   params,
@@ -74,16 +75,7 @@ export default function BlogListPage({
               href={`/${lang}/blog/${post.slug}`}
               className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
             >
-              {/* Thumbnail placeholder */}
-              <div
-                className="w-full h-40 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center"
-                role="img"
-                aria-label={post.thumbnailAlt[locale]}
-              >
-                <span className="text-3xl text-neutral-300 dark:text-neutral-600">
-                  {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : post.category === "lifestyle" ? "♡" : "***"}
-                </span>
-              </div>
+              <BlogHeroImage category={post.category} alt={post.thumbnailAlt[locale]} size="small" />
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">

@@ -15,6 +15,11 @@ export default function RetirementCalculatorPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.retirement;
+  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
+  const fmtCurrency = (v: number) => {
+    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
+    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
   const relatedPosts = getPostsByTool("retirement-calculator");
 
   const [currentAge, setCurrentAge] = useState("");
@@ -132,19 +137,19 @@ export default function RetirementCalculatorPage({
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.projectedSavings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.projectedSavings)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.projectedSavings}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.totalContributed.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.totalContributed)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalContributed}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.investmentGrowth.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.investmentGrowth)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalGrowth}</p>
             </div>

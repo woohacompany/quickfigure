@@ -18,6 +18,11 @@ export default function EmergencyFundPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.emergencyFund;
+  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
+  const fmtCurrency = (v: number) => {
+    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
+    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
   const relatedPosts = getPostsByTool("emergency-fund-calculator");
 
   const [monthlyExpenses, setMonthlyExpenses] = useState("");
@@ -85,11 +90,11 @@ export default function EmergencyFundPage({
                     {t.recommendedFund}
                   </p>
                   <p className="text-2xl font-semibold tracking-tight">
-                    ${target.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    {fmtCurrency(target)}
                   </p>
                   {needed > 0 && (
                     <p className="text-sm mt-2 text-red-600 dark:text-red-400">
-                      {t.amountNeeded}: ${needed.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      {t.amountNeeded}: {fmtCurrency(needed)}
                     </p>
                   )}
                 </div>

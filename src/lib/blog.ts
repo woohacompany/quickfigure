@@ -3,7 +3,7 @@ import type { Locale } from "./dictionaries";
 export type BlogCategory = "text-tools" | "developer-tools" | "generators" | "finance" | "lifestyle";
 
 export interface ContentBlock {
-  type: "paragraph" | "heading" | "code" | "list" | "callout" | "cta" | "faq";
+  type: "paragraph" | "heading" | "code" | "list" | "callout" | "cta" | "faq" | "embed";
   text?: string;
   items?: string[];
   language?: string;
@@ -451,6 +451,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "The Compound Interest Formula" },
           { type: "code", language: "text", code: "A = P(1 + r/n)^(nt)\n\nWhere:\n  A = Final amount\n  P = Principal (initial investment)\n  r = Annual interest rate (decimal)\n  n = Number of times interest compounds per year\n  t = Number of years\n\nExample:\n  P = $10,000\n  r = 5% (0.05)\n  n = 12 (monthly compounding)\n  t = 10 years\n\n  A = 10,000(1 + 0.05/12)^(12 × 10)\n  A = 10,000(1.004167)^120\n  A = $16,470.09\n\n  Interest earned: $6,470.09" },
           { type: "callout", text: "Key Takeaway: In this example, you earned $6,470.09 in interest on a $10,000 investment over 10 years at 5% — without adding any additional money. The power of compound interest grows dramatically over longer time periods." },
+          { type: "embed", tool: "compound-interest-calculator" },
           { type: "heading", text: "Compounding Frequency Matters" },
           { type: "paragraph", text: "The more frequently interest compounds, the more you earn. Here's how different compounding frequencies affect a $10,000 investment at 5% over 10 years:" },
           { type: "list", items: [
@@ -492,6 +493,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "복리 이자 공식" },
           { type: "code", language: "text", code: "A = P(1 + r/n)^(nt)\n\n각 변수:\n  A = 최종 금액\n  P = 원금 (초기 투자금)\n  r = 연이율 (소수)\n  n = 연간 복리 횟수\n  t = 년수\n\n예시:\n  P = 1,000만원\n  r = 5% (0.05)\n  n = 12 (월 복리)\n  t = 10년\n\n  A = 1,000만(1 + 0.05/12)^(12 × 10)\n  A = 1,000만(1.004167)^120\n  A = 1,647만원\n\n  이자 수익: 647만원" },
           { type: "callout", text: "핵심 포인트: 이 예시에서 1,000만원 투자로 10년 동안 5% 이율에서 647만원의 이자를 벌었습니다 — 추가 투자 없이. 복리의 힘은 기간이 길어질수록 극적으로 증가합니다." },
+          { type: "embed", tool: "compound-interest-calculator" },
           { type: "heading", text: "복리 주기의 중요성" },
           { type: "paragraph", text: "이자가 더 자주 복리되면 더 많이 벌 수 있습니다. 1,000만원을 5% 이율로 10년간 투자할 때 복리 주기별 차이입니다:" },
           { type: "list", items: [
@@ -657,6 +659,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "What Your BMI Number Means" },
           { type: "paragraph", text: "A BMI in the \"normal\" range (18.5-24.9) is generally associated with lower health risks. However, BMI is just one piece of the puzzle. It doesn't measure body fat directly, nor does it account for muscle mass, bone density, age, sex, or ethnicity — all of which affect health risk." },
           { type: "callout", text: "Key Takeaway: BMI is a screening tool, not a diagnostic tool. A high BMI doesn't necessarily mean you're unhealthy (athletes often have high BMIs due to muscle mass), and a normal BMI doesn't guarantee good health. Always consult with a healthcare provider for a complete assessment." },
+          { type: "embed", tool: "bmi-calculator" },
           { type: "heading", text: "Limitations of BMI" },
           { type: "list", items: [
             "Doesn't distinguish between muscle and fat (a muscular athlete may have a \"overweight\" BMI)",
@@ -702,6 +705,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "BMI 수치의 의미" },
           { type: "paragraph", text: "\"정상\" 범위의 BMI(한국 기준 18.5-22.9)는 일반적으로 낮은 건강 위험과 관련이 있습니다. 하지만 BMI는 퍼즐의 한 조각일 뿐입니다. 체지방을 직접 측정하지 않으며, 근육량, 골밀도, 나이, 성별, 민족성을 고려하지 않습니다." },
           { type: "callout", text: "핵심 포인트: BMI는 선별 도구이지 진단 도구가 아닙니다. 높은 BMI가 반드시 건강하지 않다는 것을 의미하지 않으며(운동선수는 근육량으로 높은 BMI를 가질 수 있음), 정상 BMI가 좋은 건강을 보장하지도 않습니다. 완전한 평가를 위해 항상 의료 전문가와 상담하세요." },
+          { type: "embed", tool: "bmi-calculator" },
           { type: "heading", text: "BMI의 한계" },
           { type: "list", items: [
             "근육과 지방을 구분하지 못합니다 (근육질 운동선수가 \"과체중\" BMI를 가질 수 있음)",
@@ -1121,6 +1125,7 @@ export const blogPosts: BlogPost[] = [
             "Lunar calendar age — Some cultures calculate age based on lunar calendar birthdays",
           ] },
           { type: "callout", text: "Key Takeaway: Since June 2023, South Korea officially uses the international age system (만 나이) for all legal and administrative purposes. This means Koreans are now 1-2 years 'younger' in official documents compared to the old system." },
+          { type: "embed", tool: "age-calculator" },
           { type: "heading", text: "When Exact Age Matters" },
           { type: "list", items: [
             "Legal purposes — voting age, drinking age, retirement age, contract eligibility",
@@ -1166,6 +1171,7 @@ export const blogPosts: BlogPost[] = [
             "음력 나이 — 일부 문화에서는 음력 생일을 기준으로 나이 계산",
           ] },
           { type: "callout", text: "핵심 포인트: 2023년 6월부터 한국은 모든 법적, 행정적 목적에 만 나이를 공식 사용합니다. 이로 인해 한국인들은 공식 문서에서 이전 체계보다 1-2세 '젊어'졌습니다." },
+          { type: "embed", tool: "age-calculator" },
           { type: "heading", text: "정확한 나이가 중요한 경우" },
           { type: "list", items: [
             "법적 목적 — 선거권, 음주 가능 나이, 정년, 계약 자격",
@@ -1346,6 +1352,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "What Is Compound Interest?" },
           { type: "paragraph", text: "Compound interest, on the other hand, is calculated on the principal plus all previously accumulated interest. This means your interest earns interest, creating a snowball effect that accelerates your wealth growth over time. The compound interest formula is: A = P × (1 + r/n)^(n×t), where A is the final amount, P is the principal, r is the annual interest rate, n is the number of compounding periods per year, and t is the number of years. Using the same example — $10,000 at 5% for 10 years compounded annually — your final balance would be $16,288.95, which is $1,288.95 more than with simple interest." },
           { type: "callout", text: "Key Insight: The difference between simple and compound interest grows exponentially over time. Over 10 years the gap may seem modest, but over 30 years at 5%, simple interest yields $25,000 while compound interest yields $43,219 — a difference of over $18,000 on the same $10,000 investment." },
+          { type: "embed", tool: "compound-interest-calculator" },
           { type: "cta", tool: "compound-interest-calculator", toolName: "Compound Interest Calculator" },
           { type: "heading", text: "Why Compound Interest Wins Long-Term" },
           { type: "paragraph", text: "The power of compound interest lies in time. The longer your money compounds, the more dramatic the results become. This is why financial advisors always emphasize starting to invest early. A 25-year-old who invests $5,000 per year until age 65 at a 7% return will accumulate approximately $1,068,048. A 35-year-old making the same contributions would accumulate only $505,365 — roughly half — despite only missing 10 years of contributions. Those early years of compounding make an enormous difference." },
@@ -1385,6 +1392,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "복리란 무엇인가?" },
           { type: "paragraph", text: "반면 복리는 원금에 이전에 축적된 모든 이자를 더한 금액에 대해 계산됩니다. 이는 이자가 이자를 낳는 눈덩이 효과를 만들어 시간이 지남에 따라 자산 성장을 가속화합니다. 복리 공식은 다음과 같습니다: A = P × (1 + r/n)^(n×t). 여기서 A는 최종 금액, P는 원금, r은 연간 이율, n은 연간 복리 횟수, t는 연수입니다. 같은 예시로 1,000만 원을 연 5%로 10년간 연 복리 투자하면 최종 잔액은 약 1,628만 원으로, 단리보다 약 128만 원이 더 많습니다." },
           { type: "callout", text: "핵심 인사이트: 단리와 복리의 차이는 시간이 지남에 따라 기하급수적으로 커집니다. 10년간의 차이는 미미해 보일 수 있지만, 5%로 30년이 지나면 단리는 2,500만 원, 복리는 약 4,321만 원을 만들어냅니다. 같은 1,000만 원 투자에서 1,800만 원 이상의 차이가 발생합니다." },
+          { type: "embed", tool: "compound-interest-calculator" },
           { type: "cta", tool: "compound-interest-calculator", toolName: "복리 계산기" },
           { type: "heading", text: "복리가 장기적으로 이기는 이유" },
           { type: "paragraph", text: "복리의 힘은 시간에 있습니다. 돈이 복리로 운용되는 기간이 길수록 결과는 더욱 극적으로 변합니다. 이것이 재무 전문가들이 항상 일찍 투자를 시작하라고 강조하는 이유입니다. 25세에 매년 500만 원씩 7% 수익률로 65세까지 투자하면 약 10억 6,800만 원을 모을 수 있습니다. 35세에 같은 금액을 투자하면 약 5억 500만 원, 즉 대략 절반만 모을 수 있습니다. 단 10년의 차이가 이토록 큰 격차를 만듭니다." },
@@ -1753,6 +1761,7 @@ export const blogPosts: BlogPost[] = [
             "Obese: BMI 30.0 and above",
           ] },
           { type: "cta", tool: "bmi-calculator", toolName: "BMI Calculator" },
+          { type: "embed", tool: "bmi-calculator" },
           { type: "heading", text: "What Is BMR (Basal Metabolic Rate)?" },
           { type: "paragraph", text: "Basal Metabolic Rate (BMR) measures the number of calories your body needs to perform basic life-sustaining functions at rest — breathing, circulating blood, cell production, and maintaining body temperature. BMR typically accounts for 60-75% of your total daily energy expenditure, making it the largest component of your calorie burn. Unlike BMI, BMR is a dynamic number that changes with age, weight, height, muscle mass, and hormonal factors." },
           { type: "list", items: [
@@ -1795,6 +1804,7 @@ export const blogPosts: BlogPost[] = [
             "비만: BMI 30.0 이상",
           ] },
           { type: "cta", tool: "bmi-calculator", toolName: "BMI 계산기" },
+          { type: "embed", tool: "bmi-calculator" },
           { type: "heading", text: "BMR(기초대사량)이란?" },
           { type: "paragraph", text: "기초대사량(BMR)은 안정 시 기본 생명 유지 기능(호흡, 혈액 순환, 세포 생성, 체온 유지)을 수행하는 데 필요한 칼로리 수를 측정합니다. BMR은 일반적으로 총 일일 에너지 소비량의 60-75%를 차지하여 칼로리 소모의 가장 큰 구성 요소입니다. BMI와 달리 BMR은 나이, 체중, 키, 근육량, 호르몬 요인에 따라 변하는 동적인 수치입니다." },
           { type: "list", items: [
@@ -1966,6 +1976,7 @@ export const blogPosts: BlogPost[] = [
             "If your birthday has not passed this year: Korean age = international age + 2",
           ] },
           { type: "cta", tool: "age-calculator", toolName: "Age Calculator" },
+          { type: "embed", tool: "age-calculator" },
           { type: "heading", text: "The 2023 Law Change" },
           { type: "paragraph", text: "On June 28, 2023, South Korea officially adopted the international age system for all legal and administrative purposes. This was a landmark decision that ended decades of confusion caused by having multiple age-counting systems in use simultaneously. Before this change, Korea actually used three different age systems: Korean age (for everyday social use), calendar age or year age (birth year subtracted from current year, used for some regulations), and international age (used in medicine and some legal contexts). The 2023 reform unified everything under the international standard, where your age starts at zero and increases by one on each birthday." },
           { type: "callout", text: "Did You Know? Despite the 2023 law change, many Koreans still use the traditional Korean age system in everyday conversation and social settings. Age is deeply important in Korean culture because it determines the level of formality and respect used in language, seating arrangements, drinking etiquette, and many other social interactions." },
@@ -2004,6 +2015,7 @@ export const blogPosts: BlogPost[] = [
             "올해 생일이 지나지 않았다면: 한국 나이 = 만나이 + 2",
           ] },
           { type: "cta", tool: "age-calculator", toolName: "나이 계산기" },
+          { type: "embed", tool: "age-calculator" },
           { type: "heading", text: "2023년 법 개정" },
           { type: "paragraph", text: "2023년 6월 28일, 한국은 모든 법적·행정적 목적에 대해 공식적으로 만나이 체계를 채택했습니다. 이는 동시에 여러 나이 계산 체계를 사용하면서 생긴 수십 년간의 혼란을 끝내는 획기적인 결정이었습니다. 이 변경 전 한국은 실제로 세 가지 나이 체계를 사용했습니다: 한국 나이(일상 사회적 사용), 연 나이(현재 연도에서 출생 연도를 뺀 것, 일부 규정에 사용), 만나이(의학 및 일부 법적 맥락에서 사용). 2023년 개혁으로 모든 것이 국제 표준으로 통일되었습니다." },
           { type: "callout", text: "알고 계셨나요? 2023년 법 개정에도 불구하고 많은 한국인은 일상 대화와 사회적 상황에서 여전히 전통적인 한국 나이를 사용합니다. 나이는 한국 문화에서 매우 중요합니다 — 언어의 존대 수준, 자리 배치, 음주 예절 등 많은 사회적 상호작용을 결정하기 때문입니다." },

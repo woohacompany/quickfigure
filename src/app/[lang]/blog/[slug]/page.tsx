@@ -8,6 +8,8 @@ import {
   categoryLabels,
   type ContentBlock,
 } from "@/lib/blog";
+import BlogHeroImage from "@/components/BlogHeroImage";
+import EmbedTool from "@/components/EmbedTools";
 
 export function generateStaticParams() {
   return blogPosts.flatMap((post) => [
@@ -115,6 +117,12 @@ function ContentRenderer({
                 </Link>
               </div>
             );
+          case "embed":
+            return (
+              <div key={i} className="mb-5">
+                <EmbedTool tool={block.tool || ""} lang={lang} />
+              </div>
+            );
           case "faq":
             return (
               <section
@@ -217,15 +225,8 @@ export default async function BlogPostPage({
             </p>
           </header>
 
-          {/* Thumbnail placeholder */}
-          <div
-            className="w-full h-48 sm:h-64 rounded-lg bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center mb-8"
-            role="img"
-            aria-label={post.thumbnailAlt[locale]}
-          >
-            <span className="text-5xl text-neutral-300 dark:text-neutral-600">
-              {post.category === "text-tools" ? "Aa" : post.category === "developer-tools" ? "</>" : post.category === "finance" ? "$" : post.category === "lifestyle" ? "♡" : "***"}
-            </span>
+          <div className="mb-8">
+            <BlogHeroImage category={post.category} alt={post.thumbnailAlt[locale]} size="large" />
           </div>
 
           {/* Ad placeholder */}

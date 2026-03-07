@@ -18,6 +18,11 @@ export async function generateMetadata({
       canonical: `/${lang}`,
       languages: { en: "/en", ko: "/ko" },
     },
+    openGraph: {
+      title: `QuickFigure - ${t.home.hero}`,
+      description: t.siteDescription,
+      type: "website",
+    },
   };
 }
 

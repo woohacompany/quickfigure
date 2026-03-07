@@ -15,6 +15,11 @@ export default function MortgageCalculatorPage({
   const locale = (isValidLocale(lang) ? lang : "en") as Locale;
   const dict = getDictionary(locale);
   const t = dict.mortgage;
+  const currencySymbol = locale === "ko" ? "\u20A9" : "$";
+  const fmtCurrency = (v: number) => {
+    if (locale === "ko") return currencySymbol + Math.round(v).toLocaleString();
+    return currencySymbol + v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
   const relatedPosts = getPostsByTool("mortgage-calculator");
 
   const [homePrice, setHomePrice] = useState("");
@@ -116,25 +121,25 @@ export default function MortgageCalculatorPage({
           <div className="grid grid-cols-2 gap-4 mt-4">
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.monthlyPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.monthlyPayment)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.monthlyPayment}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.loanAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.loanAmount)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.loanAmount}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.totalPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.totalPayment)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalPayment}</p>
             </div>
             <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
               <p className="text-2xl font-semibold tracking-tight">
-                ${result.totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {fmtCurrency(result.totalInterest)}
               </p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
             </div>

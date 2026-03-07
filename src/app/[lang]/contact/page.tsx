@@ -16,6 +16,11 @@ export async function generateMetadata({
       canonical: `/${lang}/contact`,
       languages: { en: "/en/contact", ko: "/ko/contact" },
     },
+    openGraph: {
+      title: t.metaTitle,
+      description: t.metaDescription,
+      type: "website",
+    },
   };
 }
 

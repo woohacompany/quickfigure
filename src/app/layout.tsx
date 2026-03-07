@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "QuickFigure",
+    title: "QuickFigure - Free Online Tools",
+    description: "Free online tools for text analysis, counting, and more.",
+    url: "https://quickfigure.com",
   },
 };
 
