@@ -524,7 +524,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
+      { slug: "retirement-calculator", name: { en: "Retirement Savings Calculator", ko: "은퇴 저축 계산기" } },
     ],
     relatedPosts: ["mortgage-calculator-guide", "retirement-savings-calculator-guide", "emergency-fund-calculator-guide"],
   },
@@ -628,7 +629,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "mortgage-calculator", name: { en: "Mortgage Calculator", ko: "모기지 계산기" } },
+      { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
     ],
     relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide", "emergency-fund-calculator-guide"],
   },
@@ -733,7 +735,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "bmi-calculator", name: { en: "BMI Calculator", ko: "BMI 계산기" } },
+      { slug: "calorie-calculator", name: { en: "Calorie Calculator", ko: "칼로리 계산기" } },
     ],
     relatedPosts: ["compound-interest-calculator-guide", "calorie-calculator-guide"],
   },
@@ -841,7 +844,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "retirement-calculator", name: { en: "Retirement Savings Calculator", ko: "은퇴 저축 계산기" } },
+      { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
     ],
     relatedPosts: ["compound-interest-calculator-guide", "mortgage-calculator-guide"],
   },
@@ -1084,7 +1088,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "emergency-fund-calculator", name: { en: "Emergency Fund Calculator", ko: "비상자금 계산기" } },
+      { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
     ],
     relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide", "mortgage-calculator-guide"],
   },
@@ -1190,7 +1195,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "age-calculator", name: { en: "Age Calculator", ko: "나이 계산기" } },
+      { slug: "bmi-calculator", name: { en: "BMI Calculator", ko: "BMI 계산기" } },
     ],
     relatedPosts: ["bmi-calculator-guide", "calorie-calculator-guide"],
   },
@@ -1314,7 +1320,8 @@ export const blogPosts: BlogPost[] = [
       },
     },
     relatedTools: [
-      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "calorie-calculator", name: { en: "Calorie Calculator", ko: "칼로리 계산기" } },
+      { slug: "bmi-calculator", name: { en: "BMI Calculator", ko: "BMI 계산기" } },
     ],
     relatedPosts: ["bmi-calculator-guide", "age-calculator-guide"],
   },

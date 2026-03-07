@@ -297,6 +297,13 @@ export default async function BlogPostPage({
                   { slug: "password-generator", name: { en: "Password Generator", ko: "비밀번호 생성기" } },
                   { slug: "base64-encoder-decoder", name: { en: "Base64 Encoder/Decoder", ko: "Base64 인코더/디코더" } },
                   { slug: "lorem-ipsum-generator", name: { en: "Lorem Ipsum Generator", ko: "Lorem Ipsum 생성기" } },
+                  { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
+                  { slug: "mortgage-calculator", name: { en: "Mortgage Calculator", ko: "모기지 계산기" } },
+                  { slug: "retirement-calculator", name: { en: "Retirement Savings Calculator", ko: "은퇴 저축 계산기" } },
+                  { slug: "emergency-fund-calculator", name: { en: "Emergency Fund Calculator", ko: "비상자금 계산기" } },
+                  { slug: "bmi-calculator", name: { en: "BMI Calculator", ko: "BMI 계산기" } },
+                  { slug: "calorie-calculator", name: { en: "Calorie Calculator", ko: "칼로리 계산기" } },
+                  { slug: "age-calculator", name: { en: "Age Calculator", ko: "나이 계산기" } },
                 ].map((tool) => (
                   <li key={tool.slug}>
                     <Link

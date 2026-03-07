@@ -117,18 +117,23 @@ export default async function LangLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${lang}/tools/case-converter`} className="hover:text-foreground transition-colors">
-                    {t.home.caseConverter}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/tools/password-generator`} className="hover:text-foreground transition-colors">
-                    {t.home.passwordGenerator}
-                  </Link>
-                </li>
-                <li>
                   <Link href={`/${lang}/tools/json-formatter`} className="hover:text-foreground transition-colors">
                     {t.home.jsonFormatter}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/compound-interest-calculator`} className="hover:text-foreground transition-colors">
+                    {t.home.compoundInterest}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/bmi-calculator`} className="hover:text-foreground transition-colors">
+                    {t.home.bmiCalc}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/calorie-calculator`} className="hover:text-foreground transition-colors">
+                    {t.home.calorieCalc}
                   </Link>
                 </li>
               </ul>

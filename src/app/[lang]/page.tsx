@@ -45,6 +45,19 @@ export default async function HomePage({
     { name: t.home.base64, description: t.home.base64Desc, href: `/${lang}/tools/base64-encoder-decoder` },
   ];
 
+  const financeTools = [
+    { name: t.home.compoundInterest, description: t.home.compoundInterestDesc, href: `/${lang}/tools/compound-interest-calculator` },
+    { name: t.home.mortgage, description: t.home.mortgageDesc, href: `/${lang}/tools/mortgage-calculator` },
+    { name: t.home.retirement, description: t.home.retirementDesc, href: `/${lang}/tools/retirement-calculator` },
+    { name: t.home.emergencyFund, description: t.home.emergencyFundDesc, href: `/${lang}/tools/emergency-fund-calculator` },
+  ];
+
+  const healthTools = [
+    { name: t.home.bmiCalc, description: t.home.bmiCalcDesc, href: `/${lang}/tools/bmi-calculator` },
+    { name: t.home.calorieCalc, description: t.home.calorieCalcDesc, href: `/${lang}/tools/calorie-calculator` },
+    { name: t.home.ageCalc, description: t.home.ageCalcDesc, href: `/${lang}/tools/age-calculator` },
+  ];
+
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
     return (
       <div className="grid gap-4 sm:grid-cols-2">
@@ -96,6 +109,18 @@ export default async function HomePage({
         <section>
           <h2 className="text-xl font-semibold mb-4">{t.home.devTools}</h2>
           <ToolGrid tools={devTools} />
+        </section>
+
+        {/* Finance Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.financeTools}</h2>
+          <ToolGrid tools={financeTools} />
+        </section>
+
+        {/* Health & Lifestyle */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.healthTools}</h2>
+          <ToolGrid tools={healthTools} />
         </section>
       </div>
 
