@@ -29,13 +29,41 @@ export default async function HomePage({
   if (!isValidLocale(lang)) return null;
   const t = getDictionary(lang);
 
-  const tools = [
-    {
-      name: t.home.wordCounter,
-      description: t.home.wordCounterDesc,
-      href: `/${lang}/tools/word-counter`,
-    },
+  const textTools = [
+    { name: t.home.wordCounter, description: t.home.wordCounterDesc, href: `/${lang}/tools/word-counter` },
+    { name: t.home.caseConverter, description: t.home.caseConverterDesc, href: `/${lang}/tools/case-converter` },
   ];
+
+  const generatorTools = [
+    { name: t.home.loremIpsum, description: t.home.loremIpsumDesc, href: `/${lang}/tools/lorem-ipsum-generator` },
+    { name: t.home.passwordGenerator, description: t.home.passwordGeneratorDesc, href: `/${lang}/tools/password-generator` },
+  ];
+
+  const devTools = [
+    { name: t.home.jsonFormatter, description: t.home.jsonFormatterDesc, href: `/${lang}/tools/json-formatter` },
+    { name: t.home.base64, description: t.home.base64Desc, href: `/${lang}/tools/base64-encoder-decoder` },
+  ];
+
+  function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
+    return (
+      <div className="grid gap-4 sm:grid-cols-2">
+        {tools.map((tool) => (
+          <Link
+            key={tool.href}
+            href={tool.href}
+            className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-5 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
+          >
+            <h3 className="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              {tool.name}
+            </h3>
+            <p className="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
+              {tool.description}
+            </p>
+          </Link>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
@@ -50,29 +78,25 @@ export default async function HomePage({
       {/* Ad placeholder */}
       {/* <div className="mb-8"><ins className="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="XXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div> */}
 
-      {/* Text Tools */}
-      <section>
-        <h2 className="text-xl font-semibold mb-4">{t.home.textTools}</h2>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {tools.map((tool) => (
-            <Link
-              key={tool.href}
-              href={tool.href}
-              className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-5 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
-            >
-              <h3 className="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                {tool.name}
-              </h3>
-              <p className="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400">
-                {tool.description}
-              </p>
-            </Link>
-          ))}
-        </div>
-        <p className="mt-6 text-sm text-neutral-400 dark:text-neutral-500">
-          {t.home.moreToolsComing}
-        </p>
-      </section>
+      <div className="space-y-12">
+        {/* Text Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.textTools}</h2>
+          <ToolGrid tools={textTools} />
+        </section>
+
+        {/* Generator Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.generatorTools}</h2>
+          <ToolGrid tools={generatorTools} />
+        </section>
+
+        {/* Developer Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.devTools}</h2>
+          <ToolGrid tools={devTools} />
+        </section>
+      </div>
     </div>
   );
 }

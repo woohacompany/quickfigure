@@ -29,7 +29,7 @@ export default async function LangLayout({
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link
-              href={`/${lang}/tools/word-counter`}
+              href={`/${lang}`}
               className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
             >
               {t.nav.tools}
@@ -79,6 +79,21 @@ export default async function LangLayout({
                 <li>
                   <Link href={`/${lang}/tools/word-counter`} className="hover:text-foreground transition-colors">
                     {t.home.wordCounter}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/case-converter`} className="hover:text-foreground transition-colors">
+                    {t.home.caseConverter}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/password-generator`} className="hover:text-foreground transition-colors">
+                    {t.home.passwordGenerator}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/${lang}/tools/json-formatter`} className="hover:text-foreground transition-colors">
+                    {t.home.jsonFormatter}
                   </Link>
                 </li>
               </ul>

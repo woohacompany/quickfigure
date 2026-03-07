@@ -7,6 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/tools/word-counter",
+    "/tools/case-converter",
+    "/tools/lorem-ipsum-generator",
+    "/tools/password-generator",
+    "/tools/json-formatter",
+    "/tools/base64-encoder-decoder",
     "/about",
     "/contact",
     "/privacy-policy",
