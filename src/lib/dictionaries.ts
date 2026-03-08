@@ -703,6 +703,7 @@ const dictionaries = {
     share: {
       share: "Share",
       kakao: "KakaoTalk",
+      facebook: "Facebook",
       twitter: "X",
       copyLink: "Copy Link",
       copied: "Copied!",
@@ -1440,6 +1441,7 @@ const dictionaries = {
     share: {
       share: "공유하기",
       kakao: "카카오톡",
+      facebook: "Facebook",
       twitter: "X",
       copyLink: "링크 복사",
       copied: "복사됨!",
