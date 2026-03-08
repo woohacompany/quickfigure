@@ -2815,6 +2815,566 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["compound-interest-calculator-guide", "unit-converter-guide", "freelancer-tax-calculator-guide"],
   },
+  {
+    slug: "salary-guide",
+    category: "finance",
+    date: "2026-03-08",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "A paycheck breakdown showing gross salary and net take-home pay",
+      ko: "연봉에서 실수령액까지의 공제 내역을 보여주는 급여명세서",
+    },
+    translations: {
+      en: {
+        title: "2026 Take-Home Pay Guide: How to Calculate Your Net Salary After Taxes",
+        summary: "Complete guide to understanding your take-home pay in 2026. Learn how social insurance, income tax, and deductions affect your monthly salary with detailed bracket tables.",
+        content: [
+          { type: "paragraph", text: "Understanding how much of your salary you actually take home is crucial for financial planning. In Korea, employees have four major social insurance contributions and income tax deducted from their gross pay. This guide breaks down every deduction so you know exactly where your money goes." },
+          { type: "heading", text: "The Four Major Social Insurance Contributions (4대보험)" },
+          { type: "paragraph", text: "Every employee in Korea contributes to four mandatory social insurance programs. These are split between the employee and employer, but here we focus on the employee's share — the amount deducted from your paycheck each month." },
+          { type: "list", items: [
+            "National Pension (국민연금): 4.5% of monthly salary, capped at ₩248,850/month. This funds your retirement pension.",
+            "Health Insurance (건강보험): 3.545% of monthly salary. Covers medical expenses through the national health system.",
+            "Long-Term Care Insurance (장기요양보험): 12.95% of your health insurance premium. Funds elderly care services.",
+            "Employment Insurance (고용보험): 0.9% of monthly salary. Provides unemployment benefits and job training support."
+          ] },
+          { type: "callout", text: "Combined, the four social insurance contributions total approximately 9% of your gross monthly salary. This is the employee's share only — your employer pays a matching amount." },
+          { type: "cta", tool: "salary-calculator", toolName: "Salary Calculator" },
+          { type: "heading", text: "Income Tax Brackets for 2026" },
+          { type: "paragraph", text: "After social insurance deductions, income tax is applied based on progressive tax brackets. The more you earn, the higher your marginal tax rate. Korea uses the following income tax brackets:" },
+          { type: "list", items: [
+            "Up to ₩14,000,000: 6%",
+            "₩14,000,001 – ₩50,000,000: 15%",
+            "₩50,000,001 – ₩88,000,000: 24%",
+            "₩88,000,001 – ₩150,000,000: 35%",
+            "₩150,000,001 – ₩300,000,000: 38%",
+            "₩300,000,001 – ₩500,000,000: 40%",
+            "₩500,000,001 – ₩1,000,000,000: 42%",
+            "Over ₩1,000,000,000: 45%"
+          ] },
+          { type: "paragraph", text: "Local income tax is an additional 10% of your calculated income tax. So if your monthly income tax is ₩200,000, you pay an additional ₩20,000 in local tax." },
+          { type: "heading", text: "Take-Home Pay by Salary Bracket" },
+          { type: "paragraph", text: "Here are approximate monthly take-home pay figures for common salary levels (assuming 1 dependent, ₩200,000 non-taxable meal allowance, severance pay separate):" },
+          { type: "list", items: [
+            "₩30,000,000 annual → approximately ₩2,260,000/month take-home",
+            "₩40,000,000 annual → approximately ₩2,930,000/month take-home",
+            "₩50,000,000 annual → approximately ₩3,560,000/month take-home",
+            "₩60,000,000 annual → approximately ₩4,140,000/month take-home",
+            "₩80,000,000 annual → approximately ₩5,220,000/month take-home",
+            "₩100,000,000 annual → approximately ₩6,180,000/month take-home"
+          ] },
+          { type: "heading", text: "Tax-Saving Tips for Salaried Workers" },
+          { type: "list", items: [
+            "Maximize non-taxable allowances: meal allowance (₩200,000), childcare, company car allowance",
+            "Contribute to retirement pension (IRP) for tax deductions up to ₩9,000,000/year",
+            "Use credit/debit cards strategically — debit cards offer higher deduction rates",
+            "Claim medical expense deductions if they exceed 3% of your total salary",
+            "Don't forget donation deductions, education expenses, and housing fund contributions"
+          ] },
+          { type: "paragraph", text: "Year-end tax settlement (연말정산) in January-February is your chance to claim all these deductions. Prepare your documents early to maximize your refund." },
+          { type: "embed", tool: "salary-calculator" },
+          { type: "faq", faqItems: [
+            { question: "What is the average salary in Korea in 2026?", answer: "The average annual salary in Korea is approximately ₩42,000,000 (about ₩3.5M/month gross). However, this varies significantly by industry, company size, and experience. Large companies (대기업) typically pay 20-50% above average." },
+            { question: "How does the number of dependents affect take-home pay?", answer: "Each dependent provides a ₩1,500,000 annual personal exemption, reducing your taxable income. For example, with 3 dependents vs. 1, your annual taxable income decreases by ₩3,000,000, potentially saving ₩150,000-450,000 in taxes depending on your bracket." },
+            { question: "Is severance pay included in annual salary?", answer: "Typically, no. Most Korean employment contracts state salary separately from severance. If your contract includes severance (퇴직금 포함), your actual working salary is about 12/13 of the stated amount, as 1/13 is set aside for severance." },
+            { question: "When should I use the salary calculator?", answer: "Use it when negotiating a new job offer to understand actual take-home pay, during year-end tax planning, when considering a raise, or when comparing job offers with different salary structures." }
+          ] },
+        ],
+      },
+      ko: {
+        title: "2026년 연봉 실수령액 완벽 가이드: 세후 월급 계산법과 구간별 실수령액표",
+        summary: "4대보험과 소득세 공제 항목을 상세히 설명하고, 연봉 구간별 실수령액 예시와 절세 팁을 제공합니다.",
+        content: [
+          { type: "paragraph", text: "연봉 협상이나 이직을 준비할 때 가장 궁금한 것은 '실제로 얼마를 받을 수 있는가'입니다. 세전 연봉과 실수령액의 차이는 생각보다 크며, 연봉이 높아질수록 그 차이는 더 벌어집니다. 이 가이드에서는 2026년 기준으로 연봉에서 어떤 항목이 얼마나 공제되는지 상세히 알아봅니다." },
+          { type: "heading", text: "4대보험 공제 항목 상세 설명" },
+          { type: "paragraph", text: "모든 직장인은 4대보험에 의무적으로 가입해야 합니다. 4대보험료는 근로자와 사업주가 각각 절반씩 부담하며, 급여명세서에 표시되는 금액은 근로자 부담분입니다." },
+          { type: "list", items: [
+            "국민연금 (4.5%): 월 급여의 4.5%, 상한액 월 248,850원. 만 60세부터 노령연금으로 수령합니다.",
+            "건강보험 (3.545%): 월 급여의 3.545%. 병원 진료비의 일부를 건강보험에서 부담합니다.",
+            "장기요양보험 (건강보험의 12.95%): 건강보험료의 12.95%를 추가 납부. 노인 돌봄 서비스 재원입니다.",
+            "고용보험 (0.9%): 월 급여의 0.9%. 실업급여와 직업훈련 지원에 사용됩니다."
+          ] },
+          { type: "callout", text: "4대보험 합산 근로자 부담률은 약 9%입니다. 연봉 5,000만원 기준 월 약 37만원이 4대보험료로 공제됩니다." },
+          { type: "cta", tool: "salary-calculator", toolName: "연봉 실수령액 계산기" },
+          { type: "heading", text: "2026년 소득세 과세 구간" },
+          { type: "paragraph", text: "4대보험 공제 후 소득세가 적용됩니다. 한국은 누진세 체계로, 소득이 높을수록 높은 세율이 적용됩니다. 2026년 소득세 과세 구간은 다음과 같습니다:" },
+          { type: "list", items: [
+            "1,400만원 이하: 6%",
+            "1,400만원 초과 ~ 5,000만원: 15%",
+            "5,000만원 초과 ~ 8,800만원: 24%",
+            "8,800만원 초과 ~ 1억 5,000만원: 35%",
+            "1억 5,000만원 초과 ~ 3억: 38%",
+            "3억 초과 ~ 5억: 40%",
+            "5억 초과 ~ 10억: 42%",
+            "10억 초과: 45%"
+          ] },
+          { type: "paragraph", text: "지방소득세는 소득세의 10%가 추가 부과됩니다. 소득세가 월 20만원이면 지방소득세 2만원이 추가로 공제됩니다." },
+          { type: "heading", text: "연봉 구간별 실수령액 예시" },
+          { type: "paragraph", text: "아래는 부양가족 1명, 비과세 식대 20만원, 퇴직금 별도 기준의 대략적인 월 실수령액입니다:" },
+          { type: "list", items: [
+            "연봉 3,000만원 → 월 실수령액 약 226만원",
+            "연봉 4,000만원 → 월 실수령액 약 293만원",
+            "연봉 5,000만원 → 월 실수령액 약 356만원",
+            "연봉 6,000만원 → 월 실수령액 약 414만원",
+            "연봉 8,000만원 → 월 실수령액 약 522만원",
+            "연봉 1억원 → 월 실수령액 약 618만원"
+          ] },
+          { type: "heading", text: "직장인을 위한 절세 팁" },
+          { type: "list", items: [
+            "비과세 항목 최대한 활용: 식대(20만원), 자녀보육, 차량유지비 등",
+            "개인형 퇴직연금(IRP) 가입으로 연 최대 900만원 세액공제",
+            "체크카드 사용 비율 높이기 — 신용카드(15%)보다 높은 공제율(30%) 적용",
+            "의료비가 총급여의 3% 초과 시 의료비 공제 청구",
+            "기부금 공제, 교육비 공제, 주택청약 공제도 놓치지 마세요"
+          ] },
+          { type: "paragraph", text: "매년 1~2월 진행되는 연말정산은 '13월의 월급'이라 불립니다. 각종 공제 서류를 미리 준비해 환급액을 극대화하세요. 국세청 홈택스의 간소화 서비스를 활용하면 대부분의 서류를 자동으로 받을 수 있습니다." },
+          { type: "embed", tool: "salary-calculator" },
+          { type: "faq", faqItems: [
+            { question: "2026년 한국 평균 연봉은 얼마인가요?", answer: "한국의 평균 연봉은 약 4,200만원(월 세전 약 350만원) 수준입니다. 다만 산업, 기업 규모, 경력에 따라 큰 차이가 있으며, 대기업은 평균보다 20~50% 높은 수준입니다." },
+            { question: "부양가족 수는 실수령액에 얼마나 영향을 미치나요?", answer: "부양가족 1명당 연 150만원의 인적공제가 적용됩니다. 부양가족 3명 대 1명일 때 과세표준이 연 300만원 줄어 세율에 따라 연 15~45만원의 세금을 절약할 수 있습니다." },
+            { question: "퇴직금 포함 연봉과 별도 연봉의 차이는?", answer: "퇴직금 포함 연봉은 명시된 금액의 12/13이 실제 근로 대가이고, 1/13이 퇴직금으로 적립됩니다. 연봉 5,200만원(퇴직금 포함)이면 실제 연봉은 약 4,800만원이므로 실수령액이 상당히 줄어듭니다." },
+            { question: "연봉 계산기는 언제 사용하면 좋나요?", answer: "이직 시 연봉 협상 전 실수령액 확인, 연말정산 계획 수립, 연봉 인상 효과 비교, 다른 회사 오퍼 비교 시 활용하세요." }
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "salary-calculator", name: { en: "Salary Calculator", ko: "연봉 실수령액 계산기" } },
+      { slug: "freelancer-tax-calculator", name: { en: "Freelancer Tax Calculator", ko: "프리랜서 세금 계산기" } },
+    ],
+    relatedPosts: ["freelancer-tax-calculator-guide", "severance-guide", "vat-guide"],
+  },
+  {
+    slug: "vat-guide",
+    category: "finance",
+    date: "2026-03-08",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "A tax invoice with VAT calculation breakdown",
+      ko: "부가세 계산 내역이 표시된 세금계산서",
+    },
+    translations: {
+      en: {
+        title: "VAT Calculation for Business Owners: From Basics to Filing",
+        summary: "Learn how to calculate VAT, understand the difference between general and simplified taxpayers, and stay on top of filing deadlines.",
+        content: [
+          { type: "paragraph", text: "Value Added Tax (VAT) is one of the most important taxes for any business owner in Korea. Whether you're issuing invoices, filing returns, or pricing your products, understanding VAT is essential. This guide covers everything from basic calculations to filing deadlines." },
+          { type: "heading", text: "What is VAT (Value Added Tax)?" },
+          { type: "paragraph", text: "VAT is an indirect tax charged on the 'value added' at each stage of production and distribution. In Korea, the standard VAT rate is 10%. When you sell a product for ₩110,000, ₩100,000 is the supply amount (공급가액) and ₩10,000 is the VAT. The business collects VAT from customers and remits it to the tax authority." },
+          { type: "callout", text: "Key Formula: VAT = Supply Amount × 10%. Total = Supply Amount × 1.1. To reverse-calculate: Supply Amount = Total ÷ 1.1, VAT = Total - Supply Amount." },
+          { type: "cta", tool: "vat-calculator", toolName: "VAT Calculator" },
+          { type: "heading", text: "How to Calculate VAT" },
+          { type: "paragraph", text: "There are two common scenarios for VAT calculation:" },
+          { type: "list", items: [
+            "From supply amount to total: ₩100,000 (supply) × 1.1 = ₩110,000 (total). VAT = ₩10,000.",
+            "From total to supply amount: ₩110,000 (total) ÷ 1.1 = ₩100,000 (supply). VAT = ₩10,000.",
+            "For non-standard rates: Supply × (1 + rate/100) = Total."
+          ] },
+          { type: "heading", text: "General vs. Simplified Taxpayers" },
+          { type: "paragraph", text: "Korean tax law distinguishes between two types of VAT taxpayers:" },
+          { type: "list", items: [
+            "General Taxpayer (일반과세자): Annual revenue over ₩80,000,000. Standard 10% VAT. Full input tax credit available. Must issue tax invoices.",
+            "Simplified Taxpayer (간이과세자): Annual revenue under ₩80,000,000. Reduced VAT based on industry-specific value-added rates (5-40%). Limited input tax credit."
+          ] },
+          { type: "paragraph", text: "If your annual revenue exceeds ₩80,000,000, you're automatically classified as a general taxpayer. New businesses can choose their classification but may be reclassified based on actual revenue." },
+          { type: "heading", text: "VAT Filing Schedule" },
+          { type: "paragraph", text: "General taxpayers file VAT returns four times a year:" },
+          { type: "list", items: [
+            "1st Period Preliminary: January 1-25 (for Oct-Dec of previous year)",
+            "1st Period Confirmed: April 1-25 (for Jan-Mar)",
+            "2nd Period Preliminary: July 1-25 (for Apr-Jun)",
+            "2nd Period Confirmed: October 1-25 (for Jul-Sep)"
+          ] },
+          { type: "paragraph", text: "Simplified taxpayers file twice a year: January 25 and July 25. Late filing incurs penalties of 20% of the unpaid tax amount, plus daily interest." },
+          { type: "heading", text: "Tax Invoice (세금계산서) Essentials" },
+          { type: "list", items: [
+            "Must include: business registration number, date, supply amount, VAT amount, total",
+            "Electronic tax invoices are mandatory for most businesses",
+            "Must be issued by the 10th of the month following the supply date",
+            "Keep records for 5 years for audit purposes"
+          ] },
+          { type: "embed", tool: "vat-calculator" },
+          { type: "faq", faqItems: [
+            { question: "Which goods and services are VAT-exempt?", answer: "Certain items are VAT-exempt in Korea, including unprocessed food, medical and educational services, public transportation, books, and financial services. Export goods are zero-rated (0% VAT), meaning you can claim input tax credits without charging output VAT." },
+            { question: "What is input tax credit (매입세액공제)?", answer: "Input tax credit allows businesses to deduct the VAT they paid on business purchases from the VAT they collected from sales. Only general taxpayers can claim full input tax credits. Keep all purchase receipts and tax invoices as documentation." },
+            { question: "What happens if I file VAT late?", answer: "Late filing penalties include: 20% of unpaid tax as a penalty, plus 0.022% daily interest on the unpaid amount. Repeated late filings may trigger a tax audit. Always file on time, even if you cannot pay the full amount immediately." },
+            { question: "Can I get a VAT refund?", answer: "Yes, if your input VAT (purchases) exceeds your output VAT (sales), you can receive a refund. This commonly happens for export businesses, businesses making large capital investments, or new businesses with high startup costs." }
+          ] },
+        ],
+      },
+      ko: {
+        title: "사업자를 위한 부가세 계산 방법: VAT 기초부터 신고까지",
+        summary: "부가세 개념과 계산법, 일반과세자와 간이과세자의 차이, 신고 일정까지 사업자가 알아야 할 부가가치세의 모든 것을 정리합니다.",
+        content: [
+          { type: "paragraph", text: "부가가치세(VAT)는 사업을 운영하는 데 있어 가장 기본적이고 중요한 세금입니다. 세금계산서 발행, 부가세 신고, 제품 가격 책정 등 모든 사업 활동에서 부가세 계산은 필수입니다. 이 가이드에서는 부가세의 기초 개념부터 신고 실무까지 상세히 다룹니다." },
+          { type: "heading", text: "부가가치세(VAT)란?" },
+          { type: "paragraph", text: "부가가치세는 재화나 용역의 생산·유통 과정에서 창출된 부가가치에 대해 부과하는 간접세입니다. 한국의 부가세율은 10%이며, 최종 소비자가 부담하고 사업자가 징수하여 국가에 납부합니다. 110,000원짜리 상품이라면 100,000원이 공급가액, 10,000원이 부가세입니다." },
+          { type: "callout", text: "핵심 공식: 부가세 = 공급가액 × 10%. 합계 = 공급가액 × 1.1. 역산: 공급가액 = 합계 ÷ 1.1, 부가세 = 합계 - 공급가액." },
+          { type: "cta", tool: "vat-calculator", toolName: "부가세 계산기" },
+          { type: "heading", text: "부가세 계산 방법" },
+          { type: "paragraph", text: "부가세 계산에는 두 가지 상황이 자주 발생합니다:" },
+          { type: "list", items: [
+            "공급가액에서 합계 계산: 공급가액 100,000원 × 1.1 = 합계 110,000원. 부가세 = 10,000원.",
+            "합계에서 공급가액 역산: 합계 110,000원 ÷ 1.1 = 공급가액 100,000원. 부가세 = 10,000원.",
+            "실무 팁: 합계금액이 원단위까지 나누어떨어지지 않을 때는 원 미만 절사합니다."
+          ] },
+          { type: "heading", text: "일반과세자 vs 간이과세자" },
+          { type: "paragraph", text: "부가세법은 사업자를 두 가지 유형으로 구분합니다:" },
+          { type: "list", items: [
+            "일반과세자: 연 매출 8,000만원 이상. 표준 10% 부가세율. 매입세액 전액 공제 가능. 세금계산서 발행 의무.",
+            "간이과세자: 연 매출 8,000만원 미만. 업종별 부가가치율(5~40%) 적용으로 세금 부담 경감. 매입세액 일부만 공제."
+          ] },
+          { type: "paragraph", text: "연 매출이 8,000만원을 초과하면 자동으로 일반과세자로 전환됩니다. 신규 사업자는 유형을 선택할 수 있지만, 실제 매출에 따라 재분류될 수 있습니다. 세금계산서를 많이 발행하는 B2B 사업이라면 처음부터 일반과세자가 유리할 수 있습니다." },
+          { type: "heading", text: "부가세 신고 일정" },
+          { type: "paragraph", text: "일반과세자는 연 4회 부가세를 신고합니다:" },
+          { type: "list", items: [
+            "제1기 예정신고: 4월 1~25일 (1~3월분)",
+            "제1기 확정신고: 7월 1~25일 (4~6월분)",
+            "제2기 예정신고: 10월 1~25일 (7~9월분)",
+            "제2기 확정신고: 다음 해 1월 1~25일 (10~12월분)"
+          ] },
+          { type: "paragraph", text: "간이과세자는 연 2회(1월 25일, 7월 25일) 신고합니다. 신고 기한을 넘기면 무신고가산세 20%와 납부불성실가산세(1일 0.022%)가 부과되므로 기한을 반드시 지키세요." },
+          { type: "heading", text: "세금계산서 발행 실무" },
+          { type: "list", items: [
+            "필수 기재사항: 사업자등록번호, 공급일자, 공급가액, 부가세액, 합계금액",
+            "전자세금계산서 의무 발행 (대부분의 사업자)",
+            "공급일이 속하는 달의 다음 달 10일까지 발행 필수",
+            "5년간 보관 의무 (세무조사 대비)"
+          ] },
+          { type: "embed", tool: "vat-calculator" },
+          { type: "faq", faqItems: [
+            { question: "부가세 면세 품목은 어떤 것이 있나요?", answer: "미가공 식료품, 의료·교육 서비스, 대중교통, 도서·신문, 금융 서비스 등이 부가세 면세 대상입니다. 수출품은 영세율(0%)이 적용되어 매입세액 공제는 받으면서 부가세는 부과하지 않습니다." },
+            { question: "매입세액공제란 무엇인가요?", answer: "사업에 사용한 물품 구매 시 지불한 부가세를 매출 시 받은 부가세에서 차감하는 제도입니다. 일반과세자만 전액 공제 가능하며, 세금계산서나 영수증 등 증빙을 반드시 보관해야 합니다." },
+            { question: "부가세를 늦게 신고하면 어떻게 되나요?", answer: "무신고가산세(미납세액의 20%)와 납부불성실가산세(1일 0.022%)가 부과됩니다. 반복적인 지연 신고는 세무조사 대상이 될 수 있습니다. 세금을 당장 납부하기 어렵더라도 신고는 반드시 기한 내에 하세요." },
+            { question: "부가세 환급은 어떤 경우에 받나요?", answer: "매입세액이 매출세액보다 많을 때 차액을 환급받을 수 있습니다. 주로 수출 기업, 대규모 설비 투자 시, 창업 초기 매입이 많은 경우에 발생합니다. 환급 신청 후 약 30일 이내에 지급됩니다." }
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "vat-calculator", name: { en: "VAT Calculator", ko: "부가세 계산기" } },
+      { slug: "percentage-calculator", name: { en: "Percentage Calculator", ko: "퍼센트 계산기" } },
+    ],
+    relatedPosts: ["freelancer-tax-calculator-guide", "salary-guide", "severance-guide"],
+  },
+  {
+    slug: "severance-guide",
+    category: "finance",
+    date: "2026-03-08",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "An employee reviewing their severance pay calculation documents",
+      ko: "퇴직금 계산 서류를 검토하는 직장인",
+    },
+    translations: {
+      en: {
+        title: "Severance Pay in Korea: Eligibility, Calculation, and Tax Guide",
+        summary: "Everything you need to know about severance pay in Korea — who qualifies, how it's calculated, tax implications, and interim settlement rules.",
+        content: [
+          { type: "paragraph", text: "Severance pay (퇴직금) is a legally mandated benefit for employees in Korea. When you leave a job after working for at least one year, your employer must pay you a lump sum based on your tenure and salary. Understanding how it works is essential for career planning and financial management." },
+          { type: "heading", text: "Who Qualifies for Severance Pay?" },
+          { type: "paragraph", text: "Under the Korean Labor Standards Act, the following conditions must be met:" },
+          { type: "list", items: [
+            "Employed for at least 1 year continuously",
+            "Average working hours of 15 or more per week",
+            "Applies to all employment types: full-time, part-time, contract, temporary",
+            "Applies regardless of the reason for leaving (resignation, layoff, retirement, contract expiration)"
+          ] },
+          { type: "callout", text: "Important: Even if you resign voluntarily, you are entitled to full severance pay as long as you've worked for 1+ years with 15+ hours per week." },
+          { type: "cta", tool: "severance-calculator", toolName: "Severance Pay Calculator" },
+          { type: "heading", text: "Severance Pay Calculation Formula" },
+          { type: "paragraph", text: "The legal formula for severance pay is:" },
+          { type: "list", items: [
+            "Step 1: Calculate Daily Average Wage = (Total wages for last 3 months) ÷ 90 days",
+            "Step 2: Severance Pay = Daily Average Wage × 30 × (Total Working Days ÷ 365)",
+            "Example: Monthly salary ₩3,000,000, worked 3 years (1,095 days)",
+            "Daily Average Wage = (₩3,000,000 × 3) ÷ 90 = ₩100,000",
+            "Severance Pay = ₩100,000 × 30 × (1,095 ÷ 365) = ₩9,000,000"
+          ] },
+          { type: "paragraph", text: "The 'average wage' includes base salary, fixed allowances, and regular bonuses. If your regular wage (통상임금) is higher than your average wage, the regular wage is used instead." },
+          { type: "heading", text: "Retirement Income Tax on Severance Pay" },
+          { type: "paragraph", text: "Severance pay is subject to retirement income tax (퇴직소득세), which is generally lower than regular income tax. The tax calculation considers:" },
+          { type: "list", items: [
+            "Years of service deduction: longer service = lower tax",
+            "Converted severance deduction based on service period",
+            "Progressive tax rates applied to the reduced amount",
+            "For most workers with 5-10 years of service, effective tax rate is 2-5%"
+          ] },
+          { type: "heading", text: "Interim Severance Settlement (중간정산)" },
+          { type: "paragraph", text: "Since 2012, interim settlement of severance pay during employment is generally prohibited. However, exceptions are allowed for:" },
+          { type: "list", items: [
+            "Purchasing a home (including mortgage repayment)",
+            "Paying Jeonse deposit for rental housing",
+            "Medical treatment for more than 6 months",
+            "Bankruptcy or personal rehabilitation proceedings",
+            "Natural disaster damage",
+            "Salary peak system (임금피크제) application"
+          ] },
+          { type: "paragraph", text: "If you receive an interim settlement, your severance calculation resets from the settlement date." },
+          { type: "embed", tool: "severance-calculator" },
+          { type: "faq", faqItems: [
+            { question: "What is the difference between severance pay and retirement pension?", answer: "Severance pay (퇴직금) is a lump sum paid upon leaving. A retirement pension (퇴직연금) is a system where the employer regularly contributes to a pension fund. There are two types: DB (defined benefit, similar to traditional severance) and DC (defined contribution, where the employee manages investments)." },
+            { question: "Can my employer refuse to pay severance?", answer: "No. Severance pay is legally mandated. If an employer fails to pay within 14 days of the employee's departure, they face penalties. Employees can file a complaint with the Labor Board (노동위원회) or take legal action." },
+            { question: "Does overtime pay count toward severance calculation?", answer: "Yes, if overtime is regularly and consistently worked. The average wage calculation includes all wages received in the last 3 months, including overtime pay, night work allowance, and holiday work allowance that were regularly paid." },
+            { question: "What if I worked less than 1 year?", answer: "Unfortunately, employees who worked less than 1 year are not entitled to severance pay under Korean law. However, if your employment contract or company policy provides for prorated severance, you may still receive some compensation." }
+          ] },
+        ],
+      },
+      ko: {
+        title: "퇴직금 계산법 총정리: 지급 기준, 계산 공식, 세금까지",
+        summary: "퇴직금 지급 조건, 계산 공식, 퇴직소득세, 중간정산 규정까지 퇴직금에 대한 모든 것을 상세히 정리합니다.",
+        content: [
+          { type: "paragraph", text: "퇴직금은 근로자의 노후를 보장하기 위해 법으로 보장된 중요한 권리입니다. 1년 이상 근무한 근로자가 퇴직할 때 사용자가 지급해야 하는 금액으로, 이직이나 은퇴를 준비할 때 정확한 퇴직금을 미리 계산해보는 것이 중요합니다." },
+          { type: "heading", text: "퇴직금 지급 조건" },
+          { type: "paragraph", text: "근로기준법에 따른 퇴직금 지급 조건은 다음과 같습니다:" },
+          { type: "list", items: [
+            "계속 근로기간 1년 이상",
+            "주 평균 근로시간 15시간 이상",
+            "정규직, 비정규직, 계약직, 파트타임 등 고용 형태 무관",
+            "자발적 퇴사, 해고, 정년퇴직, 계약만료 등 퇴직 사유 무관"
+          ] },
+          { type: "callout", text: "중요: 자발적으로 퇴사하더라도 1년 이상 근무하고 주 15시간 이상 일했다면 퇴직금을 받을 수 있습니다." },
+          { type: "cta", tool: "severance-calculator", toolName: "퇴직금 계산기" },
+          { type: "heading", text: "퇴직금 계산 공식" },
+          { type: "paragraph", text: "법정 퇴직금 계산 공식은 다음과 같습니다:" },
+          { type: "list", items: [
+            "1단계: 1일 평균임금 = (퇴직 전 3개월간 총 임금) ÷ 90일",
+            "2단계: 퇴직금 = 1일 평균임금 × 30일 × (총 근속일수 ÷ 365일)",
+            "예시: 월급 300만원, 3년 근무 (1,095일)",
+            "1일 평균임금 = (300만원 × 3) ÷ 90 = 100,000원",
+            "퇴직금 = 100,000원 × 30 × (1,095 ÷ 365) = 9,000,000원"
+          ] },
+          { type: "paragraph", text: "평균임금에는 기본급, 고정수당, 정기상여금이 포함됩니다. 통상임금이 평균임금보다 높으면 통상임금으로 계산합니다. 연장근로수당, 야간근로수당, 휴일근로수당도 정기적으로 지급받았다면 포함됩니다." },
+          { type: "heading", text: "퇴직소득세" },
+          { type: "paragraph", text: "퇴직금에는 퇴직소득세가 부과되지만, 일반 소득세보다 세율이 낮습니다. 세금 계산 시 고려사항:" },
+          { type: "list", items: [
+            "근속연수 공제: 근무 기간이 길수록 공제액이 커져 세금이 줄어듦",
+            "환산급여 공제: 근속연수에 따라 추가 공제 적용",
+            "누진세율 적용: 공제 후 남은 금액에 대해 과세",
+            "5~10년 근속 기준 실효세율은 대략 2~5% 수준"
+          ] },
+          { type: "heading", text: "퇴직금 중간정산" },
+          { type: "paragraph", text: "2012년부터 퇴직금 중간정산은 원칙적으로 금지되었습니다. 다만 예외적으로 허용되는 경우:" },
+          { type: "list", items: [
+            "주택 구입 (담보대출 상환 포함)",
+            "전세금 또는 보증금 부담",
+            "6개월 이상 장기 요양이 필요한 경우",
+            "파산 선고 또는 개인회생 절차",
+            "천재지변으로 인한 피해",
+            "임금피크제 적용"
+          ] },
+          { type: "paragraph", text: "중간정산을 받으면 퇴직금 산정 기간이 정산일부터 새로 시작됩니다. 따라서 중간정산이 반드시 유리하지는 않으며, 세금 측면에서도 불리할 수 있으므로 신중하게 결정해야 합니다." },
+          { type: "embed", tool: "severance-calculator" },
+          { type: "faq", faqItems: [
+            { question: "퇴직금과 퇴직연금의 차이는?", answer: "퇴직금은 퇴직 시 일시금으로 지급되는 제도이고, 퇴직연금은 사용자가 정기적으로 연금 기금에 적립하는 제도입니다. 퇴직연금은 DB형(확정급여형, 전통 퇴직금과 유사)과 DC형(확정기여형, 근로자가 투자 운용)이 있습니다." },
+            { question: "사용자가 퇴직금 지급을 거부할 수 있나요?", answer: "아닙니다. 퇴직금은 법으로 보장된 권리입니다. 퇴직일로부터 14일 이내에 지급하지 않으면 지연이자와 벌칙이 부과됩니다. 미지급 시 노동위원회에 진정을 제기하거나 법적 소송을 할 수 있습니다." },
+            { question: "연장근로수당도 퇴직금 계산에 포함되나요?", answer: "네, 정기적이고 일률적으로 지급된 연장근로수당은 평균임금에 포함됩니다. 퇴직 전 3개월간의 총 임금에는 기본급뿐 아니라 정기적으로 받은 야간수당, 휴일수당도 포함됩니다." },
+            { question: "1년 미만 근무 시 퇴직금은?", answer: "아쉽게도 근로기준법상 1년 미만 근무자는 퇴직금 수령 대상이 아닙니다. 다만 근로계약서나 취업규칙에 1년 미만자에 대한 퇴직금 규정이 있다면 그에 따라 받을 수 있습니다." }
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "severance-calculator", name: { en: "Severance Pay Calculator", ko: "퇴직금 계산기" } },
+      { slug: "salary-calculator", name: { en: "Salary Calculator", ko: "연봉 실수령액 계산기" } },
+    ],
+    relatedPosts: ["salary-guide", "loan-calculator-guide", "rent-conversion-guide"],
+  },
+  {
+    slug: "rent-conversion-guide",
+    category: "finance",
+    date: "2026-03-08",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "A person comparing Jeonse and monthly rent options for an apartment",
+      ko: "아파트 전세와 월세 옵션을 비교하는 모습",
+    },
+    translations: {
+      en: {
+        title: "Understanding Jeonse-Monthly Rent Conversion: 2026 Rates and Practical Guide",
+        summary: "Learn how the Jeonse-monthly rent conversion rate works, with calculation examples, legal limits, and tips for both tenants and landlords.",
+        content: [
+          { type: "paragraph", text: "Korea's unique rental system includes Jeonse (전세, a large lump-sum deposit) and monthly rent (월세). Converting between the two is a common need when negotiating lease terms. Understanding the conversion rate and its legal limits is essential for making informed housing decisions." },
+          { type: "heading", text: "What is the Jeonse-Monthly Rent Conversion Rate?" },
+          { type: "paragraph", text: "The conversion rate (전월세전환율) is the annual percentage used to translate between a Jeonse deposit and monthly rent. It represents the 'rental value' of the deposit money. For example, with a 2.5% conversion rate, a ₩100,000,000 Jeonse deposit is equivalent to about ₩208,333 in monthly rent (₩100M × 2.5% ÷ 12)." },
+          { type: "callout", text: "Legal Maximum: The conversion rate cannot exceed the Bank of Korea base rate + 2 percentage points (대통령령). As of 2026, with a base rate around 2.5-3%, the legal cap is approximately 4.5-5%." },
+          { type: "cta", tool: "rent-conversion-calculator", toolName: "Rent Conversion Calculator" },
+          { type: "heading", text: "Conversion Formulas" },
+          { type: "list", items: [
+            "Jeonse → Monthly Rent: Monthly Rent = (Jeonse Deposit - Monthly Deposit) × Rate ÷ 12",
+            "Monthly Rent → Jeonse: Jeonse = Monthly Deposit + (Monthly Rent × 12 ÷ Rate)",
+            "Example: Jeonse ₩300M, deposit ₩50M, rate 2.5%: (₩300M - ₩50M) × 2.5% ÷ 12 = ₩520,833/month",
+            "Reverse: Deposit ₩50M, rent ₩50만/month, rate 2.5%: ₩50M + (₩500,000 × 12 ÷ 0.025) = ₩290M"
+          ] },
+          { type: "heading", text: "Tenant vs. Landlord Perspective" },
+          { type: "paragraph", text: "The optimal choice depends on your financial situation and market conditions:" },
+          { type: "list", items: [
+            "Tenant (Jeonse): No monthly payments, but requires large upfront capital. Risk of not recovering deposit if landlord faces financial trouble.",
+            "Tenant (Monthly): Lower upfront cost, predictable monthly expenses. Good when interest rates are high or Jeonse deposits are risky.",
+            "Landlord (Jeonse): Receives large deposit for investment. Returns full amount at lease end.",
+            "Landlord (Monthly): Steady monthly income stream. Easier cash flow management."
+          ] },
+          { type: "heading", text: "Market Trends in 2026" },
+          { type: "paragraph", text: "The Korean rental market has been shifting toward monthly rent (반전세/월세) in recent years. Key trends include:" },
+          { type: "list", items: [
+            "Rising interest rates have made Jeonse less attractive for landlords",
+            "More tenants prefer the safety of monthly rent with smaller deposits",
+            "Ban-Jeonse (반전세): a hybrid with moderate deposit + moderate monthly rent is increasingly popular",
+            "The conversion rate in the market is typically 2-3%, often below the legal maximum"
+          ] },
+          { type: "embed", tool: "rent-conversion-calculator" },
+          { type: "faq", faqItems: [
+            { question: "What is the current legal maximum conversion rate?", answer: "The legal maximum is the Bank of Korea base rate + 2 percentage points. As of 2026, with interest rates around 2.5-3%, the cap is approximately 4.5-5%. However, market rates are typically lower at 2-3%." },
+            { question: "Can a landlord charge more than the legal conversion rate?", answer: "No. Under the Housing Lease Protection Act (주택임대차보호법), the conversion rate cannot exceed the legal maximum. If a landlord applies a higher rate, the tenant can request adjustment through the Rental Dispute Mediation Committee." },
+            { question: "How do I decide between Jeonse and monthly rent?", answer: "Consider: 1) Do you have enough savings for a Jeonse deposit? 2) What's the opportunity cost of that capital? 3) Is the landlord's financial situation stable? 4) What are current interest rates? If investment returns exceed the conversion rate, monthly rent may be better financially." },
+            { question: "What is Ban-Jeonse (반전세)?", answer: "Ban-Jeonse is a hybrid rental system combining a moderate deposit (larger than monthly rent deposits but smaller than full Jeonse) with monthly rent payments. It's increasingly popular as it balances the upfront cost burden with manageable monthly payments." }
+          ] },
+        ],
+      },
+      ko: {
+        title: "전월세 전환율 완벽 이해: 2026년 기준 계산법과 실전 적용",
+        summary: "전월세전환율의 개념, 계산 예시, 법적 상한, 임차인과 임대인 입장에서의 비교까지 전월세 전환의 모든 것을 정리합니다.",
+        content: [
+          { type: "paragraph", text: "한국의 독특한 임대 시스템인 전세와 월세 사이에서 적정 금액을 계산하는 것은 주거비 결정에 매우 중요합니다. 전월세전환율을 이해하면 전세를 월세로 바꿀 때, 또는 월세를 전세로 전환할 때 적정한 금액을 판단할 수 있습니다." },
+          { type: "heading", text: "전월세전환율이란?" },
+          { type: "paragraph", text: "전월세전환율은 전세 보증금과 월세 간의 전환 비율을 나타내는 연 이율입니다. 쉽게 말해 보증금 돈의 '임대 가치'를 나타냅니다. 예를 들어 전환율이 2.5%일 때, 전세보증금 1억원은 월세 약 208,333원(1억 × 2.5% ÷ 12)에 해당합니다." },
+          { type: "callout", text: "법적 상한: 전월세전환율은 한국은행 기준금리 + 대통령령이 정하는 이율(현재 2%p)을 초과할 수 없습니다. 2026년 기준금리 2.5~3% 감안 시 법적 상한은 약 4.5~5%입니다." },
+          { type: "cta", tool: "rent-conversion-calculator", toolName: "전월세 전환 계산기" },
+          { type: "heading", text: "전월세 전환 계산 공식" },
+          { type: "list", items: [
+            "전세 → 월세: 월세 = (전세보증금 - 월세보증금) × 전환율 ÷ 12",
+            "월세 → 전세: 전세보증금 = 월세보증금 + (월세 × 12 ÷ 전환율)",
+            "예시 1: 전세 3억, 보증금 5천만원, 전환율 2.5% → (3억-5천만) × 2.5% ÷ 12 = 약 52만원/월",
+            "예시 2: 보증금 5천만원, 월세 50만원, 전환율 2.5% → 5천만 + (50만 × 12 ÷ 0.025) = 2억9천만원"
+          ] },
+          { type: "heading", text: "임차인 vs 임대인 관점" },
+          { type: "paragraph", text: "전세와 월세 중 어떤 것이 유리한지는 개인의 재정 상황과 시장 여건에 따라 다릅니다:" },
+          { type: "list", items: [
+            "임차인(전세): 매월 지출 없음, 하지만 큰 목돈 필요. 갭투자 리스크(보증금 미반환) 주의.",
+            "임차인(월세): 초기 비용 적음, 매월 고정 지출. 금리가 높거나 전세 리스크가 클 때 유리.",
+            "임대인(전세): 큰 보증금으로 투자 수익 창출. 계약 종료 시 전액 반환.",
+            "임대인(월세): 안정적인 월 수입. 현금 흐름 관리 용이."
+          ] },
+          { type: "heading", text: "2026년 임대차 시장 동향" },
+          { type: "paragraph", text: "최근 한국 임대시장은 전세에서 반전세·월세로 전환되는 추세입니다. 주요 동향:" },
+          { type: "list", items: [
+            "금리 상승으로 임대인의 전세 선호 감소 → 월세 전환 증가",
+            "전세사기 우려로 임차인도 소액 보증금 + 월세 선호 증가",
+            "반전세(중간 보증금 + 적정 월세)가 가장 인기 있는 임대 형태로 부상",
+            "실제 시장 전환율은 보통 2~3%로, 법적 상한보다 낮은 수준"
+          ] },
+          { type: "paragraph", text: "임대차 계약 시 전월세전환율을 반드시 확인하고, 법적 상한을 초과하는지 검토하세요. 과도한 전환율은 임대차분쟁조정위원회를 통해 조정을 요청할 수 있습니다." },
+          { type: "embed", tool: "rent-conversion-calculator" },
+          { type: "faq", faqItems: [
+            { question: "현재 법적 전월세전환율 상한은?", answer: "한국은행 기준금리 + 2%p입니다. 2026년 기준금리가 약 2.5~3%이므로 법적 상한은 약 4.5~5%입니다. 실제 시장에서는 이보다 낮은 2~3%에서 거래됩니다." },
+            { question: "임대인이 법적 상한을 초과하는 전환율을 적용할 수 있나요?", answer: "불가합니다. 주택임대차보호법에 따라 전환율은 법적 상한을 초과할 수 없습니다. 상한 초과 시 임차인은 임대차분쟁조정위원회에 조정을 신청할 수 있습니다." },
+            { question: "전세와 월세 중 어떻게 선택해야 하나요?", answer: "고려할 점: 1) 전세금을 마련할 충분한 자금이 있는가? 2) 그 자금의 기회비용(투자 수익)은? 3) 임대인의 재정 상태는 안정적인가? 4) 현재 금리 수준은? 투자 수익률이 전환율을 초과한다면 월세가 재정적으로 유리할 수 있습니다." },
+            { question: "반전세(半전세)란?", answer: "반전세는 전세보다 적은 보증금에 월세를 함께 내는 혼합형 임대 방식입니다. 전세의 큰 보증금 부담과 순수 월세의 높은 월 지출 사이에서 절충점을 찾는 방식으로, 최근 가장 인기 있는 임대 형태입니다." }
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "rent-conversion-calculator", name: { en: "Rent Conversion Calculator", ko: "전월세 전환 계산기" } },
+      { slug: "loan-calculator", name: { en: "Loan Calculator", ko: "대출 계산기" } },
+    ],
+    relatedPosts: ["severance-guide", "salary-guide", "area-guide"],
+  },
+  {
+    slug: "area-guide",
+    category: "utility",
+    date: "2026-03-08",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "A floor plan with area measurements in pyeong and square meters",
+      ko: "평과 제곱미터로 면적이 표시된 아파트 평면도",
+    },
+    translations: {
+      en: {
+        title: "Korean Area Units Explained: Pyeong, Square Meters, and Real Estate Measurements",
+        summary: "Everything about the Pyeong unit — its history, conversion to square meters, common apartment sizes, and the difference between exclusive and supply area.",
+        content: [
+          { type: "paragraph", text: "If you're looking at real estate in Korea, you'll encounter the term 'pyeong' (평) everywhere. Despite Korea officially adopting the metric system, pyeong remains the most commonly used unit for describing property sizes. Understanding pyeong and its relationship to square meters is essential for navigating the Korean property market." },
+          { type: "heading", text: "What is a Pyeong?" },
+          { type: "paragraph", text: "Pyeong (평) is a traditional Korean-Japanese unit of area measurement. Originally derived from the Japanese 'tsubo' (坪), it was widely used during the Japanese colonial period and has persisted in everyday Korean usage. One pyeong equals approximately 3.30579 square meters (㎡), which is roughly the size of two tatami mats laid side by side." },
+          { type: "callout", text: "Quick Reference: 1 Pyeong = 3.30579 ㎡ = 35.58 sq ft. To convert: Pyeong × 3.3058 = ㎡, or ㎡ ÷ 3.3058 = Pyeong." },
+          { type: "cta", tool: "area-converter", toolName: "Area Converter" },
+          { type: "heading", text: "Common Apartment Sizes in Korea" },
+          { type: "paragraph", text: "Korean apartments are typically described by their supply area in pyeong. Here are the most common sizes:" },
+          { type: "list", items: [
+            "18 pyeong (59㎡ exclusive): Studio or small 1-bedroom. Popular with singles and couples.",
+            "24 pyeong (79㎡ exclusive): 2-3 bedrooms. Suitable for small families. Often called '국민평수' (national standard).",
+            "32 pyeong (106㎡ exclusive): 3-4 bedrooms. Mid-size family apartment.",
+            "34 pyeong (112㎡ exclusive): Similar to 32 pyeong but with slightly more space.",
+            "40 pyeong (132㎡ exclusive): Large 4-bedroom. Premium family apartment.",
+            "50+ pyeong (165㎡+ exclusive): Luxury apartment or penthouse."
+          ] },
+          { type: "heading", text: "Exclusive Area vs. Supply Area" },
+          { type: "paragraph", text: "Understanding the difference between exclusive area (전용면적) and supply area (공급면적) is crucial:" },
+          { type: "list", items: [
+            "Exclusive Area (전용면적): The actual livable space inside your unit — rooms, living room, kitchen, bathrooms. This is what you can use.",
+            "Supply Area (공급면적): Exclusive area + common areas (hallways, stairs, elevator halls) allocated to your unit.",
+            "Contract Area (계약면적): Supply area + other common areas (parking, management office). The largest number.",
+            "Exclusive ratio (전용률): Exclusive ÷ Supply, typically 70-85%. Higher is better for residents."
+          ] },
+          { type: "paragraph", text: "When comparing apartments, always compare the exclusive area (전용면적) for a fair assessment. A '34 pyeong' apartment in one complex may have different exclusive area than a '34 pyeong' in another complex." },
+          { type: "heading", text: "Legal Status of Pyeong" },
+          { type: "paragraph", text: "In 2007, Korea passed a law requiring all official measurements to use metric units. Real estate listings must use square meters (㎡) as the official unit. However, in practice, most Koreans still think and communicate in pyeong. Real estate agents, advertisements, and everyday conversations predominantly use pyeong, with ㎡ shown in parentheses for legal compliance." },
+          { type: "embed", tool: "area-converter" },
+          { type: "faq", faqItems: [
+            { question: "Why is pyeong still used if it's not official?", answer: "Pyeong has been used in Korea for over a century and is deeply embedded in cultural understanding of space. People intuitively know that 30 pyeong is a decent family apartment, while 60 pyeong is spacious. This cultural familiarity makes it hard to replace, even with official metric requirements." },
+            { question: "How do I calculate the actual living space from a listing?", answer: "Look for 전용면적 (exclusive area) in ㎡, then divide by 3.3058 to get pyeong. For example, '전용 84㎡' = about 25.4 pyeong of actual living space. The 공급면적 includes shared spaces and will always be larger." },
+            { question: "What is a good exclusive ratio (전용률)?", answer: "A typical exclusive ratio is 75-80%. Above 80% is considered very good (more of your payment goes to actual living space). Tower-type apartments tend to have lower exclusive ratios (70-75%) due to larger common areas like elevator lobbies." },
+            { question: "How do pyeong measurements differ for houses vs. apartments?", answer: "For houses, pyeong typically refers to the lot (land) size, not just the building footprint. A '50 pyeong house' usually means the land is 50 pyeong (165㎡), while the building itself may be smaller. For apartments, pyeong refers to the unit's supply area." }
+          ] },
+        ],
+      },
+      ko: {
+        title: "부동산 평수 계산: 평과 제곱미터 변환 총정리",
+        summary: "평 단위의 역사, 제곱미터 변환 공식, 주요 아파트 평수별 실면적, 전용면적과 공급면적의 차이를 상세히 설명합니다.",
+        content: [
+          { type: "paragraph", text: "부동산을 알아볼 때 가장 자주 접하는 단위가 '평'입니다. 공식적으로는 제곱미터(㎡)를 사용하지만, 일상에서는 여전히 평으로 이야기합니다. 이 글에서는 평의 유래부터 변환 공식, 아파트 평수별 실면적, 전용면적과 공급면적의 차이까지 부동산 면적에 대한 모든 것을 정리합니다." },
+          { type: "heading", text: "평(坪)의 역사와 유래" },
+          { type: "paragraph", text: "평은 일본의 면적 단위 '쓰보(坪)'에서 유래했습니다. 일제강점기에 도입되어 한국에서 100년 넘게 사용되고 있습니다. 원래 가로 6자(약 1.818m) × 세로 6자(약 1.818m) = 약 3.3058㎡의 면적입니다. 다다미(畳) 2장의 크기에 해당합니다." },
+          { type: "callout", text: "핵심 공식: 1평 = 3.30579㎡ = 35.58 sq ft. 변환: 평 × 3.3058 = ㎡, ㎡ ÷ 3.3058 = 평." },
+          { type: "cta", tool: "area-converter", toolName: "평수 계산기" },
+          { type: "heading", text: "주요 아파트 평수별 면적" },
+          { type: "paragraph", text: "한국 아파트는 보통 공급면적 기준으로 평수를 표현합니다. 자주 사용하는 평수:" },
+          { type: "list", items: [
+            "18평 (전용 59㎡): 원룸 또는 소형 1~2룸. 1인 가구, 신혼부부에 적합.",
+            "24평 (전용 79㎡): 2~3룸. 소형 가족용. '국민평수'라 불리는 대중적 크기.",
+            "32평 (전용 106㎡): 3~4룸. 중형 가족 아파트. 가장 거래가 활발한 크기.",
+            "34평 (전용 112㎡): 32평과 비슷하지만 약간 더 넓은 공간.",
+            "40평 (전용 132㎡): 대형 4룸. 프리미엄 가족 아파트.",
+            "50평 이상 (전용 165㎡+): 초대형 또는 펜트하우스."
+          ] },
+          { type: "heading", text: "전용면적 vs 공급면적" },
+          { type: "paragraph", text: "아파트 면적에는 여러 종류가 있어 혼동하기 쉽습니다. 정확한 이해가 필요합니다:" },
+          { type: "list", items: [
+            "전용면적: 실제 거주 공간(방, 거실, 주방, 화장실)의 면적. 내가 사용할 수 있는 공간.",
+            "공급면적: 전용면적 + 주거공용면적(복도, 계단, 엘리베이터 홀).",
+            "계약면적: 공급면적 + 기타공용면적(주차장, 관리사무소). 가장 큰 숫자.",
+            "전용률: 전용면적 ÷ 공급면적, 보통 70~85%. 높을수록 실제 사용 공간이 넓음."
+          ] },
+          { type: "paragraph", text: "아파트를 비교할 때는 반드시 전용면적을 기준으로 비교해야 합니다. 같은 '34평'이라도 단지마다 전용면적이 다를 수 있습니다. 신축 아파트가 구축보다 전용률이 높은 경향이 있습니다." },
+          { type: "heading", text: "2007년 이후 공식 제곱미터 표기" },
+          { type: "paragraph", text: "2007년부터 부동산 거래 시 공식 면적 단위는 ㎡입니다. 분양 광고, 등기부등본, 계약서 모두 ㎡로 표기해야 합니다. 하지만 실생활에서는 여전히 평이 주로 사용되며, 부동산 중개인과의 대화나 일상 대화에서도 평이 더 직관적입니다. 분양 광고에서 '전용 84㎡'라고 적힌 것이 실제로는 '25평형'이라고 불립니다." },
+          { type: "embed", tool: "area-converter" },
+          { type: "faq", faqItems: [
+            { question: "왜 아직도 평을 사용하나요?", answer: "평은 100년 넘게 사용된 단위로 한국인의 공간 감각에 깊이 자리잡고 있습니다. '30평은 가족 아파트, 60평은 넓은 집'이라는 직관적 이해가 있어 공식적으로 ㎡를 사용해도 문화적으로 대체하기 어렵습니다." },
+            { question: "분양 광고의 면적 표기는 어떻게 읽나요?", answer: "'전용 84㎡'에서 84㎡ ÷ 3.3058 = 약 25.4평이 실제 거주 공간입니다. 공급면적은 이보다 크며 보통 '34평형'이라고 부릅니다. 전용면적으로 비교하는 것이 정확합니다." },
+            { question: "전용률이 좋은 아파트는?", answer: "전용률 75~80%가 일반적이며, 80% 이상이면 우수합니다. 판상형 아파트가 타워형보다 전용률이 높은 경향이 있습니다. 타워형은 엘리베이터 로비 등 공용면적이 크기 때문입니다." },
+            { question: "단독주택과 아파트의 평수 차이는?", answer: "단독주택의 평수는 보통 대지(토지) 면적을 말합니다. '50평 주택'이면 토지가 50평(165㎡)이고 건물 면적은 이보다 작습니다. 아파트는 주거 공간(공급면적)을 기준으로 합니다." }
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "area-converter", name: { en: "Area Converter", ko: "평수 계산기" } },
+      { slug: "unit-converter", name: { en: "Unit Converter", ko: "단위 변환기" } },
+    ],
+    relatedPosts: ["rent-conversion-guide", "unit-converter-guide", "salary-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

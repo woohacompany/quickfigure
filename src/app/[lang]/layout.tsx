@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/dictionaries";
+import { TOOL_SLUGS } from "@/lib/tools";
+import { blogPosts } from "@/lib/blog";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -74,11 +76,11 @@ export default async function LangLayout({
         <div className="max-w-5xl mx-auto px-4 py-10">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div>
-              <p className="text-2xl font-bold">{t.trustSection.toolsCount}</p>
+              <p className="text-2xl font-bold">{TOOL_SLUGS.length}+</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.tools}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold">{t.trustSection.blogCount}</p>
+              <p className="text-2xl font-bold">{blogPosts.length}+</p>
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.blog}</p>
             </div>
             <div>

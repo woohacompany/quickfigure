@@ -10,6 +10,45 @@ import EmbedCodeButton from "@/components/EmbedCodeButton";
 import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
+function calculateKoreanSalary(annual: number, dep: number, nonTaxableMonthly: number, includeSeverance: boolean) {
+  const effectiveAnnual = includeSeverance ? annual * 12 / 13 : annual;
+  const monthly = effectiveAnnual / 12;
+  const taxableMonthly = Math.max(monthly - nonTaxableMonthly, 0);
+
+  const nationalPension = Math.min(taxableMonthly * 0.045, 248850);
+  const healthInsurance = taxableMonthly * 0.03545;
+  const longTermCare = healthInsurance * 0.1295;
+  const employmentInsurance = taxableMonthly * 0.009;
+
+  let taxBase = effectiveAnnual - (nonTaxableMonthly * 12) - (effectiveAnnual * 0.15) - (1500000 * dep);
+  if (taxBase < 0) taxBase = 0;
+
+  let annualTax = 0;
+  if (taxBase <= 14000000) annualTax = taxBase * 0.06;
+  else if (taxBase <= 50000000) annualTax = 840000 + (taxBase - 14000000) * 0.15;
+  else if (taxBase <= 88000000) annualTax = 6240000 + (taxBase - 50000000) * 0.24;
+  else if (taxBase <= 150000000) annualTax = 15360000 + (taxBase - 88000000) * 0.35;
+  else if (taxBase <= 300000000) annualTax = 37060000 + (taxBase - 150000000) * 0.38;
+  else if (taxBase <= 500000000) annualTax = 94060000 + (taxBase - 300000000) * 0.40;
+  else if (taxBase <= 1000000000) annualTax = 174060000 + (taxBase - 500000000) * 0.42;
+  else annualTax = 384060000 + (taxBase - 1000000000) * 0.45;
+
+  const monthlyIncomeTax = annualTax / 12;
+  const localIncomeTax = monthlyIncomeTax * 0.1;
+
+  const totalDeductions = nationalPension + healthInsurance + longTermCare + employmentInsurance + monthlyIncomeTax + localIncomeTax;
+  const netMonthly = monthly - totalDeductions;
+
+  return {
+    grossMonthly: monthly,
+    totalDeductions,
+    netMonthly,
+    breakdown: { nationalPension, healthInsurance, longTermCare, employmentInsurance, monthlyIncomeTax, localIncomeTax },
+  };
+}
+
+const SALARY_TABLE_AMOUNTS = [20000000, 25000000, 30000000, 35000000, 40000000, 45000000, 50000000, 55000000, 60000000, 65000000, 70000000, 75000000, 80000000, 90000000, 100000000];
+
 export default function SalaryCalculatorPage({
   params,
 }: {
@@ -28,6 +67,8 @@ export default function SalaryCalculatorPage({
 
   const [salary, setSalary] = useState("");
   const [dependents, setDependents] = useState("1");
+  const [nonTaxable, setNonTaxable] = useState("200000");
+  const [includeSeverance, setIncludeSeverance] = useState(false);
   const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     grossMonthly: number;
@@ -41,43 +82,21 @@ export default function SalaryCalculatorPage({
     if (annual <= 0) return;
 
     if (locale === "ko") {
-      const monthly = annual / 12;
-      const nationalPension = Math.min(monthly * 0.045, 248850);
-      const healthInsurance = monthly * 0.03545;
-      const longTermCare = healthInsurance * 0.1295;
-      const employmentInsurance = monthly * 0.009;
-
       const dep = parseInt(dependents) || 1;
-      let taxBase = annual - (annual * 0.15) - (1500000 * dep);
-      if (taxBase < 0) taxBase = 0;
-
-      let annualTax = 0;
-      if (taxBase <= 14000000) annualTax = taxBase * 0.06;
-      else if (taxBase <= 50000000) annualTax = 840000 + (taxBase - 14000000) * 0.15;
-      else if (taxBase <= 88000000) annualTax = 6240000 + (taxBase - 50000000) * 0.24;
-      else if (taxBase <= 150000000) annualTax = 15360000 + (taxBase - 88000000) * 0.35;
-      else if (taxBase <= 300000000) annualTax = 37060000 + (taxBase - 150000000) * 0.38;
-      else if (taxBase <= 500000000) annualTax = 94060000 + (taxBase - 300000000) * 0.40;
-      else if (taxBase <= 1000000000) annualTax = 174060000 + (taxBase - 500000000) * 0.42;
-      else annualTax = 384060000 + (taxBase - 1000000000) * 0.45;
-
-      const monthlyIncomeTax = annualTax / 12;
-      const localIncomeTax = monthlyIncomeTax * 0.1;
-
-      const totalDeductions = nationalPension + healthInsurance + longTermCare + employmentInsurance + monthlyIncomeTax + localIncomeTax;
-      const netMonthly = monthly - totalDeductions;
+      const nonTax = parseFloat(nonTaxable) || 0;
+      const calc = calculateKoreanSalary(annual, dep, nonTax, includeSeverance);
 
       setResult({
-        grossMonthly: monthly,
-        totalDeductions,
-        netMonthly,
+        grossMonthly: calc.grossMonthly,
+        totalDeductions: calc.totalDeductions,
+        netMonthly: calc.netMonthly,
         breakdown: [
-          { label: t.nationalPension, amount: nationalPension },
-          { label: t.healthInsurance, amount: healthInsurance },
-          { label: t.longTermCare, amount: longTermCare },
-          { label: t.employmentInsurance, amount: employmentInsurance },
-          { label: t.incomeTax, amount: monthlyIncomeTax },
-          { label: t.localIncomeTax, amount: localIncomeTax },
+          { label: t.nationalPension, amount: calc.breakdown.nationalPension },
+          { label: t.healthInsurance, amount: calc.breakdown.healthInsurance },
+          { label: t.longTermCare, amount: calc.breakdown.longTermCare },
+          { label: t.employmentInsurance, amount: calc.breakdown.employmentInsurance },
+          { label: t.incomeTax, amount: calc.breakdown.monthlyIncomeTax },
+          { label: t.localIncomeTax, amount: calc.breakdown.localIncomeTax },
         ],
       });
     } else {
@@ -156,20 +175,63 @@ export default function SalaryCalculatorPage({
         </div>
 
         {locale === "ko" && (
-          <div>
-            <label className="text-sm font-medium block mb-2">{t.dependents}</label>
-            <select
-              value={dependents}
-              onChange={(e) => setDependents(e.target.value)}
-              className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="1">1{t.person}</option>
-              <option value="2">2{t.person}</option>
-              <option value="3">3{t.person}</option>
-              <option value="4">4{t.person}</option>
-              <option value="5">5{t.person}</option>
-            </select>
-          </div>
+          <>
+            <div>
+              <label className="text-sm font-medium block mb-2">{t.dependents}</label>
+              <select
+                value={dependents}
+                onChange={(e) => setDependents(e.target.value)}
+                className="w-full p-3 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="1">1{t.person}</option>
+                <option value="2">2{t.person}</option>
+                <option value="3">3{t.person}</option>
+                <option value="4">4{t.person}</option>
+                <option value="5">5{t.person}</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium block mb-2">{t.nonTaxable}</label>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm">₩</span>
+                <input
+                  type="number"
+                  value={nonTaxable}
+                  onChange={(e) => setNonTaxable(e.target.value)}
+                  placeholder="200,000"
+                  className="w-full p-3 pl-8 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <p className="text-xs text-neutral-400 mt-1">{t.nonTaxableHint}</p>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium block mb-2">{t.includeSeverance}</label>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setIncludeSeverance(false)}
+                  className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+                    !includeSeverance
+                      ? "bg-blue-600 text-white"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                  }`}
+                >
+                  {t.severanceSeparate}
+                </button>
+                <button
+                  onClick={() => setIncludeSeverance(true)}
+                  className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors cursor-pointer ${
+                    includeSeverance
+                      ? "bg-blue-600 text-white"
+                      : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                  }`}
+                >
+                  {t.severanceIncluded}
+                </button>
+              </div>
+            </div>
+          </>
         )}
 
         <button
@@ -232,6 +294,53 @@ export default function SalaryCalculatorPage({
         )}
       </div>
 
+      {/* Salary Reference Table (Korean only) */}
+      {locale === "ko" && (
+        <section className="mt-12">
+          <h2 className="text-xl font-semibold mb-4">{t.salaryTable}</h2>
+          <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-neutral-50 dark:bg-neutral-800/50">
+                  <th className="text-left p-3 font-medium">{t.salaryTableAnnual}</th>
+                  <th className="text-right p-3 font-medium">{t.salaryTableDeductions}</th>
+                  <th className="text-right p-3 font-medium">{t.salaryTableNet}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SALARY_TABLE_AMOUNTS.map((amount) => {
+                  const calc = calculateKoreanSalary(amount, 1, 200000, false);
+                  return (
+                    <tr
+                      key={amount}
+                      className="border-t border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800/30 cursor-pointer"
+                      onClick={() => {
+                        setSalary(String(amount));
+                        setDependents("1");
+                        setNonTaxable("200000");
+                        setIncludeSeverance(false);
+                        calculate();
+                      }}
+                    >
+                      <td className="p-3">{(amount / 10000).toLocaleString("ko-KR")}{locale === "ko" ? "만원" : ""}</td>
+                      <td className="p-3 text-right text-red-600 dark:text-red-400">
+                        {Math.round(calc.totalDeductions).toLocaleString("ko-KR")}원
+                      </td>
+                      <td className="p-3 text-right text-green-600 dark:text-green-400 font-medium">
+                        {Math.round(calc.netMonthly).toLocaleString("ko-KR")}원
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-neutral-400 mt-2">
+            * {locale === "ko" ? "부양가족 1명, 비과세 20만원, 퇴직금 별도 기준" : "Based on 1 dependent, ₩200,000 non-taxable, severance separate"}
+          </p>
+        </section>
+      )}
+
       <section className="mt-12">
         <h2 className="text-xl font-semibold mb-4">{t.howToUseTitle}</h2>
         <ol className="list-decimal list-inside space-y-2 text-neutral-600 dark:text-neutral-400">
@@ -284,14 +393,14 @@ export default function SalaryCalculatorPage({
             </p>
           </Link>
           <Link
-            href={`/${lang}/tools/loan-calculator`}
+            href={`/${lang}/tools/severance-calculator`}
             className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-4 hover:border-neutral-400 dark:hover:border-neutral-500 transition-colors"
           >
             <h3 className="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              {dict.home.loanCalc}
+              {dict.home.severanceCalc}
             </h3>
             <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-              {dict.home.loanCalcDesc}
+              {dict.home.severanceCalcDesc}
             </p>
           </Link>
         </div>

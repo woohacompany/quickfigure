@@ -58,6 +58,9 @@ export default async function HomePage({
     { name: t.home.freelancerTax, description: t.home.freelancerTaxDesc, href: `/${lang}/tools/freelancer-tax-calculator` },
     { name: t.home.salaryCalc, description: t.home.salaryCalcDesc, href: `/${lang}/tools/salary-calculator` },
     { name: t.home.loanCalc, description: t.home.loanCalcDesc, href: `/${lang}/tools/loan-calculator` },
+    { name: t.home.vatCalc, description: t.home.vatCalcDesc, href: `/${lang}/tools/vat-calculator` },
+    { name: t.home.severanceCalc, description: t.home.severanceCalcDesc, href: `/${lang}/tools/severance-calculator` },
+    { name: t.home.rentConversionCalc, description: t.home.rentConversionCalcDesc, href: `/${lang}/tools/rent-conversion-calculator` },
   ];
 
   const healthTools = [
@@ -72,6 +75,7 @@ export default async function HomePage({
     { name: t.home.colorPicker, description: t.home.colorPickerDesc, href: `/${lang}/tools/color-picker` },
     { name: t.home.unitConverter, description: t.home.unitConverterDesc, href: `/${lang}/tools/unit-converter` },
     { name: t.home.percentageCalc, description: t.home.percentageCalcDesc, href: `/${lang}/tools/percentage-calculator` },
+    { name: t.home.areaConverter, description: t.home.areaConverterDesc, href: `/${lang}/tools/area-converter` },
   ];
 
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
