@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
 
 type UnitCategory = "length" | "weight" | "temperature" | "area" | "volume";
 
@@ -268,6 +270,19 @@ export default function UnitConverterPage({
           </Link>
         </div>
       </section>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="unit-converter"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="unit-converter"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

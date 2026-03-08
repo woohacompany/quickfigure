@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function FreelancerTaxPage({
@@ -25,6 +28,7 @@ export default function FreelancerTaxPage({
 
   const [income, setIncome] = useState("");
   const [expenses, setExpenses] = useState("");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     grossIncome: number;
     withholdingTax: number;
@@ -155,37 +159,40 @@ export default function FreelancerTaxPage({
         </button>
 
         {result && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.withholdingTax)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.withholdingTax)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.withholdingTax}</p>
+          <>
+            <div ref={resultRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.withholdingTax)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.withholdingTax)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.withholdingTax}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.netIncome)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.netIncome)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.netIncome}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.taxableIncome)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.taxableIncome)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.taxableIncome}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className={`text-2xl font-semibold tracking-tight ${locale === "ko" && result.estimatedRefund > 0 ? "text-green-600 dark:text-green-400" : locale === "ko" && result.estimatedRefund < 0 ? "text-red-600 dark:text-red-400" : ""}`}>
+                  {locale === "ko" && result.estimatedRefund > 0 ? "+" : ""}
+                  {fmt(Math.abs(result.estimatedRefund))}
+                </p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(Math.abs(result.estimatedRefund))}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                  {locale === "ko"
+                    ? result.estimatedRefund >= 0
+                      ? t.estimatedRefund
+                      : t.additionalTax
+                    : t.selfEmploymentTax}
+                </p>
+              </div>
             </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.netIncome)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.netIncome)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.netIncome}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.taxableIncome)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.taxableIncome)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.taxableIncome}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className={`text-2xl font-semibold tracking-tight ${locale === "ko" && result.estimatedRefund > 0 ? "text-green-600 dark:text-green-400" : locale === "ko" && result.estimatedRefund < 0 ? "text-red-600 dark:text-red-400" : ""}`}>
-                {locale === "ko" && result.estimatedRefund > 0 ? "+" : ""}
-                {fmt(Math.abs(result.estimatedRefund))}
-              </p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(Math.abs(result.estimatedRefund))}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-                {locale === "ko"
-                  ? result.estimatedRefund >= 0
-                    ? t.estimatedRefund
-                    : t.additionalTax
-                  : t.selfEmploymentTax}
-              </p>
-            </div>
-          </div>
+            <SaveResultImage targetRef={resultRef} toolName={t.title} slug="freelancer-tax-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
 
@@ -253,6 +260,19 @@ export default function FreelancerTaxPage({
           </Link>
         </div>
       </section>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="freelancer-tax-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="freelancer-tax-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

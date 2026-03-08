@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function SalaryCalculatorPage({
@@ -25,6 +28,7 @@ export default function SalaryCalculatorPage({
 
   const [salary, setSalary] = useState("");
   const [dependents, setDependents] = useState("1");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     grossMonthly: number;
     totalDeductions: number;
@@ -176,7 +180,8 @@ export default function SalaryCalculatorPage({
         </button>
 
         {result && (
-          <div className="space-y-4 mt-4">
+          <>
+          <div ref={resultRef} className="space-y-4 mt-4">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
                 <p className="text-2xl font-semibold tracking-tight">{fmt(result.grossMonthly)}</p>
@@ -222,6 +227,8 @@ export default function SalaryCalculatorPage({
               </table>
             </div>
           </div>
+          <SaveResultImage targetRef={resultRef} toolName={t.title} slug="salary-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
 
@@ -289,6 +296,19 @@ export default function SalaryCalculatorPage({
           </Link>
         </div>
       </section>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="salary-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="salary-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

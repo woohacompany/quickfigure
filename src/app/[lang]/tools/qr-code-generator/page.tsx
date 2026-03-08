@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
 import QRCode from "qrcode";
 
 export default function QRCodeGeneratorPage({
@@ -171,6 +173,19 @@ export default function QRCodeGeneratorPage({
       </div>
 
       <canvas ref={canvasRef} className="hidden" />
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="qr-code-generator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="qr-code-generator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

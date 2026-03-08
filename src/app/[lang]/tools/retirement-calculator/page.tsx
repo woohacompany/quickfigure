@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function RetirementCalculatorPage({
@@ -28,6 +31,7 @@ export default function RetirementCalculatorPage({
   const [currentSavings, setCurrentSavings] = useState("");
   const [monthlyContribution, setMonthlyContribution] = useState("");
   const [annualReturn, setAnnualReturn] = useState("");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     projectedSavings: number;
     totalContributed: number;
@@ -162,31 +166,47 @@ export default function RetirementCalculatorPage({
         </button>
 
         {result && (
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.projectedSavings)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.projectedSavings)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.projectedSavings}</p>
+          <>
+            <div ref={resultRef} className="grid grid-cols-2 gap-4 mt-4">
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.projectedSavings)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.projectedSavings)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.projectedSavings}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalContributed)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalContributed)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalContributed}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.investmentGrowth)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.investmentGrowth)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalGrowth}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">
+                  {result.yearsToRetire}
+                </p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.yearsToRetire}</p>
+              </div>
             </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalContributed)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalContributed)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalContributed}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.investmentGrowth)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.investmentGrowth)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalGrowth}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">
-                {result.yearsToRetire}
-              </p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.yearsToRetire}</p>
-            </div>
-          </div>
+            <SaveResultImage targetRef={resultRef} toolName={t.title} slug="retirement-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="retirement-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="retirement-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

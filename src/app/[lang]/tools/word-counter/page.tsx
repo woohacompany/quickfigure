@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
 
 function StatCard({ label, value }: { label: string; value: string | number }) {
   return (
@@ -80,6 +82,19 @@ export default function WordCounterPage({
 
       {/* Ad placeholder - bottom */}
       {/* <div className="mt-8"><ins className="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="XXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div> */}
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="word-counter"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="word-counter"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

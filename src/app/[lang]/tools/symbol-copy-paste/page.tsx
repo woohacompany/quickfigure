@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
 
 const SYMBOL_CATEGORIES = {
   hearts: ["\u2665", "\u2666", "\u2764", "\uD83D\uDC97", "\uD83D\uDC98", "\uD83D\uDC99", "\uD83D\uDC9A", "\uD83D\uDC9B", "\uD83D\uDC9C", "\uD83D\uDC9D", "\uD83D\uDC9E", "\uD83D\uDC9F", "\uD83D\uDC93", "\uD83D\uDC94", "\uD83D\uDC95", "\uD83D\uDC96", "\u2763", "\u2661", "\u2765", "\u2766"],
@@ -118,6 +120,19 @@ export default function SymbolCopyPastePage({
           </div>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="symbol-copy-paste"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="symbol-copy-paste"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

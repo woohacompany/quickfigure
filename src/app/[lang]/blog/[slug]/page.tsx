@@ -240,6 +240,34 @@ export default async function BlogPostPage({
           {/* Ad placeholder - mid content */}
           {/* <div className="my-8"><ins className="adsbygoogle" data-ad-client="ca-pub-XXXXXXX" data-ad-slot="XXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div> */}
 
+          {/* Related Tools CTA */}
+          {post.relatedTools.length > 0 && (
+            <section className="mt-10 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50/50 dark:bg-blue-950/20 p-6">
+              <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                <span className="text-blue-600 dark:text-blue-400">&#9654;</span>
+                {t.toolCta}
+              </h2>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {post.relatedTools.map((tool) => (
+                  <Link
+                    key={tool.slug}
+                    href={`/${lang}/tools/${tool.slug}`}
+                    className="group flex items-center justify-between gap-3 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-sm transition-all"
+                  >
+                    <div className="min-w-0">
+                      <p className="font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {tool.name[locale]}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-xs font-medium px-3 py-1.5 rounded-md bg-blue-600 text-white group-hover:bg-blue-700 transition-colors">
+                      {t.toolCtaButton} &rarr;
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
             <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

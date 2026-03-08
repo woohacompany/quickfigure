@@ -5,6 +5,8 @@ import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
 
 const BMI_CATEGORIES = [
   { key: "underweight" as const, rangeKey: "underweightRange" as const, min: 0, max: 18.5, color: "bg-blue-100 dark:bg-blue-900/40 border-blue-300 dark:border-blue-700" },
@@ -125,6 +127,19 @@ export default function BmiCalculatorPage({
           </div>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="bmi-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="bmi-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

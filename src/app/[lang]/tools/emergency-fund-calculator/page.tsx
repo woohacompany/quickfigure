@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 const TIER_KEYS = ["threeMonths", "sixMonths", "nineMonths", "twelveMonths"] as const;
@@ -28,6 +31,7 @@ export default function EmergencyFundPage({
 
   const [monthlyExpenses, setMonthlyExpenses] = useState("");
   const [currentSavings, setCurrentSavings] = useState("");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [calculated, setCalculated] = useState(false);
 
   const expenses = parseFloat(monthlyExpenses) || 0;
@@ -99,34 +103,50 @@ export default function EmergencyFundPage({
         </button>
 
         {calculated && expenses > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            {TIER_MONTHS.map((months, i) => {
-              const target = expenses * months;
-              const needed = Math.max(0, target - savings);
-              return (
-                <div
-                  key={months}
-                  className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4"
-                >
-                  <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                    {t[TIER_KEYS[i]]}
-                  </p>
-                  <p className="text-lg font-semibold mt-1">
-                    {t.recommendedFund}
-                  </p>
-                  <p className="text-2xl font-semibold tracking-tight">{fmt(target)}</p>
-                  <p className="text-xs text-neutral-400 mt-0.5">{unitHint(target)}</p>
-                  {needed > 0 && (
-                    <p className="text-sm mt-2 text-red-600 dark:text-red-400">
-                      {t.amountNeeded}: {fmt(needed)} ({unitHint(needed)})
+          <>
+            <div ref={resultRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              {TIER_MONTHS.map((months, i) => {
+                const target = expenses * months;
+                const needed = Math.max(0, target - savings);
+                return (
+                  <div
+                    key={months}
+                    className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4"
+                  >
+                    <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                      {t[TIER_KEYS[i]]}
                     </p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                    <p className="text-lg font-semibold mt-1">
+                      {t.recommendedFund}
+                    </p>
+                    <p className="text-2xl font-semibold tracking-tight">{fmt(target)}</p>
+                    <p className="text-xs text-neutral-400 mt-0.5">{unitHint(target)}</p>
+                    {needed > 0 && (
+                      <p className="text-sm mt-2 text-red-600 dark:text-red-400">
+                        {t.amountNeeded}: {fmt(needed)} ({unitHint(needed)})
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <SaveResultImage targetRef={resultRef} toolName={t.title} slug="emergency-fund-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="emergency-fund-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="emergency-fund-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function CompoundInterestPage({
@@ -28,6 +31,7 @@ export default function CompoundInterestPage({
   const [rate, setRate] = useState("");
   const [years, setYears] = useState("");
   const [frequency, setFrequency] = useState("monthly");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     futureValue: number;
     totalInterest: number;
@@ -170,25 +174,41 @@ export default function CompoundInterestPage({
         </button>
 
         {result && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.futureValue)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.futureValue)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.result}</p>
+          <>
+            <div ref={resultRef} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.futureValue)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.futureValue)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.result}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalInterest)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalDeposited)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalDeposited)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalDeposited}</p>
+              </div>
             </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalInterest)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalDeposited)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalDeposited)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalDeposited}</p>
-            </div>
-          </div>
+            <SaveResultImage targetRef={resultRef} toolName={t.title} slug="compound-interest-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="compound-interest-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="compound-interest-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">

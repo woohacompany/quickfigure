@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
 import { use } from "react";
+import ShareButtons from "@/components/ShareButtons";
+import EmbedCodeButton from "@/components/EmbedCodeButton";
+import SaveResultImage from "@/components/SaveResultImage";
 import { type Currency, getCurrencySymbol, formatCurrency, formatKRW, formatUSD } from "@/lib/currencyFormat";
 
 export default function MortgageCalculatorPage({
@@ -27,6 +30,7 @@ export default function MortgageCalculatorPage({
   const [downPayment, setDownPayment] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [loanTerm, setLoanTerm] = useState("");
+  const resultRef = useRef<HTMLDivElement>(null);
   const [result, setResult] = useState<{
     monthlyPayment: number;
     totalPayment: number;
@@ -149,30 +153,46 @@ export default function MortgageCalculatorPage({
         </button>
 
         {result && (
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.monthlyPayment)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.monthlyPayment)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.monthlyPayment}</p>
+          <>
+            <div ref={resultRef} className="grid grid-cols-2 gap-4 mt-4">
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.monthlyPayment)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.monthlyPayment)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.monthlyPayment}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.loanAmount)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.loanAmount)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.loanAmount}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalPayment)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalPayment)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalPayment}</p>
+              </div>
+              <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalInterest)}</p>
+                <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
+              </div>
             </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.loanAmount)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.loanAmount)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.loanAmount}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalPayment)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalPayment)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalPayment}</p>
-            </div>
-            <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-              <p className="text-2xl font-semibold tracking-tight">{fmt(result.totalInterest)}</p>
-              <p className="text-xs text-neutral-400 mt-0.5">{unitHint(result.totalInterest)}</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.totalInterest}</p>
-            </div>
-          </div>
+            <SaveResultImage targetRef={resultRef} toolName={t.title} slug="mortgage-calculator" labels={dict.saveImage} />
+          </>
         )}
       </div>
+
+      <ShareButtons
+        title={t.title}
+        description={t.description}
+        lang={lang}
+        slug="mortgage-calculator"
+        labels={dict.share}
+      />
+      <EmbedCodeButton
+        slug="mortgage-calculator"
+        lang={lang}
+        labels={dict.embed}
+      />
 
       {relatedPosts.length > 0 && (
         <section className="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-700">
