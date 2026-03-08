@@ -67,6 +67,14 @@ export default async function HomePage({
     { name: t.home.bmiCalc, description: t.home.bmiCalcDesc, href: `/${lang}/tools/bmi-calculator` },
     { name: t.home.calorieCalc, description: t.home.calorieCalcDesc, href: `/${lang}/tools/calorie-calculator` },
     { name: t.home.ageCalc, description: t.home.ageCalcDesc, href: `/${lang}/tools/age-calculator` },
+    { name: t.home.sleepCalc, description: t.home.sleepCalcDesc, href: `/${lang}/tools/sleep-calculator` },
+    { name: t.home.alcoholCalc, description: t.home.alcoholCalcDesc, href: `/${lang}/tools/alcohol-calculator` },
+  ];
+
+  const dateTools = [
+    { name: t.home.ddayCalc, description: t.home.ddayCalcDesc, href: `/${lang}/tools/dday-calculator` },
+    { name: t.home.dateCalc, description: t.home.dateCalcDesc, href: `/${lang}/tools/date-calculator` },
+    { name: t.home.gpaCalc, description: t.home.gpaCalcDesc, href: `/${lang}/tools/gpa-calculator` },
   ];
 
   const utilityTools = [
@@ -141,6 +149,12 @@ export default async function HomePage({
         <section>
           <h2 className="text-xl font-semibold mb-4">{t.home.healthTools}</h2>
           <ToolGrid tools={healthTools} />
+        </section>
+
+        {/* Date & Lifestyle Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.dateTools}</h2>
+          <ToolGrid tools={dateTools} />
         </section>
 
         {/* Utility Tools */}

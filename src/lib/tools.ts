@@ -24,4 +24,9 @@ export const TOOL_SLUGS = [
   "severance-calculator",
   "rent-conversion-calculator",
   "area-converter",
+  "dday-calculator",
+  "gpa-calculator",
+  "sleep-calculator",
+  "alcohol-calculator",
+  "date-calculator",
 ] as const;
