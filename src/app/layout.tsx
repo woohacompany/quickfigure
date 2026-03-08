@@ -37,17 +37,38 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9585100805467973" crossOrigin="anonymous"></script>
-        <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nk" crossOrigin="anonymous" async></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.__KAKAO_INIT__ = function() {
-                if (window.Kakao && !window.Kakao.isInitialized() && "${process.env.NEXT_PUBLIC_KAKAO_APP_KEY || ""}") {
-                  window.Kakao.init("${process.env.NEXT_PUBLIC_KAKAO_APP_KEY || ""}");
-                }
-              };
-              if (document.readyState === "complete") window.__KAKAO_INIT__();
-              else window.addEventListener("load", window.__KAKAO_INIT__);
+              (function() {
+                var APP_KEY = "${process.env.NEXT_PUBLIC_KAKAO_APP_KEY || ""}";
+                window.__KAKAO_APP_KEY__ = APP_KEY;
+                window.__KAKAO_READY__ = false;
+
+                window.__KAKAO_INIT__ = function() {
+                  console.log("[Kakao] init called, key exists:", !!APP_KEY, "SDK loaded:", !!window.Kakao);
+                  if (!APP_KEY) { console.warn("[Kakao] NEXT_PUBLIC_KAKAO_APP_KEY is empty"); return false; }
+                  if (!window.Kakao) { console.warn("[Kakao] SDK not loaded yet"); return false; }
+                  if (window.Kakao.isInitialized()) { console.log("[Kakao] Already initialized"); window.__KAKAO_READY__ = true; return true; }
+                  try {
+                    window.Kakao.init(APP_KEY);
+                    window.__KAKAO_READY__ = window.Kakao.isInitialized();
+                    console.log("[Kakao] init success:", window.__KAKAO_READY__);
+                  } catch(e) { console.error("[Kakao] init error:", e); }
+                  return window.__KAKAO_READY__;
+                };
+
+                var s = document.createElement("script");
+                s.src = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js";
+                s.crossOrigin = "anonymous";
+                s.async = true;
+                s.onload = function() {
+                  console.log("[Kakao] SDK script loaded");
+                  window.__KAKAO_INIT__();
+                };
+                s.onerror = function() { console.error("[Kakao] SDK script failed to load"); };
+                document.head.appendChild(s);
+              })();
             `,
           }}
         />

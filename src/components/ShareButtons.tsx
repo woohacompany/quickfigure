@@ -36,12 +36,39 @@ export default function ShareButtons({ title, description, lang, slug, labels }:
         isInitialized: () => boolean;
         Share: { sendDefault: (config: Record<string, unknown>) => void };
       };
-      __KAKAO_INIT__?: () => void;
+      __KAKAO_INIT__?: () => boolean;
+      __KAKAO_READY__?: boolean;
+      __KAKAO_APP_KEY__?: string;
     };
-    // Try initializing if not yet done
-    if (w.__KAKAO_INIT__) w.__KAKAO_INIT__();
 
-    if (w.Kakao && w.Kakao.isInitialized()) {
+    console.log("[Kakao Share] clicked", {
+      sdkExists: !!w.Kakao,
+      ready: w.__KAKAO_READY__,
+      keyExists: !!w.__KAKAO_APP_KEY__,
+      url,
+      ogImage,
+    });
+
+    // Try initializing if not yet done
+    if (!w.__KAKAO_READY__ && w.__KAKAO_INIT__) {
+      console.log("[Kakao Share] attempting late init...");
+      w.__KAKAO_INIT__();
+    }
+
+    if (!w.Kakao) {
+      console.error("[Kakao Share] SDK not available - script may have failed to load");
+      alert("카카오톡 SDK를 불러오지 못했습니다. 페이지를 새로고침해 주세요.");
+      return;
+    }
+
+    if (!w.Kakao.isInitialized()) {
+      console.error("[Kakao Share] SDK loaded but not initialized. Key:", w.__KAKAO_APP_KEY__ ? "set" : "MISSING");
+      alert("카카오톡 공유 초기화에 실패했습니다. 앱 키를 확인해 주세요.");
+      return;
+    }
+
+    try {
+      console.log("[Kakao Share] calling sendDefault...");
       w.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
@@ -57,6 +84,10 @@ export default function ShareButtons({ title, description, lang, slug, labels }:
           },
         ],
       });
+      console.log("[Kakao Share] sendDefault called successfully");
+    } catch (e) {
+      console.error("[Kakao Share] sendDefault error:", e);
+      alert("카카오톡 공유 중 오류가 발생했습니다.");
     }
   }
 
