@@ -38,6 +38,7 @@ export default async function HomePage({
   const textTools = [
     { name: t.home.wordCounter, description: t.home.wordCounterDesc, href: `/${lang}/tools/word-counter` },
     { name: t.home.caseConverter, description: t.home.caseConverterDesc, href: `/${lang}/tools/case-converter` },
+    { name: t.home.textDiff, description: t.home.textDiffDesc, href: `/${lang}/tools/text-diff` },
   ];
 
   const generatorTools = [
@@ -48,6 +49,7 @@ export default async function HomePage({
   const devTools = [
     { name: t.home.jsonFormatter, description: t.home.jsonFormatterDesc, href: `/${lang}/tools/json-formatter` },
     { name: t.home.base64, description: t.home.base64Desc, href: `/${lang}/tools/base64-encoder-decoder` },
+    { name: t.home.markdownEditor, description: t.home.markdownEditorDesc, href: `/${lang}/tools/markdown-editor` },
   ];
 
   const financeTools = [
@@ -61,6 +63,9 @@ export default async function HomePage({
     { name: t.home.vatCalc, description: t.home.vatCalcDesc, href: `/${lang}/tools/vat-calculator` },
     { name: t.home.severanceCalc, description: t.home.severanceCalcDesc, href: `/${lang}/tools/severance-calculator` },
     { name: t.home.rentConversionCalc, description: t.home.rentConversionCalcDesc, href: `/${lang}/tools/rent-conversion-calculator` },
+    { name: t.home.hourlyWageCalc, description: t.home.hourlyWageCalcDesc, href: `/${lang}/tools/hourly-wage-calculator` },
+    { name: t.home.discountCalc, description: t.home.discountCalcDesc, href: `/${lang}/tools/discount-calculator` },
+    { name: t.home.electricityCalc, description: t.home.electricityCalcDesc, href: `/${lang}/tools/electricity-calculator` },
   ];
 
   const healthTools = [
@@ -69,12 +74,14 @@ export default async function HomePage({
     { name: t.home.ageCalc, description: t.home.ageCalcDesc, href: `/${lang}/tools/age-calculator` },
     { name: t.home.sleepCalc, description: t.home.sleepCalcDesc, href: `/${lang}/tools/sleep-calculator` },
     { name: t.home.alcoholCalc, description: t.home.alcoholCalcDesc, href: `/${lang}/tools/alcohol-calculator` },
+    { name: t.home.bodyFatCalc, description: t.home.bodyFatCalcDesc, href: `/${lang}/tools/body-fat-calculator` },
   ];
 
   const dateTools = [
     { name: t.home.ddayCalc, description: t.home.ddayCalcDesc, href: `/${lang}/tools/dday-calculator` },
     { name: t.home.dateCalc, description: t.home.dateCalcDesc, href: `/${lang}/tools/date-calculator` },
     { name: t.home.gpaCalc, description: t.home.gpaCalcDesc, href: `/${lang}/tools/gpa-calculator` },
+    { name: t.home.timer, description: t.home.timerDesc, href: `/${lang}/tools/timer` },
   ];
 
   const utilityTools = [
@@ -84,6 +91,12 @@ export default async function HomePage({
     { name: t.home.unitConverter, description: t.home.unitConverterDesc, href: `/${lang}/tools/unit-converter` },
     { name: t.home.percentageCalc, description: t.home.percentageCalcDesc, href: `/${lang}/tools/percentage-calculator` },
     { name: t.home.areaConverter, description: t.home.areaConverterDesc, href: `/${lang}/tools/area-converter` },
+    { name: t.home.randomNumberGenerator, description: t.home.randomNumberGeneratorDesc, href: `/${lang}/tools/random-number-generator` },
+  ];
+
+  const imageTools = [
+    { name: t.home.imageResizer, description: t.home.imageResizerDesc, href: `/${lang}/tools/image-resizer` },
+    { name: t.home.pdfMerger, description: t.home.pdfMergerDesc, href: `/${lang}/tools/pdf-merger` },
   ];
 
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
@@ -161,6 +174,12 @@ export default async function HomePage({
         <section>
           <h2 className="text-xl font-semibold mb-4">{t.home.utilityTools}</h2>
           <ToolGrid tools={utilityTools} />
+        </section>
+
+        {/* Image & File Tools */}
+        <section>
+          <h2 className="text-xl font-semibold mb-4">{t.home.imageTools}</h2>
+          <ToolGrid tools={imageTools} />
         </section>
       </div>
 

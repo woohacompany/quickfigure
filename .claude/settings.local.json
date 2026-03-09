@@ -3,7 +3,14 @@
     "allow": [
       "Bash(npm ls:*)",
       "Bash(npm install:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(for dir in timer random-number-generator hourly-wage-calculator body-fat-calculator text-diff markdown-editor discount-calculator electricity-calculator image-resizer)",
+      "Bash(do echo \"=== $dir ===\")",
+      "Read(//c/Users/woose/OneDrive/바탕 화면/claude/01 도구형 웹사이트/quickfigure/src/app/[lang]/tools/**)",
+      "Bash(done)",
+      "Bash(npm run:*)"
     ]
   }
 }
