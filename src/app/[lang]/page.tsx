@@ -66,6 +66,11 @@ export default async function HomePage({
     { name: t.home.hourlyWageCalc, description: t.home.hourlyWageCalcDesc, href: `/${lang}/tools/hourly-wage-calculator` },
     { name: t.home.discountCalc, description: t.home.discountCalcDesc, href: `/${lang}/tools/discount-calculator` },
     { name: t.home.electricityCalc, description: t.home.electricityCalcDesc, href: `/${lang}/tools/electricity-calculator` },
+    { name: t.home.weeklyHolidayPayCalc, description: t.home.weeklyHolidayPayCalcDesc, href: `/${lang}/tools/weekly-holiday-pay-calculator` },
+    { name: t.home.annualLeaveCalc, description: t.home.annualLeaveCalcDesc, href: `/${lang}/tools/annual-leave-calculator` },
+    { name: t.home.unemploymentCalc, description: t.home.unemploymentCalcDesc, href: `/${lang}/tools/unemployment-calculator` },
+    { name: t.home.acquisitionTaxCalc, description: t.home.acquisitionTaxCalcDesc, href: `/${lang}/tools/acquisition-tax-calculator` },
+    { name: t.home.incomeTaxCalc, description: t.home.incomeTaxCalcDesc, href: `/${lang}/tools/income-tax-calculator` },
   ];
 
   const healthTools = [
@@ -97,6 +102,9 @@ export default async function HomePage({
   const imageTools = [
     { name: t.home.imageResizer, description: t.home.imageResizerDesc, href: `/${lang}/tools/image-resizer` },
     { name: t.home.pdfMerger, description: t.home.pdfMergerDesc, href: `/${lang}/tools/pdf-merger` },
+    { name: t.home.imageCompressor, description: t.home.imageCompressorDesc, href: `/${lang}/tools/image-compressor` },
+    { name: t.home.imageToPdf, description: t.home.imageToPdfDesc, href: `/${lang}/tools/image-to-pdf` },
+    { name: t.home.pdfSplitter, description: t.home.pdfSplitterDesc, href: `/${lang}/tools/pdf-splitter` },
   ];
 
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {
