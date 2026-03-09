@@ -13,7 +13,8 @@
       "Bash(npm run:*)",
       "Bash(for dir in weekly-holiday-pay-calculator annual-leave-calculator unemployment-calculator acquisition-tax-calculator income-tax-calculator image-compressor image-to-pdf pdf-splitter)",
       "Bash(for dir in weekly-holiday-pay-calculator annual-leave-calculator income-tax-calculator image-compressor image-to-pdf)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(mkdir:*)"
     ]
   }
 }

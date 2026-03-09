@@ -71,6 +71,9 @@ export default async function HomePage({
     { name: t.home.unemploymentCalc, description: t.home.unemploymentCalcDesc, href: `/${lang}/tools/unemployment-calculator` },
     { name: t.home.acquisitionTaxCalc, description: t.home.acquisitionTaxCalcDesc, href: `/${lang}/tools/acquisition-tax-calculator` },
     { name: t.home.incomeTaxCalc, description: t.home.incomeTaxCalcDesc, href: `/${lang}/tools/income-tax-calculator` },
+    { name: t.home.carTaxCalc, description: t.home.carTaxCalcDesc, href: `/${lang}/tools/car-tax-calculator` },
+    { name: t.home.capitalGainsTaxCalc, description: t.home.capitalGainsTaxCalcDesc, href: `/${lang}/tools/capital-gains-tax-calculator` },
+    { name: t.home.loanComparisonCalc, description: t.home.loanComparisonCalcDesc, href: `/${lang}/tools/loan-comparison-calculator` },
   ];
 
   const healthTools = [
@@ -105,6 +108,11 @@ export default async function HomePage({
     { name: t.home.imageCompressor, description: t.home.imageCompressorDesc, href: `/${lang}/tools/image-compressor` },
     { name: t.home.imageToPdf, description: t.home.imageToPdfDesc, href: `/${lang}/tools/image-to-pdf` },
     { name: t.home.pdfSplitter, description: t.home.pdfSplitterDesc, href: `/${lang}/tools/pdf-splitter` },
+    { name: t.home.pdfToWord, description: t.home.pdfToWordDesc, href: `/${lang}/tools/pdf-to-word` },
+    { name: t.home.wordToPdf, description: t.home.wordToPdfDesc, href: `/${lang}/tools/word-to-pdf` },
+    { name: t.home.pdfCompressor, description: t.home.pdfCompressorDesc, href: `/${lang}/tools/pdf-compressor` },
+    { name: t.home.pdfToJpg, description: t.home.pdfToJpgDesc, href: `/${lang}/tools/pdf-to-jpg` },
+    { name: t.home.imageConverter, description: t.home.imageConverterDesc, href: `/${lang}/tools/image-converter` },
   ];
 
   function ToolGrid({ tools }: { tools: { name: string; description: string; href: string }[] }) {

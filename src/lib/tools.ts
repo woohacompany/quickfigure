@@ -47,4 +47,12 @@ export const TOOL_SLUGS = [
   "image-compressor",
   "image-to-pdf",
   "pdf-splitter",
+  "pdf-to-word",
+  "word-to-pdf",
+  "pdf-compressor",
+  "pdf-to-jpg",
+  "image-converter",
+  "car-tax-calculator",
+  "capital-gains-tax-calculator",
+  "loan-comparison-calculator",
 ] as const;
