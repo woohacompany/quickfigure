@@ -74,6 +74,7 @@ export default async function HomePage({
     { name: t.home.carTaxCalc, description: t.home.carTaxCalcDesc, href: `/${lang}/tools/car-tax-calculator` },
     { name: t.home.capitalGainsTaxCalc, description: t.home.capitalGainsTaxCalcDesc, href: `/${lang}/tools/capital-gains-tax-calculator` },
     { name: t.home.loanComparisonCalc, description: t.home.loanComparisonCalcDesc, href: `/${lang}/tools/loan-comparison-calculator` },
+    { name: t.home.inheritanceTaxCalc, description: t.home.inheritanceTaxCalcDesc, href: `/${lang}/tools/inheritance-tax-calculator` },
   ];
 
   const healthTools = [
