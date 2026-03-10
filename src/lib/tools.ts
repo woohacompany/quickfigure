@@ -56,4 +56,5 @@ export const TOOL_SLUGS = [
   "capital-gains-tax-calculator",
   "loan-comparison-calculator",
   "inheritance-tax-calculator",
+  "dsr-calculator",
 ] as const;
