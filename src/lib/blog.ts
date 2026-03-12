@@ -6636,6 +6636,198 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["inheritance-tax-guide", "credit-score-improvement-guide"],
   },
+  {
+    slug: "accident-settlement-guide",
+    category: "finance",
+    date: "2026-03-12",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Traffic accident settlement compensation calculation guide with injury grade chart",
+      ko: "교통사고 합의금 계산 가이드와 상해급수별 위자료 표",
+    },
+    translations: {
+      en: {
+        title: "Korea Traffic Accident Settlement Guide: Compensation Calculation",
+        summary: "Learn how Korean traffic accident settlements are calculated. Covers injury grades, consolation money, lost wages, fault ratios, and 5 key tips for negotiating a fair settlement.",
+        content: [
+          { type: "paragraph", text: "After a traffic accident, the first question most victims ask is: \"How much settlement can I get?\" The answer isn't a single number — it's built from multiple compensation items, each calculated differently. Understanding these components is the key to getting a fair deal." },
+          { type: "paragraph", text: "In this guide, we'll break down the 5 components of accident settlement, explain injury grades, walk through real calculation examples, and share essential tips for negotiation." },
+
+          { type: "heading", text: "5 Components of Traffic Accident Settlement" },
+          { type: "list", items: [
+            "**Consolation Money (위자료):** Compensation for physical and mental suffering. Fixed at 150K–2M KRW based on injury grade (Grade 1–14).",
+            "**Medical Costs (치료비):** Hospital bills, medication, and treatment expenses. Typically paid directly by the insurer to the hospital.",
+            "**Lost Wages (휴업손해):** Income loss during treatment. Formula: daily income × treatment days × 85%. Default daily income is 112,000 KRW (2026 urban daily worker rate).",
+            "**Miscellaneous Costs (제잡비):** Transportation, nursing costs etc. Recognized at 14,000 KRW per inpatient day and 8,000 KRW per outpatient visit.",
+            "**Future Medical Costs (향후치료비):** Expected additional treatment after settlement (rehabilitation, braces, etc.). This is the most negotiable item.",
+          ] },
+          { type: "callout", text: "**Disability Compensation:** If permanent disability remains after recovery, a separate calculation applies based on disability rate, income, and the Hoffman coefficient. Due to complexity, consult a specialist for this item." },
+
+          { type: "heading", text: "Injury Grades 1–14 at a Glance" },
+          { type: "paragraph", text: "Korea classifies traffic accident injuries into 14 grades under the Automobile Damage Compensation Guarantee Act. Higher grades mean more severe injuries and higher consolation money:" },
+          { type: "list", items: [
+            "**Grade 1** (Severe brain injury, quadriplegia): 2,000,000 KRW",
+            "**Grade 2–3** (Major organ damage, severe fracture): 1,800,000–1,900,000 KRW",
+            "**Grade 4–6** (Fracture requiring surgery, ligament tear): 1,500,000–1,700,000 KRW",
+            "**Grade 7–9** (Non-surgical fracture, joint damage): 1,200,000–1,400,000 KRW",
+            "**Grade 10–11** (Sprain 6+ weeks, contusion): 600,000–800,000 KRW",
+            "**Grade 12** (Minor injury, muscle tear): 400,000 KRW",
+            "**Grade 13** (Cervical sprain, 3 weeks): 250,000 KRW",
+            "**Grade 14** (Cervical sprain, 2 weeks — most common in minor fender benders): 150,000 KRW",
+          ] },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "Check Your Injury Grade & Estimate Settlement" },
+
+          { type: "heading", text: "Real Calculation Examples" },
+          { type: "paragraph", text: "**Example 1: Minor accident (Grade 14)**\nCervical sprain 2 weeks, 10 outpatient visits, 0% fault, default daily worker income." },
+          { type: "list", items: [
+            "Consolation: 150,000 KRW",
+            "Lost wages: 10 visits ÷ 3 = 3 days × 112,000 × 85% = ~285,600 KRW",
+            "Misc. costs: 10 visits × 8,000 = 80,000 KRW",
+            "**Total: ~515,600 KRW**",
+          ] },
+          { type: "paragraph", text: "**Example 2: Moderate accident (Grade 10)**\nFracture with surgery, 30 inpatient days + 20 outpatient visits, 20% fault, 1M KRW future medical costs." },
+          { type: "list", items: [
+            "Consolation: 800,000 KRW",
+            "Lost wages (inpatient): 30 × 112,000 × 85% = 2,856,000 KRW",
+            "Lost wages (outpatient): 20 ÷ 3 = 6 days × 112,000 × 85% = 571,200 KRW",
+            "Misc. costs: 30 × 14,000 + 20 × 8,000 = 580,000 KRW",
+            "Future medical: 1,000,000 KRW",
+            "Subtotal: 5,807,200 KRW",
+            "Fault deduction (20%): -1,161,440 KRW",
+            "**Final estimate: ~4,645,760 KRW**",
+          ] },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "Calculate Your Settlement Amount" },
+
+          { type: "heading", text: "5 Essential Tips for a Fair Settlement" },
+          { type: "list", items: [
+            "**Don't rush the settlement.** Complete all treatment first. Once you sign, you generally can't claim additional medical costs. If disability is expected, wait at least 6 months.",
+            "**The insurer's first offer is the minimum.** Insurance companies start low — there's always room for negotiation. Compare their offer against your calculated amount.",
+            "**Check your diagnosis carefully.** The injury grade is determined by your medical records. Make sure the diagnosis and treatment period accurately reflect your injuries.",
+            "**Secure a future treatment estimate.** This is often the largest negotiable item. Get your doctor to provide a written estimate of expected future treatment costs.",
+            "**Document everything.** Keep all medical receipts, diagnosis certificates, income proof, and accident reports. Thorough documentation strengthens your negotiating position.",
+          ] },
+
+          { type: "heading", text: "How Fault Ratio Affects Your Settlement" },
+          { type: "list", items: [
+            "**0% fault:** You receive the full settlement amount.",
+            "**20% fault:** Settlement reduced by 20%, plus you may owe 20% of medical costs back.",
+            "**50% fault:** Settlement cut in half, plus 50% medical cost liability.",
+            "**Even with fault, you can still receive compensation.** Many people don't realize this — even at 70% fault, you receive 30% of the calculated damages.",
+          ] },
+          { type: "callout", text: "**Fault ratio disputes** are common. If you disagree with the assigned ratio, consult a loss adjuster or lawyer. Small differences in fault percentage can mean significant changes in settlement amount." },
+
+          { type: "heading", text: "Insurance Claim vs. Out-of-Pocket: When to Choose What" },
+          { type: "paragraph", text: "For very minor accidents (Grade 14, medical costs under 500K KRW), paying out of pocket may actually save you money in the long run. Insurance claims can increase your premium for 3 years. Use a car insurance calculator to compare the premium increase against the settlement amount before deciding." },
+
+          { type: "heading", text: "Key Takeaway" },
+          { type: "paragraph", text: "Your settlement = Consolation + Lost Wages + Misc. Costs + Future Medical − Fault Deduction. Complete treatment first, prepare your documents, and never accept the first offer without comparing it to your calculated amount. Knowledge is your strongest negotiation tool." },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "Traffic Accident Settlement Calculator" },
+          { type: "paragraph", text: "*This article is for general informational purposes and does not constitute legal advice. Consult a lawyer or licensed loss adjuster for accurate settlement assessment.*" },
+
+          { type: "faq", faqItems: [
+            { question: "How long does the settlement process typically take?", answer: "Most minor accident settlements (Grade 12–14) are completed within 1–3 months after treatment ends. For more serious injuries with potential disability, the process can take 6–12 months or longer. Rushing the process often results in lower compensation." },
+            { question: "Can I negotiate the insurer's settlement offer?", answer: "Yes, absolutely. The insurer's first offer is typically the minimum they're willing to pay. You can negotiate by presenting itemized calculations, medical records, and income documentation. If the gap is large, consider hiring a loss adjuster (손해사정사) who works on your behalf." },
+            { question: "What if I don't know my injury grade?", answer: "Your injury grade is determined based on your medical diagnosis and treatment period. You can ask your doctor, check with the insurer, or use our calculator's simple guide feature that estimates the grade based on diagnosis period and whether surgery was involved." },
+            { question: "Do I need a lawyer for accident settlement?", answer: "For minor accidents (Grade 12–14), you can usually handle the settlement yourself with proper preparation. For serious injuries (Grade 1–9), significant disability, or disputed fault ratios, hiring a lawyer or loss adjuster is strongly recommended as the stakes are much higher." },
+            { question: "What documents do I need for settlement?", answer: "Essential documents include: accident report (교통사고사실확인원), medical diagnosis certificate (진단서), medical expense receipts, income proof (salary statements, tax returns), and photos of the accident scene. For disability claims, you'll also need a disability assessment report." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "교통사고 합의금 계산법: 상해급수별 위자료와 합의 절차 총정리",
+        summary: "교통사고 합의금 구성 항목 5가지, 상해급수별 위자료(1~14급), 실제 계산 예시, 합의 시 꼭 알아야 할 5가지를 총정리합니다.",
+        content: [
+          { type: "paragraph", text: "교통사고를 당하면 가장 먼저 드는 생각, \"합의금 얼마 받을 수 있을까?\" 하지만 합의금은 하나의 숫자가 아니라 여러 항목이 쌓여서 만들어지는 구조예요. 위자료, 휴업손해, 제잡비, 향후치료비… 각각의 항목이 어떻게 계산되는지 알면 보험사 제시액이 적정한지 스스로 판단할 수 있어요." },
+          { type: "paragraph", text: "이 글에서는 합의금을 구성하는 5가지 항목, 상해급수별 위자료 표, 실제 계산 예시, 그리고 합의할 때 꼭 알아야 할 핵심 포인트를 정리했어요." },
+
+          { type: "heading", text: "교통사고 합의금 구성 항목 5가지" },
+          { type: "list", items: [
+            "**위자료:** 사고로 인한 신체적·정신적 고통에 대한 보상이에요. 상해급수(1~14급)에 따라 15만원~200만원으로 정해져 있어요.",
+            "**치료비:** 병원 진료비, 입원비, 약값 등 실제 치료에 들어간 비용이에요. 보통 보험사가 병원에 직접 지급해요.",
+            "**휴업손해:** 치료 기간 동안 일하지 못해서 발생한 소득 손실이에요. 계산식: 1일 소득 × 치료일수 × 85%. 소득 증빙이 없으면 도시일용근로자 일당(2026년 기준 112,000원)이 적용돼요.",
+            "**기타 손해배상금(제잡비):** 교통비, 간병비 등 치료에 수반되는 비용으로, 입원 1일 14,000원·통원 1회 8,000원이 인정돼요.",
+            "**향후치료비:** 합의 이후에도 재활, 보조기 등 추가 치료가 필요하면 포함돼요. 합의금에서 가장 협상 여지가 큰 항목이에요.",
+          ] },
+          { type: "callout", text: "**+α 후유장해 보상:** 사고 후 영구적인 장해가 남으면 별도로 산정해요. 장해율, 소득, 호프만계수 등으로 계산하는데, 금액이 커서 전문가(손해사정사·변호사) 산정이 필수예요." },
+
+          { type: "heading", text: "상해급수 1~14급 한눈에 보기" },
+          { type: "paragraph", text: "교통사고 상해급수는 자동차손해배상 보장법 시행령에 따라 14단계로 나뉘어요. 급수가 낮을수록 중한 부상이고 위자료가 높아요:" },
+          { type: "list", items: [
+            "**1급** (뇌손상 고도, 사지마비): 200만원",
+            "**2~3급** (주요 장기 손상, 중증 골절): 180~190만원",
+            "**4~6급** (골절 수술 필요, 인대 파열): 150~170만원",
+            "**7~9급** (골절 비수술, 관절 손상): 120~140만원",
+            "**10~11급** (염좌 6주 이상, 타박상): 60~80만원",
+            "**12급** (경상, 근육파열): 40만원",
+            "**13급** (경추 염좌 3주): 25만원",
+            "**14급** (경추 염좌 2주, 접촉사고 경미): 15만원 — 가장 흔한 경미 사고",
+          ] },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "내 상해급수 확인하고 합의금 계산하기" },
+
+          { type: "heading", text: "합의금 계산 예시" },
+          { type: "paragraph", text: "**사례 1: 경미한 사고 (14급)**\n경추 염좌 2주 진단, 통원 10회, 과실 0%, 도시일용근로자 기준" },
+          { type: "list", items: [
+            "위자료: 15만원",
+            "휴업손해: 통원 10회 ÷ 3 = 3일 × 112,000원 × 85% = 약 28만원",
+            "제잡비: 10회 × 8,000원 = 8만원",
+            "**합계: 약 51만원**",
+          ] },
+          { type: "paragraph", text: "**사례 2: 중간 정도 사고 (10급)**\n골절 수술, 입원 30일 + 통원 20회, 과실 20%, 향후치료비 100만원" },
+          { type: "list", items: [
+            "위자료: 80만원",
+            "휴업손해(입원): 30일 × 112,000원 × 85% = 약 286만원",
+            "휴업손해(통원): 20회 ÷ 3 = 6일 × 112,000원 × 85% = 약 57만원",
+            "제잡비: 30 × 14,000 + 20 × 8,000 = 58만원",
+            "향후치료비: 100만원",
+            "소계: 약 581만원",
+            "과실 상계(20%): -약 116만원",
+            "**최종 예상 합의금: 약 465만원**",
+          ] },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "직접 합의금 계산해보기" },
+
+          { type: "heading", text: "합의 시 꼭 알아야 할 5가지" },
+          { type: "list", items: [
+            "**급하게 합의하지 마세요.** 치료가 완전히 끝난 후 합의하는 게 유리해요. 합의서에 서명하면 추가 치료비 청구가 어려워요. 후유장해가 예상되면 최소 6개월 후에 합의하세요.",
+            "**보험사 첫 제시액은 최소 금액이에요.** 보험사는 낮은 금액부터 제시하는 게 일반적이에요. 이 계산기로 항목별 금액을 확인하고 비교해보세요.",
+            "**진단서·소견서를 꼼꼼히 확인하세요.** 상해급수는 진단서의 상병명과 치료 기간으로 결정돼요. 의사에게 정확한 진단을 받는 것이 합의금의 핵심이에요.",
+            "**향후치료비 추정서를 확보하세요.** 합의금에서 가장 협상 여지가 큰 항목이에요. 담당 의사에게 향후 필요한 치료와 예상 비용을 서면으로 받아두세요.",
+            "**서류를 빠짐없이 준비하세요.** 진단서, 치료비 영수증, 소득 증빙, 사고 사진 등 모든 자료가 준비되어야 합의금 협상에서 유리해요.",
+          ] },
+
+          { type: "heading", text: "과실비율에 따른 합의금 변화" },
+          { type: "list", items: [
+            "**과실 0%:** 산정된 합의금 전액을 받을 수 있어요.",
+            "**과실 20%:** 합의금에서 20% 차감되고, 치료비 중 20%도 본인이 부담해야 할 수 있어요.",
+            "**과실 50%:** 합의금이 절반으로 줄고, 치료비도 50%를 본인이 부담해요.",
+            "**과실이 있어도 합의금을 받을 수 있어요!** 많은 분들이 모르시는데, 과실 70%라도 손해액의 30%는 받을 수 있어요.",
+          ] },
+          { type: "callout", text: "**과실비율 분쟁이 생기면** 손해사정사나 변호사에게 상담하세요. 과실 비율 몇 퍼센트 차이로 합의금이 수십만 원~수백만 원 달라질 수 있어요." },
+
+          { type: "heading", text: "보험 처리 vs 자비 처리, 뭐가 유리할까?" },
+          { type: "paragraph", text: "경미한 사고(14급, 치료비 50만원 이하)라면 자비 처리가 유리할 수 있어요. 보험 처리를 하면 향후 3년간 보험료가 할증되는데, 할증 총액이 합의금보다 클 수 있거든요. 자동차보험료 계산기로 할증 영향을 먼저 확인해보세요." },
+
+          { type: "heading", text: "핵심 정리" },
+          { type: "paragraph", text: "합의금 = 위자료 + 휴업손해 + 제잡비 + 향후치료비 - 과실상계. 충분한 치료를 마친 후, 서류를 꼼꼼히 준비하고, 보험사 첫 제시액에 바로 합의하지 마세요. 내 합의금이 얼마인지 먼저 계산해보는 것, 그게 협상의 시작이에요." },
+          { type: "cta", tool: "accident-settlement-calculator", toolName: "교통사고 합의금 계산기 바로가기" },
+          { type: "paragraph", text: "*이 글은 일반적인 정보 제공 목적이며, 법률 자문을 대체하지 않습니다. 정확한 합의금 산정은 변호사·손해사정사와 상담하세요.*" },
+
+          { type: "faq", faqItems: [
+            { question: "합의금 받는 데 보통 얼마나 걸리나요?", answer: "경미한 사고(12~14급)는 치료 종결 후 1~3개월 내 합의가 완료되는 경우가 많아요. 중한 부상이나 후유장해가 있으면 6~12개월 이상 걸릴 수 있어요. 서두르면 받을 수 있는 금액이 줄어들 수 있으니 조급해하지 마세요." },
+            { question: "보험사 제시 금액을 협상할 수 있나요?", answer: "네, 가능합니다. 보험사 첫 제시액은 보통 최소 금액이에요. 항목별 계산 내역, 진단서, 소득 증빙 자료를 제시하면서 협상할 수 있어요. 차이가 크면 손해사정사를 선임하는 것도 방법이에요." },
+            { question: "상해급수를 잘 모르겠는데 어떻게 확인하나요?", answer: "상해급수는 진단서의 상병명과 치료 기간으로 결정돼요. 담당 의사에게 문의하거나, 보험사에 확인할 수 있어요. 우리 계산기의 '간이 가이드' 기능을 이용하면 진단 기간과 수술 여부로 대략적인 급수를 추정할 수 있어요." },
+            { question: "합의할 때 변호사가 꼭 필요한가요?", answer: "경미한 사고(12~14급)는 서류를 잘 준비하면 직접 합의할 수 있어요. 하지만 중한 부상(1~9급), 후유장해, 과실비율 분쟁이 있으면 변호사나 손해사정사 상담을 강력 추천해요. 금액 차이가 크니까요." },
+            { question: "합의에 필요한 서류가 뭔가요?", answer: "교통사고사실확인원, 진단서, 치료비 영수증, 소득 증빙(급여명세서, 소득금액증명원), 사고 현장 사진이 기본이에요. 후유장해가 있으면 장해진단서도 필요해요. 서류가 완비되어야 합의금 협상에서 유리해요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "accident-settlement-calculator", name: { en: "Traffic Accident Settlement Calculator", ko: "교통사고 합의금 계산기" } },
+      { slug: "car-tax-calculator", name: { en: "Car Tax Calculator", ko: "자동차 취득세 계산기" } },
+      { slug: "discount-calculator", name: { en: "Discount Calculator", ko: "할인율 계산기" } },
+    ],
+    relatedPosts: ["dsr-guide", "inheritance-tax-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
