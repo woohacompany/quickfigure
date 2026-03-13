@@ -77,6 +77,7 @@ export default async function HomePage({
     { name: t.home.inheritanceTaxCalc, description: t.home.inheritanceTaxCalcDesc, href: `/${lang}/tools/inheritance-tax-calculator` },
     { name: t.home.dsrCalc, description: t.home.dsrCalcDesc, href: `/${lang}/tools/dsr-calculator` },
     { name: t.home.accidentSettlementCalc, description: t.home.accidentSettlementCalcDesc, href: `/${lang}/tools/accident-settlement-calculator` },
+    { name: t.home.nationalPensionCalc, description: t.home.nationalPensionCalcDesc, href: `/${lang}/tools/national-pension-calculator` },
   ];
 
   const healthTools = [
