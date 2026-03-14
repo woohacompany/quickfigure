@@ -7467,6 +7467,140 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["image-upscale-guide"],
   },
+  {
+    slug: "image-kb-guide",
+    category: "utility",
+    date: "2026-03-15",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "Photo file size being reduced from large to exact KB target with a slider",
+      ko: "사진 파일 용량을 슬라이더로 원하는 KB로 줄이는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Reduce Photo Size to Exact KB: ID Photo & File Size Tips",
+        summary: "Learn how to resize images to exact KB targets. Covers ID photo requirements (200KB, 500KB), 4 methods to reduce file size, and KB vs pixel vs quality explained.",
+        content: [
+          { type: "paragraph", text: "You're filling out a job application and it says \"ID photo must be under 200KB.\" You check your photo — it's 2.4MB. How do you shrink it to exactly 200KB without ruining the quality? This is one of the most common — and most confusing — image tasks people face." },
+          { type: "paragraph", text: "In this guide, we'll cover the most common file size requirements, four practical methods to reduce photo size, and the relationship between KB, pixels, and quality. By the end, you'll know exactly how to hit any target file size." },
+
+          { type: "heading", text: "Common File Size Requirements" },
+          { type: "paragraph", text: "Different applications and platforms have different file size limits. Here's a comprehensive reference so you never have to guess:" },
+          { type: "list", items: [
+            "Civil service exam ID photo: Under 200KB — typically 3.5×4.5cm, JPG format required.",
+            "Passport photo: Under 500KB — 35×45mm, white background, neutral expression.",
+            "Resume/CV photo: 100–200KB — 3×4cm, professional appearance.",
+            "University applications: 100KB–1MB — varies by institution, check specific requirements.",
+            "Email attachments: Usually 25MB total — individual images should be 1–3MB for quick sending.",
+            "Forum/community uploads: 2–5MB — most platforms auto-compress, but smaller files upload faster.",
+          ] },
+          { type: "callout", text: "Important: Always check the exact requirements before submitting. Some systems reject files that are even 1KB over the limit." },
+
+          { type: "heading", text: "4 Ways to Reduce Photo File Size" },
+
+          { type: "paragraph", text: "Method 1: Use a KB-targeting tool (easiest and most precise). QuickFigure's Image KB Resizer lets you specify an exact target size in KB. Upload your photo, enter your target (e.g., 200KB), and the tool automatically adjusts quality and resolution using binary search to get as close to your target as possible. Batch process up to 20 files at once, all in your browser." },
+          { type: "cta", tool: "image-kb-resizer", toolName: "Image KB Resizer — Set Exact Target Size" },
+
+          { type: "paragraph", text: "Method 2: Change the image format. PNG files are often 5–10x larger than JPG for the same photo. Simply converting from PNG to JPG can dramatically reduce file size. WebP is even smaller — about 25–35% smaller than JPG at equivalent quality." },
+
+          { type: "paragraph", text: "Method 3: Reduce resolution. A 3000×4000 photo is far larger than a 1000×1333 one. For ID photos, you rarely need more than 400–600px width. Use an image resizer to reduce dimensions before worrying about compression." },
+
+          { type: "paragraph", text: "Method 4: Re-save with lower quality. In Windows Paint, open the image and save as JPG — this applies default compression. On Mac, open in Preview and export with reduced quality. This is the simplest method but gives you the least control over the final file size." },
+
+          { type: "heading", text: "KB vs Pixels vs Quality: What's the Difference?" },
+          { type: "paragraph", text: "These three concepts are related but different, and confusing them is the #1 reason people struggle with file sizes:" },
+          { type: "list", items: [
+            "KB/MB (file size): How much storage space the file takes. This is what upload limits care about. Affected by both resolution and compression quality.",
+            "Pixels (resolution): The dimensions of the image (e.g., 1920×1080). More pixels = more detail, but also larger file size. Reducing pixels is the most effective way to reduce KB.",
+            "Quality (compression): How much detail is preserved during JPG/WebP compression (1–100%). Lower quality = smaller file but more artifacts. 70–80% is usually a good sweet spot.",
+          ] },
+          { type: "callout", text: "Think of it this way: Pixels determine the 'canvas size', quality determines how much detail is painted on that canvas, and KB is the weight of the finished painting." },
+
+          { type: "heading", text: "Things to Watch Out For" },
+          { type: "list", items: [
+            "Don't over-compress: Going below 50% quality can introduce visible artifacts, especially around text and edges. For ID photos, stay above 70%.",
+            "Always keep the original: Save your reduced version as a new file. You can always make a file smaller, but you can't make it bigger without losing quality.",
+            "Check print requirements: If your photo will be printed (not just uploaded), you need higher resolution. A 200KB file may look fine on screen but blurry when printed at 4×6 inches.",
+            "Match the format requirement: Some systems only accept JPG. Others accept PNG or WebP. Submitting the wrong format will get rejected regardless of file size.",
+          ] },
+
+          { type: "paragraph", text: "Whether you're preparing an ID photo for an exam application or optimizing images for a website, knowing how to control file size precisely saves time and frustration. Try QuickFigure's Image KB Resizer for instant, exact results — no signup, no server upload, just set your target KB and download." },
+          { type: "cta", tool: "image-kb-resizer", toolName: "Reduce Photo Size Now — Free KB Resizer" },
+
+          { type: "faq", faqItems: [
+            { question: "Can I reduce a photo to exactly 200KB?", answer: "Yes. Tools like QuickFigure's Image KB Resizer use binary search to adjust quality automatically, getting as close to your target KB as possible while staying under the limit." },
+            { question: "Does reducing file size reduce image quality?", answer: "It depends on the method. Reducing resolution removes pixels permanently. Reducing JPG quality introduces compression artifacts. A KB-targeting tool finds the optimal balance automatically." },
+            { question: "What's the best format for small file sizes?", answer: "WebP is smallest, followed by JPG. PNG is lossless and much larger. For ID photos and general use, JPG at 70-80% quality offers the best size-to-quality ratio." },
+            { question: "Is it safe to use online file size reducers?", answer: "QuickFigure processes everything in your browser — your photos never leave your device. For other online tools, check whether files are uploaded to their servers." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "사진 용량 줄이기: 증명사진 200KB 맞추는 법과 용량 조절 꿀팁",
+        summary: "사진 용량을 원하는 KB로 정확히 줄이는 방법. 증명사진 200KB, 여권사진 500KB 맞추기. 자주 요구되는 용량 제한 총정리.",
+        content: [
+          { type: "paragraph", text: "공무원 시험 원서를 접수하는데 \"증명사진 200KB 이하로 업로드하세요\"라는 안내를 보고 멘붕이 온 적 있으시죠? 내 사진은 2.4MB인데 200KB로 어떻게 맞추는 건지... 이런 상황은 취업 서류, 자격증 접수, 학교 원서 등에서 정말 자주 겪는 일이에요." },
+          { type: "paragraph", text: "이 글에서는 자주 요구되는 용량 제한을 총정리하고, 사진 용량을 줄이는 4가지 실용적인 방법, 그리고 KB·픽셀·품질의 관계까지 쉽게 설명해드릴게요." },
+
+          { type: "heading", text: "자주 요구되는 용량 제한 총정리" },
+          { type: "paragraph", text: "서류별로 요구하는 파일 크기가 다 달라요. 아래 표를 저장해두면 두고두고 유용해요." },
+          { type: "list", items: [
+            "공무원 시험 증명사진: 200KB 이하 — 보통 3.5×4.5cm, JPG 형식 필수.",
+            "여권 사진: 500KB 이하 — 35×45mm, 흰색 배경, 무표정.",
+            "이력서 사진: 100~200KB — 3×4cm, 단정한 복장.",
+            "대학 원서: 100KB~1MB — 학교마다 달라서 반드시 확인 필요.",
+            "이메일 첨부: 보통 전체 25MB — 개별 이미지는 1~3MB가 적당해요.",
+            "카페/커뮤니티 업로드: 2~5MB — 대부분 자동 압축하지만 작을수록 업로드가 빨라요.",
+          ] },
+          { type: "callout", text: "중요: 제출 전에 정확한 요구사항을 꼭 확인하세요. 일부 시스템은 1KB만 초과해도 업로드를 거부해요." },
+
+          { type: "heading", text: "사진 용량 줄이는 4가지 방법" },
+
+          { type: "paragraph", text: "방법 1: KB 지정 도구 사용 (가장 쉽고 정확). QuickFigure의 사진 용량 줄이기 도구는 목표 용량을 KB 단위로 직접 지정할 수 있어요. 사진을 업로드하고 목표 용량(예: 200KB)을 입력하면, 이진 탐색 알고리즘이 품질과 해상도를 자동 조절해서 목표에 최대한 가깝게 맞춰줘요. 최대 20개 파일 일괄 처리도 가능하고, 모든 처리는 브라우저에서 이뤄져서 안전해요." },
+          { type: "cta", tool: "image-kb-resizer", toolName: "사진 용량 줄이기 도구 — KB 단위로 정확히 맞추기" },
+
+          { type: "paragraph", text: "방법 2: 이미지 형식 변경. PNG 파일은 같은 사진인데도 JPG보다 5~10배 클 수 있어요. PNG를 JPG로 바꾸는 것만으로도 용량이 크게 줄어요. WebP는 JPG보다도 25~35% 더 작은 파일을 만들어요." },
+
+          { type: "paragraph", text: "방법 3: 해상도 줄이기. 3000×4000 사진은 1000×1333보다 훨씬 커요. 증명사진은 가로 400~600px이면 충분해요. 이미지 리사이저로 크기를 줄인 다음 압축하면 더 효과적이에요." },
+
+          { type: "paragraph", text: "방법 4: 그림판/미리보기에서 다른 이름으로 저장. 윈도우 그림판에서 이미지를 열고 JPG로 저장하면 기본 압축이 적용돼요. 맥에서는 미리보기 앱에서 내보내기할 때 품질을 조절할 수 있어요. 가장 간단한 방법이지만 최종 용량을 정확히 제어하기는 어려워요." },
+
+          { type: "heading", text: "KB vs 픽셀 vs 품질: 뭐가 다른 건가요?" },
+          { type: "paragraph", text: "이 세 가지는 서로 관련 있지만 다른 개념이에요. 이걸 혼동하는 게 용량 조절을 어렵게 만드는 가장 큰 이유예요." },
+          { type: "list", items: [
+            "KB/MB (파일 크기): 파일이 차지하는 저장 공간이에요. 업로드 제한이 보는 건 바로 이 숫자예요. 해상도와 압축 품질 모두에 영향을 받아요.",
+            "픽셀 (해상도): 이미지의 가로×세로 크기(예: 1920×1080)예요. 픽셀이 많을수록 디테일이 좋지만 파일도 커져요. 픽셀을 줄이는 게 KB를 줄이는 가장 효과적인 방법이에요.",
+            "품질 (압축률): JPG/WebP 압축 시 디테일을 얼마나 보존할지(1~100%)예요. 품질이 낮을수록 파일이 작지만 뭉개짐이 생겨요. 70~80%가 보통 최적의 균형점이에요.",
+          ] },
+          { type: "callout", text: "쉽게 비유하면: 픽셀은 '캔버스 크기', 품질은 '그 캔버스에 얼마나 정교하게 그리는지', KB는 '완성된 그림의 무게'예요." },
+
+          { type: "heading", text: "용량 줄일 때 주의할 점" },
+          { type: "list", items: [
+            "과도하게 압축하지 마세요: 품질 50% 이하로 가면 눈에 보이는 깨짐이 생겨요. 증명사진은 70% 이상을 유지하세요.",
+            "원본은 반드시 보관하세요: 줄인 파일은 새 파일로 저장하세요. 파일을 작게 만들 순 있지만, 작아진 파일을 다시 키우면 화질이 떨어져요.",
+            "인쇄 요구사항을 확인하세요: 사진을 인쇄할 거라면 높은 해상도가 필요해요. 200KB 파일은 화면에서는 괜찮지만 4×6인치로 인쇄하면 흐릿할 수 있어요.",
+            "형식 요구사항을 맞추세요: 일부 시스템은 JPG만 받아요. 다른 곳은 PNG나 WebP도 허용해요. 잘못된 형식은 용량에 관계없이 거부돼요.",
+          ] },
+
+          { type: "paragraph", text: "시험 접수용 증명사진을 준비하든 웹사이트용 이미지를 최적화하든, 파일 크기를 정확히 조절하는 방법을 알면 시간과 스트레스를 크게 줄일 수 있어요. QuickFigure의 사진 용량 줄이기 도구로 지금 바로 시작해보세요 — 회원가입 없이, 서버 업로드 없이, 목표 KB를 설정하고 다운로드하면 끝이에요." },
+          { type: "cta", tool: "image-kb-resizer", toolName: "사진 용량 줄이기 도구 — 무료로 바로 사용하기" },
+
+          { type: "faq", faqItems: [
+            { question: "사진을 정확히 200KB로 줄일 수 있나요?", answer: "네. QuickFigure의 사진 용량 줄이기 도구는 이진 탐색으로 품질을 자동 조절해서 목표 KB에 최대한 가깝게 맞춰줘요. 목표 이하로 유지하면서 최대한 높은 품질을 보장해요." },
+            { question: "용량을 줄이면 화질이 떨어지나요?", answer: "방법에 따라 달라요. 해상도를 줄이면 픽셀이 영구적으로 줄어들고, JPG 품질을 낮추면 압축 아티팩트가 생겨요. KB 지정 도구를 쓰면 최적의 균형을 자동으로 찾아줘요." },
+            { question: "가장 용량이 작은 이미지 형식은 뭔가요?", answer: "WebP가 가장 작고, 그 다음이 JPG예요. PNG는 무손실이라 훨씬 커요. 증명사진이나 일반 용도에는 JPG 70~80% 품질이 용량 대비 화질 비율이 가장 좋아요." },
+            { question: "온라인 도구로 사진 용량 줄이기가 안전한가요?", answer: "QuickFigure는 모든 처리가 브라우저에서 이뤄져요. 사진이 기기를 떠나지 않아서 완전히 안전해요. 다른 온라인 도구를 쓸 때는 파일이 서버에 업로드되는지 확인하세요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "image-kb-resizer", name: { en: "Image KB Resizer", ko: "사진 용량 줄이기 (KB 지정)" } },
+      { slug: "image-compressor", name: { en: "Image Compressor", ko: "이미지 압축" } },
+      { slug: "image-converter", name: { en: "Image Converter", ko: "이미지 형식 변환" } },
+    ],
+    relatedPosts: ["image-upscale-guide", "image-crop-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
