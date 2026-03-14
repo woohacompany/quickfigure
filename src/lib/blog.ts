@@ -144,9 +144,15 @@ export function getPostTags(slug: string): BlogTag[] {
   return blogTagMapping[slug] ?? ["tool-guide"];
 }
 
+function sortByDateDesc(posts: BlogPost[]): BlogPost[] {
+  return [...posts].sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export function getPostsByTag(tag: BlogTag | "all"): BlogPost[] {
-  if (tag === "all") return blogPosts;
-  return blogPosts.filter((p) => (blogTagMapping[p.slug] ?? ["tool-guide"]).includes(tag));
+  if (tag === "all") return sortByDateDesc(blogPosts);
+  return sortByDateDesc(
+    blogPosts.filter((p) => (blogTagMapping[p.slug] ?? ["tool-guide"]).includes(tag))
+  );
 }
 
 export function getTagCounts(): Record<BlogTag | "all", number> {
