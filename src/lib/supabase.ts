@@ -1,22 +1,6 @@
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
-// Supabase 프로젝트 URL (public, not secret)
-const SUPABASE_URL = "https://ahvdfhgfifyoddweagln.supabase.co";
+const supabaseUrl = "https://ahvdfhgfifyoddweagln.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFodmRmaGdmbGZ5b2Rkd2VhZ2xuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MTA1NzUsImV4cCI6MjA4OTA4NjU3NX0.zOG2wXKcFAr8zQb3Tk2SHvcitibG_Pn8LwjWgysQI3c";
 
-let _supabase: SupabaseClient | null = null;
-
-export function getSupabase(): SupabaseClient {
-  if (!_supabase) {
-    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-    // 디버그용 (확인 후 제거)
-    console.log("[Supabase] URL:", SUPABASE_URL);
-    console.log("[Supabase] Key defined:", !!key, "Key length:", key?.length);
-
-    if (!key) {
-      throw new Error("NEXT_PUBLIC_SUPABASE_ANON_KEY is not configured");
-    }
-    _supabase = createClient(SUPABASE_URL, key);
-  }
-  return _supabase;
-}
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);

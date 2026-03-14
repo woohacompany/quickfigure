@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { getSupabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 type Variant = "homepage" | "blog" | "tool";
 
@@ -81,7 +81,6 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
     setStatus("submitting");
 
     try {
-      const supabase = getSupabase();
       const { error } = await supabase.from("email_subscribers").insert({
         email: email.toLowerCase().trim(),
         source,
