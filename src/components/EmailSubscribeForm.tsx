@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 type Variant = "homepage" | "blog" | "tool";
 
@@ -36,7 +36,6 @@ const text = {
     error: "Subscription is being set up. Please try again later.",
     privacy: "By subscribing, you agree to our",
     privacyLink: "Privacy Policy",
-    preparing: "Subscription coming soon!",
   },
   ko: {
     homepage: {
@@ -62,7 +61,6 @@ const text = {
     error: "구독 기능을 준비 중입니다. 잠시 후 다시 시도해주세요.",
     privacy: "구독 시",
     privacyLink: "개인정보처리방침",
-    preparing: "구독 기능 준비 중!",
   },
 };
 
@@ -72,9 +70,7 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
   const variant = t[source];
 
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "duplicate" | "error" | "unavailable">("idle");
-
-  const configured = isSupabaseConfigured();
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "duplicate" | "error">("idle");
 
   const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
@@ -112,8 +108,7 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
   const statusMessage =
     status === "success" ? t.success :
     status === "duplicate" ? t.duplicate :
-    status === "error" ? t.error :
-    status === "unavailable" ? t.preparing : null;
+    status === "error" ? t.error : null;
 
   const isCompact = source !== "homepage";
 
@@ -129,13 +124,9 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
           </p>
         )}
 
-        {!configured ? (
-          <p className="mt-4 text-sm text-neutral-400 dark:text-neutral-500">
-            {t.preparing}
-          </p>
-        ) : statusMessage ? (
+        {statusMessage ? (
           <p className={`mt-4 text-sm font-medium ${
-            status === "error" || status === "unavailable"
+            status === "error"
               ? "text-neutral-500 dark:text-neutral-400"
               : "text-emerald-600 dark:text-emerald-400"
           }`}>

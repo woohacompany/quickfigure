@@ -1,24 +1,22 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-let _supabase: SupabaseClient | null = null;
+// Supabase 프로젝트 URL (public, not secret)
+const SUPABASE_URL = "https://ahvdfhgfifyoddweagln.supabase.co";
 
-export function isSupabaseConfigured(): boolean {
-  return !!(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-}
+let _supabase: SupabaseClient | null = null;
 
 export function getSupabase(): SupabaseClient {
   if (!_supabase) {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    // 디버그용 (배포 후 콘솔에서 확인, 이후 제거)
-    console.log("[Supabase] URL defined:", !!url, "Key defined:", !!key);
-    if (url) console.log("[Supabase] URL:", url.substring(0, 30) + "...");
+    // 디버그용 (확인 후 제거)
+    console.log("[Supabase] URL:", SUPABASE_URL);
+    console.log("[Supabase] Key defined:", !!key, "Key length:", key?.length);
 
-    if (!url || !key) {
-      throw new Error("Supabase environment variables not configured");
+    if (!key) {
+      throw new Error("NEXT_PUBLIC_SUPABASE_ANON_KEY is not configured");
     }
-    _supabase = createClient(url, key);
+    _supabase = createClient(SUPABASE_URL, key);
   }
   return _supabase;
 }
