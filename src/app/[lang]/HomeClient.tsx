@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
 
 interface Tool {
   name: string;
   description: string;
   href: string;
+  tags?: string[];
 }
 
 interface Category {
@@ -29,6 +31,15 @@ interface BlogPost {
   summary: string;
   category: string;
   date: string;
+}
+
+interface SearchResult {
+  name: string;
+  description: string;
+  href: string;
+  categoryTitle: string;
+  score: number;
+  matchedTag?: string;
 }
 
 const categoryColorMap: Record<string, { border: string; bg: string; text: string; hover: string }> = {
@@ -59,9 +70,19 @@ export default function HomeClient({
   toolCount: number;
   blogCount: number;
 }) {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Debounce search input (200ms)
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQuery(searchQuery), 200);
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const allTools = useMemo(() => {
     return categories.flatMap((cat) =>
@@ -69,14 +90,73 @@ export default function HomeClient({
     );
   }, [categories]);
 
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase();
-    return allTools
-      .filter((t) => t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q))
-      .slice(0, 8);
-  }, [searchQuery, allTools]);
+  // Scored search: name (10) > tag exact (8) > tag partial (5) > description (3)
+  const searchResults: SearchResult[] = useMemo(() => {
+    if (!debouncedQuery.trim()) return [];
+    const q = debouncedQuery.toLowerCase().trim();
 
+    const scored: SearchResult[] = [];
+
+    for (const tool of allTools) {
+      let score = 0;
+      let matchedTag: string | undefined;
+      const nameLower = tool.name.toLowerCase();
+      const descLower = tool.description.toLowerCase();
+
+      // Name match (highest priority)
+      if (nameLower === q) {
+        score += 20;
+      } else if (nameLower.startsWith(q)) {
+        score += 15;
+      } else if (nameLower.includes(q)) {
+        score += 10;
+      }
+
+      // Tag match
+      if (tool.tags) {
+        for (const tag of tool.tags) {
+          const tagLower = tag.toLowerCase();
+          if (tagLower === q) {
+            score += 8;
+            matchedTag = tag;
+            break;
+          } else if (tagLower.includes(q) || q.includes(tagLower)) {
+            if (!matchedTag || tagLower.includes(q)) {
+              score = Math.max(score, score === 0 ? 5 : score);
+              if (score >= 5) matchedTag = tag;
+            }
+          }
+        }
+      }
+
+      // Description match (lowest priority)
+      if (descLower.includes(q)) {
+        score += 3;
+      }
+
+      if (score > 0) {
+        scored.push({
+          name: tool.name,
+          description: tool.description,
+          href: tool.href,
+          categoryTitle: tool.categoryTitle,
+          score,
+          matchedTag,
+        });
+      }
+    }
+
+    // Sort by score descending, then alphabetically
+    scored.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+    return scored.slice(0, 8);
+  }, [debouncedQuery, allTools]);
+
+  // Reset selected index when results change
+  useEffect(() => {
+    setSelectedIndex(-1);
+  }, [searchResults]);
+
+  // Click outside to close
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -87,10 +167,46 @@ export default function HomeClient({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Keyboard navigation
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (!showDropdown) return;
+
+      const hasResults = searchResults.length > 0;
+      const noResults = debouncedQuery.trim() && !hasResults;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (hasResults) {
+          setSelectedIndex((prev) => (prev < searchResults.length - 1 ? prev + 1 : 0));
+        }
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (hasResults) {
+          setSelectedIndex((prev) => (prev > 0 ? prev - 1 : searchResults.length - 1));
+        }
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (hasResults && selectedIndex >= 0 && selectedIndex < searchResults.length) {
+          router.push(searchResults[selectedIndex].href);
+          setShowDropdown(false);
+        }
+      } else if (e.key === "Escape") {
+        setShowDropdown(false);
+        inputRef.current?.blur();
+      }
+    },
+    [showDropdown, searchResults, selectedIndex, debouncedQuery, router]
+  );
+
   const scrollToCategory = (id: string) => {
     const el = document.getElementById(`category-${id}`);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const noResultsText = lang === "ko"
+    ? "검색 결과가 없습니다. 다른 키워드로 검색해보세요."
+    : "No results found. Try a different keyword.";
 
   return (
     <div className="max-w-5xl mx-auto px-4">
@@ -128,6 +244,7 @@ export default function HomeClient({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
+              ref={inputRef}
               type="text"
               value={searchQuery}
               onChange={(e) => {
@@ -135,25 +252,47 @@ export default function HomeClient({
                 setShowDropdown(true);
               }}
               onFocus={() => searchQuery && setShowDropdown(true)}
+              onKeyDown={handleKeyDown}
               placeholder={t.home.searchPlaceholder}
               className="w-full pl-12 pr-4 py-3.5 text-base rounded-xl border-2 border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-colors shadow-sm"
             />
           </div>
-          {showDropdown && searchResults.length > 0 && (
+          {showDropdown && debouncedQuery.trim() && (
             <div className="absolute z-50 top-full mt-1 w-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-xl shadow-lg overflow-hidden">
-              {searchResults.map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="flex items-start gap-3 px-4 py-3 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors border-b border-neutral-100 dark:border-neutral-800 last:border-0"
-                  onClick={() => setShowDropdown(false)}
-                >
-                  <div>
-                    <p className="font-medium text-sm">{tool.name}</p>
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 line-clamp-1">{tool.description}</p>
-                  </div>
-                </Link>
-              ))}
+              {searchResults.length > 0 ? (
+                searchResults.map((tool, index) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className={`flex items-start gap-3 px-4 py-3 transition-colors border-b border-neutral-100 dark:border-neutral-800 last:border-0 ${
+                      index === selectedIndex
+                        ? "bg-blue-50 dark:bg-blue-950/50"
+                        : "hover:bg-neutral-50 dark:hover:bg-neutral-800"
+                    }`}
+                    onClick={() => setShowDropdown(false)}
+                    onMouseEnter={() => setSelectedIndex(index)}
+                  >
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <p className="font-medium text-sm truncate">{tool.name}</p>
+                        <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400">
+                          {tool.categoryTitle}
+                        </span>
+                      </div>
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 line-clamp-1">{tool.description}</p>
+                      {tool.matchedTag && (
+                        <p className="text-[10px] text-blue-500 dark:text-blue-400 mt-0.5">
+                          {lang === "ko" ? "연관" : "match"}: {tool.matchedTag}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                <div className="px-4 py-6 text-center text-sm text-neutral-400">
+                  {noResultsText}
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -9,6 +9,7 @@ import {
   blogTagLabels,
   blogTagColors,
   blogTagOrder,
+  categoryLabels,
   getPostsByTag,
   getPostTags,
   getTagCounts,
@@ -41,9 +42,14 @@ export default function BlogListPage({
       const q = search.trim().toLowerCase();
       posts = posts.filter((p) => {
         const tr = p.translations[locale];
+        const catLabel = categoryLabels[p.category]?.[locale] || "";
+        const tags = getPostTags(p.slug);
+        const tagLabels = tags.map((tg) => blogTagLabels[tg][locale]).join(" ");
         return (
           tr.title.toLowerCase().includes(q) ||
-          tr.summary.toLowerCase().includes(q)
+          tr.summary.toLowerCase().includes(q) ||
+          catLabel.toLowerCase().includes(q) ||
+          tagLabels.toLowerCase().includes(q)
         );
       });
     }
