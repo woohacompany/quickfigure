@@ -7731,6 +7731,210 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["image-kb-guide", "image-crop-guide"],
   },
+
+  // ── Text Diff Guide ──────────────────────────────────────────────
+  {
+    slug: "text-diff-guide",
+    category: "text-tools",
+    date: "2026-03-15",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "Side-by-side text comparison with highlighted differences",
+      ko: "차이점이 하이라이트된 두 텍스트 비교 화면",
+    },
+    translations: {
+      en: {
+        title: "Online Diff Checker: How to Compare Text, Code & Documents Instantly",
+        summary: "Free online diff checker to compare two texts side by side. Highlights differences line-by-line or word-by-word. No signup, no installation. Try it now.",
+        content: [
+          // ── 1. Introduction ──
+          { type: "paragraph", text: "Ever spent 20 minutes eyeballing two versions of the same document trying to spot the difference? You're comparing a contract revision, a config file update, or two drafts of an article — and somewhere in those hundreds of lines, a single word or number has changed. Missing that one change can mean a deployed bug, a legal liability, or a factual error that goes to print." },
+          { type: "paragraph", text: "That's exactly the problem a diff checker solves. In seconds, it compares two blocks of text and highlights every addition, deletion, and modification so you don't have to. Developers have relied on diff tools since the 1970s, but today anyone — writers, lawyers, students, project managers — can use an online diff checker with zero installation and zero cost." },
+          { type: "paragraph", text: "In this guide, you'll learn what a diff checker is, when you need one, and how to compare any two texts instantly using QuickFigure's free online tool." },
+
+          // ── 2. What is a Diff Checker? ──
+          { type: "heading", text: "What Is a Diff Checker?" },
+          { type: "paragraph", text: "A diff checker (short for \"difference checker\") is a tool that takes two pieces of text and shows you exactly what changed between them. Additions are highlighted in green, deletions in red, and unchanged lines stay neutral — giving you a visual map of every edit at a glance." },
+          { type: "paragraph", text: "The concept dates back to the Unix diff command, created by Douglas McIlroy at Bell Labs in 1974. That command-line utility became the backbone of version control systems like Git. Today, online diff checkers bring that same power to the browser — no terminal, no installation, no learning curve." },
+          { type: "list", items: [
+            "Line-by-line diff: Compares entire lines. Best for code, configuration files, and structured data.",
+            "Word-by-word diff: Highlights individual word changes within a line. Best for prose, legal documents, and reports.",
+            "Character-level diff: Shows the exact characters that changed. Best for spotting typos or single-character edits.",
+          ] },
+
+          // ── 3. When Do You Need a Diff Checker? ──
+          { type: "heading", text: "When Do You Need a Diff Checker?" },
+          { type: "paragraph", text: "Diff checkers aren't just for programmers. Here are six common scenarios where comparing text saves serious time:" },
+          { type: "list", items: [
+            "Code reviews — Compare the old version of a function with the new one before committing. Catch accidental deletions, unintended whitespace changes, or logic errors before they reach production.",
+            "Document editing — You sent a report to your manager and got it back with edits. Paste both versions into a diff checker to see every change instantly instead of re-reading the entire document.",
+            "Configuration files — A server is misbehaving after a deploy. Diff the current .env or nginx.conf against the previous version to find the one setting that changed.",
+            "Legal documents — Compare contract revisions to ensure no clause was silently added or removed. Word-by-word mode catches even a single changed number in a payment term.",
+            "Content writing — Compare your first draft with the editor's revised version. See which sentences were rewritten, which paragraphs were cut, and what was added.",
+            "Data validation — Verify that a CSV export or JSON payload matches the expected output. Line-by-line diff instantly reveals missing rows or altered values.",
+          ] },
+          { type: "callout", text: "Pro tip: Bookmark a diff checker and make it part of your workflow. The few seconds it takes to paste and compare can save hours of debugging or prevent costly errors in contracts and reports." },
+
+          // ── 4. How to Compare Text Online ──
+          { type: "heading", text: "How to Compare Text Online with QuickFigure" },
+          { type: "paragraph", text: "QuickFigure's Text Diff tool lets you compare any two texts in seconds — right in your browser. Here's how:" },
+          { type: "list", items: [
+            "Step 1: Open the Text Diff tool. Go to QuickFigure's Text Diff page. No signup or account needed.",
+            "Step 2: Paste your texts. Put the original text in the left panel and the modified text in the right panel. You can paste anything — code, plain text, HTML, CSV, JSON, or even entire articles.",
+            "Step 3: Click \"Compare\". Differences are highlighted instantly. Green = added, red = removed, and you can see exactly what changed at a glance.",
+            "Step 4: Choose your view mode. Switch between line-by-line and word-by-word mode depending on your content. Use the \"Ignore whitespace\" option when comparing code to focus on meaningful changes.",
+            "Step 5: Copy or share. Copy the diff result or share the comparison with your team.",
+          ] },
+          { type: "cta", tool: "text-diff", toolName: "Try the Text Diff Tool — Free, No Signup" },
+          { type: "paragraph", text: "Everything runs in your browser. Your text is never uploaded to any server, so confidential documents — contracts, proprietary code, personal notes — stay completely private." },
+
+          // ── 5. Diff Checker vs Other Methods ──
+          { type: "heading", text: "Diff Checker vs Other Comparison Methods" },
+          { type: "paragraph", text: "There are several ways to compare text, but they vary widely in ease, accuracy, and cost. Here's how they stack up:" },
+          { type: "paragraph", text: "Online diff checker: Easy to use, high accuracy, free, best for quick comparisons of any text. Works instantly in the browser with no setup." },
+          { type: "paragraph", text: "Git diff (terminal): Medium difficulty, high accuracy, free, best for code version control. Requires Git installed and familiarity with the command line. Ideal for developers already using Git." },
+          { type: "paragraph", text: "Word Track Changes: Easy to use, medium accuracy, requires Microsoft 365 subscription, best for document collaboration. Great for back-and-forth editing but limited to Word format." },
+          { type: "paragraph", text: "Manual comparison: Hard, low accuracy, free, best for very short texts only. Reading two versions side by side works for a paragraph, but becomes error-prone for anything longer." },
+          { type: "callout", text: "Bottom line: For most people, an online diff checker is the fastest and most reliable option. It handles any text format, requires no software, and catches differences that human eyes miss." },
+
+          // ── 6. Tips for Effective Text Comparison ──
+          { type: "heading", text: "Tips for Effective Text Comparison" },
+          { type: "paragraph", text: "Get the most out of your diff checker with these practical tips:" },
+          { type: "list", items: [
+            "Normalize formatting first — Convert tabs to spaces (or vice versa) and standardize line endings (LF vs CRLF) before comparing. This eliminates noise so you can focus on real changes.",
+            "Use \"Ignore whitespace\" for code — When comparing source code, minor indentation changes can flood the diff. The ignore whitespace option filters them out and shows only logic changes.",
+            "Break large files into sections — For documents longer than a few hundred lines, compare section by section. This makes it easier to understand the context of each change.",
+            "Always save both versions — Before overwriting a file, save a copy of the original. You can't diff what you don't have. Many people learn this lesson the hard way.",
+            "Match the mode to the content — Use line-by-line mode for code and structured data. Use word-by-word mode for articles, contracts, and prose where changes happen within sentences.",
+          ] },
+
+          // ── 7. Advanced Use Cases ──
+          { type: "heading", text: "Advanced Use Cases for Diff Checkers" },
+          { type: "paragraph", text: "Beyond basic text comparison, diff checkers can help in surprisingly specific workflows:" },
+          { type: "list", items: [
+            "API response validation — Compare expected vs actual JSON responses during QA testing. A diff instantly reveals missing fields, changed values, or unexpected additions.",
+            "SEO audits — Diff your page's meta tags before and after an update to ensure title tags, descriptions, and canonical URLs are correct.",
+            "Database migration checks — Export schema or seed data before and after a migration, then diff the exports to verify nothing was lost.",
+            "Translation review — Compare the source text with the translated version side by side. While it won't catch translation quality issues, it helps verify that no sections were accidentally skipped.",
+            "Email template testing — Compare the HTML source of email templates across versions to catch broken links, missing images, or styling regressions.",
+          ] },
+
+          // ── 8. Conclusion + CTA ──
+          { type: "heading", text: "Stop Eyeballing, Start Diffing" },
+          { type: "paragraph", text: "A diff checker does in seconds what takes humans minutes — and it never misses a change. Whether you're reviewing code, comparing contracts, or verifying a configuration update, an online diff tool is the simplest way to catch every difference." },
+          { type: "paragraph", text: "QuickFigure's Text Diff tool is free, runs entirely in your browser, and requires no signup. Paste your two texts, click compare, and see every change highlighted instantly." },
+          { type: "cta", tool: "text-diff", toolName: "Compare Your Texts Now — Free Online Diff Checker" },
+
+          // ── FAQ ──
+          { type: "faq", faqItems: [
+            { question: "What is a diff checker?", answer: "A diff checker is a tool that compares two pieces of text and highlights the differences between them. It shows additions (in green), deletions (in red), and unchanged content — making it easy to see exactly what changed between two versions." },
+            { question: "Is the online diff checker free?", answer: "Yes. QuickFigure's Text Diff tool is completely free with no signup required. It runs entirely in your browser, so your text is never uploaded to any server." },
+            { question: "Can I compare code with a diff checker?", answer: "Absolutely. Diff checkers work with any plain text — including source code in any programming language. Use line-by-line mode and the 'Ignore whitespace' option for the best results when comparing code." },
+            { question: "Is my text safe when using an online diff checker?", answer: "On QuickFigure, yes. All processing happens locally in your browser using JavaScript. Your text never leaves your device — no server uploads, no storage, no tracking." },
+            { question: "What's the difference between line-by-line and word-by-word diff?", answer: "Line-by-line mode compares entire lines and marks whole lines as added or removed. Word-by-word mode goes deeper and highlights the specific words that changed within each line. Use line-by-line for code and structured data; use word-by-word for prose and documents." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "텍스트 비교 도구 완벽 가이드: 코드, 문서, 계약서 차이점 찾는 법",
+        summary: "두 텍스트를 붙여넣기만 하면 차이점을 자동으로 찾아 하이라이트합니다. 코드 리뷰, 계약서 비교, 보고서 버전 관리에 최적.",
+        content: [
+          // ── 1. 들어가며 ──
+          { type: "paragraph", text: "같은 문서의 두 버전을 놓고 20분 동안 눈으로 차이점을 찾아본 경험, 있으신가요? 계약서 수정본, 서버 설정 파일, 보고서 초안 — 수백 줄 어딘가에 단어 하나, 숫자 하나가 바뀌었는데, 그 하나를 놓치면 배포 버그, 법적 분쟁, 사실관계 오류로 이어질 수 있어요." },
+          { type: "paragraph", text: "텍스트 비교 도구(Diff Checker)는 바로 이 문제를 해결해요. 두 텍스트를 붙여넣으면 몇 초 만에 추가·삭제·수정된 부분을 모두 찾아서 색으로 표시해줘요. 원래 개발자들이 쓰던 도구지만, 지금은 누구나 — 작가, 법무팀, 학생, 기획자 — 브라우저에서 무료로 사용할 수 있어요." },
+          { type: "paragraph", text: "이 가이드에서는 텍스트 비교 도구가 무엇인지, 언제 필요한지, 그리고 QuickFigure에서 어떻게 무료로 비교할 수 있는지 알려드릴게요." },
+
+          // ── 2. 텍스트 비교 도구란? ──
+          { type: "heading", text: "텍스트 비교 도구(Diff Checker)란?" },
+          { type: "paragraph", text: "텍스트 비교 도구는 두 개의 텍스트를 받아서 무엇이 달라졌는지 정확하게 보여주는 도구예요. 추가된 내용은 초록색, 삭제된 내용은 빨간색으로 표시되어 한눈에 모든 변경 사항을 파악할 수 있어요." },
+          { type: "paragraph", text: "이 개념은 1974년 벨 연구소의 더글라스 매킬로이가 만든 Unix diff 명령어에서 시작됐어요. 이 명령어는 Git 같은 버전 관리 시스템의 핵심이 되었고, 지금은 온라인 도구 형태로 누구나 브라우저에서 사용할 수 있어요." },
+          { type: "list", items: [
+            "줄 단위(Line-by-line) 비교: 전체 줄을 비교해요. 코드, 설정 파일, 구조화된 데이터에 적합해요.",
+            "단어 단위(Word-by-word) 비교: 줄 안에서 개별 단어 변경을 표시해요. 문서, 계약서, 보고서에 적합해요.",
+            "문자 단위(Character-level) 비교: 정확히 어떤 글자가 바뀌었는지 보여줘요. 오타나 한 글자 수정을 찾을 때 좋아요.",
+          ] },
+
+          // ── 3. 언제 필요한가? ──
+          { type: "heading", text: "언제 텍스트 비교 도구가 필요할까?" },
+          { type: "paragraph", text: "텍스트 비교 도구는 개발자만을 위한 게 아니에요. 다음 6가지 상황에서 시간을 크게 절약할 수 있어요:" },
+          { type: "list", items: [
+            "코드 리뷰 — 커밋 전에 함수의 이전 버전과 새 버전을 비교해요. 실수로 삭제된 코드, 의도하지 않은 공백 변경, 로직 오류를 프로덕션에 반영되기 전에 잡을 수 있어요.",
+            "문서 편집 — 보고서를 상사에게 보냈더니 수정본이 돌아왔어요. 두 버전을 비교 도구에 붙여넣으면 전체를 다시 읽지 않고도 모든 변경 사항을 즉시 확인할 수 있어요.",
+            "설정 파일 관리 — 배포 후 서버가 이상하게 동작해요. 현재 .env나 설정 파일을 이전 버전과 비교하면 바뀐 설정 하나를 바로 찾을 수 있어요.",
+            "계약서 비교 — 계약서 수정본에서 조항이 슬쩍 추가되거나 삭제되지 않았는지 확인해요. 단어 단위 비교는 결제 조건의 숫자 하나까지 잡아내요.",
+            "콘텐츠 작성 — 초안과 편집자의 수정본을 비교해요. 어떤 문장이 다시 쓰였고, 어떤 단락이 삭제됐고, 무엇이 추가됐는지 한눈에 볼 수 있어요.",
+            "데이터 검증 — CSV 내보내기나 JSON 데이터가 예상 결과와 일치하는지 확인해요. 줄 단위 비교로 누락된 행이나 변경된 값을 즉시 발견할 수 있어요.",
+          ] },
+          { type: "callout", text: "꿀팁: 텍스트 비교 도구를 즐겨찾기에 추가하고 워크플로우에 포함시키세요. 붙여넣고 비교하는 데 걸리는 몇 초가 디버깅에 쏟는 수 시간 또는 계약서·보고서의 비용이 큰 실수를 예방할 수 있어요." },
+
+          // ── 4. 사용 방법 ──
+          { type: "heading", text: "QuickFigure에서 텍스트 비교하는 법" },
+          { type: "paragraph", text: "QuickFigure의 텍스트 비교 도구를 사용하면 브라우저에서 몇 초 만에 두 텍스트를 비교할 수 있어요. 방법은 간단해요:" },
+          { type: "list", items: [
+            "1단계: 텍스트 비교 도구를 열어요. QuickFigure 텍스트 비교 페이지로 이동하세요. 회원가입이나 로그인은 필요 없어요.",
+            "2단계: 텍스트를 붙여넣어요. 왼쪽 패널에 원본 텍스트, 오른쪽 패널에 수정된 텍스트를 붙여넣으세요. 코드, 일반 텍스트, HTML, CSV, JSON, 긴 글 등 무엇이든 가능해요.",
+            "3단계: \"비교\" 버튼을 클릭해요. 차이점이 즉시 하이라이트돼요. 초록색 = 추가, 빨간색 = 삭제, 한눈에 무엇이 바뀌었는지 알 수 있어요.",
+            "4단계: 보기 모드를 선택해요. 콘텐츠에 따라 줄 단위와 단어 단위 모드를 전환하세요. 코드를 비교할 때는 \"공백 무시\" 옵션으로 의미 있는 변경에만 집중할 수 있어요.",
+            "5단계: 복사하거나 공유해요. 비교 결과를 복사하거나 팀과 공유하세요.",
+          ] },
+          { type: "cta", tool: "text-diff", toolName: "텍스트 비교 도구 — 무료로 바로 사용하기" },
+          { type: "paragraph", text: "모든 처리가 브라우저에서 이뤄져요. 텍스트가 서버에 업로드되지 않으므로, 기밀 문서 — 계약서, 소스 코드, 개인 메모 — 도 완전히 안전해요." },
+
+          // ── 5. 비교 방법 대결 ──
+          { type: "heading", text: "텍스트 비교 방법 비교" },
+          { type: "paragraph", text: "텍스트를 비교하는 방법은 여러 가지가 있지만, 편의성·정확도·비용이 크게 달라요:" },
+          { type: "paragraph", text: "온라인 Diff Checker: 사용 쉬움, 높은 정확도, 무료. 브라우저에서 즉시 작동하며 설치 불필요. 모든 텍스트 빠른 비교에 최적." },
+          { type: "paragraph", text: "Git diff (터미널): 중간 난이도, 높은 정확도, 무료. Git이 설치되어 있고 명령어에 익숙해야 해요. 이미 Git을 사용하는 개발자에게 최적." },
+          { type: "paragraph", text: "Word 변경 내용 추적: 사용 쉬움, 중간 정확도, Microsoft 365 구독 필요. 문서 협업에 좋지만 Word 형식에 제한됨." },
+          { type: "paragraph", text: "수동 비교: 어려움, 낮은 정확도, 무료. 한 단락 정도는 괜찮지만, 그 이상은 눈으로 놓치는 부분이 반드시 생겨요." },
+          { type: "callout", text: "결론: 대부분의 경우 온라인 텍스트 비교 도구가 가장 빠르고 정확한 방법이에요. 어떤 텍스트 형식이든 처리하고, 소프트웨어 설치가 필요 없고, 사람 눈이 놓치는 차이점까지 잡아내요." },
+
+          // ── 6. 효과적인 비교 팁 ──
+          { type: "heading", text: "효과적인 텍스트 비교 팁" },
+          { type: "paragraph", text: "비교 도구를 더 잘 활용하기 위한 실전 팁이에요:" },
+          { type: "list", items: [
+            "먼저 서식을 통일하세요 — 탭과 스페이스, 줄 바꿈 방식(LF vs CRLF)을 통일하면 불필요한 노이즈 없이 실제 변경 사항에 집중할 수 있어요.",
+            "코드 비교 시 \"공백 무시\" 사용 — 소스 코드를 비교할 때 들여쓰기 변경이 diff를 가득 채울 수 있어요. 공백 무시 옵션으로 로직 변경만 확인하세요.",
+            "큰 파일은 섹션별로 비교 — 수백 줄이 넘는 문서는 섹션별로 나눠서 비교하면 각 변경의 맥락을 이해하기 쉬워요.",
+            "항상 양쪽 버전을 저장해두세요 — 파일을 덮어쓰기 전에 원본 복사본을 저장하세요. 없는 건 비교할 수 없어요. 많은 분이 이걸 어렵게 배워요.",
+            "콘텐츠에 맞는 모드를 선택하세요 — 코드와 구조화 데이터는 줄 단위 모드, 글이나 계약서 같은 산문은 단어 단위 모드가 적합해요.",
+          ] },
+
+          // ── 7. 고급 활용 사례 ──
+          { type: "heading", text: "텍스트 비교 도구 고급 활용법" },
+          { type: "paragraph", text: "기본적인 텍스트 비교 외에도, 다양한 실무 워크플로우에서 활용할 수 있어요:" },
+          { type: "list", items: [
+            "API 응답 검증 — QA 테스트에서 예상 JSON 응답과 실제 응답을 비교해요. 누락된 필드, 변경된 값, 예상치 못한 추가 데이터를 즉시 발견할 수 있어요.",
+            "SEO 감사 — 페이지 업데이트 전후의 메타 태그를 비교해서 title 태그, description, canonical URL이 올바른지 확인하세요.",
+            "DB 마이그레이션 확인 — 마이그레이션 전후의 스키마나 시드 데이터를 내보내서 비교하면 누락된 내용이 없는지 검증할 수 있어요.",
+            "번역 검수 — 원문과 번역본을 나란히 비교해요. 번역 품질까지 판단하기는 어렵지만, 실수로 빠진 섹션이 있는지는 바로 확인할 수 있어요.",
+            "이메일 템플릿 테스트 — 이메일 템플릿의 HTML 소스를 버전별로 비교해서 깨진 링크, 누락된 이미지, 스타일 오류를 찾아내세요.",
+          ] },
+
+          // ── 8. 마무리 + CTA ──
+          { type: "heading", text: "눈으로 찾지 말고, 도구로 비교하세요" },
+          { type: "paragraph", text: "텍스트 비교 도구는 사람이 몇 분 걸릴 일을 몇 초 만에 해내고, 절대 변경 사항을 놓치지 않아요. 코드 리뷰, 계약서 비교, 설정 파일 확인 등 어떤 상황이든, 온라인 비교 도구가 모든 차이점을 잡아내는 가장 간편한 방법이에요." },
+          { type: "paragraph", text: "QuickFigure의 텍스트 비교 도구는 무료이고, 브라우저에서 바로 작동하며, 회원가입이 필요 없어요. 두 텍스트를 붙여넣고 비교 버튼을 누르면 모든 차이점이 즉시 하이라이트돼요." },
+          { type: "cta", tool: "text-diff", toolName: "지금 바로 텍스트 비교하기 — 무료 온라인 도구" },
+
+          // ── FAQ ──
+          { type: "faq", faqItems: [
+            { question: "텍스트 비교 도구(Diff Checker)란 무엇인가요?", answer: "두 개의 텍스트를 비교해서 차이점을 하이라이트로 보여주는 도구예요. 추가된 내용은 초록색, 삭제된 내용은 빨간색으로 표시되어 두 버전 사이에 무엇이 바뀌었는지 정확하게 확인할 수 있어요." },
+            { question: "온라인 텍스트 비교 도구는 무료인가요?", answer: "네. QuickFigure의 텍스트 비교 도구는 완전 무료이고 회원가입도 필요 없어요. 브라우저에서 모든 처리가 이뤄져서 텍스트가 서버에 업로드되지 않아요." },
+            { question: "코드도 비교할 수 있나요?", answer: "물론이에요. 텍스트 비교 도구는 어떤 프로그래밍 언어의 소스 코드든 비교할 수 있어요. 코드 비교 시에는 줄 단위 모드와 '공백 무시' 옵션을 사용하면 가장 좋은 결과를 얻을 수 있어요." },
+            { question: "온라인 비교 도구를 사용할 때 텍스트가 안전한가요?", answer: "QuickFigure에서는 안전해요. JavaScript를 사용해서 브라우저에서 로컬로 모든 처리가 이뤄져요. 텍스트가 기기를 떠나지 않아요 — 서버 업로드 없음, 저장 없음, 추적 없음." },
+            { question: "줄 단위 비교와 단어 단위 비교의 차이는 뭔가요?", answer: "줄 단위 모드는 전체 줄을 비교해서 줄 단위로 추가/삭제를 표시해요. 단어 단위 모드는 각 줄 안에서 구체적으로 어떤 단어가 바뀌었는지 하이라이트해요. 코드와 구조화 데이터에는 줄 단위, 글이나 문서에는 단어 단위를 사용하세요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "text-diff", name: { en: "Text Diff", ko: "텍스트 비교" } },
+      { slug: "word-counter", name: { en: "Word Counter", ko: "글자수 세기" } },
+      { slug: "case-converter", name: { en: "Case Converter", ko: "대소문자 변환" } },
+    ],
+    relatedPosts: ["word-counter-guide", "case-converter-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
