@@ -103,78 +103,46 @@ export default async function LangLayout({
       {/* Footer */}
       <footer className="border-t border-neutral-200 dark:border-neutral-800">
         <div className="max-w-5xl mx-auto px-4 py-10">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
-            <div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-sm">
+            <div className="col-span-2 sm:col-span-3 lg:col-span-2">
               <p className="font-semibold mb-3">QuickFigure</p>
-              <p className="text-neutral-500 dark:text-neutral-400 text-xs leading-relaxed">
+              <p className="text-neutral-500 dark:text-neutral-400 text-xs leading-relaxed max-w-xs">
                 {t.siteDescription}
               </p>
             </div>
-            <div>
-              <p className="font-semibold mb-3">{t.footer.tools}</p>
-              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400">
-                <li>
-                  <Link href={`/${lang}/tools/word-counter`} className="hover:text-foreground transition-colors">
-                    {t.home.wordCounter}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/tools/json-formatter`} className="hover:text-foreground transition-colors">
-                    {t.home.jsonFormatter}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/tools/compound-interest-calculator`} className="hover:text-foreground transition-colors">
-                    {t.home.compoundInterest}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/tools/bmi-calculator`} className="hover:text-foreground transition-colors">
-                    {t.home.bmiCalc}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/tools/calorie-calculator`} className="hover:text-foreground transition-colors">
-                    {t.home.calorieCalc}
-                  </Link>
-                </li>
+            <nav>
+              <p className="font-semibold mb-3">{t.footer.financeTools}</p>
+              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400 text-xs">
+                <li><Link href={`/${lang}/tools/salary-calculator`} className="hover:text-foreground transition-colors">{t.home.salaryCalc}</Link></li>
+                <li><Link href={`/${lang}/tools/loan-calculator`} className="hover:text-foreground transition-colors">{t.home.loanCalc}</Link></li>
+                <li><Link href={`/${lang}/tools/severance-calculator`} className="hover:text-foreground transition-colors">{t.home.severanceCalc}</Link></li>
+                <li><Link href={`/${lang}/tools/inheritance-tax-calculator`} className="hover:text-foreground transition-colors">{t.home.inheritanceTaxCalc}</Link></li>
               </ul>
-            </div>
-            <div>
+            </nav>
+            <nav>
+              <p className="font-semibold mb-3">{t.footer.fileTools}</p>
+              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400 text-xs">
+                <li><Link href={`/${lang}/tools/pdf-merger`} className="hover:text-foreground transition-colors">{t.home.pdfMerger}</Link></li>
+                <li><Link href={`/${lang}/tools/image-compressor`} className="hover:text-foreground transition-colors">{t.home.imageCompressor}</Link></li>
+                <li><Link href={`/${lang}/tools/pdf-to-word`} className="hover:text-foreground transition-colors">{t.home.pdfToWord}</Link></li>
+                <li><Link href={`/${lang}/tools/image-converter`} className="hover:text-foreground transition-colors">{t.home.imageConverter}</Link></li>
+              </ul>
+            </nav>
+            <nav>
               <p className="font-semibold mb-3">{t.footer.legal}</p>
-              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400">
-                <li>
-                  <Link href={`/${lang}/privacy-policy`} className="hover:text-foreground transition-colors">
-                    {t.nav.privacy}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/terms-of-service`} className="hover:text-foreground transition-colors">
-                    {t.nav.terms}
-                  </Link>
-                </li>
+              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400 text-xs">
+                <li><Link href={`/${lang}/privacy-policy`} className="hover:text-foreground transition-colors">{t.nav.privacy}</Link></li>
+                <li><Link href={`/${lang}/terms-of-service`} className="hover:text-foreground transition-colors">{t.nav.terms}</Link></li>
               </ul>
-            </div>
-            <div>
+            </nav>
+            <nav>
               <p className="font-semibold mb-3">{t.footer.company}</p>
-              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400">
-                <li>
-                  <Link href={`/${lang}/blog`} className="hover:text-foreground transition-colors">
-                    {t.blog.title}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/about`} className="hover:text-foreground transition-colors">
-                    {t.nav.about}
-                  </Link>
-                </li>
-                <li>
-                  <Link href={`/${lang}/contact`} className="hover:text-foreground transition-colors">
-                    {t.nav.contact}
-                  </Link>
-                </li>
+              <ul className="space-y-2 text-neutral-500 dark:text-neutral-400 text-xs">
+                <li><Link href={`/${lang}/blog`} className="hover:text-foreground transition-colors">{t.blog.title}</Link></li>
+                <li><Link href={`/${lang}/about`} className="hover:text-foreground transition-colors">{t.nav.about}</Link></li>
+                <li><Link href={`/${lang}/contact`} className="hover:text-foreground transition-colors">{t.nav.contact}</Link></li>
               </ul>
-            </div>
+            </nav>
           </div>
           <div className="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800 text-xs text-neutral-400">
             &copy; {new Date().getFullYear()} QuickFigure. {t.footer.rights}
