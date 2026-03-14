@@ -62,4 +62,5 @@ export const TOOL_SLUGS = [
   "excel-merge",
   "image-upscaler",
   "image-cropper",
+  "image-kb-resizer",
 ] as const;
