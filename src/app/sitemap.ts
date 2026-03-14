@@ -123,6 +123,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/image-upscale-guide",
     "/blog/image-crop-guide",
     "/blog/image-kb-guide",
+    "/blog/watermark-guide",
     "/about",
     "/contact",
     "/privacy-policy",

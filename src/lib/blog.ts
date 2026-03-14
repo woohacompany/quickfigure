@@ -7601,6 +7601,136 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["image-upscale-guide", "image-crop-guide"],
   },
+  {
+    slug: "watermark-guide",
+    category: "utility",
+    date: "2026-03-15",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "Photo with semi-transparent text and logo watermark overlay for copyright protection",
+      ko: "저작권 보호를 위해 반투명 텍스트와 로고 워터마크가 입혀진 사진",
+    },
+    translations: {
+      en: {
+        title: "How to Add Watermarks to Images: Protect Your Photos & Products",
+        summary: "Learn how to add text and logo watermarks to images. Protect product photos, portfolios, and confidential documents. Free online tool included.",
+        content: [
+          { type: "paragraph", text: "You spent hours photographing your products, editing each image to perfection — only to find them stolen and reposted on a competitor's listing. Or you've shared portfolio pieces online and discovered them used without credit. Image theft is rampant, but watermarking is one of the simplest and most effective ways to protect your work." },
+          { type: "paragraph", text: "In this guide, we'll cover when you need watermarks, the difference between text and logo watermarks, three practical methods to add them, and tips for making watermarks effective without ruining your images." },
+
+          { type: "heading", text: "When Do You Need Watermarks?" },
+          { type: "paragraph", text: "Watermarks aren't just for professional photographers. Here are the most common use cases:" },
+          { type: "list", items: [
+            "E-commerce product photos: Prevent competitors from stealing your product images for their own listings. Especially important on marketplaces like Amazon, eBay, and Etsy.",
+            "Portfolio and artwork: Photographers, illustrators, and designers sharing work online need protection against unauthorized use and uncredited sharing.",
+            "Confidential documents: Mark drafts, samples, or internal documents with 'CONFIDENTIAL', 'DRAFT', or 'SAMPLE' to prevent misuse.",
+            "Brand marketing: Add your logo to social media images, blog graphics, and promotional materials to increase brand recognition.",
+          ] },
+          { type: "callout", text: "Even a subtle watermark deters casual image theft. Most people will skip a watermarked image and look for an unprotected one instead." },
+
+          { type: "heading", text: "Text vs Logo Watermark: Which Should You Use?" },
+          { type: "paragraph", text: "Both types have their place. Here's how they compare:" },
+          { type: "list", items: [
+            "Text watermark — Preparation: None, just type. Use cases: Copyright notices (©), confidential marks, quick protection. Pros: Fast, no files needed, fully customizable. Cons: Less professional-looking than a logo.",
+            "Logo watermark — Preparation: Need a logo file (PNG with transparent background recommended). Use cases: Brand logos, company marks, professional portfolios. Pros: Professional appearance, strong brand recognition. Cons: Requires a pre-made logo file.",
+          ] },
+          { type: "paragraph", text: "For quick copyright protection, text watermarks are ideal. For brand-building and professional use, logo watermarks are the way to go. Many professionals use both — a logo in the corner plus a tiled text pattern across the image." },
+
+          { type: "heading", text: "3 Ways to Add Watermarks" },
+
+          { type: "paragraph", text: "Method 1: Free online tool (fastest). QuickFigure's Image Watermark tool lets you add both text and logo watermarks with full control over position, opacity, rotation, and tiling. Batch-process up to 20 images at once, all in your browser with zero server uploads. Perfect for e-commerce sellers who need to watermark product photos quickly." },
+          { type: "cta", tool: "image-watermark", toolName: "Image Watermark Tool — Add Watermarks Free" },
+
+          { type: "paragraph", text: "Method 2: Photoshop or Canva (professional). Photoshop gives you complete control — create a watermark layer, adjust blending mode and opacity, and save it as an action for batch processing. Canva offers a simpler drag-and-drop approach with templates, good for social media graphics." },
+
+          { type: "paragraph", text: "Method 3: Mobile apps (on the go). Apps like Snapseed (free, by Google), eZy Watermark, and Add Watermark on Photos let you add watermarks directly from your phone. Convenient for quick social media posts, but limited batch capabilities." },
+
+          { type: "heading", text: "Tips for Effective Watermarks" },
+          { type: "list", items: [
+            "Keep opacity at 20–40%: Too transparent and it's invisible; too opaque and it ruins the image. 30% is usually the sweet spot.",
+            "Use diagonal tiled repeat for maximum protection: A single corner watermark can be easily cropped out. Tiling across the entire image makes removal extremely difficult.",
+            "Don't put watermarks only in corners: Corner-only watermarks are the easiest to remove by simply cropping. Place them where they overlap important content.",
+            "Prepare logos as transparent PNGs: A logo on a white background will create an ugly white box on your image. Always use PNG with transparency.",
+            "Match watermark to content: Light watermarks on dark images, dark watermarks on light images. Some tools let you add a subtle shadow or outline for visibility.",
+          ] },
+          { type: "callout", text: "Pro tip: For maximum protection, use a semi-transparent tiled pattern across the entire image. For branding, a single logo at 25-35% opacity in a strategic position works best." },
+
+          { type: "paragraph", text: "Whether you're protecting product photos from theft or building brand recognition through consistent logo placement, watermarking is a simple step that can save you a lot of headaches. Try QuickFigure's free watermark tool — text or logo, single or batch, with full customization and zero server uploads." },
+          { type: "cta", tool: "image-watermark", toolName: "Add Watermarks Now — Free Online Tool" },
+
+          { type: "faq", faqItems: [
+            { question: "Can watermarks be removed?", answer: "Simple watermarks (single corner placement) can be cropped or edited out. Tiled watermarks that cover the entire image are extremely difficult to remove without destroying the image. For maximum protection, use tiled repeat." },
+            { question: "Do watermarks reduce image quality?", answer: "Watermarking itself doesn't reduce the underlying image quality — it adds a layer on top. However, saving as JPG after watermarking applies compression. Use PNG for lossless output or JPG at 90%+ quality." },
+            { question: "What's the best watermark opacity?", answer: "20-40% opacity works best for most cases. 30% is a good starting point — visible enough to deter theft but subtle enough not to ruin the viewing experience." },
+            { question: "Is it safe to use an online watermark tool?", answer: "QuickFigure processes everything in your browser using Canvas API. Your images never leave your device or get uploaded to any server, ensuring complete privacy." },
+            { question: "Can I watermark multiple images at once?", answer: "Yes. QuickFigure's watermark tool supports batch processing of up to 20 images with the same watermark settings. Download individually or as a ZIP file." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "이미지 워터마크 넣는 법: 내 사진과 상품 이미지를 보호하세요",
+        summary: "사진에 텍스트·로고 워터마크를 넣는 방법. 상품 이미지 보호, 포트폴리오 보호, 기밀 문서 표시까지. 무료 온라인 도구.",
+        content: [
+          { type: "paragraph", text: "정성 들여 찍은 상품 사진이 다른 쇼핑몰에 도용돼 있는 걸 발견한 적 있으시죠? 포트폴리오에 올린 작품이 출처도 없이 퍼져나가는 경험도 흔해요. 이미지 도용은 정말 빈번하지만, 워터마크를 넣는 것만으로도 상당 부분 방지할 수 있어요." },
+          { type: "paragraph", text: "이 글에서는 워터마크가 필요한 상황, 텍스트와 로고 워터마크의 차이, 워터마크를 넣는 3가지 방법, 그리고 효과적인 워터마크 팁까지 총정리해드릴게요." },
+
+          { type: "heading", text: "워터마크가 필요한 경우" },
+          { type: "paragraph", text: "워터마크는 전문 사진가만 쓰는 게 아니에요. 아래 상황에서 특히 유용해요." },
+          { type: "list", items: [
+            "쇼핑몰 상품 이미지 보호: 경쟁 업체가 내 상품 사진을 가져다 쓰는 걸 방지해요. 특히 스마트스토어, 쿠팡, 11번가 같은 마켓플레이스에서 중요해요.",
+            "포트폴리오/작품 보호: 사진작가, 일러스트레이터, 디자이너가 온라인에 작품을 공유할 때 무단 사용과 출처 미표기를 방지해요.",
+            "기밀 문서 표시: 초안, 샘플, 내부 문서에 'CONFIDENTIAL', 'DRAFT', 'SAMPLE'을 표시해서 오용을 방지해요.",
+            "브랜드 마케팅: SNS 이미지, 블로그 그래픽, 홍보물에 로고를 넣어서 브랜드 인지도를 높여요.",
+          ] },
+          { type: "callout", text: "은은한 워터마크 하나만으로도 대부분의 이미지 도용을 막을 수 있어요. 사람들은 워터마크가 있는 이미지 대신 없는 이미지를 찾아가거든요." },
+
+          { type: "heading", text: "텍스트 vs 이미지(로고) 워터마크 비교" },
+          { type: "paragraph", text: "두 종류 모두 각각의 장점이 있어요. 비교해볼게요." },
+          { type: "list", items: [
+            "텍스트 워터마크 — 준비물: 없음, 텍스트만 입력. 용도: 저작권 표시(©), 기밀 표시, 빠른 보호. 장점: 빠르고 간편, 파일 불필요, 자유롭게 커스터마이징. 단점: 로고만큼 전문적이진 않아요.",
+            "이미지(로고) 워터마크 — 준비물: 로고 파일 필요 (PNG 투명 배경 권장). 용도: 브랜드 로고, 회사 마크, 전문 포트폴리오. 장점: 전문적인 외관, 강력한 브랜드 인지도. 단점: 미리 만든 로고 파일이 필요해요.",
+          ] },
+          { type: "paragraph", text: "빠른 저작권 보호에는 텍스트 워터마크가 적합하고, 브랜드 구축과 전문적 사용에는 로고 워터마크가 좋아요. 많은 전문가들은 모서리에 로고 + 전체에 타일 텍스트를 조합해서 사용해요." },
+
+          { type: "heading", text: "워터마크 넣는 3가지 방법" },
+
+          { type: "paragraph", text: "방법 1: 무료 온라인 도구 (가장 빠름). QuickFigure의 이미지 워터마크 도구는 텍스트와 로고 워터마크 모두 지원하고, 위치·투명도·회전·타일 반복까지 세밀하게 조절할 수 있어요. 최대 20개 이미지를 한 번에 일괄 처리 가능하고, 모든 처리가 브라우저에서 이뤄져서 서버 업로드가 전혀 없어요. 상품 사진을 빠르게 워터마크 처리해야 하는 셀러에게 딱이에요." },
+          { type: "cta", tool: "image-watermark", toolName: "이미지 워터마크 도구 — 무료로 바로 사용하기" },
+
+          { type: "paragraph", text: "방법 2: 포토샵 또는 캔바 (전문가용). 포토샵은 워터마크 레이어를 만들고 블렌딩 모드와 투명도를 조절한 다음 액션으로 저장해서 일괄 처리할 수 있어요. 캔바는 드래그앤드롭으로 더 쉽게 접근할 수 있고 템플릿도 제공해서 SNS 그래픽에 좋아요." },
+
+          { type: "paragraph", text: "방법 3: 모바일 앱 (이동 중에). Snapseed(무료, 구글), eZy Watermark, Add Watermark on Photos 같은 앱으로 핸드폰에서 바로 워터마크를 넣을 수 있어요. SNS 포스팅 전 빠르게 처리하기 편하지만 일괄 처리 기능은 제한적이에요." },
+
+          { type: "heading", text: "효과적인 워터마크 팁" },
+          { type: "list", items: [
+            "투명도는 20~40%가 적절해요: 너무 투명하면 안 보이고, 너무 진하면 사진이 망가져요. 30%가 보통 최적이에요.",
+            "대각선 타일 반복이 보호에 가장 효과적이에요: 모서리에만 넣은 워터마크는 크롭으로 쉽게 제거돼요. 전체에 반복 배치하면 제거가 극도로 어려워요.",
+            "모서리에만 넣지 마세요: 모서리 워터마크는 자르기만 하면 사라져요. 중요한 내용과 겹치는 위치에 배치하세요.",
+            "로고는 PNG 투명 배경으로 준비하세요: 흰색 배경 로고는 이미지 위에 흰 박스가 생겨서 보기 안 좋아요. 반드시 투명 PNG를 사용하세요.",
+            "배경에 맞게 워터마크를 조절하세요: 어두운 이미지에는 밝은 워터마크, 밝은 이미지에는 어두운 워터마크. 그림자나 외곽선을 추가하면 가시성이 좋아져요.",
+          ] },
+          { type: "callout", text: "꿀팁: 최대 보호를 위해서는 반투명 타일 패턴을 전체에 깔아주세요. 브랜딩 목적이면 25~35% 투명도의 로고를 전략적 위치에 하나 배치하는 게 가장 좋아요." },
+
+          { type: "paragraph", text: "상품 사진 도용을 방지하든 로고로 브랜드 인지도를 높이든, 워터마크는 간단하지만 효과적인 보호 수단이에요. QuickFigure의 무료 워터마크 도구를 사용해보세요 — 텍스트·로고 모두 지원, 개별·일괄 처리, 자유로운 커스터마이징, 서버 업로드 제로." },
+          { type: "cta", tool: "image-watermark", toolName: "이미지 워터마크 도구 — 무료로 바로 사용하기" },
+
+          { type: "faq", faqItems: [
+            { question: "워터마크는 제거할 수 있나요?", answer: "간단한 워터마크(모서리에 하나)는 크롭이나 편집으로 제거 가능해요. 하지만 전체 이미지에 타일 반복된 워터마크는 이미지를 훼손하지 않고는 거의 제거가 불가능해요. 최대 보호를 원하면 타일 반복을 사용하세요." },
+            { question: "워터마크를 넣으면 이미지 화질이 떨어지나요?", answer: "워터마크 자체는 원본 이미지 품질을 떨어뜨리지 않아요 — 위에 레이어를 추가할 뿐이에요. 다만 워터마크 후 JPG로 저장하면 압축이 적용돼요. 무손실 출력을 원하면 PNG, 아니면 JPG 90% 이상 품질을 사용하세요." },
+            { question: "워터마크 투명도는 얼마가 적당한가요?", answer: "대부분의 경우 20~40%가 적당해요. 30%가 좋은 시작점이에요 — 도용을 막을 만큼 보이면서도 사진 감상을 방해하지 않는 수준이에요." },
+            { question: "온라인 워터마크 도구는 안전한가요?", answer: "QuickFigure는 Canvas API를 사용해서 모든 처리가 브라우저에서 이뤄져요. 이미지가 기기를 떠나거나 서버에 업로드되지 않아서 완전한 프라이버시가 보장돼요." },
+            { question: "여러 사진에 한꺼번에 워터마크를 넣을 수 있나요?", answer: "네. QuickFigure의 워터마크 도구는 동일한 워터마크 설정으로 최대 20개 이미지를 일괄 처리할 수 있어요. 개별 다운로드 또는 ZIP 파일로 한꺼번에 받을 수 있어요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "image-watermark", name: { en: "Image Watermark", ko: "이미지 워터마크 추가" } },
+      { slug: "image-resizer", name: { en: "Image Resizer", ko: "이미지 리사이저" } },
+      { slug: "image-compressor", name: { en: "Image Compressor", ko: "이미지 압축" } },
+    ],
+    relatedPosts: ["image-kb-guide", "image-crop-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
