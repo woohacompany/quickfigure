@@ -6828,6 +6828,186 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["dsr-guide", "inheritance-tax-guide"],
   },
+  {
+    slug: "national-pension-guide",
+    category: "finance",
+    date: "2026-03-12",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "Korean national pension calculation with retirement savings chart and NPS logo",
+      ko: "국민연금 수령액 계산과 노후 저축 그래프가 보이는 이미지",
+    },
+    translations: {
+      en: {
+        title: "Korea National Pension: How Much Will You Receive?",
+        summary: "A complete guide to Korea's National Pension System—how benefits are calculated, claiming age by birth year, early vs. deferred claiming comparison, and 5 ways to maximize your pension.",
+        content: [
+          { type: "paragraph", text: "Korea's National Pension Service (NPS) is the backbone of retirement income for most Korean workers. With the 2026 premium rate increase from 9% to 9.5%, public interest in pension benefits has surged. But many contributors have no idea how much they'll actually receive. This guide breaks down the benefit calculation formula, shows estimated amounts by income and contribution period, compares early vs. deferred claiming, and shares 5 practical strategies to maximize your pension." },
+
+          { type: "heading", text: "How Is the Pension Benefit Calculated?" },
+          { type: "paragraph", text: "Your National Pension benefit depends on two core factors: your income (B-value) and your contribution period. The formula also includes the A-value—the average monthly income of all NPS contributors—which creates a wealth redistribution effect: lower earners receive proportionally more than they paid in." },
+          { type: "list", items: [
+            "A-value (2026): ₩3,193,511 — the average monthly income of all contributors. Updated annually.",
+            "B-value: Your personal average monthly income during your contribution period. Capped between ₩400,000 and ₩6,370,000.",
+            "For ≤20 years: Basic Pension = 1.29 × (A + B) × (months / 240).",
+            "For >20 years: Basic Pension = 1.29 × (A + B) × (1 + 0.05 × excess months / 12).",
+            "Payment rate: 50% at 10 years, +5% per additional year, 100% at 20+ years.",
+          ] },
+          { type: "callout", text: "The A-value means even if you earned less than average, you'll receive a higher return on your contributions compared to high earners. This is the NPS's income redistribution function—a key advantage over private pensions." },
+
+          { type: "heading", text: "Estimated Monthly Benefits by Income & Period" },
+          { type: "paragraph", text: "The table below shows approximate monthly pension benefits based on the 2026 A-value (₩3,193,511). These are simplified estimates assuming normal claiming at age 65 with no dependent family additions:" },
+          { type: "list", items: [
+            "₩2M income / 10yr: ~₩330K | 15yr: ~₩430K | 20yr: ~₩540K | 25yr: ~₩650K | 30yr: ~₩760K",
+            "₩3M income / 10yr: ~₩370K | 15yr: ~₩490K | 20yr: ~₩610K | 25yr: ~₩740K | 30yr: ~₩870K",
+            "₩4M income / 10yr: ~₩410K | 15yr: ~₩550K | 20yr: ~₩690K | 25yr: ~₩830K | 30yr: ~₩970K",
+            "₩5M income / 10yr: ~₩450K | 15yr: ~₩610K | 20yr: ~₩760K | 25yr: ~₩920K | 30yr: ~₩1.08M",
+          ] },
+          { type: "paragraph", text: "Want to know your exact estimated benefit? Use our calculator with your actual income and contribution period." },
+          { type: "cta", tool: "national-pension-calculator", toolName: "National Pension Calculator" },
+
+          { type: "heading", text: "Pension Claiming Age by Birth Year" },
+          { type: "paragraph", text: "The normal pension claiming age varies by birth year. Korea has been gradually raising it from 60 to 65:" },
+          { type: "list", items: [
+            "Born 1953–1956: Age 61",
+            "Born 1957–1960: Age 62",
+            "Born 1961–1964: Age 63",
+            "Born 1965–1968: Age 64",
+            "Born 1969 or later: Age 65",
+          ] },
+          { type: "paragraph", text: "You can also choose early claiming (up to 5 years before normal age, with a 6% reduction per year) or deferred claiming (up to 5 years after, with a 7.2% increase per year)." },
+
+          { type: "heading", text: "Early vs. Normal vs. Deferred Claiming" },
+          { type: "paragraph", text: "Let's compare using a base benefit of ₩1,000,000/month at normal claiming age 65:" },
+          { type: "list", items: [
+            "Early (age 60): ₩700,000/month (−30%). By age 77, cumulative total falls behind normal claiming.",
+            "Normal (age 65): ₩1,000,000/month. The baseline.",
+            "Deferred (age 70): ₩1,360,000/month (+36%). By age 82, cumulative total overtakes normal claiming.",
+          ] },
+          { type: "paragraph", text: "The decision depends on your health, other income sources, and life expectancy. If you're healthy and expect to live past 82, deferred claiming offers the best total return. If you need income immediately or have health concerns, early claiming provides a safety net." },
+          { type: "callout", text: "Key insight: Deferred claiming earns 7.2% more per year—far higher than most savings account rates. If you have other income to bridge the gap, deferring is often the mathematically superior choice." },
+
+          { type: "heading", text: "5 Ways to Maximize Your Pension" },
+          { type: "list", items: [
+            "1. Extend your contribution period: Use voluntary continued enrollment (임의계속가입) to keep paying until age 65, even after employment ends. Every additional year of contribution significantly increases your benefit.",
+            "2. Use voluntary enrollment: Stay-at-home spouses, students, and others not required to contribute can still join voluntarily. A married couple each contributing separately will receive two pensions instead of one.",
+            "3. Defer your claiming: Each year of deferral adds 7.2% to your monthly benefit, compounding to 36% over 5 years. This is one of the best guaranteed returns available.",
+            "4. Leverage credit programs: NPS provides contribution credits for childbirth (up to 50 months), military service (6 months), and unemployment (up to 12 months). These add free contribution months.",
+            "5. Back-pay missed contributions (추후납부): If you had exemption periods (학생, 실업 등), you can pay retroactively to fill gaps and increase your contribution period.",
+          ] },
+
+          { type: "heading", text: "2026 NPS Changes" },
+          { type: "list", items: [
+            "Premium rate: Increased from 9% to 9.5% in 2026, rising 0.5% annually to reach 13% by 2033.",
+            "Standard income range: Minimum ₩400,000, maximum ₩6,370,000.",
+            "A-value (2026): ₩3,193,511.",
+            "Income replacement rate: Under ongoing review for gradual adjustment.",
+          ] },
+
+          { type: "heading", text: "Key Takeaway" },
+          { type: "paragraph", text: "The single most important factor in your pension benefit is contribution period. Start early, contribute consistently, and consider extending your contribution years. Even small increases in contribution period can significantly boost your monthly benefit for decades of retirement." },
+          { type: "cta", tool: "national-pension-calculator", toolName: "National Pension Calculator" },
+          { type: "paragraph", text: "*This guide provides general information based on 2026 NPS standards. For personalized pension projections, visit the official NPS website at nps.or.kr or consult your local NPS office.*" },
+
+          { type: "faq", faqItems: [
+            { question: "What is the minimum contribution period to receive a pension?", answer: "You must contribute for at least 10 years (120 months) to qualify for the old-age pension. If you contributed for less than 10 years, you'll receive a lump-sum refund instead of monthly payments." },
+            { question: "Can I receive both NPS and a company pension?", answer: "Yes. NPS (국민연금) and company retirement pensions (퇴직연금) are separate systems. You can receive both simultaneously. Together with personal pensions, they form Korea's three-pillar retirement system." },
+            { question: "What happens to my pension if I move abroad?", answer: "Korean nationals living abroad can continue to receive their NPS pension. Foreign nationals may be eligible for a lump-sum refund when leaving Korea, depending on their country's social security agreement with Korea." },
+            { question: "Is NPS pension taxable?", answer: "Yes, NPS pension income is subject to pension income tax. However, the tax rate is generally lower than employment income tax, and there's a pension income deduction. The effective tax rate for most retirees is quite low." },
+            { question: "How does NPS handle inflation?", answer: "NPS adjusts pension benefits annually based on the consumer price index (CPI). This means your real purchasing power is largely maintained over time—a significant advantage over fixed private annuities." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "국민연금 수령액 계산법: 얼마 받을 수 있을까? 수령액 높이는 5가지 방법",
+        summary: "국민연금 예상 수령액 계산법, 소득·가입기간별 수령액 표, 조기·연기수령 비교, 수령액 높이는 5가지 방법을 총정리합니다.",
+        content: [
+          { type: "paragraph", text: "내가 매달 내는 국민연금, 나중에 얼마나 돌려받을 수 있을까요? 2026년부터 보험료율이 9%에서 9.5%로 인상되면서 국민연금에 대한 관심이 부쩍 높아졌어요. 하지만 정작 내가 얼마를 받게 되는지 모르는 분들이 많죠. 이 글에서는 국민연금 수령액이 어떻게 결정되는지, 소득·가입기간별로 얼마를 받을 수 있는지, 조기·연기수령 중 뭐가 유리한지, 그리고 수령액을 높이는 5가지 방법까지 모두 정리해 드릴게요." },
+
+          { type: "heading", text: "국민연금 수령액, 어떻게 결정될까?" },
+          { type: "paragraph", text: "국민연금 수령액을 결정하는 핵심 요소는 딱 2가지예요. 바로 **소득(B값)**과 **가입기간**이에요. 여기에 A값이라는 것이 더해지는데, 이건 전체 국민연금 가입자의 평균소득이에요. 2026년 A값은 약 **319만 원**이에요." },
+          { type: "list", items: [
+            "**A값** (2026년): 3,193,511원 — 전체 가입자 평균소득. 매년 갱신돼요. 소득재분배 기능을 해서, 소득이 낮은 분도 낸 것 대비 더 많이 받을 수 있어요.",
+            "**B값**: 내 가입기간 중 평균소득. 기준소득월액 범위는 최저 40만 원 ~ 최고 637만 원이에요.",
+            "**가입기간 20년 이하**: 기본연금액 = 1.29 × (A + B) × (가입월수 / 240)",
+            "**가입기간 20년 초과**: 기본연금액 = 1.29 × (A + B) × (1 + 0.05 × 초과월수 / 12)",
+            "**지급률**: 10년 가입 시 50%, 매년 +5%씩 증가, 20년 이상이면 100%",
+          ] },
+          { type: "callout", text: "A값 덕분에 평균보다 소득이 낮아도 낸 것 대비 높은 수익률을 얻을 수 있어요. 이게 국민연금이 민간 연금보다 유리한 핵심 포인트예요. 소득이 낮을수록 '가성비'가 좋은 셈이죠!" },
+
+          { type: "heading", text: "소득·가입기간별 예상 수령액 표" },
+          { type: "paragraph", text: "2026년 A값 기준으로 소득과 가입기간에 따른 예상 월 수령액을 정리했어요. 정상수령(만 65세), 부양가족연금 미포함 기준이에요." },
+          { type: "list", items: [
+            "**월소득 200만원** — 10년: 약 33만원 | 15년: 약 43만원 | 20년: 약 54만원 | 25년: 약 65만원 | 30년: 약 76만원",
+            "**월소득 300만원** — 10년: 약 37만원 | 15년: 약 49만원 | 20년: 약 61만원 | 25년: 약 74만원 | 30년: 약 87만원",
+            "**월소득 400만원** — 10년: 약 41만원 | 15년: 약 55만원 | 20년: 약 69만원 | 25년: 약 83만원 | 30년: 약 97만원",
+            "**월소득 500만원** — 10년: 약 45만원 | 15년: 약 61만원 | 20년: 약 76만원 | 25년: 약 92만원 | 30년: 약 108만원",
+          ] },
+          { type: "paragraph", text: "*간이 계산이며 실제 수령액과 차이가 있을 수 있어요. 정확한 예상 수령액은 아래 계산기로 직접 확인해 보세요!*" },
+          { type: "cta", tool: "national-pension-calculator", toolName: "국민연금 수령액 계산기 바로가기" },
+
+          { type: "heading", text: "국민연금 수령 나이 (출생연도별)" },
+          { type: "paragraph", text: "국민연금을 받기 시작하는 나이(수급개시연령)는 출생연도에 따라 달라요. 점진적으로 65세로 올라가고 있죠." },
+          { type: "list", items: [
+            "1953~1956년생: 만 61세",
+            "1957~1960년생: 만 62세",
+            "1961~1964년생: 만 63세",
+            "1965~1968년생: 만 64세",
+            "**1969년 이후 출생**: 만 65세",
+          ] },
+          { type: "paragraph", text: "정상수령 나이보다 최대 5년 일찍 받는 **조기수령**(연 6%씩 감액)과 최대 5년 늦게 받는 **연기수령**(연 7.2%씩 증액)도 선택할 수 있어요." },
+
+          { type: "heading", text: "조기수령 vs 연기수령, 뭐가 유리할까?" },
+          { type: "paragraph", text: "정상수령 시 월 **100만 원**을 받는다고 가정하고 비교해 볼게요." },
+          { type: "list", items: [
+            "**조기수령 (60세)**: 월 70만 원 (−30%). 5년 먼저 받기 시작하지만 금액이 적어요. 누적 수령액은 약 **77세**에 정상수령에게 추월당해요.",
+            "**정상수령 (65세)**: 월 100만 원. 기준 금액이에요.",
+            "**연기수령 (70세)**: 월 136만 원 (+36%). 5년 늦게 받기 시작하지만 금액이 크게 늘어요. 누적 수령액은 약 **82세**에 정상수령을 추월해요.",
+          ] },
+          { type: "paragraph", text: "결론적으로, **건강 상태**와 **다른 소득원 유무**에 따라 판단해야 해요. 건강하고 다른 소득이 있다면 연기수령이 유리하고, 당장 생활비가 필요하다면 조기수령이 현실적이에요." },
+          { type: "callout", text: "연기수령의 연 7.2% 증액은 은행 예금 이자율보다 훨씬 높아요! 다른 소득으로 생활비를 해결할 수 있다면, 연기수령은 수학적으로 가장 유리한 선택이에요." },
+
+          { type: "heading", text: "수령액 높이는 방법 5가지" },
+          { type: "list", items: [
+            "**1. 가입기간 늘리기** — 임의계속가입으로 만 65세까지 납부할 수 있어요. 퇴직 후에도 계속 납부하면 가입기간이 늘어나 수령액이 크게 증가해요. 1년만 더 내도 연금이 약 5% 올라요.",
+            "**2. 임의가입 활용** — 전업주부, 학생, 27세 이상 무소득자도 임의가입으로 국민연금에 가입할 수 있어요. 부부가 각각 가입하면 두 사람 모두 연금을 받을 수 있어요!",
+            "**3. 연기수령** — 매년 +7.2%, 5년 연기하면 +36% 증액이에요. 은행 이자보다 훨씬 높은 수익률이에요.",
+            "**4. 크레딧 제도** — 출산(둘째부터 최대 50개월), 군복무(6개월), 실업(최대 12개월)에 대해 가입기간을 추가로 인정받을 수 있어요. 무료로 가입기간이 늘어나는 셈이에요.",
+            "**5. 추후납부(추납)** — 학생 때나 실업 기간에 납부예외 처리된 기간이 있다면, 나중에 소급해서 납부할 수 있어요. 이 기간만큼 가입기간이 늘어나요.",
+          ] },
+
+          { type: "heading", text: "2026년 국민연금 주요 변화" },
+          { type: "list", items: [
+            "**보험료율**: 9% → 9.5% (2026년부터). 이후 매년 0.5%p씩 인상되어 2033년에 13%에 도달해요.",
+            "**기준소득월액**: 하한 40만 원, 상한 637만 원",
+            "**A값(전체 평균소득)**: 3,193,511원",
+            "**소득대체율**: 향후 점진적 조정 논의 중",
+          ] },
+
+          { type: "heading", text: "핵심 정리" },
+          { type: "paragraph", text: "국민연금 수령액에서 가장 중요한 건 **가입기간**이에요. 일찍 시작하고 오래 납부할수록 유리해요. 지금 내 예상 수령액이 얼마인지 궁금하다면 아래 계산기로 바로 확인해 보세요!" },
+          { type: "cta", tool: "national-pension-calculator", toolName: "국민연금 수령액 계산기 바로가기" },
+          { type: "paragraph", text: "연봉 대비 실수령액이 궁금하다면 연봉 실수령액 계산기, 퇴직금이 궁금하다면 퇴직금 계산기, 은퇴 자금 계획이 필요하다면 은퇴 저축 계산기도 함께 활용해 보세요." },
+          { type: "paragraph", text: "*이 글은 2026년 국민연금공단 기준 일반적인 정보 제공 목적이며, 정확한 수령액은 국민연금공단(nps.or.kr) 예상연금 조회를 이용하세요.*" },
+
+          { type: "faq", faqItems: [
+            { question: "국민연금 최소 가입기간은?", answer: "최소 10년(120개월) 이상 가입해야 노령연금을 받을 수 있어요. 10년 미만이면 일시금으로 돌려받게 되는데, 연금으로 받는 것보다 훨씬 적어요. 가급적 10년 이상 채우는 게 중요해요." },
+            { question: "국민연금과 퇴직연금 동시에 받을 수 있나요?", answer: "네, 가능해요! 국민연금(1층)과 퇴직연금(2층)은 별도의 제도예요. 둘 다 동시에 받을 수 있고, 여기에 개인연금(3층)까지 더하면 안정적인 3층 노후보장이 돼요." },
+            { question: "해외 거주 시 국민연금을 받을 수 있나요?", answer: "네, 한국 국적자라면 해외 거주 중에도 국민연금을 받을 수 있어요. 외국인의 경우 출국 시 반환일시금을 받을 수 있지만, 한국과 사회보장협정을 맺은 나라의 국민은 연금 형태로 받을 수도 있어요." },
+            { question: "국민연금 수령액에 세금이 붙나요?", answer: "네, 연금소득세가 부과돼요. 다만 근로소득세보다 세율이 낮고, 연금소득공제도 적용되어 실효세율은 대부분 매우 낮아요. 월 100만 원 수령 시 세금은 몇 만 원 수준이에요." },
+            { question: "물가가 오르면 연금도 올라가나요?", answer: "네! 국민연금은 매년 소비자물가상승률을 반영해서 수령액을 조정해요. 물가가 3% 오르면 연금도 3% 올라가요. 이게 민간 연금 상품과의 가장 큰 차이점이에요 — 국민연금은 실질 구매력이 유지돼요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "national-pension-calculator", name: { en: "National Pension Calculator", ko: "국민연금 수령액 계산기" } },
+      { slug: "salary-calculator", name: { en: "Salary Calculator", ko: "연봉 실수령액 계산기" } },
+      { slug: "severance-calculator", name: { en: "Severance Pay Calculator", ko: "퇴직금 계산기" } },
+      { slug: "retirement-calculator", name: { en: "Retirement Savings Calculator", ko: "은퇴 저축 계산기" } },
+    ],
+    relatedPosts: ["salary-guide", "severance-guide", "inheritance-tax-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
