@@ -120,6 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/unemployment-guide",
     "/blog/acquisition-tax-guide",
     "/blog/income-tax-guide",
+    "/blog/image-upscale-guide",
     "/about",
     "/contact",
     "/privacy-policy",
