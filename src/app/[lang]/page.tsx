@@ -111,6 +111,7 @@ export default async function HomePage({
         { name: t.home.imageConverter, description: t.home.imageConverterDesc, href: `/${lang}/tools/image-converter` },
         { name: t.home.excelMerge, description: t.home.excelMergeDesc, href: `/${lang}/tools/excel-merge` },
         { name: t.home.imageUpscaler, description: t.home.imageUpscalerDesc, href: `/${lang}/tools/image-upscaler` },
+        { name: t.home.imageCropper, description: t.home.imageCropperDesc, href: `/${lang}/tools/image-cropper` },
       ],
     },
     {

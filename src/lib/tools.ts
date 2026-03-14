@@ -61,4 +61,5 @@ export const TOOL_SLUGS = [
   "national-pension-calculator",
   "excel-merge",
   "image-upscaler",
+  "image-cropper",
 ] as const;
