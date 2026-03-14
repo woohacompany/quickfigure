@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { getSupabase } from "@/lib/supabase";
+import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
 
 type Variant = "homepage" | "blog" | "tool";
 
@@ -33,9 +33,10 @@ const text = {
     submitting: "Subscribing...",
     success: "Subscribed! We'll send you new tool updates. 🎉",
     duplicate: "You're already subscribed! Thanks. 😊",
-    error: "Something went wrong. Please try again.",
+    error: "Subscription is being set up. Please try again later.",
     privacy: "By subscribing, you agree to our",
     privacyLink: "Privacy Policy",
+    preparing: "Subscription coming soon!",
   },
   ko: {
     homepage: {
@@ -58,9 +59,10 @@ const text = {
     submitting: "구독 중...",
     success: "구독 완료! 새 도구 소식을 보내드릴게요. 🎉",
     duplicate: "이미 구독 중이에요! 감사합니다. 😊",
-    error: "잠시 후 다시 시도해주세요.",
+    error: "구독 기능을 준비 중입니다. 잠시 후 다시 시도해주세요.",
     privacy: "구독 시",
     privacyLink: "개인정보처리방침",
+    preparing: "구독 기능 준비 중!",
   },
 };
 
@@ -70,8 +72,9 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
   const variant = t[source];
 
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "duplicate" | "error">("idle");
-  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "duplicate" | "error" | "unavailable">("idle");
+
+  const configured = isSupabaseConfigured();
 
   const isValidEmail = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 
@@ -91,7 +94,6 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
 
       if (error) {
         console.error("[EmailSubscribe] Supabase error:", error.code, error.message, error.details, error.hint);
-        // Unique constraint violation = already subscribed
         if (error.code === "23505") {
           setStatus("duplicate");
         } else {
@@ -110,21 +112,14 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
   const statusMessage =
     status === "success" ? t.success :
     status === "duplicate" ? t.duplicate :
-    status === "error" ? t.error : null;
+    status === "error" ? t.error :
+    status === "unavailable" ? t.preparing : null;
 
   const isCompact = source !== "homepage";
 
   return (
-    <div className={`${
-      source === "homepage"
-        ? "py-12 px-4"
-        : "py-8 px-4"
-    }`}>
-      <div className={`max-w-xl mx-auto ${
-        source === "homepage"
-          ? "text-center"
-          : "text-center sm:text-left"
-      }`}>
+    <div className={source === "homepage" ? "py-12 px-4" : "py-8 px-4"}>
+      <div className={`max-w-xl mx-auto ${source === "homepage" ? "text-center" : "text-center sm:text-left"}`}>
         <h3 className={`font-bold ${isCompact ? "text-lg" : "text-xl sm:text-2xl"}`}>
           {variant.title}
         </h3>
@@ -134,16 +129,20 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
           </p>
         )}
 
-        {statusMessage ? (
+        {!configured ? (
+          <p className="mt-4 text-sm text-neutral-400 dark:text-neutral-500">
+            {t.preparing}
+          </p>
+        ) : statusMessage ? (
           <p className={`mt-4 text-sm font-medium ${
-            status === "error"
-              ? "text-red-600 dark:text-red-400"
+            status === "error" || status === "unavailable"
+              ? "text-neutral-500 dark:text-neutral-400"
               : "text-emerald-600 dark:text-emerald-400"
           }`}>
             {statusMessage}
           </p>
         ) : (
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-4">
+          <form onSubmit={handleSubmit} className="mt-4">
             <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
