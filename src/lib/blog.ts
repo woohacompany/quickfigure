@@ -36,7 +36,143 @@ export const categoryLabels: Record<BlogCategory, { en: string; ko: string }> = 
   utility: { en: "Utility", ko: "유틸리티" },
 };
 
-export const POSTS_PER_PAGE = 6;
+// ── Blog Tag System (new multi-tag categories for blog listing) ──
+
+export type BlogTag = "tool-guide" | "finance-tax" | "image-file" | "lifestyle";
+
+export const blogTagLabels: Record<BlogTag, { en: string; ko: string }> = {
+  "tool-guide": { en: "Tool Guides", ko: "도구 가이드" },
+  "finance-tax": { en: "Finance & Tax", ko: "금융 & 세금" },
+  "image-file": { en: "Image & File", ko: "이미지 & 파일" },
+  lifestyle: { en: "Lifestyle", ko: "라이프스타일" },
+};
+
+export const blogTagColors: Record<BlogTag, string> = {
+  "tool-guide": "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+  "finance-tax": "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
+  "image-file": "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300",
+  lifestyle: "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300",
+};
+
+export const blogTagOrder: BlogTag[] = ["tool-guide", "finance-tax", "image-file", "lifestyle"];
+
+const blogTagMapping: Record<string, BlogTag[]> = {
+  // ── 도구 가이드 only ──
+  "how-to-count-words-in-essay": ["tool-guide"],
+  "text-case-conversion-guide": ["tool-guide"],
+  "copy-paste-symbols-special-characters": ["tool-guide"],
+  "text-diff-guide": ["tool-guide"],
+  "json-formatting-best-practices": ["tool-guide"],
+  "understanding-base64-encoding": ["tool-guide"],
+  "hex-to-rgb-color-converter-guide": ["tool-guide"],
+  "markdown-guide": ["tool-guide"],
+  "how-to-create-strong-passwords": ["tool-guide"],
+  "lorem-ipsum-history-and-usage": ["tool-guide"],
+  "how-to-create-qr-code-free": ["tool-guide"],
+  "unit-converter-guide": ["tool-guide"],
+  "percentage-calculator-guide": ["tool-guide"],
+  "area-guide": ["tool-guide"],
+
+  // ── 도구 가이드 + 금융 ──
+  "compound-interest-calculator-guide": ["tool-guide", "finance-tax"],
+  "mortgage-calculator-guide": ["tool-guide", "finance-tax"],
+  "retirement-savings-calculator-guide": ["tool-guide", "finance-tax"],
+  "emergency-fund-calculator-guide": ["tool-guide", "finance-tax"],
+  "freelancer-tax-calculator-guide": ["tool-guide", "finance-tax"],
+  "salary-calculator-guide": ["tool-guide", "finance-tax"],
+  "loan-calculator-guide": ["tool-guide", "finance-tax"],
+
+  // ── 도구 가이드 + 라이프스타일 ──
+  "bmi-calculator-guide": ["tool-guide", "lifestyle"],
+  "age-calculator-guide": ["tool-guide", "lifestyle"],
+  "calorie-calculator-guide": ["tool-guide", "lifestyle"],
+  "pomodoro-guide": ["tool-guide", "lifestyle"],
+
+  // ── 도구 가이드 + 이미지 & 파일 ──
+  "pdf-to-word-guide": ["tool-guide", "image-file"],
+  "pdf-compress-guide": ["tool-guide", "image-file"],
+  "excel-merge-guide": ["tool-guide", "image-file"],
+  "image-upscale-guide": ["tool-guide", "image-file"],
+  "image-crop-guide": ["tool-guide", "image-file"],
+  "image-kb-guide": ["tool-guide", "image-file"],
+  "watermark-guide": ["tool-guide", "image-file"],
+
+  // ── 금융 & 세금 only ──
+  "simple-vs-compound-interest": ["finance-tax"],
+  "how-to-calculate-net-worth": ["finance-tax"],
+  "emergency-fund-how-much-to-save": ["finance-tax"],
+  "pay-off-mortgage-faster": ["finance-tax"],
+  "salary-guide": ["finance-tax"],
+  "vat-guide": ["finance-tax"],
+  "severance-guide": ["finance-tax"],
+  "rent-conversion-guide": ["finance-tax"],
+  "wage-guide": ["finance-tax"],
+  "electricity-guide": ["finance-tax"],
+  "weekly-pay-guide": ["finance-tax"],
+  "annual-leave-guide": ["finance-tax"],
+  "unemployment-guide": ["finance-tax"],
+  "acquisition-tax-guide": ["finance-tax"],
+  "income-tax-guide": ["finance-tax"],
+  "car-tax-guide": ["finance-tax"],
+  "capital-gains-guide": ["finance-tax"],
+  "loan-comparison-guide": ["finance-tax"],
+  "policy-fund-guide": ["finance-tax"],
+  "freelancer-tax-guide": ["finance-tax"],
+  "small-business-policy-fund-2026": ["finance-tax"],
+  "mortgage-refinance-guide-2026": ["finance-tax"],
+  "personal-rehabilitation-guide": ["finance-tax"],
+  "car-insurance-comparison-2026": ["finance-tax"],
+  "credit-score-improvement-guide": ["finance-tax"],
+  "inheritance-tax-guide": ["finance-tax"],
+  "dsr-guide": ["finance-tax"],
+  "accident-settlement-guide": ["finance-tax"],
+  "national-pension-guide": ["finance-tax"],
+
+  // ── 라이프스타일 only ──
+  "dday-guide": ["lifestyle"],
+  "gpa-guide": ["lifestyle"],
+  "sleep-guide": ["lifestyle"],
+  "alcohol-guide": ["lifestyle"],
+  "date-guide": ["lifestyle"],
+  "korean-age-vs-international-age": ["lifestyle"],
+  "bmr-vs-bmi-difference": ["lifestyle"],
+  "calories-to-lose-weight": ["lifestyle"],
+  "body-fat-guide": ["lifestyle"],
+};
+
+export function getPostTags(slug: string): BlogTag[] {
+  return blogTagMapping[slug] ?? ["tool-guide"];
+}
+
+export function getPostsByTag(tag: BlogTag | "all"): BlogPost[] {
+  if (tag === "all") return blogPosts;
+  return blogPosts.filter((p) => (blogTagMapping[p.slug] ?? ["tool-guide"]).includes(tag));
+}
+
+export function getTagCounts(): Record<BlogTag | "all", number> {
+  const counts: Record<string, number> = { all: blogPosts.length };
+  for (const tag of blogTagOrder) counts[tag] = 0;
+  for (const post of blogPosts) {
+    const tags = blogTagMapping[post.slug] ?? ["tool-guide"];
+    for (const tag of tags) counts[tag] = (counts[tag] ?? 0) + 1;
+  }
+  return counts as Record<BlogTag | "all", number>;
+}
+
+export const featuredSlugs = [
+  "image-kb-guide",
+  "dsr-guide",
+  "excel-merge-guide",
+  "accident-settlement-guide",
+];
+
+export function getFeaturedPosts(): BlogPost[] {
+  return featuredSlugs
+    .map((slug) => blogPosts.find((p) => p.slug === slug))
+    .filter((p): p is BlogPost => p !== undefined);
+}
+
+export const POSTS_PER_PAGE = 12;
 
 export const blogPosts: BlogPost[] = [
   {
