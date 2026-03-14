@@ -7330,6 +7330,143 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["excel-merge-guide"],
   },
+  {
+    slug: "image-crop-guide",
+    category: "utility",
+    date: "2026-03-15",
+    readingTime: 6,
+    thumbnailAlt: {
+      en: "Photo being cropped to different aspect ratios for Instagram, YouTube, and passport",
+      ko: "인스타그램, 유튜브, 증명사진 비율로 사진을 자르는 모습",
+    },
+    translations: {
+      en: {
+        title: "Photo Cropping Guide: From Social Media to Passport Photos",
+        summary: "Learn the optimal image ratios for Instagram, YouTube, Facebook, and passport photos. Plus 3 easy ways to crop images online.",
+        content: [
+          { type: "paragraph", text: "You've taken a great photo, but when you try to post it on Instagram, the important parts get cut off. Or you need a passport photo but can't figure out the right dimensions. Cropping images to the correct aspect ratio is one of the most common — and most frustrating — image tasks. This guide covers everything you need to know." },
+
+          { type: "heading", text: "Optimal Image Ratios for Every Platform" },
+          { type: "paragraph", text: "Each social media platform and use case has its own preferred aspect ratio. Using the wrong ratio means your image will be auto-cropped unpredictably, often cutting off the most important parts. Here's a complete reference:" },
+          { type: "list", items: [
+            "Instagram Feed: 1:1 (square) — 1080×1080px. The classic Instagram format. Also works well for profile pictures.",
+            "Instagram Stories/Reels: 9:16 (vertical) — 1080×1920px. Full-screen vertical format for maximum engagement.",
+            "YouTube Thumbnail: 16:9 (landscape) — 1280×720px. The standard widescreen ratio used across YouTube.",
+            "Facebook Cover: ~2.6:1 — 820×312px. Wide banner format that displays differently on desktop and mobile.",
+            "KakaoTalk Profile: 1:1 (square) — 640×640px. Standard profile image for Korea's most popular messenger.",
+            "Naver Blog Hero: 3:2 — 1200×800px. The recommended representative image ratio for Naver blog posts.",
+            "Twitter/X Header: ~3:1 — 1500×500px. Wide banner displayed at the top of your profile.",
+            "LinkedIn Banner: ~4:1 — 1584×396px. Professional profile header image.",
+          ] },
+          { type: "callout", text: "Pro tip: When in doubt, crop to 1:1 (square). It works on almost every platform and looks clean on both desktop and mobile feeds." },
+
+          { type: "heading", text: "Official ID Photo Specifications" },
+          { type: "paragraph", text: "ID and passport photos have strict size requirements. Getting these wrong can mean rejected applications. Here are the standard specifications:" },
+          { type: "list", items: [
+            "Passport photo (international): 35×45mm — Ratio approximately 7:9. Must show full face with neutral expression, white background.",
+            "Korean half-size photo (반명함): 3×4cm — Used for resumes, school IDs, and most Korean applications.",
+            "Resume photo (이력서): 3×4cm — Same as half-size. Some companies accept 3.5×4.5cm.",
+            "Visa photo (US): 2×2 inches (51×51mm) — Square format, white background required.",
+            "Driver's license photo: Varies by country, typically close to 3×4cm ratio.",
+          ] },
+          { type: "paragraph", text: "For ID photos, always use the highest resolution possible and ensure the subject is centered. Most online submission systems accept JPG files under 200-500KB." },
+
+          { type: "heading", text: "3 Ways to Crop Photos" },
+          { type: "paragraph", text: "You don't need expensive software to crop images properly. Here are three practical approaches:" },
+          { type: "list", items: [
+            "Online tool (QuickFigure): Upload your image, select a preset ratio (Instagram, YouTube, passport, etc.) or set custom dimensions, adjust the crop area, and download. No installation needed, works on any device, 100% browser-based.",
+            "Windows Photos / macOS Preview: Built-in apps on your computer. Open the image, select crop, and adjust. Limited preset options but works offline.",
+            "Mobile gallery app: Both iPhone Photos and Samsung Gallery have built-in crop tools. Tap edit → crop → select ratio. Convenient for quick social media posts.",
+          ] },
+          { type: "cta", tool: "image-cropper", toolName: "Image Cropper — Crop Photos Online Free" },
+
+          { type: "heading", text: "Cropping Tips for Better Photos" },
+          { type: "list", items: [
+            "Rule of thirds: Imagine a 3×3 grid over your image. Place key subjects at the intersection points for a more dynamic composition.",
+            "Don't center everything: Slightly off-center subjects create visual interest and draw the viewer's eye.",
+            "Leave breathing room: Don't crop too tightly. Leave some space around your subject for a natural, less claustrophobic feel.",
+            "Straighten the horizon: A tilted horizon is immediately noticeable. Most crop tools include a rotation option.",
+            "Crop for the platform: Always check the final result on the actual platform before publishing.",
+          ] },
+
+          { type: "paragraph", text: "Whether you're optimizing photos for social media or preparing ID photos for an application, the right crop can make all the difference. Try QuickFigure's free Image Cropper — it has built-in presets for all major platforms and ID photo standards, no signup required." },
+          { type: "cta", tool: "image-cropper", toolName: "Crop Your Photos Now — Free Online Tool" },
+
+          { type: "faq", faqItems: [
+            { question: "What's the best aspect ratio for Instagram?", answer: "1:1 (1080×1080) for feed posts, 9:16 (1080×1920) for Stories and Reels. Instagram also supports 4:5 vertical posts which get more screen real estate in the feed." },
+            { question: "What size should a passport photo be?", answer: "The international standard is 35×45mm (approximately 7:9 ratio). For US visas, it's 2×2 inches (51×51mm, square). Always check the specific requirements of your target country." },
+            { question: "Does cropping reduce image quality?", answer: "Cropping itself doesn't reduce quality — it just removes pixels from the edges. However, if you crop heavily from a low-resolution image, the remaining area may not have enough pixels to look sharp." },
+            { question: "Can I crop multiple images at once?", answer: "Most basic tools crop one image at a time. For batch cropping with the same ratio, online tools like QuickFigure or desktop software like Photoshop are your best options." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "사진 자르기 완벽 가이드: SNS 비율부터 증명사진까지",
+        summary: "인스타그램, 유튜브, 증명사진 등 용도별 최적 이미지 비율과 사진 자르는 방법을 총정리합니다.",
+        content: [
+          { type: "paragraph", text: "멋진 사진을 찍었는데 인스타에 올리려니 중요한 부분이 잘려나가는 경험, 다들 있으시죠? 증명사진을 준비해야 하는데 규격이 헷갈리는 경우도 많아요. 사진을 올바른 비율로 자르는 건 가장 흔하면서도 가장 귀찮은 이미지 작업 중 하나예요. 이 가이드에서 필요한 모든 정보를 정리해드릴게요." },
+
+          { type: "heading", text: "SNS별 최적 이미지 비율 총정리" },
+          { type: "paragraph", text: "각 SNS 플랫폼마다 선호하는 이미지 비율이 달라요. 잘못된 비율로 올리면 예상치 못하게 자동 크롭되면서 가장 중요한 부분이 잘려나갈 수 있어요. 아래 표를 참고하세요." },
+          { type: "list", items: [
+            "인스타그램 피드: 1:1 (정사각형) — 1080×1080px. 가장 클래식한 인스타 포맷이에요. 프로필 사진에도 적합해요.",
+            "인스타그램 스토리/릴스: 9:16 (세로형) — 1080×1920px. 풀스크린 세로 포맷으로 참여도가 가장 높아요.",
+            "유튜브 썸네일: 16:9 (가로형) — 1280×720px. 유튜브 전반에서 사용되는 표준 와이드스크린 비율이에요.",
+            "페이스북 커버: 약 2.6:1 — 820×312px. 데스크톱과 모바일에서 다르게 표시되는 넓은 배너 포맷이에요.",
+            "카카오톡 프로필: 1:1 (정사각형) — 640×640px. 한국의 대표 메신저 프로필 이미지 표준이에요.",
+            "네이버 블로그 대표이미지: 3:2 — 1200×800px. 네이버 블로그 포스트의 권장 대표이미지 비율이에요.",
+            "트위터(X) 헤더: 약 3:1 — 1500×500px. 프로필 상단에 표시되는 넓은 배너예요.",
+            "링크드인 배너: 약 4:1 — 1584×396px. 프로필 상단 전문가용 헤더 이미지예요.",
+          ] },
+          { type: "callout", text: "꿀팁: 어떤 비율을 써야 할지 모르겠으면 1:1(정사각형)로 자르세요. 거의 모든 플랫폼에서 잘 작동하고, 데스크톱과 모바일 피드 모두에서 깔끔하게 보여요." },
+
+          { type: "heading", text: "증명사진 규격 정리" },
+          { type: "paragraph", text: "증명사진은 규격이 엄격해서 잘못 맞추면 접수가 거부될 수 있어요. 아래 표준 규격을 확인하세요." },
+          { type: "list", items: [
+            "여권 사진 (국제표준): 35×45mm — 비율 약 7:9. 정면 무표정, 흰색 배경 필수.",
+            "반명함 사진: 3×4cm — 이력서, 학생증, 대부분의 한국 서류에 사용돼요.",
+            "이력서 사진: 3×4cm — 반명함과 동일. 일부 기업은 3.5×4.5cm도 허용해요.",
+            "미국 비자 사진: 2×2인치 (51×51mm) — 정사각형, 흰색 배경 필수.",
+            "운전면허 사진: 나라마다 다르지만, 보통 3×4cm 비율에 가까워요.",
+          ] },
+          { type: "paragraph", text: "증명사진은 최대한 높은 해상도를 사용하고 피사체가 중앙에 오도록 하세요. 온라인 제출 시스템은 대부분 200~500KB 이하의 JPG 파일을 요구해요." },
+
+          { type: "heading", text: "사진 자르는 3가지 방법" },
+          { type: "paragraph", text: "비싼 소프트웨어 없이도 사진을 제대로 자를 수 있어요. 세 가지 실용적인 방법을 소개할게요." },
+          { type: "list", items: [
+            "온라인 도구 (QuickFigure): 이미지를 업로드하고, 프리셋 비율(인스타, 유튜브, 증명사진 등)을 선택하거나 직접 크기를 입력하고, 자르기 영역을 조정한 뒤 다운로드하세요. 설치 불필요, 모든 기기에서 사용 가능, 100% 브라우저 처리.",
+            "윈도우 사진 / macOS 미리보기: 컴퓨터에 기본 설치된 앱이에요. 이미지를 열고 자르기를 선택해서 조정하면 돼요. 프리셋 옵션은 제한적이지만 오프라인에서 작동해요.",
+            "모바일 갤러리 앱: 아이폰 사진과 삼성 갤러리 모두 자르기 기능이 내장돼 있어요. 편집 → 자르기 → 비율 선택으로 간편하게 사용 가능. SNS 포스팅 전 빠르게 편집하기 좋아요.",
+          ] },
+          { type: "cta", tool: "image-cropper", toolName: "이미지 자르기 도구 — 무료로 바로 사용하기" },
+
+          { type: "heading", text: "더 좋은 사진을 위한 자르기 팁" },
+          { type: "list", items: [
+            "3분할 법칙: 이미지 위에 3×3 격자를 상상하세요. 교차점에 주요 피사체를 놓으면 더 역동적인 구도가 돼요.",
+            "모든 걸 정중앙에 놓지 마세요: 살짝 중심에서 벗어난 피사체가 시각적 흥미를 만들고 시선을 끌어요.",
+            "여백을 남기세요: 너무 빡빡하게 자르지 마세요. 피사체 주변에 여유 공간을 두면 자연스럽고 편안한 느낌을 줘요.",
+            "수평선을 맞추세요: 기울어진 수평선은 바로 눈에 띄어요. 대부분의 자르기 도구에 회전 기능이 있어요.",
+            "플랫폼에 맞게 자르세요: 게시하기 전에 실제 플랫폼에서 최종 결과를 꼭 확인하세요.",
+          ] },
+
+          { type: "paragraph", text: "SNS용 사진을 최적화하든 서류 제출용 증명사진을 준비하든, 올바른 자르기 하나가 큰 차이를 만들어요. QuickFigure의 무료 이미지 자르기 도구를 사용해보세요 — 주요 SNS 플랫폼과 증명사진 규격 프리셋이 내장돼 있고, 회원가입 없이 바로 쓸 수 있어요." },
+          { type: "cta", tool: "image-cropper", toolName: "이미지 자르기 도구 — 무료로 바로 사용하기" },
+
+          { type: "faq", faqItems: [
+            { question: "인스타그램에 가장 좋은 이미지 비율은 뭔가요?", answer: "피드 게시물은 1:1(1080×1080), 스토리와 릴스는 9:16(1080×1920)이에요. 인스타그램은 4:5 세로형 포스트도 지원하는데, 피드에서 더 넓은 화면을 차지해서 참여도가 높아요." },
+            { question: "증명사진 크기는 어떻게 되나요?", answer: "국제 표준은 35×45mm(약 7:9 비율)이에요. 미국 비자는 2×2인치(51×51mm, 정사각형)이고요. 대상 국가의 구체적인 요구사항을 항상 확인하세요." },
+            { question: "사진을 자르면 화질이 떨어지나요?", answer: "자르기 자체가 화질을 떨어뜨리진 않아요 — 가장자리 픽셀을 제거할 뿐이에요. 하지만 저해상도 이미지를 많이 자르면 남은 영역의 픽셀이 부족해서 선명도가 떨어질 수 있어요." },
+            { question: "여러 장을 한꺼번에 같은 비율로 자를 수 있나요?", answer: "대부분의 기본 도구는 한 번에 한 장씩 자를 수 있어요. 같은 비율로 일괄 자르기가 필요하면 QuickFigure 같은 온라인 도구나 포토샵 같은 데스크톱 소프트웨어가 최선이에요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "image-cropper", name: { en: "Image Cropper", ko: "이미지 자르기" } },
+      { slug: "image-resizer", name: { en: "Image Resizer", ko: "이미지 리사이저" } },
+    ],
+    relatedPosts: ["image-upscale-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

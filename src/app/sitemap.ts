@@ -121,6 +121,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/acquisition-tax-guide",
     "/blog/income-tax-guide",
     "/blog/image-upscale-guide",
+    "/blog/image-crop-guide",
     "/about",
     "/contact",
     "/privacy-policy",
