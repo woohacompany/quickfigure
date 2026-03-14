@@ -1053,6 +1053,11 @@ const dictionaries = {
             "We may use third-party service providers to serve advertisements on the Site, including Google AdSense. These third-party vendors may use cookies to serve ads based on your prior visits to our website or other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the Internet. You may opt out of personalized advertising by visiting Google's Ads Settings (https://www.google.com/settings/ads).",
         },
         {
+          heading: "Email Newsletter Subscription",
+          content:
+            "When you subscribe to our email notifications, we collect your email address. This information is used solely to send you alerts about new tool launches and service updates. Your email is stored securely and retained until you unsubscribe. You can unsubscribe at any time by contacting us via the Contact page or by using the unsubscribe link provided in our emails.",
+        },
+        {
           heading: "Data Retention",
           content:
             "We retain your information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.",
@@ -2300,6 +2305,11 @@ const dictionaries = {
           heading: "제3자 서비스",
           content:
             "당사는 Google AdSense를 포함한 제3자 서비스 제공업체를 사용하여 광고를 게재할 수 있습니다. 이러한 제3자 업체는 쿠키를 사용하여 귀하의 이전 방문 기록을 기반으로 광고를 게재할 수 있습니다. Google 광고 설정(https://www.google.com/settings/ads)에서 맞춤 광고를 거부할 수 있습니다.",
+        },
+        {
+          heading: "이메일 뉴스레터 구독",
+          content:
+            "이메일 알림 서비스에 구독하시면 이메일 주소를 수집합니다. 수집된 이메일은 새 도구 출시 알림 및 서비스 업데이트 안내 목적으로만 사용됩니다. 이메일은 안전하게 저장되며 구독 취소 시까지 보관됩니다. 문의 페이지를 통해 또는 이메일에 포함된 구독 취소 링크를 통해 언제든 구독을 취소할 수 있습니다.",
         },
         {
           heading: "데이터 보관",

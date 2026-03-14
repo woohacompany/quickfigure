@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useMemo, useRef, useEffect, useCallback } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
+import EmailSubscribeForm from "@/components/EmailSubscribeForm";
 
 interface Tool {
   name: string;
@@ -435,6 +436,11 @@ export default function HomeClient({
         <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl">
           {t.home.aboutSectionText}
         </p>
+      </section>
+
+      {/* Email Subscribe */}
+      <section className="border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 -mx-4 px-4 rounded-xl">
+        <EmailSubscribeForm lang={lang} source="homepage" />
       </section>
     </div>
   );

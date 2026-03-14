@@ -10,6 +10,7 @@ import {
 } from "@/lib/blog";
 import BlogHeroImage from "@/components/BlogHeroImage";
 import EmbedTool from "@/components/EmbedTools";
+import EmailSubscribeBlog from "./EmailSubscribeBlog";
 
 export function generateStaticParams() {
   return blogPosts.flatMap((post) => [
@@ -267,6 +268,9 @@ export default async function BlogPostPage({
               </div>
             </section>
           )}
+
+          {/* Email Subscribe */}
+          <EmailSubscribeBlog lang={lang} />
 
           {/* Related Posts */}
           {relatedPosts.length > 0 && (
