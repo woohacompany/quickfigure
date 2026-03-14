@@ -7008,6 +7008,168 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedPosts: ["salary-guide", "severance-guide", "inheritance-tax-guide"],
   },
+  {
+    slug: "excel-merge-guide",
+    category: "utility",
+    date: "2026-03-15",
+    readingTime: 5,
+    thumbnailAlt: {
+      en: "Multiple Excel spreadsheet files being merged into one combined file",
+      ko: "여러 엑셀 파일이 하나로 합쳐지는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Merge Excel Files: 3 Ways to Combine Multiple Spreadsheets",
+        summary: "Compare 3 methods to merge multiple Excel files into one: copy-paste, Power Query, and online tools. Includes automatic duplicate detection tips.",
+        content: [
+          { type: "paragraph", text: "Need to combine 10 purchase orders into a single spreadsheet but dreading the copy-paste marathon? Merging Excel files is one of the most common repetitive tasks for office workers. Whether you're consolidating sales reports, survey responses, or inventory lists, doing it manually wastes time and invites errors." },
+          { type: "paragraph", text: "In this guide, we'll compare three methods for combining Excel files — from the simplest to the most powerful — so you can pick the right approach for your situation." },
+
+          { type: "heading", text: "Method 1: Manual Copy and Paste" },
+          { type: "paragraph", text: "The most straightforward approach: open each file, select the data, and paste it into a master spreadsheet. No tools or add-ins required." },
+          { type: "list", items: [
+            "Pros: No extra tools needed — just Excel itself.",
+            "Cons: Extremely slow with many files. Risk of duplicating headers, missing rows, or pasting into wrong columns.",
+            "Best for: Merging 2–3 small files with few rows.",
+          ] },
+          { type: "callout", text: "Watch out for header rows! When pasting data from multiple files, you'll need to manually delete duplicate headers each time. Miss one, and your data analysis breaks." },
+
+          { type: "heading", text: "Method 2: Excel Power Query" },
+          { type: "paragraph", text: "Power Query is a built-in Excel feature (Windows) that lets you import and combine data from multiple sources — including entire folders of Excel files." },
+          { type: "list", items: [
+            "Pros: Built into Excel, automatable for recurring tasks, handles large datasets well.",
+            "Cons: Learning curve for beginners. Limited functionality on Mac versions of Excel.",
+            "How to use: Go to Data → Get Data → From File → From Folder → select your folder → Combine & Transform.",
+            "Best for: Regularly merging files in the same format (e.g., weekly sales reports).",
+          ] },
+          { type: "paragraph", text: "Power Query shines when you repeatedly merge files with identical column structures. Once set up, refreshing the query pulls in new files automatically. However, it requires Excel on your computer and some initial setup time." },
+
+          { type: "heading", text: "Method 3: Online Merge Tool (QuickFigure)" },
+          { type: "paragraph", text: "For the fastest experience with zero setup, an online tool lets you drag and drop files, preview the merged result, and download — all in your browser." },
+          { type: "list", items: [
+            "Pros: No installation needed. Drag-and-drop interface. Automatic duplicate detection with color highlighting.",
+            "Cons: Requires uploading files (though processing happens in-browser for privacy).",
+            "Best for: Quick one-time merges, finding duplicates across files, combining survey responses or order forms.",
+          ] },
+          { type: "paragraph", text: "This method is especially useful when you need to:" },
+          { type: "list", items: [
+            "Consolidate purchase orders or invoices from multiple suppliers into one master sheet.",
+            "Detect duplicate entries across files to prevent billing errors or double-counting.",
+            "Combine survey responses collected in separate spreadsheets.",
+          ] },
+          { type: "cta", tool: "excel-merge", toolName: "Excel Merge & Duplicate Checker" },
+
+          { type: "heading", text: "Comparison: Which Method Should You Use?" },
+          { type: "paragraph", text: "Here's a quick comparison to help you decide:" },
+          { type: "list", items: [
+            "Difficulty — Copy-paste: Easy | Power Query: Medium | Online tool: Easy",
+            "Speed — Copy-paste: Slow | Power Query: Fast after setup | Online tool: Instant",
+            "Duplicate detection — Copy-paste: Manual | Power Query: Possible with extra steps | Online tool: Automatic",
+            "Installation required — Copy-paste: Excel | Power Query: Excel (Windows) | Online tool: None (browser only)",
+            "Data privacy — Copy-paste: Local | Power Query: Local | Online tool: Browser-based (no server upload)",
+          ] },
+
+          { type: "heading", text: "Tips for Merging Excel Files Successfully" },
+          { type: "list", items: [
+            "Ensure headers (column names) are identical across all files before merging.",
+            "Standardize date formats (YYYY-MM-DD vs. DD/MM/YYYY) to avoid sorting issues.",
+            "Remove blank rows and columns in the middle of your data — they can break the merge.",
+            "Decide on duplicate handling criteria upfront: which column(s) define a 'duplicate'?",
+            "Always back up your original files before merging — never work on the only copy.",
+          ] },
+          { type: "callout", text: "Pro Tip: When merging financial data like invoices or purchase orders, always use a unique identifier column (e.g., order number) as your duplicate detection key. This prevents costly double-payments." },
+
+          { type: "paragraph", text: "In summary: for a handful of small files, copy-paste works fine. For recurring merges with consistent formats, invest time in Power Query. For quick merges with built-in duplicate checking, use an online tool." },
+          { type: "cta", tool: "excel-merge", toolName: "Excel Merge & Duplicate Checker" },
+
+          { type: "faq", faqItems: [
+            { question: "Can I merge Excel files with different column orders?", answer: "It depends on the method. Copy-paste requires you to manually reorder columns. Power Query can handle different column orders if the column names match. Online tools like QuickFigure match columns by header name, so order doesn't matter as long as the names are consistent." },
+            { question: "Is it safe to merge Excel files using an online tool?", answer: "QuickFigure's Excel merge tool processes everything in your browser — files are never uploaded to a server. Your data stays on your device, making it as private as working locally in Excel." },
+            { question: "How many files can I merge at once?", answer: "With copy-paste, there's no technical limit but your patience is the bottleneck. Power Query can handle hundreds of files from a folder. Online tools typically support 2–10 files per merge, which covers most practical use cases." },
+            { question: "What file formats are supported for merging?", answer: "All three methods work with .xlsx files. Power Query also supports .csv, .xls, and other formats. Online tools typically support .xlsx and .csv formats." },
+            { question: "How do I handle duplicate rows after merging?", answer: "Manual method: use Excel's Remove Duplicates feature (Data → Remove Duplicates). Power Query: add a remove-duplicates step in your query. Online tools like QuickFigure automatically detect and highlight duplicates, letting you review before removing them." },
+          ] },
+        ],
+      },
+      ko: {
+        title: "엑셀 파일 합치기 3가지 방법: 설치 없이 여러 엑셀을 하나로 병합하는 법",
+        summary: "여러 엑셀 파일을 하나로 합치는 3가지 방법(복사붙여넣기, 파워쿼리, 온라인 도구)을 비교합니다. 중복 데이터 자동 감지까지.",
+        content: [
+          { type: "paragraph", text: "발주서 10개를 하나로 합쳐야 하는데, 일일이 복사 붙여넣기 하고 계신가요? 엑셀 파일 합치기는 사무직이라면 누구나 겪는 반복 작업이에요. 매출 보고서, 설문 응답, 재고 목록 등 여러 파일에 흩어진 데이터를 하나로 모아야 할 때, 수작업은 시간 낭비에 실수까지 부르죠." },
+          { type: "paragraph", text: "이 글에서 엑셀 파일을 합치는 3가지 방법을 비교해 볼게요. 상황에 맞는 최적의 방법을 골라보세요." },
+
+          { type: "heading", text: "방법 1: 수동 복사 붙여넣기" },
+          { type: "paragraph", text: "가장 단순한 방법이에요. 각 파일을 열고, 데이터를 선택해서 하나의 마스터 시트에 붙여넣기. 별도 도구 없이 엑셀만 있으면 돼요." },
+          { type: "list", items: [
+            "장점: 엑셀만 있으면 바로 가능, 별도 학습 불필요.",
+            "단점: 파일이 많으면 시간이 폭발적으로 늘어나요. 헤더 중복, 행 누락, 열 불일치 등 실수 위험이 커요.",
+            "적합한 경우: 2~3개의 작은 파일, 행 수가 적을 때.",
+          ] },
+          { type: "callout", text: "주의: 여러 파일을 붙여넣을 때 헤더(열 이름) 행이 중복으로 들어가기 쉬워요. 하나라도 놓치면 데이터 분석이 엉망이 되니 꼭 확인하세요!" },
+
+          { type: "heading", text: "방법 2: 엑셀 파워쿼리" },
+          { type: "paragraph", text: "파워쿼리는 엑셀(Windows)에 내장된 데이터 통합 기능이에요. 여러 소스에서 데이터를 가져와 자동으로 합칠 수 있어요." },
+          { type: "list", items: [
+            "장점: 엑셀 내장 기능이라 추가 설치 불필요. 한번 설정하면 반복 작업 자동화 가능.",
+            "단점: 처음 배우는 데 시간이 걸려요. Mac 버전에서는 기능이 제한적이에요.",
+            "사용법: 데이터 탭 → 데이터 가져오기 → 파일에서 → 폴더에서 → 폴더 선택 → 결합 및 변환.",
+            "적합한 경우: 같은 형식의 파일을 정기적으로 합칠 때 (예: 주간 매출 보고서).",
+          ] },
+          { type: "paragraph", text: "파워쿼리는 열 구조가 동일한 파일을 반복적으로 합칠 때 빛을 발해요. 한번 설정해두면 새 파일이 추가될 때 쿼리를 새로고침하기만 하면 자동으로 반영돼요. 단, PC에 엑셀이 설치되어 있어야 하고 초기 세팅 시간이 필요해요." },
+
+          { type: "heading", text: "방법 3: 온라인 도구 사용 (QuickFigure)" },
+          { type: "paragraph", text: "가장 빠르고 간편한 방법이에요. 브라우저에서 파일을 드래그 앤 드롭하고, 합친 결과를 미리보기 한 다음 다운로드하면 끝!" },
+          { type: "list", items: [
+            "장점: 설치 불필요. 드래그 앤 드롭으로 간편. 중복 데이터 자동 감지 + 색상으로 표시.",
+            "단점: 파일 업로드가 필요하지만, 모든 처리가 브라우저에서 이루어져 서버로 전송되지 않아요.",
+            "적합한 경우: 빠른 일회성 병합, 파일 간 중복 찾기, 설문 응답이나 주문서 합치기.",
+          ] },
+          { type: "paragraph", text: "특히 이런 경우에 유용해요:" },
+          { type: "list", items: [
+            "여러 거래처의 발주서/주문서를 하나로 취합할 때.",
+            "파일 간 중복 데이터를 찾아서 이중 결제나 정산 오류를 방지할 때.",
+            "별도 파일로 수집된 설문 응답을 통합할 때.",
+          ] },
+          { type: "cta", tool: "excel-merge", toolName: "엑셀 병합 & 중복 검사기" },
+
+          { type: "heading", text: "3가지 방법 비교" },
+          { type: "paragraph", text: "어떤 방법을 선택할지 한눈에 비교해 보세요:" },
+          { type: "list", items: [
+            "난이도 — 복사 붙여넣기: 쉬움 | 파워쿼리: 중간 | 온라인 도구: 쉬움",
+            "소요 시간 — 복사 붙여넣기: 오래 걸림 | 파워쿼리: 설정 후 빠름 | 온라인 도구: 즉시",
+            "중복 검사 — 복사 붙여넣기: 수동 | 파워쿼리: 가능(추가 작업 필요) | 온라인 도구: 자동",
+            "설치 필요 — 복사 붙여넣기: 엑셀 필요 | 파워쿼리: 엑셀(Windows) 필요 | 온라인 도구: 불필요(브라우저만)",
+            "파일 보안 — 복사 붙여넣기: 로컬 | 파워쿼리: 로컬 | 온라인 도구: 브라우저 처리(서버 업로드 없음)",
+          ] },
+
+          { type: "heading", text: "엑셀 합칠 때 주의할 점" },
+          { type: "list", items: [
+            "헤더(열 이름)가 모든 파일에서 동일한지 반드시 확인하세요.",
+            "날짜 형식을 통일하세요 (YYYY-MM-DD vs DD/MM/YYYY). 형식이 다르면 정렬이 엉망이 돼요.",
+            "데이터 중간에 빈 행이나 빈 열이 있으면 병합 후 깨질 수 있으니 미리 정리하세요.",
+            "중복 데이터 처리 기준을 미리 정하세요 — 어떤 열을 기준으로 '중복'을 판단할지.",
+            "합치기 전에 반드시 원본 파일을 백업하세요 — 유일한 복사본으로 작업하지 마세요.",
+          ] },
+          { type: "callout", text: "꿀팁: 발주서나 거래명세서 같은 재무 데이터를 합칠 때는 주문번호 같은 고유 식별자 열을 중복 검사 기준으로 사용하세요. 이중 결제 같은 비용 사고를 예방할 수 있어요." },
+
+          { type: "paragraph", text: "정리하면, 파일이 몇 개 안 되면 복사 붙여넣기, 같은 형식을 정기적으로 합친다면 파워쿼리, 빠르게 합치면서 중복까지 잡고 싶다면 온라인 도구가 최선이에요." },
+          { type: "cta", tool: "excel-merge", toolName: "엑셀 병합 & 중복 검사기" },
+
+          { type: "faq", faqItems: [
+            { question: "열 순서가 다른 엑셀 파일도 합칠 수 있나요?", answer: "방법에 따라 달라요. 복사 붙여넣기는 수동으로 열 순서를 맞춰야 해요. 파워쿼리는 열 이름이 같으면 순서가 달라도 매칭해줘요. QuickFigure 같은 온라인 도구도 헤더 이름 기준으로 자동 매칭하니까, 이름만 일치하면 순서는 상관없어요." },
+            { question: "온라인 도구로 엑셀 합치기가 안전한가요?", answer: "QuickFigure의 엑셀 병합 도구는 모든 처리가 브라우저에서 이루어져요. 파일이 서버로 전송되지 않으니, 로컬 엑셀에서 작업하는 것과 동일한 수준의 프라이버시를 보장해요." },
+            { question: "한 번에 몇 개 파일까지 합칠 수 있나요?", answer: "복사 붙여넣기는 기술적 제한은 없지만 여러분의 인내심이 한계예요. 파워쿼리는 폴더 단위로 수백 개 파일도 처리할 수 있어요. 온라인 도구는 보통 2~10개 정도를 지원하는데, 대부분의 실무 상황에서 충분해요." },
+            { question: "어떤 파일 형식을 지원하나요?", answer: "세 가지 방법 모두 .xlsx 파일을 지원해요. 파워쿼리는 .csv, .xls 등 다양한 형식도 가능해요. 온라인 도구는 보통 .xlsx와 .csv 형식을 지원해요." },
+            { question: "합친 후 중복 행은 어떻게 처리하나요?", answer: "수동 방법: 엑셀의 '중복된 항목 제거' 기능 사용 (데이터 탭 → 중복된 항목 제거). 파워쿼리: 쿼리에 중복 제거 단계 추가. 온라인 도구(QuickFigure): 중복을 자동으로 감지하고 색상으로 표시해서 확인 후 제거할 수 있어요." },
+          ] },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "excel-merge", name: { en: "Excel Merge & Duplicate Checker", ko: "엑셀 병합 & 중복 검사기" } },
+    ],
+    relatedPosts: ["national-pension-guide"],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
