@@ -60,4 +60,5 @@ export const TOOL_SLUGS = [
   "accident-settlement-calculator",
   "national-pension-calculator",
   "excel-merge",
+  "image-upscaler",
 ] as const;
