@@ -82,13 +82,15 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
     setStatus("submitting");
 
     try {
-      const { error } = await getSupabase().from("email_subscribers").insert({
+      const supabase = getSupabase();
+      const { error } = await supabase.from("email_subscribers").insert({
         email: email.toLowerCase().trim(),
         source,
         language: locale,
       });
 
       if (error) {
+        console.error("[EmailSubscribe] Supabase error:", error.code, error.message, error.details, error.hint);
         // Unique constraint violation = already subscribed
         if (error.code === "23505") {
           setStatus("duplicate");
@@ -99,7 +101,8 @@ export default function EmailSubscribeForm({ lang, source }: Props) {
         setStatus("success");
         setEmail("");
       }
-    } catch {
+    } catch (err) {
+      console.error("[EmailSubscribe] Exception:", err);
       setStatus("error");
     }
   }
