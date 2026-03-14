@@ -70,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/image-upscaler",
     "/tools/image-cropper",
     "/tools/image-kb-resizer",
+    "/tools/image-watermark",
     "/blog",
     "/blog/how-to-count-words-in-essay",
     "/blog/json-formatting-best-practices",

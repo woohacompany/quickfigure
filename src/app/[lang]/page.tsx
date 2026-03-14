@@ -113,6 +113,7 @@ export default async function HomePage({
         { name: t.home.imageUpscaler, description: t.home.imageUpscalerDesc, href: `/${lang}/tools/image-upscaler` },
         { name: t.home.imageCropper, description: t.home.imageCropperDesc, href: `/${lang}/tools/image-cropper` },
         { name: t.home.imageKbResizer, description: t.home.imageKbResizerDesc, href: `/${lang}/tools/image-kb-resizer` },
+        { name: t.home.imageWatermark, description: t.home.imageWatermarkDesc, href: `/${lang}/tools/image-watermark` },
       ],
     },
     {

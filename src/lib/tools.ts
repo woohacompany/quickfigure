@@ -63,4 +63,5 @@ export const TOOL_SLUGS = [
   "image-upscaler",
   "image-cropper",
   "image-kb-resizer",
+  "image-watermark",
 ] as const;
