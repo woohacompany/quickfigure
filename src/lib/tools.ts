@@ -59,4 +59,5 @@ export const TOOL_SLUGS = [
   "dsr-calculator",
   "accident-settlement-calculator",
   "national-pension-calculator",
+  "excel-merge",
 ] as const;
