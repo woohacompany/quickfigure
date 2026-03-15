@@ -163,6 +163,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["워터마크", "로고 넣기", "사진 보호", "저작권"],
     en: ["watermark", "add logo", "protect photo", "copyright"],
   },
+  "gif-maker": {
+    ko: ["GIF", "움짤", "움짤 만들기", "GIF 만들기", "애니메이션", "짤", "사진 움짤"],
+    en: ["GIF", "GIF maker", "animated GIF", "create GIF", "image to GIF", "animation", "make GIF"],
+  },
   "pdf-merger": {
     ko: ["PDF", "합치기", "병합", "PDF 하나로", "PDF 묶기"],
     en: ["PDF merge", "combine PDF", "join PDF", "merge files"],

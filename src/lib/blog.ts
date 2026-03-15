@@ -96,6 +96,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "image-crop-guide": ["tool-guide", "image-file"],
   "image-kb-guide": ["tool-guide", "image-file"],
   "watermark-guide": ["tool-guide", "image-file"],
+  "how-to-make-gif-from-images": ["tool-guide", "image-file"],
 
   // ── 금융 & 세금 only ──
   "simple-vs-compound-interest": ["finance-tax"],
@@ -8076,6 +8077,140 @@ export const blogPosts: BlogPost[] = [
       { slug: "case-converter", name: { en: "Case Converter", ko: "대소문자 변환" } },
     ],
     relatedPosts: ["word-counter-guide", "case-converter-guide"],
+  },
+
+  // ── GIF Maker Guide ──
+  {
+    slug: "how-to-make-gif-from-images",
+    category: "utility",
+    date: "2026-03-16",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Multiple photos being combined into an animated GIF with frame controls",
+      ko: "여러 사진이 프레임 컨트롤과 함께 애니메이션 GIF로 합쳐지는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Make a GIF from Images: Complete Guide 2026",
+        summary: "Learn how to create animated GIFs from images. Step-by-step guide covering online tools, Photoshop, mobile apps, and optimization tips.",
+        content: [
+          { type: "paragraph", text: "GIFs are everywhere — from social media reactions to product demos, tutorials, and memes. Despite newer formats like WebP and APNG, the GIF format remains the most universally supported animated image format across all platforms and messaging apps." },
+          { type: "paragraph", text: "In this guide, we'll cover three ways to make GIFs from images, optimization tips for file size, and when to use GIFs vs other formats." },
+
+          { type: "heading", text: "What is a GIF and Why Use It?" },
+          { type: "paragraph", text: "GIF (Graphics Interchange Format) is an image format that supports animation by displaying a sequence of frames. Unlike video, GIFs autoplay silently, loop automatically, and work everywhere — no player needed." },
+          { type: "list", items: [
+            "Social media: Eye-catching posts, reactions, and stories that autoplay in feeds.",
+            "Product demos: Show your product from multiple angles or demonstrate features without video.",
+            "Tutorials: Step-by-step visual instructions that loop for easy following.",
+            "Presentations: Add motion to slides without embedding video files.",
+            "Messaging: Send animated reactions on KakaoTalk, iMessage, Slack, and more.",
+          ] },
+
+          { type: "heading", text: "3 Ways to Make a GIF from Images" },
+
+          { type: "paragraph", text: "Method 1: Free online tool (fastest and easiest). QuickFigure's GIF Maker lets you upload multiple images, reorder them by dragging, adjust frame speed (0.1s to 5s), resize the output, and set loop count — all in your browser with zero server uploads. Perfect for quick GIFs without installing anything." },
+          { type: "cta", tool: "gif-maker", toolName: "GIF Maker — Create Animated GIFs Free" },
+
+          { type: "paragraph", text: "Method 2: Photoshop (professional control). Open your images as layers (File > Scripts > Load Files into Stack), then go to Window > Timeline and create a Frame Animation. Set each layer's visibility per frame, adjust timing, and export via File > Export > Save for Web (Legacy) as GIF." },
+
+          { type: "paragraph", text: "Method 3: Mobile apps. Apps like GIF Maker (iOS/Android), ImgPlay, and GIPHY let you create GIFs from your camera roll. They're convenient for quick creation but offer less control over quality and optimization." },
+
+          { type: "heading", text: "Tips for Better GIFs" },
+          { type: "list", items: [
+            "Keep frame count low: 5-20 frames is ideal. More frames = larger file size. Each frame adds roughly 10-50KB depending on resolution.",
+            "Reduce dimensions: A 320px wide GIF is typically 5-10x smaller than an 800px one. Most social platforms resize GIFs anyway.",
+            "Use consistent image sizes: If your source images have different dimensions, the GIF maker will scale them to fit, but consistent sizes produce cleaner results.",
+            "Optimize frame delay: 0.1-0.2s for smooth animation (like a flipbook), 0.5-1s for slideshow-style presentations, 2-5s for slow reveals.",
+            "Fewer colors = smaller files: GIFs support max 256 colors per frame. Photos with gradients will be larger than illustrations or screenshots.",
+          ] },
+          { type: "callout", text: "Pro tip: For the smallest file size, resize to 480px width or less and use 10-15 frames. This keeps most GIFs under 1MB — ideal for messaging apps and email." },
+
+          { type: "heading", text: "GIF vs WebP vs APNG: Which Format?" },
+          { type: "list", items: [
+            "GIF: Universal support (100% of browsers, all messaging apps, email clients). Limited to 256 colors per frame. Largest file size. Best for: maximum compatibility.",
+            "WebP: Supported by all modern browsers. Better compression (25-35% smaller than GIF). Supports both lossy and lossless. Best for: web usage where compatibility isn't a concern.",
+            "APNG: PNG-based animation. Full color support (16M+ colors). Supported by modern browsers but not by older apps. Best for: high-quality animations with transparency.",
+          ] },
+          { type: "paragraph", text: "For most users, GIF remains the safest choice because it works literally everywhere. If you're building a website and can control the format, consider WebP for smaller files." },
+
+          { type: "heading", text: "Common Questions" },
+          { type: "faq", faqItems: [
+            { question: "What's the maximum file size for GIFs on social media?", answer: "Twitter/X: 15MB, Facebook: 8MB, Discord: 8MB (25MB with Nitro), Slack: 20MB (varies by plan), KakaoTalk: 10MB. For best results, keep GIFs under 5MB." },
+            { question: "Why does my GIF look pixelated or have banding?", answer: "GIFs are limited to 256 colors per frame. Photos with smooth gradients will show color banding. To minimize this, reduce the image dimensions (smaller = less visible banding) or use images with fewer colors." },
+            { question: "Can I convert a video to GIF?", answer: "This guide covers image-to-GIF conversion. For video-to-GIF, you'll need a tool that extracts video frames. Many online tools and ffmpeg can do this." },
+            { question: "How do I make a GIF loop only once?", answer: "In QuickFigure's GIF Maker, select 'Play Once' in the loop settings. Note that some platforms (like most browsers and social media) may override this and loop infinitely." },
+            { question: "Is it safe to use an online GIF maker?", answer: "QuickFigure processes everything in your browser using Canvas API. Your images never leave your device — no server upload, no storage, no tracking." },
+          ] },
+
+          { type: "paragraph", text: "Making GIFs from images is quick and easy with the right tool. Whether you're creating product demos, social media content, or fun animations, QuickFigure's free GIF Maker handles it all in your browser — no software to install, no server uploads, no limits." },
+          { type: "cta", tool: "gif-maker", toolName: "Create Your GIF Now — Free Online Tool" },
+        ],
+      },
+      ko: {
+        title: "움짤(GIF) 만드는 법 완벽 가이드 - 이미지로 GIF 만들기 2026",
+        summary: "이미지로 애니메이션 GIF(움짤)를 만드는 방법 완벽 정리. 온라인 도구, 포토샵, 모바일 앱, 최적화 팁까지.",
+        content: [
+          { type: "paragraph", text: "움짤(GIF)은 SNS, 카카오톡, 블로그, 프레젠테이션 등 어디에서나 쓰이고 있어요. WebP나 APNG 같은 새로운 포맷이 나왔지만, GIF는 여전히 모든 플랫폼과 메신저에서 가장 널리 지원되는 애니메이션 이미지 포맷이에요." },
+          { type: "paragraph", text: "이 글에서는 이미지로 GIF를 만드는 3가지 방법, 파일 크기 최적화 팁, 그리고 GIF vs 다른 포맷 비교까지 총정리해드릴게요." },
+
+          { type: "heading", text: "GIF(움짤)란? 어디에 쓰이나요?" },
+          { type: "paragraph", text: "GIF(Graphics Interchange Format)는 여러 프레임을 순서대로 보여주는 애니메이션 이미지 포맷이에요. 동영상과 달리 소리 없이 자동 재생되고, 자동으로 반복되며, 별도의 플레이어 없이 어디서든 작동해요." },
+          { type: "list", items: [
+            "SNS: 피드에서 자동 재생되는 눈에 띄는 포스트, 리액션, 스토리.",
+            "상품 소개: 여러 각도의 상품 사진이나 기능 시연을 동영상 없이 보여주기.",
+            "튜토리얼: 반복 재생되는 단계별 시각 가이드.",
+            "프레젠테이션: 동영상 파일 삽입 없이 슬라이드에 움직임 추가.",
+            "카카오톡/메신저: 카카오톡, iMessage, 슬랙 등에서 움짤 리액션 보내기.",
+          ] },
+
+          { type: "heading", text: "이미지로 GIF 만드는 3가지 방법" },
+
+          { type: "paragraph", text: "방법 1: 무료 온라인 도구 (가장 빠르고 쉬움). QuickFigure의 GIF 만들기 도구는 여러 이미지를 업로드하고, 드래그로 순서를 변경하고, 프레임 속도(0.1초~5초)를 조절하고, 크기를 변경하고, 반복 횟수를 설정할 수 있어요. 모든 처리가 브라우저에서 이뤄져서 서버 업로드가 전혀 없어요." },
+          { type: "cta", tool: "gif-maker", toolName: "GIF 만들기 — 무료로 바로 사용하기" },
+
+          { type: "paragraph", text: "방법 2: 포토샵 (전문적인 제어). 이미지를 레이어로 불러온 후 (파일 > 스크립트 > 파일을 레이어로 로드), 창 > 타임라인에서 프레임 애니메이션을 만들어요. 각 프레임의 레이어 가시성을 설정하고 타이밍을 조절한 다음, 파일 > 내보내기 > 웹용으로 저장에서 GIF로 저장해요." },
+
+          { type: "paragraph", text: "방법 3: 모바일 앱. GIF Maker(iOS/Android), ImgPlay, GIPHY 같은 앱으로 카메라 롤에서 바로 GIF를 만들 수 있어요. 빠르게 만들기에는 편하지만 품질과 최적화 제어가 제한적이에요." },
+
+          { type: "heading", text: "좋은 GIF 만드는 팁" },
+          { type: "list", items: [
+            "프레임 수는 적게: 5~20장이 이상적이에요. 프레임이 많을수록 파일 크기가 커져요. 해상도에 따라 프레임당 10~50KB가 추가돼요.",
+            "크기를 줄이세요: 320px 너비 GIF는 800px보다 5~10배 작아요. 대부분의 SNS 플랫폼은 GIF를 자동으로 리사이즈해요.",
+            "같은 크기의 이미지 사용: 소스 이미지 크기가 다르면 맞추기 위해 스케일링이 되지만, 같은 크기가 더 깔끔한 결과를 만들어요.",
+            "프레임 간격 최적화: 부드러운 애니메이션은 0.1~0.2초, 슬라이드쇼 스타일은 0.5~1초, 천천히 보여주기는 2~5초가 좋아요.",
+            "색상이 적을수록 파일이 작아요: GIF는 프레임당 최대 256색을 지원해요. 그라데이션이 있는 사진보다 일러스트나 스크린샷이 더 작은 파일을 만들어요.",
+          ] },
+          { type: "callout", text: "꿀팁: 가장 작은 파일 크기를 원하면 480px 이하로 리사이즈하고 10~15프레임을 사용하세요. 대부분의 GIF가 1MB 미만으로 만들어져서 카카오톡이나 이메일에 딱이에요." },
+
+          { type: "heading", text: "GIF vs WebP vs APNG 비교" },
+          { type: "list", items: [
+            "GIF: 모든 곳에서 지원 (브라우저 100%, 모든 메신저, 이메일). 프레임당 256색 제한. 파일 크기 가장 큼. 최대 호환성이 필요할 때 최고.",
+            "WebP: 모든 최신 브라우저 지원. GIF보다 25~35% 더 작은 압축. 손실/무손실 모두 지원. 웹사이트용으로 호환성이 크게 중요하지 않을 때 최고.",
+            "APNG: PNG 기반 애니메이션. 1600만+ 색상 풀 지원. 최신 브라우저 지원하지만 오래된 앱에서는 미지원. 투명도가 있는 고품질 애니메이션에 최고.",
+          ] },
+          { type: "paragraph", text: "대부분의 사용자에게 GIF가 가장 안전한 선택이에요 — 말 그대로 어디서든 작동하니까요. 웹사이트를 만들고 포맷을 직접 제어할 수 있다면 더 작은 WebP를 고려해보세요." },
+
+          { type: "heading", text: "자주 묻는 질문" },
+          { type: "faq", faqItems: [
+            { question: "SNS별 GIF 최대 파일 크기는?", answer: "트위터/X: 15MB, 페이스북: 8MB, 디스코드: 8MB (Nitro는 25MB), 슬랙: 20MB (요금제별 상이), 카카오톡: 10MB. 최적의 결과를 위해 5MB 이하로 유지하세요." },
+            { question: "GIF가 깨지거나 색상이 뭉쳐 보이는 이유는?", answer: "GIF는 프레임당 256색으로 제한돼요. 부드러운 그라데이션이 있는 사진은 색상 밴딩이 나타나요. 이를 줄이려면 이미지 크기를 줄이거나(작을수록 덜 보임) 색상이 적은 이미지를 사용하세요." },
+            { question: "동영상을 GIF로 변환할 수 있나요?", answer: "이 가이드는 이미지→GIF 변환을 다뤄요. 동영상→GIF는 비디오 프레임을 추출하는 도구가 필요해요. 온라인 도구나 ffmpeg로 가능해요." },
+            { question: "GIF를 1회만 재생하게 하려면?", answer: "QuickFigure GIF 만들기에서 반복 설정을 '1회 재생'으로 선택하세요. 다만 일부 플랫폼(대부분의 브라우저와 SNS)은 이 설정을 무시하고 무한 반복할 수 있어요." },
+            { question: "카카오톡에서 움짤로 보내려면?", answer: "GIF를 다운로드한 후 카카오톡 채팅에서 + 버튼 > 파일로 GIF 파일을 전송하면 자동으로 움짤로 재생돼요. 파일 크기가 10MB 이하면 가장 좋아요." },
+          ] },
+
+          { type: "paragraph", text: "이미지로 GIF를 만드는 건 적절한 도구만 있으면 정말 쉬워요. 상품 데모, SNS 콘텐츠, 재미있는 움짤 등 무엇이든 QuickFigure의 무료 GIF 만들기 도구로 브라우저에서 바로 만들어보세요 — 설치 불필요, 서버 업로드 없음, 제한 없음." },
+          { type: "cta", tool: "gif-maker", toolName: "GIF 만들기 — 무료로 바로 사용하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "gif-maker", name: { en: "GIF Maker", ko: "GIF 만들기" } },
+      { slug: "image-compressor", name: { en: "Image Compressor", ko: "이미지 압축" } },
+      { slug: "image-converter", name: { en: "Image Format Converter", ko: "이미지 형식 변환" } },
+    ],
+    relatedPosts: ["image-compressor-guide", "image-resizer-guide"],
   },
 ];
 

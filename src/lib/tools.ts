@@ -64,4 +64,5 @@ export const TOOL_SLUGS = [
   "image-cropper",
   "image-kb-resizer",
   "image-watermark",
+  "gif-maker",
 ] as const;

@@ -122,6 +122,7 @@ export default async function HomePage({
         { name: t.home.imageCropper, description: t.home.imageCropperDesc, href: `/${lang}/tools/image-cropper`, tags: getToolTags("image-cropper") },
         { name: t.home.imageKbResizer, description: t.home.imageKbResizerDesc, href: `/${lang}/tools/image-kb-resizer`, tags: getToolTags("image-kb-resizer") },
         { name: t.home.imageWatermark, description: t.home.imageWatermarkDesc, href: `/${lang}/tools/image-watermark`, tags: getToolTags("image-watermark") },
+        { name: t.home.gifMaker, description: t.home.gifMakerDesc, href: `/${lang}/tools/gif-maker`, tags: getToolTags("gif-maker") },
       ],
     },
     {
