@@ -195,6 +195,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["엑셀 합치기", "엑셀 병합", "파일 합치기", "발주서 합치기", "중복 검사"],
     en: ["Excel merge", "combine spreadsheets", "merge files", "Excel combine"],
   },
+  "pdf-to-excel": {
+    ko: ["PDF 엑셀", "PDF 변환", "PDF 표 추출", "PDF CSV", "PDF 엑셀 변환", "PDF 스프레드시트"],
+    en: ["PDF to Excel", "PDF to CSV", "extract table from PDF", "PDF converter", "PDF to spreadsheet", "PDF table extraction"],
+  },
 
   // ── Text ──
   "word-counter": {

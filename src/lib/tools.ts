@@ -65,4 +65,5 @@ export const TOOL_SLUGS = [
   "image-kb-resizer",
   "image-watermark",
   "gif-maker",
+  "pdf-to-excel",
 ] as const;

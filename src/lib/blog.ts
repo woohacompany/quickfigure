@@ -97,6 +97,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "image-kb-guide": ["tool-guide", "image-file"],
   "watermark-guide": ["tool-guide", "image-file"],
   "how-to-make-gif-from-images": ["tool-guide", "image-file"],
+  "pdf-to-excel-conversion-guide": ["tool-guide", "image-file"],
 
   // ── 금융 & 세금 only ──
   "simple-vs-compound-interest": ["finance-tax"],
@@ -8211,6 +8212,156 @@ export const blogPosts: BlogPost[] = [
       { slug: "image-converter", name: { en: "Image Format Converter", ko: "이미지 형식 변환" } },
     ],
     relatedPosts: ["image-compressor-guide", "image-resizer-guide"],
+  },
+
+  // ── PDF to Excel Conversion Guide ──
+  {
+    slug: "pdf-to-excel-conversion-guide",
+    category: "utility",
+    date: "2026-03-17",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "PDF document being converted to Excel spreadsheet with table extraction",
+      ko: "PDF 문서가 표 추출과 함께 엑셀 스프레드시트로 변환되는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Convert PDF to Excel: Complete Guide 2026",
+        summary: "Learn how to extract tables from PDF files and convert them to Excel. Compare methods including online tools, Adobe Acrobat, and Python scripts.",
+        content: [
+          { type: "paragraph", text: "PDF files are everywhere in business — invoices, bank statements, financial reports, quotes. But when you need to edit, analyze, or manipulate the data inside those tables, PDF is the worst format to work with. That's where PDF to Excel conversion comes in." },
+          { type: "paragraph", text: "In this guide, we'll compare 4 methods to convert PDF tables to Excel, help you choose the right approach, and share tips for getting the cleanest results." },
+
+          { type: "heading", text: "When Do You Need PDF to Excel Conversion?" },
+          { type: "list", items: [
+            "Accounting reports: Extract financial data from PDF statements into spreadsheets for analysis.",
+            "Bank statements: Convert transaction history to Excel for budgeting and bookkeeping.",
+            "Invoices & quotes: Pull line items into a spreadsheet to compare vendors or track expenses.",
+            "Government/regulatory documents: Extract statistical tables for research or compliance reporting.",
+            "Academic research: Convert published data tables for analysis in Excel, R, or Python.",
+          ] },
+
+          { type: "heading", text: "Method 1: Free Online Tool (Fastest)" },
+          { type: "paragraph", text: "QuickFigure's PDF to Excel Converter processes everything in your browser — no file uploads to any server. Upload a PDF, and the tool automatically detects table structures using text coordinate analysis. Preview the extracted data, then download as CSV or XLSX." },
+          { type: "list", items: [
+            "Pros: Free, instant, no installation, 100% private (browser-only processing), supports multi-page PDFs.",
+            "Cons: Text-based PDFs only (not scanned/image PDFs). Complex merged cells may need manual cleanup.",
+            "Best for: Quick one-off conversions, privacy-sensitive documents, users who don't want to install software.",
+          ] },
+          { type: "cta", tool: "pdf-to-excel", toolName: "PDF to Excel Converter — Free Online Tool" },
+
+          { type: "heading", text: "Method 2: Adobe Acrobat (Premium)" },
+          { type: "paragraph", text: "Adobe Acrobat Pro has a built-in 'Export PDF' feature that converts to Excel with high accuracy. Go to File > Export To > Spreadsheet > Microsoft Excel Workbook. It handles complex layouts well and includes OCR for scanned PDFs." },
+          { type: "list", items: [
+            "Pros: Best accuracy for complex layouts, OCR support for scanned PDFs, batch processing.",
+            "Cons: Requires paid subscription ($19.99/month), desktop software installation needed.",
+            "Best for: Professionals who regularly convert complex PDFs, scanned document processing.",
+          ] },
+
+          { type: "heading", text: "Method 3: Python Script (Developer)" },
+          { type: "paragraph", text: "For developers and data scientists, Python libraries like tabula-py, camelot-py, and pdfplumber offer programmatic PDF table extraction. These are ideal for batch processing and automation pipelines." },
+          { type: "code", language: "python", code: "import tabula\n\n# Extract all tables from PDF\ntables = tabula.read_pdf('report.pdf', pages='all')\n\n# Save each table as CSV\nfor i, table in enumerate(tables):\n    table.to_csv(f'table_{i+1}.csv', index=False)" },
+          { type: "list", items: [
+            "Pros: Free, automatable, handles batch processing, integrates with data pipelines.",
+            "Cons: Requires Python knowledge, setup time, may need tuning per document type.",
+            "Best for: Developers, data scientists, recurring/automated extraction tasks.",
+          ] },
+
+          { type: "heading", text: "Tips for Better Conversion Results" },
+          { type: "list", items: [
+            "Use text-based PDFs: PDFs created from Word, Excel, or other software contain actual text data and convert best. Scanned/photographed PDFs need OCR first.",
+            "Clean table structure helps: Simple grid-like tables with clear borders convert most accurately. Irregular layouts with merged cells may need manual cleanup.",
+            "Check the preview: Always review extracted data before downloading. Missing columns or merged cells are easy to spot in the preview.",
+            "Try CSV first: CSV is a simpler format that's less likely to have encoding issues. If you need formatting, use XLSX instead.",
+            "Multi-page documents: For long PDFs, the tool extracts tables from each page separately. XLSX format saves each page as a separate sheet.",
+          ] },
+          { type: "callout", text: "Pro tip: If your PDF has inconsistent formatting across pages, consider splitting it into individual pages first (use a PDF splitter), then converting each page separately for better results." },
+
+          { type: "heading", text: "Frequently Asked Questions" },
+          { type: "faq", faqItems: [
+            { question: "Why can't I convert a scanned PDF?", answer: "Scanned PDFs are essentially images — there's no actual text data to extract. You need OCR (Optical Character Recognition) software to first convert the image to text, then extract the tables. Adobe Acrobat Pro includes OCR." },
+            { question: "Why are some columns merged or missing?", answer: "Table detection relies on text positioning. If cells are too close together or use unusual spacing, the algorithm may merge them. Try the Python method (tabula-py) for more control over column detection." },
+            { question: "Can I convert password-protected PDFs?", answer: "You'll need to remove the password protection first. Most PDF tools (including browser-based ones) cannot process encrypted files directly." },
+            { question: "CSV vs XLSX: Which should I download?", answer: "CSV is simpler and works everywhere, but doesn't support multiple sheets or formatting. XLSX supports multiple sheets (one per page), formatting, and is native to Excel. For multi-page PDFs, XLSX is usually better." },
+            { question: "Is it safe to use online PDF converters?", answer: "QuickFigure processes everything in your browser — your file never leaves your device. Many other online converters upload your file to their servers, which is a privacy concern for sensitive documents." },
+          ] },
+
+          { type: "paragraph", text: "Converting PDF tables to Excel doesn't have to be painful. For quick, private conversions, try QuickFigure's free browser-based tool. For complex or scanned documents, consider Adobe Acrobat or Python scripts." },
+          { type: "cta", tool: "pdf-to-excel", toolName: "Convert PDF to Excel Now — Free & Private" },
+        ],
+      },
+      ko: {
+        title: "PDF 엑셀 변환 방법 총정리 - 표 추출부터 편집까지 2026",
+        summary: "PDF 파일에서 표를 추출하여 엑셀로 변환하는 방법을 총정리합니다. 온라인 도구, Adobe Acrobat, Python 스크립트 비교.",
+        content: [
+          { type: "paragraph", text: "비즈니스에서 PDF 파일은 어디에나 있어요 — 청구서, 은행 명세서, 재무 보고서, 견적서. 하지만 그 안의 표 데이터를 편집하거나 분석해야 할 때, PDF는 최악의 포맷이에요. 그래서 PDF 엑셀 변환이 필요합니다." },
+          { type: "paragraph", text: "이 글에서는 PDF 표를 엑셀로 변환하는 4가지 방법을 비교하고, 상황에 맞는 접근법을 선택하는 방법과 최상의 결과를 얻는 팁을 공유할게요." },
+
+          { type: "heading", text: "PDF를 엑셀로 변환해야 하는 상황" },
+          { type: "list", items: [
+            "회계 보고서: PDF 재무제표에서 데이터를 추출하여 스프레드시트에서 분석.",
+            "은행 명세서: 거래 내역을 엑셀로 변환하여 가계부 작성 및 회계 처리.",
+            "청구서 & 견적서: 항목별 데이터를 스프레드시트로 가져와 업체 비교 또는 비용 추적.",
+            "정부/규제 문서: 통계 테이블 추출하여 연구 또는 규정 준수 보고에 활용.",
+            "학술 연구: 출판된 데이터 테이블을 엑셀, R, Python에서 분석하기 위해 변환.",
+          ] },
+
+          { type: "heading", text: "방법 1: 무료 온라인 도구 (가장 빠름)" },
+          { type: "paragraph", text: "QuickFigure의 PDF 엑셀 변환기는 모든 처리를 브라우저에서 수행해요 — 어떤 서버에도 파일을 업로드하지 않아요. PDF를 업로드하면 텍스트 좌표 분석으로 테이블 구조를 자동 감지합니다. 추출된 데이터를 미리보기한 후 CSV 또는 XLSX로 다운로드하세요." },
+          { type: "list", items: [
+            "장점: 무료, 즉시 변환, 설치 불필요, 100% 프라이버시(브라우저 처리), 여러 페이지 PDF 지원.",
+            "단점: 텍스트 기반 PDF만 지원(스캔/이미지 PDF 불가). 복잡한 병합 셀은 수동 정리 필요할 수 있음.",
+            "추천 상황: 빠른 일회성 변환, 프라이버시가 중요한 문서, 소프트웨어 설치를 원하지 않는 사용자.",
+          ] },
+          { type: "cta", tool: "pdf-to-excel", toolName: "PDF 엑셀 변환기 — 무료 온라인 도구" },
+
+          { type: "heading", text: "방법 2: Adobe Acrobat (유료)" },
+          { type: "paragraph", text: "Adobe Acrobat Pro에는 PDF를 엑셀로 높은 정확도로 변환하는 '내보내기' 기능이 내장되어 있어요. 파일 > 내보내기 > 스프레드시트 > Microsoft Excel 통합 문서로 이동하세요. 복잡한 레이아웃도 잘 처리하고 스캔된 PDF를 위한 OCR도 포함되어 있어요." },
+          { type: "list", items: [
+            "장점: 복잡한 레이아웃에서 최고 정확도, 스캔 PDF용 OCR 지원, 일괄 처리.",
+            "단점: 유료 구독 필요(월 $19.99), 데스크톱 소프트웨어 설치 필요.",
+            "추천 상황: 복잡한 PDF를 자주 변환하는 전문가, 스캔 문서 처리.",
+          ] },
+
+          { type: "heading", text: "방법 3: Python 스크립트 (개발자용)" },
+          { type: "paragraph", text: "개발자와 데이터 사이언티스트라면 tabula-py, camelot-py, pdfplumber 같은 Python 라이브러리로 프로그래밍 방식의 PDF 테이블 추출이 가능해요. 일괄 처리와 자동화 파이프라인에 이상적이에요." },
+          { type: "code", language: "python", code: "import tabula\n\n# PDF에서 모든 테이블 추출\ntables = tabula.read_pdf('report.pdf', pages='all')\n\n# 각 테이블을 CSV로 저장\nfor i, table in enumerate(tables):\n    table.to_csv(f'table_{i+1}.csv', index=False)" },
+          { type: "list", items: [
+            "장점: 무료, 자동화 가능, 일괄 처리, 데이터 파이프라인 연동.",
+            "단점: Python 지식 필요, 설정 시간, 문서 유형별 튜닝 필요할 수 있음.",
+            "추천 상황: 개발자, 데이터 사이언티스트, 반복적/자동화된 추출 작업.",
+          ] },
+
+          { type: "heading", text: "변환 품질 높이는 팁" },
+          { type: "list", items: [
+            "텍스트 기반 PDF 사용: Word, Excel 등에서 만든 PDF는 실제 텍스트 데이터를 포함하고 있어 가장 잘 변환돼요. 스캔/촬영 PDF는 먼저 OCR 처리가 필요해요.",
+            "깨끗한 표 구조가 중요: 명확한 테두리가 있는 단순 격자형 표가 가장 정확하게 변환돼요. 셀 병합이나 불규칙한 레이아웃은 수동 정리가 필요할 수 있어요.",
+            "미리보기 확인: 다운로드 전 항상 추출된 데이터를 확인하세요. 누락된 열이나 병합된 셀은 미리보기에서 쉽게 발견할 수 있어요.",
+            "CSV를 먼저 시도: CSV는 인코딩 문제가 적은 단순한 형식이에요. 서식이 필요하면 XLSX를 사용하세요.",
+            "여러 페이지 문서: 긴 PDF의 경우 도구가 각 페이지에서 개별적으로 표를 추출해요. XLSX 형식은 각 페이지를 별도 시트로 저장해요.",
+          ] },
+          { type: "callout", text: "꿀팁: PDF의 서식이 페이지마다 다르다면, 먼저 PDF를 개별 페이지로 분할(PDF 분할기 사용)한 후 각 페이지를 따로 변환하면 더 좋은 결과를 얻을 수 있어요." },
+
+          { type: "heading", text: "자주 묻는 질문" },
+          { type: "faq", faqItems: [
+            { question: "스캔한 PDF는 왜 변환이 안 되나요?", answer: "스캔한 PDF는 본질적으로 이미지예요 — 추출할 실제 텍스트 데이터가 없어요. OCR(광학 문자 인식) 소프트웨어로 먼저 이미지를 텍스트로 변환한 다음 표를 추출해야 해요. Adobe Acrobat Pro에는 OCR이 포함되어 있어요." },
+            { question: "일부 열이 병합되거나 누락되는 이유는?", answer: "테이블 감지는 텍스트 위치에 의존해요. 셀이 너무 가깝거나 비정상적인 간격을 사용하면 알고리즘이 병합할 수 있어요. 열 감지를 더 세밀하게 제어하려면 Python 방법(tabula-py)을 시도해보세요." },
+            { question: "비밀번호로 보호된 PDF도 변환할 수 있나요?", answer: "먼저 비밀번호 보호를 해제해야 해요. 대부분의 PDF 도구(브라우저 기반 포함)는 암호화된 파일을 직접 처리할 수 없어요." },
+            { question: "CSV vs XLSX: 어떤 걸 다운로드해야 하나요?", answer: "CSV는 단순하고 어디서든 작동하지만 여러 시트나 서식을 지원하지 않아요. XLSX는 여러 시트(페이지당 하나), 서식을 지원하고 엑셀 기본 형식이에요. 여러 페이지 PDF는 보통 XLSX가 더 좋아요." },
+            { question: "온라인 PDF 변환기는 안전한가요?", answer: "QuickFigure는 모든 것을 브라우저에서 처리해요 — 파일이 기기를 떠나지 않아요. 다른 많은 온라인 변환기는 파일을 서버에 업로드하는데, 이는 민감한 문서에 대한 프라이버시 우려가 있어요." },
+          ] },
+
+          { type: "paragraph", text: "PDF 표를 엑셀로 변환하는 건 어렵지 않아요. 빠르고 안전한 변환이 필요하면 QuickFigure의 무료 브라우저 기반 도구를 사용해보세요. 복잡하거나 스캔한 문서는 Adobe Acrobat이나 Python 스크립트를 고려하세요." },
+          { type: "cta", tool: "pdf-to-excel", toolName: "PDF 엑셀 변환 — 무료로 바로 사용하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "pdf-to-excel", name: { en: "PDF to Excel Converter", ko: "PDF 엑셀 변환" } },
+      { slug: "excel-merge", name: { en: "Excel Merge", ko: "엑셀 합치기" } },
+      { slug: "pdf-to-word", name: { en: "PDF to Word", ko: "PDF 워드 변환" } },
+    ],
+    relatedPosts: ["pdf-to-word-guide", "excel-merge-guide"],
   },
 ];
 

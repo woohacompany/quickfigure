@@ -123,6 +123,7 @@ export default async function HomePage({
         { name: t.home.imageKbResizer, description: t.home.imageKbResizerDesc, href: `/${lang}/tools/image-kb-resizer`, tags: getToolTags("image-kb-resizer") },
         { name: t.home.imageWatermark, description: t.home.imageWatermarkDesc, href: `/${lang}/tools/image-watermark`, tags: getToolTags("image-watermark") },
         { name: t.home.gifMaker, description: t.home.gifMakerDesc, href: `/${lang}/tools/gif-maker`, tags: getToolTags("gif-maker") },
+        { name: t.home.pdfToExcel, description: t.home.pdfToExcelDesc, href: `/${lang}/tools/pdf-to-excel`, tags: getToolTags("pdf-to-excel") },
       ],
     },
     {
