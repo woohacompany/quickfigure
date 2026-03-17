@@ -145,6 +145,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "calories-to-lose-weight": ["lifestyle"],
   "body-fat-guide": ["lifestyle"],
   "world-clock-guide": ["lifestyle"],
+  "world-time-converter-guide": ["tool-guide", "lifestyle"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -9194,6 +9195,247 @@ export const blogPosts: BlogPost[] = [
       { slug: "dday-calculator", name: { en: "D-Day Calculator", ko: "디데이 계산기" } },
     ],
     relatedPosts: ["date-guide", "dday-guide"],
+  },
+
+  // ── World Time Converter Guide (SEO-heavy) ──
+  {
+    slug: "world-time-converter-guide",
+    category: "lifestyle" as BlogCategory,
+    date: "2026-03-18",
+    readingTime: 10,
+    thumbnailAlt: {
+      en: "World map with time zone lines and clocks showing different times in major cities",
+      ko: "주요 도시별 시간을 표시하는 시계와 시간대 선이 있는 세계 지도",
+    },
+    translations: {
+      en: {
+        title: "World Time Zone Converter: How to Calculate Time Differences Instantly 2026",
+        summary: "Learn how to convert between time zones, understand DST, calculate time differences for meetings, and find what time it is anywhere in the world.",
+        content: [
+          { type: "paragraph", text: "Whether you're scheduling a video call with colleagues in Seoul, checking what time it is in New York right now, or figuring out when the London stock exchange opens in your local time, time zone conversion is something billions of people deal with daily. In this comprehensive guide, we'll cover everything from basic time difference calculations to advanced tips for managing meetings across multiple time zones." },
+
+          { type: "heading", text: "When You Need a World Clock & Time Zone Converter" },
+          { type: "paragraph", text: "Time zone conversion isn't just for business travelers. Here are the most common scenarios where a reliable world clock saves you from embarrassing mistakes:" },
+          { type: "list", items: [
+            "Video conferencing and Zoom meetings across offices in different countries",
+            "International stock market trading — knowing when NYSE, NASDAQ, LSE, or TSE opens in your time",
+            "Online shopping events like Black Friday, Prime Day, or flash sales that start at a specific local time",
+            "Calling family or friends abroad at a reasonable hour",
+            "Watching live sports — Premier League, NBA, MLB, or Champions League kick-off times",
+            "Global product launches, Apple events, gaming server resets, and online event schedules",
+            "Travel planning — confirming arrival times, check-in times, and jet lag management",
+          ] },
+
+          { type: "heading", text: "Understanding UTC, GMT, EST, PST, and Other Time Zone Abbreviations" },
+          { type: "paragraph", text: "Before diving into conversions, let's clarify the key abbreviations you'll encounter:" },
+          { type: "list", items: [
+            "UTC (Coordinated Universal Time): The global reference point. All time zones are defined as offsets from UTC. It's based on atomic clocks and doesn't observe DST.",
+            "GMT (Greenwich Mean Time): Practically identical to UTC for everyday purposes. Based on the Prime Meridian in Greenwich, London.",
+            "EST (Eastern Standard Time): UTC−5. Used by New York, Washington DC, Toronto, Miami. Becomes EDT (UTC−4) during Daylight Saving Time.",
+            "CST (Central Standard Time): UTC−6. Used by Chicago, Dallas, Houston, Mexico City. Becomes CDT (UTC−5) during DST.",
+            "MST (Mountain Standard Time): UTC−7. Used by Denver, Phoenix (Arizona doesn't observe DST). Becomes MDT (UTC−6).",
+            "PST (Pacific Standard Time): UTC−8. Used by Los Angeles, San Francisco, Seattle, Vancouver. Becomes PDT (UTC−7) during DST.",
+            "KST (Korea Standard Time): UTC+9. Used by South Korea. Fixed year-round — no DST.",
+            "JST (Japan Standard Time): UTC+9. Same offset as KST — when it's noon in Seoul, it's noon in Tokyo.",
+            "CST/China (China Standard Time): UTC+8. Used across all of China despite its geographic span. No DST.",
+            "IST (India Standard Time): UTC+5:30. One of the few zones with a 30-minute offset.",
+            "AEDT (Australian Eastern Daylight Time): UTC+11 during DST (summer). AEST is UTC+10.",
+          ] },
+
+          { type: "heading", text: "Time Differences from Major Cities — Quick Reference" },
+          { type: "paragraph", text: "Here are the most commonly searched time differences between major world cities. All offsets shown are standard time; during DST the difference changes by 1 hour where applicable:" },
+          { type: "list", items: [
+            "New York (EST, UTC−5) → London (GMT, UTC+0): +5 hours. When it's 9 AM in New York, it's 2 PM in London.",
+            "New York → Los Angeles (PST, UTC−8): −3 hours. When it's noon in New York, it's 9 AM in LA.",
+            "New York → Tokyo/Seoul (UTC+9): +14 hours. When it's 8 AM in New York, it's 10 PM in Seoul.",
+            "London → Dubai (GST, UTC+4): +4 hours. When it's noon in London, it's 4 PM in Dubai.",
+            "London → Sydney (AEDT, UTC+11): +11 hours during Australian summer. When it's 8 AM in London, it's 7 PM in Sydney.",
+            "Los Angeles → Seoul (KST, UTC+9): +17 hours. When it's 4 PM Monday in LA, it's 9 AM Tuesday in Seoul.",
+            "Singapore (SGT, UTC+8) → London: −8 hours. When it's 4 PM in Singapore, it's 8 AM in London.",
+          ] },
+
+          { type: "cta", tool: "world-clock", toolName: "World Clock — Compare Times Across Cities Instantly" },
+
+          { type: "heading", text: "Daylight Saving Time (DST) — The Hidden Complication in 2026" },
+          { type: "paragraph", text: "Daylight Saving Time shifts clocks forward by 1 hour in spring and back in autumn. This changes time differences between cities and catches many people off guard. Here's what you need to know for 2026:" },
+          { type: "list", items: [
+            "United States DST 2026: Starts Sunday, March 8 (clocks spring forward). Ends Sunday, November 1 (clocks fall back).",
+            "European DST 2026 (Summer Time): Starts Sunday, March 29. Ends Sunday, October 25.",
+            "Australia DST: Starts first Sunday in October, ends first Sunday in April. Opposite to Northern Hemisphere.",
+            "Countries that DO NOT observe DST: Japan, South Korea, China, India, Singapore, Thailand, most of Africa, most of South America.",
+            "During the 3-week gap between US and EU DST changes (early March), time differences between US and EU cities differ from the rest of the year.",
+          ] },
+          { type: "paragraph", text: "For example, during US DST the New York–Seoul time difference shrinks from 14 to 13 hours. The New York–London gap changes from 5 to 4 hours for the 3-week window when only the US has switched. Always verify with a world clock tool during March and October/November transitions." },
+          { type: "callout", text: "Pro tip: Use QuickFigure's world clock — it automatically detects DST for every city and shows a ☀️ DST badge when active." },
+
+          { type: "heading", text: "How to Calculate Time Differences — 3 Methods" },
+          { type: "paragraph", text: "Method 1: Use QuickFigure's World Clock (Recommended). Add the cities you care about and use the time slider to instantly see what time it is everywhere when Korea (or any reference point) is at a specific hour. The meeting time finder shows overlapping business hours." },
+          { type: "paragraph", text: "Method 2: Calculate using UTC offsets. Take the UTC offset of each city, subtract to find the difference. Example: Seoul is UTC+9, New York is UTC−5. Difference = 9 − (−5) = 14 hours. Seoul is 14 hours ahead of New York." },
+          { type: "paragraph", text: "Method 3: Smartphone world clock. Most phones have a built-in world clock app, but they typically show only current time and don't let you explore 'what if it's 3 PM in Seoul, what time is it in London?' — that's where a time slider tool excels." },
+
+          { type: "heading", text: "Finding the Best Meeting Time Across Time Zones" },
+          { type: "paragraph", text: "The golden rule of global meetings: find the overlap of business hours (9 AM–6 PM) across all participants' time zones. Here's how the overlap narrows with more zones:" },
+          { type: "list", items: [
+            "New York + London: 9 AM–1 PM EST (2 PM–6 PM GMT) — generous 4-hour overlap.",
+            "New York + London + Seoul: Very tight. 10 PM–midnight KST = 8–10 AM EST = 1–3 PM GMT.",
+            "LA + London + Tokyo: Virtually no overlap during business hours. Asynchronous communication recommended.",
+            "Singapore + London + New York: 9:30–10:30 PM SGT = 1:30–2:30 PM GMT = 8:30–9:30 AM EST — just 1 hour.",
+          ] },
+          { type: "paragraph", text: "When no reasonable overlap exists, rotate meeting times so no single team is always meeting outside business hours. Tools like QuickFigure's meeting time finder visualize this overlap on a timeline." },
+
+          { type: "cta", tool: "world-clock", toolName: "Find Overlapping Meeting Times — Free Tool" },
+
+          { type: "heading", text: "Real-World Scenarios" },
+          { type: "list", items: [
+            "Stock market hours: NYSE/NASDAQ open at 9:30 AM EST = 2:30 PM GMT = 10:30 PM KST (or 9:30 PM during US DST). London Stock Exchange opens at 8:00 AM GMT = 5:00 PM KST.",
+            "Premier League: Saturday 3 PM GMT kick-off = 10 AM EST = midnight Sunday KST.",
+            "Amazon Black Friday: Deals start at midnight EST = 5 AM GMT = 2 PM KST.",
+            "Apple Keynote: Typically 10 AM PDT = 1 PM EDT = 6 PM GMT = 2 AM KST (next day).",
+          ] },
+
+          { type: "heading", text: "Tips for Managing Time Zone Differences" },
+          { type: "list", items: [
+            "Always include the time zone when sharing times: '3 PM EST' not just '3 PM'. Even better, include a world clock link.",
+            "Set your calendar to show multiple time zones side by side.",
+            "Be aware of DST transitions in March and November — double-check scheduled meetings during these weeks.",
+            "Use a world clock tool with a slider to quickly answer 'if it's X here, what time is it there?'",
+            "For recurring meetings, pick a time and stick to it in UTC — let everyone's local time shift with DST.",
+            "Consider the human cost: avoid scheduling at 6 AM or 11 PM for any participant regularly.",
+          ] },
+
+          { type: "heading", text: "Frequently Asked Questions" },
+          { type: "faq", faqItems: [
+            { question: "What time is it in New York right now?", answer: "New York uses Eastern Time (EST, UTC−5; EDT, UTC−4 during DST). Use QuickFigure's world clock to see the current time in New York and compare it with your local time." },
+            { question: "What is the time difference between London and New York?", answer: "London (GMT) is 5 hours ahead of New York (EST). During summer when both observe DST, the gap stays 5 hours (EDT vs BST). But for 2-3 weeks in March/November when only one has switched, it's 4 or 6 hours." },
+            { question: "What time does the US stock market open?", answer: "NYSE and NASDAQ open at 9:30 AM Eastern Time. That's 2:30 PM GMT, 6:30 AM PST, and 10:30 PM KST (11:30 PM during standard time). Pre-market trading starts at 4 AM ET." },
+            { question: "Does Japan observe Daylight Saving Time?", answer: "No. Japan (JST, UTC+9) does not observe DST. The time is fixed year-round, same as Korea (KST). When it's noon in Seoul, it's always noon in Tokyo regardless of the time of year." },
+            { question: "Why do some time zones have 30-minute or 45-minute offsets?", answer: "India (IST, UTC+5:30), Nepal (UTC+5:45), and a few others have non-standard offsets for historical and geographical reasons. India chose +5:30 as a compromise between its eastern and western extremes." },
+            { question: "When does Daylight Saving Time start in 2026?", answer: "In the US, DST begins on March 8, 2026 (second Sunday of March). In Europe, summer time begins on March 29, 2026 (last Sunday of March). During the 3-week gap, US-Europe time differences shift temporarily." },
+          ] },
+
+          { type: "paragraph", text: "Time zone conversion doesn't have to be confusing. With the right tool, you can instantly compare any number of cities, find meeting overlaps, and account for DST automatically. Try QuickFigure's free world clock to never miss a meeting or miscalculate a time difference again." },
+          { type: "cta", tool: "world-clock", toolName: "World Clock & Time Zone Converter — Free Online" },
+        ],
+      },
+      ko: {
+        title: "한국 시간 미국 시간 변환 & 세계 시차 계산 완벽 가이드 2026",
+        summary: "한국 미국 시차, 뉴욕 시간 지금, LA 시간, 런던 시간 등 세계 시간 변환과 서머타임(DST) 정보를 한 곳에 정리했습니다.",
+        content: [
+          { type: "paragraph", text: "\"지금 뉴욕은 몇 시지?\", \"한국이 오전 10시면 LA는 몇 시야?\", \"서머타임이라 시차가 바뀐다는데...\" — 해외 미팅, 미국 주식 거래, 해외여행, 가족 통화 등 일상에서 시차 계산이 필요한 순간은 생각보다 많습니다. 이 가이드에서 세계 시간 변환의 모든 것을 정리합니다." },
+
+          { type: "heading", text: "세계 시간 변환이 필요한 순간들" },
+          { type: "paragraph", text: "시차 계산은 비즈니스 여행자만의 일이 아닙니다. 다음과 같은 상황에서 정확한 세계 시계가 필요합니다:" },
+          { type: "list", items: [
+            "해외 클라이언트와 화상회의/줌 미팅 시간 조율 — \"한국 오전 10시에 하자\"고 했는데 상대방에겐 새벽이라면?",
+            "해외 주식 거래 — 미국 나스닥/NYSE 개장 시간이 한국 시간으로 밤 11시 30분 (서머타임 시 10시 30분)",
+            "해외 직구 타임세일 — 아마존 블랙프라이데이, 프라임데이가 미국 동부 시간 기준이라 한국 시간으로 언제인지 확인 필요",
+            "해외여행 전 현지 시간 확인 — 도착 시 현지 몇 시인지, 호텔 체크인 가능한지",
+            "유학생/교민 가족 통화 — 상대방이 자고 있는 시간에 전화하면 곤란",
+            "해외 스포츠 중계 시청 — 프리미어리그, NBA, MLB 경기 시작 시간이 현지 기준",
+            "글로벌 런칭/이벤트 — 애플 키노트, 게임 서버 점검, 온라인 이벤트 시작 시간",
+          ] },
+
+          { type: "heading", text: "한국과 주요 국가 시차 총정리" },
+          { type: "paragraph", text: "한국 시간(KST, UTC+9)을 기준으로 세계 주요 도시와의 시차를 정리합니다. 서머타임 적용 시 변동이 있는 국가는 별도 표기합니다:" },
+          { type: "list", items: [
+            "미국 동부 (뉴욕, 워싱턴DC, 마이애미): -14시간 → 서머타임 시 -13시간. 한국 오전 9시 = 뉴욕 전날 오후 7시",
+            "미국 서부 (LA, 샌프란시스코, 시애틀): -17시간 → 서머타임 시 -16시간. 한국 오전 9시 = LA 전날 오후 4시",
+            "미국 중부 (시카고, 달라스, 휴스턴): -15시간 → 서머타임 시 -14시간",
+            "미국 산악 (덴버, 피닉스): -16시간 → 서머타임 시 -15시간 (피닉스는 서머타임 미적용)",
+            "영국 런던: -9시간 → 서머타임 시 -8시간. 한국 오전 9시 = 런던 자정",
+            "프랑스 파리 / 독일 베를린: -8시간 → 서머타임 시 -7시간",
+            "일본 도쿄: 0시간 (동일). 한국과 일본은 같은 UTC+9 시간대",
+            "중국 베이징/상하이: -1시간. 한국 오전 9시 = 중국 오전 8시",
+            "호주 동부 시드니: +2시간 → 호주 서머타임 시 +3시간 (10월~4월)",
+            "인도 뉴델리: -3시간 30분. 인도는 UTC+5:30으로 30분 단위 오프셋",
+            "아랍에미리트 두바이: -5시간. 한국 오전 9시 = 두바이 오전 4시",
+            "싱가포르: -1시간. 한국 오전 9시 = 싱가포르 오전 8시",
+          ] },
+
+          { type: "cta", tool: "world-clock", toolName: "세계 시간 변환기 — 슬라이더로 즉시 비교" },
+
+          { type: "heading", text: "서머타임(DST) 완벽 정리 — 2026년 기준" },
+          { type: "paragraph", text: "서머타임(Daylight Saving Time)은 봄에 시계를 1시간 앞당기고, 가을에 다시 되돌리는 제도입니다. 이 때문에 1년에 두 번 국가 간 시차가 바뀝니다. 2026년 서머타임 일정은 다음과 같습니다:" },
+          { type: "list", items: [
+            "미국 서머타임 2026: 3월 8일 (일) 시작 (시계 1시간 앞으로) → 11월 1일 (일) 종료 (시계 1시간 뒤로)",
+            "유럽 서머타임 2026: 3월 29일 (일) 시작 → 10월 25일 (일) 종료",
+            "호주 서머타임: 10월 첫째 일요일 시작 → 4월 첫째 일요일 종료 (북반구와 반대!)",
+            "서머타임 미적용 국가: 한국, 일본, 중국, 싱가포르, 인도, 태국, 대부분의 아프리카와 남미",
+          ] },
+          { type: "paragraph", text: "주의할 점: 미국과 유럽의 서머타임 시작일이 약 3주 차이나므로, 이 기간(3월 초~말)에는 미국-유럽 간 시차가 평소와 다릅니다. 예를 들어 뉴욕-런던 시차는 보통 5시간이지만, 미국만 서머타임인 3월 8일~29일에는 4시간으로 줄어듭니다." },
+          { type: "callout", text: "QuickFigure 세계 시간 변환기는 서머타임을 자동 반영하며, 적용 중인 도시에 ☀️ DST 배지를 표시합니다." },
+
+          { type: "heading", text: "UTC, GMT, KST란? — 시간대 용어 정리" },
+          { type: "paragraph", text: "시차 계산에 자주 등장하는 약어들을 정리합니다:" },
+          { type: "list", items: [
+            "UTC (협정 세계시): 원자시계 기반 국제 표준 시간. 모든 시간대의 기준점. 서머타임 없음.",
+            "GMT (그리니치 표준시): 영국 그리니치 천문대 기준. 실용적으로 UTC와 동일.",
+            "KST (한국 표준시): UTC+9. 연중 고정, 서머타임 없음. 일본(JST)과 동일한 오프셋.",
+            "EST (미국 동부 표준시): UTC-5. 뉴욕, 워싱턴DC. 서머타임 시 EDT(UTC-4)로 변경.",
+            "PST (미국 태평양 표준시): UTC-8. LA, 샌프란시스코. 서머타임 시 PDT(UTC-7)로 변경.",
+            "CST (미국 중부 표준시): UTC-6. 시카고, 달라스. 서머타임 시 CDT(UTC-5).",
+            "IST (인도 표준시): UTC+5:30. 30분 단위 오프셋이라 시차 계산 시 주의 필요.",
+            "AEDT (호주 동부 일광절약시간): UTC+11. 비서머타임(AEST)은 UTC+10.",
+          ] },
+
+          { type: "heading", text: "시차 쉽게 계산하는 3가지 방법" },
+          { type: "paragraph", text: "방법 1: QuickFigure 세계 시간 변환기 사용 (가장 추천). 원하는 도시를 추가하고 시간 슬라이더를 움직이면 모든 도시 시간이 동시에 변환됩니다. \"한국이 오전 10시면 뉴욕은?\" → 슬라이더를 10시로 드래그하면 즉시 확인. 회의 시간 찾기 기능으로 업무시간 겹치는 구간도 한눈에 볼 수 있습니다." },
+          { type: "paragraph", text: "방법 2: UTC 오프셋으로 직접 계산. 각 도시의 UTC 오프셋을 빼면 시차가 나옵니다. 예: 서울(UTC+9) - 뉴욕(UTC-5) = 14시간. 서울이 14시간 앞섭니다. 하지만 서머타임 기간에는 오프셋이 바뀌므로 주의해야 합니다." },
+          { type: "paragraph", text: "방법 3: 스마트폰 세계 시계 앱. 기본 시계 앱에서 도시를 추가하면 현재 시간을 볼 수 있지만, '특정 시간일 때 다른 도시는 몇 시?'라는 질문에는 답하기 어렵습니다. 이 점에서 슬라이더 기반 변환 도구가 훨씬 편리합니다." },
+
+          { type: "heading", text: "QuickFigure 세계 시간 변환기 사용법" },
+          { type: "list", items: [
+            "기본 사용: 페이지 접속 시 서울, 뉴욕, LA, 런던, 도쿄 5개 도시의 실시간 시계가 표시됩니다.",
+            "시간 슬라이더: \"시간 조절하기\" 버튼 → 슬라이더를 드래그하면 한국 시간 기준으로 모든 도시 시간이 동시 변환.",
+            "도시 추가: \"도시 추가\" 버튼으로 40개+ 도시 중 원하는 도시를 검색하여 추가 (최대 10개).",
+            "순서 변경: 도시 카드를 드래그하여 원하는 순서로 정렬.",
+            "회의 시간 찾기: \"회의 시간 찾기\" 모드를 켜면 모든 도시의 업무시간(9시~18시)이 겹치는 구간을 KST 기준 녹색 타임라인으로 표시.",
+            "낮/밤 구분: 각 도시의 현지 시간에 따라 카드 배경이 밝은색(낮)과 어두운색(밤)으로 자동 전환.",
+            "자동 저장: 선택한 도시 목록이 브라우저에 저장되어 다음 방문 시에도 유지.",
+          ] },
+
+          { type: "cta", tool: "world-clock", toolName: "세계 시간 변환기 — 지금 무료로 사용하기" },
+
+          { type: "heading", text: "실전 활용 시나리오" },
+          { type: "paragraph", text: "시나리오 1: 미국 클라이언트와 화상회의 잡기. 한국 오전 10시에 미팅을 제안했는데, 뉴욕은 전날 오후 8시 — 퇴근 후라 부담스럽습니다. 세계 시간 변환기로 확인하니 한국 오전 8시 = 뉴욕 오후 6시. 아직 늦긴 하지만 훨씬 합리적입니다. 또는 한국 밤 11시 = 뉴욕 오전 9시로 잡으면 뉴욕 입장에서 최적이지만 한국 측이 늦은 시간입니다." },
+          { type: "paragraph", text: "시나리오 2: 미국 주식 장 시작 시간 확인. 나스닥/NYSE 개장은 미국 동부 시간 오전 9시 30분 = 한국 시간 오후 11시 30분 (서머타임 기간에는 오후 10시 30분). 프리마켓은 동부 시간 오전 4시 = 한국 시간 오후 6시부터 시작합니다. 해외 주식 거래 시간을 정확히 아는 것이 투자 타이밍의 핵심입니다." },
+          { type: "paragraph", text: "시나리오 3: 영국 프리미어리그 경기 시청. 토요일 오후 3시 GMT 킥오프 = 한국 일요일 오전 12시(자정). 서머타임 기간(BST)에는 오후 3시 BST = 한국 오후 11시로 1시간 빨라집니다." },
+          { type: "paragraph", text: "시나리오 4: 아마존 블랙프라이데이 딜. 미국 동부 시간 자정 시작 = 한국 시간 오후 2시. 한국에서는 금요일 오후에 이미 딜을 잡을 수 있다는 뜻입니다!" },
+
+          { type: "heading", text: "화상회의 시간 맞추기 — 글로벌 팀 팁" },
+          { type: "paragraph", text: "여러 시간대에 걸친 팀이라면 업무시간(9시~18시)이 겹치는 '골든 아워'를 찾는 것이 핵심입니다:" },
+          { type: "list", items: [
+            "뉴욕 + 런던: EST 9시~13시 (GMT 14시~18시) — 4시간 겹침으로 여유로움",
+            "뉴욕 + 런던 + 서울: KST 22시~24시 = EST 8시~10시 = GMT 13시~15시 — 겨우 2시간",
+            "LA + 런던 + 도쿄: 업무시간 겹침 구간 거의 없음 → 비동기 커뮤니케이션 권장",
+            "서울 + 싱가포르 + 두바이: KST 9시~18시 = SGT 8시~17시 = GST 4시~13시 — 오전에 넓은 겹침",
+          ] },
+          { type: "paragraph", text: "겹치는 시간이 없을 때는 미팅 시간을 공평하게 돌아가며 잡는 것이 좋습니다. 한 팀만 계속 새벽에 미팅하면 번아웃의 원인이 됩니다." },
+
+          { type: "heading", text: "자주 묻는 질문 (FAQ)" },
+          { type: "faq", faqItems: [
+            { question: "한국과 미국 시차는 몇 시간인가요?", answer: "한국(KST, UTC+9)은 미국 동부(EST, UTC-5)보다 14시간 앞섭니다. 서부(PST, UTC-8)와는 17시간 차이입니다. 서머타임 기간에는 각각 13시간, 16시간으로 줄어듭니다." },
+            { question: "지금 뉴욕은 몇 시인가요?", answer: "QuickFigure 세계 시간 변환기에서 실시간으로 뉴욕 현재 시간을 확인할 수 있습니다. 서머타임 자동 반영됩니다." },
+            { question: "지금 LA는 몇 시인가요?", answer: "LA는 미국 태평양 시간대(PST, UTC-8)를 사용합니다. 한국보다 17시간 느리며, 서머타임 시 16시간 느립니다. 세계 시간 변환기에서 확인하세요." },
+            { question: "지금 런던은 몇 시인가요?", answer: "런던은 GMT(UTC+0)를 사용하며 한국보다 9시간 느립니다. 서머타임(BST) 기간에는 8시간 차이입니다." },
+            { question: "서머타임은 언제 시작하나요? (2026년)", answer: "미국: 2026년 3월 8일 (일요일). 유럽: 2026년 3월 29일 (일요일). 종료는 미국 11월 1일, 유럽 10월 25일입니다." },
+            { question: "한국과 일본은 시차가 없나요?", answer: "네, 한국(KST)과 일본(JST) 모두 UTC+9입니다. 두 나라 모두 서머타임을 적용하지 않아 연중 시차가 없습니다." },
+            { question: "해외 주식 거래 시간은 한국 기준 몇 시인가요?", answer: "미국 나스닥/NYSE: 한국 시간 오후 11:30 ~ 오전 6:00 (정규장). 서머타임 시 오후 10:30 ~ 오전 5:00. 프리마켓은 한국 시간 오후 6:00부터 시작됩니다." },
+            { question: "인도와 한국 시차에 30분이 있다고요?", answer: "네, 인도 표준시(IST)는 UTC+5:30입니다. 한국(UTC+9)과의 시차는 정확히 3시간 30분입니다. 인도는 동서로 긴 국토의 절충안으로 30분 단위 오프셋을 채택했습니다." },
+            { question: "호주와 한국 시차는 얼마인가요?", answer: "호주 동부(시드니)는 한국보다 2시간 빠릅니다(AEST, UTC+10). 호주 서머타임(10월~4월) 기간에는 3시간 차이(AEDT, UTC+11)로 벌어집니다." },
+          ] },
+
+          { type: "paragraph", text: "시차 계산은 복잡해 보이지만, 좋은 도구만 있으면 간단합니다. QuickFigure 세계 시간 변환기로 여러 도시 시간을 한눈에 비교하고, 슬라이더로 특정 시간을 즉시 변환하고, 서머타임까지 자동으로 반영하세요. 해외 미팅, 주식 거래, 여행 계획 등 어떤 상황에서든 시차 걱정 없이 정확한 시간을 확인할 수 있습니다." },
+          { type: "cta", tool: "world-clock", toolName: "세계 시간 변환기 — 지금 바로 확인하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "world-clock", name: { en: "World Clock & Time Zone Converter", ko: "세계 시간 변환기" } },
+      { slug: "date-calculator", name: { en: "Date Calculator", ko: "날짜 계산기" } },
+      { slug: "dday-calculator", name: { en: "D-Day Calculator", ko: "디데이 계산기" } },
+    ],
+    relatedPosts: ["world-clock-guide", "date-guide", "dday-guide"],
   },
 ];
 
