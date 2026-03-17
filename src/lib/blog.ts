@@ -100,6 +100,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "pdf-to-excel-conversion-guide": ["tool-guide", "image-file"],
   "how-to-rotate-images-online": ["tool-guide", "image-file"],
   "excel-to-pdf-conversion-guide": ["tool-guide", "image-file"],
+  "roi-calculator-investment-guide": ["tool-guide", "finance-tax"],
 
   // ── 금융 & 세금 only ──
   "simple-vs-compound-interest": ["finance-tax"],
@@ -8716,6 +8717,172 @@ export const blogPosts: BlogPost[] = [
       { slug: "excel-merge", name: { en: "Excel Merge", ko: "엑셀 합치기" } },
     ],
     relatedPosts: ["pdf-to-excel-conversion-guide", "excel-merge-guide"],
+  },
+
+  // ── ROI Calculator Investment Guide ──
+  {
+    slug: "roi-calculator-investment-guide",
+    category: "finance",
+    date: "2026-03-18",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "Investment returns chart showing ROI calculation with comparison of multiple options",
+      ko: "여러 투자 옵션 비교와 함께 ROI 계산을 보여주는 투자 수익률 차트",
+    },
+    translations: {
+      en: {
+        title: "How to Calculate ROI: Beginner's Complete Guide 2026",
+        summary: "Learn how to calculate Return on Investment (ROI). Understand annualized returns, inflation adjustment, and how to compare investments effectively.",
+        content: [
+          { type: "paragraph", text: "ROI — Return on Investment — is the most fundamental metric in investing. Whether you're evaluating a stock purchase, a rental property, a business expansion, or even a savings account, ROI tells you one thing: how much profit did you make relative to what you put in?" },
+          { type: "paragraph", text: "In this guide, we'll break down ROI from the basics to advanced concepts like annualized returns, inflation adjustment, and the key differences between ROI, CAGR, and IRR." },
+
+          { type: "heading", text: "What is ROI?" },
+          { type: "paragraph", text: "ROI measures the percentage return on an investment relative to its cost. The formula is simple:" },
+          { type: "paragraph", text: "ROI = ((Final Value − Investment Cost) / Investment Cost) × 100" },
+          { type: "paragraph", text: "For example, if you invest $10,000 and it grows to $13,000, your ROI is ((13,000 − 10,000) / 10,000) × 100 = 30%. If it drops to $8,000, your ROI is −20%." },
+          { type: "paragraph", text: "ROI is universal — it works for stocks, bonds, real estate, business investments, savings accounts, and even personal decisions like whether a certification course is worth the cost." },
+
+          { type: "heading", text: "Why Annualized ROI Matters" },
+          { type: "paragraph", text: "Basic ROI has a critical flaw: it ignores time. A 30% return in 1 year is excellent. A 30% return over 10 years? Not so much — that's only about 2.66% per year." },
+          { type: "paragraph", text: "Annualized ROI (also called CAGR — Compound Annual Growth Rate) solves this by converting any holding period to an equivalent annual rate:" },
+          { type: "paragraph", text: "Annualized ROI = ((Final Value / Investment)^(1/years) − 1) × 100" },
+          { type: "list", items: [
+            "Investment A: $10,000 → $15,000 in 2 years = 50% total ROI, but 22.47% annualized.",
+            "Investment B: $10,000 → $18,000 in 5 years = 80% total ROI, but only 12.47% annualized.",
+            "Investment A actually performed better on a per-year basis, despite lower total ROI.",
+          ] },
+          { type: "callout", text: "Always compare investments using annualized ROI when holding periods differ. Total ROI can be misleading." },
+          { type: "cta", tool: "roi-calculator", toolName: "ROI Calculator — Calculate Your Investment Returns" },
+
+          { type: "heading", text: "Inflation-Adjusted (Real) Returns" },
+          { type: "paragraph", text: "Nominal returns don't account for purchasing power erosion. If your investment earned 8% but inflation was 5%, your real gain in purchasing power was much less:" },
+          { type: "paragraph", text: "Real Return = ((1 + Nominal Return) / (1 + Inflation Rate) − 1) × 100" },
+          { type: "paragraph", text: "In this case: ((1.08) / (1.05) − 1) × 100 = 2.86%. Your money grew 8% in number, but only 2.86% in what it can actually buy." },
+          { type: "list", items: [
+            "High-inflation periods (like 2022-2023) can turn positive nominal returns into negative real returns.",
+            "Always check real returns for long-term investments (10+ years) where inflation compounds significantly.",
+            "Savings accounts earning 2% with 3% inflation actually lose purchasing power every year.",
+          ] },
+
+          { type: "heading", text: "ROI Examples by Investment Type" },
+          { type: "list", items: [
+            "Stocks: Buy 100 shares at $50, sell at $65 after 3 years. Investment: $5,000, Final: $6,500. ROI: 30%, Annualized: 9.14%.",
+            "Real estate: Buy a property for $200,000, sell for $280,000 after 5 years (net of expenses). ROI: 40%, Annualized: 6.96%.",
+            "Savings account: Deposit $10,000 at 4% APY for 3 years. Final: $11,248.64. ROI: 12.49%, Annualized: 4% (as expected).",
+            "Business investment: Invest $50,000 in equipment that generates $65,000 additional revenue over 2 years. ROI: 30%, Annualized: 14.02%.",
+          ] },
+
+          { type: "heading", text: "ROI vs IRR vs CAGR: Key Differences" },
+          { type: "list", items: [
+            "ROI: Simple total return percentage. Doesn't account for time or cash flow timing. Best for: quick comparison of completed investments.",
+            "CAGR (Compound Annual Growth Rate): Same as annualized ROI — the steady annual rate that would grow your investment from start to end value. Best for: comparing investments with different holding periods.",
+            "IRR (Internal Rate of Return): Accounts for multiple cash flows at different times (deposits, withdrawals, dividends). Best for: complex investments with ongoing contributions or distributions.",
+          ] },
+          { type: "paragraph", text: "For most personal investors, ROI and CAGR (annualized ROI) are sufficient. IRR becomes important when you have irregular cash flows, like monthly contributions to a portfolio or rental income from property." },
+
+          { type: "heading", text: "Limitations of ROI" },
+          { type: "list", items: [
+            "No risk measurement: A 20% ROI from government bonds is very different from 20% from cryptocurrency. ROI doesn't capture volatility or risk.",
+            "Ignores cash flow timing: ROI treats a lump-sum investment and periodic investments the same way.",
+            "Doesn't include opportunity cost: Your 10% return matters less if the market returned 15% in the same period.",
+            "Can be manipulated: By choosing selective start/end dates, ROI can paint a misleading picture.",
+            "Doesn't account for taxes and fees: Net-of-tax ROI is what actually matters for your wealth.",
+          ] },
+
+          { type: "heading", text: "Frequently Asked Questions" },
+          { type: "faq", faqItems: [
+            { question: "What's considered a good ROI?", answer: "It depends on context. The S&P 500 has historically returned about 10% annually (7% inflation-adjusted). Anything consistently above this benchmark is considered strong. For real estate, 8-12% annually is good. For savings accounts, beating inflation is the minimum bar." },
+            { question: "Can ROI be negative?", answer: "Yes. If your investment loses value, ROI is negative. For example, investing $10,000 that drops to $7,000 gives an ROI of -30%." },
+            { question: "Should I include dividends in ROI calculation?", answer: "Yes. Total return = capital appreciation + dividends. If you bought a stock for $100, received $5 in dividends, and sold for $110, your total final value is $115, giving ROI of 15%." },
+            { question: "How do I calculate ROI for real estate?", answer: "Include all costs (purchase price, closing costs, renovation, property taxes, maintenance) as your investment. Your final value is the sale price minus selling costs, plus any rental income received during the holding period." },
+            { question: "Is annualized ROI the same as CAGR?", answer: "Yes, they're mathematically identical. Both calculate the steady annual compound growth rate between a starting and ending value over a given time period." },
+          ] },
+
+          { type: "paragraph", text: "Understanding ROI is essential for making informed investment decisions. Whether you're choosing between stocks and real estate, evaluating a business investment, or simply checking if your savings account beats inflation, ROI gives you a clear, comparable number. Use QuickFigure's free ROI calculator to analyze any investment in seconds." },
+          { type: "cta", tool: "roi-calculator", toolName: "Calculate Your ROI Now — Free Calculator" },
+        ],
+      },
+      ko: {
+        title: "투자 수익률(ROI) 계산하는 법 - 초보자 완벽 가이드 2026",
+        summary: "투자 수익률(ROI) 계산 방법 완벽 정리. 연환산 수익률, 인플레이션 조정, 투자 비교 방법까지 초보자도 이해하기 쉽게.",
+        content: [
+          { type: "paragraph", text: "ROI(Return on Investment, 투자수익률)는 투자에서 가장 기본적인 성과 지표예요. 주식, 부동산, 적금, 사업 투자 등 무엇이든 '내가 넣은 돈 대비 얼마나 벌었는지'를 퍼센트로 알려주죠." },
+          { type: "paragraph", text: "이 글에서는 ROI 기본 개념부터 연환산 수익률, 인플레이션 조정, ROI vs CAGR vs IRR 차이까지 초보자도 이해하기 쉽게 총정리해드릴게요." },
+
+          { type: "heading", text: "ROI(투자수익률)란?" },
+          { type: "paragraph", text: "ROI는 투자 비용 대비 수익의 비율을 퍼센트로 나타낸 거예요. 공식은 간단해요:" },
+          { type: "paragraph", text: "ROI = ((최종금액 − 투자금액) / 투자금액) × 100" },
+          { type: "paragraph", text: "예를 들어, 1000만원을 투자해서 1300만원이 되었다면: ROI = ((1300 − 1000) / 1000) × 100 = 30%. 반대로 800만원으로 줄었다면 ROI는 -20%예요." },
+          { type: "paragraph", text: "ROI는 주식, 채권, 부동산, 사업 투자, 적금, 심지어 자격증 취득 비용 대비 연봉 상승까지 — 모든 투자에 적용할 수 있는 만능 지표예요." },
+
+          { type: "heading", text: "연환산 수익률이 중요한 이유" },
+          { type: "paragraph", text: "기본 ROI에는 치명적인 약점이 있어요: 시간을 무시한다는 거예요. 30% 수익을 1년 만에 달성한 것과 10년에 걸쳐 달성한 것은 전혀 달라요. 10년 30%는 연간 약 2.66%밖에 안 돼요." },
+          { type: "paragraph", text: "연환산 수익률(CAGR)은 투자 기간을 고려해서 1년 기준으로 환산한 수익률이에요:" },
+          { type: "paragraph", text: "연환산 ROI = ((최종금액 / 투자금액)^(1/년수) − 1) × 100" },
+          { type: "list", items: [
+            "투자 A: 1000만원 → 1500만원, 2년 = 총 ROI 50%, 연환산 22.47%.",
+            "투자 B: 1000만원 → 1800만원, 5년 = 총 ROI 80%, 연환산 12.47%.",
+            "총 ROI는 B가 높지만, 연 기준으로는 A가 훨씬 좋은 성과예요.",
+          ] },
+          { type: "callout", text: "기간이 다른 투자를 비교할 때는 반드시 연환산 수익률을 사용하세요. 총 ROI만 보면 잘못된 판단을 할 수 있어요." },
+          { type: "cta", tool: "roi-calculator", toolName: "ROI 계산기 — 투자 수익률 계산하기" },
+
+          { type: "heading", text: "인플레이션 조정 실질수익률" },
+          { type: "paragraph", text: "명목수익률은 물가 상승에 따른 구매력 하락을 반영하지 않아요. 투자 수익이 8%인데 인플레이션이 5%라면, 실제 구매력 기준 수익은 훨씬 적어요:" },
+          { type: "paragraph", text: "실질수익률 = ((1 + 명목수익률) / (1 + 인플레이션율) − 1) × 100" },
+          { type: "paragraph", text: "이 경우: ((1.08) / (1.05) − 1) × 100 = 2.86%. 돈은 8% 늘었지만, 실제로 살 수 있는 것은 2.86%만 늘어난 거예요." },
+          { type: "list", items: [
+            "고인플레이션 시기(2022-2023년처럼)에는 양의 명목수익률도 음의 실질수익률이 될 수 있어요.",
+            "장기 투자(10년 이상)에서는 인플레이션이 복리로 쌓이므로 반드시 실질수익률을 확인하세요.",
+            "연 2% 이자를 주는 적금에 인플레이션이 3%면, 사실 매년 구매력이 줄어드는 거예요.",
+          ] },
+
+          { type: "heading", text: "투자 유형별 ROI 예시" },
+          { type: "list", items: [
+            "주식: 주당 5만원에 100주 매수, 3년 후 6만5천원에 매도. 투자금 500만원, 최종 650만원. ROI 30%, 연환산 9.14%.",
+            "부동산: 2억원에 매수, 5년 후 2억8천만원에 매도(비용 차감 후). ROI 40%, 연환산 6.96%.",
+            "적금: 1000만원을 연 4% 3년 적금. 최종 1124만원. ROI 12.49%, 연환산 4% (예상대로).",
+            "사업 투자: 장비에 5000만원 투자, 2년간 추가 매출 6500만원 창출. ROI 30%, 연환산 14.02%.",
+          ] },
+
+          { type: "heading", text: "ROI vs IRR vs CAGR 차이" },
+          { type: "list", items: [
+            "ROI: 단순 총 수익률. 시간이나 현금 흐름 타이밍 미반영. 용도: 완료된 투자 간 빠른 비교.",
+            "CAGR(연평균성장률): 연환산 ROI와 동일 — 시작값에서 최종값까지 균일하게 성장하는 연간 비율. 용도: 기간이 다른 투자 비교.",
+            "IRR(내부수익률): 시점이 다른 여러 현금 흐름(입금, 출금, 배당)을 고려. 용도: 적립식 투자나 임대 수입 등 복잡한 투자.",
+          ] },
+          { type: "paragraph", text: "대부분의 개인 투자자에게는 ROI와 CAGR(연환산 ROI)이면 충분해요. IRR은 매달 적립하는 포트폴리오나 임대 수입이 있는 부동산처럼 불규칙한 현금 흐름이 있을 때 중요해요." },
+
+          { type: "heading", text: "ROI의 한계" },
+          { type: "list", items: [
+            "위험(리스크) 미반영: 국채 20% 수익과 암호화폐 20% 수익은 전혀 달라요. ROI는 변동성이나 위험을 잡아내지 못해요.",
+            "현금 흐름 타이밍 무시: ROI는 일시 투자와 적립식 투자를 같은 방식으로 처리해요.",
+            "기회비용 미포함: 내 수익률이 10%여도 시장 평균이 15%였다면, 실제로는 부진한 성과예요.",
+            "조작 가능: 시작/종료 날짜를 선택적으로 잡으면 ROI가 오해를 줄 수 있어요.",
+            "세금과 수수료 미포함: 세후 수익률이야말로 실제 자산에 영향을 주는 진짜 수익률이에요.",
+          ] },
+
+          { type: "heading", text: "자주 묻는 질문" },
+          { type: "faq", faqItems: [
+            { question: "좋은 ROI는 몇 %인가요?", answer: "상황에 따라 달라요. S&P 500의 역사적 연평균 수익률은 약 10%(인플레이션 조정 시 7%)예요. 이 기준을 꾸준히 넘으면 강한 성과예요. 부동산은 연 8-12%가 양호하고, 적금은 최소한 인플레이션을 이기는 게 기본이에요." },
+            { question: "ROI가 마이너스일 수 있나요?", answer: "네. 투자금이 줄어들면 ROI는 음수예요. 1000만원이 700만원이 되면 ROI는 -30%예요." },
+            { question: "배당금도 ROI에 포함해야 하나요?", answer: "네. 총 수익 = 시세차익 + 배당금이에요. 주식을 10만원에 사서 배당 5천원을 받고 11만원에 팔았다면, 최종 가치는 11만5천원이고 ROI는 15%예요." },
+            { question: "부동산 ROI는 어떻게 계산하나요?", answer: "모든 비용(매입가, 취등록세, 리모델링, 재산세, 유지비)을 투자금으로 잡고, 최종 가치는 매도가에서 매도 비용을 빼고 보유 기간 임대 수입을 더하세요." },
+            { question: "연환산 수익률과 CAGR은 같은 건가요?", answer: "네, 수학적으로 동일해요. 둘 다 시작값과 최종값 사이의 일정한 연간 복리 성장률을 계산해요." },
+          ] },
+
+          { type: "paragraph", text: "ROI를 이해하는 것은 현명한 투자 결정의 첫걸음이에요. 주식과 부동산 중 고민이든, 사업 투자 검토든, 적금이 인플레이션을 이기는지 확인이든 — ROI는 명확하고 비교 가능한 숫자를 줘요. QuickFigure의 무료 ROI 계산기로 몇 초 만에 어떤 투자든 분석해보세요." },
+          { type: "cta", tool: "roi-calculator", toolName: "ROI 계산기 — 무료로 바로 계산하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "roi-calculator", name: { en: "ROI Calculator", ko: "투자 수익률 계산기" } },
+      { slug: "compound-interest-calculator", name: { en: "Compound Interest Calculator", ko: "복리 계산기" } },
+      { slug: "retirement-calculator", name: { en: "Retirement Calculator", ko: "은퇴 저축 계산기" } },
+    ],
+    relatedPosts: ["compound-interest-calculator-guide", "retirement-savings-calculator-guide"],
   },
 ];
 

@@ -68,4 +68,5 @@ export const TOOL_SLUGS = [
   "pdf-to-excel",
   "image-rotate",
   "excel-to-pdf",
+  "roi-calculator",
 ] as const;

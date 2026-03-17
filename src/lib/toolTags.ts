@@ -207,6 +207,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["엑셀 PDF", "엑셀 변환", "XLSX PDF", "CSV PDF", "엑셀 인쇄", "스프레드시트 PDF"],
     en: ["Excel to PDF", "XLSX to PDF", "CSV to PDF", "convert Excel", "spreadsheet to PDF"],
   },
+  "roi-calculator": {
+    ko: ["ROI", "투자수익률", "수익률 계산", "투자 계산기", "수익률", "투자 비교", "연환산 수익률"],
+    en: ["ROI calculator", "return on investment", "investment return", "ROI", "annualized return", "investment comparison"],
+  },
 
   // ── Text ──
   "word-counter": {
