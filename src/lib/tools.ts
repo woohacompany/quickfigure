@@ -71,4 +71,5 @@ export const TOOL_SLUGS = [
   "roi-calculator",
   "image-to-svg",
   "world-clock",
+  "ladder-game",
 ] as const;

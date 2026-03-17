@@ -251,6 +251,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
   },
 
   // ── Generator ──
+  "ladder-game": {
+    ko: ["사다리", "사다리타기", "사다리게임", "제비뽑기", "랜덤뽑기", "벌칙", "순서정하기", "팀나누기", "당첨", "회식게임"],
+    en: ["ladder", "ladder game", "random picker", "team picker", "decision maker", "who pays", "ladder draw", "lottery"],
+  },
   "lorem-ipsum-generator": {
     ko: ["더미 텍스트", "로렘입숨", "목업"],
     en: ["dummy text", "lorem ipsum", "placeholder text", "mockup text"],

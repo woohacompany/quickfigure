@@ -160,6 +160,7 @@ export default async function HomePage({
       tools: [
         { name: t.home.loremIpsum, description: t.home.loremIpsumDesc, href: `/${lang}/tools/lorem-ipsum-generator`, tags: getToolTags("lorem-ipsum-generator") },
         { name: t.home.passwordGenerator, description: t.home.passwordGeneratorDesc, href: `/${lang}/tools/password-generator`, tags: getToolTags("password-generator") },
+        { name: t.home.ladderGame, description: t.home.ladderGameDesc, href: `/${lang}/tools/ladder-game`, tags: getToolTags("ladder-game") },
       ],
     },
     {
