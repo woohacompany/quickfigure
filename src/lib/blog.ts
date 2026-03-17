@@ -98,6 +98,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "watermark-guide": ["tool-guide", "image-file"],
   "how-to-make-gif-from-images": ["tool-guide", "image-file"],
   "pdf-to-excel-conversion-guide": ["tool-guide", "image-file"],
+  "how-to-rotate-images-online": ["tool-guide", "image-file"],
 
   // ── 금융 & 세금 only ──
   "simple-vs-compound-interest": ["finance-tax"],
@@ -8362,6 +8363,176 @@ export const blogPosts: BlogPost[] = [
       { slug: "pdf-to-word", name: { en: "PDF to Word", ko: "PDF 워드 변환" } },
     ],
     relatedPosts: ["pdf-to-word-guide", "excel-merge-guide"],
+  },
+
+  // ── Image Rotate Guide ──
+  {
+    slug: "how-to-rotate-images-online",
+    category: "utility",
+    date: "2026-03-18",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Image being rotated and flipped with angle controls and preview",
+      ko: "각도 조절과 미리보기로 이미지를 회전하고 반전하는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Rotate Images Online: Complete Guide 2026",
+        summary: "Learn how to rotate and flip images online. Compare methods including browser tools, desktop software, and mobile apps, plus EXIF orientation explained.",
+        content: [
+          { type: "paragraph", text: "Need to rotate a sideways photo, flip an image for a mirror effect, or straighten a slightly tilted scan? Image rotation is one of the most common photo editing tasks — and you don't need to install Photoshop to do it." },
+          { type: "paragraph", text: "In this guide, we'll cover when and why you need image rotation, compare different methods, explain the mysterious EXIF orientation, and show you how to batch-rotate multiple images at once." },
+
+          { type: "heading", text: "When Do You Need to Rotate Images?" },
+          { type: "list", items: [
+            "Smartphone photos: Photos taken in portrait mode may display sideways in some programs due to EXIF orientation metadata.",
+            "Scanned documents: Flatbed scanners often produce rotated or upside-down scans that need correction.",
+            "Social media uploads: Some platforms don't read EXIF data, causing photos to appear in the wrong orientation.",
+            "Design work: Flipping images horizontally creates mirror effects, useful for design compositions and symmetry.",
+            "Batch processing: When you have dozens of photos from a scanner or camera that all need the same rotation applied.",
+          ] },
+
+          { type: "heading", text: "Method 1: Free Online Tool (Fastest)" },
+          { type: "paragraph", text: "QuickFigure's Image Rotate tool processes everything in your browser — no file uploads to any server. Upload one or multiple images, use quick-rotate buttons (90°/180°/270°), set a custom angle with the slider, or flip horizontally/vertically. Apply settings to all images at once and download in the original format." },
+          { type: "list", items: [
+            "Pros: Free, instant, no installation, 100% private (browser-only), batch processing, preserves original format (JPG→JPG, PNG→PNG).",
+            "Cons: Very large images (50MP+) may be slow on older devices since all processing is client-side.",
+            "Best for: Quick rotations, privacy-sensitive images, batch processing without software installation.",
+          ] },
+          { type: "cta", tool: "image-rotate", toolName: "Image Rotate — Rotate & Flip Photos Free" },
+
+          { type: "heading", text: "Method 2: Windows / Mac Built-in Tools" },
+          { type: "paragraph", text: "Windows: Right-click the image in File Explorer and select 'Rotate right' or 'Rotate left'. For more control, open in Photos app and use the rotate/crop tool. macOS: Open in Preview, go to Tools > Rotate Left/Right, or use the crop tool for custom angles." },
+          { type: "list", items: [
+            "Pros: No installation needed (built into OS), simple for single images.",
+            "Cons: Limited to 90° increments (no custom angles), no batch processing, no flip option in basic mode.",
+            "Best for: Quick single-image 90° rotations when you're already browsing files.",
+          ] },
+
+          { type: "heading", text: "Method 3: Mobile (iOS / Android)" },
+          { type: "paragraph", text: "iOS: Open the photo in Photos app, tap Edit, then tap the crop/rotate icon. You can rotate 90° or adjust the angle freely. Android: Open in Google Photos, tap Edit > Crop, then use the rotate button or angle dial." },
+          { type: "list", items: [
+            "Pros: Edit directly on your phone, straighten with angle control, integrated with camera roll.",
+            "Cons: One image at a time, no batch processing, may re-compress the image.",
+            "Best for: Quick edits on photos you just took on your phone.",
+          ] },
+
+          { type: "heading", text: "Understanding EXIF Orientation (Why Photos Auto-Rotate)" },
+          { type: "paragraph", text: "When you take a photo with a smartphone, the camera sensor always captures the image in the same orientation. Instead of actually rotating the pixels, the phone writes an EXIF orientation tag (a number from 1-8) that tells software how to display the image." },
+          { type: "paragraph", text: "This works great when software reads EXIF data — but many programs, web platforms, and older browsers ignore it, causing photos to appear sideways or upside-down. The fix? Rotate the actual pixels to match the desired orientation and save. This is exactly what QuickFigure's Image Rotate tool does." },
+          { type: "callout", text: "Pro tip: If your photos consistently appear rotated on a specific platform, the platform likely ignores EXIF orientation. Rotate and re-save the images once, and they'll display correctly everywhere." },
+
+          { type: "heading", text: "Rotation vs Flip: What's the Difference?" },
+          { type: "list", items: [
+            "Rotation: Turns the image around its center by a specified angle (90°, 180°, or any custom degree). The image content stays the same, just oriented differently.",
+            "Horizontal Flip (Mirror): Creates a mirror image — left becomes right and vice versa. Useful for selfies, design symmetry, or correcting mirrored text.",
+            "Vertical Flip: Flips the image upside-down along the horizontal axis. Less commonly needed, but useful for reflections and special effects.",
+            "Combined: You can apply rotation and flip together. For example, rotate 90° + flip horizontal gives a different result than just rotating 90°.",
+          ] },
+
+          { type: "heading", text: "Batch Rotation Tips" },
+          { type: "list", items: [
+            "Upload all images at once: Select multiple files in the upload dialog or drag a batch onto the upload area.",
+            "Set rotation on one image: Adjust the angle, flip, and other settings on a single representative image.",
+            "Apply to All: Click 'Apply to All' to copy the exact same settings to every uploaded image.",
+            "Download All: Save all processed images at once — each file keeps its original name with '-rotated' appended.",
+          ] },
+
+          { type: "heading", text: "Frequently Asked Questions" },
+          { type: "faq", faqItems: [
+            { question: "Does rotating an image reduce quality?", answer: "Rotating by 90° or 180° is lossless for PNG and WebP. For JPG, there's minimal quality loss (QuickFigure saves at 95% quality). Custom angles require resampling which can introduce slight softening, but it's usually imperceptible." },
+            { question: "What's the maximum image size I can rotate?", answer: "Since processing happens in your browser, it depends on your device's memory. Most devices handle images up to 20-30 megapixels without issues. For very large images (50MP+), consider resizing first." },
+            { question: "Can I rotate a GIF and keep the animation?", answer: "This tool rotates individual image files. For animated GIFs, the rotation applies to the static first frame. To rotate an animated GIF, you'd need to extract frames, rotate each, and reassemble." },
+            { question: "Why does my rotated JPG have a white background in corners?", answer: "When rotating by non-90° angles, the rotated image creates a larger bounding box. The corners that don't contain image data are filled with white. PNG format preserves transparency in these areas." },
+            { question: "Is there a way to auto-detect and fix rotation?", answer: "QuickFigure's tool is manual — you choose the rotation angle. For automatic EXIF-based correction, you can open the image and save it, which most modern tools (including this one) handle by rendering the image in its correct EXIF orientation." },
+          ] },
+
+          { type: "paragraph", text: "Rotating and flipping images is a simple task that shouldn't require complex software. QuickFigure's free Image Rotate tool handles single images and batches right in your browser — no uploads, no installation, no quality loss. Try it now!" },
+          { type: "cta", tool: "image-rotate", toolName: "Rotate Your Images Now — Free Online Tool" },
+        ],
+      },
+      ko: {
+        title: "이미지 회전하는 법 - 사진 돌리기 & 반전 완벽 가이드 2026",
+        summary: "이미지를 회전하고 반전하는 방법 완벽 정리. 온라인 도구, 윈도우/맥 기본 도구, 모바일 앱 비교, EXIF 방향 정보 설명까지.",
+        content: [
+          { type: "paragraph", text: "옆으로 된 사진을 바로 돌리거나, 이미지를 좌우 반전하거나, 기울어진 스캔 문서를 바로잡아야 할 때가 있죠. 이미지 회전은 가장 흔한 사진 편집 작업 중 하나인데, 포토샵을 설치할 필요는 없어요." },
+          { type: "paragraph", text: "이 글에서는 이미지 회전이 필요한 상황, 다양한 회전 방법 비교, EXIF 방향 정보의 비밀, 그리고 여러 이미지 일괄 회전 방법까지 총정리해드릴게요." },
+
+          { type: "heading", text: "이미지 회전이 필요한 상황" },
+          { type: "list", items: [
+            "스마트폰 사진: 세로로 찍은 사진이 일부 프로그램에서 EXIF 방향 메타데이터 때문에 옆으로 표시되는 경우.",
+            "스캔 문서: 평판 스캐너로 스캔한 문서가 돌아가거나 뒤집혀 나온 경우.",
+            "SNS 업로드: 일부 플랫폼이 EXIF 데이터를 읽지 않아 사진이 잘못된 방향으로 표시되는 경우.",
+            "디자인 작업: 이미지를 좌우 반전하여 거울 효과를 만들거나 대칭 구도를 잡을 때.",
+            "일괄 처리: 스캐너나 카메라에서 나온 수십 장의 사진에 같은 회전을 적용해야 할 때.",
+          ] },
+
+          { type: "heading", text: "방법 1: 무료 온라인 도구 (가장 빠르고 쉬움)" },
+          { type: "paragraph", text: "QuickFigure의 이미지 회전 도구는 모든 처리가 브라우저에서 이뤄져요 — 서버 업로드가 전혀 없어요. 이미지를 1장 또는 여러 장 업로드하고, 빠른 회전 버튼(90°/180°/270°)을 사용하거나, 슬라이더로 자유 각도를 설정하거나, 좌우/상하 반전을 적용할 수 있어요. 설정을 모든 이미지에 일괄 적용하고 원본 형식 그대로 다운로드하세요." },
+          { type: "list", items: [
+            "장점: 무료, 즉시 처리, 설치 불필요, 100% 개인정보 보호(브라우저 전용), 일괄 처리, 원본 형식 유지(JPG→JPG, PNG→PNG).",
+            "단점: 매우 큰 이미지(5000만 화소 이상)는 오래된 기기에서 느릴 수 있음.",
+            "추천 상황: 빠른 회전, 개인정보가 중요한 이미지, 소프트웨어 설치 없이 일괄 처리할 때.",
+          ] },
+          { type: "cta", tool: "image-rotate", toolName: "이미지 회전 — 무료로 바로 사용하기" },
+
+          { type: "heading", text: "방법 2: 윈도우 / 맥 기본 도구" },
+          { type: "paragraph", text: "윈도우: 파일 탐색기에서 이미지를 오른쪽 클릭하고 '오른쪽으로 회전' 또는 '왼쪽으로 회전'을 선택하세요. 더 세밀한 조절이 필요하면 사진 앱에서 열고 회전/자르기 도구를 사용하세요. 맥: 미리보기에서 열고 도구 > 왼쪽/오른쪽으로 회전을 선택하거나, 자르기 도구로 자유 각도를 조절하세요." },
+          { type: "list", items: [
+            "장점: 설치 불필요(OS 내장), 단일 이미지 처리에 간편.",
+            "단점: 90° 단위만 가능(자유 각도 불가), 일괄 처리 불가, 기본 모드에서 반전 옵션 없음.",
+            "추천 상황: 파일 탐색 중 단일 이미지를 90° 빠르게 회전할 때.",
+          ] },
+
+          { type: "heading", text: "방법 3: 모바일 (iOS / Android)" },
+          { type: "paragraph", text: "iOS: 사진 앱에서 사진을 열고 편집을 탭한 후 자르기/회전 아이콘을 탭하세요. 90° 회전하거나 자유 각도로 조절할 수 있어요. 안드로이드: Google 포토에서 편집 > 자르기를 탭하고 회전 버튼이나 각도 다이얼을 사용하세요." },
+          { type: "list", items: [
+            "장점: 폰에서 직접 편집, 각도 조절 가능, 카메라 롤과 통합.",
+            "단점: 한 번에 한 장만 가능, 일괄 처리 불가, 이미지 재압축 가능성.",
+            "추천 상황: 폰으로 찍은 사진을 바로 수정할 때.",
+          ] },
+
+          { type: "heading", text: "EXIF 방향 정보란? (사진이 자동 회전되는 이유)" },
+          { type: "paragraph", text: "스마트폰으로 사진을 찍으면 카메라 센서는 항상 같은 방향으로 이미지를 캡처해요. 실제로 픽셀을 회전하는 대신, 폰은 EXIF 방향 태그(1~8 사이의 숫자)를 기록해서 소프트웨어에게 어떻게 표시할지 알려줘요." },
+          { type: "paragraph", text: "EXIF 데이터를 읽는 소프트웨어에서는 잘 작동하지만, 많은 프로그램, 웹 플랫폼, 오래된 브라우저는 이를 무시해서 사진이 옆으로 또는 거꾸로 나타나요. 해결책은? 실제 픽셀을 원하는 방향으로 회전하고 저장하는 거예요. QuickFigure 이미지 회전 도구가 바로 이 작업을 해줘요." },
+          { type: "callout", text: "꿀팁: 특정 플랫폼에서 사진이 계속 회전되어 나타난다면, 그 플랫폼이 EXIF 방향 정보를 무시하는 거예요. 이미지를 한 번 회전하고 다시 저장하면 어디서든 올바르게 표시돼요." },
+
+          { type: "heading", text: "회전 vs 반전: 차이가 뭔가요?" },
+          { type: "list", items: [
+            "회전: 이미지를 중심으로 지정된 각도(90°, 180° 또는 자유 각도)만큼 돌려요. 이미지 내용은 그대로, 방향만 바뀌어요.",
+            "좌우 반전 (미러): 거울 이미지를 만들어요 — 왼쪽이 오른쪽이 되고 반대도 마찬가지예요. 셀카, 디자인 대칭, 뒤집힌 글자 수정에 유용해요.",
+            "상하 반전: 수평축을 기준으로 이미지를 뒤집어요. 덜 자주 필요하지만, 반사 효과나 특수 효과에 유용해요.",
+            "조합: 회전과 반전을 함께 적용할 수 있어요. 예를 들어 90° 회전 + 좌우 반전은 단순 90° 회전과 다른 결과를 만들어요.",
+          ] },
+
+          { type: "heading", text: "일괄 회전 활용법" },
+          { type: "list", items: [
+            "모든 이미지를 한 번에 업로드: 업로드 대화상자에서 여러 파일을 선택하거나 업로드 영역에 일괄 드래그하세요.",
+            "한 이미지에서 설정: 대표 이미지 하나에서 각도, 반전 등을 조절하세요.",
+            "전체 적용: '전체 적용' 버튼으로 동일한 설정을 모든 업로드된 이미지에 복사하세요.",
+            "전체 다운로드: 처리된 모든 이미지를 한 번에 저장 — 각 파일은 원본 이름에 '-rotated'가 추가돼요.",
+          ] },
+
+          { type: "heading", text: "자주 묻는 질문" },
+          { type: "faq", faqItems: [
+            { question: "이미지를 회전하면 화질이 떨어지나요?", answer: "90°/180° 회전은 PNG와 WebP에서 무손실이에요. JPG는 약간의 품질 손실이 있지만(QuickFigure는 95% 품질로 저장) 거의 눈에 띄지 않아요. 자유 각도 회전은 리샘플링이 필요해서 약간의 부드러움이 생길 수 있지만 보통 감지하기 어려워요." },
+            { question: "회전할 수 있는 최대 이미지 크기는?", answer: "브라우저에서 처리하므로 기기의 메모리에 따라 달라요. 대부분의 기기는 2000~3000만 화소까지 문제없이 처리해요. 매우 큰 이미지(5000만 화소 이상)는 먼저 리사이즈하는 것을 권장해요." },
+            { question: "GIF를 회전하면 애니메이션이 유지되나요?", answer: "이 도구는 개별 이미지 파일을 회전해요. 애니메이션 GIF의 경우 정적인 첫 프레임에 회전이 적용돼요. 애니메이션 GIF를 회전하려면 프레임을 추출하고, 각각 회전한 후 다시 조립해야 해요." },
+            { question: "자유 각도 회전 시 모서리에 흰색 배경이 생기는 이유는?", answer: "90°가 아닌 각도로 회전하면 회전된 이미지가 더 큰 바운딩 박스를 만들어요. 이미지 데이터가 없는 모서리는 흰색으로 채워져요. PNG 형식은 이런 영역에서 투명도를 유지해요." },
+            { question: "자동으로 회전을 감지하고 수정할 수 있나요?", answer: "QuickFigure 도구는 수동이에요 — 원하는 회전 각도를 직접 선택해요. EXIF 기반 자동 보정은, 이미지를 열고 저장하면 대부분의 최신 도구(이 도구 포함)가 올바른 EXIF 방향으로 렌더링해줘요." },
+          ] },
+
+          { type: "paragraph", text: "이미지 회전과 반전은 복잡한 소프트웨어가 필요 없는 간단한 작업이에요. QuickFigure의 무료 이미지 회전 도구로 단일 이미지든 일괄 처리든 브라우저에서 바로 해결하세요 — 업로드 없음, 설치 없음, 품질 손실 없음!" },
+          { type: "cta", tool: "image-rotate", toolName: "이미지 회전 — 무료로 바로 사용하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "image-rotate", name: { en: "Image Rotate", ko: "이미지 회전" } },
+      { slug: "image-cropper", name: { en: "Image Cropper", ko: "이미지 자르기" } },
+      { slug: "image-resizer", name: { en: "Image Resizer", ko: "이미지 리사이저" } },
+    ],
+    relatedPosts: ["image-crop-guide", "image-compressor-guide"],
   },
 ];
 

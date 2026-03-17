@@ -66,4 +66,5 @@ export const TOOL_SLUGS = [
   "image-watermark",
   "gif-maker",
   "pdf-to-excel",
+  "image-rotate",
 ] as const;

@@ -199,6 +199,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["PDF 엑셀", "PDF 변환", "PDF 표 추출", "PDF CSV", "PDF 엑셀 변환", "PDF 스프레드시트"],
     en: ["PDF to Excel", "PDF to CSV", "extract table from PDF", "PDF converter", "PDF to spreadsheet", "PDF table extraction"],
   },
+  "image-rotate": {
+    ko: ["이미지 회전", "사진 회전", "사진 돌리기", "이미지 뒤집기", "사진 반전", "90도 회전"],
+    en: ["rotate image", "flip image", "image rotation", "rotate photo", "mirror image", "rotate 90 degrees"],
+  },
 
   // ── Text ──
   "word-counter": {
