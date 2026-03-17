@@ -67,4 +67,5 @@ export const TOOL_SLUGS = [
   "gif-maker",
   "pdf-to-excel",
   "image-rotate",
+  "excel-to-pdf",
 ] as const;

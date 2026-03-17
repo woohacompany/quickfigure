@@ -99,6 +99,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "how-to-make-gif-from-images": ["tool-guide", "image-file"],
   "pdf-to-excel-conversion-guide": ["tool-guide", "image-file"],
   "how-to-rotate-images-online": ["tool-guide", "image-file"],
+  "excel-to-pdf-conversion-guide": ["tool-guide", "image-file"],
 
   // ── 금융 & 세금 only ──
   "simple-vs-compound-interest": ["finance-tax"],
@@ -8533,6 +8534,188 @@ export const blogPosts: BlogPost[] = [
       { slug: "image-resizer", name: { en: "Image Resizer", ko: "이미지 리사이저" } },
     ],
     relatedPosts: ["image-crop-guide", "image-compressor-guide"],
+  },
+
+  // ── Excel to PDF Conversion Guide ──
+  {
+    slug: "excel-to-pdf-conversion-guide",
+    category: "utility",
+    date: "2026-03-18",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Excel spreadsheet being converted to a clean PDF document with layout options",
+      ko: "엑셀 스프레드시트가 레이아웃 옵션과 함께 깔끔한 PDF 문서로 변환되는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Convert Excel to PDF: Complete Guide 2026",
+        summary: "Learn how to convert Excel spreadsheets to PDF. Compare methods including online tools, Excel's built-in export, and tips for preserving layout.",
+        content: [
+          { type: "paragraph", text: "Excel spreadsheets are great for data entry and analysis, but they're not ideal for sharing. Recipients may not have Excel, columns can shift on different screens, and formulas can be accidentally modified. Converting to PDF solves all of these problems — the layout is locked, the file is universally viewable, and no one can accidentally edit your data." },
+          { type: "paragraph", text: "In this guide, we'll compare four ways to convert Excel to PDF, share layout tips to avoid broken formatting, and explain how to handle multi-sheet workbooks." },
+
+          { type: "heading", text: "Why Convert Excel to PDF?" },
+          { type: "list", items: [
+            "Universal viewing: PDFs look identical on every device, OS, and browser — no Excel installation needed.",
+            "Prevent accidental edits: Protect your data from unintended changes when sharing reports, invoices, or quotes.",
+            "Print-ready output: PDFs preserve exact page layouts, margins, and formatting for reliable printing.",
+            "Professional sharing: Clients and stakeholders expect polished PDF documents, not raw spreadsheet files.",
+            "Compliance & archiving: Many industries require PDF format for document retention and regulatory submissions.",
+          ] },
+
+          { type: "heading", text: "Method 1: Free Online Tool (Fastest)" },
+          { type: "paragraph", text: "QuickFigure's Excel to PDF Converter processes everything in your browser — no file uploads to any server. Upload your XLSX, XLS, or CSV file, preview the data in a table, choose layout options (portrait/landscape, A4/Letter, font size), and download a clean PDF instantly." },
+          { type: "list", items: [
+            "Pros: Free, instant, no installation, 100% private (browser-only), supports multi-sheet workbooks, customizable layout.",
+            "Cons: CJK fonts may not render perfectly in all cases. Very large files (100K+ rows) may be slow.",
+            "Best for: Quick conversions, privacy-sensitive data, users without Excel installed.",
+          ] },
+          { type: "cta", tool: "excel-to-pdf", toolName: "Excel to PDF Converter — Free Online Tool" },
+
+          { type: "heading", text: "Method 2: Excel's Built-in Export (Best Quality)" },
+          { type: "paragraph", text: "If you have Microsoft Excel, go to File > Save As (or Export > Create PDF/XPS). This method produces the highest quality output because Excel uses its own rendering engine with full font support." },
+          { type: "list", items: [
+            "Pros: Perfect formatting, full font support (including CJK), handles complex layouts with charts and images.",
+            "Cons: Requires Microsoft Excel license, not available on all devices.",
+            "Best for: Complex spreadsheets with charts, images, or special formatting.",
+          ] },
+
+          { type: "heading", text: "Method 3: Print to PDF (Any OS)" },
+          { type: "paragraph", text: "Open the file in any spreadsheet app (Excel, Google Sheets, LibreOffice), press Ctrl+P (or Cmd+P on Mac), and select 'Save as PDF' or 'Microsoft Print to PDF' as the printer. Adjust page settings before printing." },
+          { type: "list", items: [
+            "Pros: Works with any app that can open spreadsheets, no additional software needed.",
+            "Cons: Less control over table formatting, may truncate wide tables, manual page setup required.",
+            "Best for: Quick one-off conversions when you already have the file open.",
+          ] },
+
+          { type: "heading", text: "Method 4: Google Sheets (Free, Cloud-based)" },
+          { type: "paragraph", text: "Upload your Excel file to Google Drive, open it in Google Sheets, then go to File > Download > PDF document. Google Sheets offers good layout options including paper size, orientation, margins, and gridline visibility." },
+          { type: "list", items: [
+            "Pros: Free, cloud-based (works from any device), good layout options.",
+            "Cons: Requires Google account, file must be uploaded to Google's servers, some Excel formatting may be lost.",
+            "Best for: Users who already use Google Workspace and don't need offline processing.",
+          ] },
+
+          { type: "heading", text: "Tips to Prevent Layout Issues" },
+          { type: "list", items: [
+            "Use landscape for wide tables: If your spreadsheet has many columns, landscape orientation prevents column truncation.",
+            "Reduce font size: Dropping from 10pt to 8pt can fit significantly more columns per page without sacrificing readability.",
+            "Freeze header rows: Most PDF converters can highlight header rows, making multi-page tables easier to read.",
+            "Remove empty columns/rows: Clean up your spreadsheet before converting — empty columns waste valuable page space.",
+            "Check the preview: Always review the table preview before downloading to catch formatting issues early.",
+            "Split wide tables: If a table still doesn't fit, consider splitting it into two narrower tables or using A3/Tabloid paper size.",
+          ] },
+          { type: "callout", text: "Pro tip: For the cleanest results, set your Excel print area (Page Layout > Print Area > Set Print Area) before converting. This ensures only the relevant data range is included in the PDF." },
+
+          { type: "heading", text: "Handling Multi-Sheet Workbooks" },
+          { type: "paragraph", text: "Excel workbooks often contain multiple sheets (tabs). When converting to PDF, you have two options:" },
+          { type: "list", items: [
+            "Single sheet: Convert only the active/selected sheet. Best when you only need one specific table from the workbook.",
+            "All sheets: Combine every sheet into a single PDF file, with each sheet starting on a new page. QuickFigure supports this with the 'Include all sheets' checkbox.",
+          ] },
+          { type: "paragraph", text: "In Excel's built-in export, select 'Entire Workbook' instead of 'Active Sheet(s)' in the publish options to include all sheets." },
+
+          { type: "heading", text: "Frequently Asked Questions" },
+          { type: "faq", faqItems: [
+            { question: "Does converting to PDF preserve formulas?", answer: "No — and that's the point. PDFs contain only the visible values, not the underlying formulas. This is a benefit for sharing because recipients see the final numbers without access to your calculation logic." },
+            { question: "Can I convert a password-protected Excel file?", answer: "You'll need to remove the password first. Open the file in Excel, go to File > Info > Protect Workbook, and remove the password. Then convert the unprotected file." },
+            { question: "Why does my PDF have blank pages?", answer: "This usually happens when there are empty rows or columns beyond your data that extend the print area. Delete unused rows/columns or set a specific print area in Excel before converting." },
+            { question: "Can I convert back from PDF to Excel?", answer: "Yes — QuickFigure has a PDF to Excel converter that extracts tables from PDFs. However, some formatting may be lost in the round-trip, so keep your original Excel file." },
+            { question: "What's the maximum file size supported?", answer: "Since processing happens in your browser, it depends on your device's memory. Most devices handle files up to 10-20MB without issues. For very large files, consider splitting them first." },
+          ] },
+
+          { type: "paragraph", text: "Converting Excel to PDF is essential for professional document sharing, printing, and archiving. Whether you use QuickFigure's free online tool for quick privacy-safe conversions or Excel's built-in export for complex layouts, the key is choosing the right method for your needs." },
+          { type: "cta", tool: "excel-to-pdf", toolName: "Convert Excel to PDF Now — Free Online Tool" },
+        ],
+      },
+      ko: {
+        title: "엑셀을 PDF로 변환하는 방법 총정리 2026",
+        summary: "엑셀 스프레드시트를 PDF로 변환하는 방법 총정리. 온라인 도구, 엑셀 내보내기, 레이아웃 깨짐 방지 팁까지.",
+        content: [
+          { type: "paragraph", text: "엑셀 스프레드시트는 데이터 입력과 분석에는 좋지만 공유하기에는 불편해요. 받는 사람이 엑셀이 없을 수도 있고, 화면마다 열이 밀릴 수 있고, 수식이 실수로 수정될 수도 있죠. PDF로 변환하면 이 모든 문제가 해결돼요 — 레이아웃이 고정되고, 어디서든 볼 수 있고, 아무도 데이터를 실수로 편집할 수 없어요." },
+          { type: "paragraph", text: "이 글에서는 엑셀을 PDF로 변환하는 4가지 방법을 비교하고, 레이아웃 깨짐 방지 팁과 여러 시트 처리 방법까지 총정리해드릴게요." },
+
+          { type: "heading", text: "엑셀을 PDF로 변환해야 하는 이유" },
+          { type: "list", items: [
+            "어디서든 동일하게 보기: PDF는 모든 기기, OS, 브라우저에서 동일하게 보여요 — 엑셀 설치 불필요.",
+            "실수로 편집 방지: 보고서, 견적서, 청구서를 공유할 때 데이터가 변경되는 것을 방지해요.",
+            "인쇄용 출력: PDF는 정확한 페이지 레이아웃, 여백, 서식을 유지하여 인쇄가 안정적이에요.",
+            "전문적인 공유: 거래처와 고객은 원시 스프레드시트가 아닌 깔끔한 PDF 문서를 기대해요.",
+            "규정 준수 & 보관: 많은 업종에서 문서 보존과 규제 제출에 PDF 형식을 요구해요.",
+          ] },
+
+          { type: "heading", text: "방법 1: 무료 온라인 도구 (가장 빠르고 쉬움)" },
+          { type: "paragraph", text: "QuickFigure의 엑셀 PDF 변환기는 모든 처리가 브라우저에서 이뤄져요 — 서버 업로드가 전혀 없어요. XLSX, XLS, CSV 파일을 업로드하고, 테이블 미리보기에서 데이터를 확인하고, 레이아웃 옵션(세로/가로, A4/Letter, 폰트 크기)을 설정한 후 깔끔한 PDF를 즉시 다운로드하세요." },
+          { type: "list", items: [
+            "장점: 무료, 즉시 처리, 설치 불필요, 100% 개인정보 보호(브라우저 전용), 여러 시트 지원, 레이아웃 커스터마이징.",
+            "단점: 한글 폰트가 완벽하게 렌더링되지 않을 수 있음. 매우 큰 파일(10만 행 이상)은 느릴 수 있음.",
+            "추천 상황: 빠른 변환, 기밀 데이터, 엑셀이 설치되지 않은 환경.",
+          ] },
+          { type: "cta", tool: "excel-to-pdf", toolName: "엑셀 PDF 변환 — 무료로 바로 사용하기" },
+
+          { type: "heading", text: "방법 2: 엑셀 자체 내보내기 (최고 품질)" },
+          { type: "paragraph", text: "Microsoft Excel이 있다면, 파일 > 다른 이름으로 저장(또는 내보내기 > PDF/XPS 만들기)을 사용하세요. 엑셀의 자체 렌더링 엔진을 사용하므로 완벽한 폰트 지원과 함께 최고 품질의 결과물을 만들어요." },
+          { type: "list", items: [
+            "장점: 완벽한 서식, 한글 폰트 완벽 지원, 차트와 이미지가 포함된 복잡한 레이아웃 처리.",
+            "단점: Microsoft Excel 라이선스 필요, 모든 기기에서 사용 불가.",
+            "추천 상황: 차트, 이미지, 특수 서식이 포함된 복잡한 스프레드시트.",
+          ] },
+
+          { type: "heading", text: "방법 3: PDF로 인쇄 (모든 OS)" },
+          { type: "paragraph", text: "아무 스프레드시트 앱(엑셀, 구글 시트, 리브레오피스)에서 파일을 열고, Ctrl+P(맥은 Cmd+P)를 눌러 프린터를 'PDF로 저장' 또는 'Microsoft Print to PDF'로 선택하세요. 인쇄 전 페이지 설정을 조절하세요." },
+          { type: "list", items: [
+            "장점: 스프레드시트를 열 수 있는 모든 앱에서 사용 가능, 추가 소프트웨어 불필요.",
+            "단점: 테이블 서식 제어 제한, 넓은 테이블이 잘릴 수 있음, 수동 페이지 설정 필요.",
+            "추천 상황: 파일을 이미 열어놓은 상태에서 빠른 일회성 변환.",
+          ] },
+
+          { type: "heading", text: "방법 4: 구글 시트 (무료, 클라우드 기반)" },
+          { type: "paragraph", text: "엑셀 파일을 구글 드라이브에 업로드하고, 구글 시트에서 열어서, 파일 > 다운로드 > PDF 문서를 선택하세요. 구글 시트는 용지 크기, 방향, 여백, 눈금선 표시 등 좋은 레이아웃 옵션을 제공해요." },
+          { type: "list", items: [
+            "장점: 무료, 클라우드 기반(어느 기기에서든 사용), 좋은 레이아웃 옵션.",
+            "단점: 구글 계정 필요, 파일이 구글 서버에 업로드됨, 일부 엑셀 서식 손실 가능.",
+            "추천 상황: 이미 구글 워크스페이스를 사용하고 오프라인 처리가 필요 없는 경우.",
+          ] },
+
+          { type: "heading", text: "레이아웃 깨짐 방지 팁" },
+          { type: "list", items: [
+            "넓은 테이블은 가로 방향: 열이 많은 스프레드시트는 가로 방향을 사용하면 열이 잘리는 것을 방지해요.",
+            "폰트 크기 줄이기: 10pt에서 8pt로 줄이면 가독성을 유지하면서 페이지당 훨씬 많은 열을 넣을 수 있어요.",
+            "헤더 행 고정: 대부분의 PDF 변환기에서 헤더 행을 강조할 수 있어서, 여러 페이지 테이블을 읽기 쉽게 만들어요.",
+            "빈 열/행 제거: 변환 전에 스프레드시트를 정리하세요 — 빈 열은 귀중한 페이지 공간을 낭비해요.",
+            "미리보기 확인: 다운로드 전에 항상 테이블 미리보기를 확인하여 서식 문제를 일찍 발견하세요.",
+            "넓은 테이블 분할: 그래도 안 맞으면 테이블을 두 개의 좁은 테이블로 분할하거나 A3 용지를 사용해보세요.",
+          ] },
+          { type: "callout", text: "꿀팁: 가장 깔끔한 결과를 원하면 변환 전에 엑셀에서 인쇄 영역을 설정하세요(페이지 레이아웃 > 인쇄 영역 > 인쇄 영역 설정). 이렇게 하면 관련 데이터 범위만 PDF에 포함돼요." },
+
+          { type: "heading", text: "여러 시트를 하나의 PDF로 합치는 방법" },
+          { type: "paragraph", text: "엑셀 워크북에는 여러 시트(탭)가 있는 경우가 많아요. PDF로 변환할 때 두 가지 옵션이 있어요:" },
+          { type: "list", items: [
+            "단일 시트: 활성/선택된 시트만 변환. 워크북에서 특정 테이블 하나만 필요할 때 좋아요.",
+            "모든 시트: 모든 시트를 하나의 PDF 파일로 합치기, 각 시트는 새 페이지에서 시작. QuickFigure에서 '모든 시트 포함' 체크박스로 지원해요.",
+          ] },
+          { type: "paragraph", text: "엑셀 자체 내보내기에서는 게시 옵션에서 '활성 시트' 대신 '전체 통합 문서'를 선택하면 모든 시트가 포함돼요." },
+
+          { type: "heading", text: "자주 묻는 질문" },
+          { type: "faq", faqItems: [
+            { question: "PDF로 변환하면 수식이 유지되나요?", answer: "아니요 — 그게 바로 장점이에요. PDF에는 보이는 값만 포함되고, 기본 수식은 포함되지 않아요. 받는 사람이 최종 숫자만 보고 계산 로직에 접근할 수 없으니 공유에 유리해요." },
+            { question: "비밀번호로 보호된 엑셀 파일을 변환할 수 있나요?", answer: "먼저 비밀번호를 제거해야 해요. 엑셀에서 파일 > 정보 > 통합 문서 보호를 열고 비밀번호를 제거한 후, 보호 해제된 파일을 변환하세요." },
+            { question: "PDF에 빈 페이지가 생기는 이유는?", answer: "보통 데이터 범위를 넘어서 빈 행이나 열이 있어 인쇄 영역이 확장될 때 발생해요. 사용하지 않는 행/열을 삭제하거나, 변환 전에 특정 인쇄 영역을 설정하세요." },
+            { question: "PDF를 다시 엑셀로 변환할 수 있나요?", answer: "네 — QuickFigure에는 PDF에서 표를 추출하는 PDF 엑셀 변환기가 있어요. 다만 왕복 변환 시 일부 서식이 손실될 수 있으니 원본 엑셀 파일을 보관하세요." },
+            { question: "지원되는 최대 파일 크기는?", answer: "브라우저에서 처리하므로 기기의 메모리에 따라 달라요. 대부분의 기기는 10~20MB 파일을 문제없이 처리해요. 매우 큰 파일은 먼저 분할하는 것을 권장해요." },
+          ] },
+
+          { type: "paragraph", text: "엑셀을 PDF로 변환하는 것은 전문적인 문서 공유, 인쇄, 보관에 필수적이에요. QuickFigure의 무료 온라인 도구로 빠르고 안전하게 변환하든, 복잡한 레이아웃에 엑셀 자체 내보내기를 사용하든, 핵심은 상황에 맞는 방법을 선택하는 거예요." },
+          { type: "cta", tool: "excel-to-pdf", toolName: "엑셀 PDF 변환 — 무료로 바로 사용하기" },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "excel-to-pdf", name: { en: "Excel to PDF Converter", ko: "엑셀 PDF 변환" } },
+      { slug: "pdf-to-excel", name: { en: "PDF to Excel Converter", ko: "PDF 엑셀 변환" } },
+      { slug: "excel-merge", name: { en: "Excel Merge", ko: "엑셀 합치기" } },
+    ],
+    relatedPosts: ["pdf-to-excel-conversion-guide", "excel-merge-guide"],
   },
 ];
 

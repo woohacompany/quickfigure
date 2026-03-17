@@ -125,6 +125,7 @@ export default async function HomePage({
         { name: t.home.gifMaker, description: t.home.gifMakerDesc, href: `/${lang}/tools/gif-maker`, tags: getToolTags("gif-maker") },
         { name: t.home.pdfToExcel, description: t.home.pdfToExcelDesc, href: `/${lang}/tools/pdf-to-excel`, tags: getToolTags("pdf-to-excel") },
         { name: t.home.imageRotate, description: t.home.imageRotateDesc, href: `/${lang}/tools/image-rotate`, tags: getToolTags("image-rotate") },
+        { name: t.home.excelToPdf, description: t.home.excelToPdfDesc, href: `/${lang}/tools/excel-to-pdf`, tags: getToolTags("excel-to-pdf") },
       ],
     },
     {
