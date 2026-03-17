@@ -86,6 +86,7 @@ export default function PdfCompressorPage({
     originalSize: number;
     compressedSize: number;
     blob: Blob;
+    alreadyOptimized: boolean;
   } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -235,15 +236,36 @@ export default function PdfCompressorPage({
       }
 
       const pdfOutput = doc.output("arraybuffer");
-      const blob = new Blob([pdfOutput], { type: "application/pdf" });
+      const compressedSize = pdfOutput.byteLength;
 
-      setResult({
-        originalSize: fileSize,
-        compressedSize: pdfOutput.byteLength,
-        blob,
-      });
-      setProgress(100);
-      setStatus(isKo ? "압축 완료!" : "Compression complete!");
+      // If compressed file is larger or within 1% of original, return original
+      const savingsRatio = 1 - compressedSize / fileSize;
+      if (savingsRatio < 0.01) {
+        // Already optimized — return original file
+        const originalBlob = new Blob([pdfBytes], { type: "application/pdf" });
+        setResult({
+          originalSize: fileSize,
+          compressedSize: fileSize,
+          blob: originalBlob,
+          alreadyOptimized: true,
+        });
+        setProgress(100);
+        setStatus(
+          isKo
+            ? "이 파일은 이미 최적화되어 있어 추가 압축이 불가합니다."
+            : "This file is already optimized. No further compression possible."
+        );
+      } else {
+        const blob = new Blob([pdfOutput], { type: "application/pdf" });
+        setResult({
+          originalSize: fileSize,
+          compressedSize,
+          blob,
+          alreadyOptimized: false,
+        });
+        setProgress(100);
+        setStatus(isKo ? "압축 완료!" : "Compression complete!");
+      }
     } catch (err) {
       console.error(err);
       setStatus(
@@ -508,43 +530,67 @@ export default function PdfCompressorPage({
 
         {/* Result */}
         {result && (
-          <div className="rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20 p-4 space-y-4">
-            {/* Before → After display */}
-            <div className="flex items-center justify-center gap-3">
-              <div className="text-center">
-                <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-1">
-                  {isKo ? "원본" : "Original"}
-                </p>
-                <p className="text-lg font-bold">
-                  {formatFileSize(result.originalSize)}
-                </p>
-              </div>
-              <div className="text-xl text-neutral-400">→</div>
-              <div className="text-center">
-                <p className="text-xs text-green-600 dark:text-green-400 mb-1">
-                  {isKo ? "압축 후" : "Compressed"}
-                </p>
-                <p className="text-lg font-bold text-green-600 dark:text-green-400">
-                  {formatFileSize(result.compressedSize)}
-                </p>
-              </div>
-            </div>
-            {/* Compression ratio badge */}
-            <div className="flex justify-center">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-sm font-medium">
-                {parseFloat(compressionRatio!) > 0
-                  ? `${compressionRatio}% ${isKo ? "감소" : "smaller"}`
-                  : isKo
-                    ? "추가 압축 불가"
-                    : "No further compression possible"}
-              </span>
-            </div>
-            <button
-              onClick={downloadResult}
-              className="w-full px-5 py-3 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition-colors cursor-pointer"
-            >
-              {isKo ? "압축된 PDF 다운로드" : "Download Compressed PDF"}
-            </button>
+          <div className={`rounded-lg border p-4 space-y-4 ${
+            result.alreadyOptimized
+              ? "border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-900/20"
+              : "border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-900/20"
+          }`}>
+            {result.alreadyOptimized ? (
+              <>
+                {/* Already optimized message */}
+                <div className="text-center space-y-2">
+                  <p className="text-lg font-bold">
+                    {formatFileSize(result.originalSize)}
+                  </p>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 text-sm font-medium">
+                    {isKo
+                      ? "이 파일은 이미 최적화되어 있어 추가 압축이 불가합니다."
+                      : "This file is already optimized. No further compression possible."}
+                  </span>
+                </div>
+                <button
+                  onClick={downloadResult}
+                  className="w-full px-5 py-3 rounded-md bg-amber-600 text-white font-medium hover:bg-amber-700 transition-colors cursor-pointer"
+                >
+                  {isKo ? "원본 PDF 다운로드" : "Download Original PDF"}
+                </button>
+              </>
+            ) : (
+              <>
+                {/* Before → After display */}
+                <div className="flex items-center justify-center gap-3">
+                  <div className="text-center">
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-1">
+                      {isKo ? "원본" : "Original"}
+                    </p>
+                    <p className="text-lg font-bold">
+                      {formatFileSize(result.originalSize)}
+                    </p>
+                  </div>
+                  <div className="text-xl text-neutral-400">→</div>
+                  <div className="text-center">
+                    <p className="text-xs text-green-600 dark:text-green-400 mb-1">
+                      {isKo ? "압축 후" : "Compressed"}
+                    </p>
+                    <p className="text-lg font-bold text-green-600 dark:text-green-400">
+                      {formatFileSize(result.compressedSize)}
+                    </p>
+                  </div>
+                </div>
+                {/* Compression ratio badge */}
+                <div className="flex justify-center">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-sm font-medium">
+                    {compressionRatio}% {isKo ? "감소" : "smaller"}
+                  </span>
+                </div>
+                <button
+                  onClick={downloadResult}
+                  className="w-full px-5 py-3 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition-colors cursor-pointer"
+                >
+                  {isKo ? "압축된 PDF 다운로드" : "Download Compressed PDF"}
+                </button>
+              </>
+            )}
           </div>
         )}
 
