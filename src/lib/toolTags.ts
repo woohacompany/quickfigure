@@ -211,6 +211,10 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["ROI", "투자수익률", "수익률 계산", "투자 계산기", "수익률", "투자 비교", "연환산 수익률"],
     en: ["ROI calculator", "return on investment", "investment return", "ROI", "annualized return", "investment comparison"],
   },
+  "image-to-svg": {
+    ko: ["SVG 변환", "이미지 벡터 변환", "JPG SVG", "PNG SVG", "벡터 변환", "벡터화", "일러스트 변환", "로고 벡터", "사진 벡터", "사진 일러스트", "래스터 벡터"],
+    en: ["image to SVG", "JPG to SVG", "PNG to SVG", "vectorize image", "raster to vector", "image vectorizer", "convert to vector", "SVG converter", "trace image", "logo to vector"],
+  },
 
   // ── Text ──
   "word-counter": {

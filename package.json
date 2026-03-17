@@ -12,6 +12,7 @@
     "@supabase/supabase-js": "^2.99.1",
     "dom-to-image-more": "^3.7.2",
     "html2canvas": "^1.4.1",
+    "imagetracerjs": "^1.2.6",
     "jspdf": "^4.2.1",
     "jspdf-autotable": "^5.0.7",
     "jszip": "^3.10.1",
