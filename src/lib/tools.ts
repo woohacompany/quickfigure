@@ -70,4 +70,5 @@ export const TOOL_SLUGS = [
   "excel-to-pdf",
   "roi-calculator",
   "image-to-svg",
+  "world-clock",
 ] as const;

@@ -216,6 +216,12 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     en: ["image to SVG", "JPG to SVG", "PNG to SVG", "vectorize image", "raster to vector", "image vectorizer", "convert to vector", "SVG converter", "trace image", "logo to vector"],
   },
 
+  // ── Date & Time ──
+  "world-clock": {
+    ko: ["세계 시간", "세계 시계", "시차", "시간 변환", "타임존", "뉴욕 시간", "LA 시간", "런던 시간", "한국 미국 시간", "시차 계산", "현재 시간", "세계시간"],
+    en: ["world clock", "time zone", "timezone converter", "time difference", "world time", "EST to KST", "PST to KST", "current time", "meeting time", "time zone calculator"],
+  },
+
   // ── Text ──
   "word-counter": {
     ko: ["글자수", "단어수", "자소서", "에세이", "몇글자"],

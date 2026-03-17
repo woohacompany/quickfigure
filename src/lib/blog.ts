@@ -144,6 +144,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "bmr-vs-bmi-difference": ["lifestyle"],
   "calories-to-lose-weight": ["lifestyle"],
   "body-fat-guide": ["lifestyle"],
+  "world-clock-guide": ["lifestyle"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -9064,6 +9065,135 @@ export const blogPosts: BlogPost[] = [
       { slug: "image-resizer", name: { en: "Image Resizer", ko: "이미지 리사이저" } },
     ],
     relatedPosts: ["image-compressor-guide", "image-upscale-guide"],
+  },
+
+  // ── World Clock Guide ──
+  {
+    slug: "world-clock-guide",
+    category: "lifestyle" as BlogCategory,
+    date: "2026-03-18",
+    readingTime: 6,
+    thumbnailAlt: { en: "World Clock & Time Zone Converter Guide", ko: "세계 시간 변환기 가이드" },
+    translations: {
+      en: {
+        title: "How to Convert Time Zones: A Complete Guide to World Clock & Time Differences",
+        summary: "Learn how to accurately convert time zones, understand DST, and find the best meeting times across global teams.",
+        content: [
+          { type: "paragraph", text: "Working across time zones is one of the biggest challenges of modern global collaboration. Whether you're scheduling a meeting with colleagues in New York, London, and Tokyo, or simply trying to call a friend abroad at a reasonable hour, understanding time zone conversions is essential." },
+
+          { type: "heading", text: "Understanding Time Zones and UTC Offsets" },
+          { type: "paragraph", text: "The world is divided into 24 primary time zones, each offset from Coordinated Universal Time (UTC). Korea Standard Time (KST) is UTC+9, meaning when it's midnight UTC, it's 9:00 AM in Seoul. The United States spans multiple zones: Eastern (UTC-5), Central (UTC-6), Mountain (UTC-7), and Pacific (UTC-8)." },
+          { type: "paragraph", text: "A common confusion is the time difference between Korea and the US. Korea is 14 hours ahead of US Eastern Time (EST) — so when it's 9:00 AM Monday in Seoul, it's 7:00 PM Sunday in New York. With Pacific Time (PST), the gap widens to 17 hours." },
+
+          { type: "heading", text: "Daylight Saving Time (DST) — The Hidden Complication" },
+          { type: "paragraph", text: "Twice a year, most of the US and Europe shift their clocks by one hour. In the US, DST runs from the second Sunday of March to the first Sunday of November. During DST, the Korea-New York gap shrinks from 14 hours to 13 hours. This can catch people off guard if they're not tracking DST transitions." },
+          { type: "paragraph", text: "Not all countries observe DST. Japan, China, Korea, Singapore, and most of Asia don't change clocks at all. Australia's DST runs opposite to the Northern Hemisphere (October to April). This makes a world clock tool with automatic DST detection invaluable." },
+
+          { type: "cta", tool: "world-clock", toolName: "World Clock & Time Zone Converter — Try Free" },
+
+          { type: "heading", text: "How to Find the Best Meeting Time Across Time Zones" },
+          { type: "paragraph", text: "The key to scheduling global meetings is finding overlapping business hours. For a Seoul-New York-London meeting, the overlap is narrow: roughly 10:00 PM–midnight KST (which is 8:00–10:00 AM EST and 1:00–3:00 PM GMT). This is why many global companies adopt asynchronous communication." },
+          { type: "list", items: [
+            "Step 1: List all participant time zones",
+            "Step 2: Map each zone's business hours (typically 9 AM–6 PM) onto a shared timeline",
+            "Step 3: Identify the overlapping window",
+            "Step 4: If no overlap exists, rotate meeting times to share the burden fairly",
+          ]},
+
+          { type: "heading", text: "Quick Reference: Korea Time Differences" },
+          { type: "list", items: [
+            "Seoul → New York: -14 hours (KST 9 AM = EST 7 PM previous day)",
+            "Seoul → Los Angeles: -17 hours (KST 9 AM = PST 4 PM previous day)",
+            "Seoul → London: -9 hours (KST 9 AM = GMT midnight)",
+            "Seoul → Tokyo: 0 hours (same time zone)",
+            "Seoul → Sydney: +2 hours (KST 9 AM = AEDT 11 AM)",
+            "Seoul → Dubai: -5 hours (KST 9 AM = GST 4 AM)",
+          ]},
+
+          { type: "heading", text: "Tips for Managing Time Zone Differences" },
+          { type: "list", items: [
+            "Always specify the time zone when sharing meeting times (e.g., '3 PM KST' not just '3 PM')",
+            "Use a world clock tool to visualize multiple time zones simultaneously",
+            "Be mindful of DST transitions in March and November — double-check around those dates",
+            "For recurring meetings, use calendar apps that auto-adjust for DST",
+            "Consider the human impact: avoid scheduling at unreasonable hours for any participant",
+          ]},
+
+          { type: "cta", tool: "world-clock", toolName: "Compare World Times Now — Free Online Tool" },
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "What is the time difference between Korea and the US?", answer: "Korea (KST) is 14 hours ahead of US Eastern Time (EST) and 17 hours ahead of Pacific Time (PST). During US Daylight Saving Time, these gaps shrink by 1 hour." },
+              { question: "Does Japan have the same time zone as Korea?", answer: "Yes, both Korea (KST) and Japan (JST) are UTC+9. When it's noon in Seoul, it's also noon in Tokyo." },
+              { question: "When does Daylight Saving Time start and end in the US?", answer: "US DST begins on the second Sunday of March (clocks spring forward 1 hour) and ends on the first Sunday of November (clocks fall back 1 hour)." },
+            ],
+          },
+        ],
+      },
+      ko: {
+        title: "시차 계산 완벽 가이드: 세계 시간 변환과 서머타임까지",
+        summary: "한국과 미국, 유럽, 일본 시차를 정확히 계산하는 방법과 서머타임(DST) 이해, 글로벌 미팅 시간 찾기 팁을 알려드립니다.",
+        content: [
+          { type: "paragraph", text: "해외 출장, 원격 근무, 유학, 또는 해외에 있는 가족과 통화할 때 가장 먼저 확인하는 것이 시차입니다. 한국이 오전 10시면 뉴욕은 몇 시일까? 서머타임 기간에는 시차가 달라진다는데? 이 글에서 시차 계산의 모든 것을 정리합니다." },
+
+          { type: "heading", text: "시간대(Time Zone)와 UTC 이해하기" },
+          { type: "paragraph", text: "세계는 24개의 주요 시간대로 나뉘며, 각각 협정 세계시(UTC)를 기준으로 오프셋됩니다. 한국 표준시(KST)는 UTC+9로, UTC가 자정일 때 서울은 오전 9시입니다. 미국은 동부(UTC-5), 중부(UTC-6), 산악(UTC-7), 태평양(UTC-8) 등 여러 시간대에 걸쳐 있습니다." },
+          { type: "paragraph", text: "한국과 미국의 시차가 자주 헷갈리는 이유는 날짜가 바뀌기 때문입니다. 서울이 월요일 오전 9시이면 뉴욕은 일요일 오후 7시입니다. 14시간 차이로, 거의 반나절이 넘습니다." },
+
+          { type: "heading", text: "서머타임(DST) — 숨겨진 변수" },
+          { type: "paragraph", text: "미국과 유럽은 1년에 두 번 시계를 1시간 조정합니다. 미국 서머타임은 3월 둘째 일요일에 시작되어 11월 첫째 일요일에 끝납니다. 서머타임 기간에는 한국-뉴욕 시차가 14시간에서 13시간으로 줄어듭니다." },
+          { type: "paragraph", text: "한국, 일본, 중국, 싱가포르 등 대부분의 아시아 국가는 서머타임을 적용하지 않습니다. 호주의 서머타임은 북반구와 반대로 10월~4월에 적용됩니다. 이런 복잡한 변수 때문에 자동 DST 감지 기능이 있는 세계 시계 도구가 필수적입니다." },
+
+          { type: "cta", tool: "world-clock", toolName: "세계 시간 변환기 — 무료로 사용하기" },
+
+          { type: "heading", text: "글로벌 미팅 시간 찾는 방법" },
+          { type: "paragraph", text: "해외 팀과의 미팅 시간을 잡을 때 핵심은 업무시간이 겹치는 구간을 찾는 것입니다. 서울-뉴욕-런던 3자 미팅의 경우, 겹치는 시간대는 KST 기준 밤 10시~자정 정도입니다 (EST 오전 8~10시, GMT 오후 1~3시)." },
+          { type: "list", items: [
+            "1단계: 모든 참석자의 시간대를 나열",
+            "2단계: 각 시간대의 업무시간(보통 9시~18시)을 공통 타임라인에 매핑",
+            "3단계: 겹치는 구간 확인",
+            "4단계: 겹치는 시간이 없으면 미팅 시간을 공평하게 돌아가며 조정",
+          ]},
+
+          { type: "heading", text: "한국 기준 주요 도시 시차 정리" },
+          { type: "list", items: [
+            "서울 → 뉴욕: -14시간 (KST 오전 9시 = EST 전날 오후 7시)",
+            "서울 → LA: -17시간 (KST 오전 9시 = PST 전날 오후 4시)",
+            "서울 → 런던: -9시간 (KST 오전 9시 = GMT 자정)",
+            "서울 → 도쿄: 0시간 (동일 시간대)",
+            "서울 → 시드니: +2시간 (KST 오전 9시 = AEDT 오전 11시)",
+            "서울 → 두바이: -5시간 (KST 오전 9시 = GST 오전 4시)",
+          ]},
+
+          { type: "heading", text: "시차 관리 실전 팁" },
+          { type: "list", items: [
+            "시간을 공유할 때 반드시 시간대를 명시하세요 (예: '오후 3시 KST')",
+            "세계 시계 도구로 여러 시간대를 한눈에 시각화하세요",
+            "3월과 11월 서머타임 전환 시기에는 시차를 반드시 재확인하세요",
+            "정기 미팅은 DST를 자동 반영하는 캘린더 앱을 활용하세요",
+            "참석자 모두에게 무리한 시간이 되지 않도록 배려하세요",
+          ]},
+
+          { type: "cta", tool: "world-clock", toolName: "세계 시간 비교 — 무료 온라인 도구" },
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "한국과 미국의 시차는 얼마인가요?", answer: "한국(KST)은 미국 동부시간(EST)보다 14시간, 태평양시간(PST)보다 17시간 앞서 있습니다. 미국 서머타임 기간에는 각각 1시간씩 줄어듭니다." },
+              { question: "일본과 한국은 같은 시간대인가요?", answer: "네, 한국(KST)과 일본(JST) 모두 UTC+9입니다. 서울이 정오이면 도쿄도 정오입니다." },
+              { question: "미국 서머타임은 언제 시작하고 끝나나요?", answer: "3월 둘째 일요일에 시작(시계를 1시간 앞으로)되고, 11월 첫째 일요일에 끝납니다(시계를 1시간 뒤로)." },
+            ],
+          },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "world-clock", name: { en: "World Clock & Time Zone Converter", ko: "세계 시간 변환기" } },
+      { slug: "date-calculator", name: { en: "Date Calculator", ko: "날짜 계산기" } },
+      { slug: "dday-calculator", name: { en: "D-Day Calculator", ko: "디데이 계산기" } },
+    ],
+    relatedPosts: ["date-guide", "dday-guide"],
   },
 ];
 
