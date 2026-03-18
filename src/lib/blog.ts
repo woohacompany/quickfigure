@@ -146,6 +146,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "body-fat-guide": ["lifestyle"],
   "world-clock-guide": ["lifestyle"],
   "world-time-converter-guide": ["tool-guide", "lifestyle"],
+  "ladder-game-online-guide": ["tool-guide", "lifestyle"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -9436,6 +9437,186 @@ export const blogPosts: BlogPost[] = [
       { slug: "dday-calculator", name: { en: "D-Day Calculator", ko: "디데이 계산기" } },
     ],
     relatedPosts: ["world-clock-guide", "date-guide", "dday-guide"],
+  },
+
+  // ── Ladder Game Guide ──
+  {
+    slug: "ladder-game-online-guide",
+    category: "generators" as BlogCategory,
+    date: "2026-03-18",
+    readingTime: 8,
+    thumbnailAlt: {
+      en: "Ladder game with colorful lines and participants making random decisions",
+      ko: "참가자들이 사다리를 타고 내려가는 다채로운 사다리 타기 게임",
+    },
+    translations: {
+      en: {
+        title: "Ladder Game Online: The Fun Korean Way to Make Random Decisions 2026",
+        summary: "Discover the Korean ladder game (Ghost Leg) — a unique, visual, and fair way to make random decisions. Learn how it works, why it's mathematically fair, and creative ways to use it.",
+        content: [
+          { type: "paragraph", text: "Have you ever needed to decide who pays for dinner, which team someone joins, or what chore each roommate handles — but wanted something more fun than flipping a coin? Enter the Korean ladder game, known internationally as \"Ghost Leg\" (amidakuji in Japanese). It's a uniquely East Asian method of random selection that's visual, dramatic, and mathematically fair." },
+
+          { type: "heading", text: "What Is the Ladder Game (Ghost Leg)?" },
+          { type: "paragraph", text: "The ladder game is a random selection method originating from East Asia. Players are placed at the top of vertical lines (\"rails\"), and results are placed at the bottom. Random horizontal bars (\"rungs\") connect adjacent rails. Each player traces their path downward — every time they hit a horizontal rung, they move sideways to the adjacent rail. Where they end up at the bottom is their result." },
+          { type: "paragraph", text: "What makes this method special is that it creates a perfect one-to-one mapping (a mathematical permutation). Every player reaches exactly one result, and every result is claimed by exactly one player. No ties, no duplicates, no unfairness." },
+
+          { type: "heading", text: "How Does It Work? The Math Behind Fairness" },
+          { type: "paragraph", text: "Each horizontal rung acts as a swap between two adjacent positions. A series of adjacent swaps can produce any permutation of the players — this is proven in group theory (any permutation can be decomposed into a product of adjacent transpositions). When rungs are randomly generated, each possible permutation has an equal probability of occurring, making the game provably fair." },
+          { type: "list", items: [
+            "Each rung swaps two adjacent paths — like a shuffle step",
+            "With enough random rungs, any outcome is equally likely",
+            "The result is always a complete permutation — no duplicates or gaps",
+            "Computer-generated rungs are more random than hand-drawn ones",
+          ]},
+
+          { type: "cta", tool: "ladder-game", toolName: "Try the Ladder Game Now — Free Online Tool" },
+
+          { type: "heading", text: "10 Creative Ways to Use the Ladder Game" },
+          { type: "list", items: [
+            "1. Who pays for dinner? — The classic Korean office game for deciding who treats",
+            "2. Team assignments — Split players into balanced teams for sports or projects",
+            "3. Chore rotation — Fairly assign cleaning, dishes, or cooking duties",
+            "4. Lunch menu picker — Can't decide between pizza and tacos? The ladder decides",
+            "5. Gift exchange pairing — Perfect for Secret Santa or white elephant games",
+            "6. Presentation order — Randomly determine who goes first in a meeting",
+            "7. Seating arrangement — Fair desk or table assignments for classrooms",
+            "8. Travel destination — Each option goes on the bottom; let fate choose",
+            "9. Penalty picker — Fun forfeits for games: sing, dance, buy coffee",
+            "10. Date night decider — Who cooks, who picks the movie, who does cleanup",
+          ]},
+
+          { type: "heading", text: "Ladder Game vs. Other Random Methods" },
+          { type: "paragraph", text: "How does the ladder game compare to other ways of making random decisions?" },
+          { type: "list", items: [
+            "Ladder Game: Visual, dramatic reveal, supports one-by-one mode. Best for groups of 2-12.",
+            "Wheel Spinner: Good for picking one winner. Can adjust probabilities. Less fair for multiple assignments.",
+            "Drawing Straws: Traditional but hard to do online. No visual drama.",
+            "Random Number: Fast but boring. No suspense or entertainment value.",
+            "Coin Flip: Only works for two choices. Simple but limited.",
+          ]},
+          { type: "paragraph", text: "The ladder game wins when you want entertainment value, fairness for group decisions, and the ability to reveal results one at a time for dramatic effect." },
+
+          { type: "heading", text: "How to Use QuickFigure's Ladder Game" },
+          { type: "list", items: [
+            "Step 1: Set the number of players (2-12) and enter their names",
+            "Step 2: Enter the results at the bottom (or use a quick preset like 'Winner/Loser' or 'Team Split')",
+            "Step 3: Click 'Build Ladder' to generate random horizontal rungs",
+            "Step 4: Click 'Reveal All' to watch the animated paths, or enable 'One by One' mode for suspense",
+            "Step 5: Share results via copy or social media",
+          ]},
+
+          { type: "cta", tool: "ladder-game", toolName: "Play the Ladder Game — Free, No Sign-up" },
+
+          { type: "heading", text: "Fun Ladder Game Ideas for Your Next Gathering" },
+          { type: "paragraph", text: "Make your office meetings, parties, and hangouts more fun with these ideas:" },
+          { type: "list", items: [
+            "\"Coffee Run\" — Run it daily to decide who buys coffee for the team",
+            "\"Meeting Facilitator\" — Randomly pick who leads the standup or retro",
+            "\"Weekend Activity\" — Load options like hiking, movies, cooking, gaming",
+            "\"Dinner Menu Roulette\" — Replace the endless 'what should we eat?' debate",
+            "\"Karaoke Song Picker\" — Each person gets a random song genre to perform",
+          ]},
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "Is the ladder game really fair?", answer: "Yes. Mathematically, each horizontal rung performs an adjacent transposition, and with sufficiently random rungs, all permutations are equally likely. Computer-generated ladders are more random than hand-drawn ones." },
+              { question: "What is the ladder game called in other countries?", answer: "In Japan it's called 'Amidakuji' (阿弥陀くじ). Internationally it's often called 'Ghost Leg' or 'Ladder Lottery'. In Korea it's '사다리 타기' (sadari tagi), meaning 'climbing the ladder'." },
+              { question: "Can I rig the results?", answer: "Not with QuickFigure — rungs are generated using computer randomness (Math.random), making results completely unpredictable. Even viewing the ladder won't help you guess paths when there are many rungs." },
+              { question: "How many players can participate?", answer: "QuickFigure supports 2 to 12 players. For larger groups, consider running multiple rounds." },
+            ],
+          },
+        ],
+      },
+      ko: {
+        title: "사다리 타기 온라인 - 회식 벌칙부터 팀 배정까지 완벽 활용법 2026",
+        summary: "사다리 타기의 원리, 수학적 공정성, 그리고 회식/팀배정/벌칙/순서정하기 등 다양한 활용법을 알아보세요. 온라인 사다리 타기 도구 사용법 포함.",
+        content: [
+          { type: "paragraph", text: "\"사다리 타기 해서 정하자!\" — 한국인이라면 누구나 한 번쯤 해본 사다리 타기. 회식에서 술래 정하기, 청소 당번 정하기, 점심 메뉴 결정까지, 사다리 타기는 우리 일상에 깊이 자리잡은 랜덤 선택 방법입니다. 종이에 그리던 사다리를 이제 온라인에서 더 공정하고, 더 재미있게 즐기세요." },
+
+          { type: "heading", text: "사다리 타기란?" },
+          { type: "paragraph", text: "사다리 타기는 한국 고유의 랜덤 선택 문화입니다. 참가자 수만큼 세로선을 그리고, 그 사이에 랜덤으로 가로선(다리)을 배치합니다. 위에서 아래로 내려가면서 가로선을 만나면 옆으로 이동하여 최종 결과에 도달하는 방식입니다." },
+          { type: "paragraph", text: "일본에서는 '아미다쿠지(阿弥陀くじ)'라고 부르며, 영어권에서는 'Ghost Leg' 또는 'Ladder Lottery'라고 합니다. 하지만 한국처럼 일상적으로 사다리 타기를 활용하는 나라는 없을 정도로, 이것은 한국 특유의 문화입니다." },
+
+          { type: "heading", text: "사다리 타기는 정말 공정할까? — 수학적 증명" },
+          { type: "paragraph", text: "사다리 타기가 공정한지 의심해 본 적 있으신가요? 수학적으로 사다리 타기는 완벽하게 공정합니다. 그 이유를 알아봅시다." },
+          { type: "list", items: [
+            "각 가로선은 인접한 두 경로를 교환(swap)하는 역할을 합니다",
+            "수학의 '군론(Group Theory)'에 따르면, 인접 교환의 조합으로 모든 순열(permutation)을 만들 수 있습니다",
+            "충분한 수의 랜덤 가로선이 있으면 모든 결과가 동일한 확률로 나타납니다",
+            "모든 참가자가 정확히 하나의 결과에 대응됩니다 (1:1 대응)",
+            "결과가 중복되거나 빠지는 일이 수학적으로 불가능합니다",
+          ]},
+          { type: "paragraph", text: "컴퓨터로 생성한 사다리는 손으로 그리는 것보다 더 공정합니다. 사람이 그리면 무의식적으로 패턴이 생기지만, 컴퓨터의 난수 생성은 진정한 랜덤에 가깝기 때문입니다." },
+
+          { type: "cta", tool: "ladder-game", toolName: "지금 바로 사다리 타기 해보기 →" },
+
+          { type: "heading", text: "사다리 타기 활용 상황 10가지" },
+          { type: "list", items: [
+            "1. 회식 벌칙 정하기 — 술래, 노래 부르기, 커피 쏘기 등 벌칙 결정의 정석",
+            "2. 청소 당번 정하기 — 사무실, 기숙사, 자취방 청소 당번을 공정하게",
+            "3. 점심 메뉴 결정 — 치킨 vs 피자 vs 국밥 vs 떡볶이, 사다리로 끝장",
+            "4. 선물 교환 (마니또) — 크리스마스 선물 교환, 마니또 매칭에 딱",
+            "5. 팀/조 배정 — 체육대회, 프로젝트, 스터디 그룹 팀 나누기",
+            "6. 발표 순서 정하기 — 수업, 회의, 프레젠테이션 발표 순서 결정",
+            "7. 자리 배치 — 교실, 회의실, 회식 자리 배정",
+            "8. 여행지 결정 — 제주도 vs 부산 vs 강릉, 고민 끝!",
+            "9. 커플 역할 분담 — 설거지, 요리, 쓰레기 버리기 공정하게",
+            "10. 게임 순서 정하기 — 보드게임, 카드게임 시작 순서",
+          ]},
+
+          { type: "heading", text: "QuickFigure 사다리 타기 사용법" },
+          { type: "paragraph", text: "QuickFigure의 온라인 사다리 타기는 설정 간단, 결과 시각적, 다양한 상황에 활용 가능합니다." },
+          { type: "list", items: [
+            "1단계: 참가자 수를 설정하고 이름을 입력합니다 (2~12명)",
+            "2단계: 결과 아이템을 입력합니다 (프리셋 활용 가능: 당첨/꽝, 벌칙, 팀배정 등)",
+            "3단계: '사다리 만들기' 버튼을 클릭하면 랜덤 사다리가 생성됩니다",
+            "4단계: '결과 보기'를 클릭하면 애니메이션과 함께 모든 결과가 공개됩니다",
+            "5단계: '한 명씩 타기' 모드로 긴장감 있게 한 명씩 공개할 수도 있습니다",
+          ]},
+          { type: "paragraph", text: "프리셋 버튼을 활용하면 '회식 벌칙', '당첨/꽝', '팀 배정', '점심 메뉴' 등의 설정이 원클릭으로 완료됩니다. 한 명씩 타기 모드는 회식이나 모임에서 긴장감을 연출하기 좋습니다." },
+
+          { type: "heading", text: "사다리 vs 다른 랜덤 방법 비교" },
+          { type: "paragraph", text: "랜덤 선택 방법에는 여러 가지가 있습니다. 상황에 맞는 최적의 방법을 비교해 봅시다." },
+          { type: "list", items: [
+            "사다리 타기: 시각적이고 재미있음, 한 명씩 결과 공개 가능, 2~12명에 적합. 그룹 결정에 최고.",
+            "룰렛: 1명 선택에 적합, 확률 조절 가능. 하지만 여러 명을 동시에 매칭하기 어려움.",
+            "제비뽑기: 전통적이고 익숙하지만, 온라인에서는 불편. 시각적 재미 부족.",
+            "랜덤 숫자 생성: 빠르지만 재미가 없음. 결과가 숫자라 직관적이지 않음.",
+            "동전 던지기: 2가지 선택에만 사용 가능. 단순하지만 제한적.",
+          ]},
+          { type: "paragraph", text: "사다리 타기는 '재미'와 '공정성'을 모두 잡은 유일한 방법입니다. 특히 그룹 결정, 한 명씩 결과 공개, 시각적 드라마가 필요한 상황에서 다른 방법을 압도합니다." },
+
+          { type: "cta", tool: "ladder-game", toolName: "무료 사다리 타기 — 지금 바로 시작하기" },
+
+          { type: "heading", text: "재미있는 사다리 타기 아이디어" },
+          { type: "list", items: [
+            "\"오늘의 커피 셔틀\" — 매일 아침 사다리 돌려서 커피 사올 사람 정하기",
+            "\"회의 진행자 뽑기\" — 스탠드업 미팅 진행자를 매일 랜덤으로",
+            "\"주말 뭐 할지\" — 등산, 영화, 요리, 게임 등 활동을 사다리에 걸기",
+            "\"저녁 메뉴 사다리\" — '뭐 먹지?' 끝없는 논쟁을 사다리로 종결",
+            "\"노래방 장르 뽑기\" — 각자 랜덤 장르를 받아서 부르기",
+          ]},
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "사다리 타기 결과를 조작할 수 있나요?", answer: "QuickFigure는 컴퓨터 난수 생성(Math.random)으로 가로선을 배치하므로 결과를 예측하거나 조작하는 것이 불가능합니다. 가로선이 많을수록 경로 예측은 더 어려워집니다." },
+              { question: "몇 명까지 참여할 수 있나요?", answer: "2명부터 12명까지 지원합니다. 더 많은 인원이 필요하면 여러 라운드로 나눠서 진행할 수 있습니다." },
+              { question: "모바일에서도 사용 가능한가요?", answer: "네, QuickFigure 사다리 타기는 스마트폰과 태블릿에서도 완벽하게 작동합니다. 터치로 쉽게 조작할 수 있습니다." },
+              { question: "결과를 친구들과 공유할 수 있나요?", answer: "네! 결과가 공개된 후 '결과 복사' 버튼으로 텍스트를 복사하거나, 카카오톡/페이스북/트위터로 직접 공유할 수 있습니다." },
+              { question: "사다리 타기는 해외에서도 하나요?", answer: "일본에서 '아미다쿠지'로 유명하며, 영어권에서는 'Ghost Leg'이라고 부릅니다. 하지만 한국처럼 일상적으로 활용하는 나라는 드뭅니다." },
+            ],
+          },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "ladder-game", name: { en: "Ladder Game", ko: "사다리 타기" } },
+      { slug: "random-number-generator", name: { en: "Random Number Generator", ko: "랜덤 숫자 생성기" } },
+      { slug: "password-generator", name: { en: "Password Generator", ko: "비밀번호 생성기" } },
+    ],
+    relatedPosts: [],
   },
 ];
 
