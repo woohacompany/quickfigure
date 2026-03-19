@@ -73,4 +73,5 @@ export const TOOL_SLUGS = [
   "world-clock",
   "ladder-game",
   "schedule-finder",
+  "currency-converter",
 ] as const;

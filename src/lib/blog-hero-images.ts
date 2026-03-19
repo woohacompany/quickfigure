@@ -425,4 +425,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
     "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
   ],
+  "currency-converter-exchange-rate-guide": [
+    "https://images.unsplash.com/photo-1580519542036-c47de6196ba5",
+    "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
+    "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e",
+  ],
 };

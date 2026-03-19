@@ -86,6 +86,7 @@ export default async function HomePage({
         { name: t.home.accidentSettlementCalc, description: t.home.accidentSettlementCalcDesc, href: `/${lang}/tools/accident-settlement-calculator`, tags: getToolTags("accident-settlement-calculator") },
         { name: t.home.nationalPensionCalc, description: t.home.nationalPensionCalcDesc, href: `/${lang}/tools/national-pension-calculator`, tags: getToolTags("national-pension-calculator") },
         { name: t.home.roiCalc, description: t.home.roiCalcDesc, href: `/${lang}/tools/roi-calculator`, tags: getToolTags("roi-calculator") },
+        { name: t.home.currencyConverter, description: t.home.currencyConverterDesc, href: `/${lang}/tools/currency-converter`, tags: getToolTags("currency-converter") },
       ],
     },
     {
