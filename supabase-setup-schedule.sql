@@ -86,6 +86,7 @@ DROP POLICY IF EXISTS "Allow public insert participants" ON schedule_participant
 DROP POLICY IF EXISTS "Allow public select participants" ON schedule_participants;
 DROP POLICY IF EXISTS "Allow public insert votes" ON schedule_votes;
 DROP POLICY IF EXISTS "Allow public update votes" ON schedule_votes;
+DROP POLICY IF EXISTS "Allow public delete votes" ON schedule_votes;
 DROP POLICY IF EXISTS "Allow public select votes" ON schedule_votes;
 
 -- schedule_rooms: 누구나 방 생성 가능
@@ -130,6 +131,13 @@ CREATE POLICY "Allow public update votes"
   TO anon
   USING (true)
   WITH CHECK (true);
+
+-- schedule_votes: 투표 삭제 가능 (재투표 시 기존 투표 삭제)
+CREATE POLICY "Allow public delete votes"
+  ON schedule_votes
+  FOR DELETE
+  TO anon
+  USING (true);
 
 -- schedule_votes: 누구나 room_id로 투표 결과 조회 가능
 CREATE POLICY "Allow public select votes"

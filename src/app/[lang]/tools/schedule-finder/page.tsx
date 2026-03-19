@@ -30,13 +30,26 @@ interface VoteMap {
   [participantId: string]: Set<string>; // "2026-03-20_09:00"
 }
 
-type Step = "create" | "join" | "vote" | "loading";
+type Step = "create" | "join" | "vote" | "loading" | "expired";
 
 function generateRoomCode(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let code = "";
   for (let i = 0; i < 6; i++) code += chars[Math.floor(Math.random() * chars.length)];
   return code;
+}
+
+async function generateUniqueRoomCode(): Promise<string> {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const code = generateRoomCode();
+    const { data } = await supabase
+      .from("schedule_rooms")
+      .select("id")
+      .eq("room_code", code)
+      .maybeSingle();
+    if (!data) return code;
+  }
+  return generateRoomCode();
 }
 
 function buildTimeSlots(start: number, end: number, interval: number): string[] {
@@ -114,6 +127,7 @@ export default function ScheduleFinderPage({
   const [mySelections, setMySelections] = useState<Set<string>>(new Set());
   const [hoveredSlot, setHoveredSlot] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -122,8 +136,27 @@ export default function ScheduleFinderPage({
     const url = new URL(window.location.href);
     const code = url.searchParams.get("code");
     if (code && code.length === 6) {
-      setJoinCode(code.toUpperCase());
-      setStep("join");
+      const upperCode = code.toUpperCase();
+      setJoinCode(upperCode);
+      // Pre-check room existence and expiry
+      (async () => {
+        const { data } = await supabase
+          .from("schedule_rooms")
+          .select("*")
+          .eq("room_code", upperCode)
+          .single();
+        if (data && (!data.is_active || (data.expires_at && new Date(data.expires_at) < new Date()))) {
+          setRoom({
+            id: data.id, room_code: data.room_code, title: data.title,
+            creator_name: data.creator_name, dates: data.dates,
+            time_range_start: data.time_range_start, time_range_end: data.time_range_end,
+            time_slot_minutes: data.time_slot_minutes,
+          });
+          setStep("expired");
+          return;
+        }
+        setStep("join");
+      })();
     }
   }, []);
 
@@ -131,18 +164,22 @@ export default function ScheduleFinderPage({
   useEffect(() => {
     if (step !== "vote" || !room) return;
     const fetchData = async () => {
-      const [pRes, vRes] = await Promise.all([
-        supabase.from("schedule_participants").select("*").eq("room_id", room.id),
-        supabase.from("schedule_votes").select("*").eq("room_id", room.id).eq("available", true),
-      ]);
-      if (pRes.data) setParticipants(pRes.data.map((p: { id: string; nickname: string }) => ({ id: p.id, nickname: p.nickname })));
-      if (vRes.data) {
-        const vm: VoteMap = {};
-        for (const v of vRes.data) {
-          if (!vm[v.participant_id]) vm[v.participant_id] = new Set();
-          vm[v.participant_id].add(slotKey(v.date, v.time_slot));
+      try {
+        const [pRes, vRes] = await Promise.all([
+          supabase.from("schedule_participants").select("*").eq("room_id", room.id),
+          supabase.from("schedule_votes").select("*").eq("room_id", room.id).eq("available", true),
+        ]);
+        if (pRes.data) setParticipants(pRes.data.map((p: { id: string; nickname: string }) => ({ id: p.id, nickname: p.nickname })));
+        if (vRes.data) {
+          const vm: VoteMap = {};
+          for (const v of vRes.data) {
+            if (!vm[v.participant_id]) vm[v.participant_id] = new Set();
+            vm[v.participant_id].add(slotKey(v.date, v.time_slot));
+          }
+          setVotes(vm);
         }
-        setVotes(vm);
+      } catch {
+        // Silently handle network errors during polling
       }
     };
     fetchData();
@@ -238,7 +275,7 @@ export default function ScheduleFinderPage({
     setError("");
     setStep("loading");
 
-    const code = generateRoomCode();
+    const code = await generateUniqueRoomCode();
     const { data: roomData, error: roomErr } = await supabase
       .from("schedule_rooms")
       .insert({
@@ -304,12 +341,27 @@ export default function ScheduleFinderPage({
       .from("schedule_rooms")
       .select("*")
       .eq("room_code", joinCode.trim().toUpperCase())
-      .eq("is_active", true)
       .single();
 
     if (roomErr || !roomData) {
       setError(isKo ? "방을 찾을 수 없습니다. 코드를 확인하세요." : "Room not found. Check the code.");
       setStep("join");
+      return;
+    }
+
+    // Check if room is expired
+    if (!roomData.is_active || (roomData.expires_at && new Date(roomData.expires_at) < new Date())) {
+      setRoom({
+        id: roomData.id,
+        room_code: roomData.room_code,
+        title: roomData.title,
+        creator_name: roomData.creator_name,
+        dates: roomData.dates,
+        time_range_start: roomData.time_range_start,
+        time_range_end: roomData.time_range_end,
+        time_slot_minutes: roomData.time_slot_minutes,
+      });
+      setStep("expired");
       return;
     }
 
@@ -392,24 +444,35 @@ export default function ScheduleFinderPage({
   const handleSaveVotes = async () => {
     if (!room || !myParticipant) return;
     setSaving(true);
+    setSaved(false);
+    setError("");
 
-    // Delete existing votes for this participant
-    await supabase.from("schedule_votes").delete().eq("participant_id", myParticipant.id);
+    try {
+      // Delete existing votes for this participant
+      const { error: delErr } = await supabase.from("schedule_votes").delete().eq("participant_id", myParticipant.id);
+      if (delErr) throw delErr;
 
-    // Insert new votes
-    const inserts = Array.from(mySelections).map(key => {
-      const [date, time_slot] = key.split("_");
-      return {
-        room_id: room.id,
-        participant_id: myParticipant.id,
-        date,
-        time_slot,
-        available: true,
-      };
-    });
+      // Insert new votes
+      const inserts = Array.from(mySelections).map(key => {
+        const [date, time_slot] = key.split("_");
+        return {
+          room_id: room.id,
+          participant_id: myParticipant.id,
+          date,
+          time_slot,
+          available: true,
+        };
+      });
 
-    if (inserts.length > 0) {
-      await supabase.from("schedule_votes").insert(inserts);
+      if (inserts.length > 0) {
+        const { error: insErr } = await supabase.from("schedule_votes").insert(inserts);
+        if (insErr) throw insErr;
+      }
+
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2500);
+    } catch {
+      setError(isKo ? "저장에 실패했습니다. 다시 시도하세요." : "Failed to save. Please try again.");
     }
 
     setSaving(false);
@@ -719,6 +782,24 @@ export default function ScheduleFinderPage({
         </div>
       )}
 
+      {/* Expired Room */}
+      {step === "expired" && room && (
+        <div className="max-w-md mx-auto text-center py-12 space-y-4">
+          <div className="text-5xl mb-4">&#8987;</div>
+          <h2 className="text-xl font-bold">
+            {isKo ? "이 방은 만료되었습니다" : "This room has expired"}
+          </h2>
+          <p className="text-neutral-600 dark:text-neutral-400">
+            {isKo
+              ? `"${room.title}" 방은 7일이 지나 만료되었습니다. 새 방을 만들어주세요.`
+              : `The room "${room.title}" has expired after 7 days. Please create a new room.`}
+          </p>
+          <button onClick={() => { setStep("create"); setRoom(null); setError(""); }} className={btnPrimary}>
+            {isKo ? "새 방 만들기" : "Create New Room"}
+          </button>
+        </div>
+      )}
+
       {/* STEP 1: Create Room */}
       {step === "create" && (
         <div className="space-y-6">
@@ -919,9 +1000,11 @@ export default function ScheduleFinderPage({
           {/* Save Button (my vote) */}
           {!showResults && (
             <div className="flex items-center gap-3">
-              <button onClick={handleSaveVotes} className={btnPrimary} disabled={saving}>
+              <button onClick={handleSaveVotes} className={`${btnPrimary} ${saved ? "!bg-green-600 hover:!bg-green-700" : ""}`} disabled={saving}>
                 {saving
                   ? (isKo ? "저장 중..." : "Saving...")
+                  : saved
+                  ? (isKo ? "저장 완료!" : "Saved!")
                   : (isKo ? "투표 저장" : "Save Vote")}
               </button>
               <span className="text-xs text-neutral-500">

@@ -147,6 +147,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "world-clock-guide": ["lifestyle"],
   "world-time-converter-guide": ["tool-guide", "lifestyle"],
   "ladder-game-online-guide": ["tool-guide", "lifestyle"],
+  "schedule-finder-meeting-time-guide": ["tool-guide", "lifestyle"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -9617,6 +9618,164 @@ export const blogPosts: BlogPost[] = [
       { slug: "password-generator", name: { en: "Password Generator", ko: "비밀번호 생성기" } },
     ],
     relatedPosts: [],
+  },
+  {
+    slug: "schedule-finder-meeting-time-guide",
+    category: "lifestyle" as BlogCategory,
+    date: "2026-03-20",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Group of people voting on availability in a schedule grid to find the best meeting time",
+      ko: "여러 사람이 시간표에 가능한 시간을 투표해 최적 모임 시간을 찾는 모습",
+    },
+    translations: {
+      en: {
+        title: "How to Find the Best Meeting Time for Groups: Schedule Finder Guide 2026",
+        summary: "Stop the endless 'when are you free?' messages. Learn how to coordinate group schedules instantly with a free visual time-polling tool.",
+        content: [
+          { type: "paragraph", text: "Trying to find a time when everyone is free is one of life's most tedious tasks. Whether it's a team dinner, a study group session, or a reunion with old friends, the process usually goes like this: someone asks 'When are you free?', everyone replies with slightly different formats, one person tries to compile the answers, and by the time a decision is made, three people have changed their availability." },
+          { type: "paragraph", text: "There has to be a better way — and there is. Schedule polling tools let everyone mark their available times visually, then automatically find the overlap. No more spreadsheet headaches, no more missed messages." },
+
+          { type: "heading", text: "Why Coordinating Schedules Is So Hard" },
+          { type: "paragraph", text: "Group scheduling breaks down for predictable reasons. With 3+ people, the number of possible time combinations explodes. Text-based communication (group chats, emails) forces someone to mentally parse everyone's availability. Responses come in at different times, some people forget to reply, and latecomers invalidate earlier decisions." },
+          { type: "list", items: [
+            "Message overload: With 6 people, you could have 15+ messages just to find one meeting time",
+            "Format inconsistency: 'I'm free after 3' vs 'anytime except Tuesday morning' vs 'check my Google Calendar'",
+            "Delayed responses: One slow replier holds up everyone else",
+            "Recency bias: People who reply last have disproportionate influence on the final choice",
+          ]},
+
+          { type: "heading", text: "Schedule Coordination Methods Compared" },
+          { type: "paragraph", text: "Let's compare the most popular approaches to group scheduling:" },
+          { type: "list", items: [
+            "Group chat poll: Easy to set up, but only supports date-level voting. No time-slot granularity. Gets buried in chat history.",
+            "Google Calendar: Powerful but requires everyone to have Google accounts and share calendars. Overkill for casual meetups.",
+            "When2Meet: The original time-polling tool. Functional but has a dated UI, poor mobile experience, and no sharing integrations.",
+            "Doodle: Feature-rich but pushes premium features aggressively. Can be confusing for simple use cases.",
+            "QuickFigure Schedule Finder: Modern UI, no signup, drag-to-select on mobile, KakaoTalk sharing, automatic best-time detection. Built for both casual and professional use.",
+          ]},
+
+          { type: "cta", tool: "schedule-finder", toolName: "Try Schedule Finder Now — Free, No Sign-up" },
+
+          { type: "heading", text: "How to Use QuickFigure's Schedule Finder" },
+          { type: "paragraph", text: "The entire process takes under a minute to set up:" },
+          { type: "list", items: [
+            "Step 1: Create a room — Enter the meeting name, your name, select candidate dates on the calendar, and set the time range (e.g., 9 AM to 10 PM)",
+            "Step 2: Share the link — Copy the generated link or room code and send it via any messaging app",
+            "Step 3: Everyone votes — Each participant clicks or drags on the time grid to mark when they're available",
+            "Step 4: View results — The heatmap shows availability overlap, and the top recommended times are listed automatically",
+          ]},
+
+          { type: "heading", text: "Use Case Scenarios" },
+          { type: "list", items: [
+            "Study groups: Coordinate weekly meeting times at the start of each semester",
+            "Team dinners: Find a date that works for the whole department",
+            "Club meetings: Schedule regular meetups without endless debate",
+            "Reunions: Pick a date for alumni gatherings across different cities and time zones",
+            "Interviews: Offer candidates multiple time slots and let them self-select",
+            "Freelancer meetings: Coordinate with clients across different schedules",
+          ]},
+
+          { type: "heading", text: "Tips for Effective Schedule Coordination" },
+          { type: "list", items: [
+            "Offer 3-5 candidate dates — too few limits options, too many causes decision fatigue",
+            "Set realistic time ranges — don't include times nobody would actually meet",
+            "Set a voting deadline — 'Please vote by tomorrow evening' dramatically improves response rates",
+            "Vote first yourself — seeing that someone already voted encourages others to participate",
+            "Send one reminder — a single follow-up message boosts completion rates by 40-60%",
+          ]},
+
+          { type: "cta", tool: "schedule-finder", toolName: "Start Scheduling Now — Find Your Best Time" },
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "Do I need to create an account?", answer: "No, QuickFigure Schedule Finder requires no signup. Just enter a nickname to create or join a room." },
+              { question: "How long does a room stay active?", answer: "Rooms remain active for 7 days after creation. This gives everyone enough time to vote while keeping the tool clean." },
+              { question: "Is there a limit on participants?", answer: "No. Anyone with the room code or link can join and vote, with no upper limit on the number of participants." },
+              { question: "Can I change my votes after submitting?", answer: "Yes, you can modify your availability and save again at any time while the room is active." },
+              { question: "Does it work on mobile?", answer: "Yes, the tool is fully responsive. You can drag to select times on both touchscreens and desktop." },
+            ],
+          },
+        ],
+      },
+      ko: {
+        title: "모임 시간 정하기 쉽게 하는 법 - 일정 조율 도구 완벽 가이드 2026",
+        summary: "카톡방에서 '언제 돼?' 메시지 폭탄은 이제 그만. 링크 하나로 모임 시간을 정하는 일정 조율 도구 사용법과 비교 가이드.",
+        content: [
+          { type: "paragraph", text: "\"언제 돼?\" \"나는 금요일 빼고 다 돼\" \"나는 수요일만 가능\" \"나는 저녁 7시 이후로\" — 단체 카톡방에서 일정 잡기를 해본 사람이라면 이 상황이 너무나 익숙할 것입니다. 3명만 넘어가면 메시지가 폭발하고, 누군가는 답장이 늦고, 결국 한 사람이 모든 답변을 정리해야 합니다." },
+          { type: "paragraph", text: "더 나은 방법이 있습니다. 일정 조율 도구를 사용하면 각자 가능한 시간을 시각적으로 선택하고, 자동으로 겹치는 시간을 찾아줍니다. 스프레드시트도, 메시지 정리도 필요 없습니다." },
+
+          { type: "heading", text: "모임 시간 정하기가 어려운 이유" },
+          { type: "paragraph", text: "그룹 일정 조율이 어려운 이유는 명확합니다. 사람이 3명만 넘어가도 가능한 시간 조합이 기하급수적으로 늘어납니다. 텍스트 기반 소통(카톡, 문자)은 누군가가 머릿속으로 모든 사람의 일정을 정리해야 합니다." },
+          { type: "list", items: [
+            "메시지 폭탄: 6명이면 시간 잡는 데만 메시지 15개 이상",
+            "형식 불일치: \"3시 이후 가능\" vs \"화요일 오전 빼고 다 됨\" vs \"캘린더 확인해볼게\"",
+            "답장 지연: 한 명만 늦어도 전체가 대기",
+            "나중에 답한 사람의 영향력: 마지막에 답한 사람이 결과를 좌우하는 불공정",
+          ]},
+
+          { type: "heading", text: "일정 조율 방법 비교" },
+          { type: "paragraph", text: "가장 많이 사용되는 일정 조율 방법들을 비교해봅시다." },
+          { type: "list", items: [
+            "카카오톡 투표: 설정 쉬움. 하지만 날짜만 가능, 시간대 세분화 불가. 대화에 묻히기 쉬움.",
+            "네이버 캘린더: 기능은 강력하지만 모두 네이버 계정이 필요. 개인 모임에는 과함.",
+            "When2Meet: 원조 시간 투표 도구. 하지만 영어 전용, UI 투박, 모바일에서 불편.",
+            "되는시간: 비즈니스에 특화. 개인 모임이나 가벼운 약속에는 기능이 과다.",
+            "QuickFigure 일정 맞추기: 한국어 완벽 지원, 깔끔한 UI, 가입 불필요, 카카오톡 공유, 자동 최적 시간 추천.",
+          ]},
+
+          { type: "cta", tool: "schedule-finder", toolName: "지금 일정 맞추기 시작하기 →" },
+
+          { type: "heading", text: "QuickFigure 일정 맞추기 사용법" },
+          { type: "paragraph", text: "설정부터 결과 확인까지 1분이면 충분합니다." },
+          { type: "list", items: [
+            "1단계: 방 만들기 — 모임 이름, 내 이름 입력 후 캘린더에서 후보 날짜 선택, 시간 범위 설정 (예: 오전 9시~밤 10시)",
+            "2단계: 링크 공유 — 생성된 링크나 6자리 방 코드를 카카오톡으로 공유",
+            "3단계: 시간 투표 — 참가자 각자 시간표에서 가능한 시간을 클릭 또는 드래그로 선택",
+            "4단계: 결과 확인 — 히트맵으로 겹치는 시간 시각화, TOP 5 추천 시간 자동 표시",
+          ]},
+
+          { type: "heading", text: "활용 시나리오" },
+          { type: "list", items: [
+            "대학생 조별과제: 학기 초 팀원들과 정기 회의 시간 맞추기",
+            "회사 팀 회식: 부서 전원이 가능한 날짜 찾기",
+            "동아리/동호회: 정기모임 날짜를 매달 투표로 결정",
+            "동창회/동문회: 여러 도시에 흩어진 친구들과 날짜 조율",
+            "소규모 미팅: 프리랜서-클라이언트 간 미팅 시간 조율",
+            "스터디 그룹: 시험 기간 스터디 일정 맞추기",
+          ]},
+
+          { type: "heading", text: "일정 조율 잘 하는 꿀팁" },
+          { type: "list", items: [
+            "후보 날짜는 3~5일이 적당 — 너무 적으면 선택지 부족, 너무 많으면 결정 장애",
+            "시간 범위는 현실적으로 — 실제 만날 수 있는 시간대만 포함",
+            "마감 기한 정하기 — \"내일 저녁까지 투표해주세요!\"라고 공지하면 참여율 급상승",
+            "먼저 투표하면 참여율 올라감 — 누군가 이미 투표한 걸 보면 나도 빨리 하게 됨",
+            "리마인더 한 번 보내기 — 한 번의 재촉 메시지로 완료율 40~60% 상승",
+          ]},
+
+          { type: "cta", tool: "schedule-finder", toolName: "지금 일정 맞추기 시작하기 →" },
+
+          {
+            type: "faq",
+            faqItems: [
+              { question: "가입해야 하나요?", answer: "아니요, QuickFigure 일정 맞추기는 회원가입이 필요 없습니다. 닉네임만 입력하면 바로 방을 만들거나 참가할 수 있습니다." },
+              { question: "방은 얼마나 유지되나요?", answer: "방은 생성 후 7일간 유지됩니다. 모두가 투표하기 충분한 시간이면서, 도구를 깨끗하게 유지합니다." },
+              { question: "몇 명까지 참가할 수 있나요?", answer: "인원 제한이 없습니다. 방 코드나 링크만 있으면 누구나 참가하고 투표할 수 있습니다." },
+              { question: "투표를 수정할 수 있나요?", answer: "네, 방이 활성화된 동안 언제든 가능한 시간을 다시 선택하고 저장할 수 있습니다." },
+              { question: "카카오톡으로 공유할 수 있나요?", answer: "네, 방을 만들면 카카오톡 공유 버튼이 바로 나타납니다. 링크 복사도 가능합니다." },
+            ],
+          },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "schedule-finder", name: { en: "Schedule Finder", ko: "일정 맞추기" } },
+      { slug: "dday-calculator", name: { en: "D-Day Calculator", ko: "디데이 계산기" } },
+      { slug: "world-clock", name: { en: "World Clock", ko: "세계 시간 변환기" } },
+    ],
+    relatedPosts: ["dday-guide", "world-clock-guide"],
   },
 ];
 
