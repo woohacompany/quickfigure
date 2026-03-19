@@ -128,10 +128,12 @@ export default function ScheduleFinderPage({
   const [hoveredSlot, setHoveredSlot] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [selectMode, setSelectMode] = useState(false); // mobile: false=scroll, true=drag-select
   const lastTouchedSlotRef = useRef<string | null>(null);
 
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const [showParticipants, setShowParticipants] = useState(false);
 
   // Check URL for room code on mount
   useEffect(() => {
@@ -644,87 +646,100 @@ export default function ScheduleFinderPage({
     const timeSlots = buildTimeSlots(room.time_range_start, room.time_range_end, room.time_slot_minutes);
     const results = computeResults();
     const maxParticipants = participants.length || 1;
+    // In scroll mode (mobile default), taps toggle cells; drag is disabled so scrolling works.
+    // In select mode (toggle button), touch-action:none enables drag selection.
+    const isInteractive = !showResults;
+    const dragEnabled = selectMode && isInteractive;
 
     return (
       <div className="overflow-x-auto -mx-4 px-4">
-        <div className="min-w-[400px]">
-          {/* Header: Dates */}
-          <div className="flex">
-            <div className="w-14 shrink-0" />
-            {room.dates.map(date => (
-              <div key={date} className="flex-1 text-center text-xs font-medium py-2 min-w-[52px]">
-                {formatDateLabel(date, locale)}
-              </div>
-            ))}
-          </div>
-
-          {/* Grid */}
-          <div
-            ref={gridRef}
-            className="select-none"
-            style={{ touchAction: showResults ? "auto" : "none" }}
-            onMouseLeave={() => setHoveredSlot(null)}
-            onTouchMove={showResults ? undefined : handleGridTouchMove}
-          >
-            {timeSlots.map(time => (
-              <div key={time} className="flex">
-                <div className="w-14 shrink-0 text-xs text-neutral-500 dark:text-neutral-400 pr-2 text-right leading-[44px]">
-                  {time}
+        {/* Scrollable container: max-height on mobile so grid doesn't push everything down */}
+        <div className="md:max-h-none max-h-[60vh] overflow-y-auto overscroll-contain rounded-lg border border-neutral-200 dark:border-neutral-700">
+          <div className="min-w-[320px]">
+            {/* Header: Dates - sticky */}
+            <div className="flex sticky top-0 z-20 bg-white dark:bg-neutral-900">
+              <div className="w-12 md:w-14 shrink-0" />
+              {room.dates.map(date => (
+                <div key={date} className="flex-1 text-center text-[10px] md:text-xs font-medium py-1.5 md:py-2 min-w-[44px] md:min-w-[52px] border-b border-neutral-200 dark:border-neutral-700">
+                  {formatDateLabel(date, locale)}
                 </div>
-                {room.dates.map(date => {
-                  const key = slotKey(date, time);
-                  const isMySelected = mySelections.has(key);
-                  const result = results.find(r => r.key === key);
-                  const count = result?.count ?? 0;
-                  const ratio = count / maxParticipants;
+              ))}
+            </div>
 
-                  if (showResults) {
-                    const bgOpacity = count === 0 ? 0 : 0.15 + ratio * 0.85;
-                    const isAll = count === maxParticipants && count > 0;
+            {/* Grid */}
+            <div
+              ref={gridRef}
+              className="select-none"
+              style={{ touchAction: dragEnabled ? "none" : "auto" }}
+              onMouseLeave={() => setHoveredSlot(null)}
+              onTouchMove={dragEnabled ? handleGridTouchMove : undefined}
+            >
+              {timeSlots.map(time => (
+                <div key={time} className="flex">
+                  <div className="w-12 md:w-14 shrink-0 text-[10px] md:text-xs text-neutral-500 dark:text-neutral-400 pr-1 md:pr-2 text-right leading-[32px] md:leading-[36px]">
+                    {time}
+                  </div>
+                  {room.dates.map(date => {
+                    const key = slotKey(date, time);
+                    const isMySelected = mySelections.has(key);
+                    const result = results.find(r => r.key === key);
+                    const count = result?.count ?? 0;
+                    const ratio = count / maxParticipants;
+
+                    if (showResults) {
+                      const bgOpacity = count === 0 ? 0 : 0.15 + ratio * 0.85;
+                      const isAll = count === maxParticipants && count > 0;
+                      return (
+                        <div
+                          key={key}
+                          className={`flex-1 min-w-[44px] md:min-w-[52px] h-8 md:h-9 border border-neutral-200 dark:border-neutral-700 relative group transition-colors ${
+                            isAll ? "ring-1 ring-blue-500" : ""
+                          }`}
+                          style={{
+                            backgroundColor: count > 0 ? `rgba(34, 197, 94, ${bgOpacity})` : undefined,
+                          }}
+                          onMouseEnter={() => setHoveredSlot(key)}
+                          onMouseLeave={() => setHoveredSlot(null)}
+                        >
+                          {count > 0 && (
+                            <span className="absolute inset-0 flex items-center justify-center text-[10px] md:text-xs font-semibold text-green-900 dark:text-green-100">
+                              {count}
+                            </span>
+                          )}
+                          {hoveredSlot === key && result && result.names.length > 0 && (
+                            <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 rounded bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-[10px] whitespace-nowrap shadow-lg pointer-events-none">
+                              {isKo ? "가능: " : "Available: "}{result.names.join(", ")} ({count}/{maxParticipants})
+                            </div>
+                          )}
+                        </div>
+                      );
+                    }
+
                     return (
                       <div
                         key={key}
-                        className={`flex-1 min-w-[52px] h-11 border border-neutral-200 dark:border-neutral-700 relative group transition-colors ${
-                          isAll ? "ring-1 ring-blue-500" : ""
+                        className={`flex-1 min-w-[44px] md:min-w-[52px] h-8 md:h-9 border cursor-pointer transition-colors ${
+                          isMySelected
+                            ? "bg-blue-500 border-blue-400"
+                            : "border-neutral-200 dark:border-neutral-700 hover:bg-blue-50 dark:hover:bg-blue-950"
                         }`}
-                        style={{
-                          backgroundColor: count > 0 ? `rgba(34, 197, 94, ${bgOpacity})` : undefined,
-                        }}
-                        onMouseEnter={() => setHoveredSlot(key)}
-                        onMouseLeave={() => setHoveredSlot(null)}
-                      >
-                        {count > 0 && (
-                          <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-green-900 dark:text-green-100">
-                            {count}
-                          </span>
-                        )}
-                        {/* Tooltip */}
-                        {hoveredSlot === key && result && result.names.length > 0 && (
-                          <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-1 rounded bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 text-[10px] whitespace-nowrap shadow-lg pointer-events-none">
-                            {isKo ? "가능: " : "Available: "}{result.names.join(", ")} ({count}/{maxParticipants})
-                          </div>
-                        )}
-                      </div>
+                        onMouseDown={(e) => { e.preventDefault(); handleCellDown(key); }}
+                        onMouseEnter={() => handleCellEnter(key)}
+                        onTouchStart={dragEnabled ? () => { handleCellDown(key); } : undefined}
+                        onClick={!dragEnabled && isInteractive ? () => {
+                          setMySelections(prev => {
+                            const next = new Set(prev);
+                            next.has(key) ? next.delete(key) : next.add(key);
+                            return next;
+                          });
+                        } : undefined}
+                        data-slot={key}
+                      />
                     );
-                  }
-
-                  return (
-                    <div
-                      key={key}
-                      className={`flex-1 min-w-[52px] h-11 border cursor-pointer transition-colors ${
-                        isMySelected
-                          ? "bg-blue-500 border-blue-400"
-                          : "border-neutral-200 dark:border-neutral-700 hover:bg-blue-50 dark:hover:bg-blue-950"
-                      }`}
-                      onMouseDown={(e) => { e.preventDefault(); handleCellDown(key); }}
-                      onMouseEnter={() => handleCellEnter(key)}
-                      onTouchStart={() => { handleCellDown(key); }}
-                      data-slot={key}
-                    />
-                  );
-                })}
-              </div>
-            ))}
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -978,43 +993,41 @@ export default function ScheduleFinderPage({
       {/* STEP 3: Vote */}
       {step === "vote" && room && (
         <div className="space-y-6">
-          {/* Room Info Bar */}
+          {/* Room Info Bar - compact on mobile */}
           <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
-            <div className="p-4 bg-neutral-50 dark:bg-neutral-800">
-              <h2 className="font-semibold text-lg truncate">{room.title}</h2>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-                {isKo ? `${room.creator_name}님이 생성` : `Created by ${room.creator_name}`}
-                {" · "}
-                {participants.length}{isKo ? "명 참가" : " participant(s)"}
-              </p>
+            <div className="p-3 md:p-4 bg-neutral-50 dark:bg-neutral-800 flex items-center gap-3">
+              <div className="flex-1 min-w-0">
+                <h2 className="font-semibold text-sm md:text-lg truncate">{room.title}</h2>
+                <p className="text-[11px] md:text-xs text-neutral-500 dark:text-neutral-400">
+                  {isKo ? `${room.creator_name}님` : room.creator_name}
+                  {" · "}
+                  {participants.length}{isKo ? "명" : "p"}
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-700 rounded-md px-2.5 py-1.5 md:px-4 md:py-2.5">
+                <span className="font-mono text-sm md:text-xl font-bold tracking-[0.15em] md:tracking-[0.2em]">{room.room_code}</span>
+              </div>
             </div>
-            <div className="p-4 flex flex-col sm:flex-row items-center gap-3">
-              {/* Room code prominent display */}
-              <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg px-4 py-2.5">
-                <span className="text-xs text-neutral-500 dark:text-neutral-400">{isKo ? "방 코드" : "Code"}</span>
-                <span className="font-mono text-xl font-bold tracking-[0.2em]">{room.room_code}</span>
-              </div>
-              <div className="flex gap-2 flex-wrap justify-center sm:justify-start">
-                <button onClick={copyLink} className={btnSecondary}>
-                  {copied ? (isKo ? "복사됨!" : "Copied!") : (isKo ? "링크 복사" : "Copy Link")}
+            <div className="px-3 py-2 md:p-4 flex gap-2 flex-wrap">
+              <button onClick={copyLink} className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 text-xs md:text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer">
+                {copied ? (isKo ? "복사됨!" : "Copied!") : (isKo ? "링크 복사" : "Copy Link")}
+              </button>
+              {isKo && (
+                <button onClick={shareKakao} className="inline-flex items-center gap-1 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#FEE500] text-[#191919] text-xs md:text-sm font-medium hover:bg-[#FDD800] transition-colors cursor-pointer">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.687 1.747 5.049 4.387 6.394l-.913 3.37a.3.3 0 0 0 .458.33l3.918-2.592c.68.097 1.38.148 2.09.148h.06C17.523 18.341 22 14.879 22 10.691 22 6.463 17.523 3 12 3" />
+                  </svg>
+                  카카오톡
                 </button>
-                {isKo && (
-                  <button onClick={shareKakao} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#FEE500] text-[#191919] text-sm font-medium hover:bg-[#FDD800] transition-colors cursor-pointer">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.687 1.747 5.049 4.387 6.394l-.913 3.37a.3.3 0 0 0 .458.33l3.918-2.592c.68.097 1.38.148 2.09.148h.06C17.523 18.341 22 14.879 22 10.691 22 6.463 17.523 3 12 3" />
-                    </svg>
-                    카카오톡 공유
-                  </button>
-                )}
-              </div>
+              )}
             </div>
           </div>
 
           {/* Toggle: My Vote / Results */}
-          <div className="flex gap-2">
+          <div className="flex gap-1.5 md:gap-2">
             <button
               onClick={() => setShowResults(false)}
-              className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              className={`flex-1 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-medium transition-colors cursor-pointer ${
                 !showResults ? "bg-blue-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
               }`}
             >
@@ -1022,19 +1035,35 @@ export default function ScheduleFinderPage({
             </button>
             <button
               onClick={() => setShowResults(true)}
-              className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+              className={`flex-1 py-2 md:py-2.5 rounded-lg text-xs md:text-sm font-medium transition-colors cursor-pointer ${
                 showResults ? "bg-blue-600 text-white" : "bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400"
               }`}
             >
-              {isKo ? "결과 보기" : "View Results"} ({participants.length})
+              {isKo ? "결과 보기" : "Results"} ({participants.length})
             </button>
           </div>
 
-          {/* Grid */}
+          {/* Select mode toggle + hint (my vote only) */}
           {!showResults && (
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
-              {isKo ? "가능한 시간을 클릭하거나 드래그하세요. 다시 클릭하면 해제됩니다." : "Click or drag to select available times. Click again to deselect."}
-            </p>
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                onClick={() => setSelectMode(prev => !prev)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors cursor-pointer ${
+                  selectMode
+                    ? "bg-blue-600 text-white border-blue-600"
+                    : "border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                }`}
+              >
+                {selectMode
+                  ? (isKo ? "📜 스크롤 모드" : "📜 Scroll Mode")
+                  : (isKo ? "✏️ 드래그 선택" : "✏️ Drag Select")}
+              </button>
+              <span className="text-[11px] text-neutral-500 dark:text-neutral-400">
+                {selectMode
+                  ? (isKo ? "드래그로 여러 셀 선택. 스크롤 비활성." : "Drag to select multiple cells. Scrolling disabled.")
+                  : (isKo ? "탭으로 셀 선택/해제. 스크롤 가능." : "Tap cells to toggle. Scrolling enabled.")}
+              </span>
+            </div>
           )}
           {renderVotingGrid()}
 
@@ -1071,19 +1100,19 @@ export default function ScheduleFinderPage({
                   </button>
                 )}
               </div>
-              {/* Participants List */}
-              <div className="mt-4">
-                <p className="text-xs font-semibold text-neutral-600 dark:text-neutral-400 mb-2">
+              {/* Participants List - collapsible */}
+              <details className="mt-4" open={showParticipants} onToggle={(e) => setShowParticipants((e.target as HTMLDetailsElement).open)}>
+                <summary className="text-xs font-semibold text-neutral-600 dark:text-neutral-400 cursor-pointer select-none">
                   {isKo ? "참가자" : "Participants"} ({participants.length})
-                </p>
-                <div className="flex flex-wrap gap-1.5">
+                </summary>
+                <div className="flex flex-wrap gap-1.5 mt-2">
                   {participants.map(p => (
                     <span key={p.id} className="px-2 py-1 rounded bg-neutral-100 dark:bg-neutral-800 text-xs">
                       {p.nickname}
                     </span>
                   ))}
                 </div>
-              </div>
+              </details>
             </div>
           )}
         </div>
