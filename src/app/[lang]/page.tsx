@@ -174,6 +174,7 @@ export default async function HomePage({
         { name: t.home.gpaCalc, description: t.home.gpaCalcDesc, href: `/${lang}/tools/gpa-calculator`, tags: getToolTags("gpa-calculator") },
         { name: t.home.timer, description: t.home.timerDesc, href: `/${lang}/tools/timer`, tags: getToolTags("timer") },
         { name: t.home.worldClock, description: t.home.worldClockDesc, href: `/${lang}/tools/world-clock`, tags: getToolTags("world-clock") },
+        { name: t.home.scheduleFinder, description: t.home.scheduleFinderDesc, href: `/${lang}/tools/schedule-finder`, tags: getToolTags("schedule-finder") },
       ],
     },
     {

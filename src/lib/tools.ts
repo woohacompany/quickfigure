@@ -72,4 +72,5 @@ export const TOOL_SLUGS = [
   "image-to-svg",
   "world-clock",
   "ladder-game",
+  "schedule-finder",
 ] as const;
