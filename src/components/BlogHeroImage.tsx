@@ -92,14 +92,39 @@ export default function BlogHeroImage({
   category,
   alt,
   size = "large",
+  heroImage,
 }: {
   category: BlogCategory;
   alt: string;
   size?: "large" | "small";
+  heroImage?: string;
 }) {
   const config = categoryConfig[category];
-  const heightClass = size === "large" ? "h-48 sm:h-64" : "h-40";
+  const heightClass = size === "large" ? "h-56 sm:h-72" : "h-44";
+  const imgSize = size === "large" ? "w=800&q=80" : "w=400&q=80";
 
+  // Unsplash photo mode
+  if (heroImage) {
+    const src = `${heroImage}?${imgSize}&auto=format&fit=crop`;
+    return (
+      <div
+        className={`w-full ${heightClass} rounded-lg relative overflow-hidden`}
+        role="img"
+        aria-label={alt}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
+      </div>
+    );
+  }
+
+  // Fallback: gradient + icon
   return (
     <div
       className={`w-full ${heightClass} rounded-lg bg-gradient-to-br ${config.gradient} flex items-center justify-center relative overflow-hidden`}

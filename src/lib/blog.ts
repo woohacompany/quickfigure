@@ -1,4 +1,5 @@
 import type { Locale } from "./dictionaries";
+import { blogHeroImages } from "./blog-hero-images";
 
 export type BlogCategory = "text-tools" | "developer-tools" | "generators" | "finance" | "lifestyle" | "utility";
 
@@ -18,6 +19,7 @@ export interface BlogPost {
   category: BlogCategory;
   date: string;
   readingTime: number;
+  heroImage?: string;
   thumbnailAlt: { en: string; ko: string };
   translations: {
     en: { title: string; summary: string; content: ContentBlock[] };
@@ -9790,6 +9792,12 @@ export const blogPosts: BlogPost[] = [
     relatedPosts: ["dday-guide", "world-clock-guide"],
   },
 ];
+
+// Apply hero images from mapping
+for (const post of blogPosts) {
+  const img = blogHeroImages[post.slug];
+  if (img) post.heroImage = img;
+}
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
