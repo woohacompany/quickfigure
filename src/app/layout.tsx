@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     description: "Free online tools for text analysis, counting, and more.",
     url: "https://quickfigure.com",
   },
+  other: {
+    "naver-site-verification": "3c02b83df67a4cd6c4ce2016bef7e406bc2418d1",
+  },
 };
 
 export default function RootLayout({
