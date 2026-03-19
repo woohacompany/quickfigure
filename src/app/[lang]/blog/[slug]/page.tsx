@@ -5,6 +5,7 @@ import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import {
   blogPosts,
   getPostBySlug,
+  getPostOgImage,
   categoryLabels,
   type ContentBlock,
 } from "@/lib/blog";
@@ -29,6 +30,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   const tr = post.translations[lang];
+  const ogImage = getPostOgImage(slug);
   return {
     title: tr.title + " | QuickFigure",
     description: tr.summary,
@@ -41,6 +43,14 @@ export async function generateMetadata({
       description: tr.summary,
       type: "article",
       publishedTime: post.date,
+      images: [
+        {
+          url: `https://quickfigure.net${ogImage}`,
+          width: 1200,
+          height: 630,
+          alt: post.thumbnailAlt[lang],
+        },
+      ],
     },
   };
 }

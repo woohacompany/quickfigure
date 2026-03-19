@@ -154,6 +154,18 @@ export function getPostTags(slug: string): BlogTag[] {
   return blogTagMapping[slug] ?? ["tool-guide"];
 }
 
+const blogTagOgImage: Record<BlogTag, string> = {
+  "tool-guide": "/images/blog/tool-guide-og.svg",
+  "finance-tax": "/images/blog/finance-og.svg",
+  "image-file": "/images/blog/image-file-og.svg",
+  lifestyle: "/images/blog/lifestyle-og.svg",
+};
+
+export function getPostOgImage(slug: string): string {
+  const tags = getPostTags(slug);
+  return blogTagOgImage[tags[0]] ?? blogTagOgImage["tool-guide"];
+}
+
 function sortByDateDesc(posts: BlogPost[]): BlogPost[] {
   return [...posts].sort((a, b) => b.date.localeCompare(a.date));
 }
