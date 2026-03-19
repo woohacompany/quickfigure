@@ -128,8 +128,10 @@ export default function ScheduleFinderPage({
   const [hoveredSlot, setHoveredSlot] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const lastTouchedSlotRef = useRef<string | null>(null);
 
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   // Check URL for room code on mount
   useEffect(() => {
@@ -409,6 +411,7 @@ export default function ScheduleFinderPage({
   /* ── Voting Grid Drag ── */
   const handleCellDown = useCallback((key: string) => {
     setIsDragging(true);
+    lastTouchedSlotRef.current = key;
     const willSelect = !mySelections.has(key);
     setDragMode(willSelect);
     setMySelections(prev => {
@@ -420,6 +423,8 @@ export default function ScheduleFinderPage({
 
   const handleCellEnter = useCallback((key: string) => {
     if (!isDragging) return;
+    if (lastTouchedSlotRef.current === key) return;
+    lastTouchedSlotRef.current = key;
     setMySelections(prev => {
       const next = new Set(prev);
       dragMode ? next.add(key) : next.delete(key);
@@ -429,7 +434,18 @@ export default function ScheduleFinderPage({
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
+    lastTouchedSlotRef.current = null;
   }, []);
+
+  // Touch move handler for grid - finds cell under finger
+  const handleGridTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const el = document.elementFromPoint(touch.clientX, touch.clientY);
+    const cellKey = el?.getAttribute("data-slot");
+    if (cellKey) handleCellEnter(cellKey);
+  }, [isDragging, handleCellEnter]);
 
   useEffect(() => {
     window.addEventListener("mouseup", handleMouseUp);
@@ -511,18 +527,29 @@ export default function ScheduleFinderPage({
   };
 
   /* ── Copy Link ── */
+  const getRoomShareUrl = () =>
+    room ? `${window.location.origin}/${lang}/tools/schedule-finder?code=${room.room_code}` : "";
+
+  const getRichShareText = () => {
+    if (!room) return "";
+    const url = getRoomShareUrl();
+    return isKo
+      ? `${room.creator_name}님이 '${room.title}' 일정을 만들었어요!\n방 코드: ${room.room_code}\n지금 참여하기: ${url}`
+      : `${room.creator_name} created "${room.title}" schedule!\nRoom code: ${room.room_code}\nJoin now: ${url}`;
+  };
+
   const copyLink = async () => {
     if (!room) return;
-    const url = `${window.location.origin}/${lang}/tools/schedule-finder?code=${room.room_code}`;
+    const text = getRichShareText();
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(text);
     } catch {
-      const input = document.createElement("input");
-      input.value = url;
-      document.body.appendChild(input);
-      input.select();
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
       document.execCommand("copy");
-      document.body.removeChild(input);
+      document.body.removeChild(ta);
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -555,16 +582,22 @@ export default function ScheduleFinderPage({
     if (!w.__KAKAO_READY__ && w.__KAKAO_INIT__) w.__KAKAO_INIT__();
     if (!w.Kakao || !w.Kakao.isInitialized()) return;
 
-    const url = `${window.location.origin}/${lang}/tools/schedule-finder?code=${room.room_code}`;
+    const url = getRoomShareUrl();
+    const kakaoTitle = isKo
+      ? `${room.title} 일정 투표`
+      : `${room.title} - Schedule Poll`;
+    const kakaoDesc = isKo
+      ? `${room.creator_name}님이 일정을 만들었습니다. 지금 참여하세요!\n방 코드: ${room.room_code}`
+      : `${room.creator_name} created a schedule poll. Join now!\nRoom code: ${room.room_code}`;
     w.Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: room.title,
-        description: isKo ? "가능한 시간을 투표해주세요!" : "Vote your available times!",
+        title: kakaoTitle,
+        description: kakaoDesc,
         imageUrl: `${window.location.origin}/og-image.png`,
         link: { mobileWebUrl: url, webUrl: url },
       },
-      buttons: [{ title: isKo ? "투표하기" : "Vote Now", link: { mobileWebUrl: url, webUrl: url } }],
+      buttons: [{ title: isKo ? "일정 참여하기" : "Join Schedule", link: { mobileWebUrl: url, webUrl: url } }],
     });
   };
 
@@ -617,9 +650,9 @@ export default function ScheduleFinderPage({
         <div className="min-w-[400px]">
           {/* Header: Dates */}
           <div className="flex">
-            <div className="w-16 shrink-0" />
+            <div className="w-14 shrink-0" />
             {room.dates.map(date => (
-              <div key={date} className="flex-1 text-center text-xs font-medium py-2 min-w-[60px]">
+              <div key={date} className="flex-1 text-center text-xs font-medium py-2 min-w-[52px]">
                 {formatDateLabel(date, locale)}
               </div>
             ))}
@@ -627,12 +660,15 @@ export default function ScheduleFinderPage({
 
           {/* Grid */}
           <div
+            ref={gridRef}
             className="select-none"
+            style={{ touchAction: showResults ? "auto" : "none" }}
             onMouseLeave={() => setHoveredSlot(null)}
+            onTouchMove={showResults ? undefined : handleGridTouchMove}
           >
             {timeSlots.map(time => (
               <div key={time} className="flex">
-                <div className="w-16 shrink-0 text-xs text-neutral-500 dark:text-neutral-400 py-1 pr-2 text-right leading-[28px]">
+                <div className="w-14 shrink-0 text-xs text-neutral-500 dark:text-neutral-400 pr-2 text-right leading-[44px]">
                   {time}
                 </div>
                 {room.dates.map(date => {
@@ -648,7 +684,7 @@ export default function ScheduleFinderPage({
                     return (
                       <div
                         key={key}
-                        className={`flex-1 min-w-[60px] h-7 border border-neutral-200 dark:border-neutral-700 relative group transition-colors ${
+                        className={`flex-1 min-w-[52px] h-11 border border-neutral-200 dark:border-neutral-700 relative group transition-colors ${
                           isAll ? "ring-1 ring-blue-500" : ""
                         }`}
                         style={{
@@ -658,7 +694,7 @@ export default function ScheduleFinderPage({
                         onMouseLeave={() => setHoveredSlot(null)}
                       >
                         {count > 0 && (
-                          <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-green-900 dark:text-green-100">
+                          <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-green-900 dark:text-green-100">
                             {count}
                           </span>
                         )}
@@ -675,20 +711,14 @@ export default function ScheduleFinderPage({
                   return (
                     <div
                       key={key}
-                      className={`flex-1 min-w-[60px] h-7 border cursor-pointer transition-colors ${
+                      className={`flex-1 min-w-[52px] h-11 border cursor-pointer transition-colors ${
                         isMySelected
                           ? "bg-blue-500 border-blue-400"
                           : "border-neutral-200 dark:border-neutral-700 hover:bg-blue-50 dark:hover:bg-blue-950"
                       }`}
                       onMouseDown={(e) => { e.preventDefault(); handleCellDown(key); }}
                       onMouseEnter={() => handleCellEnter(key)}
-                      onTouchStart={(e) => { e.preventDefault(); handleCellDown(key); }}
-                      onTouchMove={(e) => {
-                        const touch = e.touches[0];
-                        const el = document.elementFromPoint(touch.clientX, touch.clientY);
-                        const cellKey = el?.getAttribute("data-slot");
-                        if (cellKey) handleCellEnter(cellKey);
-                      }}
+                      onTouchStart={() => { handleCellDown(key); }}
                       data-slot={key}
                     />
                   );
@@ -834,7 +864,7 @@ export default function ScheduleFinderPage({
                   type="text"
                   value={creatorName}
                   onChange={e => setCreatorName(e.target.value)}
-                  placeholder={isKo ? "예: 석준" : "e.g., John"}
+                  placeholder={isKo ? "예: 유진" : "e.g., Eugene"}
                   className={inputClass}
                   maxLength={20}
                 />
@@ -934,7 +964,7 @@ export default function ScheduleFinderPage({
               type="text"
               value={joinName}
               onChange={e => setJoinName(e.target.value)}
-              placeholder={isKo ? "예: 현우" : "e.g., Jane"}
+              placeholder={isKo ? "예: 유진" : "e.g., Eugene"}
               className={inputClass}
               maxLength={20}
             />
@@ -949,24 +979,35 @@ export default function ScheduleFinderPage({
       {step === "vote" && room && (
         <div className="space-y-6">
           {/* Room Info Bar */}
-          <div className="flex flex-wrap items-center gap-3 p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800">
-            <div className="flex-1 min-w-0">
-              <h2 className="font-semibold truncate">{room.title}</h2>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                {isKo ? "방 코드: " : "Code: "}
-                <span className="font-mono font-bold">{room.room_code}</span>
+          <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+            <div className="p-4 bg-neutral-50 dark:bg-neutral-800">
+              <h2 className="font-semibold text-lg truncate">{room.title}</h2>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+                {isKo ? `${room.creator_name}님이 생성` : `Created by ${room.creator_name}`}
                 {" · "}
                 {participants.length}{isKo ? "명 참가" : " participant(s)"}
               </p>
             </div>
-            <button onClick={copyLink} className={btnSecondary}>
-              {copied ? (isKo ? "복사됨!" : "Copied!") : (isKo ? "링크 복사" : "Copy Link")}
-            </button>
-            {isKo && (
-              <button onClick={shareKakao} className="px-4 py-2 rounded-lg bg-[#FEE500] text-[#191919] text-sm font-medium hover:bg-[#FDD800] transition-colors cursor-pointer">
-                카카오톡 공유
-              </button>
-            )}
+            <div className="p-4 flex flex-col sm:flex-row items-center gap-3">
+              {/* Room code prominent display */}
+              <div className="flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg px-4 py-2.5">
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">{isKo ? "방 코드" : "Code"}</span>
+                <span className="font-mono text-xl font-bold tracking-[0.2em]">{room.room_code}</span>
+              </div>
+              <div className="flex gap-2 flex-wrap justify-center sm:justify-start">
+                <button onClick={copyLink} className={btnSecondary}>
+                  {copied ? (isKo ? "복사됨!" : "Copied!") : (isKo ? "링크 복사" : "Copy Link")}
+                </button>
+                {isKo && (
+                  <button onClick={shareKakao} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#FEE500] text-[#191919] text-sm font-medium hover:bg-[#FDD800] transition-colors cursor-pointer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.687 1.747 5.049 4.387 6.394l-.913 3.37a.3.3 0 0 0 .458.33l3.918-2.592c.68.097 1.38.148 2.09.148h.06C17.523 18.341 22 14.879 22 10.691 22 6.463 17.523 3 12 3" />
+                    </svg>
+                    카카오톡 공유
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
           {/* Toggle: My Vote / Results */}
