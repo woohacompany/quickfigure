@@ -15,7 +15,22 @@ function getLocale(request: NextRequest): string {
 }
 
 export function middleware(request: NextRequest) {
+  const host = request.headers.get("host") || "";
   const { pathname } = request.nextUrl;
+
+  // non-www → www 301 redirect (single hop, includes locale)
+  if (host === "quickfigure.net") {
+    const hasLocale = locales.some(
+      (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    );
+    let dest = pathname;
+    if (!hasLocale && !pathname.startsWith("/_next") && !pathname.startsWith("/api") && !pathname.includes(".")) {
+      const locale = getLocale(request);
+      dest = `/${locale}${pathname}`;
+    }
+    const url = new URL(`https://www.quickfigure.net${dest}${request.nextUrl.search}`);
+    return NextResponse.redirect(url, 301);
+  }
 
   const hasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
