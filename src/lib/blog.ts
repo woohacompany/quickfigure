@@ -19,7 +19,7 @@ export interface BlogPost {
   category: BlogCategory;
   date: string;
   readingTime: number;
-  heroImage?: string;
+  heroImages?: string[];
   thumbnailAlt: { en: string; ko: string };
   translations: {
     en: { title: string; summary: string; content: ContentBlock[] };
@@ -9795,8 +9795,8 @@ export const blogPosts: BlogPost[] = [
 
 // Apply hero images from mapping
 for (const post of blogPosts) {
-  const img = blogHeroImages[post.slug];
-  if (img) post.heroImage = img;
+  const imgs = blogHeroImages[post.slug];
+  if (imgs) post.heroImages = imgs;
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

@@ -30,8 +30,8 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   const tr = post.translations[lang];
-  const ogImageUrl = post.heroImage
-    ? `${post.heroImage}?w=1200&h=630&q=80&auto=format&fit=crop`
+  const ogImageUrl = post.heroImages?.[0]
+    ? `${post.heroImages[0]}?w=1200&h=630&q=80&auto=format&fit=crop`
     : `https://quickfigure.net${getPostOgImage(slug)}`;
   return {
     title: tr.title + " | QuickFigure",
@@ -239,7 +239,7 @@ export default async function BlogPostPage({
           </header>
 
           <div className="mb-8">
-            <BlogHeroImage category={post.category} alt={post.thumbnailAlt[locale]} size="large" heroImage={post.heroImage} />
+            <BlogHeroImage category={post.category} alt={post.thumbnailAlt[locale]} size="large" heroImages={post.heroImages} />
           </div>
 
           {/* Ad placeholder */}

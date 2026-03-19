@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useState, type ReactNode } from "react";
 import type { BlogCategory } from "@/lib/blog";
 
 const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }> = {
@@ -40,9 +42,6 @@ const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }
         <path d="M60 20 L66 42 L88 42 L70 56 L76 78 L60 64 L44 78 L50 56 L32 42 L54 42 Z" fill="white" fillOpacity="0.25" />
         <circle cx="60" cy="60" r="30" stroke="white" strokeOpacity="0.3" strokeWidth="2" fill="none" />
         <circle cx="60" cy="60" r="20" stroke="white" strokeOpacity="0.2" strokeWidth="2" fill="none" strokeDasharray="4 4" />
-        <circle cx="85" cy="30" r="5" fill="white" fillOpacity="0.15" />
-        <circle cx="30" cy="85" r="8" fill="white" fillOpacity="0.1" />
-        <circle cx="90" cy="80" r="4" fill="white" fillOpacity="0.15" />
       </svg>
     ),
   },
@@ -56,7 +55,6 @@ const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }
         <rect x="74" y="35" width="14" height="70" rx="2" fill="white" fillOpacity="0.6" />
         <rect x="92" y="20" width="14" height="85" rx="2" fill="white" fillOpacity="0.7" />
         <path d="M22 80 Q45 55 60 50 Q80 40 100 20" stroke="white" strokeOpacity="0.8" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <circle cx="100" cy="20" r="4" fill="white" fillOpacity="0.9" />
       </svg>
     ),
   },
@@ -69,8 +67,6 @@ const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }
         <rect x="65" y="42" width="20" height="20" rx="4" fill="white" fillOpacity="0.25" />
         <rect x="35" y="68" width="20" height="12" rx="4" fill="white" fillOpacity="0.2" />
         <rect x="65" y="68" width="20" height="12" rx="4" fill="white" fillOpacity="0.35" />
-        <circle cx="45" cy="52" r="5" fill="white" fillOpacity="0.5" />
-        <path d="M72 48 L78 48 L75 54 Z" fill="white" fillOpacity="0.5" />
       </svg>
     ),
   },
@@ -80,51 +76,21 @@ const categoryConfig: Record<BlogCategory, { gradient: string; icon: ReactNode }
       <svg viewBox="0 0 120 120" fill="none" className="w-20 h-20 sm:w-28 sm:h-28">
         <path d="M60 95 C25 70 10 50 10 35 C10 20 22 10 37 10 C47 10 55 16 60 25 C65 16 73 10 83 10 C98 10 110 20 110 35 C110 50 95 70 60 95Z" fill="white" fillOpacity="0.2" stroke="white" strokeOpacity="0.4" strokeWidth="2" />
         <circle cx="60" cy="52" r="15" stroke="white" strokeOpacity="0.4" strokeWidth="2" fill="none" />
-        <circle cx="60" cy="48" r="5" fill="white" fillOpacity="0.3" />
-        <line x1="60" y1="55" x2="60" y2="67" stroke="white" strokeOpacity="0.3" strokeWidth="2" />
-        <line x1="52" y1="60" x2="68" y2="60" stroke="white" strokeOpacity="0.3" strokeWidth="2" />
       </svg>
     ),
   },
 };
 
-export default function BlogHeroImage({
+function GradientFallback({
   category,
   alt,
-  size = "large",
-  heroImage,
+  heightClass,
 }: {
   category: BlogCategory;
   alt: string;
-  size?: "large" | "small";
-  heroImage?: string;
+  heightClass: string;
 }) {
   const config = categoryConfig[category];
-  const heightClass = size === "large" ? "h-56 sm:h-72" : "h-44";
-  const imgSize = size === "large" ? "w=800&q=80" : "w=400&q=80";
-
-  // Unsplash photo mode
-  if (heroImage) {
-    const src = `${heroImage}?${imgSize}&auto=format&fit=crop`;
-    return (
-      <div
-        className={`w-full ${heightClass} rounded-lg relative overflow-hidden`}
-        role="img"
-        aria-label={alt}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={src}
-          alt={alt}
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
-      </div>
-    );
-  }
-
-  // Fallback: gradient + icon
   return (
     <div
       className={`w-full ${heightClass} rounded-lg bg-gradient-to-br ${config.gradient} flex items-center justify-center relative overflow-hidden`}
@@ -136,6 +102,55 @@ export default function BlogHeroImage({
         <div className="absolute bottom-4 right-4 w-32 h-32 rounded-full bg-white blur-3xl" />
       </div>
       <div className="relative z-10">{config.icon}</div>
+    </div>
+  );
+}
+
+export default function BlogHeroImage({
+  category,
+  alt,
+  size = "large",
+  heroImages,
+}: {
+  category: BlogCategory;
+  alt: string;
+  size?: "large" | "small";
+  heroImages?: string[];
+}) {
+  const [imgIndex, setImgIndex] = useState(0);
+  const [useFallback, setUseFallback] = useState(false);
+
+  const heightClass = size === "large" ? "h-56 sm:h-72" : "h-44";
+  const imgSize = size === "large" ? "w=800&q=80" : "w=400&q=80";
+
+  // No images or all failed → gradient fallback
+  if (!heroImages || heroImages.length === 0 || useFallback) {
+    return <GradientFallback category={category} alt={alt} heightClass={heightClass} />;
+  }
+
+  const src = `${heroImages[imgIndex]}?${imgSize}&auto=format&fit=crop`;
+
+  return (
+    <div
+      className={`w-full ${heightClass} rounded-lg relative overflow-hidden bg-neutral-200 dark:bg-neutral-800`}
+      role="img"
+      aria-label={alt}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+        onError={() => {
+          if (imgIndex < heroImages.length - 1) {
+            setImgIndex(imgIndex + 1);
+          } else {
+            setUseFallback(true);
+          }
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
     </div>
   );
 }

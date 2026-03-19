@@ -101,7 +101,7 @@ export default function BlogListPage({
                   category={post.category}
                   alt={post.thumbnailAlt[locale]}
                   size="small"
-                  heroImage={post.heroImage}
+                  heroImages={post.heroImages}
                 />
                 <div className="p-4">
                   {primaryTag && (
@@ -202,7 +202,7 @@ export default function BlogListPage({
                   category={post.category}
                   alt={post.thumbnailAlt[locale]}
                   size="small"
-                  heroImage={post.heroImage}
+                  heroImages={post.heroImages}
                 />
                 <div className="p-5">
                   <div className="flex flex-wrap items-center gap-1.5 mb-2">
