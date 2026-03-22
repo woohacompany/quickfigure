@@ -242,8 +242,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
 
   // ── Dev ──
   "json-formatter": {
-    ko: ["JSON", "포맷", "정리", "검증"],
-    en: ["JSON", "format", "beautify", "validate", "pretty print"],
+    ko: ["JSON", "JSON 포맷터", "JSON 정리", "JSON 유효성 검사", "JSON 뷰어", "JSON beautify", "JSON minify", "JSON 변환", "JSON 포맷", "포맷", "정리", "검증"],
+    en: ["JSON", "json formatter", "json beautifier", "json validator", "format json", "pretty print json", "json viewer", "json minifier", "json lint", "beautify", "validate"],
   },
   "base64-encoder-decoder": {
     ko: ["Base64", "인코딩", "디코딩"],

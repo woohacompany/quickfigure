@@ -152,6 +152,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "ladder-game-online-guide": ["tool-guide", "lifestyle"],
   "schedule-finder-meeting-time-guide": ["tool-guide", "lifestyle"],
   "typing-speed-test-guide": ["tool-guide", "lifestyle"],
+  "json-formatter-guide": ["tool-guide"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -10066,6 +10067,124 @@ export const blogPosts: BlogPost[] = [
       { slug: "timer", name: { en: "Timer", ko: "타이머" } },
     ],
     relatedPosts: ["pomodoro-guide"],
+  },
+  {
+    slug: "json-formatter-guide",
+    category: "developer-tools",
+    date: "2026-03-23",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Code editor showing formatted JSON data with syntax highlighting",
+      ko: "구문 강조가 적용된 JSON 데이터를 보여주는 코드 에디터",
+    },
+    translations: {
+      en: {
+        title: "JSON Formatter Guide: How to Format, Validate & Beautify JSON Online 2026",
+        summary: "Learn what JSON formatting is, why validation matters, compare tools (VS Code vs JSONLint vs QuickFigure), and master practical tips for API debugging.",
+        content: [
+          { type: "paragraph", text: "JSON (JavaScript Object Notation) is the most widely used data format for APIs, configuration files, and data exchange. Whether you're debugging an API response, editing a config file, or reviewing data payloads, having a good JSON formatter is essential for developer productivity." },
+          { type: "heading", text: "What Is JSON Formatting?" },
+          { type: "paragraph", text: "JSON formatting (also called beautifying or pretty-printing) transforms compact, single-line JSON into a human-readable structure with proper indentation and line breaks. The data itself remains unchanged — only the visual presentation improves." },
+          { type: "list", items: [
+            "Beautify: Adds indentation and line breaks for readability. Great for debugging and code review.",
+            "Minify: Removes all whitespace to reduce file size. Used in production APIs and config storage.",
+            "Validate: Checks if JSON syntax is correct. Catches missing commas, unclosed brackets, trailing commas, etc.",
+            "Tree View: Displays JSON as an expandable tree. Perfect for navigating deeply nested structures.",
+          ] },
+          { type: "cta", tool: "json-formatter", toolName: "JSON Formatter" },
+          { type: "heading", text: "Why JSON Validation Matters" },
+          { type: "paragraph", text: "Invalid JSON is one of the most common causes of API failures. A single missing comma or unclosed bracket can break an entire API request. Common JSON syntax errors include:" },
+          { type: "list", items: [
+            "Trailing commas after the last element in an array or object",
+            "Single quotes instead of double quotes for strings",
+            "Unquoted property names (valid in JavaScript, but not in JSON)",
+            "Comments in JSON (not supported in standard JSON)",
+            "Missing closing brackets or braces",
+          ] },
+          { type: "paragraph", text: "Validating JSON before sending API requests or saving config files prevents these errors from causing runtime failures." },
+          { type: "heading", text: "Tool Comparison: VS Code vs JSONLint vs QuickFigure" },
+          { type: "list", items: [
+            "VS Code: Built-in JSON formatting with Shift+Alt+F. Great if you already have a file open, but requires installation and doesn't validate as clearly.",
+            "JSONLint.com: Popular online validator, but limited to validation only. No beautify/minify modes, no tree view, and the UI is dated.",
+            "QuickFigure: All-in-one tool with Beautify, Minify, Validate, and Tree View in one page. Syntax highlighting, file upload/download, line numbers, and instant error detection with line highlighting.",
+          ] },
+          { type: "heading", text: "Practical Tips for Working with JSON" },
+          { type: "list", items: [
+            "Always validate before sending: Run your JSON through a validator before making API calls to catch syntax errors early.",
+            "Use 2-space indentation: It's the most common standard in JavaScript/TypeScript projects and keeps files compact.",
+            "Minify for production: Minified JSON reduces bandwidth. A 10KB formatted JSON might compress to 3KB minified.",
+            "Use Tree View for exploration: When dealing with large nested JSON responses (e.g., GraphQL), Tree View lets you navigate without scrolling through thousands of lines.",
+            "Keep a formatter bookmarked: Having quick access to a JSON formatter saves minutes every day when debugging APIs.",
+          ] },
+          { type: "cta", tool: "json-formatter", toolName: "Try JSON Formatter Now" },
+          {
+            type: "faq",
+            faqItems: [
+              { question: "Is it safe to paste sensitive JSON data?", answer: "Yes, QuickFigure's JSON formatter processes everything in your browser. No data is sent to any server. Your JSON never leaves your device." },
+              { question: "What's the maximum JSON size supported?", answer: "Since processing happens in your browser, the limit depends on your device's memory. Typically, JSON files up to 10MB work smoothly. For very large files (100MB+), consider using command-line tools like jq." },
+              { question: "Can I format JSON with comments?", answer: "Standard JSON does not support comments. If your JSON contains comments (like JSONC used in VS Code settings), you'll need to remove them first. Our validator will flag comments as syntax errors." },
+              { question: "What indent style should I use?", answer: "2 spaces is the most common in JavaScript/TypeScript projects. 4 spaces is common in Python and Java projects. Tabs are preferred by some teams for accessibility. Choose what matches your team's style guide." },
+            ],
+          },
+        ],
+      },
+      ko: {
+        title: "JSON 포맷터 사용법 총정리 - JSON 정리·유효성 검사 가이드 2026",
+        summary: "JSON 포맷팅이란 무엇인지, 유효성 검사가 왜 중요한지, 도구 비교(VS Code/JSONLint/QuickFigure), 실무 활용 팁까지 완벽 가이드.",
+        content: [
+          { type: "paragraph", text: "JSON(JavaScript Object Notation)은 API, 설정 파일, 데이터 교환에서 가장 널리 사용되는 데이터 형식입니다. API 응답을 디버깅하거나, 설정 파일을 편집하거나, 데이터 페이로드를 확인할 때 좋은 JSON 포맷터는 개발자 생산성에 필수입니다." },
+          { type: "heading", text: "JSON 포맷팅이란?" },
+          { type: "paragraph", text: "JSON 포맷팅(Beautify, Pretty Print라고도 함)은 한 줄로 압축된 JSON을 들여쓰기와 줄바꿈을 추가하여 사람이 읽기 쉬운 구조로 변환하는 것입니다. 데이터 자체는 변하지 않고 시각적 표현만 개선됩니다." },
+          { type: "list", items: [
+            "Beautify(정리): 들여쓰기와 줄바꿈을 추가해 가독성을 높입니다. 디버깅과 코드 리뷰에 최적.",
+            "Minify(압축): 모든 공백을 제거해 파일 크기를 최소화합니다. 프로덕션 API와 설정 저장에 사용.",
+            "Validate(검증): JSON 문법이 올바른지 확인합니다. 빠진 쉼표, 닫히지 않은 괄호 등을 잡아냅니다.",
+            "Tree View(트리 뷰): JSON을 접기/펼치기 가능한 트리로 표시합니다. 깊은 중첩 구조 탐색에 편리.",
+          ] },
+          { type: "cta", tool: "json-formatter", toolName: "JSON 포맷터 바로 사용하기" },
+          { type: "heading", text: "JSON 유효성 검사가 중요한 이유" },
+          { type: "paragraph", text: "잘못된 JSON은 API 실패의 가장 흔한 원인 중 하나입니다. 쉼표 하나가 빠지거나 괄호가 닫히지 않으면 전체 API 요청이 실패할 수 있습니다. 흔한 JSON 문법 오류:" },
+          { type: "list", items: [
+            "배열이나 객체의 마지막 요소 뒤에 쉼표(trailing comma)",
+            "문자열에 큰따옴표 대신 작은따옴표 사용",
+            "속성 이름을 따옴표 없이 사용 (JavaScript에서는 유효하지만 JSON에서는 무효)",
+            "JSON 안에 주석 사용 (표준 JSON은 주석을 지원하지 않음)",
+            "닫는 괄호나 중괄호 누락",
+          ] },
+          { type: "paragraph", text: "API 요청을 보내거나 설정 파일을 저장하기 전에 JSON을 검증하면 이러한 오류로 인한 런타임 실패를 방지할 수 있습니다." },
+          { type: "heading", text: "도구 비교: VS Code vs JSONLint vs QuickFigure" },
+          { type: "list", items: [
+            "VS Code: Shift+Alt+F로 내장 JSON 포맷팅. 파일이 이미 열려있으면 편리하지만 설치가 필요하고 검증 기능이 명확하지 않음.",
+            "JSONLint.com: 인기 있는 온라인 검증기이지만 검증만 가능. Beautify/Minify 모드, 트리 뷰가 없고 UI가 오래됨.",
+            "QuickFigure: Beautify, Minify, Validate, Tree View를 한 페이지에서 제공. 구문 강조, 파일 업로드/다운로드, 줄 번호, 실시간 오류 감지까지.",
+          ] },
+          { type: "heading", text: "JSON 실무 활용 팁" },
+          { type: "list", items: [
+            "전송 전 항상 검증하기: API 호출 전에 JSON을 검증기에 통과시켜 문법 오류를 일찍 잡으세요.",
+            "2칸 들여쓰기 사용하기: JavaScript/TypeScript 프로젝트에서 가장 일반적인 표준이며 파일을 컴팩트하게 유지합니다.",
+            "프로덕션에서는 압축(Minify)하기: 압축된 JSON은 대역폭을 줄입니다. 10KB 포맷된 JSON이 Minify하면 3KB로 줄어들 수 있습니다.",
+            "대규모 JSON 탐색에는 Tree View 활용: 큰 중첩 JSON 응답(예: GraphQL)을 다룰 때 수천 줄을 스크롤하지 않고 탐색할 수 있습니다.",
+            "포맷터 북마크하기: JSON 포맷터에 빠르게 접근할 수 있으면 API 디버깅 시 매일 몇 분씩 절약됩니다.",
+          ] },
+          { type: "cta", tool: "json-formatter", toolName: "JSON 포맷터로 지금 확인하기" },
+          {
+            type: "faq",
+            faqItems: [
+              { question: "민감한 JSON 데이터를 붙여넣어도 안전한가요?", answer: "네, QuickFigure의 JSON 포맷터는 모든 것을 브라우저에서 처리합니다. 어떤 데이터도 서버로 전송되지 않습니다. JSON이 기기를 떠나지 않습니다." },
+              { question: "지원하는 최대 JSON 크기는?", answer: "브라우저에서 처리하므로 기기 메모리에 따라 다릅니다. 일반적으로 10MB까지의 JSON 파일은 원활하게 작동합니다. 매우 큰 파일(100MB+)은 jq 같은 커맨드라인 도구를 사용하세요." },
+              { question: "주석이 있는 JSON도 포맷할 수 있나요?", answer: "표준 JSON은 주석을 지원하지 않습니다. VS Code 설정에 사용되는 JSONC 같은 형식에 주석이 있다면 먼저 제거해야 합니다. 검증기는 주석을 문법 오류로 표시합니다." },
+              { question: "어떤 들여쓰기 스타일을 사용해야 하나요?", answer: "2칸은 JavaScript/TypeScript 프로젝트에서 가장 일반적입니다. 4칸은 Python과 Java에서 흔합니다. 탭은 접근성을 위해 일부 팀이 선호합니다. 팀의 스타일 가이드에 맞추세요." },
+            ],
+          },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "json-formatter", name: { en: "JSON Formatter", ko: "JSON 포맷터" } },
+      { slug: "base64-encoder-decoder", name: { en: "Base64 Encoder/Decoder", ko: "Base64 인코더/디코더" } },
+      { slug: "markdown-editor", name: { en: "Markdown Editor", ko: "마크다운 에디터" } },
+    ],
+    relatedPosts: ["json-formatting-best-practices", "understanding-base64-encoding"],
   },
 ];
 
