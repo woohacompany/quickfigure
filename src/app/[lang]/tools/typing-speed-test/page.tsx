@@ -15,57 +15,68 @@ type Phase = "idle" | "running" | "finished";
 type Grade = "S" | "A" | "B" | "C" | "D";
 
 /* ── Sentence Data ── */
+// Korean: short everyday sentences (avg ~15-20 chars each for manageable typing)
 const KOREAN_SENTENCES = [
-  "오늘 날씨가 정말 좋아서 공원에 산책을 가기로 했습니다.",
-  "커피 한 잔의 여유가 하루를 더 풍요롭게 만들어 줍니다.",
-  "프로그래밍을 배우는 것은 새로운 언어를 배우는 것과 비슷합니다.",
-  "서울의 지하철은 세계에서 가장 편리한 대중교통 중 하나입니다.",
-  "건강한 식습관은 규칙적인 운동과 함께 건강의 기본입니다.",
-  "독서는 마음의 양식이며 상상력을 키워주는 좋은 방법입니다.",
-  "인공지능 기술의 발전이 우리의 일상생활을 크게 변화시키고 있습니다.",
-  "한국의 사계절은 각각 고유한 아름다움을 가지고 있습니다.",
-  "시간 관리를 잘하는 것이 성공의 가장 중요한 열쇠입니다.",
-  "주말에 가족과 함께 영화를 보는 것은 즐거운 시간입니다.",
-  "꾸준한 노력은 반드시 좋은 결과를 가져다 줍니다.",
-  "온라인 쇼핑은 편리하지만 직접 보고 사는 것도 중요합니다.",
-  "음악을 들으면 스트레스가 해소되고 기분이 좋아집니다.",
-  "새해에는 새로운 목표를 세우고 실천하는 것이 중요합니다.",
-  "요리를 배우면 건강한 식사를 직접 준비할 수 있습니다.",
-  "매일 아침 일찍 일어나는 습관이 하루를 더 길게 만들어줍니다.",
-  "외국어를 배우면 다른 문화를 이해하는 폭이 넓어집니다.",
-  "좋은 친구는 인생에서 가장 소중한 보물 중 하나입니다.",
-  "환경 보호를 위해 일회용품 사용을 줄이는 것이 필요합니다.",
-  "기술의 발전으로 재택근무가 점점 보편화되고 있습니다.",
-  "여행을 통해 새로운 경험과 추억을 만들 수 있습니다.",
-  "규칙적인 수면은 건강과 집중력에 큰 영향을 미칩니다.",
-  "도서관은 조용히 공부하기에 가장 좋은 장소입니다.",
-  "봄이 오면 벚꽃이 피어 거리가 아름답게 변합니다.",
-  "자전거를 타면 운동도 되고 환경도 보호할 수 있습니다.",
-  "맛있는 음식을 먹으면 행복감이 높아진다는 연구 결과가 있습니다.",
-  "스마트폰 없이 하루를 보내는 것은 생각보다 어렵습니다.",
-  "취미 활동은 일상에 활력을 불어넣어 주는 중요한 요소입니다.",
-  "대한민국은 빠른 인터넷 속도로 세계적으로 유명합니다.",
-  "정리정돈을 잘하면 생활이 더 효율적이고 쾌적해집니다.",
-  "가을의 단풍은 한국에서 가장 아름다운 자연 풍경 중 하나입니다.",
-  "매일 조금씩 운동하면 건강을 오래 유지할 수 있습니다.",
-  "좋은 습관을 만드는 데는 최소 삼십 일이 필요하다고 합니다.",
-  "주말에는 충분한 휴식을 취해야 다음 주를 활기차게 시작할 수 있습니다.",
-  "한국 음식은 건강에 좋은 재료를 많이 사용하는 것으로 알려져 있습니다.",
-  "글을 잘 쓰려면 많이 읽고 많이 쓰는 연습이 필요합니다.",
-  "지구 온난화는 전 세계적으로 심각한 환경 문제입니다.",
-  "사진을 찍는 것은 소중한 순간을 기록하는 좋은 방법입니다.",
-  "대중교통을 이용하면 교통 체증도 줄이고 환경도 보호할 수 있습니다.",
-  "겨울에는 따뜻한 차 한 잔이 몸과 마음을 녹여줍니다.",
-  "긍정적인 생각은 어려운 상황을 극복하는 데 큰 도움이 됩니다.",
-  "컴퓨터 과학은 현대 사회에서 가장 중요한 학문 중 하나입니다.",
-  "매일 감사하는 마음을 가지면 더 행복한 삶을 살 수 있습니다.",
-  "한국의 전통 문화는 세계적으로 많은 관심을 받고 있습니다.",
-  "팀워크는 혼자서는 할 수 없는 일을 가능하게 만들어줍니다.",
-  "아침에 물 한 잔을 마시면 신진대사가 활발해집니다.",
-  "새로운 도전을 두려워하지 않는 것이 성장의 시작입니다.",
-  "공부할 때 집중력을 높이려면 조용한 환경이 중요합니다.",
-  "한국어는 세계에서 가장 과학적인 문자 체계를 가지고 있습니다.",
-  "작은 친절이 세상을 더 따뜻하게 만들 수 있습니다.",
+  "오늘 날씨가 참 좋습니다.",
+  "카페에서 커피를 마셨다.",
+  "주말에 친구를 만났습니다.",
+  "점심으로 김치찌개를 먹었다.",
+  "버스를 타고 출근합니다.",
+  "오늘 할 일이 많습니다.",
+  "공원에서 산책을 했습니다.",
+  "내일은 비가 온다고 합니다.",
+  "음악을 들으며 공부했다.",
+  "저녁에 운동을 하러 갔다.",
+  "도서관에서 책을 빌렸습니다.",
+  "친구에게 생일 선물을 줬다.",
+  "지하철이 정말 편리합니다.",
+  "오늘 일찍 일어났습니다.",
+  "주말에 영화를 봤습니다.",
+  "집에서 요리를 만들었다.",
+  "새 신발을 사고 싶습니다.",
+  "시험 공부를 열심히 했다.",
+  "여행 계획을 세우고 있다.",
+  "맛있는 빵집을 발견했다.",
+  "아침에 우유를 마셨습니다.",
+  "강아지와 산책을 나갔다.",
+  "오늘 회의가 두 개 있다.",
+  "택배가 도착해서 기쁘다.",
+  "방을 깨끗이 청소했습니다.",
+  "꽃이 예쁘게 피었습니다.",
+  "동생이 학교에서 돌아왔다.",
+  "저녁에 치킨을 시켰습니다.",
+  "창문을 열어서 환기했다.",
+  "커피 한 잔이 필요합니다.",
+  "오늘 하루도 수고했습니다.",
+  "가을 단풍이 아름답습니다.",
+  "주말에 빨래를 했습니다.",
+  "새해 목표를 세웠습니다.",
+  "핸드폰 배터리가 부족하다.",
+  "마트에서 장을 보았습니다.",
+  "한국 음식이 정말 맛있다.",
+  "좋은 하루가 되길 바랍니다.",
+  "건강이 가장 중요합니다.",
+  "물을 많이 마셔야 합니다.",
+  "잠을 충분히 자야 합니다.",
+  "서울 날씨가 많이 춥습니다.",
+  "자전거를 타는 것이 좋다.",
+  "노래를 불렀더니 기분이 좋다.",
+  "엄마가 맛있는 밥을 해줬다.",
+  "회사에서 야근을 했습니다.",
+  "감기에 걸려서 약을 먹었다.",
+  "내일 시험이라 긴장됩니다.",
+  "사진을 찍어서 올렸습니다.",
+  "봄이 오면 벚꽃이 핀다.",
+  "비가 와서 우산을 챙겼다.",
+  "편의점에서 간식을 샀습니다.",
+  "퇴근 후에 집에서 쉬었다.",
+  "주말에 등산을 가려고 한다.",
+  "오늘 처음으로 요가를 했다.",
+  "맛집을 찾아서 가보았다.",
+  "친구와 전화 통화를 했다.",
+  "어제 늦게까지 드라마를 봤다.",
+  "새 책이 재미있어 보입니다.",
+  "출퇴근 시간이 너무 길다.",
 ];
 
 const ENGLISH_SENTENCES = [
@@ -168,9 +179,18 @@ function shuffleArray<T>(arr: T[]): T[] {
   return copy;
 }
 
-function generateText(testLang: TestLang): string {
+function generateText(testLang: TestLang, durationSec: number): string {
   const sentences = testLang === "korean" ? KOREAN_SENTENCES : ENGLISH_SENTENCES;
-  return shuffleArray(sentences).slice(0, 15).join(" ");
+  // Scale sentence count by duration: ~400 CPM (Korean) or ~50 WPM (English) max target
+  // Korean avg sentence ~14 chars, English avg ~60 chars
+  const sentencesPerMin = testLang === "korean" ? 25 : 8;
+  const minutes = durationSec / 60;
+  // Generate ~1.5x more text than expected to avoid running out
+  const count = Math.min(
+    Math.ceil(sentencesPerMin * minutes * 1.5),
+    sentences.length
+  );
+  return shuffleArray(sentences).slice(0, count).join(" ");
 }
 
 /* ── Component ── */
@@ -188,7 +208,7 @@ export default function TypingSpeedTestPage({
   const [testLang, setTestLang] = useState<TestLang>(isKo ? "korean" : "english");
   const [duration, setDuration] = useState<Duration>(60);
   const [phase, setPhase] = useState<Phase>("idle");
-  const [sampleText, setSampleText] = useState(() => generateText(isKo ? "korean" : "english"));
+  const [sampleText, setSampleText] = useState(() => generateText(isKo ? "korean" : "english", 60));
   const [typed, setTyped] = useState("");
   const [timeLeft, setTimeLeft] = useState(60);
   const [errors, setErrors] = useState(0);
@@ -213,7 +233,7 @@ export default function TypingSpeedTestPage({
     setTyped("");
     setTimeLeft(duration);
     setErrors(0);
-    setSampleText(generateText(testLang));
+    setSampleText(generateText(testLang, duration));
   }, [duration, testLang]);
 
   useEffect(() => {

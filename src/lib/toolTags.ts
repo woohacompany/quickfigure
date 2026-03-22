@@ -315,4 +315,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["랜덤", "무작위", "로또", "번호 생성"],
     en: ["random", "random number", "lottery", "generate number", "dice"],
   },
+  "typing-speed-test": {
+    ko: ["타자", "타자 속도", "타자 연습", "타이핑", "타자 테스트", "타자 속도 측정", "키보드 연습", "한타", "영타", "타자 속도 테스트", "타수", "WPM"],
+    en: ["typing", "typing speed", "typing test", "WPM", "typing practice", "keyboard speed", "words per minute", "CPM", "typing speed test"],
+  },
 };

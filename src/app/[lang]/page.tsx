@@ -191,6 +191,7 @@ export default async function HomePage({
         { name: t.home.percentageCalc, description: t.home.percentageCalcDesc, href: `/${lang}/tools/percentage-calculator`, tags: getToolTags("percentage-calculator") },
         { name: t.home.areaConverter, description: t.home.areaConverterDesc, href: `/${lang}/tools/area-converter`, tags: getToolTags("area-converter") },
         { name: t.home.randomNumberGenerator, description: t.home.randomNumberGeneratorDesc, href: `/${lang}/tools/random-number-generator`, tags: getToolTags("random-number-generator") },
+        { name: t.home.typingSpeedTest, description: t.home.typingSpeedTestDesc, href: `/${lang}/tools/typing-speed-test`, tags: getToolTags("typing-speed-test") },
       ],
     },
   ];
