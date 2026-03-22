@@ -430,4 +430,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3",
     "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e",
   ],
+  "typing-speed-test-guide": [
+    "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
+    "https://images.unsplash.com/photo-1541462608143-67571c6738dd",
+    "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+  ],
 };

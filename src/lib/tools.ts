@@ -74,4 +74,5 @@ export const TOOL_SLUGS = [
   "ladder-game",
   "schedule-finder",
   "currency-converter",
+  "typing-speed-test",
 ] as const;
