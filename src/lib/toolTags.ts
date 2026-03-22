@@ -246,8 +246,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     en: ["JSON", "json formatter", "json beautifier", "json validator", "format json", "pretty print json", "json viewer", "json minifier", "json lint", "beautify", "validate"],
   },
   "base64-encoder-decoder": {
-    ko: ["Base64", "인코딩", "디코딩"],
-    en: ["Base64", "encode", "decode", "encoding"],
+    ko: ["Base64", "Base64 인코딩", "Base64 디코딩", "Base64 변환", "Base64 인코더", "Base64 디코더", "이미지 Base64", "텍스트 Base64", "인코딩", "디코딩", "Base64 온라인"],
+    en: ["Base64", "base64 encode", "base64 decode", "base64 encoder", "base64 decoder", "base64 converter", "base64 to text", "text to base64", "image to base64", "data URI"],
   },
   "markdown-editor": {
     ko: ["마크다운", "MD", "편집기"],

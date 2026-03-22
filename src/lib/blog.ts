@@ -153,6 +153,7 @@ const blogTagMapping: Record<string, BlogTag[]> = {
   "schedule-finder-meeting-time-guide": ["tool-guide", "lifestyle"],
   "typing-speed-test-guide": ["tool-guide", "lifestyle"],
   "json-formatter-guide": ["tool-guide"],
+  "base64-encoding-guide": ["tool-guide"],
 };
 
 export function getPostTags(slug: string): BlogTag[] {
@@ -10185,6 +10186,140 @@ export const blogPosts: BlogPost[] = [
       { slug: "markdown-editor", name: { en: "Markdown Editor", ko: "마크다운 에디터" } },
     ],
     relatedPosts: ["json-formatting-best-practices", "understanding-base64-encoding"],
+  },
+  {
+    slug: "base64-encoding-guide",
+    category: "developer-tools",
+    date: "2026-03-23",
+    readingTime: 7,
+    thumbnailAlt: {
+      en: "Binary data encoding concept with code on screen",
+      ko: "화면에 코드가 표시된 바이너리 데이터 인코딩 개념",
+    },
+    translations: {
+      en: {
+        title: "Base64 Encoding & Decoding Guide: What It Is and How to Use It 2026",
+        summary: "Learn what Base64 encoding is, why it's used in emails, images, and APIs, how the 3-byte-to-4-character conversion works, and practical tips for developers.",
+        content: [
+          { type: "paragraph", text: "Base64 encoding is one of those things every developer encounters but few fully understand. Whether you're dealing with email attachments, embedding images in HTML, or sending binary data through JSON APIs, Base64 is the bridge between binary and text worlds." },
+          { type: "heading", text: "What Is Base64 Encoding?" },
+          { type: "paragraph", text: "Base64 is a binary-to-text encoding scheme that converts binary data into a string of 64 safe ASCII characters (A-Z, a-z, 0-9, +, /). It was designed to safely transmit binary data through text-only channels like email (SMTP), which can corrupt raw binary." },
+          { type: "list", items: [
+            "Takes 3 bytes (24 bits) of binary data at a time",
+            "Splits them into 4 groups of 6 bits each",
+            "Maps each 6-bit group to one of 64 printable ASCII characters",
+            "Result is always ~33% larger than the original binary data",
+            "Uses = padding when input length isn't divisible by 3",
+          ] },
+          { type: "heading", text: "Why Use Base64?" },
+          { type: "paragraph", text: "Base64 solves a fundamental problem: how to include binary data in text-based formats. Common use cases include:" },
+          { type: "list", items: [
+            "Email attachments (MIME): Raw binary files are encoded to Base64 for safe transmission through SMTP servers that only handle 7-bit ASCII.",
+            "Data URIs in HTML/CSS: Embed small images directly in HTML using data:image/png;base64,... to eliminate extra HTTP requests.",
+            "API payloads (JSON): JSON doesn't support binary data, so files and images must be Base64-encoded to be included in request/response bodies.",
+            "JWT tokens: JSON Web Tokens use URL-safe Base64 (base64url) to encode header, payload, and signature.",
+            "HTTP Basic Authentication: Username and password are combined and Base64-encoded in the Authorization header.",
+          ] },
+          { type: "cta", tool: "base64-encoder-decoder", toolName: "Base64 Encoder/Decoder" },
+          { type: "heading", text: "Standard Base64 vs URL-Safe Base64" },
+          { type: "paragraph", text: "Standard Base64 uses + and / characters, which have special meaning in URLs. URL-safe Base64 (also called base64url) replaces these:" },
+          { type: "list", items: [
+            "Standard: uses A-Z, a-z, 0-9, +, / with = padding",
+            "URL-safe: replaces + with -, / with _, and removes = padding",
+            "JWT tokens always use URL-safe Base64",
+            "When in doubt, URL-safe is the safer choice for web applications",
+          ] },
+          { type: "heading", text: "Image to Base64: Practical Guide" },
+          { type: "paragraph", text: "Converting images to Base64 is useful for embedding small images directly in HTML or CSS. However, keep these guidelines in mind:" },
+          { type: "list", items: [
+            "Good for small images (<10KB): Icons, logos, small UI elements benefit from inline embedding — fewer HTTP requests.",
+            "Bad for large images (>50KB): Base64 is 33% larger than binary. A 100KB image becomes 133KB as Base64, and it can't be cached separately.",
+            "Format: data:image/png;base64,iVBORw0KGgo... — the prefix specifies the MIME type.",
+            "Use our Image tab to instantly convert any image to its data URI format.",
+          ] },
+          { type: "heading", text: "Tool Comparison: btoa()/atob() vs Terminal vs QuickFigure" },
+          { type: "list", items: [
+            "JavaScript btoa()/atob(): Built-in browser functions, but btoa() only handles Latin1 characters — fails on Unicode/emoji. Need TextEncoder workaround for UTF-8.",
+            "Terminal (base64 command): Works on Mac/Linux with `echo -n 'text' | base64`. Great for scripts, but no image support or URL-safe mode.",
+            "QuickFigure: Handles UTF-8, URL-safe toggle, image drag-and-drop, bidirectional conversion, byte size stats. All in-browser, no data sent to servers.",
+          ] },
+          { type: "cta", tool: "base64-encoder-decoder", toolName: "Try Base64 Tool Now" },
+          {
+            type: "faq",
+            faqItems: [
+              { question: "Is Base64 encryption?", answer: "No. Base64 is encoding, not encryption. It does not provide any security — anyone can decode Base64 back to the original data. Never use Base64 to 'protect' sensitive information. Use actual encryption (AES, RSA) for security." },
+              { question: "Why is Base64 output larger than the input?", answer: "Base64 converts 3 bytes into 4 characters (6 bits each instead of 8), resulting in a ~33% size increase. This is the trade-off for text-safe representation of binary data." },
+              { question: "Can I Base64-encode any file type?", answer: "Yes, Base64 can encode any binary data — images, PDFs, audio, executables, etc. However, it's most practical for small files due to the 33% size overhead." },
+              { question: "What does the = padding mean?", answer: "Base64 works on 3-byte groups. If the input isn't divisible by 3, = characters are added to pad the output to a multiple of 4. One = means 1 byte of padding, == means 2 bytes." },
+            ],
+          },
+        ],
+      },
+      ko: {
+        title: "Base64 인코딩 디코딩 완벽 가이드 - 원리부터 활용법까지 2026",
+        summary: "Base64 인코딩이란 무엇인지, 이메일/이미지/API에서 왜 쓰이는지, 3바이트→4문자 변환 원리, 개발자를 위한 실무 팁까지.",
+        content: [
+          { type: "paragraph", text: "Base64 인코딩은 모든 개발자가 만나지만 완전히 이해하는 사람은 드문 주제입니다. 이메일 첨부파일, HTML 이미지 임베딩, JSON API를 통한 바이너리 데이터 전송 등 Base64는 바이너리와 텍스트 세계를 연결하는 다리 역할을 합니다." },
+          { type: "heading", text: "Base64 인코딩이란?" },
+          { type: "paragraph", text: "Base64는 바이너리 데이터를 64개의 안전한 ASCII 문자(A-Z, a-z, 0-9, +, /)로 변환하는 인코딩 방식입니다. 이메일(SMTP)처럼 원시 바이너리를 손상시킬 수 있는 텍스트 전용 채널을 통해 바이너리를 안전하게 전송하기 위해 설계되었습니다." },
+          { type: "list", items: [
+            "한 번에 3바이트(24비트)의 바이너리 데이터를 처리",
+            "6비트씩 4개 그룹으로 분할",
+            "각 6비트 그룹을 64개의 출력 가능한 ASCII 문자 중 하나로 매핑",
+            "결과는 원본보다 항상 약 33% 더 큼",
+            "입력 길이가 3으로 나누어지지 않으면 = 패딩 사용",
+          ] },
+          { type: "heading", text: "왜 Base64를 사용하나요?" },
+          { type: "paragraph", text: "Base64는 근본적인 문제를 해결합니다: 텍스트 기반 형식에 바이너리 데이터를 포함하는 방법. 주요 사용 사례:" },
+          { type: "list", items: [
+            "이메일 첨부파일(MIME): 7비트 ASCII만 처리하는 SMTP 서버를 통해 안전하게 전송하기 위해 원시 바이너리 파일을 Base64로 인코딩.",
+            "HTML/CSS의 Data URI: data:image/png;base64,...를 사용해 작은 이미지를 HTML에 직접 임베딩하여 추가 HTTP 요청 제거.",
+            "API 페이로드(JSON): JSON은 바이너리를 지원하지 않으므로, 요청/응답 본문에 파일과 이미지를 포함하려면 Base64 인코딩 필요.",
+            "JWT 토큰: JSON Web Token은 URL-safe Base64(base64url)를 사용해 헤더, 페이로드, 서명을 인코딩.",
+            "HTTP Basic 인증: 사용자 이름과 비밀번호를 결합하여 Authorization 헤더에 Base64 인코딩.",
+          ] },
+          { type: "cta", tool: "base64-encoder-decoder", toolName: "Base64 인코더/디코더 바로 사용하기" },
+          { type: "heading", text: "표준 Base64 vs URL-Safe Base64" },
+          { type: "paragraph", text: "표준 Base64는 +와 / 문자를 사용하는데, URL에서 특별한 의미가 있습니다. URL-safe Base64(base64url)는 이를 대체합니다:" },
+          { type: "list", items: [
+            "표준: A-Z, a-z, 0-9, +, / 사용, = 패딩 포함",
+            "URL-safe: +를 -로, /를 _로 교체, = 패딩 제거",
+            "JWT 토큰은 항상 URL-safe Base64 사용",
+            "웹 애플리케이션에서는 URL-safe가 더 안전한 선택",
+          ] },
+          { type: "heading", text: "이미지 → Base64: 실무 가이드" },
+          { type: "paragraph", text: "이미지를 Base64로 변환하면 HTML이나 CSS에 직접 임베딩할 수 있습니다. 다만 다음 가이드라인을 참고하세요:" },
+          { type: "list", items: [
+            "작은 이미지에 적합(<10KB): 아이콘, 로고, 작은 UI 요소는 인라인 임베딩이 유리 — HTTP 요청 감소.",
+            "큰 이미지에는 부적합(>50KB): Base64는 바이너리보다 33% 더 큼. 100KB 이미지가 Base64로 133KB가 되고, 별도 캐싱 불가.",
+            "형식: data:image/png;base64,iVBORw0KGgo... — 접두사가 MIME 타입을 지정.",
+            "Image 탭을 사용하면 모든 이미지를 즉시 data URI 형식으로 변환할 수 있습니다.",
+          ] },
+          { type: "heading", text: "도구 비교: btoa()/atob() vs 터미널 vs QuickFigure" },
+          { type: "list", items: [
+            "JavaScript btoa()/atob(): 브라우저 내장 함수이지만, btoa()는 Latin1 문자만 처리 — 유니코드/이모지에서 실패. UTF-8에는 TextEncoder 우회 필요.",
+            "터미널(base64 명령): Mac/Linux에서 `echo -n 'text' | base64`로 사용. 스크립트에 좋지만 이미지 지원이나 URL-safe 모드 없음.",
+            "QuickFigure: UTF-8 처리, URL-safe 토글, 이미지 드래그앤드롭, 양방향 변환, 바이트 크기 통계. 모든 처리가 브라우저에서 — 데이터가 서버로 전송되지 않음.",
+          ] },
+          { type: "cta", tool: "base64-encoder-decoder", toolName: "Base64 도구로 지금 확인하기" },
+          {
+            type: "faq",
+            faqItems: [
+              { question: "Base64는 암호화인가요?", answer: "아니요. Base64는 인코딩이지 암호화가 아닙니다. 어떤 보안도 제공하지 않습니다 — 누구나 Base64를 원본 데이터로 디코딩할 수 있습니다. 민감한 정보를 '보호'하는 데 Base64를 사용하지 마세요. 보안에는 실제 암호화(AES, RSA)를 사용하세요." },
+              { question: "왜 Base64 결과가 입력보다 큰가요?", answer: "Base64는 3바이트를 4문자로 변환합니다(8비트 대신 6비트씩). 이로 인해 약 33%의 크기 증가가 발생합니다. 이것이 바이너리 데이터를 텍스트로 안전하게 표현하기 위한 트레이드오프입니다." },
+              { question: "모든 파일 유형을 Base64로 인코딩할 수 있나요?", answer: "네, Base64는 이미지, PDF, 오디오, 실행 파일 등 모든 바이너리 데이터를 인코딩할 수 있습니다. 다만 33% 크기 오버헤드 때문에 작은 파일에 가장 실용적입니다." },
+              { question: "= 패딩은 무엇을 의미하나요?", answer: "Base64는 3바이트 그룹으로 작동합니다. 입력이 3으로 나누어지지 않으면 출력을 4의 배수로 맞추기 위해 = 문자가 추가됩니다. =는 1바이트 패딩, ==는 2바이트 패딩을 의미합니다." },
+            ],
+          },
+        ],
+      },
+    },
+    relatedTools: [
+      { slug: "base64-encoder-decoder", name: { en: "Base64 Encoder/Decoder", ko: "Base64 인코더/디코더" } },
+      { slug: "json-formatter", name: { en: "JSON Formatter", ko: "JSON 포맷터" } },
+      { slug: "password-generator", name: { en: "Password Generator", ko: "비밀번호 생성기" } },
+    ],
+    relatedPosts: ["understanding-base64-encoding", "json-formatting-best-practices"],
   },
 ];
 
