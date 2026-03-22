@@ -319,4 +319,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["타자", "타자 속도", "타자 연습", "타이핑", "타자 테스트", "타자 속도 측정", "키보드 연습", "한타", "영타", "타자 속도 테스트", "타수", "WPM"],
     en: ["typing", "typing speed", "typing test", "WPM", "typing practice", "keyboard speed", "words per minute", "CPM", "typing speed test"],
   },
+  "jeonse-vs-wolse-calculator": {
+    ko: ["전세", "월세", "전세 월세 비교", "전세 월세 뭐가 유리", "전세대출", "전월세 전환율", "월세 전환율", "주거비", "부동산 계산기", "전세 월세 계산기", "전세대출 이자"],
+    en: ["jeonse", "wolse", "jeonse vs wolse", "korean housing", "korean rent", "lump sum deposit", "monthly rent korea", "housing cost comparison"],
+  },
 };

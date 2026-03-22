@@ -445,4 +445,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1550439062-609e1531270e",
     "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
   ],
+  "jeonse-vs-wolse-guide": [
+    "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+    "https://images.unsplash.com/photo-1582407947092-50c0d0a0b5d7",
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+  ],
 };
