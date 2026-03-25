@@ -470,4 +470,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1450101499163-c8848c66ca85",
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
   ],
+  "uuid-generator-guide": [
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a",
+  ],
 };

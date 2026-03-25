@@ -327,4 +327,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["연말정산", "환급", "13월의 월급", "연말정산 계산기", "소득공제", "세액공제", "신용카드 공제", "의료비 공제", "교육비 공제", "연금저축 공제", "연말정산 환급금", "원천징수"],
     en: ["year end tax", "tax refund korea", "tax settlement", "income deduction", "tax credit korea", "korean tax refund"],
   },
+  "uuid-generator": {
+    ko: ["UUID", "UUID 생성", "GUID", "고유 식별자", "UUID v4", "UUID v7", "랜덤 ID", "UUID 만들기", "UUID 검증"],
+    en: ["UUID", "UUID generator", "GUID", "unique ID", "UUID v4", "UUID v7", "random UUID", "UUID validator", "bulk UUID"],
+  },
 };
