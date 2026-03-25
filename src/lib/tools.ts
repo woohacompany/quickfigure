@@ -76,4 +76,5 @@ export const TOOL_SLUGS = [
   "currency-converter",
   "typing-speed-test",
   "jeonse-vs-wolse-calculator",
+  "year-end-tax-calculator",
 ] as const;

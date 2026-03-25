@@ -465,4 +465,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
   ],
+  "year-end-tax-guide": [
+    "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
+    "https://images.unsplash.com/photo-1450101499163-c8848c66ca85",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+  ],
 };

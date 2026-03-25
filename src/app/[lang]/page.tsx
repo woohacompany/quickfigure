@@ -88,6 +88,7 @@ export default async function HomePage({
         { name: t.home.roiCalc, description: t.home.roiCalcDesc, href: `/${lang}/tools/roi-calculator`, tags: getToolTags("roi-calculator") },
         { name: t.home.currencyConverter, description: t.home.currencyConverterDesc, href: `/${lang}/tools/currency-converter`, tags: getToolTags("currency-converter") },
         { name: t.home.jeonseVsWolseCalc, description: t.home.jeonseVsWolseCalcDesc, href: `/${lang}/tools/jeonse-vs-wolse-calculator`, tags: getToolTags("jeonse-vs-wolse-calculator") },
+        { name: t.home.yearEndTaxCalc, description: t.home.yearEndTaxCalcDesc, href: `/${lang}/tools/year-end-tax-calculator`, tags: getToolTags("year-end-tax-calculator") },
       ],
     },
     {

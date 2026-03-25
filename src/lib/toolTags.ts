@@ -323,4 +323,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["전세", "월세", "전세 월세 비교", "전세 월세 뭐가 유리", "전세대출", "전월세 전환율", "월세 전환율", "주거비", "부동산 계산기", "전세 월세 계산기", "전세대출 이자"],
     en: ["jeonse", "wolse", "jeonse vs wolse", "korean housing", "korean rent", "lump sum deposit", "monthly rent korea", "housing cost comparison"],
   },
+  "year-end-tax-calculator": {
+    ko: ["연말정산", "환급", "13월의 월급", "연말정산 계산기", "소득공제", "세액공제", "신용카드 공제", "의료비 공제", "교육비 공제", "연금저축 공제", "연말정산 환급금", "원천징수"],
+    en: ["year end tax", "tax refund korea", "tax settlement", "income deduction", "tax credit korea", "korean tax refund"],
+  },
 };
