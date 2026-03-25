@@ -12,6 +12,9 @@ export async function generateMetadata({
   return {
     title: t.metaTitle,
     description: t.metaDescription,
+    keywords: lang === "ko"
+      ? ["색상 선택기", "컬러 피커", "HEX 색상 코드", "RGB 변환", "HSL 변환", "색상 팔레트", "색상 대비 체크", "웹 색상"]
+      : ["color picker", "hex color code", "rgb to hex", "color converter", "color palette generator", "contrast checker", "hsl converter", "css color"],
     alternates: {
       canonical: `/${lang}/tools/color-picker`,
       languages: { en: "/en/tools/color-picker", ko: "/ko/tools/color-picker" },
