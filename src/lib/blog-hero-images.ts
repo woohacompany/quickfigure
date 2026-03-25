@@ -455,4 +455,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1502691876148-a84978e59af8",
     "https://images.unsplash.com/photo-1541701494587-cb58502866ab",
   ],
+  "capital-gains-tax-guide": [
+    "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11",
+    "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
+    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf",
+  ],
 };

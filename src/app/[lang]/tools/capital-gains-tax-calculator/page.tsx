@@ -235,10 +235,10 @@ export default function CapitalGainsTaxCalculatorPage({
   const fmt = (v: number) =>
     v.toLocaleString(isKo ? "ko-KR" : "en-US", { maximumFractionDigits: 0 });
 
-  const title = isKo ? "양도소득세 계산기" : "Capital Gains Tax Calculator";
+  const title = isKo ? "양도소득세 계산기 - 부동산 양도세 계산" : "Capital Gains Tax Calculator";
   const description = isKo
-    ? "2026년 기준 부동산 양도소득세를 자동 계산합니다. 장기보유특별공제, 1세대1주택 비과세, 다주택 중과세율을 확인하세요."
-    : "Calculate Korean capital gains tax on real estate. Includes long-term holding deductions, single-home exemption, and multi-home surcharges.";
+    ? "양도소득세 자동 계산기. 매도가·매수가·보유기간 입력하면 양도세, 장기보유공제, 실수령액을 계산. 2026년 세법 기준."
+    : "Calculate Korean capital gains tax on real estate. Includes long-term holding deductions, single-home exemption, and multi-home surcharges. 2026 tax law.";
 
   const holdingPeriodOptions: { value: HoldingPeriod; labelKo: string; labelEn: string }[] = [
     { value: "lt1", labelKo: "1년 미만", labelEn: "Less than 1 year" },
@@ -272,8 +272,21 @@ export default function CapitalGainsTaxCalculatorPage({
         { q: "What qualifies as necessary expenses?", a: "Brokerage fees, acquisition tax, legal fees, interior/remodeling costs, and repair costs at the time of sale are recognized as necessary expenses. Higher expenses reduce the capital gain and thus the tax burden." },
       ];
 
+  const toolUrl = `https://quickfigure.net/${lang}/tools/capital-gains-tax-calculator`;
+  const webAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: title,
+    url: toolUrl,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "All",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+    description,
+  };
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
@@ -516,11 +529,22 @@ export default function CapitalGainsTaxCalculatorPage({
                           <td className="p-3">{isKo ? "총 납부세액" : "Total Tax Payable"}</td>
                           <td className="p-3 text-right text-red-600 dark:text-red-400">&#8361;{fmt(result.totalTax)}</td>
                         </tr>
+                        <tr className="font-semibold bg-blue-50 dark:bg-blue-950/30">
+                          <td className="p-3">{isKo ? "실수령액" : "Net Proceeds"}</td>
+                          <td className="p-3 text-right text-blue-600 dark:text-blue-400">&#8361;{fmt(result.salePrice - result.acquisitionPrice - result.expenses - result.totalTax)}</td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
                 </>
               )}
+              <div className="mt-4 p-3 rounded-md bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
+                <p className="text-xs text-amber-700 dark:text-amber-300">
+                  {isKo
+                    ? "⚠️ 본 계산기는 참고용이며, 정확한 세금은 세무사에게 확인하세요. 개별 상황에 따라 실제 세액이 달라질 수 있습니다."
+                    : "⚠️ This calculator is for reference only. Please consult a tax professional for accurate calculations. Actual tax may vary based on individual circumstances."}
+                </p>
+              </div>
             </div>
             <SaveResultImage
               targetRef={resultRef}
