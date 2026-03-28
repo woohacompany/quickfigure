@@ -475,4 +475,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
     "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a",
   ],
+  "regex-tester-guide": [
+    "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
+  ],
 };
