@@ -79,4 +79,5 @@ export const TOOL_SLUGS = [
   "year-end-tax-calculator",
   "uuid-generator",
   "regex-tester",
+  "hash-generator",
 ] as const;

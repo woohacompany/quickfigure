@@ -155,6 +155,7 @@ export default async function HomePage({
         { name: t.home.markdownEditor, description: t.home.markdownEditorDesc, href: `/${lang}/tools/markdown-editor`, tags: getToolTags("markdown-editor") },
         { name: t.home.uuidGenerator, description: t.home.uuidGeneratorDesc, href: `/${lang}/tools/uuid-generator`, tags: getToolTags("uuid-generator") },
         { name: t.home.regexTester, description: t.home.regexTesterDesc, href: `/${lang}/tools/regex-tester`, tags: getToolTags("regex-tester") },
+        { name: t.home.hashGenerator, description: t.home.hashGeneratorDesc, href: `/${lang}/tools/hash-generator`, tags: getToolTags("hash-generator") },
       ],
     },
     {

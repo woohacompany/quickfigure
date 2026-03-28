@@ -480,4 +480,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
   ],
+  "hash-generator-guide": [
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+  ],
 };
