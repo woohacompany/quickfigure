@@ -490,4 +490,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1516116216624-53e697fedbea",
     "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
   ],
+  "css-gradient-guide": [
+    "https://images.unsplash.com/photo-1557683316-973673baf926",
+    "https://images.unsplash.com/photo-1579546929518-9e396f3cc809",
+    "https://images.unsplash.com/photo-1508739773434-c26b3d09e071",
+  ],
 };

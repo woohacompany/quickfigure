@@ -339,4 +339,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["주급", "주급 계산", "주간 급여", "연장근로수당", "야간근로수당", "주휴수당", "알바 주급", "시급 계산", "근로수당", "주급 계산기", "야간수당", "연장수당"],
     en: ["weekly pay", "weekly salary", "weekly wage", "overtime pay", "night shift pay", "weekly pay calculator", "hourly to weekly", "overtime calculator"],
   },
+  "css-gradient-generator": {
+    ko: ["CSS 그라데이션", "그라데이션 생성기", "그라디언트", "CSS 배경", "그라데이션 만들기", "CSS 색상", "linear-gradient", "radial-gradient", "웹 그라데이션", "그라데이션 코드"],
+    en: ["css gradient", "gradient generator", "gradient maker", "linear gradient", "radial gradient", "css background gradient", "gradient css code", "css gradient tool", "gradient creator"],
+  },
 };

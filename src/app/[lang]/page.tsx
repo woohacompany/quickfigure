@@ -158,6 +158,7 @@ export default async function HomePage({
         { name: t.home.regexTester, description: t.home.regexTesterDesc, href: `/${lang}/tools/regex-tester`, tags: getToolTags("regex-tester") },
         { name: t.home.hashGenerator, description: t.home.hashGeneratorDesc, href: `/${lang}/tools/hash-generator`, tags: getToolTags("hash-generator") },
         { name: t.home.urlEncoderDecoder, description: t.home.urlEncoderDecoderDesc, href: `/${lang}/tools/url-encoder-decoder`, tags: getToolTags("url-encoder-decoder") },
+        { name: t.home.cssGradient, description: t.home.cssGradientDesc, href: `/${lang}/tools/css-gradient-generator`, tags: getToolTags("css-gradient-generator") },
       ],
     },
     {

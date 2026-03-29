@@ -82,4 +82,5 @@ export const TOOL_SLUGS = [
   "hash-generator",
   "url-encoder-decoder",
   "weekly-pay-calculator",
+  "css-gradient-generator",
 ] as const;
