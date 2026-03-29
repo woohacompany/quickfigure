@@ -80,4 +80,5 @@ export const TOOL_SLUGS = [
   "uuid-generator",
   "regex-tester",
   "hash-generator",
+  "url-encoder-decoder",
 ] as const;

@@ -331,4 +331,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["UUID", "UUID 생성", "GUID", "고유 식별자", "UUID v4", "UUID v7", "랜덤 ID", "UUID 만들기", "UUID 검증"],
     en: ["UUID", "UUID generator", "GUID", "unique ID", "UUID v4", "UUID v7", "random UUID", "UUID validator", "bulk UUID"],
   },
+  "url-encoder-decoder": {
+    ko: ["URL 인코딩", "URL 디코딩", "URL 인코더", "URL 디코더", "퍼센트 인코딩", "한글 URL", "URL 변환", "URL 파싱"],
+    en: ["url encoder", "url decoder", "url encode", "url decode", "percent encoding", "url parser", "encode url", "decode url"],
+  },
 };
