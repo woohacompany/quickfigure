@@ -74,6 +74,7 @@ export default async function HomePage({
         { name: t.home.discountCalc, description: t.home.discountCalcDesc, href: `/${lang}/tools/discount-calculator`, tags: getToolTags("discount-calculator") },
         { name: t.home.electricityCalc, description: t.home.electricityCalcDesc, href: `/${lang}/tools/electricity-calculator`, tags: getToolTags("electricity-calculator") },
         { name: t.home.weeklyHolidayPayCalc, description: t.home.weeklyHolidayPayCalcDesc, href: `/${lang}/tools/weekly-holiday-pay-calculator`, tags: getToolTags("weekly-holiday-pay-calculator") },
+        { name: t.home.weeklyPayCalc, description: t.home.weeklyPayCalcDesc, href: `/${lang}/tools/weekly-pay-calculator`, tags: getToolTags("weekly-pay-calculator") },
         { name: t.home.annualLeaveCalc, description: t.home.annualLeaveCalcDesc, href: `/${lang}/tools/annual-leave-calculator`, tags: getToolTags("annual-leave-calculator") },
         { name: t.home.unemploymentCalc, description: t.home.unemploymentCalcDesc, href: `/${lang}/tools/unemployment-calculator`, tags: getToolTags("unemployment-calculator") },
         { name: t.home.acquisitionTaxCalc, description: t.home.acquisitionTaxCalcDesc, href: `/${lang}/tools/acquisition-tax-calculator`, tags: getToolTags("acquisition-tax-calculator") },

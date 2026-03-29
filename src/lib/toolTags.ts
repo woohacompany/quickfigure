@@ -335,4 +335,8 @@ export const toolTags: Record<string, { ko: string[]; en: string[] }> = {
     ko: ["URL 인코딩", "URL 디코딩", "URL 인코더", "URL 디코더", "퍼센트 인코딩", "한글 URL", "URL 변환", "URL 파싱"],
     en: ["url encoder", "url decoder", "url encode", "url decode", "percent encoding", "url parser", "encode url", "decode url"],
   },
+  "weekly-pay-calculator": {
+    ko: ["주급", "주급 계산", "주간 급여", "연장근로수당", "야간근로수당", "주휴수당", "알바 주급", "시급 계산", "근로수당", "주급 계산기", "야간수당", "연장수당"],
+    en: ["weekly pay", "weekly salary", "weekly wage", "overtime pay", "night shift pay", "weekly pay calculator", "hourly to weekly", "overtime calculator"],
+  },
 };

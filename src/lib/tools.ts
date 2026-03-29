@@ -81,4 +81,5 @@ export const TOOL_SLUGS = [
   "regex-tester",
   "hash-generator",
   "url-encoder-decoder",
+  "weekly-pay-calculator",
 ] as const;
