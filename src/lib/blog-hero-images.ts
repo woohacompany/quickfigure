@@ -505,4 +505,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1541462608143-67571c6738dd",
     "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
   ],
+  "character-count-guide": [
+    "https://images.unsplash.com/photo-1455390582262-044cdead277a",
+    "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    "https://images.unsplash.com/photo-1501504905252-473c47e087f8",
+  ],
 };
