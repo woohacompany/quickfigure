@@ -495,4 +495,9 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1579546929518-9e396f3cc809",
     "https://images.unsplash.com/photo-1508739773434-c26b3d09e071",
   ],
+  "special-characters-for-sns": [
+    "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
+    "https://images.unsplash.com/photo-1562577309-4932fdd64cd1",
+    "https://images.unsplash.com/photo-1563986768609-322da13575f2",
+  ],
 };
