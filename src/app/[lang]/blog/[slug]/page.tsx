@@ -9,6 +9,8 @@ import {
   categoryLabels,
   type ContentBlock,
 } from "@/lib/blog";
+import { getPostAuthor, getAuthorPosts } from "@/lib/authors";
+import { AuthorByline, AuthorCard } from "@/components/AuthorProfile";
 import BlogHeroImage from "@/components/BlogHeroImage";
 import EmbedTool from "@/components/EmbedTools";
 import EmailSubscribeBlog from "./EmailSubscribeBlog";
@@ -197,6 +199,9 @@ export default async function BlogPostPage({
   const tr = post.translations[locale];
   const t = getDictionary(locale).blog;
 
+  const author = getPostAuthor(slug);
+  const authorOtherPosts = getAuthorPosts(author.id, blogPosts, slug, 3);
+
   const relatedPosts = post.relatedPosts
     .map((s) => getPostBySlug(s))
     .filter(Boolean);
@@ -221,7 +226,7 @@ export default async function BlogPostPage({
 
           {/* Header */}
           <header className="mb-8">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
               <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
                 {categoryLabels[post.category][locale]}
               </span>
@@ -229,6 +234,8 @@ export default async function BlogPostPage({
               <span className="text-sm text-neutral-400">
                 {post.readingTime} {t.minRead}
               </span>
+              <span className="text-sm text-neutral-300 dark:text-neutral-600">|</span>
+              <AuthorByline author={author} locale={locale} />
             </div>
             <h1 className="text-3xl font-bold tracking-tight leading-tight">
               {tr.title}
@@ -281,6 +288,15 @@ export default async function BlogPostPage({
             </section>
           )}
 
+          {/* Author Profile Card */}
+          <AuthorCard
+            author={author}
+            locale={locale}
+            lang={lang}
+            otherPosts={authorOtherPosts}
+            moreLabel={t.moreByAuthor}
+          />
+
           {/* Email Subscribe */}
           <EmailSubscribeBlog lang={lang} />
 
@@ -309,6 +325,33 @@ export default async function BlogPostPage({
             </section>
           )}
         </article>
+
+        {/* JSON-LD: Article + Author */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: tr.title,
+              description: tr.summary,
+              datePublished: post.date,
+              url: `https://quickfigure.net/${lang}/blog/${slug}`,
+              inLanguage: locale === "ko" ? "ko-KR" : "en-US",
+              author: {
+                "@type": "Person",
+                name: author.name[locale],
+                description: author.bio[locale],
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "QuickFigure",
+                url: "https://quickfigure.net",
+              },
+            }),
+          }}
+        />
 
         {/* Sticky Sidebar - Desktop */}
         <aside className="hidden lg:block">
