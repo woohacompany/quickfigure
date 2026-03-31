@@ -23,7 +23,7 @@ export async function generateMetadata({
       : ["capital gains tax calculator", "property tax korea", "capital gains tax rate", "real estate tax calculator korea"],
     alternates: {
       canonical: `/${lang}/tools/capital-gains-tax-calculator`,
-      languages: { en: "/en/tools/capital-gains-tax-calculator", ko: "/ko/tools/capital-gains-tax-calculator" },
+      languages: { en: "/en/tools/capital-gains-tax-calculator", ko: "/ko/tools/capital-gains-tax-calculator", "x-default": "/en/tools/capital-gains-tax-calculator" },
     },
     openGraph: { title, description, type: "website" },
   };

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/emergency-fund-calculator`,
-      languages: { en: "/en/tools/emergency-fund-calculator", ko: "/ko/tools/emergency-fund-calculator" },
+      languages: { en: "/en/tools/emergency-fund-calculator", ko: "/ko/tools/emergency-fund-calculator", "x-default": "/en/tools/emergency-fund-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

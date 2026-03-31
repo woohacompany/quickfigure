@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/case-converter`,
-      languages: { en: "/en/tools/case-converter", ko: "/ko/tools/case-converter" },
+      languages: { en: "/en/tools/case-converter", ko: "/ko/tools/case-converter", "x-default": "/en/tools/case-converter" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

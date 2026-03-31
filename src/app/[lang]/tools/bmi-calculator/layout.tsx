@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/bmi-calculator`,
-      languages: { en: "/en/tools/bmi-calculator", ko: "/ko/tools/bmi-calculator" },
+      languages: { en: "/en/tools/bmi-calculator", ko: "/ko/tools/bmi-calculator", "x-default": "/en/tools/bmi-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

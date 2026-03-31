@@ -20,7 +20,7 @@ export async function generateMetadata({
     description: metaDescription,
     alternates: {
       canonical: `/${lang}/tools/dsr-calculator`,
-      languages: { en: "/en/tools/dsr-calculator", ko: "/ko/tools/dsr-calculator" },
+      languages: { en: "/en/tools/dsr-calculator", ko: "/ko/tools/dsr-calculator", "x-default": "/en/tools/dsr-calculator" },
     },
     openGraph: {
       title: metaTitle,

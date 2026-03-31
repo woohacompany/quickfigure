@@ -20,7 +20,7 @@ export async function generateMetadata({
     description: metaDescription,
     alternates: {
       canonical: `/${lang}/tools/inheritance-tax-calculator`,
-      languages: { en: "/en/tools/inheritance-tax-calculator", ko: "/ko/tools/inheritance-tax-calculator" },
+      languages: { en: "/en/tools/inheritance-tax-calculator", ko: "/ko/tools/inheritance-tax-calculator", "x-default": "/en/tools/inheritance-tax-calculator" },
     },
     openGraph: {
       title: metaTitle,

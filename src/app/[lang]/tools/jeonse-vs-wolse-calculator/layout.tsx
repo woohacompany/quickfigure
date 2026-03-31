@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/jeonse-vs-wolse-calculator`,
-      languages: { en: "/en/tools/jeonse-vs-wolse-calculator", ko: "/ko/tools/jeonse-vs-wolse-calculator" },
+      languages: { en: "/en/tools/jeonse-vs-wolse-calculator", ko: "/ko/tools/jeonse-vs-wolse-calculator", "x-default": "/en/tools/jeonse-vs-wolse-calculator" },
     },
     openGraph: {
       title: metaTitle,

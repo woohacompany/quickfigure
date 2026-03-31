@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/currency-converter`,
-      languages: { en: "/en/tools/currency-converter", ko: "/ko/tools/currency-converter" },
+      languages: { en: "/en/tools/currency-converter", ko: "/ko/tools/currency-converter", "x-default": "/en/tools/currency-converter" },
     },
     openGraph: {
       title: metaTitle,

@@ -20,7 +20,7 @@ export async function generateMetadata({
     description: metaDescription,
     alternates: {
       canonical: `/${lang}/tools/accident-settlement-calculator`,
-      languages: { en: "/en/tools/accident-settlement-calculator", ko: "/ko/tools/accident-settlement-calculator" },
+      languages: { en: "/en/tools/accident-settlement-calculator", ko: "/ko/tools/accident-settlement-calculator", "x-default": "/en/tools/accident-settlement-calculator" },
     },
     openGraph: {
       title: metaTitle,

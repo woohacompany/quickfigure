@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/json-formatter`,
-      languages: { en: "/en/tools/json-formatter", ko: "/ko/tools/json-formatter" },
+      languages: { en: "/en/tools/json-formatter", ko: "/ko/tools/json-formatter", "x-default": "/en/tools/json-formatter" },
     },
     openGraph: {
       title: metaTitle,

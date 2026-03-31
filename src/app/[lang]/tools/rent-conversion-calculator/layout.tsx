@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/rent-conversion-calculator`,
-      languages: { en: "/en/tools/rent-conversion-calculator", ko: "/ko/tools/rent-conversion-calculator" },
+      languages: { en: "/en/tools/rent-conversion-calculator", ko: "/ko/tools/rent-conversion-calculator", "x-default": "/en/tools/rent-conversion-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/calorie-calculator`,
-      languages: { en: "/en/tools/calorie-calculator", ko: "/ko/tools/calorie-calculator" },
+      languages: { en: "/en/tools/calorie-calculator", ko: "/ko/tools/calorie-calculator", "x-default": "/en/tools/calorie-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

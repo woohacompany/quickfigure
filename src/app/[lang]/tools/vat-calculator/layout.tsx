@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/vat-calculator`,
-      languages: { en: "/en/tools/vat-calculator", ko: "/ko/tools/vat-calculator" },
+      languages: { en: "/en/tools/vat-calculator", ko: "/ko/tools/vat-calculator", "x-default": "/en/tools/vat-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

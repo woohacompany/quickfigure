@@ -17,7 +17,7 @@ export async function generateMetadata({
       : ["color picker", "hex color code", "rgb to hex", "color converter", "color palette generator", "contrast checker", "hsl converter", "css color"],
     alternates: {
       canonical: `/${lang}/tools/color-picker`,
-      languages: { en: "/en/tools/color-picker", ko: "/ko/tools/color-picker" },
+      languages: { en: "/en/tools/color-picker", ko: "/ko/tools/color-picker", "x-default": "/en/tools/color-picker" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

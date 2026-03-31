@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/retirement-calculator`,
-      languages: { en: "/en/tools/retirement-calculator", ko: "/ko/tools/retirement-calculator" },
+      languages: { en: "/en/tools/retirement-calculator", ko: "/ko/tools/retirement-calculator", "x-default": "/en/tools/retirement-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

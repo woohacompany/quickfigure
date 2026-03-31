@@ -23,7 +23,7 @@ export async function generateMetadata({
       : ["korean year end tax settlement", "tax refund calculator korea", "income deduction calculator"],
     alternates: {
       canonical: `/${lang}/tools/year-end-tax-calculator`,
-      languages: { en: "/en/tools/year-end-tax-calculator", ko: "/ko/tools/year-end-tax-calculator" },
+      languages: { en: "/en/tools/year-end-tax-calculator", ko: "/ko/tools/year-end-tax-calculator", "x-default": "/en/tools/year-end-tax-calculator" },
     },
     openGraph: { title, description, type: "website" },
   };

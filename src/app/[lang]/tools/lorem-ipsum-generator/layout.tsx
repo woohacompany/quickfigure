@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/lorem-ipsum-generator`,
-      languages: { en: "/en/tools/lorem-ipsum-generator", ko: "/ko/tools/lorem-ipsum-generator" },
+      languages: { en: "/en/tools/lorem-ipsum-generator", ko: "/ko/tools/lorem-ipsum-generator", "x-default": "/en/tools/lorem-ipsum-generator" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

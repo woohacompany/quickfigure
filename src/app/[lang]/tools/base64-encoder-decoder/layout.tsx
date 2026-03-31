@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/base64-encoder-decoder`,
-      languages: { en: "/en/tools/base64-encoder-decoder", ko: "/ko/tools/base64-encoder-decoder" },
+      languages: { en: "/en/tools/base64-encoder-decoder", ko: "/ko/tools/base64-encoder-decoder", "x-default": "/en/tools/base64-encoder-decoder" },
     },
     openGraph: {
       title: metaTitle,

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/area-converter`,
-      languages: { en: "/en/tools/area-converter", ko: "/ko/tools/area-converter" },
+      languages: { en: "/en/tools/area-converter", ko: "/ko/tools/area-converter", "x-default": "/en/tools/area-converter" },
     },
     openGraph: {
       title: t.metaTitle,

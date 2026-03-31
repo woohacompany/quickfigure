@@ -22,7 +22,7 @@ export async function generateMetadata({
     description: metaDescription,
     alternates: {
       canonical: `/${lang}/tools/excel-merge`,
-      languages: { en: "/en/tools/excel-merge", ko: "/ko/tools/excel-merge" },
+      languages: { en: "/en/tools/excel-merge", ko: "/ko/tools/excel-merge", "x-default": "/en/tools/excel-merge" },
     },
     openGraph: {
       title: metaTitle,

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/css-gradient-generator`,
-      languages: { en: "/en/tools/css-gradient-generator", ko: "/ko/tools/css-gradient-generator" },
+      languages: { en: "/en/tools/css-gradient-generator", ko: "/ko/tools/css-gradient-generator", "x-default": "/en/tools/css-gradient-generator" },
     },
     openGraph: {
       title: t.metaTitle,

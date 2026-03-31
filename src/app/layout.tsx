@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | QuickFigure",
   },
   description: "Free online tools for text analysis, counting, and more.",
-  metadataBase: new URL("https://quickfigure.com"),
+  metadataBase: new URL("https://www.quickfigure.net"),
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "QuickFigure",
     title: "QuickFigure - Free Online Tools",
     description: "Free online tools for text analysis, counting, and more.",
-    url: "https://quickfigure.com",
+    url: "https://www.quickfigure.net",
   },
   other: {
     "naver-site-verification": "3c02b83df67a4cd6c4ce2016bef7e406bc2418d1",

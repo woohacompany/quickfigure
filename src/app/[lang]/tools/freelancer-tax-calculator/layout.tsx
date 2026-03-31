@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/freelancer-tax-calculator`,
-      languages: { en: "/en/tools/freelancer-tax-calculator", ko: "/ko/tools/freelancer-tax-calculator" },
+      languages: { en: "/en/tools/freelancer-tax-calculator", ko: "/ko/tools/freelancer-tax-calculator", "x-default": "/en/tools/freelancer-tax-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

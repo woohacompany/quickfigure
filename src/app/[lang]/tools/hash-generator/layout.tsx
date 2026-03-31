@@ -23,7 +23,7 @@ export async function generateMetadata({
       : ["hash generator", "md5 generator", "sha256 hash", "hash calculator", "file hash checker", "sha1 generator", "hash compare", "checksum generator"],
     alternates: {
       canonical: `/${lang}/tools/hash-generator`,
-      languages: { en: "/en/tools/hash-generator", ko: "/ko/tools/hash-generator" },
+      languages: { en: "/en/tools/hash-generator", ko: "/ko/tools/hash-generator", "x-default": "/en/tools/hash-generator" },
     },
     openGraph: { title, description, type: "website" },
   };

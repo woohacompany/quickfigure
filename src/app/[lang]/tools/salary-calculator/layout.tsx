@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/salary-calculator`,
-      languages: { en: "/en/tools/salary-calculator", ko: "/ko/tools/salary-calculator" },
+      languages: { en: "/en/tools/salary-calculator", ko: "/ko/tools/salary-calculator", "x-default": "/en/tools/salary-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

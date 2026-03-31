@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/severance-calculator`,
-      languages: { en: "/en/tools/severance-calculator", ko: "/ko/tools/severance-calculator" },
+      languages: { en: "/en/tools/severance-calculator", ko: "/ko/tools/severance-calculator", "x-default": "/en/tools/severance-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

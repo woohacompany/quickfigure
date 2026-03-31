@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/qr-code-generator`,
-      languages: { en: "/en/tools/qr-code-generator", ko: "/ko/tools/qr-code-generator" },
+      languages: { en: "/en/tools/qr-code-generator", ko: "/ko/tools/qr-code-generator", "x-default": "/en/tools/qr-code-generator" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

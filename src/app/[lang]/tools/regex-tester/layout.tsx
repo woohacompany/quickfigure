@@ -23,7 +23,7 @@ export async function generateMetadata({
       : ["regex tester", "regular expression tester", "regex online", "regex matcher", "regex checker", "regex validator", "test regex", "regex101"],
     alternates: {
       canonical: `/${lang}/tools/regex-tester`,
-      languages: { en: "/en/tools/regex-tester", ko: "/ko/tools/regex-tester" },
+      languages: { en: "/en/tools/regex-tester", ko: "/ko/tools/regex-tester", "x-default": "/en/tools/regex-tester" },
     },
     openGraph: { title, description, type: "website" },
   };

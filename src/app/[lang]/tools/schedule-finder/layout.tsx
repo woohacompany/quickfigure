@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/schedule-finder`,
-      languages: { en: "/en/tools/schedule-finder", ko: "/ko/tools/schedule-finder" },
+      languages: { en: "/en/tools/schedule-finder", ko: "/ko/tools/schedule-finder", "x-default": "/en/tools/schedule-finder" },
     },
     openGraph: {
       title: metaTitle,

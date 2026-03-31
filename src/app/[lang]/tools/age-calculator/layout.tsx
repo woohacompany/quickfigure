@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/age-calculator`,
-      languages: { en: "/en/tools/age-calculator", ko: "/ko/tools/age-calculator" },
+      languages: { en: "/en/tools/age-calculator", ko: "/ko/tools/age-calculator", "x-default": "/en/tools/age-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/contact`,
-      languages: { en: "/en/contact", ko: "/ko/contact" },
+      languages: { en: "/en/contact", ko: "/ko/contact", "x-default": "/en/contact" },
     },
     openGraph: {
       title: t.metaTitle,

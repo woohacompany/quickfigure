@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/weekly-pay-calculator`,
-      languages: { en: "/en/tools/weekly-pay-calculator", ko: "/ko/tools/weekly-pay-calculator" },
+      languages: { en: "/en/tools/weekly-pay-calculator", ko: "/ko/tools/weekly-pay-calculator", "x-default": "/en/tools/weekly-pay-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

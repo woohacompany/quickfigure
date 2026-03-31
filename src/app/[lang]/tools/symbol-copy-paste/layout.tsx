@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/symbol-copy-paste`,
-      languages: { en: "/en/tools/symbol-copy-paste", ko: "/ko/tools/symbol-copy-paste" },
+      languages: { en: "/en/tools/symbol-copy-paste", ko: "/ko/tools/symbol-copy-paste", "x-default": "/en/tools/symbol-copy-paste" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

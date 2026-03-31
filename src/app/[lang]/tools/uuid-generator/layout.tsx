@@ -23,7 +23,7 @@ export async function generateMetadata({
       : ["uuid generator", "uuid v4 generator", "random uuid", "guid generator", "uuid online", "generate uuid", "uuid validator", "bulk uuid generator"],
     alternates: {
       canonical: `/${lang}/tools/uuid-generator`,
-      languages: { en: "/en/tools/uuid-generator", ko: "/ko/tools/uuid-generator" },
+      languages: { en: "/en/tools/uuid-generator", ko: "/ko/tools/uuid-generator", "x-default": "/en/tools/uuid-generator" },
     },
     openGraph: { title, description, type: "website" },
   };

@@ -24,7 +24,7 @@ export async function generateMetadata({
     keywords,
     alternates: {
       canonical: `/${lang}/tools/typing-speed-test`,
-      languages: { en: "/en/tools/typing-speed-test", ko: "/ko/tools/typing-speed-test" },
+      languages: { en: "/en/tools/typing-speed-test", ko: "/ko/tools/typing-speed-test", "x-default": "/en/tools/typing-speed-test" },
     },
     openGraph: {
       title: metaTitle,

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/unit-converter`,
-      languages: { en: "/en/tools/unit-converter", ko: "/ko/tools/unit-converter" },
+      languages: { en: "/en/tools/unit-converter", ko: "/ko/tools/unit-converter", "x-default": "/en/tools/unit-converter" },
     },
     openGraph: {
       title: t.metaTitle,

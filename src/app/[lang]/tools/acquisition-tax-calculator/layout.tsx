@@ -20,7 +20,7 @@ export async function generateMetadata({
     description: metaDescription,
     alternates: {
       canonical: `/${lang}/tools/acquisition-tax-calculator`,
-      languages: { en: "/en/tools/acquisition-tax-calculator", ko: "/ko/tools/acquisition-tax-calculator" },
+      languages: { en: "/en/tools/acquisition-tax-calculator", ko: "/ko/tools/acquisition-tax-calculator", "x-default": "/en/tools/acquisition-tax-calculator" },
     },
     openGraph: {
       title: metaTitle,

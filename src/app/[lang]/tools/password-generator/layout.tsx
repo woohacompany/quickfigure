@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/password-generator`,
-      languages: { en: "/en/tools/password-generator", ko: "/ko/tools/password-generator" },
+      languages: { en: "/en/tools/password-generator", ko: "/ko/tools/password-generator", "x-default": "/en/tools/password-generator" },
     },
     openGraph: { title: t.metaTitle, description: t.metaDescription, type: "website" },
   };

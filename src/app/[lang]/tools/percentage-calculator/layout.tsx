@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/percentage-calculator`,
-      languages: { en: "/en/tools/percentage-calculator", ko: "/ko/tools/percentage-calculator" },
+      languages: { en: "/en/tools/percentage-calculator", ko: "/ko/tools/percentage-calculator", "x-default": "/en/tools/percentage-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

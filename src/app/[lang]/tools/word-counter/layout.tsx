@@ -17,7 +17,7 @@ export async function generateMetadata({
       : ["word counter", "character counter", "word count", "letter counter", "text counter", "character count online", "word count tool"],
     alternates: {
       canonical: `/${lang}/tools/word-counter`,
-      languages: { en: "/en/tools/word-counter", ko: "/ko/tools/word-counter" },
+      languages: { en: "/en/tools/word-counter", ko: "/ko/tools/word-counter", "x-default": "/en/tools/word-counter" },
     },
     openGraph: {
       title: t.metaTitle,

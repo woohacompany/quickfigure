@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/mortgage-calculator`,
-      languages: { en: "/en/tools/mortgage-calculator", ko: "/ko/tools/mortgage-calculator" },
+      languages: { en: "/en/tools/mortgage-calculator", ko: "/ko/tools/mortgage-calculator", "x-default": "/en/tools/mortgage-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

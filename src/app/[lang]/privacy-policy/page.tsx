@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/privacy-policy`,
-      languages: { en: "/en/privacy-policy", ko: "/ko/privacy-policy" },
+      languages: { en: "/en/privacy-policy", ko: "/ko/privacy-policy", "x-default": "/en/privacy-policy" },
     },
     openGraph: {
       title: t.metaTitle,

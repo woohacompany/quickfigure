@@ -38,7 +38,7 @@ export async function generateMetadata({
     description: tr.summary,
     alternates: {
       canonical: `/${lang}/blog/${slug}`,
-      languages: { en: `/en/blog/${slug}`, ko: `/ko/blog/${slug}` },
+      languages: { en: `/en/blog/${slug}`, ko: `/ko/blog/${slug}`, "x-default": `/en/blog/${slug}` },
     },
     openGraph: {
       title: tr.title,

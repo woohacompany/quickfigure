@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/compound-interest-calculator`,
-      languages: { en: "/en/tools/compound-interest-calculator", ko: "/ko/tools/compound-interest-calculator" },
+      languages: { en: "/en/tools/compound-interest-calculator", ko: "/ko/tools/compound-interest-calculator", "x-default": "/en/tools/compound-interest-calculator" },
     },
     openGraph: {
       title: t.metaTitle,

@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://quickfigure.net";
+const BASE_URL = "https://www.quickfigure.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = ["en", "ko"];
+  const locales = ["en", "ko"] as const;
   const routes = [
     "",
     "/tools/word-counter",
@@ -72,6 +72,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/image-kb-resizer",
     "/tools/image-watermark",
     "/tools/currency-converter",
+    "/tools/css-gradient-generator",
+    "/tools/excel-to-pdf",
+    "/tools/gif-maker",
+    "/tools/hash-generator",
+    "/tools/image-rotate",
+    "/tools/image-to-svg",
+    "/tools/jeonse-vs-wolse-calculator",
+    "/tools/ladder-game",
+    "/tools/pdf-to-excel",
+    "/tools/regex-tester",
+    "/tools/roi-calculator",
+    "/tools/schedule-finder",
+    "/tools/typing-speed-test",
+    "/tools/url-encoder-decoder",
+    "/tools/uuid-generator",
+    "/tools/weekly-pay-calculator",
+    "/tools/world-clock",
+    "/tools/year-end-tax-calculator",
     "/blog",
     "/blog/how-to-count-words-in-essay",
     "/blog/json-formatting-best-practices",
@@ -126,6 +144,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/image-kb-guide",
     "/blog/watermark-guide",
     "/blog/currency-converter-exchange-rate-guide",
+    "/blog/accident-settlement-guide",
+    "/blog/base64-encoding-guide",
+    "/blog/capital-gains-guide",
+    "/blog/capital-gains-tax-guide",
+    "/blog/car-insurance-comparison-2026",
+    "/blog/car-tax-guide",
+    "/blog/character-count-guide",
+    "/blog/color-picker-guide",
+    "/blog/credit-score-improvement-guide",
+    "/blog/css-gradient-guide",
+    "/blog/dsr-guide",
+    "/blog/excel-merge-guide",
+    "/blog/excel-to-pdf-conversion-guide",
+    "/blog/freelancer-tax-guide",
+    "/blog/hash-generator-guide",
+    "/blog/how-to-make-gif-from-images",
+    "/blog/how-to-rotate-images-online",
+    "/blog/image-to-vector-svg-complete-guide",
+    "/blog/inheritance-tax-guide",
+    "/blog/jeonse-vs-wolse-guide",
+    "/blog/json-formatter-guide",
+    "/blog/ladder-game-online-guide",
+    "/blog/loan-comparison-guide",
+    "/blog/mortgage-refinance-guide-2026",
+    "/blog/national-pension-guide",
+    "/blog/pdf-compress-guide",
+    "/blog/pdf-to-excel-conversion-guide",
+    "/blog/pdf-to-word-guide",
+    "/blog/personal-rehabilitation-guide",
+    "/blog/policy-fund-guide",
+    "/blog/regex-tester-guide",
+    "/blog/roi-calculator-investment-guide",
+    "/blog/schedule-finder-meeting-time-guide",
+    "/blog/small-business-policy-fund-2026",
+    "/blog/special-characters-for-sns",
+    "/blog/special-characters-keyboard-shortcut",
+    "/blog/text-diff-guide",
+    "/blog/typing-speed-test-guide",
+    "/blog/url-encoder-guide",
+    "/blog/uuid-generator-guide",
+    "/blog/word-counter-guide",
+    "/blog/world-clock-guide",
+    "/blog/world-time-converter-guide",
+    "/blog/year-end-tax-guide",
     "/about",
     "/contact",
     "/privacy-policy",
@@ -134,13 +196,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const locale of locales) {
-    for (const route of routes) {
+  for (const route of routes) {
+    for (const locale of locales) {
       entries.push({
         url: `${BASE_URL}/${locale}${route}`,
         lastModified: new Date(),
         changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1 : route.startsWith("/tools") ? 0.9 : 0.5,
+        alternates: {
+          languages: {
+            en: `${BASE_URL}/en${route}`,
+            ko: `${BASE_URL}/ko${route}`,
+          },
+        },
       });
     }
   }

@@ -14,7 +14,7 @@ export async function generateMetadata({
     description: t.metaDescription,
     alternates: {
       canonical: `/${lang}/tools/loan-calculator`,
-      languages: { en: "/en/tools/loan-calculator", ko: "/ko/tools/loan-calculator" },
+      languages: { en: "/en/tools/loan-calculator", ko: "/ko/tools/loan-calculator", "x-default": "/en/tools/loan-calculator" },
     },
     openGraph: {
       title: t.metaTitle,
