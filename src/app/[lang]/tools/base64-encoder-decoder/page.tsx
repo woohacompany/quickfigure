@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -247,6 +248,8 @@ export default function Base64Page({
             ? "\uBB34\uB8CC Base64 \uC778\uCF54\uB354/\uB514\uCF54\uB354. \uD14D\uC2A4\uD2B8\xB7\uC774\uBBF8\uC9C0 Base64 \uBCC0\uD658. \uBE60\uB974\uACE0 \uC548\uC804\uD55C \uD074\uB77C\uC774\uC5B8\uD2B8 \uCC98\uB9AC. \uAC00\uC785 \uC5C6\uC774 \uBB34\uB8CC."
             : "Free Base64 encoder/decoder. Convert text and images to/from Base64. Fast, secure, client-side processing. No signup needed."}
         </p>
+
+        <ToolAbout slug="base64-encoder-decoder" locale={locale} />
       </header>
 
       {/* Main Tab Bar */}
@@ -507,6 +510,9 @@ export default function Base64Page({
           )}
         </div>
       )}
+
+      <ToolHowItWorks slug="base64-encoder-decoder" locale={locale} />
+      <ToolDisclaimer slug="base64-encoder-decoder" locale={locale} />
 
       <ShareButtons
         title={t.title}

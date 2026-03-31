@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -338,6 +339,8 @@ export default function JsonFormatterPage({
             ? "\uBB34\uB8CC \uC628\uB77C\uC778 JSON \uD3EC\uB9F7\uD130. JSON\uC744 \uBCF4\uAE30 \uC88B\uAC8C \uC815\uB9AC\uD558\uACE0 \uC720\uD6A8\uC131 \uAC80\uC0AC\uAE4C\uC9C0. \uD2B8\uB9AC \uBDF0 \uC9C0\uC6D0. \uAC00\uC785 \uC5C6\uC774 \uBB34\uB8CC."
             : "Free online JSON formatter. Beautify, minify, validate, and explore JSON with Tree View. No signup needed."}
         </p>
+
+        <ToolAbout slug="json-formatter" locale={locale} />
       </header>
 
       {/* Tab Bar */}
@@ -538,6 +541,9 @@ export default function JsonFormatterPage({
           </div>
         </div>
       )}
+
+      <ToolHowItWorks slug="json-formatter" locale={locale} />
+      <ToolDisclaimer slug="json-formatter" locale={locale} />
 
       <ShareButtons
         title={t.title}

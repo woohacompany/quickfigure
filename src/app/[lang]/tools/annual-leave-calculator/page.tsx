@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -144,6 +145,8 @@ export default function AnnualLeaveCalculatorPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="annual-leave-calculator" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
@@ -298,6 +301,9 @@ export default function AnnualLeaveCalculatorPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="annual-leave-calculator" locale={locale} />
+      <ToolDisclaimer slug="annual-leave-calculator" locale={locale} />
 
       <ShareButtons title={title} description={description} lang={lang} slug="annual-leave-calculator" labels={dict.share} />
       <EmbedCodeButton slug="annual-leave-calculator" lang={lang} labels={dict.embed} />

@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -304,6 +305,8 @@ export default function RegexTesterPage({
             ? "무료 온라인 정규식 테스터. 패턴을 입력하고 실시간으로 매칭 결과를 확인하세요. 가입 없이 무료."
             : "Free online regex tester. Enter a pattern and see matches highlighted in real-time. No signup needed."}
         </p>
+
+        <ToolAbout slug="regex-tester" locale={locale} />
       </header>
 
       {/* Presets */}
@@ -572,6 +575,9 @@ export default function RegexTesterPage({
           </div>
         )}
       </div>
+
+      <ToolHowItWorks slug="regex-tester" locale={locale} />
+      <ToolDisclaimer slug="regex-tester" locale={locale} />
 
       <ShareButtons
         title={toolTitle}

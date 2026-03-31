@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -60,6 +61,8 @@ export default function AreaConverterPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {t.description}
         </p>
+
+        <ToolAbout slug="area-converter" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
@@ -212,6 +215,9 @@ export default function AreaConverterPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="area-converter" locale={locale} />
+      <ToolDisclaimer slug="area-converter" locale={locale} />
 
       <ShareButtons
         title={t.title}

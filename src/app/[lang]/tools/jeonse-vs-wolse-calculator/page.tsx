@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -176,6 +177,8 @@ export default function JeonseVsWolsePage({
             ? "전세와 월세 중 어떤 게 유리한지 계산합니다. 전세대출 이자, 기회비용, 전월세 전환율까지 반영. 2026년 기준."
             : "Compare Korean Jeonse (lump-sum deposit) vs Wolse (monthly rent). Factor in loan interest, opportunity cost, and conversion rate."}
         </p>
+
+        <ToolAbout slug="jeonse-vs-wolse-calculator" locale={locale} />
       </header>
 
       {/* ── Jeonse Section ── */}
@@ -439,6 +442,9 @@ export default function JeonseVsWolsePage({
           </button>
         </div>
       )}
+
+      <ToolHowItWorks slug="jeonse-vs-wolse-calculator" locale={locale} />
+      <ToolDisclaimer slug="jeonse-vs-wolse-calculator" locale={locale} />
 
       <ShareButtons
         title={isKo ? "전세 vs 월세 비교 계산기" : "Jeonse vs Wolse Calculator"}

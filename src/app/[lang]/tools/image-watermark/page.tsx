@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -358,6 +359,8 @@ export default function ImageWatermarkPage({
           {isKo ? "이미지 워터마크 추가" : "Image Watermark Tool"}
         </h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="image-watermark" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-6">
@@ -796,6 +799,9 @@ export default function ImageWatermarkPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="image-watermark" locale={locale} />
+      <ToolDisclaimer slug="image-watermark" locale={locale} />
 
       <ShareButtons title={title} description={description} lang={lang} slug="image-watermark" labels={dict.share} />
       <EmbedCodeButton slug="image-watermark" lang={lang} labels={dict.embed} />

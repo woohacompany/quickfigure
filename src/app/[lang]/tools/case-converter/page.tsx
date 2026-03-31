@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -94,6 +95,8 @@ export default function CaseConverterPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{t.title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{t.description}</p>
+
+        <ToolAbout slug="case-converter" locale={locale} />
       </header>
 
       <textarea
@@ -134,6 +137,9 @@ export default function CaseConverterPage({
           </button>
         </>
       )}
+
+      <ToolHowItWorks slug="case-converter" locale={locale} />
+      <ToolDisclaimer slug="case-converter" locale={locale} />
 
       <ShareButtons
         title={t.title}

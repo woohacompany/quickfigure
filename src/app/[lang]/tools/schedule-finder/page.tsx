@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import { supabase } from "@/lib/supabase";
 import ShareButtons from "@/components/ShareButtons";
@@ -799,6 +800,8 @@ export default function ScheduleFinderPage({
       <h1 className="text-2xl font-bold mb-2">{title}</h1>
       <p className="text-neutral-600 dark:text-neutral-400 mb-6">{description}</p>
 
+      <ToolAbout slug="schedule-finder" locale={locale} />
+
       {/* Steps Guide */}
       {step === "create" && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
@@ -1201,6 +1204,9 @@ export default function ScheduleFinderPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="schedule-finder" locale={locale} />
+      <ToolDisclaimer slug="schedule-finder" locale={locale} />
 
       <ShareButtons
         title={title}

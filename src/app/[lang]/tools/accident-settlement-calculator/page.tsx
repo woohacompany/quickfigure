@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -347,6 +348,8 @@ export default function AccidentSettlementCalculatorPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="accident-settlement-calculator" locale={locale} />
       </header>
 
       {/* 상단 면책 문구 */}
@@ -1090,6 +1093,9 @@ export default function AccidentSettlementCalculatorPage({
       </section>
 
       {/* Share & Embed */}
+      <ToolHowItWorks slug="accident-settlement-calculator" locale={locale} />
+      <ToolDisclaimer slug="accident-settlement-calculator" locale={locale} />
+
       <ShareButtons title={title} description={description} lang={lang} slug="accident-settlement-calculator" labels={dict.share} />
       <EmbedCodeButton slug="accident-settlement-calculator" lang={lang} labels={dict.embed} />
 

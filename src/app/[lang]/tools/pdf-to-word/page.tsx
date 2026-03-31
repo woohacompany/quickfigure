@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -441,6 +442,8 @@ export default function PdfToWordPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
+
+        <ToolAbout slug="pdf-to-word" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
@@ -692,6 +695,9 @@ export default function PdfToWordPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="pdf-to-word" locale={locale} />
+      <ToolDisclaimer slug="pdf-to-word" locale={locale} />
 
       <ShareButtons
         title={pageTitle}

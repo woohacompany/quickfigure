@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -548,6 +549,8 @@ export default function WorldClockPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold">{title}</h1>
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="world-clock" locale={locale} />
       </header>
 
       {/* ── Base City Main Clock ── */}
@@ -1136,6 +1139,9 @@ export default function WorldClockPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="world-clock" locale={locale} />
+      <ToolDisclaimer slug="world-clock" locale={locale} />
 
       <ShareButtons
         title={title}

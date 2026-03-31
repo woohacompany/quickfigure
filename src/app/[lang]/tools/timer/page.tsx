@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -443,6 +444,8 @@ export default function TimerPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
+
+        <ToolAbout slug="timer" locale={locale} />
       </header>
 
       <div
@@ -965,6 +968,9 @@ export default function TimerPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="timer" locale={locale} />
+      <ToolDisclaimer slug="timer" locale={locale} />
 
       <ShareButtons
         title={title}

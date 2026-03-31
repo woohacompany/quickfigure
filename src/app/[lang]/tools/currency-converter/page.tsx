@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -272,6 +273,8 @@ export default function CurrencyConverterPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
+
+        <ToolAbout slug="currency-converter" locale={locale} />
       </header>
 
       {/* Main Converter */}
@@ -692,6 +695,9 @@ export default function CurrencyConverterPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="currency-converter" locale={locale} />
+      <ToolDisclaimer slug="currency-converter" locale={locale} />
 
       <ShareButtons
         title={title}

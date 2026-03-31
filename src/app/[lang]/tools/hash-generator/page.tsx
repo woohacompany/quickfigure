@@ -4,6 +4,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -342,6 +343,8 @@ export default function HashGeneratorPage({
             ? "무료 온라인 해시 생성기. 텍스트나 파일의 MD5, SHA-1, SHA-256, SHA-512 해시값을 즉시 계산하세요. 가입 없이 무료."
             : "Free online hash generator. Instantly compute MD5, SHA-1, SHA-256, SHA-512 hashes for text or files. No signup needed."}
         </p>
+
+        <ToolAbout slug="hash-generator" locale={locale} />
       </header>
 
       {/* Tab: Text | File */}
@@ -615,6 +618,9 @@ export default function HashGeneratorPage({
           )}
         </div>
       </section>
+
+      <ToolHowItWorks slug="hash-generator" locale={locale} />
+      <ToolDisclaimer slug="hash-generator" locale={locale} />
 
       <ShareButtons
         title={toolTitle}

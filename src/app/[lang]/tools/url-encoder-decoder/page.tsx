@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -180,6 +181,8 @@ export default function UrlEncoderDecoderPage({
             ? "URL을 인코딩하거나 디코딩하세요. 한글 URL 변환, 쿼리 파라미터 파싱. 가입 없이 무료."
             : "Encode or decode URLs online. Parse query parameters, convert special characters. Free, no signup."}
         </p>
+
+        <ToolAbout slug="url-encoder-decoder" locale={locale} />
       </header>
 
       {/* Mode Toggle: Encode / Decode */}
@@ -410,6 +413,9 @@ export default function UrlEncoderDecoderPage({
           </div>
         </div>
       </section>
+
+      <ToolHowItWorks slug="url-encoder-decoder" locale={locale} />
+      <ToolDisclaimer slug="url-encoder-decoder" locale={locale} />
 
       <ShareButtons
         title={toolTitle}

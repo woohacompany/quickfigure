@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -343,6 +344,8 @@ export default function PdfToExcelPage({
       <h1 className="text-2xl font-bold sm:text-3xl">{title}</h1>
       <p className="mt-2 text-neutral-600 dark:text-neutral-400">{description}</p>
 
+      <ToolAbout slug="pdf-to-excel" locale={locale} />
+
       {/* Upload Area */}
       <div className="mt-8">
         <div
@@ -602,6 +605,9 @@ export default function PdfToExcelPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="pdf-to-excel" locale={locale} />
+      <ToolDisclaimer slug="pdf-to-excel" locale={locale} />
 
       <ShareButtons
         title={title}

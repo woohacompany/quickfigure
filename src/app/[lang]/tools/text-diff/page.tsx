@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -328,6 +329,8 @@ export default function TextDiffPage({
           <p className="mt-2 text-neutral-500 dark:text-neutral-400">
             {description}
           </p>
+
+          <ToolAbout slug="text-diff" locale={locale} />
         </header>
 
         {/* Ad placeholder - top */}
@@ -682,6 +685,9 @@ export default function TextDiffPage({
         </section>
 
         {/* ── Share + Embed ───────────────────────────── */}
+        <ToolHowItWorks slug="text-diff" locale={locale} />
+        <ToolDisclaimer slug="text-diff" locale={locale} />
+
         <ShareButtons
           title={title}
           description={description}

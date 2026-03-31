@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -133,6 +134,8 @@ export default function WordCounterPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{t.title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{t.description}</p>
+
+        <ToolAbout slug="word-counter" locale={locale} />
       </header>
 
       {/* Stats Grid */}
@@ -208,6 +211,9 @@ export default function WordCounterPage({
           <p className="text-sm text-neutral-400">{t.noKeywords}</p>
         )}
       </div>
+
+      <ToolHowItWorks slug="word-counter" locale={locale} />
+      <ToolDisclaimer slug="word-counter" locale={locale} />
 
       <ShareButtons title={t.title} description={t.description} lang={lang} slug="word-counter" labels={dict.share} />
       <EmbedCodeButton slug="word-counter" lang={lang} labels={dict.embed} />

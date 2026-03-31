@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -224,6 +225,8 @@ export default function RoiCalculatorPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
+
+        <ToolAbout slug="roi-calculator" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-6">
@@ -813,6 +816,9 @@ export default function RoiCalculatorPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="roi-calculator" locale={locale} />
+      <ToolDisclaimer slug="roi-calculator" locale={locale} />
 
       <ShareButtons
         title={title}

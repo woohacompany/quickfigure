@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -416,6 +417,8 @@ export default function TypingSpeedTestPage({
             ? "한국어/영어 타자 속도를 측정하세요. WPM, 정확도, 등급까지 확인. 100% 무료."
             : "Test your typing speed in English or Korean. Measure WPM, accuracy, and get your grade."}
         </p>
+
+        <ToolAbout slug="typing-speed-test" locale={locale} />
       </header>
 
       {/* Settings */}
@@ -612,6 +615,9 @@ export default function TypingSpeedTestPage({
           </div>
         </div>
       )}
+
+      <ToolHowItWorks slug="typing-speed-test" locale={locale} />
+      <ToolDisclaimer slug="typing-speed-test" locale={locale} />
 
       <ShareButtons
         title={isKo ? "타자 속도 측정" : "Typing Speed Test"}

@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -527,6 +528,8 @@ export default function ImageCropperPage({
           {isKo ? "이미지 자르기" : "Image Cropper"}
         </h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="image-cropper" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-6">
@@ -999,6 +1002,9 @@ export default function ImageCropperPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="image-cropper" locale={locale} />
+      <ToolDisclaimer slug="image-cropper" locale={locale} />
 
       <ShareButtons
         title={isKo ? "이미지 자르기" : "Image Cropper"}

@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -322,6 +323,8 @@ export default function ImageConverterPage({
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">
           {description}
         </p>
+
+        <ToolAbout slug="image-converter" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
@@ -613,6 +616,9 @@ export default function ImageConverterPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="image-converter" locale={locale} />
+      <ToolDisclaimer slug="image-converter" locale={locale} />
 
       <ShareButtons
         title={title}

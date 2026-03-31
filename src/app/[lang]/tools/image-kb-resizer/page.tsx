@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -355,6 +356,8 @@ export default function ImageKbResizerPage({
           {isKo ? "사진 용량 줄이기 (KB 지정)" : "Image KB Resizer"}
         </h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="image-kb-resizer" locale={locale} />
       </header>
 
       {/* Practical example banner */}
@@ -805,6 +808,9 @@ export default function ImageKbResizerPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="image-kb-resizer" locale={locale} />
+      <ToolDisclaimer slug="image-kb-resizer" locale={locale} />
 
       <ShareButtons title={title} description={description} lang={lang} slug="image-kb-resizer" labels={dict.share} />
       <EmbedCodeButton slug="image-kb-resizer" lang={lang} labels={dict.embed} />

@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -193,6 +194,8 @@ export default function UuidGeneratorPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="uuid-generator" locale={locale} />
       </header>
 
       {/* Tabs */}
@@ -323,6 +326,9 @@ export default function UuidGeneratorPage({
           )}
         </div>
       )}
+
+      <ToolHowItWorks slug="uuid-generator" locale={locale} />
+      <ToolDisclaimer slug="uuid-generator" locale={locale} />
 
       <ShareButtons title={title} description={description} lang={lang} slug="uuid-generator" labels={dict.share} />
       <EmbedCodeButton slug="uuid-generator" lang={lang} labels={dict.embed} />

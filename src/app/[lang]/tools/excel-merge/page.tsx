@@ -4,6 +4,7 @@ import { useState, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -534,6 +535,8 @@ export default function ExcelMergePage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{pageTitle}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="excel-merge" locale={locale} />
       </header>
 
       {/* ===== STEP 1: File Upload ===== */}
@@ -957,6 +960,9 @@ export default function ExcelMergePage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="excel-merge" locale={locale} />
+      <ToolDisclaimer slug="excel-merge" locale={locale} />
 
       <ShareButtons
         title={pageTitle}

@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -152,6 +153,8 @@ export default function ImageCompressorPage({
           {isKo ? "이미지 압축" : "Image Compressor"}
         </h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="image-compressor" locale={locale} />
       </header>
 
       <div className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-6 space-y-5">
@@ -336,6 +339,9 @@ export default function ImageCompressorPage({
           </Link>
         </div>
       </section>
+
+      <ToolHowItWorks slug="image-compressor" locale={locale} />
+      <ToolDisclaimer slug="image-compressor" locale={locale} />
 
       <ShareButtons title={title} description={description} lang={lang} slug="image-compressor" labels={dict.share} />
       <EmbedCodeButton slug="image-compressor" lang={lang} labels={dict.embed} />

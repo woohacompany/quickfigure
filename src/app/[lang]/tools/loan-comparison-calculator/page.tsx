@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -235,6 +236,8 @@ export default function LoanComparisonCalculatorPage({
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
         <p className="mt-2 text-neutral-500 dark:text-neutral-400">{description}</p>
+
+        <ToolAbout slug="loan-comparison-calculator" locale={locale} />
       </header>
 
       {/* Tool UI */}
@@ -629,6 +632,9 @@ export default function LoanComparisonCalculatorPage({
       </section>
 
       {/* Share & Embed */}
+      <ToolHowItWorks slug="loan-comparison-calculator" locale={locale} />
+      <ToolDisclaimer slug="loan-comparison-calculator" locale={locale} />
+
       <ShareButtons
         title={title}
         description={description}

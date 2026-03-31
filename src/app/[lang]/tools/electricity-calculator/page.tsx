@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
 import { getPostsByTool } from "@/lib/blog";
+import { ToolAbout, ToolHowItWorks, ToolDisclaimer } from "@/components/ToolContentSections";
 import { use } from "react";
 import ShareButtons from "@/components/ShareButtons";
 import EmbedCodeButton from "@/components/EmbedCodeButton";
@@ -287,6 +288,8 @@ export default function ElectricityCalculatorPage({
           <p className="mt-2 text-neutral-500 dark:text-neutral-400">
             {description}
           </p>
+
+          <ToolAbout slug="electricity-calculator" locale={locale} />
         </header>
 
         {/* Tool UI */}
@@ -770,6 +773,9 @@ export default function ElectricityCalculatorPage({
         </section>
 
         {/* Share & Embed */}
+        <ToolHowItWorks slug="electricity-calculator" locale={locale} />
+        <ToolDisclaimer slug="electricity-calculator" locale={locale} />
+
         <ShareButtons
           title={title}
           description={description}
