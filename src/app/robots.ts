@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://quickfigure.com/sitemap.xml",
+    sitemap: "https://www.quickfigure.net/sitemap.xml",
   };
 }
