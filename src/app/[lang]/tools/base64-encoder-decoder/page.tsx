@@ -198,7 +198,7 @@ export default function Base64Page({
     description: isKo
       ? "\uBB34\uB8CC Base64 \uC778\uCF54\uB354/\uB514\uCF54\uB354. \uD14D\uC2A4\uD2B8\xB7\uC774\uBBF8\uC9C0 Base64 \uBCC0\uD658."
       : "Free Base64 encoder/decoder. Convert text and images to/from Base64.",
-    url: `https://quickfigure.net/${lang}/tools/base64-encoder-decoder`,
+    url: `https://www.quickfigure.net/${lang}/tools/base64-encoder-decoder`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

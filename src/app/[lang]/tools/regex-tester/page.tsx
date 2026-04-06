@@ -224,7 +224,7 @@ export default function RegexTesterPage({
     description: isKo
       ? "정규표현식을 실시간으로 테스트하세요. 매칭 하이라이트, 캡처 그룹, 프리셋 제공."
       : "Test regular expressions in real-time. Match highlighting, capture groups, and presets included.",
-    url: `https://quickfigure.net/${lang}/tools/regex-tester`,
+    url: `https://www.quickfigure.net/${lang}/tools/regex-tester`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

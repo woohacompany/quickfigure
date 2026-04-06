@@ -667,7 +667,7 @@ export default function ImageRotatePage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/image-rotate`,
+            url: `https://www.quickfigure.net/${lang}/tools/image-rotate`,
             applicationCategory: "MultimediaApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

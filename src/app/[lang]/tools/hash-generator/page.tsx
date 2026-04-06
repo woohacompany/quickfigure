@@ -254,7 +254,7 @@ export default function HashGeneratorPage({
     description: isKo
       ? "MD5, SHA-1, SHA-256, SHA-512 해시값을 생성하고 비교하세요. 텍스트와 파일 모두 지원."
       : "Generate MD5, SHA-1, SHA-256, SHA-512 hashes. Supports both text and file input.",
-    url: `https://quickfigure.net/${lang}/tools/hash-generator`,
+    url: `https://www.quickfigure.net/${lang}/tools/hash-generator`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

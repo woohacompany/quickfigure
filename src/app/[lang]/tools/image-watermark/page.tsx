@@ -771,7 +771,7 @@ export default function ImageWatermarkPage({
                 "@type": "WebApplication",
                 name: isKo ? "이미지 워터마크 추가" : "Image Watermark Tool",
                 description,
-                url: `https://quickfigure.net/${lang}/tools/image-watermark`,
+                url: `https://www.quickfigure.net/${lang}/tools/image-watermark`,
                 applicationCategory: "UtilityApplication",
                 operatingSystem: "All",
                 offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

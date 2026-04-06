@@ -227,7 +227,7 @@ Combine them: ***bold and italic***
 
 ## Links & Images
 
-[Visit QuickFigure](https://quickfigure.net)
+[Visit QuickFigure](https://www.quickfigure.net)
 
 ![Sample Image](https://via.placeholder.com/300x100?text=Markdown+Preview)
 
@@ -277,7 +277,7 @@ const DEFAULT_MD_KO = `# 마크다운 편집기에 오신 것을 환영합니다
 
 ## 링크 & 이미지
 
-[QuickFigure 방문하기](https://quickfigure.net)
+[QuickFigure 방문하기](https://www.quickfigure.net)
 
 ![샘플 이미지](https://via.placeholder.com/300x100?text=Markdown+Preview)
 
@@ -447,11 +447,11 @@ export default function MarkdownEditorPage({
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={`https://quickfigure.net/${lang}/tools/markdown-editor`} />
+      <meta property="og:url" content={`https://www.quickfigure.net/${lang}/tools/markdown-editor`} />
       <meta property="og:type" content="website" />
-      <link rel="canonical" href={`https://quickfigure.net/${lang}/tools/markdown-editor`} />
-      <link rel="alternate" hrefLang="en" href="https://quickfigure.net/en/tools/markdown-editor" />
-      <link rel="alternate" hrefLang="ko" href="https://quickfigure.net/ko/tools/markdown-editor" />
+      <link rel="canonical" href={`https://www.quickfigure.net/${lang}/tools/markdown-editor`} />
+      <link rel="alternate" hrefLang="en" href="https://www.quickfigure.net/en/tools/markdown-editor" />
+      <link rel="alternate" hrefLang="ko" href="https://www.quickfigure.net/ko/tools/markdown-editor" />
 
       <header className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">{pageTitle}</h1>

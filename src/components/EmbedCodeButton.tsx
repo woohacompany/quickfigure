@@ -32,7 +32,7 @@ export default function EmbedCodeButton({ slug, lang, labels }: EmbedCodeButtonP
 
   if (!EMBED_SLUGS.has(slug)) return null;
 
-  const iframeCode = `<iframe src="https://quickfigure.net/embed/${lang}/${slug}" width="100%" height="450" frameborder="0" style="border:0;border-radius:8px;overflow:hidden;" loading="lazy"></iframe>`;
+  const iframeCode = `<iframe src="https://www.quickfigure.net/embed/${lang}/${slug}" width="100%" height="450" frameborder="0" style="border:0;border-radius:8px;overflow:hidden;" loading="lazy"></iframe>`;
 
   async function handleCopy() {
     try {

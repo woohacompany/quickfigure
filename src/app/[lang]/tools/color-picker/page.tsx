@@ -184,7 +184,7 @@ export default function ColorPickerPage({
   const inputCls = "w-full p-2 rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-foreground font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500";
   const copyBtnCls = "px-3 py-2 rounded-md border border-neutral-300 dark:border-neutral-700 text-xs hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer mt-4";
 
-  const toolUrl = `https://quickfigure.net/${lang}/tools/color-picker`;
+  const toolUrl = `https://www.quickfigure.net/${lang}/tools/color-picker`;
 
   // JSON-LD
   const jsonLd = {

@@ -34,7 +34,7 @@ export async function generateMetadata({
   const tr = post.translations[lang];
   const ogImageUrl = post.heroImages?.[0]
     ? `${post.heroImages[0]}?w=1200&h=630&q=80&auto=format&fit=crop`
-    : `https://quickfigure.net${getPostOgImage(slug)}`;
+    : `https://www.quickfigure.net${getPostOgImage(slug)}`;
   return {
     title: tr.title + " | QuickFigure",
     description: tr.summary,
@@ -337,7 +337,7 @@ export default async function BlogPostPage({
               headline: tr.title,
               description: tr.summary,
               datePublished: post.date,
-              url: `https://quickfigure.net/${lang}/blog/${slug}`,
+              url: `https://www.quickfigure.net/${lang}/blog/${slug}`,
               inLanguage: locale === "ko" ? "ko-KR" : "en-US",
               author: {
                 "@type": "Person",
@@ -347,7 +347,7 @@ export default async function BlogPostPage({
               publisher: {
                 "@type": "Organization",
                 name: "QuickFigure",
-                url: "https://quickfigure.net",
+                url: "https://www.quickfigure.net",
               },
             }),
           }}

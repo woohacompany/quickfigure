@@ -259,12 +259,12 @@ export default function BlogListPage({
             "@type": "Blog",
             name: t.title,
             description: t.description,
-            url: `https://quickfigure.net/${lang}/blog`,
+            url: `https://www.quickfigure.net/${lang}/blog`,
             inLanguage: locale === "ko" ? "ko-KR" : "en-US",
             publisher: {
               "@type": "Organization",
               name: "QuickFigure",
-              url: "https://quickfigure.net",
+              url: "https://www.quickfigure.net",
             },
           }),
         }}

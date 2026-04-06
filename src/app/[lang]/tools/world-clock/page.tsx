@@ -536,12 +536,12 @@ export default function WorldClockPage({
             : "world clock, time zone converter, time difference, world time, EST to KST, PST to KST, timezone converter, meeting time planner"
         }
       />
-      <link rel="canonical" href={`https://quickfigure.net/${lang}/tools/world-clock`} />
-      <link rel="alternate" hrefLang="en" href="https://quickfigure.net/en/tools/world-clock" />
-      <link rel="alternate" hrefLang="ko" href="https://quickfigure.net/ko/tools/world-clock" />
+      <link rel="canonical" href={`https://www.quickfigure.net/${lang}/tools/world-clock`} />
+      <link rel="alternate" hrefLang="en" href="https://www.quickfigure.net/en/tools/world-clock" />
+      <link rel="alternate" hrefLang="ko" href="https://www.quickfigure.net/ko/tools/world-clock" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={`https://quickfigure.net/${lang}/tools/world-clock`} />
+      <meta property="og:url" content={`https://www.quickfigure.net/${lang}/tools/world-clock`} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="QuickFigure" />
 
@@ -1090,7 +1090,7 @@ export default function WorldClockPage({
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: isKo ? "세계 시간 변환기" : "World Clock & Time Zone Converter",
-            url: `https://quickfigure.net/${lang}/tools/world-clock`,
+            url: `https://www.quickfigure.net/${lang}/tools/world-clock`,
             applicationCategory: "UtilityApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

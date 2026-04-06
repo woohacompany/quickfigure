@@ -263,22 +263,22 @@ export default function ElectricityCalculatorPage({
         <meta property="og:description" content={description} />
         <meta
           property="og:url"
-          content={`https://quickfigure.net/${locale}/tools/electricity-calculator`}
+          content={`https://www.quickfigure.net/${locale}/tools/electricity-calculator`}
         />
         <meta property="og:type" content="website" />
         <link
           rel="canonical"
-          href={`https://quickfigure.net/${locale}/tools/electricity-calculator`}
+          href={`https://www.quickfigure.net/${locale}/tools/electricity-calculator`}
         />
         <link
           rel="alternate"
           hrefLang="en"
-          href="https://quickfigure.net/en/tools/electricity-calculator"
+          href="https://www.quickfigure.net/en/tools/electricity-calculator"
         />
         <link
           rel="alternate"
           hrefLang="ko"
-          href="https://quickfigure.net/ko/tools/electricity-calculator"
+          href="https://www.quickfigure.net/ko/tools/electricity-calculator"
         />
       </head>
 
@@ -729,7 +729,7 @@ export default function ElectricityCalculatorPage({
               "@type": "WebApplication",
               name: title,
               description: description,
-              url: `https://quickfigure.net/${locale}/tools/electricity-calculator`,
+              url: `https://www.quickfigure.net/${locale}/tools/electricity-calculator`,
               applicationCategory: "UtilityApplication",
               operatingSystem: "Any",
               offers: {

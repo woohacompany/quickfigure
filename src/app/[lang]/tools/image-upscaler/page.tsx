@@ -718,7 +718,7 @@ export default function ImageUpscalerPage({
             "@type": "WebApplication",
             name: isKo ? "이미지 화질 개선" : "Image Upscaler",
             description: description,
-            url: `https://quickfigure.net/${lang}/tools/image-upscaler`,
+            url: `https://www.quickfigure.net/${lang}/tools/image-upscaler`,
             applicationCategory: "MultimediaApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

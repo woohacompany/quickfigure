@@ -780,7 +780,7 @@ export default function ImageKbResizerPage({
                 "@type": "WebApplication",
                 name: isKo ? "사진 용량 줄이기 (KB 지정)" : "Image KB Resizer",
                 description: description,
-                url: `https://quickfigure.net/${lang}/tools/image-kb-resizer`,
+                url: `https://www.quickfigure.net/${lang}/tools/image-kb-resizer`,
                 applicationCategory: "UtilityApplication",
                 operatingSystem: "All",
                 offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

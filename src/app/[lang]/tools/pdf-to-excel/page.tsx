@@ -545,7 +545,7 @@ export default function PdfToExcelPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/pdf-to-excel`,
+            url: `https://www.quickfigure.net/${lang}/tools/pdf-to-excel`,
             applicationCategory: "BusinessApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

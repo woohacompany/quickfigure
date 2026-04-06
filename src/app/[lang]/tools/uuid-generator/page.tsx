@@ -141,7 +141,7 @@ export default function UuidGeneratorPage({
     ? "UUID를 온라인으로 즉시 생성하세요. v1/v4/v7 지원, 벌크 생성, 유효성 검사. 개발자 필수 도구."
     : "Generate UUIDs online instantly. Supports v1/v4/v7, bulk generation, and validation. Essential developer tool.";
 
-  const toolUrl = `https://quickfigure.net/${lang}/tools/uuid-generator`;
+  const toolUrl = `https://www.quickfigure.net/${lang}/tools/uuid-generator`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",

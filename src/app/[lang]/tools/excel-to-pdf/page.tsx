@@ -596,7 +596,7 @@ export default function ExcelToPdfPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/excel-to-pdf`,
+            url: `https://www.quickfigure.net/${lang}/tools/excel-to-pdf`,
             applicationCategory: "BusinessApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

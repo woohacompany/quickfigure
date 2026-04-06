@@ -25,7 +25,7 @@ export default function EmbedPage({
       </div>
       <div className="mt-4 pt-3 border-t border-neutral-200 dark:border-neutral-700 text-center">
         <a
-          href={`https://quickfigure.net/${lang}/tools/${slug}`}
+          href={`https://www.quickfigure.net/${lang}/tools/${slug}`}
           target="_blank"
           rel="noopener"
           className="text-xs text-neutral-500 hover:text-blue-600 transition-colors"

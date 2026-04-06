@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       type: "website",
-      url: `https://quickfigure.net/${lang}/tools/base64-encoder-decoder`,
+      url: `https://www.quickfigure.net/${lang}/tools/base64-encoder-decoder`,
     },
   };
 }

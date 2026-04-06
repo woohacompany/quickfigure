@@ -1166,7 +1166,7 @@ export default function ScheduleFinderPage({
                 "@type": "WebApplication",
                 name: title,
                 description,
-                url: `https://quickfigure.net/${lang}/tools/schedule-finder`,
+                url: `https://www.quickfigure.net/${lang}/tools/schedule-finder`,
                 applicationCategory: "UtilitiesApplication",
                 operatingSystem: "All",
                 offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

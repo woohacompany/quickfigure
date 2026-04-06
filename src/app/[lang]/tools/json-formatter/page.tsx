@@ -282,7 +282,7 @@ export default function JsonFormatterPage({
     description: isKo
       ? "\uBB34\uB8CC \uC628\uB77C\uC778 JSON \uD3EC\uB9F7\uD130. JSON\uC744 \uBCF4\uAE30 \uC88B\uAC8C \uC815\uB9AC\uD558\uACE0 \uC720\uD6A8\uC131 \uAC80\uC0AC\uAE4C\uC9C0."
       : "Free online JSON formatter. Beautify, minify, and validate JSON data instantly.",
-    url: `https://quickfigure.net/${lang}/tools/json-formatter`,
+    url: `https://www.quickfigure.net/${lang}/tools/json-formatter`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

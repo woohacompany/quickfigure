@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       type: "website",
-      url: `https://quickfigure.net/${lang}/tools/typing-speed-test`,
+      url: `https://www.quickfigure.net/${lang}/tools/typing-speed-test`,
     },
   };
 }

@@ -264,7 +264,7 @@ export default function YearEndTaxCalculatorPage({
         { q: "How can I maximize my refund?", a: "Use debit cards and cash receipts more (2x deduction rate vs credit cards). Max out pension savings/IRP contributions. Register all medical and education receipts. Claim monthly rent credit if salary is under 70M KRW." },
       ];
 
-  const toolUrl = `https://quickfigure.net/${lang}/tools/year-end-tax-calculator`;
+  const toolUrl = `https://www.quickfigure.net/${lang}/tools/year-end-tax-calculator`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",

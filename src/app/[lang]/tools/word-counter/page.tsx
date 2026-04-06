@@ -105,7 +105,7 @@ export default function WordCounterPage({
     setTimeout(() => setCopied(false), 1500);
   }
 
-  const toolUrl = `https://quickfigure.net/${lang}/tools/word-counter`;
+  const toolUrl = `https://www.quickfigure.net/${lang}/tools/word-counter`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",

@@ -363,7 +363,7 @@ export default function CssGradientPage({
             "@type": "WebApplication",
             name: t.title,
             description: t.description,
-            url: `https://quickfigure.net/${locale}/tools/css-gradient-generator`,
+            url: `https://www.quickfigure.net/${locale}/tools/css-gradient-generator`,
             applicationCategory: "DesignApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

@@ -352,8 +352,8 @@ export default function TypingSpeedTestPage({
   // Copy result
   const copyResult = () => {
     const text = isKo
-      ? `타자 속도 테스트 결과\n${testLang === "korean" ? "타수" : "WPM"}: ${resultWpm}\n정확도: ${resultAccuracy}%\n등급: ${resultGrade}\nhttps://quickfigure.net/ko/tools/typing-speed-test`
-      : `Typing Speed Test Result\n${testLang === "korean" ? "CPM" : "WPM"}: ${resultWpm}\nAccuracy: ${resultAccuracy}%\nGrade: ${resultGrade}\nhttps://quickfigure.net/en/tools/typing-speed-test`;
+      ? `타자 속도 테스트 결과\n${testLang === "korean" ? "타수" : "WPM"}: ${resultWpm}\n정확도: ${resultAccuracy}%\n등급: ${resultGrade}\nhttps://www.quickfigure.net/ko/tools/typing-speed-test`
+      : `Typing Speed Test Result\n${testLang === "korean" ? "CPM" : "WPM"}: ${resultWpm}\nAccuracy: ${resultAccuracy}%\nGrade: ${resultGrade}\nhttps://www.quickfigure.net/en/tools/typing-speed-test`;
     navigator.clipboard.writeText(text);
   };
 
@@ -365,7 +365,7 @@ export default function TypingSpeedTestPage({
     description: isKo
       ? "한국어/영어 타자 속도를 측정하세요. WPM, 정확도, 등급까지 확인."
       : "Test your typing speed. Measure WPM, accuracy, and get your grade.",
-    url: `https://quickfigure.net/${lang}/tools/typing-speed-test`,
+    url: `https://www.quickfigure.net/${lang}/tools/typing-speed-test`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

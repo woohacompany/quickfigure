@@ -934,7 +934,7 @@ export default function GifMakerPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/gif-maker`,
+            url: `https://www.quickfigure.net/${lang}/tools/gif-maker`,
             applicationCategory: "MultimediaApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

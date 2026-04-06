@@ -92,7 +92,7 @@ export default function UrlEncoderDecoderPage({
     description: isKo
       ? "URL을 인코딩하거나 디코딩하세요. 한글 URL 변환, 쿼리 파라미터 파싱. 가입 없이 무료."
       : "Encode or decode URLs online. Parse query parameters, convert special characters. Free, no signup.",
-    url: `https://quickfigure.net/${lang}/tools/url-encoder-decoder`,
+    url: `https://www.quickfigure.net/${lang}/tools/url-encoder-decoder`,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

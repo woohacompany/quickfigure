@@ -430,8 +430,8 @@ export default function LadderGamePage({
       objectType: "text",
       text: `🪜 ${isKo ? "사다리 타기 결과" : "Ladder Game Result"}\n${lines.join("\n")}`,
       link: {
-        mobileWebUrl: `https://quickfigure.net/${lang}/tools/ladder-game`,
-        webUrl: `https://quickfigure.net/${lang}/tools/ladder-game`,
+        mobileWebUrl: `https://www.quickfigure.net/${lang}/tools/ladder-game`,
+        webUrl: `https://www.quickfigure.net/${lang}/tools/ladder-game`,
       },
     });
   }
@@ -799,7 +799,7 @@ export default function LadderGamePage({
                 "@type": "WebApplication",
                 name: title,
                 description,
-                url: `https://quickfigure.net/${lang}/tools/ladder-game`,
+                url: `https://www.quickfigure.net/${lang}/tools/ladder-game`,
                 applicationCategory: "GameApplication",
                 operatingSystem: "All",
                 offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

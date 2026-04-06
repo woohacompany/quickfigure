@@ -273,7 +273,7 @@ export default function CapitalGainsTaxCalculatorPage({
         { q: "What qualifies as necessary expenses?", a: "Brokerage fees, acquisition tax, legal fees, interior/remodeling costs, and repair costs at the time of sale are recognized as necessary expenses. Higher expenses reduce the capital gain and thus the tax burden." },
       ];
 
-  const toolUrl = `https://quickfigure.net/${lang}/tools/capital-gains-tax-calculator`;
+  const toolUrl = `https://www.quickfigure.net/${lang}/tools/capital-gains-tax-calculator`;
   const webAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",

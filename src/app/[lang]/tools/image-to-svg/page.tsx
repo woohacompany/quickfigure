@@ -652,7 +652,7 @@ export default function ImageToSvgPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/image-to-svg`,
+            url: `https://www.quickfigure.net/${lang}/tools/image-to-svg`,
             applicationCategory: "DesignApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

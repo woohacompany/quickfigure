@@ -303,7 +303,7 @@ export default function WeeklyPayCalculatorPage({
             "@type": "WebApplication",
             name: t.title,
             description: t.description,
-            url: `https://quickfigure.net/${locale}/tools/weekly-pay-calculator`,
+            url: `https://www.quickfigure.net/${locale}/tools/weekly-pay-calculator`,
             applicationCategory: "FinanceApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

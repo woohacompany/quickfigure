@@ -976,7 +976,7 @@ export default function ImageCropperPage({
             "@type": "WebApplication",
             name: isKo ? "이미지 자르기" : "Image Cropper",
             description,
-            url: `https://quickfigure.net/${lang}/tools/image-cropper`,
+            url: `https://www.quickfigure.net/${lang}/tools/image-cropper`,
             applicationCategory: "MultimediaApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

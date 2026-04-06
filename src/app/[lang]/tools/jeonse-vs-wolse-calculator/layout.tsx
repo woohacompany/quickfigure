@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: metaTitle,
       description: metaDescription,
       type: "website",
-      url: `https://quickfigure.net/${lang}/tools/jeonse-vs-wolse-calculator`,
+      url: `https://www.quickfigure.net/${lang}/tools/jeonse-vs-wolse-calculator`,
     },
   };
 }

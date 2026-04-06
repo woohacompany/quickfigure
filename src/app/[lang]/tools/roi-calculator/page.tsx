@@ -756,7 +756,7 @@ export default function RoiCalculatorPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/roi-calculator`,
+            url: `https://www.quickfigure.net/${lang}/tools/roi-calculator`,
             applicationCategory: "FinanceApplication",
             operatingSystem: "Any",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

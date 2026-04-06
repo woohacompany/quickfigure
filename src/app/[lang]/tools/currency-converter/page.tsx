@@ -631,7 +631,7 @@ export default function CurrencyConverterPage({
             "@type": "WebApplication",
             name: title,
             description,
-            url: `https://quickfigure.net/${lang}/tools/currency-converter`,
+            url: `https://www.quickfigure.net/${lang}/tools/currency-converter`,
             applicationCategory: "FinanceApplication",
             operatingSystem: "Any",
             offers: {

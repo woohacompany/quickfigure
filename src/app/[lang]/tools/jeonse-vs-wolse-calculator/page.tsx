@@ -117,8 +117,8 @@ export default function JeonseVsWolsePage({
       ? (isKo ? "전세가 유리" : "Jeonse is better")
       : (isKo ? "월세가 유리" : "Wolse is better");
     const text = isKo
-      ? `전세 vs 월세 비교 결과\n${winner} (월 ${fmtWon(result.monthlyDiff)} 절약)\n전세 월비용: ${fmtWon(result.jMonthlyCost)}\n월세 월비용: ${fmtWon(result.wMonthlyCost)}\nhttps://quickfigure.net/ko/tools/jeonse-vs-wolse-calculator`
-      : `Jeonse vs Wolse Result\n${winner} (Save ${fmtWon(result.monthlyDiff)}/mo)\nJeonse: ${fmtWon(result.jMonthlyCost)}/mo\nWolse: ${fmtWon(result.wMonthlyCost)}/mo\nhttps://quickfigure.net/en/tools/jeonse-vs-wolse-calculator`;
+      ? `전세 vs 월세 비교 결과\n${winner} (월 ${fmtWon(result.monthlyDiff)} 절약)\n전세 월비용: ${fmtWon(result.jMonthlyCost)}\n월세 월비용: ${fmtWon(result.wMonthlyCost)}\nhttps://www.quickfigure.net/ko/tools/jeonse-vs-wolse-calculator`
+      : `Jeonse vs Wolse Result\n${winner} (Save ${fmtWon(result.monthlyDiff)}/mo)\nJeonse: ${fmtWon(result.jMonthlyCost)}/mo\nWolse: ${fmtWon(result.wMonthlyCost)}/mo\nhttps://www.quickfigure.net/en/tools/jeonse-vs-wolse-calculator`;
     navigator.clipboard.writeText(text);
   }, [result, isKo]);
 
@@ -130,7 +130,7 @@ export default function JeonseVsWolsePage({
     description: isKo
       ? "전세와 월세 중 어떤 게 유리한지 계산합니다."
       : "Compare Korean Jeonse vs Wolse housing costs.",
-    url: `https://quickfigure.net/${lang}/tools/jeonse-vs-wolse-calculator`,
+    url: `https://www.quickfigure.net/${lang}/tools/jeonse-vs-wolse-calculator`,
     applicationCategory: "FinanceApplication",
     operatingSystem: "All",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

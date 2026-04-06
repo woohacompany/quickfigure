@@ -32,7 +32,7 @@ export async function generateMetadata({
       description,
       type: "website",
       siteName: "QuickFigure",
-      url: `https://quickfigure.net/${lang}`,
+      url: `https://www.quickfigure.net/${lang}`,
     },
   };
 }
@@ -256,20 +256,20 @@ export default async function HomePage({
       {
         "@type": "WebSite",
         name: "QuickFigure",
-        url: "https://quickfigure.net",
+        url: "https://www.quickfigure.net",
         description: t.siteDescription,
         inLanguage: lang === "ko" ? "ko-KR" : "en-US",
         potentialAction: {
           "@type": "SearchAction",
-          target: `https://quickfigure.net/${lang}?q={search_term_string}`,
+          target: `https://www.quickfigure.net/${lang}?q={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "Organization",
         name: "QuickFigure",
-        url: "https://quickfigure.net",
-        logo: "https://quickfigure.net/icon.png",
+        url: "https://www.quickfigure.net",
+        logo: "https://www.quickfigure.net/icon.png",
       },
       {
         "@type": "ItemList",
@@ -279,7 +279,7 @@ export default async function HomePage({
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
-          url: `https://quickfigure.net${tool.href}`,
+          url: `https://www.quickfigure.net${tool.href}`,
         })),
       },
     ],
