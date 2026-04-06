@@ -1334,32 +1334,89 @@ const dictionaries = {
     },
     about: {
       title: "About QuickFigure",
-      metaTitle: "About | QuickFigure",
-      metaDescription: "Learn about QuickFigure - free online tools for text analysis and more.",
+      metaTitle: "About QuickFigure — Free Online Tools for Everyone | QuickFigure",
+      metaDescription: "Meet the team behind QuickFigure. 80+ free online tools — calculators, PDF editors, image tools & more. 100% browser-based, no signup required.",
       description:
         "QuickFigure is a collection of free, fast, and easy-to-use online tools designed to help you with everyday tasks.",
-      sections: [
-        {
-          heading: "Our Mission",
-          content:
-            "We believe that useful tools should be accessible to everyone. QuickFigure provides simple, fast, and free online tools that work right in your browser - no sign-up required, no data stored on our servers.",
-        },
-        {
-          heading: "What We Offer",
-          content:
-            "QuickFigure currently offers text analysis tools including our Word Counter, which lets you instantly count words, characters, sentences, paragraphs, and estimate reading time. We are actively developing more tools to help you with various tasks.",
-        },
-        {
-          heading: "Privacy First",
-          content:
-            "Your privacy matters. All our tools process data locally in your browser. We don't store your text, files, or personal data on any server. What you type stays on your device.",
-        },
-        {
-          heading: "Always Free",
-          content:
-            "QuickFigure is and will always be free to use. We support the site through non-intrusive advertising, allowing us to keep all tools completely free for everyone.",
-        },
-      ],
+      hero: {
+        badge: "80+ Free Tools",
+        headline: "Tools that just work.\nNo signup, no install, no hassle.",
+        sub: "QuickFigure gives you instant access to calculators, converters, PDF editors, and image tools — all running in your browser.",
+      },
+      story: {
+        heading: "Our Story",
+        p1: "We started QuickFigure with one simple frustration: every time we needed a quick calculation or file conversion, we had to wade through ad-heavy sites, create accounts, or download sketchy software.",
+        p2: "So we built the site we always wanted — fast, clean, free, and private. Every tool runs entirely in your browser. Your data never leaves your device.",
+        p3: "What began as a handful of calculators has grown into 80+ tools used by people around the world every day.",
+      },
+      team: {
+        heading: "The Team",
+        members: [
+          {
+            name: "Daniel Woo",
+            role: "Founder & Full-Stack Developer",
+            bio: "Builds the product, writes the code, and keeps the servers humming. Obsessed with making tools that load fast and feel effortless.",
+            avatar: "DW",
+          },
+          {
+            name: "Jiyeon Park",
+            role: "Content & SEO Strategist",
+            bio: "Creates in-depth guides, researches keywords, and makes sure our tools show up when you search for them. Turns complex topics into plain language.",
+            avatar: "JP",
+          },
+        ],
+      },
+      values: {
+        heading: "What We Believe",
+        items: [
+          {
+            icon: "shield",
+            title: "Privacy First",
+            desc: "All tools process data locally in your browser. We don't store your files, text, or personal data on any server.",
+          },
+          {
+            icon: "zap",
+            title: "Speed Matters",
+            desc: "No loading spinners, no server round-trips. Every tool gives you results instantly because it all runs on your device.",
+          },
+          {
+            icon: "heart",
+            title: "Always Free",
+            desc: "We support the site through non-intrusive ads. No paywalls, no premium tiers, no hidden limits.",
+          },
+          {
+            icon: "globe",
+            title: "For Everyone",
+            desc: "Available in English and Korean, designed mobile-first, and built to be accessible to anyone with a browser.",
+          },
+        ],
+      },
+      toolCategories: {
+        heading: "What We Offer",
+        sub: "80+ tools across 6 categories — and growing every week.",
+        items: [
+          { icon: "💰", name: "Finance Tools", count: "25+", desc: "Tax, loans, salary, insurance, investment calculators" },
+          { icon: "📄", name: "File Tools", count: "20+", desc: "PDF merge/split/compress, Excel, Word converters" },
+          { icon: "🖼️", name: "Image Tools", count: "12+", desc: "Resize, compress, convert, crop, watermark, GIF maker" },
+          { icon: "💻", name: "Developer Tools", count: "8+", desc: "JSON, Base64, Regex, UUID, URL encoder, CSS tools" },
+          { icon: "❤️", name: "Health Tools", count: "6", desc: "BMI, calorie, body fat, sleep, alcohol calculators" },
+          { icon: "📅", name: "Date & Utility", count: "10+", desc: "D-Day, world clock, timer, unit converter, QR code" },
+        ],
+      },
+      cta: {
+        heading: "Have a suggestion?",
+        desc: "We're always looking for the next tool to build. If you have an idea, found a bug, or just want to say hi — we'd love to hear from you.",
+        button: "Contact Us",
+      },
+      techStack: {
+        heading: "Built With",
+        items: [
+          { name: "Next.js 14", desc: "App Router" },
+          { name: "Tailwind CSS", desc: "Styling" },
+          { name: "Vercel", desc: "Hosting" },
+          { name: "100% Client-side", desc: "No server uploads" },
+        ],
+      },
     },
     blog: {
       title: "Guides & Tips",
@@ -2764,32 +2821,89 @@ const dictionaries = {
     },
     about: {
       title: "QuickFigure 소개",
-      metaTitle: "소개 | QuickFigure",
-      metaDescription: "QuickFigure - 텍스트 분석 등 무료 온라인 도구 모음 소개.",
+      metaTitle: "QuickFigure 소개 — 누구나 쓸 수 있는 무료 온라인 도구 | QuickFigure",
+      metaDescription: "QuickFigure 팀을 소개합니다. 80개 이상의 무료 온라인 도구 — 계산기, PDF 편집, 이미지 도구 등. 100% 브라우저 기반, 회원가입 불필요.",
       description:
         "QuickFigure는 일상적인 작업을 도와주는 무료, 빠르고 사용하기 쉬운 온라인 도구 모음입니다.",
-      sections: [
-        {
-          heading: "우리의 미션",
-          content:
-            "유용한 도구는 모든 사람이 이용할 수 있어야 합니다. QuickFigure는 브라우저에서 바로 작동하는 간단하고 빠른 무료 온라인 도구를 제공합니다. 회원가입 불필요, 서버에 데이터 저장 없음.",
-        },
-        {
-          heading: "제공 서비스",
-          content:
-            "QuickFigure는 현재 글자수 세기를 포함한 텍스트 분석 도구를 제공하고 있으며, 단어, 글자, 문장, 문단 수와 읽기 시간을 즉시 확인할 수 있습니다. 더 많은 도구를 계속 개발하고 있습니다.",
-        },
-        {
-          heading: "개인정보 보호 우선",
-          content:
-            "모든 도구는 브라우저에서 로컬로 데이터를 처리합니다. 입력한 텍스트, 파일 또는 개인 데이터를 서버에 저장하지 않습니다. 입력한 내용은 귀하의 기기에만 남습니다.",
-        },
-        {
-          heading: "항상 무료",
-          content:
-            "QuickFigure는 항상 무료입니다. 비침해적인 광고를 통해 사이트를 운영하여 모든 도구를 무료로 제공합니다.",
-        },
-      ],
+      hero: {
+        badge: "80개+ 무료 도구",
+        headline: "그냥 바로 쓰는 도구.\n가입도, 설치도, 번거로움도 없습니다.",
+        sub: "계산기, 변환기, PDF 편집기, 이미지 도구까지 — 모두 브라우저에서 바로 실행됩니다.",
+      },
+      story: {
+        heading: "우리의 이야기",
+        p1: "간단한 계산이나 파일 변환이 필요할 때마다 광고 범벅인 사이트를 뒤지거나, 회원가입을 하거나, 수상한 프로그램을 설치해야 하는 게 불만이었습니다.",
+        p2: "그래서 우리가 항상 원하던 사이트를 직접 만들었습니다 — 빠르고, 깔끔하고, 무료이며, 개인정보를 지키는 사이트. 모든 도구는 브라우저에서만 실행되고, 여러분의 데이터는 기기 밖으로 나가지 않습니다.",
+        p3: "몇 개의 계산기로 시작한 것이 지금은 전 세계 사용자들이 매일 이용하는 80개 이상의 도구로 성장했습니다.",
+      },
+      team: {
+        heading: "팀 소개",
+        members: [
+          {
+            name: "우다니엘",
+            role: "창립자 & 풀스택 개발자",
+            bio: "제품을 만들고, 코드를 쓰고, 서버를 관리합니다. 빠르게 로딩되고 자연스럽게 느껴지는 도구 만들기에 집중합니다.",
+            avatar: "DW",
+          },
+          {
+            name: "박지연",
+            role: "콘텐츠 & SEO 전략가",
+            bio: "심층 가이드를 작성하고, 키워드를 리서치하며, 검색에서 우리 도구를 찾을 수 있도록 합니다. 복잡한 주제를 쉬운 말로 풀어냅니다.",
+            avatar: "JP",
+          },
+        ],
+      },
+      values: {
+        heading: "우리가 믿는 것",
+        items: [
+          {
+            icon: "shield",
+            title: "개인정보 보호 우선",
+            desc: "모든 도구는 브라우저에서 로컬로 처리됩니다. 파일, 텍스트, 개인 데이터를 서버에 저장하지 않습니다.",
+          },
+          {
+            icon: "zap",
+            title: "속도가 중요합니다",
+            desc: "로딩 스피너도, 서버 왕복도 없습니다. 모든 것이 기기에서 실행되니 결과가 즉시 나옵니다.",
+          },
+          {
+            icon: "heart",
+            title: "항상 무료",
+            desc: "비침해적인 광고로 사이트를 운영합니다. 유료 벽도, 프리미엄 단계도, 숨겨진 제한도 없습니다.",
+          },
+          {
+            icon: "globe",
+            title: "모두를 위해",
+            desc: "영어와 한국어를 지원하고, 모바일 우선으로 설계하며, 브라우저만 있으면 누구나 사용할 수 있습니다.",
+          },
+        ],
+      },
+      toolCategories: {
+        heading: "제공 도구",
+        sub: "6개 카테고리, 80개 이상의 도구 — 매주 새로운 도구가 추가됩니다.",
+        items: [
+          { icon: "💰", name: "금융 도구", count: "25+", desc: "세금, 대출, 연봉, 보험, 투자 계산기" },
+          { icon: "📄", name: "파일 도구", count: "20+", desc: "PDF 합치기/분할/압축, 엑셀, 워드 변환" },
+          { icon: "🖼️", name: "이미지 도구", count: "12+", desc: "리사이즈, 압축, 변환, 크롭, 워터마크, GIF" },
+          { icon: "💻", name: "개발자 도구", count: "8+", desc: "JSON, Base64, Regex, UUID, URL 인코더, CSS" },
+          { icon: "❤️", name: "건강 도구", count: "6", desc: "BMI, 칼로리, 체지방, 수면, 음주 계산기" },
+          { icon: "📅", name: "날짜 & 유틸리티", count: "10+", desc: "D-Day, 세계시간, 타이머, 단위변환, QR코드" },
+        ],
+      },
+      cta: {
+        heading: "제안이 있으신가요?",
+        desc: "다음에 만들 도구를 항상 찾고 있습니다. 아이디어, 버그 신고, 또는 그냥 인사라도 — 언제든 연락주세요.",
+        button: "문의하기",
+      },
+      techStack: {
+        heading: "기술 스택",
+        items: [
+          { name: "Next.js 14", desc: "App Router" },
+          { name: "Tailwind CSS", desc: "스타일링" },
+          { name: "Vercel", desc: "호스팅" },
+          { name: "100% 클라이언트", desc: "서버 업로드 없음" },
+        ],
+      },
     },
     blog: {
       title: "가이드 & 팁",
