@@ -13,6 +13,7 @@ import { getPostAuthor, getAuthorPosts } from "@/lib/authors";
 import { AuthorByline, AuthorCard } from "@/components/AuthorProfile";
 import BlogHeroImage from "@/components/BlogHeroImage";
 import EmbedTool from "@/components/EmbedTools";
+import { SummaryBox, TipBox, WarningBox, CalcBox, ComparisonTable, ToolCTA } from "@/components/BlogWidgets";
 import EmailSubscribeBlog from "./EmailSubscribeBlog";
 
 export function generateStaticParams() {
@@ -175,6 +176,37 @@ function ContentRenderer({
                   ))}
                 </div>
               </section>
+            );
+          case "summary":
+            return (
+              <SummaryBox key={i} title={block.title} items={block.items ?? []} />
+            );
+          case "tip":
+            return (
+              <TipBox key={i} title={block.title} text={block.text ?? ""} />
+            );
+          case "warning":
+            return (
+              <WarningBox key={i} title={block.title} text={block.text ?? ""} />
+            );
+          case "calc":
+            return (
+              <CalcBox key={i} title={block.title} steps={block.steps ?? []} />
+            );
+          case "comparison":
+            return (
+              <ComparisonTable key={i} headers={block.headers ?? []} rows={block.rows ?? []} />
+            );
+          case "tool-cta":
+            return (
+              <ToolCTA
+                key={i}
+                tool={block.tool ?? ""}
+                toolName={block.toolName ?? ""}
+                description={block.toolDescription}
+                buttonText={block.buttonText}
+                lang={lang}
+              />
             );
           default:
             return null;
