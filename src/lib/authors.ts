@@ -138,7 +138,7 @@ const slugAuthorMap: Record<string, AuthorId> = {
   "ladder-game-online-guide": "haeun",
   "schedule-finder-meeting-time-guide": "haeun",
   "typing-speed-test-guide": "haeun",
-  "electricity-guide": "haeun",
+  "electricity-guide": "seokjun",
 
   // ── 석준 (Seokjun) — 금융 (세금, 대출, 연봉, 퇴직금 등) ──
   "compound-interest-calculator-guide": "seokjun",
@@ -155,6 +155,7 @@ const slugAuthorMap: Record<string, AuthorId> = {
   "vat-guide": "seokjun",
   "severance-guide": "seokjun",
   "wage-guide": "seokjun",
+  "discount-calculator-guide": "seokjun",
   "weekly-pay-guide": "seokjun",
   "annual-leave-guide": "seokjun",
   "unemployment-guide": "seokjun",
