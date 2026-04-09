@@ -12,7 +12,7 @@ export function CalcBox({
   children?: ReactNode;
 }) {
   return (
-    <div className="mb-6 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5">
+    <div className="my-8 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-6">
       {title && (
         <p className="font-semibold mb-3">{title}</p>
       )}

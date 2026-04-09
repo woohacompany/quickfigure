@@ -75,23 +75,23 @@ function ContentRenderer({
         switch (block.type) {
           case "paragraph":
             return (
-              <p key={i} className="mb-5 leading-relaxed text-neutral-700 dark:text-neutral-300">
+              <p key={i} className="mb-7 text-neutral-700 dark:text-neutral-300">
                 {block.text}
               </p>
             );
           case "heading":
             return (
-              <h2 key={i} className="text-xl font-semibold mt-8 mb-4">
+              <h2 key={i} className="text-xl font-semibold mt-12 mb-5 pb-2 border-b border-neutral-100 dark:border-neutral-800">
                 {block.text}
               </h2>
             );
           case "list":
             return (
-              <ul key={i} className="mb-5 space-y-2 pl-5">
+              <ul key={i} className="mb-7 space-y-3 pl-5">
                 {block.items!.map((item, j) => (
                   <li
                     key={j}
-                    className="list-disc text-neutral-700 dark:text-neutral-300 leading-relaxed"
+                    className="list-disc text-neutral-700 dark:text-neutral-300"
                   >
                     {item}
                   </li>
@@ -102,7 +102,7 @@ function ContentRenderer({
             return (
               <pre
                 key={i}
-                className="mb-5 p-4 rounded-lg bg-neutral-900 dark:bg-neutral-950 text-neutral-100 text-sm overflow-x-auto font-mono leading-relaxed"
+                className="my-8 p-5 rounded-xl bg-neutral-900 dark:bg-neutral-950 text-neutral-100 text-sm overflow-x-auto font-mono leading-relaxed"
               >
                 <code>{block.code}</code>
               </pre>
@@ -111,7 +111,7 @@ function ContentRenderer({
             return (
               <div
                 key={i}
-                className="mb-5 p-4 rounded-lg border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/30 text-neutral-700 dark:text-neutral-300 leading-relaxed"
+                className="my-8 p-5 rounded-xl border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/30 text-neutral-700 dark:text-neutral-300"
               >
                 {block.text}
               </div>
@@ -120,7 +120,7 @@ function ContentRenderer({
             return (
               <div
                 key={i}
-                className="mb-5 p-4 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 text-center"
+                className="my-8 p-5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 text-center"
               >
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">
                   {t.tryTool}
@@ -135,7 +135,7 @@ function ContentRenderer({
             );
           case "embed":
             return (
-              <div key={i} className="mb-5">
+              <div key={i} className="my-8">
                 <EmbedTool tool={block.tool || ""} lang={lang} />
               </div>
             );
@@ -143,16 +143,16 @@ function ContentRenderer({
             return (
               <section
                 key={i}
-                className="mb-5"
+                className="my-10"
                 itemScope
                 itemType="https://schema.org/FAQPage"
               >
-                <h2 className="text-xl font-semibold mt-8 mb-4">{t.faq}</h2>
+                <h2 className="text-xl font-semibold mt-12 mb-5 pb-2 border-b border-neutral-100 dark:border-neutral-800">{t.faq}</h2>
                 <div className="space-y-4">
                   {block.faqItems!.map((item, j) => (
                     <div
                       key={j}
-                      className="rounded-lg border border-neutral-200 dark:border-neutral-700 p-4"
+                      className="rounded-xl border border-neutral-200 dark:border-neutral-700 p-5"
                       itemScope
                       itemProp="mainEntity"
                       itemType="https://schema.org/Question"
@@ -239,7 +239,7 @@ export default async function BlogPostPage({
     .filter(Boolean);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+    <div className="max-w-5xl mx-auto px-5 sm:px-6 py-12">
       <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
         {/* Main Content */}
         <article className="min-w-0">

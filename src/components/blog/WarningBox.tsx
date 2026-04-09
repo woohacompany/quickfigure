@@ -12,7 +12,7 @@ export function WarningBox({
   children?: ReactNode;
 }) {
   return (
-    <div className="mb-6 flex gap-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 p-5">
+    <div className="my-8 flex gap-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 p-6">
       <span className="shrink-0 text-xl mt-0.5">{"\u26A0\uFE0F"}</span>
       <div>
         {title && (

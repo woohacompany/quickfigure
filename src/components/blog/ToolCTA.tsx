@@ -23,7 +23,7 @@ export function ToolCTA({
   const linkHref = href ?? (lang && tool ? `/${lang}/tools/${tool}` : "#");
 
   return (
-    <div className="mb-6 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-600 p-6 text-center">
+    <div className="my-8 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-600 p-7 text-center">
       <p className="text-white text-lg font-semibold mb-1">{displayTitle}</p>
       {description && (
         <p className="text-blue-100 text-sm mb-4">{description}</p>
