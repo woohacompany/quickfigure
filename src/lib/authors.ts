@@ -157,6 +157,7 @@ const slugAuthorMap: Record<string, AuthorId> = {
   "wage-guide": "seokjun",
   "discount-calculator-guide": "seokjun",
   "weekly-pay-guide": "seokjun",
+  "weekly-holiday-pay-guide": "seokjun",
   "annual-leave-guide": "seokjun",
   "unemployment-guide": "seokjun",
   "income-tax-guide": "seokjun",

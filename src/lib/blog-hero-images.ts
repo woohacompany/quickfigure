@@ -239,6 +239,11 @@ export const blogHeroImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
   ],
+  "weekly-holiday-pay-guide": [
+    "https://images.unsplash.com/photo-1495364141860-b0d03eccd065",
+    "https://images.unsplash.com/photo-1506784983877-45594efa4cbe",
+    "https://images.unsplash.com/photo-1508963493744-76fce69379c0",
+  ],
   "annual-leave-guide": [
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",
