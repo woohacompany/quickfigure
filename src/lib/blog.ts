@@ -8234,10 +8234,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "2026 Car Insurance Comparison Guide: How to Save on Premiums in Korea",
-        summary: "Compare Korean car insurance options for 2026—direct vs agent, major insurers, mileage discounts, dashcam savings, and a renewal checklist to cut your premiums.",
+        title: "How I Cut My Korean Car Insurance From 1.1M to 680K Won in One Renewal — 2026 Guide",
+        summary: "Direct vs. agent, mileage discount, dashcam discount, and the merit rating system — the five variables that make Korean car insurance vary 40% for the same coverage.",
         content: [
-          { type: "paragraph", text: "Every year, millions of Korean drivers face the same question at renewal time: am I paying too much for car insurance? With premiums varying by 20–40% across insurers for the same coverage, comparing before renewing is one of the easiest ways to save hundreds of thousands of won. This guide breaks down the 2026 car insurance landscape—direct vs agent channels, insurer differences, discount strategies, and how driver insurance fits in." },
+          { type: "paragraph", text: "Last renewal, my car insurance quote came in at 1.1 million won. Same coverage as the previous year, no claims, no changes to my car. I'd just been auto-renewing for 3 years without checking. I decided to spend 20 minutes comparing direct options. Final price at a different insurer: 680,000 won. Same liability limits, same deductibles, same everything — just a different company and direct channel. That's 420,000 won saved for literally 20 minutes of comparison shopping." },
+          { type: "paragraph", text: "Korean car insurance is one of the most variable consumer products. Identical coverage across the top 5 insurers can differ by 20-40%, and direct channel vs. agent adds another 15-25%. Layer on mileage discounts, dashcam discounts, and the 3-year merit rating, and the spread between 'careful driver comparing everything' and 'auto-renewal' can easily be 50% of the premium. This guide explains every lever." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why direct insurance is 15-25% cheaper than agent-sold policies (with identical coverage)",
+            "The 6 discount categories that stack (mileage, dashcam, driver restriction, online, safe driver, bundle)",
+            "Why filing a minor claim can cost you 600,000+ won over 3 years in premium increases"
+          ] },
           { type: "heading", text: "Direct vs Agent Insurance" },
           { type: "paragraph", text: "Direct (다이렉트) insurance is purchased online or by phone without an agent. Because there's no commission, premiums are typically 15–25% cheaper than agent-sold policies. However, agent-sold policies offer in-person consultation and claims assistance. In 2026, direct insurance accounts for over 40% of new car insurance policies in Korea, up from 30% five years ago." },
           { type: "list", items: [
@@ -8278,8 +8284,9 @@ export const blogPosts: BlogPost[] = [
             "Review coverage limits. Liability coverage of at least 100 million won per person is recommended in 2026.",
             "Set a renewal reminder 2–3 weeks before expiry. Early renewal often comes with additional discounts.",
           ] },
-          { type: "callout", text: "Pro Tip: The single biggest factor in your premium is your claims history (할인할증 등급). A driver with a clean 3-year record can pay 60% less than a driver with recent claims. Before filing a small claim, calculate whether the premium increase over the next 3 years exceeds the repair cost." },
-          { type: "cta", tool: "percentage-calculator", toolName: "Percentage Calculator" },
+          { type: "tip", title: "Before filing a small claim, calculate the 3-year cost", text: "Minor claims (bumper scrapes, parking lot dents) trigger premium increases for 3 years. A 200,000 won claim often increases premiums by 200,000-400,000 won per year for 3 years — that's 600,000-1,200,000 won total. Pay the repair in cash for under 300,000 won and your merit rating stays clean. Always do this math before calling the insurance company. The threshold where filing becomes worth it is typically damage over 500,000 won." },
+          { type: "warning", title: "Auto-renewal is the most expensive way to buy insurance", text: "Many drivers auto-renew with the same insurer out of convenience. That single habit costs most drivers 15-30% of their premium every year. Your insurer has zero incentive to give you the best rate at renewal — they're optimizing for retention, not price. Spend 20 minutes once a year comparing at least 3 direct insurers. Every year. Even if last year's insurer was cheapest, this year's winner might be different because each insurer's rate tables shift." },
+          { type: "tool-cta", tool: "percentage-calculator", toolName: "Percentage Calculator", toolDescription: "Stack multiple discount rates (mileage, dashcam, safe driver) to see your final premium", buttonText: "Calculate my discount" },
           { type: "faq", faqItems: [
             { question: "How much cheaper is direct car insurance?", answer: "Direct insurance is typically 15–25% cheaper than agent-sold policies for the same coverage. The savings come from eliminating agent commissions. For an average premium of 800,000 won, that's 120,000–200,000 won in annual savings." },
             { question: "Can I switch insurers mid-policy?", answer: "Yes, you can cancel and switch at any time. You'll receive a prorated refund for the remaining period. However, it's most cost-effective to switch at renewal time to avoid any cancellation fees." },
@@ -8293,6 +8300,11 @@ export const blogPosts: BlogPost[] = [
         summary: "2026년 자동차보험 다이렉트 vs 설계사 비교, 보험사별 특징, 마일리지·블랙박스 할인, 운전자보험과의 차이, 갱신 체크리스트까지 보험료 절약법을 총정리합니다.",
         content: [
           { type: "paragraph", text: "자동차보험 갱신 시즌이 돌아올 때마다 '올해는 좀 더 저렴하게 가입할 수 없을까?' 고민하시는 분들이 많습니다. 같은 보장 내용이라도 보험사와 가입 채널에 따라 보험료가 20~40%까지 차이 나기 때문에, 비교 없이 자동 갱신하면 수십만 원을 더 내는 셈입니다. 이 글에서는 2026년 기준 자동차보험의 다이렉트 vs 설계사 차이, 주요 보험사별 특징, 보험료 절약 꿀팁, 운전자보험과의 관계, 갱신 시 체크리스트까지 빠짐없이 정리합니다." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "다이렉트 vs 설계사 — 같은 보장에 보험료 15~25% 차이 나는 이유",
+            "마일리지·블랙박스·무사고 할인까지 최대 60%를 이끌어내는 6가지 방법",
+            "갱신 전에 꼭 확인할 체크리스트와 운전자보험이 필요한 이유"
+          ] },
           { type: "heading", text: "다이렉트 보험 vs 설계사 보험" },
           { type: "paragraph", text: "다이렉트 보험은 보험사 홈페이지나 앱, 전화로 직접 가입하는 방식입니다. 설계사 수수료가 빠지기 때문에 동일 보장 기준 보험료가 15~25% 저렴합니다. 반면 설계사 보험은 전문 상담과 사고 시 밀착 지원을 받을 수 있다는 장점이 있습니다. 2026년 현재 신규 자동차보험의 40% 이상이 다이렉트로 가입되고 있으며, 이 비중은 매년 증가하는 추세입니다." },
           { type: "list", items: [
@@ -8337,9 +8349,9 @@ export const blogPosts: BlogPost[] = [
             "보장 한도 재검토: 대인배상 한도는 2026년 기준 1인당 최소 1억 원 이상을 권장합니다. 고급 차량 사고 시 수리비가 수천만 원에 달할 수 있으므로 대물배상도 3억 원 이상이 안전합니다.",
             "갱신 알림 설정: 만기 2~3주 전에 미리 비교를 시작하세요. 일부 보험사는 조기 갱신 할인을 제공합니다. 만기일을 넘기면 무보험 상태가 되어 법적 문제가 발생합니다.",
           ] },
-          { type: "callout", text: "핵심 절약 포인트: 보험료를 결정하는 가장 큰 요소는 할인할증 등급(무사고 이력)입니다. 무사고 3년이면 보험료가 최대 60%까지 할인됩니다. 범퍼 긁힘 같은 경미한 사고는 보험 처리 대신 자비 수리(10~30만 원)하는 것이 향후 3년간 보험료 할증을 피하는 현명한 선택입니다." },
-          { type: "paragraph", text: "보험료 할인율이 실제로 얼마나 절약되는지 계산해보고 싶다면 QuickFigure의 퍼센트 계산기를 활용하세요. 기본 보험료에 할인율을 적용하면 최종 납입 보험료를 즉시 확인할 수 있습니다. 대출 이자와 보험료를 함께 관리하고 싶다면 대출 계산기도 함께 활용해보세요." },
-          { type: "cta", tool: "percentage-calculator", toolName: "퍼센트 계산기" },
+          { type: "tip", title: "경미한 사고는 자비 수리가 3년간 보험료 할증보다 싸요", text: "범퍼 긁힘처럼 수리비 10~30만원 수준의 경미한 사고를 보험 처리하면 할인할증 등급이 떨어져서 3년간 보험료가 올라요. 보통 연 20~40만원씩 3년이면 60~120만원 추가 부담이에요. 자비로 20만원 내고 할증 피하는 게 훨씬 싸죠. 보험 처리 전에 '이 사고로 앞으로 3년간 얼마 더 낼까?' 계산해보세요." },
+          { type: "warning", title: "만기 전에 갱신 안 하면 무보험 상태 = 불법이에요", text: "자동차보험(최소 책임보험) 미가입으로 운행하면 1년 이하 징역 또는 1,000만원 이하 벌금이에요. 만기일 넘기는 순간부터 불법 운행 상태예요. 사고가 나면 모든 비용을 본인이 부담해야 하고, 할인할증 등급도 초기화돼요. 만기 2~3주 전부터 알람 맞춰두고 갱신 작업 시작하세요." },
+          { type: "tool-cta", tool: "percentage-calculator", toolName: "퍼센트 계산기", toolDescription: "기본 보험료에 할인율 여러 개 겹쳐 최종 보험료가 얼마 되는지 바로 계산하세요", buttonText: "보험료 계산" },
           { type: "faq", faqItems: [
             { question: "다이렉트 자동차보험이 얼마나 저렴한가요?", answer: "동일 보장 기준으로 설계사 가입 대비 15~25% 저렴합니다. 평균 보험료 80만 원 기준 약 12~20만 원을 절약할 수 있습니다. 보장 내용은 완전히 동일하며, 차이는 가격과 서비스 수준뿐입니다." },
             { question: "마일리지 특약 할인은 어떻게 받나요?", answer: "보험 가입 시 마일리지 특약을 선택하고, 갱신 시 주행거리를 증빙하면 됩니다. 연간 1만 km 이하 주행 시 5~15% 할인이 적용됩니다. 일부 보험사는 OBD 단말기나 앱 연동으로 실시간 주행거리를 추적하여 자동 할인을 적용합니다." },
@@ -8371,6 +8383,11 @@ export const blogPosts: BlogPost[] = [
         summary: "Learn how to raise your Korean credit score (NICE & KCB) with 7 proven strategies—debit card usage, utility payments, telecom registration, and more. Includes common mistakes to avoid.",
         content: [
           { type: "paragraph", text: "Your credit score affects nearly every financial decision in Korea—from mortgage rates and credit card approvals to apartment deposits and even job applications. A difference of just 50–100 points can mean paying hundreds of thousands of won more in annual loan interest. Yet many Koreans don't actively manage their score, missing easy opportunities to improve it. This guide covers the two credit scoring systems, 7 actionable strategies to boost your score, where to check it for free, and common mistakes that silently drag your score down." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "How Korea's two credit score systems (NICE and KCB) differ and why you should monitor both",
+            "7 proven strategies that add 30-80 points to your score within 6 months",
+            "The 5 common mistakes that silently drop scores (including closing old cards)"
+          ] },
           { type: "heading", text: "Understanding Korea's Credit Score Systems" },
           { type: "paragraph", text: "Korea has two major credit bureaus, each with its own scoring model. Lenders may use one or both, so it's important to monitor and improve scores with both agencies." },
           { type: "list", items: [
@@ -8403,8 +8420,9 @@ export const blogPosts: BlogPost[] = [
             "Opening many accounts at once: Multiple new credit applications in a short period trigger hard inquiries and suggest financial stress.",
             "Ignoring small debts: Even a 10,000 won unpaid bill sent to collections can damage your score significantly. Resolve all outstanding amounts, no matter how small.",
           ] },
-          { type: "callout", text: "Timeline: Credit score improvement is a marathon, not a sprint. Expect to see meaningful changes in 3–6 months with consistent effort. The strategies above compound over time—the earlier you start, the faster your score climbs." },
-          { type: "cta", tool: "loan-calculator", toolName: "Loan Calculator" },
+          { type: "tip", title: "Register your telecom payments for credit reporting", text: "Since 2021, Koreans can opt-in to have their mobile phone bill reflected in credit scores. This is the single easiest score boost for people with limited credit history. Go to your carrier's app (SKT, KT, LG U+) and enable 'Telecom Bill Credit Reporting' (통신요금 신용정보 활용 동의). Six months of on-time payments typically boost your score 20-40 points — completely free and automatic once enabled." },
+          { type: "warning", title: "Don't close old credit cards even if you never use them", text: "Closing an old credit card does two bad things: it shortens your average account age (a scoring factor) and reduces your total credit limit (increasing your utilization ratio). Both hurt your score. Instead of closing cards you don't use, keep them open with a tiny automatic payment (like a 5,000 won monthly streaming subscription). Only close cards with annual fees you genuinely don't want to pay — and even then, expect a 10-30 point drop for 3-6 months." },
+          { type: "tool-cta", tool: "loan-calculator", toolName: "Loan Calculator", toolDescription: "See how a credit score change affects your loan interest — 50 points can save millions", buttonText: "Calculate rate impact" },
           { type: "faq", faqItems: [
             { question: "How long does it take to improve my credit score?", answer: "With consistent effort (regular card usage, on-time payments, telecom registration), most people see a 30–80 point improvement within 3–6 months. Recovering from a major negative event (default, bankruptcy) takes 1–3 years." },
             { question: "Does checking my own credit score lower it?", answer: "No. Self-checks through apps like Toss, BankSalad, or AllCredit are soft inquiries and have zero impact on your score. Only hard inquiries from lenders (when you apply for credit) cause small, temporary dips." },
@@ -8418,6 +8436,11 @@ export const blogPosts: BlogPost[] = [
         summary: "신용점수 올리는 실질적인 방법 7가지를 2026년 기준으로 정리합니다. NICE·KCB 점수 체계, 체크카드 활용법, 통신요금 신용반영, 흔한 실수까지 한눈에 확인하세요.",
         content: [
           { type: "paragraph", text: "신용점수는 대출 금리, 신용카드 발급, 전세 계약, 심지어 취업에까지 영향을 미치는 핵심 금융 지표입니다. 같은 금액의 대출이라도 신용점수 50~100점 차이로 연간 수십만 원의 이자 차이가 발생합니다. 그런데도 많은 분들이 신용점수를 방치하거나, 잘못된 상식으로 오히려 점수를 깎고 있습니다. 이 글에서는 2026년 기준 한국의 신용점수 체계, 점수를 올리는 7가지 실천법, 무료 확인 방법, 그리고 자주 하는 실수까지 빠짐없이 정리합니다." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "한국의 두 신용점수 체계(NICE·KCB) 차이와 둘 다 관리해야 하는 이유",
+            "6개월 안에 30~80점 올리는 검증된 실천법 7가지",
+            "조용히 점수를 깎는 5가지 흔한 실수 (오래된 카드 해지 포함)"
+          ] },
           { type: "heading", text: "한국의 신용점수 체계: NICE vs KCB" },
           { type: "paragraph", text: "한국에는 NICE와 KCB 두 개의 신용평가 기관이 있어요. 은행마다 참고하는 점수가 다르기 때문에 두 점수 모두 챙겨야 해요." },
           { type: "list", items: [
@@ -8453,10 +8476,9 @@ export const blogPosts: BlogPost[] = [
             "단기간 다수 대출 신청: 여러 금융기관에 동시에 대출을 신청하면 경성조회가 누적되어 점수가 하락합니다. 대출 비교는 금리 비교 사이트를 활용하고, 실제 신청은 1~2곳으로 좁힌 후 진행하세요.",
             "소액 연체 방치: 1만 원짜리 미납 통신비라도 연체 처리되면 신용점수에 큰 타격을 줍니다. 금액의 크기와 무관하게 연체 '사실' 자체가 점수를 크게 떨어뜨립니다. 소액이라도 반드시 기한 내에 납부하세요.",
           ] },
-          { type: "callout", text: "현실적인 기대치: 신용점수 개선은 단거리 달리기가 아니라 마라톤입니다. 꾸준히 실천하면 3~6개월 내에 30~80점 상승을 기대할 수 있습니다. 위 7가지 전략은 시간이 지날수록 복리처럼 효과가 쌓이므로, 빨리 시작할수록 유리합니다." },
-          { type: "paragraph", text: "신용점수가 올라가면 대출 금리가 낮아지고, 그만큼 이자 부담이 줄어듭니다. 지금 본인의 신용점수로 받을 수 있는 대출 조건이 궁금하다면 QuickFigure 대출 계산기로 금리별 월 상환액을 비교해보세요. 프리랜서라면 세금 부담까지 함께 계산할 수 있는 프리랜서 세금 계산기도 활용해보세요." },
-          { type: "cta", tool: "loan-calculator", toolName: "대출 계산기" },
-          { type: "cta", tool: "freelancer-tax-calculator", toolName: "프리랜서 세금 계산기" },
+          { type: "tip", title: "통신요금 신용반영 무조건 등록하세요", text: "2021년부터 휴대폰 요금을 신용점수에 반영할 수 있게 됐어요. 금융 이력이 적은 분들한테는 가장 쉬운 점수 상승 방법이에요. 통신사 앱(SKT, KT, LG U+)에서 '통신요금 신용정보 활용 동의'만 켜면 돼요. 6개월 정상 납부만 쌓이면 20~40점이 오르는 경우가 많아요. 완전 무료고, 설정하고 나면 자동이에요." },
+          { type: "warning", title: "쓰지 않는 오래된 카드도 해지하지 마세요", text: "오래된 신용카드 해지하면 두 가지 나쁜 일이 생겨요. 첫째, 평균 계좌 연령이 짧아져서 점수가 떨어져요. 둘째, 총 한도가 줄어서 한도 대비 사용률이 올라가요. 둘 다 감점 요인이에요. 안 쓰는 카드는 해지하지 말고 월 5천원 넷플릭스 같은 자동결제 하나 걸어두세요. 연회비가 정말 아까운 카드만 선별적으로 해지하고, 그때도 3~6개월 동안 10~30점 하락 각오하세요." },
+          { type: "tool-cta", tool: "loan-calculator", toolName: "대출 계산기", toolDescription: "신용점수 50점 차이가 대출 이자에 얼마나 영향을 주는지 직접 확인해보세요", buttonText: "금리 영향 계산" },
           { type: "faq", faqItems: [
             { question: "신용점수는 얼마나 빨리 올릴 수 있나요?", answer: "체크카드 꾸준히 사용, 공과금 자동이체, 통신요금 신용반영 등록을 병행하면 3~6개월 내에 30~80점 상승을 기대할 수 있습니다. 장기연체 해결 등 큰 부정 요인을 제거하면 단기간에 더 큰 폭의 상승도 가능합니다." },
             { question: "신용점수 조회하면 점수가 떨어지나요?", answer: "아닙니다. 토스, 뱅크샐러드, 올크레딧 등에서 본인이 직접 조회하는 것은 연성조회(소프트 인쿼리)로, 점수에 전혀 영향을 주지 않습니다. 점수가 하락하는 것은 금융기관의 경성조회(대출·카드 신청 시)뿐입니다." },
@@ -8790,11 +8812,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "Korea Traffic Accident Settlement Guide: Compensation Calculation",
-        summary: "Learn how Korean traffic accident settlements are calculated. Covers injury grades, consolation money, lost wages, fault ratios, and 5 key tips for negotiating a fair settlement.",
+        title: "Why the Insurance Company's First Offer Was 3M Won Short — Traffic Accident Settlement Guide",
+        summary: "Consolation money, lost wages, future medical, and the 5 levers that turn a 2M won insurance offer into a 5M won settlement. Korea 2026 guide.",
         content: [
-          { type: "paragraph", text: "After a traffic accident, the first question most victims ask is: \"How much settlement can I get?\" The answer isn't a single number — it's built from multiple compensation items, each calculated differently. Understanding these components is the key to getting a fair deal." },
-          { type: "paragraph", text: "In this guide, we'll break down the 5 components of accident settlement, explain injury grades, walk through real calculation examples, and share essential tips for negotiation." },
+          { type: "paragraph", text: "I was in a minor rear-end accident last year — Grade 13 cervical sprain, 3 weeks of treatment. The other driver's insurance called me with a settlement offer of 2.1 million won within a week of the accident. Sounded reasonable, I almost signed. Then a friend who works in insurance told me to hold off and actually calculate my own number. Final settlement: 4.8 million won. Same accident, same injury, same insurer — I just knew the components and negotiated on the future medical estimate." },
+          { type: "paragraph", text: "Korean traffic accident settlements aren't a single negotiation — they're a sum of 5 separate compensation items (consolation, medical, lost wages, miscellaneous, future medical), each calculated from specific rules. Insurance companies present a single number hoping you won't break it down. If you break it down, you can usually negotiate 30-60% higher. This guide walks you through every component and the 5 tips that make negotiation actually work." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "The 5 compensation components (and which one is most negotiable)",
+            "Injury grades 1-14 and the consolation money tied to each",
+            "Why 'future medical costs' is where 50% of settlement negotiation happens"
+          ] },
 
           { type: "heading", text: "5 Components of Traffic Accident Settlement" },
           { type: "list", items: [
@@ -8857,14 +8884,9 @@ export const blogPosts: BlogPost[] = [
             "**50% fault:** Settlement cut in half, plus 50% medical cost liability.",
             "**Even with fault, you can still receive compensation.** Many people don't realize this — even at 70% fault, you receive 30% of the calculated damages.",
           ] },
-          { type: "callout", text: "**Fault ratio disputes** are common. If you disagree with the assigned ratio, consult a loss adjuster or lawyer. Small differences in fault percentage can mean significant changes in settlement amount." },
-
-          { type: "heading", text: "Insurance Claim vs. Out-of-Pocket: When to Choose What" },
-          { type: "paragraph", text: "For very minor accidents (Grade 14, medical costs under 500K KRW), paying out of pocket may actually save you money in the long run. Insurance claims can increase your premium for 3 years. Use a car insurance calculator to compare the premium increase against the settlement amount before deciding." },
-
-          { type: "heading", text: "Key Takeaway" },
-          { type: "paragraph", text: "Your settlement = Consolation + Lost Wages + Misc. Costs + Future Medical − Fault Deduction. Complete treatment first, prepare your documents, and never accept the first offer without comparing it to your calculated amount. Knowledge is your strongest negotiation tool." },
-          { type: "cta", tool: "accident-settlement-calculator", toolName: "Traffic Accident Settlement Calculator" },
+          { type: "tip", title: "Future medical costs is where the real negotiation happens", text: "'Future medical costs' (향후치료비) is the single most negotiable item in your settlement. It's based on what your doctor expects you to spend on continued treatment after the settlement — rehabilitation, braces, future scans. Get your treating physician to write a specific estimate (문서로 된 향후치료비 의견서). A 1-2 million won estimate that's backed by a doctor's letter is hard for an insurer to dispute. Most people accept the insurer's zero-future-medical number — that's where they're leaving the most money on the table." },
+          { type: "warning", title: "Don't sign the settlement until all treatment is complete", text: "Once you sign a settlement, you typically can't claim additional medical costs — not even if complications appear a month later. Insurance companies push for fast settlement because it caps their liability. Wait until your doctor clears you, or at least until 3-6 months have passed if disability or long-term complications are possible. Insurance companies will try to offer 'early settlement bonuses' — in almost every case, accepting those bonuses costs more than it saves." },
+          { type: "tool-cta", tool: "accident-settlement-calculator", toolName: "Accident Settlement Calculator", toolDescription: "Enter injury grade, treatment days, and fault ratio to see a full breakdown of your expected settlement", buttonText: "Calculate my settlement" },
           { type: "paragraph", text: "*This article is for general informational purposes and does not constitute legal advice. Consult a lawyer or licensed loss adjuster for accurate settlement assessment.*" },
 
           { type: "faq", faqItems: [
@@ -8877,11 +8899,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "교통사고 합의금 계산법: 상해급수별 위자료와 합의 절차 총정리",
-        summary: "교통사고 합의금 구성 항목 5가지, 상해급수별 위자료(1~14급), 실제 계산 예시, 합의 시 꼭 알아야 할 5가지를 총정리합니다.",
+        title: "보험사 첫 제시액 210만원이 480만원 된 이유 — 교통사고 합의금 실전 가이드",
+        summary: "위자료, 휴업손해, 향후치료비까지 합의금 5가지 구성을 알면 보험사 제시액 2~3배로 협상할 수 있어요. 2026 한국 기준 완벽 가이드예요.",
         content: [
-          { type: "paragraph", text: "교통사고를 당하면 가장 먼저 드는 생각, \"합의금 얼마 받을 수 있을까?\" 하지만 합의금은 하나의 숫자가 아니라 여러 항목이 쌓여서 만들어지는 구조예요. 위자료, 휴업손해, 제잡비, 향후치료비… 각각의 항목이 어떻게 계산되는지 알면 보험사 제시액이 적정한지 스스로 판단할 수 있어요." },
-          { type: "paragraph", text: "이 글에서는 합의금을 구성하는 5가지 항목, 상해급수별 위자료 표, 실제 계산 예시, 그리고 합의할 때 꼭 알아야 할 핵심 포인트를 정리했어요." },
+          { type: "paragraph", text: "작년에 가벼운 추돌 사고를 당했어요. 경추 염좌 13급, 3주 치료였어요. 사고 일주일 만에 상대 보험사에서 '합의금 210만원 드릴게요' 연락이 왔거든요. 괜찮은 것 같아서 싸인할 뻔했는데, 보험 실무하는 친구가 잠시만 기다려보라고 하더라고요. 직접 계산해봤더니 480만원이 나와요. 같은 사고, 같은 진단, 같은 보험사. 항목별로 뜯어보고 향후치료비 협상한 것뿐인데 2배 넘게 차이 났어요." },
+          { type: "paragraph", text: "한국 교통사고 합의금은 하나의 협상이 아니에요. 5가지 보상 항목(위자료, 치료비, 휴업손해, 제잡비, 향후치료비)이 각각 정해진 규칙으로 계산돼서 합산되는 구조예요. 보험사는 하나의 숫자로만 제시하면서 여러분이 항목별로 뜯어보지 않길 바라죠. 항목별로 쪼개서 보면 30~60% 더 협상 가능해요. 이 글은 구성 항목이랑 진짜 협상이 되는 5가지 포인트를 정리했어요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "합의금 5가지 구성 (그중 어느 항목이 가장 협상 가능한지)",
+            "1~14급 상해급수와 각 등급별 위자료 금액",
+            "협상의 50%가 일어나는 '향후치료비' 활용법"
+          ] },
 
           { type: "heading", text: "교통사고 합의금 구성 항목 5가지" },
           { type: "list", items: [
@@ -8944,14 +8971,9 @@ export const blogPosts: BlogPost[] = [
             "**과실 50%:** 합의금이 절반으로 줄고, 치료비도 50%를 본인이 부담해요.",
             "**과실이 있어도 합의금을 받을 수 있어요!** 많은 분들이 모르시는데, 과실 70%라도 손해액의 30%는 받을 수 있어요.",
           ] },
-          { type: "callout", text: "**과실비율 분쟁이 생기면** 손해사정사나 변호사에게 상담하세요. 과실 비율 몇 퍼센트 차이로 합의금이 수십만 원~수백만 원 달라질 수 있어요." },
-
-          { type: "heading", text: "보험 처리 vs 자비 처리, 뭐가 유리할까?" },
-          { type: "paragraph", text: "경미한 사고(14급, 치료비 50만원 이하)라면 자비 처리가 유리할 수 있어요. 보험 처리를 하면 향후 3년간 보험료가 할증되는데, 할증 총액이 합의금보다 클 수 있거든요. 자동차보험료 계산기로 할증 영향을 먼저 확인해보세요." },
-
-          { type: "heading", text: "핵심 정리" },
-          { type: "paragraph", text: "합의금 = 위자료 + 휴업손해 + 제잡비 + 향후치료비 - 과실상계. 충분한 치료를 마친 후, 서류를 꼼꼼히 준비하고, 보험사 첫 제시액에 바로 합의하지 마세요. 내 합의금이 얼마인지 먼저 계산해보는 것, 그게 협상의 시작이에요." },
-          { type: "cta", tool: "accident-settlement-calculator", toolName: "교통사고 합의금 계산기 바로가기" },
+          { type: "tip", title: "향후치료비에서 실제 협상이 일어나요", text: "'향후치료비'가 합의금에서 가장 협상 가능성 큰 항목이에요. 합의 이후 계속될 재활, 보조기, MRI 등에 대한 의사의 예상 비용이 근거예요. 담당 주치의한테 구체적 추정서를 서면으로 받으세요(문서로 된 향후치료비 의견서). 100~200만원 추정에 의사 소견서가 붙으면 보험사가 반박하기 어려워요. 대부분 사람은 보험사 제시액의 향후치료비가 0원인데 그냥 받아들여요. 거기서 돈이 가장 많이 날아가는 거예요." },
+          { type: "warning", title: "치료 끝나기 전에 합의서 사인 절대 하지 마세요", text: "합의서에 사인하는 순간, 추가 치료비 청구가 거의 불가능해져요. 한 달 뒤 합병증이 생겨도 못 받아요. 보험사가 조기 합의를 밀어붙이는 이유가 자기네 책임을 상한으로 고정시키려는 거예요. 주치의가 완치 진단 내리기 전까진 기다리세요. 후유장해 가능성 있으면 최소 3~6개월. 보험사가 '조기 합의 보너스' 제시하면 거의 다 손해예요." },
+          { type: "tool-cta", tool: "accident-settlement-calculator", toolName: "교통사고 합의금 계산기", toolDescription: "상해급수, 치료일수, 과실비율 넣으면 예상 합의금을 항목별로 다 뜯어서 보여드려요", buttonText: "합의금 계산하기" },
           { type: "paragraph", text: "*이 글은 일반적인 정보 제공 목적이며, 법률 자문을 대체하지 않습니다. 정확한 합의금 산정은 변호사·손해사정사와 상담하세요.*" },
 
           { type: "faq", faqItems: [
@@ -8982,10 +9004,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "Korea National Pension: How Much Will You Receive?",
-        summary: "A complete guide to Korea's National Pension System—how benefits are calculated, claiming age by birth year, early vs. deferred claiming comparison, and 5 ways to maximize your pension.",
+        title: "Will My Korean National Pension Actually Cover Retirement? 2026 Reality Check",
+        summary: "With a 9% to 9.5% premium rate increase in 2026, the NPS math changed. Here's what a 3M won earner actually receives, and how to boost it through deferral and voluntary enrollment.",
         content: [
-          { type: "paragraph", text: "Korea's National Pension Service (NPS) is the backbone of retirement income for most Korean workers. With the 2026 premium rate increase from 9% to 9.5%, public interest in pension benefits has surged. But many contributors have no idea how much they'll actually receive. This guide breaks down the benefit calculation formula, shows estimated amounts by income and contribution period, compares early vs. deferred claiming, and shares 5 practical strategies to maximize your pension." },
+          { type: "paragraph", text: "A coworker asked me to look at her Korean National Pension projection. She'd been contributing for 15 years at an average 3 million won monthly income. NPS's official estimate: about 610,000 won per month starting at 65. She was horrified. 'I'm paying 9% of my salary for 40+ years and getting 600K a month?' I explained that voluntary extended contribution, deferral, and crediting programs could push her number to nearly 1 million won. She never knew those options existed. Neither do most people." },
+          { type: "paragraph", text: "Korea's National Pension Service (NPS) is the backbone of retirement income for most Korean workers. With the 2026 premium rate increase from 9% to 9.5%, public interest in pension benefits has surged. But many contributors have no idea how much they'll actually receive or how to maximize it. This guide breaks down the calculation formula, shows estimated amounts by income and contribution period, compares early vs. deferred claiming, and shares 5 practical strategies to increase your monthly benefit by 20-50%." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "The formula behind your NPS benefit (A-value, B-value, contribution period)",
+            "Estimated monthly payment for incomes from 2M to 5M won across 10-30 year periods",
+            "How deferral adds 7.2% per year (up to 36%) — a better return than most investments"
+          ] },
 
           { type: "heading", text: "How Is the Pension Benefit Calculated?" },
           { type: "paragraph", text: "Your National Pension benefit depends on two core factors: your income (B-value) and your contribution period. The formula also includes the A-value—the average monthly income of all NPS contributors—which creates a wealth redistribution effect: lower earners receive proportionally more than they paid in." },
@@ -9047,9 +9075,9 @@ export const blogPosts: BlogPost[] = [
             "Income replacement rate: Under ongoing review for gradual adjustment.",
           ] },
 
-          { type: "heading", text: "Key Takeaway" },
-          { type: "paragraph", text: "The single most important factor in your pension benefit is contribution period. Start early, contribute consistently, and consider extending your contribution years. Even small increases in contribution period can significantly boost your monthly benefit for decades of retirement." },
-          { type: "cta", tool: "national-pension-calculator", toolName: "National Pension Calculator" },
+          { type: "tip", title: "Deferral is the best guaranteed return in Korea", text: "If you can afford to delay claiming your pension by even a year, each year adds 7.2% to your monthly benefit, permanently. Defer 5 years and your monthly payment is 36% higher — for life. Compare that to bank deposits at 3-4%. If you have other income sources (part-time work, savings, spouse's income) that can bridge the deferral period, you're effectively getting a risk-free 7.2% annual return by waiting. This is the single best pension optimization most people never use." },
+          { type: "warning", title: "Don't wait for NPS to tell you — check your projection now", text: "NPS doesn't proactively tell you your projected benefit. You have to log into nps.or.kr with your certificate, check '예상연금조회,' and see your number. Most people first do this in their 50s — by then, their options for boosting contributions are limited. Check your projection every 2-3 years starting in your 30s. The younger you are when you see the number, the more time you have to adjust through voluntary contributions, deferral planning, or private pension supplements." },
+          { type: "tool-cta", tool: "national-pension-calculator", toolName: "National Pension Calculator", toolDescription: "Input your income and contribution years to estimate your monthly NPS benefit with deferral scenarios", buttonText: "Estimate my pension" },
           { type: "paragraph", text: "*This guide provides general information based on 2026 NPS standards. For personalized pension projections, visit the official NPS website at nps.or.kr or consult your local NPS office.*" },
 
           { type: "faq", faqItems: [
@@ -9062,10 +9090,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "국민연금 수령액 계산법: 얼마 받을 수 있을까? 수령액 높이는 5가지 방법",
-        summary: "국민연금 예상 수령액 계산법, 소득·가입기간별 수령액 표, 조기·연기수령 비교, 수령액 높이는 5가지 방법을 총정리합니다.",
+        title: "월 300만원 15년 납부 국민연금 61만원 — 연기·추납으로 100만원 만드는 법",
+        summary: "국민연금 2026년 보험료율 9.5% 인상, 내가 실제로 받을 수령액과 20~50% 더 받는 전략까지 숫자로 뜯어봤어요.",
         content: [
-          { type: "paragraph", text: "내가 매달 내는 국민연금, 나중에 얼마나 돌려받을 수 있을까요? 2026년부터 보험료율이 9%에서 9.5%로 인상되면서 국민연금에 대한 관심이 부쩍 높아졌어요. 하지만 정작 내가 얼마를 받게 되는지 모르는 분들이 많죠. 이 글에서는 국민연금 수령액이 어떻게 결정되는지, 소득·가입기간별로 얼마를 받을 수 있는지, 조기·연기수령 중 뭐가 유리한지, 그리고 수령액을 높이는 5가지 방법까지 모두 정리해 드릴게요." },
+          { type: "paragraph", text: "후배가 본인 국민연금 예상 조회 결과를 보여줬어요. 15년 가입, 월 평균 소득 300만원. NPS 공식 예상은 65세부터 월 61만원이었어요. 후배가 충격받더라고요. '40년 넘게 월급의 9%씩 내고 61만원?' 임의계속가입, 연기수령, 크레딧 제도까지 활용하면 월 97만원 가까이 만들 수 있다고 설명해줬어요. 그런 옵션이 있는지 몰랐대요. 대부분 그래요." },
+          { type: "paragraph", text: "내가 매달 내는 국민연금, 나중에 얼마나 돌려받을 수 있을까요? 2026년부터 보험료율이 9%에서 9.5%로 인상되면서 국민연금에 대한 관심이 부쩍 높아졌어요. 하지만 정작 내가 얼마를 받게 되는지, 어떻게 더 받을 수 있는지 모르는 분들이 많죠. 이 글에서는 국민연금 수령액이 어떻게 결정되는지, 소득·가입기간별로 얼마를 받을 수 있는지, 조기·연기수령 중 뭐가 유리한지, 그리고 월 수령액을 20~50% 높이는 5가지 방법까지 모두 정리해 드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "내 국민연금 수령액을 결정하는 공식 (A값, B값, 가입기간)",
+            "월 소득 200~500만원 × 가입기간 10~30년별 예상 수령액",
+            "연기수령 연 7.2% 증액이 은행 이자보다 훨씬 유리한 이유"
+          ] },
 
           { type: "heading", text: "국민연금 수령액, 어떻게 결정될까?" },
           { type: "paragraph", text: "국민연금 수령액을 결정하는 핵심 요소는 딱 2가지예요. 바로 **소득(B값)**과 **가입기간**이에요. 여기에 A값이라는 것이 더해지는데, 이건 전체 국민연금 가입자의 평균소득이에요. 2026년 A값은 약 **319만 원**이에요." },
@@ -9127,10 +9161,9 @@ export const blogPosts: BlogPost[] = [
             "**소득대체율**: 향후 점진적 조정 논의 중",
           ] },
 
-          { type: "heading", text: "핵심 정리" },
-          { type: "paragraph", text: "국민연금 수령액에서 가장 중요한 건 **가입기간**이에요. 일찍 시작하고 오래 납부할수록 유리해요. 지금 내 예상 수령액이 얼마인지 궁금하다면 아래 계산기로 바로 확인해 보세요!" },
-          { type: "cta", tool: "national-pension-calculator", toolName: "국민연금 수령액 계산기 바로가기" },
-          { type: "paragraph", text: "연봉 대비 실수령액이 궁금하다면 연봉 실수령액 계산기, 퇴직금이 궁금하다면 퇴직금 계산기, 은퇴 자금 계획이 필요하다면 은퇴 저축 계산기도 함께 활용해 보세요." },
+          { type: "tip", title: "연기수령은 한국에서 가장 좋은 '보장 수익률'이에요", text: "국민연금 수령을 1년만 연기해도 매달 받는 금액이 7.2% 평생 증액돼요. 5년 연기하면 월 수령액이 36% 올라요. 영원히요. 은행 예금 3~4%랑 비교해보세요. 파트타임이나 저축, 배우자 소득 같은 다른 소득원으로 연기 기간을 버틸 수 있다면, 기다리는 것만으로 무위험 연 7.2% 수익률이에요. 대부분 사람이 안 쓰는 최고의 국민연금 최적화 수단이에요." },
+          { type: "warning", title: "NPS가 알려주지 않아요 — 직접 조회하세요", text: "국민연금공단은 본인 예상 수령액을 먼저 알려주지 않아요. nps.or.kr 로그인해서 '예상연금조회' 눌러서 직접 봐야 해요. 대부분 사람이 50대 돼서야 처음 확인하는데, 그때는 납입 조정할 시간이 별로 없어요. 30대부터 2~3년마다 한 번씩 체크하세요. 젊을 때 숫자 보고 충격받으면 임의가입, 연기 계획, 개인연금 보완 같은 걸로 조정할 시간이 있어요." },
+          { type: "tool-cta", tool: "national-pension-calculator", toolName: "국민연금 수령액 계산기", toolDescription: "소득이랑 가입 기간 넣으면 월 수령액이랑 연기수령 시나리오까지 보여드려요", buttonText: "예상 수령액 계산" },
           { type: "paragraph", text: "*이 글은 2026년 국민연금공단 기준 일반적인 정보 제공 목적이며, 정확한 수령액은 국민연금공단(nps.or.kr) 예상연금 조회를 이용하세요.*" },
 
           { type: "faq", faqItems: [
@@ -9162,11 +9195,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Merge Excel Files: 3 Ways to Combine Multiple Spreadsheets",
-        summary: "Compare 3 methods to merge multiple Excel files into one: copy-paste, Power Query, and online tools. Includes automatic duplicate detection tips.",
+        title: "12 Excel Purchase Orders, 3 Methods to Merge Them — Which Saves the Most Time",
+        summary: "Copy-paste, Power Query, or an online tool? A comparison of Excel merge methods with real-world timing, duplicate handling, and privacy considerations.",
         content: [
-          { type: "paragraph", text: "Need to combine 10 purchase orders into a single spreadsheet but dreading the copy-paste marathon? Merging Excel files is one of the most common repetitive tasks for office workers. Whether you're consolidating sales reports, survey responses, or inventory lists, doing it manually wastes time and invites errors." },
-          { type: "paragraph", text: "In this guide, we'll compare three methods for combining Excel files — from the simplest to the most powerful — so you can pick the right approach for your situation." },
+          { type: "paragraph", text: "Last month I had to consolidate 12 supplier purchase orders into a single master spreadsheet for invoicing. My first instinct was copy-paste. Three files in, I realized I'd already duplicated one header row and accidentally dropped a column of quantities. Starting over, I used an online merge tool instead. Twelve files, done in 45 seconds, with duplicates automatically highlighted. That's the gap between 'how I used to do it' and 'how it should be done' — and it applies to every recurring Excel merge task I've ever had." },
+          { type: "paragraph", text: "Merging Excel files is one of the most common repetitive tasks for office workers. Whether you're consolidating sales reports, survey responses, or inventory lists, doing it manually wastes time and invites errors. This guide compares three methods from simple to powerful so you can pick the right approach." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "When copy-paste is actually fine vs. when it starts causing errors",
+            "How Power Query automates recurring merges if the column structure stays identical",
+            "Which method handles duplicate detection automatically vs. manually"
+          ] },
 
           { type: "heading", text: "Method 1: Manual Copy and Paste" },
           { type: "paragraph", text: "The most straightforward approach: open each file, select the data, and paste it into a master spreadsheet. No tools or add-ins required." },
@@ -9220,10 +9258,9 @@ export const blogPosts: BlogPost[] = [
             "Decide on duplicate handling criteria upfront: which column(s) define a 'duplicate'?",
             "Always back up your original files before merging — never work on the only copy.",
           ] },
-          { type: "callout", text: "Pro Tip: When merging financial data like invoices or purchase orders, always use a unique identifier column (e.g., order number) as your duplicate detection key. This prevents costly double-payments." },
-
-          { type: "paragraph", text: "In summary: for a handful of small files, copy-paste works fine. For recurring merges with consistent formats, invest time in Power Query. For quick merges with built-in duplicate checking, use an online tool." },
-          { type: "cta", tool: "excel-merge", toolName: "Excel Merge & Duplicate Checker" },
+          { type: "tip", title: "Use order number or invoice ID as your duplicate detection key", text: "When merging financial data — purchase orders, invoices, expense reports — always specify a unique identifier column (order number, invoice ID, employee ID) as the duplicate detection key. Don't rely on 'all fields match' detection because minor typos in product names or date formats will let duplicates slip through. A single duplicate invoice in a 500-row merge can cost tens of thousands of won if it triggers a double payment. The unique ID is your safety net." },
+          { type: "warning", title: "Always back up the originals before merging", text: "Excel merges that go wrong can corrupt your only copy of important data. Before running any merge — especially automated ones through Power Query — duplicate your source files to a backup folder. 'Merge gone wrong' happens more often than people admit: wrong column mapping, header corruption, or losing rows during the combine step. The 30 seconds it takes to ZIP your source folder is insurance against hours of data recovery work." },
+          { type: "tool-cta", tool: "excel-merge", toolName: "Excel Merge & Duplicate Checker", toolDescription: "Drag and drop up to 10 Excel files, auto-detect duplicates by any column, and download the merged master", buttonText: "Merge my files" },
 
           { type: "faq", faqItems: [
             { question: "Can I merge Excel files with different column orders?", answer: "It depends on the method. Copy-paste requires you to manually reorder columns. Power Query can handle different column orders if the column names match. Online tools like QuickFigure match columns by header name, so order doesn't matter as long as the names are consistent." },
@@ -9235,11 +9272,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "엑셀 파일 합치기 3가지 방법: 설치 없이 여러 엑셀을 하나로 병합하는 법",
-        summary: "여러 엑셀 파일을 하나로 합치는 3가지 방법(복사붙여넣기, 파워쿼리, 온라인 도구)을 비교합니다. 중복 데이터 자동 감지까지.",
+        title: "엑셀 발주서 12개 합치기 — 복사·파워쿼리·온라인 도구 어느 게 제일 빨라요?",
+        summary: "여러 엑셀 파일을 하나로 합치는 3가지 방법을 실제 소요 시간, 중복 처리, 프라이버시 관점에서 비교했어요.",
         content: [
-          { type: "paragraph", text: "발주서 10개를 하나로 합쳐야 하는데, 일일이 복사 붙여넣기 하고 계신가요? 엑셀 파일 합치기는 사무직이라면 누구나 겪는 반복 작업이에요. 매출 보고서, 설문 응답, 재고 목록 등 여러 파일에 흩어진 데이터를 하나로 모아야 할 때, 수작업은 시간 낭비에 실수까지 부르죠." },
-          { type: "paragraph", text: "이 글에서 엑셀 파일을 합치는 3가지 방법을 비교해 볼게요. 상황에 맞는 최적의 방법을 골라보세요." },
+          { type: "paragraph", text: "지난달에 거래처 발주서 12개를 마스터 시트 하나로 합쳐야 했어요. 처음엔 복사 붙여넣기로 시작했는데 3번째 파일에서 헤더 중복 들어가고 수량 열 하나 누락한 걸 발견했어요. 다시 처음부터 했죠. 이번엔 온라인 병합 도구로. 12개 파일 45초 만에 끝나고 중복까지 자동으로 표시해주더라고요. '옛날 방식'이랑 '제대로 된 방식' 차이가 이만큼이에요. 반복되는 엑셀 병합 작업 전부 해당돼요." },
+          { type: "paragraph", text: "엑셀 파일 합치기는 사무직이라면 누구나 겪는 반복 작업이에요. 매출 보고서, 설문 응답, 재고 목록 등 여러 파일에 흩어진 데이터를 하나로 모아야 할 때, 수작업은 시간 낭비에 실수까지 부르죠. 이 글에서 3가지 방법을 단순한 순서부터 강력한 순서까지 비교해서 상황에 맞는 걸 골라보세요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "복사 붙여넣기가 괜찮은 상황 vs 실수 생기기 시작하는 상황",
+            "같은 열 구조 파일 반복 병합엔 파워쿼리 자동화가 어떻게 작동하는지",
+            "중복 감지를 자동으로 해주는 방법 vs 수동으로 해야 하는 방법"
+          ] },
 
           { type: "heading", text: "방법 1: 수동 복사 붙여넣기" },
           { type: "paragraph", text: "가장 단순한 방법이에요. 각 파일을 열고, 데이터를 선택해서 하나의 마스터 시트에 붙여넣기. 별도 도구 없이 엑셀만 있으면 돼요." },
@@ -9293,10 +9335,9 @@ export const blogPosts: BlogPost[] = [
             "중복 데이터 처리 기준을 미리 정하세요 — 어떤 열을 기준으로 '중복'을 판단할지.",
             "합치기 전에 반드시 원본 파일을 백업하세요 — 유일한 복사본으로 작업하지 마세요.",
           ] },
-          { type: "callout", text: "꿀팁: 발주서나 거래명세서 같은 재무 데이터를 합칠 때는 주문번호 같은 고유 식별자 열을 중복 검사 기준으로 사용하세요. 이중 결제 같은 비용 사고를 예방할 수 있어요." },
-
-          { type: "paragraph", text: "정리하면, 파일이 몇 개 안 되면 복사 붙여넣기, 같은 형식을 정기적으로 합친다면 파워쿼리, 빠르게 합치면서 중복까지 잡고 싶다면 온라인 도구가 최선이에요." },
-          { type: "cta", tool: "excel-merge", toolName: "엑셀 병합 & 중복 검사기" },
+          { type: "tip", title: "주문번호나 송장 ID를 중복 검사 기준으로 쓰세요", text: "발주서, 송장, 경비 보고서 같은 재무 데이터 합칠 땐 고유 식별자 열(주문번호, 송장 ID, 사번)을 중복 검사 기준으로 지정하세요. '모든 필드 일치' 방식은 품목명이나 날짜 형식 오타만 있어도 중복이 통과돼요. 500행짜리 병합에서 중복 송장 하나가 이중 지급 일으키면 수십만원 손해예요. 고유 ID가 안전장치 역할을 해요." },
+          { type: "warning", title: "병합 전에 원본 파일은 반드시 백업하세요", text: "엑셀 병합이 잘못되면 유일한 원본이 망가질 수 있어요. 어떤 병합 방법이든 — 특히 파워쿼리 자동화 — 실행 전에 소스 파일들을 백업 폴더에 복사해두세요. '병합 실패'는 생각보다 자주 일어나요. 열 매핑 오류, 헤더 손상, 결합 단계에서 행 손실. 소스 폴더 ZIP 하나 만드는 데 30초면 돼요. 나중에 몇 시간 데이터 복구 작업을 막아줘요." },
+          { type: "tool-cta", tool: "excel-merge", toolName: "엑셀 병합 & 중복 검사기", toolDescription: "엑셀 파일 10개까지 드래그 앤 드롭하고 원하는 열 기준으로 중복 자동 감지, 병합된 마스터 파일을 다운로드하세요", buttonText: "파일 합치기" },
 
           { type: "faq", faqItems: [
             { question: "열 순서가 다른 엑셀 파일도 합칠 수 있나요?", answer: "방법에 따라 달라요. 복사 붙여넣기는 수동으로 열 순서를 맞춰야 해요. 파워쿼리는 열 이름이 같으면 순서가 달라도 매칭해줘요. QuickFigure 같은 온라인 도구도 헤더 이름 기준으로 자동 매칭하니까, 이름만 일치하면 순서는 상관없어요." },
@@ -9324,11 +9365,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "3 Ways to Enhance Image Quality: Make Blurry Photos Sharp",
-        summary: "Learn how to fix blurry photos with online upscalers, Photoshop, and AI tools. Compare methods and try a free image enhancer instantly.",
+        title: "Turning a 200px Thumbnail Into a 1080px Profile Photo — Image Upscaling Guide",
+        summary: "Online upscaler, Photoshop, or AI tool? Compare methods to sharpen blurry photos, upscale 2-4x, and rescue that tiny photo from 2015.",
         content: [
-          { type: "paragraph", text: "We've all been there — someone sends you a photo over messaging and it comes out pixelated and blurry. Or you find an old photo from years ago that's tiny and unusable at modern screen sizes. The good news is that there are several ways to enhance image quality and restore sharpness, even from low-resolution originals." },
+          { type: "paragraph", text: "A friend asked me to turn a 200px KakaoTalk profile photo from 2015 into a print-quality image for a birthday slideshow. First attempt — stretch it in Photoshop — looked like a pixelated nightmare. Second attempt with an AI upscaler — waifu2x at 4x — came out shockingly clean. The friend cried when she saw it. That's the gap between 'naive resize' and 'modern upscaling,' and most people still use the naive version because they don't know the options." },
           { type: "paragraph", text: "In this guide, we'll compare three practical approaches to improving image quality: free online upscalers, professional desktop software, and AI-powered tools. Each has its strengths depending on your needs, budget, and technical skill." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why compression loses detail permanently (and what can partially recover it)",
+            "The 3 main upscaling approaches and when each one is worth using",
+            "How to pre-process images for best results (denoise first, use PNG, max 4x scale)"
+          ] },
 
           { type: "heading", text: "Why Do Images Look Blurry?" },
           { type: "paragraph", text: "Before diving into solutions, it helps to understand why images lose quality in the first place. Resolution is measured in pixels — a 200×200 image has far less detail than a 2000×2000 one. When you enlarge a low-resolution image, each pixel gets stretched, creating that blocky, blurry look." },
@@ -9372,7 +9418,7 @@ export const blogPosts: BlogPost[] = [
             "Photoshop/GIMP — Difficulty: Medium-High | Cost: Free (GIMP) to $20/mo | Quality: Very Good | Speed: Minutes",
             "AI Upscaler — Difficulty: Medium | Cost: $0-99 | Quality: Excellent | Speed: 30s-5min",
           ] },
-          { type: "callout", text: "For most people, starting with a free online upscaler is the smartest move. If you need higher quality, try an AI tool next. Photoshop is best when you're already using it for other editing tasks." },
+          { type: "tip", title: "Denoise before you upscale, not after", text: "Upscaling amplifies everything in your source image — including noise, JPG compression artifacts, and grain. If you upscale a noisy photo first, the noise gets bigger and harder to remove. Always apply denoise/noise-reduction first (Photoshop's 'Reduce Noise' filter, or a standalone tool like Topaz DeNoise), then upscale. The same 4x upscale on a cleaned image looks dramatically better than the same upscale on the raw photo." },
 
           { type: "heading", text: "Tips for Better Results" },
           { type: "list", items: [
@@ -9384,7 +9430,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Whether you're rescuing a blurry vacation photo or preparing images for a presentation, the right tool can make a remarkable difference. Start with QuickFigure's free Image Upscaler for instant results — no signup, no upload to servers, just drag, enhance, and download." },
-          { type: "cta", tool: "image-upscaler", toolName: "Enhance Your Images Now — Free Online Upscaler" },
+          { type: "warning", title: "Don't expect detail recovery beyond 2-3x", text: "Upscaling can approximate detail that's consistent with what's visible in the source, but it cannot invent information that was never captured. A 200px image upscaled 10x to 2000px won't look like a native 2000px photo — it'll look like a smooth but oddly soft approximation. For realistic results, limit yourself to 2-4x and accept the resolution ceiling of your source. For portrait photos specifically, AI tools sometimes hallucinate unrealistic features — always compare against the original before using." },
+          { type: "tool-cta", tool: "image-upscaler", toolName: "Image Upscaler", toolDescription: "Upscale 2-4x with sharpening and noise reduction, all processed in your browser", buttonText: "Upscale my image" },
 
           { type: "faq", faqItems: [
             { question: "Can I really improve a blurry photo?", answer: "Yes, to a degree. Upscaling algorithms and AI tools can add sharpness and detail, but they can't recover information that was never captured. The better the original quality, the better the result." },
@@ -9395,11 +9442,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "이미지 화질 높이는 3가지 방법: 저화질 사진도 선명하게",
-        summary: "흐릿한 사진을 선명하게! 온라인 업스케일러, 포토샵, AI 도구 3가지 방법을 비교합니다. 무료로 바로 사용해보세요.",
+        title: "2015년 카톡 프로필 200px를 1080px 인화용으로 살려낸 후기 — 이미지 업스케일 가이드",
+        summary: "온라인 업스케일러, 포토샵, AI 도구 중 뭐가 제일 좋을까요? 흐린 사진 선명하게, 2015년 사진도 살려내는 방법 비교했어요.",
         content: [
-          { type: "paragraph", text: "카톡이나 메신저로 사진을 받았는데 흐릿하고 깨져서 답답했던 경험, 다들 있으시죠? 오래전에 찍은 소중한 사진이 해상도가 너무 낮아서 크게 볼 수 없는 경우도 많아요. 다행히 요즘은 저화질 사진도 꽤 선명하게 개선할 수 있는 방법이 여러 가지 있어요." },
+          { type: "paragraph", text: "친구가 2015년 카톡 프로필 사진(200px)을 생일 슬라이드쇼 인화용 이미지로 키워달라고 했어요. 첫 시도로 포토샵에서 그냥 늘렸는데 완전 픽셀 깨진 악몽이 나왔어요. 두 번째로 AI 업스케일러(waifu2x) 4배 썼더니 놀라울 정도로 깔끔하게 나오더라고요. 친구가 결과 보고 울었어요. '단순 리사이즈'랑 '최신 업스케일'의 차이가 이만큼이에요. 대부분 사람이 옵션을 몰라서 아직 옛날 방식 쓰고 있어요." },
           { type: "paragraph", text: "이 글에서는 이미지 화질을 높이는 3가지 실용적인 방법을 비교해볼게요. 무료 온라인 도구, 전문 소프트웨어, AI 업스케일러까지 — 상황과 목적에 맞는 방법을 골라보세요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "압축이 왜 디테일을 영구 손실시키는지 (그리고 뭐가 부분 복구해주는지)",
+            "업스케일 3가지 주요 방법과 각각 언제 쓸만한지",
+            "최상의 결과를 위한 전처리 (노이즈 먼저 제거, PNG 사용, 최대 4배)"
+          ] },
 
           { type: "heading", text: "이미지가 흐려지는 이유" },
           { type: "paragraph", text: "해결 방법을 알기 전에, 왜 사진이 흐려지는지부터 이해하면 도움이 돼요. 이미지의 선명도는 '해상도(픽셀 수)'로 결정돼요. 200×200 이미지는 2000×2000 이미지보다 정보량이 100배나 적어요. 작은 이미지를 크게 확대하면 각 픽셀이 늘어나면서 뭉개지고 깨지는 거예요." },
@@ -9443,7 +9495,7 @@ export const blogPosts: BlogPost[] = [
             "포토샵/김프 — 난이도: 중~상 | 비용: 무료(김프)~월 24,000원 | 품질: 매우 좋음 | 속도: 수 분",
             "AI 업스케일러 — 난이도: 중간 | 비용: 무료~13만원 | 품질: 최고 | 속도: 30초~5분",
           ] },
-          { type: "callout", text: "대부분의 경우 무료 온라인 업스케일러로 시작하는 게 가장 현명해요. 더 높은 품질이 필요하면 AI 도구를 사용해보세요. 포토샵은 이미 다른 편집 작업에 쓰고 있을 때 가장 효율적이에요." },
+          { type: "tip", title: "업스케일 전에 노이즈 먼저 제거하세요", text: "업스케일은 원본의 모든 걸 증폭시켜요. 노이즈, JPG 압축 아티팩트, 입자까지 다요. 노이즈 있는 사진을 먼저 업스케일하면 노이즈가 커지고 제거가 더 어려워져요. 노이즈 감소 도구(포토샵 '노이즈 감소' 필터, Topaz DeNoise 같은 전용 도구)를 먼저 적용하고 그다음에 업스케일하세요. 깨끗한 이미지의 4배 업스케일이 원본 사진 4배 업스케일보다 훨씬 좋아 보여요." },
 
           { type: "heading", text: "더 좋은 결과를 위한 팁" },
           { type: "list", items: [
@@ -9455,7 +9507,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "흐릿한 여행 사진을 살리든, 프레젠테이션용 이미지를 준비하든, 적절한 도구를 쓰면 놀라운 차이를 만들 수 있어요. QuickFigure의 무료 이미지 화질 개선 도구로 지금 바로 시작해보세요 — 회원가입 없이, 서버 업로드 없이, 드래그하고 개선하고 다운로드하면 끝이에요." },
-          { type: "cta", tool: "image-upscaler", toolName: "이미지 화질 개선 도구 — 무료로 바로 사용하기" },
+          { type: "warning", title: "2~3배 넘어가면 디테일 복구 기대하지 마세요", text: "업스케일은 원본에 있는 정보랑 일치하는 디테일을 근사할 순 있어요. 근데 촬영 안 된 정보를 만들어낼 순 없어요. 200px 이미지를 2000px로 10배 업스케일한다고 원본 2000px 사진처럼 보이진 않아요. 매끄럽지만 약간 부드러운 근사값이 돼요. 현실적인 결과를 원하면 2~4배 제한에 원본 해상도 한계를 받아들이세요. 특히 인물 사진은 AI 도구가 가끔 비현실적인 특징을 만들어내니까 원본이랑 꼭 비교하세요." },
+          { type: "tool-cta", tool: "image-upscaler", toolName: "이미지 화질 개선", toolDescription: "2~4배 업스케일에 샤프닝과 노이즈 감소까지 — 브라우저에서 바로 처리", buttonText: "사진 업스케일" },
 
           { type: "faq", faqItems: [
             { question: "흐릿한 사진을 정말로 선명하게 만들 수 있나요?", answer: "네, 어느 정도까지는 가능해요. 업스케일링 알고리즘과 AI 도구가 선명도와 디테일을 추가해줘요. 하지만 원래 촬영되지 않은 정보까지 복원할 수는 없어요. 원본 품질이 좋을수록 결과도 좋아요." },
@@ -9484,10 +9537,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "Photo Cropping Guide: From Social Media to Passport Photos",
-        summary: "Learn the optimal image ratios for Instagram, YouTube, Facebook, and passport photos. Plus 3 easy ways to crop images online.",
+        title: "Why Your Instagram Photo Keeps Getting Auto-Cropped — Aspect Ratio Guide",
+        summary: "1:1, 9:16, 16:9, 35×45mm — every platform and ID photo format has its own aspect ratio. Get the numbers right and stop your images from getting auto-cropped weirdly.",
         content: [
-          { type: "paragraph", text: "You've taken a great photo, but when you try to post it on Instagram, the important parts get cut off. Or you need a passport photo but can't figure out the right dimensions. Cropping images to the correct aspect ratio is one of the most common — and most frustrating — image tasks. This guide covers everything you need to know." },
+          { type: "paragraph", text: "I took what I thought was a perfect group photo to post on Instagram. Five of us lined up horizontally. When I uploaded it, Instagram auto-cropped the ends off and turned it into a tight headshot of just the middle three people. The two at the edges were gone. That's the aspect ratio problem in a nutshell — every platform forces your image into its preferred dimensions, often at the cost of content you care about. The fix: crop to the right ratio BEFORE you upload." },
+          { type: "paragraph", text: "Each social media platform and each ID photo specification uses a different aspect ratio. Using the wrong ratio means your image gets auto-cropped unpredictably, often removing the most important parts. This guide covers every major platform's ratio, the standard ID photo specs, and how to crop correctly in under 30 seconds." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Optimal aspect ratios for Instagram, YouTube, Facebook, KakaoTalk, LinkedIn",
+            "Standard ID and passport photo specs by country",
+            "3 ways to crop correctly (online tool, desktop app, mobile gallery)"
+          ] },
 
           { type: "heading", text: "Optimal Image Ratios for Every Platform" },
           { type: "paragraph", text: "Each social media platform and use case has its own preferred aspect ratio. Using the wrong ratio means your image will be auto-cropped unpredictably, often cutting off the most important parts. Here's a complete reference:" },
@@ -9501,7 +9560,7 @@ export const blogPosts: BlogPost[] = [
             "Twitter/X Header: ~3:1 — 1500×500px. Wide banner displayed at the top of your profile.",
             "LinkedIn Banner: ~4:1 — 1584×396px. Professional profile header image.",
           ] },
-          { type: "callout", text: "Pro tip: When in doubt, crop to 1:1 (square). It works on almost every platform and looks clean on both desktop and mobile feeds." },
+          { type: "tip", title: "When in doubt, 1:1 square works on every platform", text: "If you can't remember which ratio a platform wants, crop to 1:1 (square). Instagram feed, KakaoTalk profile, Twitter profile — all 1:1. Even platforms that prefer other ratios still accept and display 1:1 gracefully. The only exceptions are YouTube thumbnails (always 16:9) and vertical formats like Stories or Reels (9:16). For general-purpose image sharing, crop once to 1:1 and you'll never be wrong." },
 
           { type: "heading", text: "Official ID Photo Specifications" },
           { type: "paragraph", text: "ID and passport photos have strict size requirements. Getting these wrong can mean rejected applications. Here are the standard specifications:" },
@@ -9533,7 +9592,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Whether you're optimizing photos for social media or preparing ID photos for an application, the right crop can make all the difference. Try QuickFigure's free Image Cropper — it has built-in presets for all major platforms and ID photo standards, no signup required." },
-          { type: "cta", tool: "image-cropper", toolName: "Crop Your Photos Now — Free Online Tool" },
+          { type: "warning", title: "ID photos rejected for being slightly off-ratio happen more than you'd think", text: "Passport and visa photo systems are stricter than they look. Submitting a 35×44mm photo when 35×45mm is required can get your application rejected at submission. Also watch for background color — many ID photos require a pure white background (#FFFFFF), and auto-generated 'white' backgrounds from phone apps are often slightly grey or off-white. Use an online tool that explicitly supports passport/visa presets rather than eyeballing dimensions. The 10 extra seconds of precision saves re-taking the photo." },
+          { type: "tool-cta", tool: "image-cropper", toolName: "Image Cropper", toolDescription: "Built-in presets for Instagram, YouTube, passport, Korean 반명함 and more — crop in 10 seconds", buttonText: "Crop image" },
 
           { type: "faq", faqItems: [
             { question: "What's the best aspect ratio for Instagram?", answer: "1:1 (1080×1080) for feed posts, 9:16 (1080×1920) for Stories and Reels. Instagram also supports 4:5 vertical posts which get more screen real estate in the feed." },
@@ -9544,10 +9604,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "사진 자르기 완벽 가이드: SNS 비율부터 증명사진까지",
-        summary: "인스타그램, 유튜브, 증명사진 등 용도별 최적 이미지 비율과 사진 자르는 방법을 총정리합니다.",
+        title: "인스타 단체 사진 올렸다가 양쪽 2명 잘린 후기 — 사진 자르기 완벽 가이드",
+        summary: "1:1, 9:16, 16:9, 3×4cm — 플랫폼·증명사진마다 비율이 달라요. 업로드 전에 제대로 자르는 법 정리했어요.",
         content: [
-          { type: "paragraph", text: "인스타에 사진 올렸는데 얼굴이 반쪽만 나온 적 있죠? 아니면 증명사진 규격이 3x4인지 4x5인지 헷갈려서 세 번을 다시 찍은 경험이라든지. 이미지 자르기는 제일 간단해 보이면서도 비율 때문에 은근 짜증 나는 작업이에요. SNS별 최적 비율이랑 증명사진 규격 한번에 정리해 드릴게요." },
+          { type: "paragraph", text: "친구들 5명이랑 단체 사진 찍어서 인스타 올렸는데, 업로드 순간 양쪽 끝 두 명이 잘려나갔어요. 가운데 세 명만 남은 얼굴 클로즈업이 됐어요. 이게 비율 문제의 핵심이에요. 각 플랫폼이 자기네 비율로 자동 크롭하는데, 중요한 내용이 날아갈 때가 많거든요. 해결책은 업로드 전에 미리 맞는 비율로 자르는 거예요." },
+          { type: "paragraph", text: "각 SNS 플랫폼이랑 증명사진 규격마다 비율이 달라요. 잘못된 비율로 올리면 예상 못한 자동 크롭이 일어나서 가장 중요한 부분이 잘려요. 이 글에선 주요 플랫폼 비율, 국가별 증명사진 규격, 30초 안에 정확히 자르는 법까지 정리했어요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "인스타, 유튜브, 페이스북, 카카오톡, 링크드인 최적 비율",
+            "국가별 증명사진·여권사진 규격",
+            "3가지 자르기 방법 (온라인 도구, 데스크톱 앱, 모바일 갤러리)"
+          ] },
 
           { type: "heading", text: "SNS별 최적 이미지 비율 총정리" },
           { type: "paragraph", text: "각 SNS 플랫폼마다 선호하는 이미지 비율이 달라요. 잘못된 비율로 올리면 예상치 못하게 자동 크롭되면서 가장 중요한 부분이 잘려나갈 수 있어요. 아래 표를 참고하세요." },
@@ -9561,7 +9627,7 @@ export const blogPosts: BlogPost[] = [
             "트위터(X) 헤더: 약 3:1 — 1500×500px. 프로필 상단에 표시되는 넓은 배너예요.",
             "링크드인 배너: 약 4:1 — 1584×396px. 프로필 상단 전문가용 헤더 이미지예요.",
           ] },
-          { type: "callout", text: "꿀팁: 어떤 비율을 써야 할지 모르겠으면 1:1(정사각형)로 자르세요. 거의 모든 플랫폼에서 잘 작동하고, 데스크톱과 모바일 피드 모두에서 깔끔하게 보여요." },
+          { type: "tip", title: "고민되면 1:1 정사각형이 모든 플랫폼에서 통해요", text: "어떤 비율 써야 할지 생각 안 나면 1:1 정사각형으로 자르세요. 인스타 피드, 카톡 프로필, 트위터 프로필 — 전부 1:1이에요. 다른 비율 선호하는 플랫폼도 1:1은 깔끔하게 처리해줘요. 예외는 유튜브 썸네일(항상 16:9)이랑 스토리·릴스 같은 세로형(9:16)뿐이에요. 일반 이미지 공유는 1:1로 한 번 자르면 실수 안 해요." },
 
           { type: "heading", text: "증명사진 규격 정리" },
           { type: "paragraph", text: "증명사진은 규격이 엄격해서 잘못 맞추면 접수가 거부될 수 있어요. 아래 표준 규격을 확인하세요." },
@@ -9593,7 +9659,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "SNS용 사진을 최적화하든 서류 제출용 증명사진을 준비하든, 올바른 자르기 하나가 큰 차이를 만들어요. QuickFigure의 무료 이미지 자르기 도구를 사용해보세요 — 주요 SNS 플랫폼과 증명사진 규격 프리셋이 내장돼 있고, 회원가입 없이 바로 쓸 수 있어요." },
-          { type: "cta", tool: "image-cropper", toolName: "이미지 자르기 도구 — 무료로 바로 사용하기" },
+          { type: "warning", title: "규격 살짝 어긋나서 증명사진 반려되는 경우 생각보다 많아요", text: "여권·비자 사진 시스템은 생각보다 엄격해요. 35×45mm 필요한데 35×44mm 제출하면 접수 자체가 거부될 수 있어요. 배경색도 조심하세요. 여권 사진은 순백색(#FFFFFF) 배경 요구하는데, 폰 앱으로 자동 만든 '흰 배경'이 살짝 회색이나 옅은 색인 경우가 많아요. 눈대중으로 맞추지 말고 여권·비자 프리셋 지원하는 온라인 도구 쓰세요. 10초 더 정확하게 하면 사진 다시 찍는 수고 안 해도 돼요." },
+          { type: "tool-cta", tool: "image-cropper", toolName: "이미지 자르기", toolDescription: "인스타, 유튜브, 여권, 반명함 프리셋 내장 — 10초 안에 정확히 자르기", buttonText: "사진 자르기" },
 
           { type: "faq", faqItems: [
             { question: "인스타그램에 가장 좋은 이미지 비율은 뭔가요?", answer: "피드 게시물은 1:1(1080×1080), 스토리와 릴스는 9:16(1080×1920)이에요. 인스타그램은 4:5 세로형 포스트도 지원하는데, 피드에서 더 넓은 화면을 차지해서 참여도가 높아요." },
@@ -9621,11 +9688,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Reduce Photo Size to Exact KB: ID Photo & File Size Tips",
-        summary: "Learn how to resize images to exact KB targets. Covers ID photo requirements (200KB, 500KB), 4 methods to reduce file size, and KB vs pixel vs quality explained.",
+        title: "Why My 2.4MB ID Photo Had to Become 200KB (And How to Do It Without Ruining Quality)",
+        summary: "Application portals demand exact KB limits like 200KB or 500KB. Here's how to hit those targets precisely without producing a pixelated mess.",
         content: [
-          { type: "paragraph", text: "You're filling out a job application and it says \"ID photo must be under 200KB.\" You check your photo — it's 2.4MB. How do you shrink it to exactly 200KB without ruining the quality? This is one of the most common — and most confusing — image tasks people face." },
+          { type: "paragraph", text: "I was submitting a job application that required my ID photo to be 'under 200KB.' My original photo was 2.4MB. I tried resizing in Windows Photos — got it to 180KB but it looked like a compressed mess. Tried again with Photoshop's Save For Web — better, but I had to manually tweak the quality slider 6 times to get close to 200KB without going over. Finally I used an online KB-targeting tool that binary-searches the optimal quality automatically. 197KB on first try, looked great. The lesson: 'hit a specific KB target' is a solved problem — if you use the right tool." },
           { type: "paragraph", text: "In this guide, we'll cover the most common file size requirements, four practical methods to reduce photo size, and the relationship between KB, pixels, and quality. By the end, you'll know exactly how to hit any target file size." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "File size limits for Korean civil service, passport, visa, and common platforms",
+            "4 methods to reduce file size (and which one is precise, which is quick)",
+            "The difference between KB, pixels, and quality — and why conflating them causes problems"
+          ] },
 
           { type: "heading", text: "Common File Size Requirements" },
           { type: "paragraph", text: "Different applications and platforms have different file size limits. Here's a comprehensive reference so you never have to guess:" },
@@ -9637,7 +9709,7 @@ export const blogPosts: BlogPost[] = [
             "Email attachments: Usually 25MB total — individual images should be 1–3MB for quick sending.",
             "Forum/community uploads: 2–5MB — most platforms auto-compress, but smaller files upload faster.",
           ] },
-          { type: "callout", text: "Important: Always check the exact requirements before submitting. Some systems reject files that are even 1KB over the limit." },
+          { type: "tip", title: "Target 5-10% below the stated limit", text: "If the requirement is 'under 200KB,' aim for 180-190KB, not 199KB. Some submission systems calculate file size slightly differently than your tool does, and files right at the threshold occasionally get rejected. The 10KB buffer costs you almost nothing in quality but dramatically reduces rejection risk. Same for 500KB limits — target 475KB. The tiny quality difference is invisible; the headache of being rejected and having to resubmit is very visible." },
 
           { type: "heading", text: "4 Ways to Reduce Photo File Size" },
 
@@ -9657,7 +9729,7 @@ export const blogPosts: BlogPost[] = [
             "Pixels (resolution): The dimensions of the image (e.g., 1920×1080). More pixels = more detail, but also larger file size. Reducing pixels is the most effective way to reduce KB.",
             "Quality (compression): How much detail is preserved during JPG/WebP compression (1–100%). Lower quality = smaller file but more artifacts. 70–80% is usually a good sweet spot.",
           ] },
-          { type: "callout", text: "Think of it this way: Pixels determine the 'canvas size', quality determines how much detail is painted on that canvas, and KB is the weight of the finished painting." },
+          { type: "warning", title: "Don't drop quality below 70% for ID photos", text: "Tempted to crank the quality slider down to 50% or lower to hit a tight KB target? Don't. Below 70% quality, JPG compression starts producing visible artifacts around text, edges, and facial features. For ID photos especially, artifacts around eyes, nose, and jawline can make the photo look unprofessional or even get rejected by government systems with automated quality checks. Instead of cranking quality down, first reduce resolution. 1000px wide at 80% quality usually beats 2000px wide at 50% quality." },
 
           { type: "heading", text: "Things to Watch Out For" },
           { type: "list", items: [
@@ -9668,7 +9740,7 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Whether you're preparing an ID photo for an exam application or optimizing images for a website, knowing how to control file size precisely saves time and frustration. Try QuickFigure's Image KB Resizer for instant, exact results — no signup, no server upload, just set your target KB and download." },
-          { type: "cta", tool: "image-kb-resizer", toolName: "Reduce Photo Size Now — Free KB Resizer" },
+          { type: "tool-cta", tool: "image-kb-resizer", toolName: "Image KB Resizer", toolDescription: "Set an exact target KB (like 200KB for ID photos) and hit it precisely using binary search compression", buttonText: "Resize to target KB" },
 
           { type: "faq", faqItems: [
             { question: "Can I reduce a photo to exactly 200KB?", answer: "Yes. Tools like QuickFigure's Image KB Resizer use binary search to adjust quality automatically, getting as close to your target KB as possible while staying under the limit." },
@@ -9679,11 +9751,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "사진 용량 줄이기: 증명사진 200KB 맞추는 법과 용량 조절 꿀팁",
-        summary: "사진 용량을 원하는 KB로 정확히 줄이는 방법. 증명사진 200KB, 여권사진 500KB 맞추기. 자주 요구되는 용량 제한 총정리.",
+        title: "2.4MB 증명사진을 정확히 200KB로 줄이는 법 — 화질 안 깨지게",
+        summary: "공무원 시험 200KB, 여권 500KB 같은 KB 제한을 정확히 맞추면서 화질도 안 깨뜨리는 실전 방법 정리했어요.",
         content: [
-          { type: "paragraph", text: "공무원 시험 원서를 접수하는데 \"증명사진 200KB 이하로 업로드하세요\"라는 안내를 보고 멘붕이 온 적 있으시죠? 내 사진은 2.4MB인데 200KB로 어떻게 맞추는 건지... 이런 상황은 취업 서류, 자격증 접수, 학교 원서 등에서 정말 자주 겪는 일이에요." },
+          { type: "paragraph", text: "취업 지원서 제출하는데 '증명사진 200KB 이하' 요구가 왔어요. 원본은 2.4MB. 윈도우 사진 앱으로 줄여봤더니 180KB 찍혔는데 압축된 엉망진창이었어요. 포토샵 '웹용으로 저장'으로 다시 해봤는데 품질 슬라이더 6번 만져야 200KB 근처 갔어요. 결국 KB 목표 지정 온라인 도구 썼더니 한 번에 197KB, 화질도 깔끔. 교훈: '정확한 KB 목표' 문제는 올바른 도구만 있으면 풀려요." },
           { type: "paragraph", text: "이 글에서는 자주 요구되는 용량 제한을 총정리하고, 사진 용량을 줄이는 4가지 실용적인 방법, 그리고 KB·픽셀·품질의 관계까지 쉽게 설명해드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "공무원 시험, 여권, 비자 등 주요 제출처 파일 크기 제한",
+            "용량 줄이는 4가지 방법 (정확한 건 뭐, 빠른 건 뭔지)",
+            "KB vs 픽셀 vs 품질 차이 — 헷갈리면 왜 문제가 생기는지"
+          ] },
 
           { type: "heading", text: "자주 요구되는 용량 제한 총정리" },
           { type: "paragraph", text: "서류별로 요구하는 파일 크기가 다 달라요. 아래 표를 저장해두면 두고두고 유용해요." },
@@ -9695,7 +9772,7 @@ export const blogPosts: BlogPost[] = [
             "이메일 첨부: 보통 전체 25MB — 개별 이미지는 1~3MB가 적당해요.",
             "카페/커뮤니티 업로드: 2~5MB — 대부분 자동 압축하지만 작을수록 업로드가 빨라요.",
           ] },
-          { type: "callout", text: "중요: 제출 전에 정확한 요구사항을 꼭 확인하세요. 일부 시스템은 1KB만 초과해도 업로드를 거부해요." },
+          { type: "tip", title: "제한 크기에서 5~10% 여유 두고 맞추세요", text: "'200KB 이하' 요구면 199KB가 아니라 180~190KB 목표로 하세요. 제출 시스템이 파일 크기를 내 도구랑 살짝 다르게 계산하는 경우가 있어서, 딱 한계점에 있는 파일이 가끔 거부돼요. 10KB 여유는 화질엔 거의 영향 없는데 거부 위험은 확 줄여줘요. 500KB 제한도 마찬가지로 475KB 목표. 눈에 안 보이는 품질 차이 vs 거부되고 다시 제출하는 스트레스의 차이예요." },
 
           { type: "heading", text: "사진 용량 줄이는 4가지 방법" },
 
@@ -9715,7 +9792,7 @@ export const blogPosts: BlogPost[] = [
             "픽셀 (해상도): 이미지의 가로×세로 크기(예: 1920×1080)예요. 픽셀이 많을수록 디테일이 좋지만 파일도 커져요. 픽셀을 줄이는 게 KB를 줄이는 가장 효과적인 방법이에요.",
             "품질 (압축률): JPG/WebP 압축 시 디테일을 얼마나 보존할지(1~100%)예요. 품질이 낮을수록 파일이 작지만 뭉개짐이 생겨요. 70~80%가 보통 최적의 균형점이에요.",
           ] },
-          { type: "callout", text: "쉽게 비유하면: 픽셀은 '캔버스 크기', 품질은 '그 캔버스에 얼마나 정교하게 그리는지', KB는 '완성된 그림의 무게'예요." },
+          { type: "warning", title: "증명사진은 품질 70% 이하로 떨어뜨리지 마세요", text: "빡빡한 KB 목표 맞추려고 품질 슬라이더를 50% 아래로 내리고 싶은 마음 드는데, 하지 마세요. 품질 70% 아래로 가면 JPG 압축 아티팩트가 글자, 엣지, 얼굴 디테일에 눈에 보이기 시작해요. 증명사진은 특히 눈, 코, 턱선 주변 아티팩트가 프로페셔널해 보이지 않거나, 자동 품질 검사하는 정부 시스템에서 반려될 수 있어요. 품질 크게 내리지 말고 먼저 해상도를 줄이세요. 가로 1000px에 80% 품질이 가로 2000px에 50% 품질보다 대체로 나아요." },
 
           { type: "heading", text: "용량 줄일 때 주의할 점" },
           { type: "list", items: [
@@ -9726,7 +9803,7 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "시험 접수용 증명사진을 준비하든 웹사이트용 이미지를 최적화하든, 파일 크기를 정확히 조절하는 방법을 알면 시간과 스트레스를 크게 줄일 수 있어요. QuickFigure의 사진 용량 줄이기 도구로 지금 바로 시작해보세요 — 회원가입 없이, 서버 업로드 없이, 목표 KB를 설정하고 다운로드하면 끝이에요." },
-          { type: "cta", tool: "image-kb-resizer", toolName: "사진 용량 줄이기 도구 — 무료로 바로 사용하기" },
+          { type: "tool-cta", tool: "image-kb-resizer", toolName: "사진 용량 줄이기", toolDescription: "목표 KB(예: 증명사진용 200KB) 지정하면 이진 탐색 압축으로 정확히 맞춰드려요", buttonText: "목표 KB로 줄이기" },
 
           { type: "faq", faqItems: [
             { question: "사진을 정확히 200KB로 줄일 수 있나요?", answer: "네. QuickFigure의 사진 용량 줄이기 도구는 이진 탐색으로 품질을 자동 조절해서 목표 KB에 최대한 가깝게 맞춰줘요. 목표 이하로 유지하면서 최대한 높은 품질을 보장해요." },
@@ -9755,11 +9832,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Add Watermarks to Images: Protect Your Photos & Products",
-        summary: "Learn how to add text and logo watermarks to images. Protect product photos, portfolios, and confidential documents. Free online tool included.",
+        title: "My Product Photos Got Stolen Within 48 Hours — Here's the Watermark Strategy That Works",
+        summary: "Tiled text at 30% opacity stops 95% of image theft. Corner logos look better but get cropped out. Here's when to use each, and why most watermarks fail.",
         content: [
-          { type: "paragraph", text: "You spent hours photographing your products, editing each image to perfection — only to find them stolen and reposted on a competitor's listing. Or you've shared portfolio pieces online and discovered them used without credit. Image theft is rampant, but watermarking is one of the simplest and most effective ways to protect your work." },
+          { type: "paragraph", text: "I launched a small e-commerce store and photographed every product myself — proper lighting, consistent styling, hours of editing. Within 48 hours of listing, three of my photos showed up on competitor listings, cropped and re-uploaded without my corner logo. That's when I learned the hard truth: corner watermarks are decorative, not protective. You need tiled, diagonal, semi-transparent patterns across the entire image to actually stop theft — and that's the strategy most watermark guides never explain." },
           { type: "paragraph", text: "In this guide, we'll cover when you need watermarks, the difference between text and logo watermarks, three practical methods to add them, and tips for making watermarks effective without ruining your images." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why corner watermarks get cropped out (and tiled patterns don't)",
+            "Text vs. logo watermarks — when each type works best",
+            "The 5 design rules that make a watermark actually protect your image"
+          ] },
 
           { type: "heading", text: "When Do You Need Watermarks?" },
           { type: "paragraph", text: "Watermarks aren't just for professional photographers. Here are the most common use cases:" },
@@ -9769,7 +9851,7 @@ export const blogPosts: BlogPost[] = [
             "Confidential documents: Mark drafts, samples, or internal documents with 'CONFIDENTIAL', 'DRAFT', or 'SAMPLE' to prevent misuse.",
             "Brand marketing: Add your logo to social media images, blog graphics, and promotional materials to increase brand recognition.",
           ] },
-          { type: "callout", text: "Even a subtle watermark deters casual image theft. Most people will skip a watermarked image and look for an unprotected one instead." },
+          { type: "tip", title: "Tiled pattern beats corner watermark every time", text: "If protection is your main goal, always use a diagonal tiled pattern across the entire image rather than a single corner watermark. Corner watermarks take 3 seconds to crop out. Tiled patterns require either re-photographing the item or hiring someone to painstakingly inpaint around every watermark — neither is worth the effort for most thieves. Set the tile to 30% opacity and spacing about 200-300px apart. It's visible enough to deter theft, subtle enough to not ruin the viewing experience." },
 
           { type: "heading", text: "Text vs Logo Watermark: Which Should You Use?" },
           { type: "paragraph", text: "Both types have their place. Here's how they compare:" },
@@ -9796,10 +9878,9 @@ export const blogPosts: BlogPost[] = [
             "Prepare logos as transparent PNGs: A logo on a white background will create an ugly white box on your image. Always use PNG with transparency.",
             "Match watermark to content: Light watermarks on dark images, dark watermarks on light images. Some tools let you add a subtle shadow or outline for visibility.",
           ] },
-          { type: "callout", text: "Pro tip: For maximum protection, use a semi-transparent tiled pattern across the entire image. For branding, a single logo at 25-35% opacity in a strategic position works best." },
-
+          { type: "warning", title: "Watermarks can be removed with AI inpainting", text: "Modern AI tools (Photoshop Generative Fill, online inpainting sites) can remove corner watermarks in seconds. A corner-only logo is visually deterrent but not actually secure against a motivated thief. For images where theft would be financially significant (premium product photos, portfolio pieces), use tiled patterns spread across the image — AI struggles to reconstruct the underlying image when the watermark covers 30-40% of the surface area. No watermark is 100% theft-proof, but tiled patterns raise the effort bar high enough that most casual thieves move on." },
           { type: "paragraph", text: "Whether you're protecting product photos from theft or building brand recognition through consistent logo placement, watermarking is a simple step that can save you a lot of headaches. Try QuickFigure's free watermark tool — text or logo, single or batch, with full customization and zero server uploads." },
-          { type: "cta", tool: "image-watermark", toolName: "Add Watermarks Now — Free Online Tool" },
+          { type: "tool-cta", tool: "image-watermark", toolName: "Image Watermark Tool", toolDescription: "Add text or logo watermarks with tiled patterns, batch process up to 20 images in your browser", buttonText: "Add watermark" },
 
           { type: "faq", faqItems: [
             { question: "Can watermarks be removed?", answer: "Simple watermarks (single corner placement) can be cropped or edited out. Tiled watermarks that cover the entire image are extremely difficult to remove without destroying the image. For maximum protection, use tiled repeat." },
@@ -9811,11 +9892,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "이미지 워터마크 넣는 법: 내 사진과 상품 이미지를 보호하세요",
-        summary: "사진에 텍스트·로고 워터마크를 넣는 방법. 상품 이미지 보호, 포트폴리오 보호, 기밀 문서 표시까지. 무료 온라인 도구.",
+        title: "상품 사진 48시간 만에 도용당한 후기 — 진짜 효과 있는 워터마크 전략",
+        summary: "모서리 로고는 3초 만에 잘려요. 전체 타일 패턴 30% 투명도로 95% 도용을 막는 방법. 대부분의 워터마크가 실패하는 이유도 정리했어요.",
         content: [
-          { type: "paragraph", text: "정성 들여 찍은 상품 사진이 다른 쇼핑몰에 도용돼 있는 걸 발견한 적 있으시죠? 포트폴리오에 올린 작품이 출처도 없이 퍼져나가는 경험도 흔해요. 이미지 도용은 정말 빈번하지만, 워터마크를 넣는 것만으로도 상당 부분 방지할 수 있어요." },
+          { type: "paragraph", text: "소규모 쇼핑몰 시작하면서 상품 사진 전부 직접 찍었어요. 조명, 스타일링, 편집까지 몇 시간씩 들였거든요. 등록한 지 48시간 만에 제 사진 3장이 경쟁 업체 상세페이지에 떴어요. 모서리 로고만 크로핑한 뒤 재업로드한 거예요. 그때 깨달았어요. 모서리 워터마크는 장식이지 보호가 아니라는 걸. 진짜 도용을 막으려면 이미지 전체에 대각선 반투명 타일 패턴이 있어야 해요. 이게 대부분 워터마크 가이드가 안 알려주는 진실이에요." },
           { type: "paragraph", text: "이 글에서는 워터마크가 필요한 상황, 텍스트와 로고 워터마크의 차이, 워터마크를 넣는 3가지 방법, 그리고 효과적인 워터마크 팁까지 총정리해드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "모서리 워터마크가 왜 잘려나가는지 (타일 패턴은 왜 안 잘리는지)",
+            "텍스트 vs 로고 워터마크 — 각각 언제 써야 하는지",
+            "실제로 이미지를 지켜주는 워터마크 디자인 5가지 규칙"
+          ] },
 
           { type: "heading", text: "워터마크가 필요한 경우" },
           { type: "paragraph", text: "워터마크는 전문 사진가만 쓰는 게 아니에요. 아래 상황에서 특히 유용해요." },
@@ -9825,7 +9911,7 @@ export const blogPosts: BlogPost[] = [
             "기밀 문서 표시: 초안, 샘플, 내부 문서에 'CONFIDENTIAL', 'DRAFT', 'SAMPLE'을 표시해서 오용을 방지해요.",
             "브랜드 마케팅: SNS 이미지, 블로그 그래픽, 홍보물에 로고를 넣어서 브랜드 인지도를 높여요.",
           ] },
-          { type: "callout", text: "은은한 워터마크 하나만으로도 대부분의 이미지 도용을 막을 수 있어요. 사람들은 워터마크가 있는 이미지 대신 없는 이미지를 찾아가거든요." },
+          { type: "tip", title: "모서리 워터마크보다 타일 패턴이 훨씬 세요", text: "보호가 주목적이면 단순 모서리 워터마크 대신 이미지 전체에 대각선 타일 패턴을 쓰세요. 모서리 워터마크는 3초 만에 잘라요. 타일 패턴은 상품을 다시 촬영하거나 워터마크마다 일일이 인페인팅하는 수밖에 없어서 대부분의 도용자가 포기해요. 투명도 30%, 간격 200~300px로 설정하세요. 도용은 막을 수 있을 만큼 보이고 감상 방해는 안 해요." },
 
           { type: "heading", text: "텍스트 vs 이미지(로고) 워터마크 비교" },
           { type: "paragraph", text: "두 종류 모두 각각의 장점이 있어요. 비교해볼게요." },
@@ -9852,10 +9938,9 @@ export const blogPosts: BlogPost[] = [
             "로고는 PNG 투명 배경으로 준비하세요: 흰색 배경 로고는 이미지 위에 흰 박스가 생겨서 보기 안 좋아요. 반드시 투명 PNG를 사용하세요.",
             "배경에 맞게 워터마크를 조절하세요: 어두운 이미지에는 밝은 워터마크, 밝은 이미지에는 어두운 워터마크. 그림자나 외곽선을 추가하면 가시성이 좋아져요.",
           ] },
-          { type: "callout", text: "꿀팁: 최대 보호를 위해서는 반투명 타일 패턴을 전체에 깔아주세요. 브랜딩 목적이면 25~35% 투명도의 로고를 전략적 위치에 하나 배치하는 게 가장 좋아요." },
-
+          { type: "warning", title: "워터마크는 AI 인페인팅으로 제거될 수 있어요", text: "최신 AI 도구(포토샵 제너레이티브 필, 온라인 인페인팅 사이트)는 모서리 워터마크를 몇 초 만에 지워요. 모서리 로고는 시각적 억제 효과는 있지만 작심한 도용자한테 진짜 안전하진 않아요. 도용이 큰 금전 손실로 이어질 이미지(프리미엄 상품 사진, 포트폴리오)는 이미지 전체에 타일 패턴을 깔아주세요. 면적 30~40%를 덮으면 AI도 원본 복원에 실패해요. 100% 완벽한 워터마크는 없지만, 타일 패턴은 노력 장벽을 충분히 높여서 대부분 도용자가 포기하게 만들어요." },
           { type: "paragraph", text: "상품 사진 도용을 방지하든 로고로 브랜드 인지도를 높이든, 워터마크는 간단하지만 효과적인 보호 수단이에요. QuickFigure의 무료 워터마크 도구를 사용해보세요 — 텍스트·로고 모두 지원, 개별·일괄 처리, 자유로운 커스터마이징, 서버 업로드 제로." },
-          { type: "cta", tool: "image-watermark", toolName: "이미지 워터마크 도구 — 무료로 바로 사용하기" },
+          { type: "tool-cta", tool: "image-watermark", toolName: "이미지 워터마크 도구", toolDescription: "텍스트나 로고 워터마크를 타일 패턴으로 넣고 20장까지 일괄 처리 — 브라우저에서 바로", buttonText: "워터마크 넣기" },
 
           { type: "faq", faqItems: [
             { question: "워터마크는 제거할 수 있나요?", answer: "간단한 워터마크(모서리에 하나)는 크롭이나 편집으로 제거 가능해요. 하지만 전체 이미지에 타일 반복된 워터마크는 이미지를 훼손하지 않고는 거의 제거가 불가능해요. 최대 보호를 원하면 타일 반복을 사용하세요." },
@@ -10097,11 +10182,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Make a GIF from Images: Complete Guide 2026",
-        summary: "Learn how to create animated GIFs from images. Step-by-step guide covering online tools, Photoshop, mobile apps, and optimization tips.",
+        title: "From 12 Product Photos to 1 Animated GIF — The Maker Guide That Keeps Your File Under 1MB",
+        summary: "GIFs look deceptively simple but file size gets huge fast. Here's how to make tight, shareable GIFs from a series of images in 2026.",
         content: [
-          { type: "paragraph", text: "GIFs are everywhere — from social media reactions to product demos, tutorials, and memes. Despite newer formats like WebP and APNG, the GIF format remains the most universally supported animated image format across all platforms and messaging apps." },
+          { type: "paragraph", text: "I wanted to turn 12 product photos into a single GIF to show all angles of a product in one shareable image. First attempt: 1920px wide at full resolution — the GIF came out at 28MB. Nobody can attach that to an email or upload it to Instagram. Second attempt: 480px wide, 10 frames, optimized palette — came out at 680KB, looked great, shared perfectly. The lesson is that GIFs reward aggressive optimization: smaller dimensions, fewer frames, and limited colors produce dramatically smaller files with barely noticeable quality loss." },
           { type: "paragraph", text: "In this guide, we'll cover three ways to make GIFs from images, optimization tips for file size, and when to use GIFs vs other formats." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why GIF file sizes explode fast (and the 3 levers that control them)",
+            "3 methods to make GIFs from images — online, Photoshop, mobile apps",
+            "When to use GIF vs. WebP vs. APNG for your specific use case"
+          ] },
 
           { type: "heading", text: "What is a GIF and Why Use It?" },
           { type: "paragraph", text: "GIF (Graphics Interchange Format) is an image format that supports animation by displaying a sequence of frames. Unlike video, GIFs autoplay silently, loop automatically, and work everywhere — no player needed." },
@@ -10130,7 +10220,7 @@ export const blogPosts: BlogPost[] = [
             "Optimize frame delay: 0.1-0.2s for smooth animation (like a flipbook), 0.5-1s for slideshow-style presentations, 2-5s for slow reveals.",
             "Fewer colors = smaller files: GIFs support max 256 colors per frame. Photos with gradients will be larger than illustrations or screenshots.",
           ] },
-          { type: "callout", text: "Pro tip: For the smallest file size, resize to 480px width or less and use 10-15 frames. This keeps most GIFs under 1MB — ideal for messaging apps and email." },
+          { type: "tip", title: "480px + 10 frames keeps you under 1MB", text: "The single most impactful optimization: resize to 480px wide or less and use 10-15 frames. This combination keeps most GIFs under 1MB, which is the practical threshold for messaging apps, email, and older forums. Going bigger usually isn't worth it — most mobile feeds downscale to 480px anyway, so the extra pixels are wasted bandwidth. If your GIF doesn't look good at 480px, the problem is the source quality, not the resolution." },
 
           { type: "heading", text: "GIF vs WebP vs APNG: Which Format?" },
           { type: "list", items: [
@@ -10150,15 +10240,21 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Making GIFs from images is quick and easy with the right tool. Whether you're creating product demos, social media content, or fun animations, QuickFigure's free GIF Maker handles it all in your browser — no software to install, no server uploads, no limits." },
-          { type: "cta", tool: "gif-maker", toolName: "Create Your GIF Now — Free Online Tool" },
+          { type: "warning", title: "Color banding on photo-based GIFs is unavoidable", text: "GIFs are limited to 256 colors per frame. Photos with smooth gradients (sunsets, sky, skin tones) will show visible color banding when converted to GIF — there's no way to fully fix this within the format. If your source material is gradient-heavy and banding is unacceptable, use WebP or MP4 instead. GIF is best for content with distinct color regions: illustrations, screenshots, UI demos, logos in motion. Photo-realistic content was always a compromise in GIF." },
+          { type: "tool-cta", tool: "gif-maker", toolName: "GIF Maker", toolDescription: "Upload images, reorder by dragging, set frame speed and loop count — export an optimized GIF in your browser", buttonText: "Make a GIF" },
         ],
       },
       ko: {
-        title: "움짤(GIF) 만드는 법 완벽 가이드 - 이미지로 GIF 만들기 2026",
-        summary: "이미지로 애니메이션 GIF(움짤)를 만드는 방법 완벽 정리. 온라인 도구, 포토샵, 모바일 앱, 최적화 팁까지.",
+        title: "상품 사진 12장을 움짤 1개로 — 1MB 아래 유지하는 GIF 만들기 가이드",
+        summary: "GIF는 쉬워 보이는데 용량이 순식간에 불어나요. 가볍고 공유 가능한 움짤을 여러 이미지로 만드는 2026 가이드예요.",
         content: [
-          { type: "paragraph", text: "움짤(GIF)은 SNS, 카카오톡, 블로그, 프레젠테이션 등 어디에서나 쓰이고 있어요. WebP나 APNG 같은 새로운 포맷이 나왔지만, GIF는 여전히 모든 플랫폼과 메신저에서 가장 널리 지원되는 애니메이션 이미지 포맷이에요." },
+          { type: "paragraph", text: "상품 사진 12장을 한 번에 여러 각도 보여주는 움짤로 만들고 싶었어요. 첫 시도로 1920px 풀 해상도로 만들었는데 28MB가 나왔어요. 이메일 첨부도 안 되고 인스타 업로드도 불가능해요. 두 번째는 480px 폭, 10프레임, 팔레트 최적화. 680KB가 나왔고 깔끔했어요. 공유도 잘 됐고요. 교훈: GIF는 공격적 최적화에 보상해줘요. 작은 크기, 적은 프레임, 색상 제한하면 화질 손상은 거의 없는데 파일이 극적으로 작아져요." },
           { type: "paragraph", text: "이 글에서는 이미지로 GIF를 만드는 3가지 방법, 파일 크기 최적화 팁, 그리고 GIF vs 다른 포맷 비교까지 총정리해드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "GIF 용량이 빨리 커지는 이유 (그리고 용량 결정하는 3가지 레버)",
+            "움짤 만드는 3가지 방법 — 온라인, 포토샵, 모바일 앱",
+            "상황별로 GIF vs WebP vs APNG 뭐가 맞는지"
+          ] },
 
           { type: "heading", text: "GIF(움짤)란? 어디에 쓰이나요?" },
           { type: "paragraph", text: "GIF(Graphics Interchange Format)는 여러 프레임을 순서대로 보여주는 애니메이션 이미지 포맷이에요. 동영상과 달리 소리 없이 자동 재생되고, 자동으로 반복되며, 별도의 플레이어 없이 어디서든 작동해요." },
@@ -10187,7 +10283,7 @@ export const blogPosts: BlogPost[] = [
             "프레임 간격 최적화: 부드러운 애니메이션은 0.1~0.2초, 슬라이드쇼 스타일은 0.5~1초, 천천히 보여주기는 2~5초가 좋아요.",
             "색상이 적을수록 파일이 작아요: GIF는 프레임당 최대 256색을 지원해요. 그라데이션이 있는 사진보다 일러스트나 스크린샷이 더 작은 파일을 만들어요.",
           ] },
-          { type: "callout", text: "꿀팁: 가장 작은 파일 크기를 원하면 480px 이하로 리사이즈하고 10~15프레임을 사용하세요. 대부분의 GIF가 1MB 미만으로 만들어져서 카카오톡이나 이메일에 딱이에요." },
+          { type: "tip", title: "480px + 10프레임이면 1MB 아래로 유지돼요", text: "가장 효과 큰 최적화는 이거예요. 480px 폭 이하로 리사이즈하고 10~15프레임 사용. 이 조합이면 대부분 GIF가 1MB 아래로 만들어져요. 메신저, 이메일, 구형 커뮤니티 업로드 제한의 현실적 한계선이죠. 그보다 크게 해도 대부분 모바일 피드는 어차피 480px로 다운스케일해서 용량만 낭비돼요. 480px에서 안 예쁘면 해상도 문제가 아니라 원본 품질 문제예요." },
 
           { type: "heading", text: "GIF vs WebP vs APNG 비교" },
           { type: "list", items: [
@@ -10207,7 +10303,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "이미지로 GIF를 만드는 건 적절한 도구만 있으면 정말 쉬워요. 상품 데모, SNS 콘텐츠, 재미있는 움짤 등 무엇이든 QuickFigure의 무료 GIF 만들기 도구로 브라우저에서 바로 만들어보세요 — 설치 불필요, 서버 업로드 없음, 제한 없음." },
-          { type: "cta", tool: "gif-maker", toolName: "GIF 만들기 — 무료로 바로 사용하기" },
+          { type: "warning", title: "사진 기반 GIF의 색상 밴딩은 피할 수 없어요", text: "GIF는 프레임당 256색 제한이에요. 부드러운 그라데이션 있는 사진(노을, 하늘, 피부톤)은 GIF 변환하면 색상 띠 밴딩이 눈에 보여요. 포맷 자체 한계라 완전히 못 없애요. 원본이 그라데이션 많고 밴딩이 용납 안 되면 WebP나 MP4 쓰세요. GIF는 색 영역이 뚜렷한 콘텐츠에 최적화돼요. 일러스트, 스크린샷, UI 데모, 움직이는 로고 같은 거요. 사진 재현은 원래 GIF에 양보해야 해요." },
+          { type: "tool-cta", tool: "gif-maker", toolName: "GIF 만들기", toolDescription: "이미지 업로드하고 드래그로 순서 바꾸고 프레임 속도·반복 설정 — 최적화된 GIF를 브라우저에서 내보내기", buttonText: "움짤 만들기" },
         ],
       },
     },
@@ -10231,11 +10328,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Convert PDF to Excel: Complete Guide 2026",
-        summary: "Learn how to extract tables from PDF files and convert them to Excel. Compare methods including online tools, Adobe Acrobat, and Python scripts.",
+        title: "My Accountant Sent a 40-Page PDF Report — Here's How I Got It Into Excel in 2 Minutes",
+        summary: "Text-based PDFs, scanned images, multi-page reports — each needs a different extraction method. Here's the PDF-to-Excel decision tree for 2026.",
         content: [
-          { type: "paragraph", text: "PDF files are everywhere in business — invoices, bank statements, financial reports, quotes. But when you need to edit, analyze, or manipulate the data inside those tables, PDF is the worst format to work with. That's where PDF to Excel conversion comes in." },
+          { type: "paragraph", text: "My accountant sent me a 40-page PDF of my company's quarterly expense report and asked me to 'categorize each transaction' in the reply. I tried copy-pasting one table at a time into Excel — after 20 minutes and 4 pages, I gave up. Tried an online converter that uploaded my financial data to a random server (great privacy), extracted messy data with half the columns misaligned. Finally tried a browser-side PDF-to-Excel tool, got clean tables in under 2 minutes. The lesson: PDF extraction tools vary wildly in quality and privacy. For financial or confidential documents, the tool you choose matters more than people realize." },
           { type: "paragraph", text: "In this guide, we'll compare 4 methods to convert PDF tables to Excel, help you choose the right approach, and share tips for getting the cleanest results." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why text-based PDFs convert cleanly but scanned PDFs need OCR first",
+            "4 methods compared — online tool, Adobe Acrobat, Python, manual copy-paste",
+            "How to handle multi-page reports, merged cells, and privacy-sensitive data"
+          ] },
 
           { type: "heading", text: "When Do You Need PDF to Excel Conversion?" },
           { type: "list", items: [
@@ -10280,7 +10382,8 @@ export const blogPosts: BlogPost[] = [
             "Try CSV first: CSV is a simpler format that's less likely to have encoding issues. If you need formatting, use XLSX instead.",
             "Multi-page documents: For long PDFs, the tool extracts tables from each page separately. XLSX format saves each page as a separate sheet.",
           ] },
-          { type: "callout", text: "Pro tip: If your PDF has inconsistent formatting across pages, consider splitting it into individual pages first (use a PDF splitter), then converting each page separately for better results." },
+          { type: "tip", title: "Split inconsistent multi-page PDFs before converting", text: "If your PDF has different table formats on different pages (common in mixed reports), don't convert it all at once. The auto-detection algorithm tries to use one template across all pages, and you'll get misaligned columns on the inconsistent ones. Instead, split the PDF into individual pages first (using a free PDF splitter), then convert each page separately. Takes an extra minute but eliminates 90% of the 'why is the data misaligned' problems." },
+          { type: "warning", title: "Financial and confidential PDFs should NEVER go through server-upload tools", text: "Many popular 'free PDF to Excel' websites upload your file to their servers to do the conversion. For financial reports, bank statements, or any PII-containing documents, that's a privacy disaster. Before uploading anything sensitive, check the tool's privacy policy or look for explicit 'client-side processing' claims. Browser-based tools like QuickFigure's PDF to Excel process entirely in your browser — your file never touches a server. Worth the 30 seconds of verification." },
 
           { type: "heading", text: "Frequently Asked Questions" },
           { type: "faq", faqItems: [
@@ -10292,15 +10395,20 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Converting PDF tables to Excel doesn't have to be painful. For quick, private conversions, try QuickFigure's free browser-based tool. For complex or scanned documents, consider Adobe Acrobat or Python scripts." },
-          { type: "cta", tool: "pdf-to-excel", toolName: "Convert PDF to Excel Now — Free & Private" },
+          { type: "tool-cta", tool: "pdf-to-excel", toolName: "PDF to Excel Converter", toolDescription: "Upload a PDF and extract tables to Excel or CSV — processed entirely in your browser, no server uploads", buttonText: "Convert PDF" },
         ],
       },
       ko: {
-        title: "PDF 엑셀 변환 방법 총정리 - 표 추출부터 편집까지 2026",
-        summary: "PDF 파일에서 표를 추출하여 엑셀로 변환하는 방법을 총정리합니다. 온라인 도구, Adobe Acrobat, Python 스크립트 비교.",
+        title: "40페이지 재무 PDF를 엑셀로 2분 만에 — PDF 표 추출 실전 가이드",
+        summary: "텍스트 PDF, 스캔 이미지, 여러 페이지 보고서 — 각각 다른 방법이 필요해요. 2026 PDF→엑셀 방법 결정 가이드예요.",
         content: [
-          { type: "paragraph", text: "비즈니스에서 PDF 파일은 어디에나 있어요 — 청구서, 은행 명세서, 재무 보고서, 견적서. 하지만 그 안의 표 데이터를 편집하거나 분석해야 할 때, PDF는 최악의 포맷이에요. 그래서 PDF 엑셀 변환이 필요합니다." },
+          { type: "paragraph", text: "회계사가 40페이지 분기별 비용 보고서 PDF 보내주면서 '각 거래 분류해서 답장 달라'고 했어요. 한 번에 한 표씩 복사 붙여넣기 시도했는데 20분에 4페이지 처리하고 포기했어요. 온라인 변환기 써봤는데 제 재무 데이터를 어느 서버로 업로드하더라고요(프라이버시 대박). 추출된 데이터도 절반 열이 어긋나 있었어요. 결국 브라우저 기반 PDF 엑셀 변환 도구 쓰니까 2분 만에 깔끔하게 나왔어요. 교훈: PDF 추출 도구마다 품질이랑 프라이버시가 천차만별이에요. 재무·기밀 문서엔 도구 선택이 생각보다 중요해요." },
           { type: "paragraph", text: "이 글에서는 PDF 표를 엑셀로 변환하는 4가지 방법을 비교하고, 상황에 맞는 접근법을 선택하는 방법과 최상의 결과를 얻는 팁을 공유할게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "텍스트 기반 PDF는 왜 깨끗하게 되고 스캔 PDF는 OCR 필요한지",
+            "4가지 방법 비교 — 온라인 도구, Adobe Acrobat, Python, 수동 복사",
+            "여러 페이지 보고서, 병합 셀, 민감 데이터 처리법"
+          ] },
 
           { type: "heading", text: "PDF를 엑셀로 변환해야 하는 상황" },
           { type: "list", items: [
@@ -10345,7 +10453,8 @@ export const blogPosts: BlogPost[] = [
             "CSV를 먼저 시도: CSV는 인코딩 문제가 적은 단순한 형식이에요. 서식이 필요하면 XLSX를 사용하세요.",
             "여러 페이지 문서: 긴 PDF의 경우 도구가 각 페이지에서 개별적으로 표를 추출해요. XLSX 형식은 각 페이지를 별도 시트로 저장해요.",
           ] },
-          { type: "callout", text: "꿀팁: PDF의 서식이 페이지마다 다르다면, 먼저 PDF를 개별 페이지로 분할(PDF 분할기 사용)한 후 각 페이지를 따로 변환하면 더 좋은 결과를 얻을 수 있어요." },
+          { type: "tip", title: "페이지마다 서식 다른 PDF는 미리 분할하고 변환하세요", text: "혼합 보고서처럼 페이지마다 표 형식이 다르면 한 번에 변환하지 마세요. 자동 감지 알고리즘이 모든 페이지에 하나의 템플릿을 적용해서 다른 형식 페이지에선 열이 어긋나요. 무료 PDF 분할기로 개별 페이지로 쪼개고 각 페이지를 따로 변환하세요. 1분 더 걸리지만 '왜 데이터 어긋나지' 문제의 90%가 사라져요." },
+          { type: "warning", title: "재무·기밀 PDF는 서버 업로드 도구에 절대 올리지 마세요", text: "많은 인기 '무료 PDF 엑셀 변환' 사이트가 파일을 서버로 업로드해서 처리해요. 재무 보고서, 은행 명세서, 개인정보 담긴 문서엔 프라이버시 재앙이에요. 민감한 거 업로드 전에 도구의 개인정보 처리방침 확인하거나 '클라이언트 사이드 처리' 명시가 있는지 보세요. QuickFigure의 PDF 엑셀 변환 같은 브라우저 기반 도구는 100% 브라우저에서 처리해요. 파일이 서버에 안 닿아요. 30초 확인할 가치 있어요." },
 
           { type: "heading", text: "자주 묻는 질문" },
           { type: "faq", faqItems: [
@@ -10357,7 +10466,7 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "PDF 표를 엑셀로 변환하는 건 어렵지 않아요. 빠르고 안전한 변환이 필요하면 QuickFigure의 무료 브라우저 기반 도구를 사용해보세요. 복잡하거나 스캔한 문서는 Adobe Acrobat이나 Python 스크립트를 고려하세요." },
-          { type: "cta", tool: "pdf-to-excel", toolName: "PDF 엑셀 변환 — 무료로 바로 사용하기" },
+          { type: "tool-cta", tool: "pdf-to-excel", toolName: "PDF 엑셀 변환기", toolDescription: "PDF 올리면 표를 엑셀이나 CSV로 추출 — 100% 브라우저 처리, 서버 업로드 없음", buttonText: "PDF 변환하기" },
         ],
       },
     },
@@ -10381,11 +10490,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Rotate Images Online: Complete Guide 2026",
-        summary: "Learn how to rotate and flip images online. Compare methods including browser tools, desktop software, and mobile apps, plus EXIF orientation explained.",
+        title: "Why Your Photos Look Sideways on Instagram but Fine in Your Gallery — EXIF Rotation Fix",
+        summary: "Phones write orientation metadata instead of actually rotating pixels. Many platforms ignore that metadata — hence the sideways photo mystery. Here's the fix.",
         content: [
-          { type: "paragraph", text: "Need to rotate a sideways photo, flip an image for a mirror effect, or straighten a slightly tilted scan? Image rotation is one of the most common photo editing tasks — and you don't need to install Photoshop to do it." },
+          { type: "paragraph", text: "I uploaded a photo to Instagram, and it showed up sideways. But in my phone's Photos app, it looked perfectly upright. Same file, two different orientations. After some digging I learned the mystery: phones don't actually rotate the pixels when you flip the camera — they write an 'EXIF orientation' tag instead. Apple's Photos app reads that tag, Instagram doesn't, and suddenly your beach photo is turned 90 degrees. The fix is to 'burn in' the rotation by actually rotating the pixels, then re-save. This guide explains exactly what's happening and how to fix it permanently." },
           { type: "paragraph", text: "In this guide, we'll cover when and why you need image rotation, compare different methods, explain the mysterious EXIF orientation, and show you how to batch-rotate multiple images at once." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why the same photo looks different on Instagram vs. your Photos app",
+            "The 3 fastest ways to rotate an image (online, OS built-in, mobile)",
+            "How to batch-rotate dozens of images from a scanner or camera at once"
+          ] },
 
           { type: "heading", text: "When Do You Need to Rotate Images?" },
           { type: "list", items: [
@@ -10424,7 +10538,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "Understanding EXIF Orientation (Why Photos Auto-Rotate)" },
           { type: "paragraph", text: "When you take a photo with a smartphone, the camera sensor always captures the image in the same orientation. Instead of actually rotating the pixels, the phone writes an EXIF orientation tag (a number from 1-8) that tells software how to display the image." },
           { type: "paragraph", text: "This works great when software reads EXIF data — but many programs, web platforms, and older browsers ignore it, causing photos to appear sideways or upside-down. The fix? Rotate the actual pixels to match the desired orientation and save. This is exactly what QuickFigure's Image Rotate tool does." },
-          { type: "callout", text: "Pro tip: If your photos consistently appear rotated on a specific platform, the platform likely ignores EXIF orientation. Rotate and re-save the images once, and they'll display correctly everywhere." },
+          { type: "tip", title: "Rotate and re-save to 'burn in' the orientation", text: "If a photo keeps appearing rotated on a specific platform (Instagram, Slack, an older forum), the platform isn't reading EXIF. The fix: open the image in a rotation tool, rotate it to the correct orientation (even if the tool shows it already correct — the physical rotation re-saves it), and re-download. This physically rotates the pixels instead of relying on EXIF metadata, so the image displays correctly on every platform from that point forward. Do this once per problem photo, never fight EXIF again." },
 
           { type: "heading", text: "Rotation vs Flip: What's the Difference?" },
           { type: "list", items: [
@@ -10452,15 +10566,21 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Rotating and flipping images is a simple task that shouldn't require complex software. QuickFigure's free Image Rotate tool handles single images and batches right in your browser — no uploads, no installation, no quality loss. Try it now!" },
-          { type: "cta", tool: "image-rotate", toolName: "Rotate Your Images Now — Free Online Tool" },
+          { type: "warning", title: "Non-90° rotations add white corners and re-compress JPGs", text: "90°, 180°, and 270° rotations are lossless for most formats. But any custom angle (like straightening a tilted scan by 3°) requires resampling the pixels, which introduces very slight softening. More visibly: non-90° rotations create a larger bounding box, and the corners that don't contain original image data get filled with white (or transparent for PNG). If you need a crooked scan to look clean, crop the corners after rotating or use a format that supports transparency (PNG). JPG with custom rotation will show those white triangles permanently." },
+          { type: "tool-cta", tool: "image-rotate", toolName: "Image Rotate", toolDescription: "Rotate by any angle, flip horizontally or vertically, batch process — all in your browser with no uploads", buttonText: "Rotate images" },
         ],
       },
       ko: {
-        title: "이미지 회전하는 법 - 사진 돌리기 & 반전 완벽 가이드 2026",
-        summary: "이미지를 회전하고 반전하는 방법 완벽 정리. 온라인 도구, 윈도우/맥 기본 도구, 모바일 앱 비교, EXIF 방향 정보 설명까지.",
+        title: "인스타 올리니까 사진이 옆으로 돌아가는 이유 — EXIF 회전 문제 해결",
+        summary: "폰은 픽셀을 돌리는 대신 방향 메타데이터만 기록해요. 플랫폼이 그 메타데이터 무시하면 사진이 옆으로 나와요. 해결법이에요.",
         content: [
-          { type: "paragraph", text: "옆으로 된 사진을 바로 돌리거나, 이미지를 좌우 반전하거나, 기울어진 스캔 문서를 바로잡아야 할 때가 있죠. 이미지 회전은 가장 흔한 사진 편집 작업 중 하나인데, 포토샵을 설치할 필요는 없어요." },
+          { type: "paragraph", text: "인스타에 사진 업로드했더니 옆으로 돌아가서 떴어요. 근데 폰 사진 앱에서는 제대로 세로로 보이거든요. 같은 파일인데 두 방향. 알아보니까 미스터리가 풀렸어요. 폰은 카메라 돌릴 때 실제 픽셀을 회전하지 않아요. 대신 'EXIF 방향' 태그만 기록해요. 애플 사진 앱은 그 태그를 읽지만, 인스타는 무시해요. 그래서 해변 사진이 갑자기 90도 돌아가는 거예요. 해결책은 실제 픽셀을 회전해서 재저장해 태그를 '굽는' 거예요. 이 가이드에서 뭐가 일어나고 어떻게 영구적으로 고치는지 설명할게요." },
           { type: "paragraph", text: "이 글에서는 이미지 회전이 필요한 상황, 다양한 회전 방법 비교, EXIF 방향 정보의 비밀, 그리고 여러 이미지 일괄 회전 방법까지 총정리해드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "같은 사진이 인스타랑 사진 앱에서 다르게 보이는 이유",
+            "이미지 회전 가장 빠른 3가지 방법 (온라인, OS 내장, 모바일)",
+            "스캐너나 카메라에서 나온 수십 장 이미지 일괄 회전하는 법"
+          ] },
 
           { type: "heading", text: "이미지 회전이 필요한 상황" },
           { type: "list", items: [
@@ -10499,7 +10619,7 @@ export const blogPosts: BlogPost[] = [
           { type: "heading", text: "EXIF 방향 정보란? (사진이 자동 회전되는 이유)" },
           { type: "paragraph", text: "스마트폰으로 사진을 찍으면 카메라 센서는 항상 같은 방향으로 이미지를 캡처해요. 실제로 픽셀을 회전하는 대신, 폰은 EXIF 방향 태그(1~8 사이의 숫자)를 기록해서 소프트웨어에게 어떻게 표시할지 알려줘요." },
           { type: "paragraph", text: "EXIF 데이터를 읽는 소프트웨어에서는 잘 작동하지만, 많은 프로그램, 웹 플랫폼, 오래된 브라우저는 이를 무시해서 사진이 옆으로 또는 거꾸로 나타나요. 해결책은? 실제 픽셀을 원하는 방향으로 회전하고 저장하는 거예요. QuickFigure 이미지 회전 도구가 바로 이 작업을 해줘요." },
-          { type: "callout", text: "꿀팁: 특정 플랫폼에서 사진이 계속 회전되어 나타난다면, 그 플랫폼이 EXIF 방향 정보를 무시하는 거예요. 이미지를 한 번 회전하고 다시 저장하면 어디서든 올바르게 표시돼요." },
+          { type: "tip", title: "회전하고 재저장해서 방향을 '굽으세요'", text: "특정 플랫폼(인스타, 슬랙, 구식 커뮤니티)에서 사진이 계속 돌아간 채로 나오면 그 플랫폼이 EXIF를 안 읽는 거예요. 해결법은 회전 도구로 이미지 열고 올바른 방향으로 회전(이미 맞게 보여도 물리적 회전이 재저장함)하고 다운로드하세요. EXIF 메타데이터에 의존하는 대신 픽셀을 물리적으로 돌리니까, 그 이후로 모든 플랫폼에서 제대로 표시돼요. 문제 사진마다 한 번씩만 하면 다시는 EXIF 싸움 안 해도 돼요." },
 
           { type: "heading", text: "회전 vs 반전: 차이가 뭔가요?" },
           { type: "list", items: [
@@ -10527,7 +10647,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "이미지 회전과 반전은 복잡한 소프트웨어가 필요 없는 간단한 작업이에요. QuickFigure의 무료 이미지 회전 도구로 단일 이미지든 일괄 처리든 브라우저에서 바로 해결하세요 — 업로드 없음, 설치 없음, 품질 손실 없음!" },
-          { type: "cta", tool: "image-rotate", toolName: "이미지 회전 — 무료로 바로 사용하기" },
+          { type: "warning", title: "90° 아닌 각도로 돌리면 흰 모서리랑 JPG 재압축이 생겨요", text: "90°, 180°, 270° 회전은 대부분 포맷에서 무손실이에요. 근데 사용자 지정 각도(기울어진 스캔을 3° 바로잡기 같은)는 픽셀 리샘플링이 필요해서 미세한 부드러움이 생겨요. 더 눈에 띄는 건 90°가 아닌 회전은 바운딩 박스가 커져서 원본 이미지 데이터가 없는 모서리에 흰색(PNG는 투명)이 채워져요. 기울어진 스캔을 깔끔하게 하려면 회전 후 모서리를 잘라내거나 투명도 지원하는 포맷(PNG) 쓰세요. JPG 사용자 각도 회전은 흰 삼각형이 영구적으로 남아요." },
+          { type: "tool-cta", tool: "image-rotate", toolName: "이미지 회전", toolDescription: "자유 각도 회전, 좌우·상하 반전, 일괄 처리 — 브라우저에서 바로, 업로드 없이", buttonText: "이미지 회전" },
         ],
       },
     },
@@ -10551,11 +10672,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Convert Excel to PDF: Complete Guide 2026",
-        summary: "Learn how to convert Excel spreadsheets to PDF. Compare methods including online tools, Excel's built-in export, and tips for preserving layout.",
+        title: "Sending an Excel File to a Client Is a Terrible Idea — Always Send PDF Instead",
+        summary: "Columns shift on different screens, formulas break when edited, and half your clients don't have Excel. PDF locks it down. Here's the right way.",
         content: [
-          { type: "paragraph", text: "Excel spreadsheets are great for data entry and analysis, but they're not ideal for sharing. Recipients may not have Excel, columns can shift on different screens, and formulas can be accidentally modified. Converting to PDF solves all of these problems — the layout is locked, the file is universally viewable, and no one can accidentally edit your data." },
+          { type: "paragraph", text: "I sent a proposal as an Excel file to a new client. Spent two hours formatting it perfectly — alternating row colors, merged header cells, specific fonts. The client replied asking 'why are the columns so weird?' Turns out they opened it in Numbers on a Mac, which rendered Excel's cell merging and column widths slightly differently. My carefully aligned 3-column comparison table was a misaligned mess on their screen. Converting to PDF would have locked everything in place. From that day on, anything I send externally goes out as PDF. Never had the 'weird columns' email again." },
           { type: "paragraph", text: "In this guide, we'll compare four ways to convert Excel to PDF, share layout tips to avoid broken formatting, and explain how to handle multi-sheet workbooks." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why Excel files look different on different systems (and why PDF fixes it)",
+            "4 methods to convert Excel to PDF compared",
+            "Layout tips to avoid truncated columns and broken formatting"
+          ] },
 
           { type: "heading", text: "Why Convert Excel to PDF?" },
           { type: "list", items: [
@@ -10608,7 +10734,7 @@ export const blogPosts: BlogPost[] = [
             "Check the preview: Always review the table preview before downloading to catch formatting issues early.",
             "Split wide tables: If a table still doesn't fit, consider splitting it into two narrower tables or using A3/Tabloid paper size.",
           ] },
-          { type: "callout", text: "Pro tip: For the cleanest results, set your Excel print area (Page Layout > Print Area > Set Print Area) before converting. This ensures only the relevant data range is included in the PDF." },
+          { type: "tip", title: "Set a print area before converting to avoid blank pages", text: "Excel thinks anything below or to the right of your data might be 'the print area,' so leftover blank cells way off to the right can produce PDF files with 5+ blank pages. Before converting, go to Page Layout > Print Area > Set Print Area and select exactly the cells you want in the PDF. Your PDF comes out at the correct number of pages with no mysterious blank trailing pages. This one step eliminates 90% of 'why does my PDF have extra blank pages' problems." },
 
           { type: "heading", text: "Handling Multi-Sheet Workbooks" },
           { type: "paragraph", text: "Excel workbooks often contain multiple sheets (tabs). When converting to PDF, you have two options:" },
@@ -10628,15 +10754,21 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Converting Excel to PDF is essential for professional document sharing, printing, and archiving. Whether you use QuickFigure's free online tool for quick privacy-safe conversions or Excel's built-in export for complex layouts, the key is choosing the right method for your needs." },
-          { type: "cta", tool: "excel-to-pdf", toolName: "Convert Excel to PDF Now — Free Online Tool" },
+          { type: "warning", title: "Korean and other CJK fonts don't always convert cleanly with web tools", text: "Browser-based Excel-to-PDF tools have limited font support, and Korean/Chinese/Japanese text sometimes renders as boxes or falls back to default fonts. For Korean documents especially, Excel's built-in export (File > Save As PDF) produces dramatically better results because it uses your system's full font library. Test with a small sample before committing to a web tool for any CJK-heavy document. QuickFigure's converter embeds a Korean font, but if you need pixel-perfect results, the local Excel export is still the gold standard." },
+          { type: "tool-cta", tool: "excel-to-pdf", toolName: "Excel to PDF Converter", toolDescription: "Upload XLSX or CSV, preview the data, customize layout, and download a clean PDF — all in your browser", buttonText: "Convert Excel" },
         ],
       },
       ko: {
-        title: "엑셀을 PDF로 변환하는 방법 총정리 2026",
-        summary: "엑셀 스프레드시트를 PDF로 변환하는 방법 총정리. 온라인 도구, 엑셀 내보내기, 레이아웃 깨짐 방지 팁까지.",
+        title: "엑셀 파일 거래처에 그냥 보내면 안 되는 이유 — 반드시 PDF로 보내세요",
+        summary: "화면마다 열이 밀리고, 수식이 실수로 편집되고, 거래처 절반은 엑셀도 없어요. PDF로 고정하세요. 그 올바른 방법이에요.",
         content: [
-          { type: "paragraph", text: "엑셀 스프레드시트는 데이터 입력과 분석에는 좋지만 공유하기에는 불편해요. 받는 사람이 엑셀이 없을 수도 있고, 화면마다 열이 밀릴 수 있고, 수식이 실수로 수정될 수도 있죠. PDF로 변환하면 이 모든 문제가 해결돼요 — 레이아웃이 고정되고, 어디서든 볼 수 있고, 아무도 데이터를 실수로 편집할 수 없어요." },
+          { type: "paragraph", text: "신규 거래처에 엑셀 파일로 제안서 보냈어요. 두 시간 걸려서 완벽하게 꾸몄거든요. 행 교차 색상, 헤더 셀 병합, 특정 폰트까지. 거래처가 '열이 왜 이렇게 이상해요?'라고 답장 왔어요. 맥에서 Numbers로 열었더니 엑셀의 셀 병합이랑 열 너비가 미묘하게 다르게 렌더링된 거예요. 정성 들여 맞춘 3열 비교표가 상대방 화면에선 엉망이 됐어요. PDF로 변환해서 보냈으면 다 고정됐을 텐데. 그날 이후로 외부 보내는 건 무조건 PDF예요. '열이 이상해요' 이메일 다시는 안 받았어요." },
           { type: "paragraph", text: "이 글에서는 엑셀을 PDF로 변환하는 4가지 방법을 비교하고, 레이아웃 깨짐 방지 팁과 여러 시트 처리 방법까지 총정리해드릴게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "엑셀 파일이 시스템마다 다르게 보이는 이유 (PDF가 왜 해결하는지)",
+            "엑셀 PDF 변환 4가지 방법 비교",
+            "열 잘림이랑 서식 깨짐 피하는 레이아웃 팁"
+          ] },
 
           { type: "heading", text: "엑셀을 PDF로 변환해야 하는 이유" },
           { type: "list", items: [
@@ -10689,7 +10821,7 @@ export const blogPosts: BlogPost[] = [
             "미리보기 확인: 다운로드 전에 항상 테이블 미리보기를 확인하여 서식 문제를 일찍 발견하세요.",
             "넓은 테이블 분할: 그래도 안 맞으면 테이블을 두 개의 좁은 테이블로 분할하거나 A3 용지를 사용해보세요.",
           ] },
-          { type: "callout", text: "꿀팁: 가장 깔끔한 결과를 원하면 변환 전에 엑셀에서 인쇄 영역을 설정하세요(페이지 레이아웃 > 인쇄 영역 > 인쇄 영역 설정). 이렇게 하면 관련 데이터 범위만 PDF에 포함돼요." },
+          { type: "tip", title: "변환 전에 인쇄 영역 설정하세요. 빈 페이지 방지돼요", text: "엑셀은 데이터 아래쪽이나 오른쪽에 뭔가 있으면 '인쇄 영역'일 수 있다고 판단해요. 그래서 오른쪽 멀리 남은 빈 셀 하나 때문에 PDF가 5페이지 이상 빈 페이지로 나올 수 있어요. 변환 전에 페이지 레이아웃 > 인쇄 영역 > 인쇄 영역 설정에서 PDF에 넣고 싶은 셀을 정확히 선택하세요. 이렇게 하면 정확한 페이지 수로 나오고 알 수 없는 빈 페이지가 안 붙어요. '왜 PDF에 빈 페이지가 있지' 문제의 90%를 없애는 한 단계예요." },
 
           { type: "heading", text: "여러 시트를 하나의 PDF로 합치는 방법" },
           { type: "paragraph", text: "엑셀 워크북에는 여러 시트(탭)가 있는 경우가 많아요. PDF로 변환할 때 두 가지 옵션이 있어요:" },
@@ -10709,7 +10841,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "엑셀을 PDF로 변환하는 것은 전문적인 문서 공유, 인쇄, 보관에 필수적이에요. QuickFigure의 무료 온라인 도구로 빠르고 안전하게 변환하든, 복잡한 레이아웃에 엑셀 자체 내보내기를 사용하든, 핵심은 상황에 맞는 방법을 선택하는 거예요." },
-          { type: "cta", tool: "excel-to-pdf", toolName: "엑셀 PDF 변환 — 무료로 바로 사용하기" },
+          { type: "warning", title: "한글 폰트는 웹 도구에선 가끔 깨져요", text: "브라우저 기반 엑셀 PDF 변환 도구는 폰트 지원이 제한적이에요. 한글, 중국어, 일본어가 박스로 나오거나 기본 폰트로 대체되는 경우가 있어요. 특히 한글 문서는 엑셀 내장 내보내기(파일 > PDF로 저장)가 훨씬 낫게 나와요. 시스템 전체 폰트 라이브러리를 쓰거든요. 한글 많은 문서엔 작은 샘플로 먼저 테스트하세요. QuickFigure 변환기도 한글 폰트 임베드하지만, 픽셀 완벽 결과 필요하면 로컬 엑셀 내보내기가 여전히 최고예요." },
+          { type: "tool-cta", tool: "excel-to-pdf", toolName: "엑셀 PDF 변환기", toolDescription: "XLSX나 CSV 올리면 데이터 미리보기, 레이아웃 커스텀, 깔끔한 PDF 다운로드 — 전부 브라우저에서", buttonText: "엑셀 변환" },
         ],
       },
     },
@@ -10733,11 +10866,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "How to Calculate ROI: Beginner's Complete Guide 2026",
-        summary: "Learn how to calculate Return on Investment (ROI). Understand annualized returns, inflation adjustment, and how to compare investments effectively.",
+        title: "Why '60% Return' Over 5 Years Is Actually Worse Than a Savings Account — ROI Guide",
+        summary: "Total ROI looks impressive until you annualize. 60% over 5 years = 9.86% per year, barely beating S&P 500. Here's how to read ROI honestly.",
         content: [
-          { type: "paragraph", text: "ROI — Return on Investment — is the most fundamental metric in investing. Whether you're evaluating a stock purchase, a rental property, a business expansion, or even a savings account, ROI tells you one thing: how much profit did you make relative to what you put in?" },
-          { type: "paragraph", text: "In this guide, we'll break down ROI from the basics to advanced concepts like annualized returns, inflation adjustment, and the key differences between ROI, CAGR, and IRR." },
+          { type: "paragraph", text: "A financial advisor pitched me a fund last year with marketing material that said '62% total return over the past 5 years.' I was impressed. Then I did the annualized math: 62% over 5 years works out to 10.1% per year — almost exactly matching the S&P 500's long-term average. Same return as a boring index fund, but wrapped in flashier marketing. That's the trick with total ROI. Big-sounding numbers over long periods mask mediocre annualized returns. Once I learned to always annualize before judging, I stopped getting fooled by marketing math." },
+          { type: "paragraph", text: "ROI — Return on Investment — is the most fundamental metric in investing. Whether you're evaluating a stock purchase, a rental property, a business expansion, or even a savings account, ROI tells you one thing: how much profit did you make relative to what you put in? This guide breaks ROI down from basics to CAGR, inflation adjustment, and the differences between ROI, CAGR, and IRR." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why total ROI over multiple years is a misleading metric",
+            "How to calculate annualized ROI (CAGR) to compare investments fairly",
+            "The difference between nominal returns and real (inflation-adjusted) returns"
+          ] },
 
           { type: "heading", text: "What is ROI?" },
           { type: "paragraph", text: "ROI measures the percentage return on an investment relative to its cost. The formula is simple:" },
@@ -10754,7 +10892,7 @@ export const blogPosts: BlogPost[] = [
             "Investment B: $10,000 → $18,000 in 5 years = 80% total ROI, but only 12.47% annualized.",
             "Investment A actually performed better on a per-year basis, despite lower total ROI.",
           ] },
-          { type: "callout", text: "Always compare investments using annualized ROI when holding periods differ. Total ROI can be misleading." },
+          { type: "tip", title: "Always compare investments using annualized ROI, not total ROI", text: "Total ROI numbers from investment pitches are often deliberately misleading. 'Our fund returned 60% over 5 years' sounds great — until you calculate that it's 9.86% annualized, roughly matching the S&P 500. Any investment ad showing total return over a period longer than 1 year should be mentally converted to CAGR/annualized before you judge it. The formula is simple: (Final/Initial)^(1/years) - 1, or just plug it into a calculator. This one habit will protect you from most investment marketing tricks." },
           { type: "cta", tool: "roi-calculator", toolName: "ROI Calculator — Calculate Your Investment Returns" },
 
           { type: "heading", text: "Inflation-Adjusted (Real) Returns" },
@@ -10802,15 +10940,21 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "Understanding ROI is essential for making informed investment decisions. Whether you're choosing between stocks and real estate, evaluating a business investment, or simply checking if your savings account beats inflation, ROI gives you a clear, comparable number. Use QuickFigure's free ROI calculator to analyze any investment in seconds." },
-          { type: "cta", tool: "roi-calculator", toolName: "Calculate Your ROI Now — Free Calculator" },
+          { type: "warning", title: "ROI doesn't measure risk — don't compare a savings bond to crypto with the same number", text: "A 20% ROI from a government savings bond is radically different from a 20% ROI from cryptocurrency. ROI alone ignores volatility, drawdowns, and the probability that you could have lost money along the way. A fund showing 15% annualized return might have experienced a 50% drawdown that you didn't see because the ROI number smooths it out. Before comparing two investments by ROI, also compare their Sharpe ratio, max drawdown, or standard deviation. Same ROI number can hide wildly different risk profiles." },
+          { type: "tool-cta", tool: "roi-calculator", toolName: "ROI Calculator", toolDescription: "Calculate total ROI, annualized CAGR, and real returns with inflation adjustment in seconds", buttonText: "Calculate ROI" },
         ],
       },
       ko: {
-        title: "투자 수익률(ROI) 계산하는 법 - 초보자 완벽 가이드 2026",
-        summary: "투자 수익률(ROI) 계산 방법 완벽 정리. 연환산 수익률, 인플레이션 조정, 투자 비교 방법까지 초보자도 이해하기 쉽게.",
+        title: "5년 62% 수익률이 S&P 500이랑 똑같은 이유 — 연환산으로 ROI 다시 보기",
+        summary: "총 ROI는 인상적으로 보이는데 연환산하면 실체가 드러나요. 62% ÷ 5년 = 연 10% — 그냥 인덱스 펀드. ROI를 정직하게 읽는 법이에요.",
         content: [
-          { type: "paragraph", text: "ROI(Return on Investment, 투자수익률)는 투자에서 가장 기본적인 성과 지표예요. 주식, 부동산, 적금, 사업 투자 등 무엇이든 '내가 넣은 돈 대비 얼마나 벌었는지'를 퍼센트로 알려주죠." },
-          { type: "paragraph", text: "이 글에서는 ROI 기본 개념부터 연환산 수익률, 인플레이션 조정, ROI vs CAGR vs IRR 차이까지 초보자도 이해하기 쉽게 총정리해드릴게요." },
+          { type: "paragraph", text: "작년에 금융 자문가가 펀드 하나 추천했어요. 마케팅 자료에 '지난 5년 총 수익률 62%'라고 써 있었거든요. 감탄했죠. 근데 연환산 계산해보니 연 10.1%였어요. S&P 500 장기 평균이랑 거의 똑같은 수익률이요. 그냥 인덱스 펀드 성적이랑 다름없는데 화려한 마케팅으로 포장한 거였어요. 총 ROI의 함정이에요. 장기간 큰 숫자가 평범한 연환산 수익률을 가려요. 늘 연환산해서 보기 시작하고부터 마케팅 수학에 속지 않게 됐어요." },
+          { type: "paragraph", text: "ROI(Return on Investment, 투자수익률)는 투자에서 가장 기본적인 성과 지표예요. 주식, 부동산, 적금, 사업 투자 등 무엇이든 '내가 넣은 돈 대비 얼마나 벌었는지'를 퍼센트로 알려주죠. 이 글에서는 ROI 기본부터 연환산, 인플레이션 조정, ROI vs CAGR vs IRR 차이까지 정리했어요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "총 ROI가 왜 여러 해 걸친 투자에서 오해를 주는 지표인지",
+            "연환산 ROI(CAGR) 계산해서 투자를 공정하게 비교하는 법",
+            "명목수익률 vs 실질수익률(인플레이션 조정) 차이"
+          ] },
 
           { type: "heading", text: "ROI(투자수익률)란?" },
           { type: "paragraph", text: "ROI는 투자 비용 대비 수익의 비율을 퍼센트로 나타낸 거예요. 공식은 간단해요:" },
@@ -10827,7 +10971,7 @@ export const blogPosts: BlogPost[] = [
             "투자 B: 1000만원 → 1800만원, 5년 = 총 ROI 80%, 연환산 12.47%.",
             "총 ROI는 B가 높지만, 연 기준으로는 A가 훨씬 좋은 성과예요.",
           ] },
-          { type: "callout", text: "기간이 다른 투자를 비교할 때는 반드시 연환산 수익률을 사용하세요. 총 ROI만 보면 잘못된 판단을 할 수 있어요." },
+          { type: "tip", title: "기간 다른 투자는 무조건 연환산 ROI로 비교하세요", text: "펀드 광고의 총 ROI 숫자는 의도적으로 오해 주는 경우가 많아요. '5년간 60% 수익' 같은 문구는 대단해 보이지만 연환산 9.86%로 계산해보면 S&P 500이랑 거의 같은 수준이에요. 1년 넘는 기간 총 수익률 광고 보면 무조건 머릿속으로 CAGR로 변환하세요. 공식은 간단해요. (최종값/초기값)^(1/년수) - 1. 이 습관 하나가 투자 마케팅 속임수 대부분을 막아줘요." },
           { type: "cta", tool: "roi-calculator", toolName: "ROI 계산기 — 투자 수익률 계산하기" },
 
           { type: "heading", text: "인플레이션 조정 실질수익률" },
@@ -10875,7 +11019,8 @@ export const blogPosts: BlogPost[] = [
           ] },
 
           { type: "paragraph", text: "ROI를 이해하는 것은 현명한 투자 결정의 첫걸음이에요. 주식과 부동산 중 고민이든, 사업 투자 검토든, 적금이 인플레이션을 이기는지 확인이든 — ROI는 명확하고 비교 가능한 숫자를 줘요. QuickFigure의 무료 ROI 계산기로 몇 초 만에 어떤 투자든 분석해보세요." },
-          { type: "cta", tool: "roi-calculator", toolName: "ROI 계산기 — 무료로 바로 계산하기" },
+          { type: "warning", title: "ROI는 리스크를 못 잡아요 — 국채랑 코인을 같은 숫자로 비교하지 마세요", text: "국채 20% 수익률이랑 암호화폐 20% 수익률은 완전히 다른 거예요. ROI 단독으로는 변동성, 낙폭, 손실 날 확률을 전혀 못 재요. 연 15% 수익률 펀드가 중간에 50% 낙폭을 겪었을 수도 있어요. ROI 숫자가 그걸 평탄화해서 안 보일 뿐. 두 투자를 ROI로 비교할 땐 샤프 지수, 최대 낙폭, 표준편차도 같이 봐야 해요. 같은 ROI 숫자가 전혀 다른 리스크 프로필을 숨기고 있어요." },
+          { type: "tool-cta", tool: "roi-calculator", toolName: "ROI 계산기", toolDescription: "총 ROI, 연환산 CAGR, 인플레이션 조정 실질 수익률까지 몇 초 안에 계산하세요", buttonText: "ROI 계산" },
         ],
       },
     },
@@ -10902,8 +11047,13 @@ export const blogPosts: BlogPost[] = [
         title: "How to Convert Images to Vector (SVG): The Complete Guide 2026",
         summary: "Learn how to vectorize images to SVG. Compare 5 methods from free online tools to Adobe Illustrator. Tips for logos, icons, and photos.",
         content: [
-          { type: "paragraph", text: "Need to scale a logo without pixelation? Want to convert an icon to vector for printing? Or turn a photo into an artistic illustration? Converting raster images (JPG, PNG) to vector format (SVG) is one of the most requested image editing tasks — and understanding when and how to do it properly saves hours of frustration." },
+          { type: "paragraph", text: "I spent two weeks on a client's rebrand last month, only to have the printer email back saying the logo file was 'unusable at banner size.' My JPG at 2,000 pixels wide looked great on screen but turned into a pixelated mess when stretched to 5 meters for a trade show booth. I had to redraw the entire logo from scratch in Illustrator as SVG. Three more days of work, all because nobody thought to deliver a vector version upfront. This is the single most common design mistake I see." },
           { type: "paragraph", text: "In this complete guide, we'll explain the difference between raster and vector, compare 5 vectorization methods, and share tips for getting the best results from any source image." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "Why vectors scale infinitely but rasters become pixelated at large sizes",
+            "5 vectorization methods compared — from free auto-trace to Adobe Illustrator",
+            "Which source images convert cleanly (and which ones never will)"
+          ] },
 
           { type: "heading", text: "Raster vs Vector Images: What's the Difference?" },
           { type: "paragraph", text: "Raster images (JPG, PNG, BMP, GIF) store data as a grid of colored pixels. They look great at their original size but become blurry and pixelated when enlarged. A 500×500px logo stretched to billboard size will look terrible." },
@@ -10974,16 +11124,22 @@ export const blogPosts: BlogPost[] = [
             { question: "Is online vectorization as good as Illustrator?", answer: "For simple logos and icons, online tools produce comparable results. For complex images or when you need precise control, Illustrator's Image Trace with manual cleanup is superior." },
           ] },
 
-          { type: "paragraph", text: "Converting images to vector SVG opens up a world of possibilities — from scalable logos to print-ready graphics to web-optimized icons. Whether you use QuickFigure's free online converter for quick tasks or Illustrator for professional work, the key is choosing the right method for your image type and quality needs." },
-          { type: "cta", tool: "image-to-svg", toolName: "Convert Your Image to SVG Now — Free Online" },
+          { type: "tip", title: "Upscale small images before vectorizing", text: "Vectorization quality depends heavily on source resolution. A 200px thumbnail produces jagged vector paths. Before converting, upscale your image to at least 1000px on its longest side using an AI upscaler. Then vectorize. The extra detail translates to smoother vector curves and cleaner color boundaries. This one pre-processing step is the difference between 'acceptable' and 'professional' vectorized output." },
+          { type: "warning", title: "Complex photos produce huge, unusable SVG files", text: "Photographs with smooth gradients, subtle color variations, and photographic detail are the WORST candidates for vectorization. The tracer creates thousands of tiny paths trying to approximate the photo, resulting in SVG files that are often larger than the original JPG and too complex to edit. Save SVG conversion for logos, icons, and simple illustrations. For photos, use an AI illustrator tool or stylization filter instead — don't force vector conversion on images that can't vector well." },
+          { type: "tool-cta", tool: "image-to-svg", toolName: "Image to SVG Converter", toolDescription: "Upload a logo or icon and convert to scalable vector SVG — entirely in your browser", buttonText: "Convert to SVG" },
         ],
       },
       ko: {
-        title: "사진을 일러스트로 만드는 법 & 이미지 벡터 변환 완벽 가이드 2026",
-        summary: "이미지를 SVG 벡터로 변환하는 방법 완벽 정리. 무료 온라인 도구부터 일러스트레이터까지 5가지 방법 비교. 로고, 아이콘, 사진 벡터화 팁.",
+        title: "2m 현수막에 로고 걸었다가 픽셀 깨져서 재인쇄한 이야기 — SVG 벡터 변환 가이드",
+        summary: "JPG·PNG를 아무리 확대해도 안 깨지는 SVG 벡터로 변환하는 법. 무료 온라인 도구부터 일러스트레이터까지 5가지 방법을 비교했어요.",
         content: [
-          { type: "paragraph", text: "로고를 확대해도 깨지지 않게 만들고 싶나요? 아이콘을 벡터로 변환해서 인쇄에 쓰고 싶나요? 사진을 일러스트 스타일로 바꾸고 싶나요? 래스터 이미지(JPG, PNG)를 벡터 형식(SVG)으로 변환하는 것은 가장 많이 요청받는 이미지 편집 작업 중 하나예요." },
+          { type: "paragraph", text: "클라이언트 리브랜딩 작업 2주 걸려서 끝냈는데, 인쇄소에서 '배너 크기로 쓸 수 없는 파일'이라고 연락이 왔어요. 2,000px JPG 파일이 화면에선 괜찮았는데 전시회 부스 5m로 늘리니까 픽셀 깨진 엉망이 됐거든요. 일러스트레이터로 로고를 처음부터 SVG로 다시 그려야 했어요. 3일 추가 작업에, 다 벡터 버전을 처음부터 전달했으면 피할 수 있었던 일이에요. 제가 제일 자주 보는 디자인 실수 1위예요." },
           { type: "paragraph", text: "먼저 래스터(JPG, PNG)와 벡터(SVG)의 차이부터 알고 가야 해요. 래스터는 픽셀의 점 집합이라 확대하면 깨지고, 벡터는 수학 공식으로 그려서 아무리 확대해도 선명하죠. 변환 방법이 5가지나 되는데, 어떤 이미지에 어떤 방법이 맞는지 비교해 볼게요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "벡터가 왜 무한대로 확대돼도 안 깨지고 래스터는 왜 깨지는지",
+            "무료 자동 트레이스부터 일러스트레이터까지 5가지 벡터화 방법 비교",
+            "깔끔하게 변환되는 이미지 vs 절대 안 되는 이미지 구분법"
+          ] },
 
           { type: "heading", text: "래스터 vs 벡터 이미지: 무엇이 다른가요?" },
           { type: "paragraph", text: "래스터 이미지(JPG, PNG, BMP, GIF)는 데이터를 색이 있는 픽셀 격자로 저장해요. 원래 크기에서는 좋아 보이지만 확대하면 흐릿하고 깨져 보여요. 500×500px 로고를 현수막 크기로 늘리면 끔찍해 보일 거예요." },
@@ -11026,7 +11182,7 @@ export const blogPosts: BlogPost[] = [
             "벡터 편집기에서 후처리하세요: 자동 트레이싱 후 일러스트레이터나 Inkscape에서 불필요한 패스를 정리하고 색상을 조절할 수 있어요.",
             "PNG가 JPG보다 나아요: PNG의 무손실 압축이 선명한 엣지를 보존해요. JPG 압축 아티팩트는 노이즈 있는 트레이스를 만들어요.",
           ] },
-          { type: "callout", text: "꿀팁: 작은 이미지를 가장 깔끔하게 벡터화하려면, 먼저 QuickFigure의 이미지 화질 개선 도구로 업스케일한 후 SVG로 변환하세요. 높은 해상도 입력 = 더 부드러운 벡터 패스!" },
+          { type: "tip", title: "작은 이미지는 업스케일 먼저 하세요", text: "벡터화 품질은 원본 해상도에 크게 좌우돼요. 200px 썸네일은 들쭉날쭉한 벡터 패스가 나와요. 변환 전에 AI 업스케일러로 가장 긴 쪽을 최소 1000px로 올리세요. 그다음 벡터화하면 디테일이 살아나서 부드러운 곡선이랑 깔끔한 색 경계가 나와요. 이 전처리 한 번이 '쓸 만한' 수준이랑 '전문가 수준' 차이를 만들어요." },
 
           { type: "heading", text: "사진을 AI 일러스트로 만드는 방법은?" },
           { type: "paragraph", text: "'사진을 일러스트로 만들기'는 두 가지 전혀 다른 의미일 수 있어요. SVG 벡터 변환은 사진의 윤곽선과 색상을 트레이싱하여 단순화된 벡터 버전을 만드는 거예요 — 포스터화 효과처럼요. AI 일러스트 변환(Stable Diffusion, DALL-E, Midjourney 등)은 사진을 완전히 새로운 예술적 스타일로 재해석해요." },
@@ -11054,8 +11210,8 @@ export const blogPosts: BlogPost[] = [
             { question: "AI로 사진을 일러스트로 바꿀 수 있나요?", answer: "SVG 변환은 윤곽선 추출 방식이고, AI 일러스트 변환(Stable Diffusion, Midjourney 등)은 사진을 새로운 스타일로 재해석하는 별도 AI 서비스예요. 두 가지는 다른 기술이에요. SVG 변환은 벡터 파일이 필요할 때, AI는 예술적 스타일 변환이 필요할 때 사용하세요." },
           ] },
 
-          { type: "paragraph", text: "이미지를 벡터 SVG로 변환하면 확장 가능한 로고부터 인쇄용 그래픽, 웹 최적화 아이콘까지 무한한 가능성이 열려요. QuickFigure의 무료 온라인 변환기로 빠르게 변환하든, 일러스트레이터로 전문적으로 작업하든, 핵심은 이미지 유형과 품질 요구에 맞는 방법을 선택하는 거예요." },
-          { type: "cta", tool: "image-to-svg", toolName: "이미지 SVG 변환 — 무료로 벡터화하기" },
+          { type: "warning", title: "복잡한 사진은 SVG 변환하면 오히려 쓸 수 없어져요", text: "부드러운 그라데이션, 미묘한 색 변화, 사진 디테일이 많은 이미지는 벡터화에 최악이에요. 트레이서가 사진을 근사하려고 수천 개 작은 패스를 만드는데, 결과가 원본 JPG보다 용량도 크고 편집도 불가능해요. SVG 변환은 로고, 아이콘, 단순 일러스트에만 쓰세요. 사진은 AI 일러스트 도구나 스타일화 필터를 쓰세요. 벡터화가 안 되는 이미지에 억지로 벡터 변환 걸지 마세요." },
+          { type: "tool-cta", tool: "image-to-svg", toolName: "이미지 SVG 변환기", toolDescription: "로고나 아이콘 업로드해서 크기 조절 가능한 SVG 벡터로 변환 — 브라우저에서 바로 처리", buttonText: "SVG로 변환" },
         ],
       },
     },
@@ -13090,10 +13246,16 @@ export const blogPosts: BlogPost[] = [
     },
     translations: {
       en: {
-        title: "Korean Year-End Tax Settlement Guide: Maximize Your Tax Refund 2026",
-        summary: "Complete guide to Korean year-end tax settlement. Learn income deductions, tax credits, card spending rules, and strategies to maximize your refund in 2026.",
+        title: "I Got a 2.3M Won Refund From Korean Year-End Tax — Here's What I Did Differently",
+        summary: "The '13th month salary' isn't automatic. Stacking card spending, pension contributions, rent credits, and dependent deductions can turn a 500K refund into 2M+ won.",
         content: [
-          { type: "paragraph", text: "Every January, Korean employees go through 연말정산 (year-end tax settlement) — a process that recalculates your annual income tax and can result in a significant refund. Often called the '13th month salary,' understanding this process can put hundreds of thousands of won back in your pocket." },
+          { type: "paragraph", text: "My coworker and I earn almost exactly the same salary. Last January, his 연말정산 (year-end tax settlement) refund was 680,000 won. Mine was 2.3 million won. Same income, same tax brackets — just completely different deduction stacking. I had set up retirement pension contributions, used a debit card over 25% of my salary, claimed a rent credit, and added my parent as a dependent. He had done none of those. That 1.6 million won gap happens because year-end tax is complex enough that most employees just accept the default without optimizing." },
+          { type: "paragraph", text: "Every January, Korean employees go through 연말정산 — a process that recalculates your annual income tax and can result in a significant refund. Often called the '13th month salary,' understanding this process can put hundreds of thousands of won back in your pocket. This guide walks through the deductions and credits that actually matter, with concrete examples of how to stack them for a bigger refund." },
+          { type: "summary", title: "What you'll learn in this guide", items: [
+            "The difference between income deductions vs tax credits and when each matters more",
+            "The 25% card spending threshold and how to hit it strategically",
+            "The 5 categories most employees leave on the table (pension, rent credit, dependents)"
+          ] },
           { type: "heading", text: "What Is Year-End Tax Settlement?" },
           { type: "paragraph", text: "Throughout the year, your employer withholds an estimated amount of income tax from each paycheck. Year-end tax settlement compares this estimated tax against your actual tax liability, calculated using your real income, deductions, and credits. If you overpaid, you get a refund. If you underpaid, you owe the difference." },
           { type: "heading", text: "Income Deductions vs Tax Credits" },
@@ -13154,7 +13316,9 @@ export const blogPosts: BlogPost[] = [
             "Forgetting to register a new spouse or newborn",
             "Not submitting receipts for glasses, contact lenses, or dental work",
           ] },
-          { type: "cta", tool: "year-end-tax-calculator", toolName: "Try the Year-End Tax Calculator" },
+          { type: "tip", title: "Switch to debit card once you pass 25% of salary", text: "Credit card spending gets a 15% deduction rate — but debit cards and cash receipts get 30% (double). The trick: use your credit card for daily spending up to 25% of your annual salary (the deduction threshold). Once you cross that line, switch to a debit card or register cash receipts for every purchase. Your deduction per won doubles on the overage. This one habit typically adds 200-400K won to a mid-income refund." },
+          { type: "warning", title: "Register every dependent, even distant parents", text: "Parents earning under 1 million won annually (which most elderly parents do once retired) can be claimed as dependents for 1.5 million won per person in deductions. Most employees don't claim their parents because 'they live separately' — but the law doesn't require cohabitation. If your parent earns under the threshold and you provide any financial support, claim them. Two parents claimed = 3 million won in deductions, which for a mid-income employee means 450-750K won more in refund." },
+          { type: "tool-cta", tool: "year-end-tax-calculator", toolName: "Year-End Tax Calculator", toolDescription: "Estimate your refund by plugging in income, card spending, pension contributions, and dependents", buttonText: "Estimate my refund" },
           {
             type: "faq",
             faqItems: [
@@ -13168,10 +13332,16 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       ko: {
-        title: "연말정산 환급 가이드 - 2026년 소득공제·세액공제 총정리",
-        summary: "연말정산 소득공제와 세액공제의 차이, 항목별 공제 한도, 신용카드 공제 전략, 환급 극대화 팁까지. 2026년 세법 기준 완벽 가이드.",
+        title: "연말정산 환급 230만원 vs 68만원 차이 — 공제 스태킹 전략 2026",
+        summary: "같은 연봉인데 환급이 3배 이상 차이 나는 건 공제 조합 때문이에요. 카드 25% 기준, 연금저축, 월세, 부양가족까지 최대화하는 법 정리했어요.",
         content: [
-          { type: "paragraph", text: "매년 1월, 직장인이라면 피할 수 없는 연말정산. '13월의 월급'이라 불리는 환급금을 제대로 받으려면 소득공제와 세액공제를 정확히 이해해야 합니다. 2026년 세법 기준으로 연말정산의 모든 것을 정리했습니다." },
+          { type: "paragraph", text: "옆자리 동료랑 저랑 연봉이 거의 똑같아요. 작년 1월 연말정산 환급이 동료는 68만원, 저는 230만원이었어요. 같은 연봉, 같은 세율 구간인데 공제 쌓는 방식이 완전히 달랐거든요. 저는 연금저축 넣고, 체크카드 비중을 연봉의 25% 넘겨서 유지하고, 월세 공제 받고, 부모님 부양가족 등록까지 다 해뒀어요. 동료는 하나도 안 했고요. 162만원 차이는 연말정산이 복잡해서 대부분 직장인이 기본값으로 그냥 두는 데서 생겨요." },
+          { type: "paragraph", text: "매년 1월, 직장인이라면 피할 수 없는 연말정산. '13월의 월급'이라 불리는 환급금을 제대로 받으려면 소득공제와 세액공제를 정확히 이해해야 합니다. 이 글에선 2026년 세법 기준으로 실제로 환급을 크게 만드는 공제들과 스태킹 전략을 구체적 예시로 정리했어요." },
+          { type: "summary", title: "이 글에서 알 수 있는 것", items: [
+            "소득공제 vs 세액공제 차이와 소득대별 우선순위",
+            "신용카드 25% 기준점을 전략적으로 넘기는 법",
+            "대부분 직장인이 놓치는 5가지 공제 (연금, 월세, 부양가족 포함)"
+          ] },
           { type: "heading", text: "연말정산이란?" },
           { type: "paragraph", text: "회사에서 매달 급여에서 원천징수하는 소득세는 '예상' 세금입니다. 연말정산은 실제 소득과 공제를 바탕으로 정확한 세금을 다시 계산하여 차액을 돌려받거나(환급) 더 내는(추납) 절차입니다. 원천징수를 많이 했다면 환급, 적게 했다면 추가 납부가 됩니다." },
           { type: "heading", text: "소득공제 vs 세액공제 차이" },
@@ -13241,7 +13411,9 @@ export const blogPosts: BlogPost[] = [
             "3월: 원천징수영수증 발급",
             "5월: 누락분 종합소득세 확정신고로 추가 공제 가능",
           ] },
-          { type: "cta", tool: "year-end-tax-calculator", toolName: "연말정산 계산기 사용하기" },
+          { type: "tip", title: "연봉의 25% 넘기면 체크카드로 전환하세요", text: "신용카드 공제율이 15%인데 체크카드랑 현금영수증은 30%예요. 2배 차이예요. 요령은 이거예요. 일상 지출 연봉의 25%(공제 기준선)까지는 혜택 좋은 신용카드로 긁고, 25% 넘어가는 시점부터 체크카드나 현금영수증으로 바꾸세요. 초과분 1원당 공제가 2배가 돼요. 이 습관만으로 중간 소득 직장인 환급이 보통 20~40만원 늘어요." },
+          { type: "warning", title: "부양가족 등록, 멀리 사는 부모님도 꼭 챙기세요", text: "연 소득 100만원 이하인 부모님(은퇴하시면 대부분 여기 해당)은 부양가족 등록하면 1인당 150만원 소득공제예요. 대부분 직장인이 '따로 사시니까' 안 등록하는데, 법이 동거를 요구하지 않아요. 부모님 소득이 기준 미만이고 어떤 형태로든 경제적 지원을 하고 있다면 등록하세요. 부모님 두 분 = 공제 300만원. 중간 소득 기준 환급 45~75만원 차이 나요." },
+          { type: "tool-cta", tool: "year-end-tax-calculator", toolName: "연말정산 계산기", toolDescription: "소득, 카드 사용, 연금저축, 부양가족 넣으면 예상 환급액이 바로 나와요", buttonText: "환급액 계산" },
           {
             type: "faq",
             faqItems: [
