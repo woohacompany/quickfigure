@@ -1,6 +1,57 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary, isValidLocale } from "@/lib/dictionaries";
+import { TOOL_SLUGS } from "@/lib/tools";
+
+const categorySlugs: Record<string, readonly string[]> = {
+  "💰": [
+    "compound-interest-calculator", "mortgage-calculator", "retirement-calculator",
+    "emergency-fund-calculator", "freelancer-tax-calculator", "salary-calculator",
+    "loan-calculator", "vat-calculator", "severance-calculator", "rent-conversion-calculator",
+    "hourly-wage-calculator", "discount-calculator", "electricity-calculator",
+    "weekly-holiday-pay-calculator", "weekly-pay-calculator", "annual-leave-calculator",
+    "unemployment-calculator", "acquisition-tax-calculator", "income-tax-calculator",
+    "car-tax-calculator", "capital-gains-tax-calculator", "loan-comparison-calculator",
+    "inheritance-tax-calculator", "dsr-calculator", "accident-settlement-calculator",
+    "national-pension-calculator", "roi-calculator", "currency-converter",
+    "jeonse-vs-wolse-calculator", "year-end-tax-calculator",
+  ],
+  "📄": [
+    "pdf-merger", "pdf-splitter", "pdf-to-word", "word-to-pdf", "pdf-compressor",
+    "pdf-to-jpg", "pdf-to-excel", "excel-to-pdf", "excel-merge", "image-to-pdf",
+  ],
+  "🖼️": [
+    "image-resizer", "image-compressor", "image-converter", "image-upscaler",
+    "image-cropper", "image-kb-resizer", "image-watermark", "image-rotate",
+    "image-to-svg", "gif-maker",
+  ],
+  "💻": [
+    "json-formatter", "base64-encoder-decoder", "markdown-editor", "uuid-generator",
+    "regex-tester", "hash-generator", "url-encoder-decoder", "css-gradient-generator",
+  ],
+  "❤️": [
+    "bmi-calculator", "calorie-calculator", "age-calculator", "sleep-calculator",
+    "alcohol-calculator", "body-fat-calculator",
+  ],
+  "📅": [
+    "dday-calculator", "date-calculator", "gpa-calculator", "timer", "world-clock",
+    "schedule-finder", "symbol-copy-paste", "qr-code-generator", "color-picker",
+    "unit-converter", "percentage-calculator", "area-converter", "random-number-generator",
+    "typing-speed-test", "word-counter", "case-converter", "text-diff",
+    "lorem-ipsum-generator", "password-generator", "ladder-game",
+  ],
+};
+
+function categoryCount(icon: string): number {
+  const slugs = categorySlugs[icon];
+  if (!slugs) return 0;
+  const valid = new Set<string>(TOOL_SLUGS);
+  return slugs.filter((s) => valid.has(s)).length;
+}
+
+function withCount(template: string, count: number): string {
+  return template.replace(/\{count\}/g, String(count));
+}
 
 export async function generateMetadata({
   params,
@@ -10,16 +61,17 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
   const t = getDictionary(lang).about;
+  const toolCount = TOOL_SLUGS.length;
   return {
     title: t.metaTitle,
-    description: t.metaDescription,
+    description: withCount(t.metaDescription, toolCount),
     alternates: {
       canonical: `/${lang}/about`,
       languages: { en: "/en/about", ko: "/ko/about", "x-default": "/en/about" },
     },
     openGraph: {
       title: t.metaTitle,
-      description: t.metaDescription,
+      description: withCount(t.metaDescription, toolCount),
       type: "website",
     },
   };
@@ -65,8 +117,10 @@ const valueIcons: Record<string, () => React.ReactElement> = {
 };
 
 const avatarColors: Record<string, string> = {
-  DW: "bg-blue-600",
-  JP: "bg-emerald-600",
+  SJ: "bg-blue-600",
+  HE: "bg-purple-600",
+  MJ: "bg-emerald-600",
+  YR: "bg-orange-500",
 };
 
 export default async function AboutPage({
@@ -77,13 +131,14 @@ export default async function AboutPage({
   const { lang } = await params;
   if (!isValidLocale(lang)) return null;
   const t = getDictionary(lang).about;
+  const toolCount = TOOL_SLUGS.length;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
       {/* ── Hero ── */}
       <section className="text-center space-y-5">
         <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-sm font-medium border border-blue-100 dark:border-blue-900">
-          {t.hero.badge}
+          {withCount(t.hero.badge, toolCount)}
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight whitespace-pre-line leading-tight">
           {t.hero.headline}
@@ -99,7 +154,7 @@ export default async function AboutPage({
         <div className="space-y-3 text-neutral-600 dark:text-neutral-300 leading-relaxed">
           <p>{t.story.p1}</p>
           <p>{t.story.p2}</p>
-          <p>{t.story.p3}</p>
+          <p>{withCount(t.story.p3, toolCount)}</p>
         </div>
       </section>
 
@@ -156,24 +211,30 @@ export default async function AboutPage({
       <section className="space-y-6">
         <div className="text-center space-y-2">
           <h2 className="text-2xl font-bold tracking-tight">{t.toolCategories.heading}</h2>
-          <p className="text-neutral-500 dark:text-neutral-400">{t.toolCategories.sub}</p>
+          <p className="text-neutral-500 dark:text-neutral-400">
+            {withCount(t.toolCategories.sub, toolCount)}
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {t.toolCategories.items.map((cat: { icon: string; name: string; count: string; desc: string }) => (
-            <div
-              key={cat.name}
-              className="rounded-xl border border-neutral-200 dark:border-neutral-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
-            >
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">{cat.icon}</span>
-                <div>
-                  <p className="font-semibold">{cat.name}</p>
-                  <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">{cat.count}</p>
+          {t.toolCategories.items.map((cat: { icon: string; name: string; desc: string }) => {
+            const count = categoryCount(cat.icon);
+            const countLabel = lang === "ko" ? `${count}개` : `${count} tools`;
+            return (
+              <div
+                key={cat.name}
+                className="rounded-xl border border-neutral-200 dark:border-neutral-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-2xl">{cat.icon}</span>
+                  <div>
+                    <p className="font-semibold">{cat.name}</p>
+                    <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">{countLabel}</p>
+                  </div>
                 </div>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">{cat.desc}</p>
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">{cat.desc}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
