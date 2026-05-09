@@ -39,6 +39,7 @@ export async function generateMetadata({
   return {
     title: tr.title + " | QuickFigure",
     description: tr.summary,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `/${lang}/blog/${slug}`,
       languages: { en: `/en/blog/${slug}`, ko: `/ko/blog/${slug}`, "x-default": `/en/blog/${slug}` },

@@ -12,6 +12,7 @@ export async function generateMetadata({
   return {
     title: t.metaTitle,
     description: t.metaDescription,
+    robots: { index: false, follow: true },
     alternates: {
       canonical: `/${lang}/blog`,
       languages: { en: "/en/blog", ko: "/ko/blog", "x-default": "/en/blog" },
