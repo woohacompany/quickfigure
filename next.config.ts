@@ -13,6 +13,17 @@ const nextConfig: NextConfig = {
         destination: "https://www.quickfigure.net/:path",
         permanent: true,
       },
+      // Block all blog routes during AdSense review by 308-redirecting them to
+      // the homepage. Blog data (src/lib/blog.ts) and page components stay in
+      // the codebase — deleting these six entries fully restores the blog.
+      // List page and sub-paths are listed separately so the list URL is
+      // covered regardless of how :path* treats the zero-segment case.
+      { source: "/ko/blog", destination: "/ko", permanent: true },
+      { source: "/ko/blog/:path*", destination: "/ko", permanent: true },
+      { source: "/en/blog", destination: "/en", permanent: true },
+      { source: "/en/blog/:path*", destination: "/en", permanent: true },
+      { source: "/blog", destination: "/ko", permanent: true },
+      { source: "/blog/:path*", destination: "/ko", permanent: true },
     ];
   },
 };
