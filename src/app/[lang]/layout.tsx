@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, isValidLocale, locales, type Locale } from "@/lib/dictionaries";
 import { TOOL_SLUGS } from "@/lib/tools";
-import { blogPosts } from "@/lib/blog";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -35,12 +34,6 @@ export default async function LangLayout({
               className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
             >
               {t.nav.tools}
-            </Link>
-            <Link
-              href={`/${lang}/blog`}
-              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
-            >
-              {t.blog.title}
             </Link>
             <Link
               href={`/${lang}/about`}
@@ -80,8 +73,8 @@ export default async function LangLayout({
               <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.tools}</p>
             </div>
             <div>
-              <p className="text-2xl font-bold">{blogPosts.length}+</p>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.blog}</p>
+              <p className="text-2xl font-bold">8</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{t.trustSection.categories}</p>
             </div>
             <div>
               <p className="text-2xl font-bold">{t.trustSection.languagesValue}</p>
@@ -138,7 +131,6 @@ export default async function LangLayout({
             <nav>
               <p className="font-semibold mb-3">{t.footer.company}</p>
               <ul className="space-y-2 text-neutral-500 dark:text-neutral-400 text-xs">
-                <li><Link href={`/${lang}/blog`} className="hover:text-foreground transition-colors">{t.blog.title}</Link></li>
                 <li><Link href={`/${lang}/about`} className="hover:text-foreground transition-colors">{t.nav.about}</Link></li>
                 <li><Link href={`/${lang}/contact`} className="hover:text-foreground transition-colors">{t.nav.contact}</Link></li>
               </ul>

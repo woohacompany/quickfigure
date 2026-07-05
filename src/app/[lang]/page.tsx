@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getDictionary, isValidLocale, type Locale } from "@/lib/dictionaries";
-import { blogPosts, categoryLabels } from "@/lib/blog";
+import { getDictionary, isValidLocale } from "@/lib/dictionaries";
 import { TOOL_SLUGS } from "@/lib/tools";
 import { toolTags } from "@/lib/toolTags";
 import HomeClient from "./HomeClient";
@@ -234,20 +233,7 @@ export default async function HomePage({
     return null;
   }).filter(Boolean) as { name: string; description: string; href: string; icon: string }[];
 
-  const latestPosts = blogPosts.slice(0, 6).map((post) => {
-    const tr = post.translations[lang as Locale];
-    return {
-      slug: post.slug,
-      href: `/${lang}/blog/${post.slug}`,
-      title: tr.title,
-      summary: tr.summary,
-      category: categoryLabels[post.category][lang as Locale],
-      date: post.date,
-    };
-  });
-
   const toolCount = TOOL_SLUGS.length;
-  const blogCount = blogPosts.length;
 
   // JSON-LD structured data
   const jsonLd = {
@@ -296,9 +282,7 @@ export default async function HomePage({
         t={t}
         categories={categories}
         popularTools={popularTools}
-        latestPosts={latestPosts}
         toolCount={toolCount}
-        blogCount={blogCount}
       />
     </>
   );

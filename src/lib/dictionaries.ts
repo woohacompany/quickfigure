@@ -1481,6 +1481,7 @@ const dictionaries = {
     trustSection: {
       tools: "Tools available",
       blog: "Blog articles",
+      categories: "Tool categories",
       languages: "Languages",
       languagesValue: "English & 한국어",
     },
@@ -2978,6 +2979,7 @@ const dictionaries = {
     trustSection: {
       tools: "제공 도구",
       blog: "블로그 글",
+      categories: "도구 카테고리",
       languages: "지원 언어",
       languagesValue: "English & 한국어",
     },

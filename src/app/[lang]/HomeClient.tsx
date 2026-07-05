@@ -25,15 +25,6 @@ interface PopularTool extends Tool {
   icon: string;
 }
 
-interface BlogPost {
-  slug: string;
-  href: string;
-  title: string;
-  summary: string;
-  category: string;
-  date: string;
-}
-
 interface SearchResult {
   name: string;
   description: string;
@@ -59,17 +50,13 @@ export default function HomeClient({
   t,
   categories,
   popularTools,
-  latestPosts,
   toolCount,
-  blogCount,
 }: {
   lang: string;
   t: Dictionary;
   categories: Category[];
   popularTools: PopularTool[];
-  latestPosts: BlogPost[];
   toolCount: number;
-  blogCount: number;
 }) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
@@ -306,8 +293,8 @@ export default function HomeClient({
           </div>
           <div className="w-px bg-neutral-200 dark:bg-neutral-700" />
           <div>
-            <p className="text-2xl sm:text-3xl font-bold">{blogCount}+</p>
-            <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{t.trustSection.blog}</p>
+            <p className="text-2xl sm:text-3xl font-bold">{categories.length}</p>
+            <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">{t.trustSection.categories}</p>
           </div>
           <div className="w-px bg-neutral-200 dark:bg-neutral-700" />
           <div>
@@ -393,42 +380,6 @@ export default function HomeClient({
           );
         })}
       </div>
-
-      {/* Blog Section */}
-      <section className="py-10 border-t border-neutral-200 dark:border-neutral-800">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold">📚 {t.home.guidesAndTips}</h2>
-          <Link
-            href={`/${lang}/blog`}
-            className="px-4 py-2 rounded-lg text-sm font-medium text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors"
-          >
-            {t.blog.viewAll} &rarr;
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {latestPosts.map((post) => (
-            <article key={post.slug}>
-              <Link
-                href={post.href}
-                className="group block rounded-lg border border-neutral-200 dark:border-neutral-700 p-4 hover:border-neutral-400 dark:hover:border-neutral-500 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-neutral-400">{post.date}</span>
-                </div>
-                <h3 className="font-medium leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="mt-1.5 text-sm text-neutral-500 dark:text-neutral-400 line-clamp-2">
-                  {post.summary}
-                </p>
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
 
       {/* About Section */}
       <section className="py-10 border-t border-neutral-200 dark:border-neutral-800">
