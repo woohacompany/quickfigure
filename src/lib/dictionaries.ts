@@ -1349,34 +1349,30 @@ const dictionaries = {
         p2: "So we built the site we always wanted — fast, clean, free, and private. Every tool runs entirely in your browser. Your data never leaves your device.",
         p3: "What began as a handful of calculators has grown into {count}+ tools used by people around the world every day.",
       },
-      team: {
-        heading: "The Team",
-        members: [
-          {
-            name: "Seokjun",
-            role: "Founder & CEO",
-            bio: "QuickFigure's founder, working with financial data for 5 years. Building tools that turn complex tax calculations into a 10-second task anyone can handle.",
-            avatar: "SJ",
-          },
-          {
-            name: "Haeun",
-            role: "Content Editor",
-            bio: "Editor who only writes about tools she's actually tested. Clicks every button at least 100 times before publishing a guide.",
-            avatar: "HE",
-          },
-          {
-            name: "Minjae",
-            role: "Frontend Developer",
-            bio: "Frontend developer. Writes about the daily coding battles — from JSON parsing to PDF conversion — one debug session at a time.",
-            avatar: "MJ",
-          },
-          {
-            name: "Yuri",
-            role: "Real Estate Editor",
-            bio: "Editor sharing the real estate math she learned the hard way — through three rental moves of her own.",
-            avatar: "YR",
-          },
-        ],
+      identity: {
+        heading: "What QuickFigure Is",
+        body: "QuickFigure is a free online toolkit that gathers the calculators, converters, and file tools people need for everyday life and work into one place. Finance, health, PDF, image, developer, and everyday utility tools may sit in different categories, but they all serve a single purpose: helping you finish a specific task in seconds — no installation, no sign-up, and no handing over your data.",
+      },
+      operator: {
+        heading: "Who Runs QuickFigure",
+        body1: "QuickFigure is planned, developed, and operated directly by the QuickFigure team — a small group of developers and content editors who build and maintain every tool on the site. We work under the team name rather than personal bylines, and we take responsibility as a team for the accuracy and upkeep of what we publish.",
+        body2: "Questions, corrections, or tool ideas are always welcome. Reach us anytime:",
+        emailLabel: "Email",
+        email: "quickfigure.contact@gmail.com",
+        contactPrefix: "or through our",
+        contactLinkText: "contact page",
+      },
+      methodology: {
+        heading: "How We Build and Verify Our Tools",
+        body: "Our finance and tax tools are built on official 2026 standards — the current tax brackets, insurance rates, and statutory formulas published by the relevant authorities. When laws or rates change, we update the affected tools and revise the figures shown on each page. Before a calculator goes live, we verify its logic against worked examples and official reference tables, and we re-check high-impact tools whenever the underlying rules are revised.",
+      },
+      dataPolicy: {
+        heading: "Your Data Stays on Your Device",
+        body: "Every calculation and file operation runs entirely in your browser. Your files, text, and inputs are processed locally and are never uploaded to a server — nothing you enter leaves your device.",
+      },
+      disclaimer: {
+        heading: "Please Note",
+        body: "Our finance, tax, and health tools are provided for reference and general information only. Results are estimates and may not reflect your exact circumstances. For decisions that matter — taxes, loans, medical, or legal matters — please consult a qualified professional before acting.",
       },
       values: {
         heading: "What We Believe",
@@ -2847,34 +2843,30 @@ const dictionaries = {
         p2: "그래서 우리가 항상 원하던 사이트를 직접 만들었습니다 — 빠르고, 깔끔하고, 무료이며, 개인정보를 지키는 사이트. 모든 도구는 브라우저에서만 실행되고, 여러분의 데이터는 기기 밖으로 나가지 않습니다.",
         p3: "몇 개의 계산기로 시작한 것이 지금은 전 세계 사용자들이 매일 이용하는 {count}개 이상의 도구로 성장했습니다.",
       },
-      team: {
-        heading: "팀 소개",
-        members: [
-          {
-            name: "석준",
-            role: "대표",
-            bio: "금융 데이터를 5년째 다루고 있는 QuickFigure 대표. 복잡한 세금 계산을 누구나 10초 안에 할 수 있도록 만들고 있어요.",
-            avatar: "SJ",
-          },
-          {
-            name: "하은",
-            role: "콘텐츠 에디터",
-            bio: "실제로 써보고 검증한 도구만 소개하는 에디터. 글 쓰기 전에 직접 100번은 눌러봐요.",
-            avatar: "HE",
-          },
-          {
-            name: "민재",
-            role: "프론트엔드 개발자",
-            bio: "프론트엔드 개발자. JSON 파싱부터 PDF 변환까지 매일 코드로 부딪히는 것들을 정리해요.",
-            avatar: "MJ",
-          },
-          {
-            name: "유리",
-            role: "부동산 에디터",
-            bio: "전월세 3번 이사하면서 배운 부동산 계산법을 공유하는 에디터.",
-            avatar: "YR",
-          },
-        ],
+      identity: {
+        heading: "QuickFigure는 어떤 곳인가요",
+        body: "QuickFigure는 한국의 생활과 업무에 필요한 계산기·변환기·파일 도구를 한곳에 모은 무료 온라인 도구 사이트입니다. 금융, 건강, PDF, 이미지, 개발자, 날짜·유틸리티 도구는 서로 다른 카테고리처럼 보이지만 모두 하나의 목적을 향합니다 — 설치도 가입도 없이, 데이터를 넘기지 않고도 필요한 작업을 몇 초 안에 끝내도록 돕는 것.",
+      },
+      operator: {
+        heading: "누가 운영하나요",
+        body1: "QuickFigure는 QuickFigure 팀이 직접 기획·개발·운영합니다. 사이트의 모든 도구를 만들고 관리하는 소수의 개발자와 콘텐츠 에디터로 이루어진 팀입니다. 개인 이름 대신 팀 명의로 활동하며, 우리가 공개하는 내용의 정확성과 유지관리에 대한 책임을 팀으로서 집니다.",
+        body2: "질문, 오류 제보, 도구 아이디어는 언제든 환영합니다. 편하게 연락해 주세요:",
+        emailLabel: "이메일",
+        email: "quickfigure.contact@gmail.com",
+        contactPrefix: "또는",
+        contactLinkText: "문의 페이지",
+      },
+      methodology: {
+        heading: "도구는 이렇게 만들고 검증합니다",
+        body: "금융·세금 도구는 2026년 공식 기준 — 관계 기관이 발표한 최신 세율, 과세표준 구간, 4대 보험료율, 법정 산식 — 을 반영해 제작합니다. 법령이나 요율이 바뀌면 해당 도구와 페이지에 표시된 수치를 업데이트합니다. 계산기를 공개하기 전에는 계산 로직을 검산 예제와 공식 기준표에 맞춰 검증하고, 규정이 개정될 때마다 영향이 큰 도구를 다시 점검합니다.",
+      },
+      dataPolicy: {
+        heading: "데이터는 기기 안에만 있습니다",
+        body: "모든 계산과 파일 처리는 전적으로 브라우저 안에서 이뤄집니다. 여러분의 파일, 텍스트, 입력값은 기기에서 로컬로 처리되며 서버로 업로드되지 않습니다 — 입력한 어떤 것도 기기 밖으로 나가지 않습니다.",
+      },
+      disclaimer: {
+        heading: "참고해 주세요",
+        body: "금융·세금·건강 도구는 참고 및 일반 정보 제공용입니다. 결과는 추정치이며 개인의 정확한 상황과 다를 수 있습니다. 세금, 대출, 의료, 법률처럼 중요한 판단에는 실행 전에 반드시 전문가와 상담하시기를 권장합니다.",
       },
       values: {
         heading: "우리가 믿는 것",

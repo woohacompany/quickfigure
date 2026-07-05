@@ -116,13 +116,6 @@ const valueIcons: Record<string, () => React.ReactElement> = {
   globe: GlobeIcon,
 };
 
-const avatarColors: Record<string, string> = {
-  SJ: "bg-blue-600",
-  HE: "bg-purple-600",
-  MJ: "bg-emerald-600",
-  YR: "bg-orange-500",
-};
-
 export default async function AboutPage({
   params,
 }: {
@@ -158,31 +151,34 @@ export default async function AboutPage({
         </div>
       </section>
 
-      {/* ── Team ── */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold tracking-tight text-center">{t.team.heading}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {t.team.members.map((m: { name: string; role: string; bio: string; avatar: string }) => (
-            <div
-              key={m.avatar}
-              className="rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 space-y-4 hover:border-blue-400 dark:hover:border-blue-500 transition-colors duration-200"
+      {/* ── Identity ── */}
+      <section className="max-w-3xl mx-auto space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">{t.identity.heading}</h2>
+        <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">{t.identity.body}</p>
+      </section>
+
+      {/* ── Operator ── */}
+      <section className="max-w-3xl mx-auto space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">{t.operator.heading}</h2>
+        <div className="space-y-3 text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          <p>{t.operator.body1}</p>
+          <p>
+            {t.operator.body2}{" "}
+            <a
+              href={`mailto:${t.operator.email}`}
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
             >
-              <div className="flex items-center gap-4">
-                <div
-                  className={`w-14 h-14 rounded-full ${avatarColors[m.avatar] ?? "bg-neutral-500"} flex items-center justify-center text-white text-lg font-bold shrink-0`}
-                >
-                  {m.avatar}
-                </div>
-                <div>
-                  <p className="font-semibold text-lg">{m.name}</p>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400">{m.role}</p>
-                </div>
-              </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-                {m.bio}
-              </p>
-            </div>
-          ))}
+              {t.operator.email}
+            </a>{" "}
+            {t.operator.contactPrefix}{" "}
+            <Link
+              href={`/${lang}/contact`}
+              className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
+            >
+              {t.operator.contactLinkText}
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -205,6 +201,12 @@ export default async function AboutPage({
             );
           })}
         </div>
+      </section>
+
+      {/* ── Methodology ── */}
+      <section className="max-w-3xl mx-auto space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">{t.methodology.heading}</h2>
+        <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">{t.methodology.body}</p>
       </section>
 
       {/* ── Tool Categories ── */}
@@ -235,6 +237,27 @@ export default async function AboutPage({
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* ── Data Policy ── */}
+      <section className="max-w-3xl mx-auto">
+        <div className="flex gap-4 p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700">
+          <div className="text-blue-600 dark:text-blue-400 mt-0.5 shrink-0">
+            <ShieldIcon />
+          </div>
+          <div className="space-y-1">
+            <p className="font-semibold">{t.dataPolicy.heading}</p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{t.dataPolicy.body}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Disclaimer ── */}
+      <section className="max-w-3xl mx-auto">
+        <div className="rounded-xl border border-amber-200 dark:border-amber-900 bg-amber-50 dark:bg-amber-950/40 p-5 space-y-1">
+          <p className="font-semibold text-amber-800 dark:text-amber-300">{t.disclaimer.heading}</p>
+          <p className="text-sm text-amber-700 dark:text-amber-200/80 leading-relaxed">{t.disclaimer.body}</p>
         </div>
       </section>
 
