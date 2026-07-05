@@ -1335,7 +1335,7 @@ const dictionaries = {
     about: {
       title: "About QuickFigure",
       metaTitle: "About QuickFigure — Free Online Tools for Everyone | QuickFigure",
-      metaDescription: "Meet the team behind QuickFigure. {count}+ free online tools — calculators, PDF editors, image tools & more. 100% browser-based, no signup required.",
+      metaDescription: "Learn what QuickFigure is and how we build and verify our tools.",
       description:
         "QuickFigure is a collection of free, fast, and easy-to-use online tools designed to help you with everyday tasks.",
       hero: {
@@ -2829,7 +2829,7 @@ const dictionaries = {
     about: {
       title: "QuickFigure 소개",
       metaTitle: "QuickFigure 소개 — 누구나 쓸 수 있는 무료 온라인 도구 | QuickFigure",
-      metaDescription: "QuickFigure 팀을 소개합니다. {count}개 이상의 무료 온라인 도구 — 계산기, PDF 편집, 이미지 도구 등. 100% 브라우저 기반, 회원가입 불필요.",
+      metaDescription: "QuickFigure가 어떤 사이트인지, 도구를 어떻게 만들고 검증하는지 소개합니다.",
       description:
         "QuickFigure는 일상적인 작업을 도와주는 무료, 빠르고 사용하기 쉬운 온라인 도구 모음입니다.",
       hero: {
